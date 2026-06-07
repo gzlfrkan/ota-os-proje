@@ -1,0 +1,97 @@
+=== BINARY IDENTITY ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+SIZE: 129760 bytes
+SHA256: 0d0b203a3a72accd4b774e60b92443d848745089217a0c52e70f4476b619b47d
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: ./udp-client.z1
+SIZE: 100630 bytes
+SHA256: 1fefaa41e2833cc978aefdc62eaba2f04ed6d9b5688612689e14b04a226ab4b1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: ./udp-server.z1
+SIZE: 100221 bytes
+SHA256: 917c9afa207da3af10d80384c3ed829c931a66fb253b1a7055ea782c68b9c27f
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+SIZE: 664376 bytes
+SHA256: beebcb6ab4dbf44b5d89b6d4953f5d8dde096873bb978959eced3d4780afce62
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+SIZE: 131334 bytes
+SHA256: 7a1d9687692a95b318347c7e808f3b30378997dfa55ebf90bce568ebd0b32385
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+SIZE: 92587 bytes
+SHA256: 8186c18ec1f4df7e8ed81e0a3efee33d582f25f1577cd0a8b7f197911eb61be1
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+SIZE: 98143 bytes
+SHA256: 8067064abf29b7cd991b09c1b67603e2bea7bf92099ae08fbb959d619449327e
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+SIZE: 416272 bytes
+SHA256: f465a30c00a1a3a49cf9b0b2dc2e92b9ee18b3840df3b3e5fefb3f94c890ec11
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+SIZE: 58936 bytes
+SHA256: 58cdcc9b1c3e0f514e32d5d6d5f5ee36f9c6665410245f5639506d3185fff08b
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+SIZE: 53667 bytes
+SHA256: c8357bb569bf00bf13395dd57ce7778b929eaf7be128d63d2c848b1d2a30a7fa
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+SIZE: 112713 bytes
+SHA256: 2409d323eb679fb0793e4dd93e6084acba44cf4657e0800c8426eb89d8e4f5ea
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+SIZE: 118534 bytes
+SHA256: bc21e16968cf577e218df756751650064228460a432a3d2a4cc04eb1e65159a2
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+SIZE: 59251 bytes
+SHA256: 1c6634768a8603563cf15437cee5deccd13ec98a0ffd6fc8747d6d6f0f83e74d
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+SIZE: 94285 bytes
+SHA256: 1ddf025c21778614423231286aef7e683856c19710452f233d505946464bf340
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+SIZE: 99661 bytes
+SHA256: 24f535f0c9c8f6e0fb7e5884c7f67a5bc904af3d35f555877adf29bf7bd3bb74
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+SIZE: 93744 bytes
+SHA256: f553f71fb185ee4ea384c2d56a580cbe6b8edebb1bf0c8a297b58dffa72d7cd6
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
