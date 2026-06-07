@@ -187,6 +187,87 @@ text    data    bss    dec
 
 `new-firmware.z1` dosyasının büyük olmasının temel nedeni `.text` alanının yüksek olmasıdır. Bu da daha fazla kod, ağ stack bileşeni, RPL/UDP/6LoWPAN yapısı, sensör ve sürücü fonksiyonu içerdiğini gösterir. `bss` alanı RAM kullanımını etkilediği için gömülü sistemlerde önemlidir.
 
+
+## Donanım Bellek Eşleştirmesi: CC1352R SoC
+
+Ödev şartnamesinde araç zinciri ile üretilen disk ve bellek uzayı sonuçlarının CC1352R SoC teknik dokümantasyonunda verilen disk ve bellek alanlarıyla ilişkilendirilmesi istenmektedir. Bu nedenle bu bölümde özellikle ARM / SimpleLink hedefi için üretilmiş olan `base-demo.simplelink` dosyası CC1352R bellek alanlarıyla eşleştirilmiştir.
+
+TI CC1352R dokümantasyonunda cihazın 352 KB in-system programmable Flash, 80 KB ultra-low leakage SRAM ve ek olarak 8 KB cache SRAM alanına sahip olduğu belirtilmektedir. Ürün özetinde RAM toplamı 88 KB olarak verilmektedir. Bu çalışmada SRAM yüzdesi hesaplanırken toplam 88 KB RAM değeri esas alınmıştır. Daha korumacı yorum için yalnızca 80 KB ana SRAM dikkate alındığında oran ayrıca belirtilmiştir.
+
+### CC1352R bellek alanları
+
+| Donanım alanı | Kapasite | Yaklaşık byte | Kullanım amacı |
+|---|---:|---:|---|
+| Flash / Program belleği | 352 KB | 360.448 byte | Program kodu, sabit veriler, başlangıç değerleri |
+| SRAM toplam | 88 KB | 90.112 byte | `.data`, `.bss`, heap, stack ve runtime verileri |
+| Ana ultra-low leakage SRAM | 80 KB | 81.920 byte | Ana çalışma zamanı RAM alanı |
+| Cache SRAM | 8 KB | 8.192 byte | Cache veya alternatif genel amaçlı RAM |
+
+### `base-demo.simplelink` için hesaplama
+
+`base-demo.simplelink` dosyasının `size` çıktısı aşağıdaki gibidir:
+
+| Alan | Boyut |
+|---|---:|
+| `.text` | 71.393 byte |
+| `.data` | 1.408 byte |
+| `.bss` | 12.968 byte |
+| Toplam (`dec`) | 85.769 byte |
+
+Gömülü sistemlerde `.text` alanı program kodunu ve salt-okunur verileri temsil eder. `.data` alanı başlangıç değeri verilmiş değişkenleri temsil eder; bu alanın başlangıç değerleri Flash içinde bulunur, çalışma sırasında RAM'e kopyalanır. `.bss` ise başlangıç değeri verilmemiş global/static değişkenler için RAM'de ayrılan alandır.
+
+Bu nedenle yaklaşık hesaplama şu şekilde yapılmıştır:
+
+```text
+Flash kullanımı ≈ .text + .data
+SRAM kullanımı  ≈ .data + .bss
+```
+
+| Firmware | Flash kullanımı | Flash oranı | SRAM kullanımı | SRAM oranı / 88 KB | SRAM oranı / 80 KB |
+|---|---:|---:|---:|---:|---:|
+| `base-demo.simplelink` | 72.801 byte | %20,2 | 14.376 byte | %16,0 | %17,5 |
+
+### Basit bellek haritası
+
+```text
+CC1352R Flash / Program Belleği
+Kapasite: 352 KB
+0x00000000  ┌────────────────────────────────────────────┐
+            │ Reset vector / startup code                 │
+            │ .text  → program kodu                       │
+            │ .rodata → sabit veriler ve stringler         │
+            │ .data başlangıç değerleri                   │
+            │                                            │
+            │ base-demo.simplelink yaklaşık Flash kullanımı│
+            │ 72.801 byte ≈ %20,2                         │
+            └────────────────────────────────────────────┘
+
+
+CC1352R SRAM / Veri Belleği
+Toplam RAM: 88 KB
+0x20000000  ┌────────────────────────────────────────────┐
+            │ .data → başlangıç değerli değişkenler       │
+            │ .bss  → sıfırlanan global/static alanlar    │
+            │ heap / stack çalışma zamanı alanları        │
+            │                                            │
+            │ base-demo.simplelink yaklaşık SRAM kullanımı │
+            │ 14.376 byte ≈ %16,0                         │
+            └────────────────────────────────────────────┘
+```
+
+### MSP430 firmware dosyaları hakkında not
+
+`new-firmware.z1`, `udp-client.z1`, `udp-server.z1` ve diğer `.z1/.sky` dosyaları MSP430 mimarisi için derlenmiştir. Bu nedenle bu dosyalar CC1352R SoC üzerine doğrudan yüklenemez. Bellek kullanım değerleri karşılaştırmalı analiz için yararlıdır; ancak CC1352R üzerinde çalıştırılacak firmware için uygulamanın ARM / SimpleLink hedefiyle yeniden derlenmesi gerekir.
+
+| Firmware | Yaklaşık Flash kullanımı (`.text + .data`) | Yaklaşık RAM kullanımı (`.data + .bss`) | CC1352R'ye doğrudan yüklenebilir mi? |
+|---|---:|---:|---|
+| `new-firmware.z1` | 72.051 byte | 6.042 byte | Hayır, MSP430 hedefli |
+| `udp-client.z1` | 43.207 byte | 6.258 byte | Hayır, MSP430 hedefli |
+| `udp-server.z1` | 42.921 byte | 6.202 byte | Hayır, MSP430 hedefli |
+| `base-demo.simplelink` | 72.801 byte | 14.376 byte | Evet, ARM / SimpleLink hedefli |
+
+Bu eşleştirme, araç zinciri ile elde edilen `.text`, `.data` ve `.bss` sonuçlarının CC1352R teknik dokümantasyonundaki Flash ve SRAM alanlarıyla nasıl ilişkilendirileceğini göstermektedir.
+
 ---
 
 # 3. Symbol / Function Analizi
@@ -1570,3 +1651,8 @@ readme-analysis/23-educational-re.txt
 ```
 
 Bu README dosyası, ham terminal çıktılarının tamamını tekrar etmek yerine analizlerden elde edilen önemli bulguları ve yorumları özetlemektedir.
+
+
+## Teknik Referans Notu
+
+CC1352R bellek eşleştirmesi için TI CC1352R ürün/dokümantasyon bilgilerindeki 352 KB Flash, 80 KB ultra-low leakage SRAM ve 8 KB cache SRAM bilgileri esas alınmıştır. Firmware bellek değerleri ise `readme-analysis/02-memory-size.txt` dosyasındaki `size` çıktılarından alınmıştır.
