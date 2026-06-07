@@ -1,0 +1,97 @@
+=== MEMORY SIZE ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  71715	    336	   5706	  77757	  12fbd	./new-firmware.z1
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  42871	    336	   5922	  49129	   bfe9	./udp-client.z1
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  42585	    336	   5866	  48787	   be93	./udp-server.z1
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  71393	   1408	  12968	  85769	  14f09	extra-firmwares/base-demo.simplelink
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  73564	    374	   5698	  79636	  13714	extra-firmwares/hardworker.z1
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  42237	    324	   6714	  49275	   c07b	extra-firmwares/hello-world.sky
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  41512	    328	   5676	  47516	   b99c	extra-firmwares/hello-world.z1
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+   text	   data	    bss	    dec	    hex	filename
+ 324415	   9488	 292376	 626279	  98e67	extra-firmwares/mtype5756516.cooja
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  17866	    166	   2240	  20272	   4f30	extra-firmwares/nullnet-broadcast.z1
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  17793	    310	   2814	  20917	   51b5	extra-firmwares/nullnet-unicast-u50.sky
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  29171	   4426	   3086	  36683	   8f4b	extra-firmwares/nullnet-unicast.sky
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  28097	   2488	   2632	  33217	   81c1	extra-firmwares/nullnet-unicast.z1
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  17883	   4626	   2998	  25507	   63a3	extra-firmwares/nullnet-unicast_eleco.sky
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  43386	    330	   7024	  50740	   c634	extra-firmwares/udp-client.sky
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  42542	    336	   5888	  48766	   be7e	extra-firmwares/udp-client.z1
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+   text	   data	    bss	    dec	    hex	filename
+  43000	    330	   6968	  50298	   c47a	extra-firmwares/udp-server.sky

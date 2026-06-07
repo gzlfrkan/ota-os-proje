@@ -1,0 +1,2689 @@
+=== 17. LINKER / BUILD SYSTEM ANALYSIS ===
+Makefile:1:CONTIKI_PROJECT = udp-client udp-server
+Makefile:3:all: $(CONTIKI_PROJECT)
+./Makefile
+./slot-a.ld
+./slot-b.ld
+
+----------------------------------------
+FILE: ./new-firmware.z1
+./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          94584 (bytes into file)
+  Number of program headers:         6
+  Number of section headers:         21
+
+[Section placement]
+  [ 1] .far.text         PROGBITS        00010000 00cff2 004a78 00  AX  0   0  2
+  [ 2] .text             PROGBITS        00003100 0000f4 00976e 00  AX  0   0  2
+  [ 3] .rodata           PROGBITS        0000c870 009864 0035fd 00   A  0   0  4
+  [ 4] .data             PROGBITS        00001100 00ce62 000150 00  WA  0   0  2
+  [ 5] .bss              NOBITS          00001250 00cfb2 001648 00  WA  0   0  2
+  [ 6] .noinit           NOBITS          00002898 00cfb2 000002 00  WA  0   0  2
+  [ 7] .vectors          PROGBITS        0000ffc0 00cfb2 000040 00  AX  0   0  1
+  [19] .symtab           SYMTAB          00000000 0174c0 004770 10     20 385  4
+  [20] .strtab           STRTAB          00000000 01bc30 003eb0 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000300c 0x0000300c 0x09862 0x09862 R E 0x1
+  LOAD           0x009864 0x0000c870 0x0000c870 0x035fd 0x035fd R   0x1
+  LOAD           0x00ce62 0x00001100 0x0000fe6e 0x00150 0x01798 RW  0x1
+  LOAD           0x00cfb2 0x00002898 0x0000ffbe 0x00000 0x00002 RW  0x1
+  LOAD           0x00cfb2 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+  LOAD           0x00cff2 0x00010000 0x00010000 0x04a78 0x04a78 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+   05     .far.text 
+
+[Startup / reset / vector symbols]
+00002898 B __bss_end
+00001648 A __bss_size
+00001250 B __bss_start
+00003376 T __ctors_start
+0000ffbe A __data_end_rom
+0000fe6e A __data_load_start
+00000150 A __data_size
+00001100 D __data_start
+0000fe6e A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+00003376 T __dtors_start
+00000000 T __far_bss_start
+00014a78 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+0000289a B __noinit_end
+00002898 B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+0000289a A _stack
+00010000 T _vectors_end
+0000396a T accm_init
+00003a3a T autostart_start
+00003ad6 T cc2420_arch_init
+00004436 T cc2420_init
+000024b6 B cc2420_sfd_start_time
+0000453a T clock_init
+00004cc8 T csma_output_init
+00005034 T ctimer_init
+0000512a T energest_init
+         U gpio_hal_arch_init
+00005c00 T i2c_receiveinit
+00005c36 T i2c_transmitinit
+00004f50 t init
+0000a786 t init
+00007294 t init_dag
+000045ac T init_platform
+00002465 b initialized
+00002497 b initialized.3799
+00005ce4 T leds_arch_init
+00005d64 T leds_init
+00005ff8 T link_stats_init
+00006040 T list_init
+0000615a T mac_sequence_init
+00006284 T memb_init
+0000641a T msp430_cpu_init
+0000637a T msp430_init_dco
+000068c2 T netstack_init
+0000687c T netstack_process_ip_callback
+0000691c T node_id_init
+00006ae4 T platform_init_stage_one
+00006bb0 T platform_init_stage_three
+00006af6 T platform_init_stage_two
+0000735c t process_dio_init_dag
+00006d7c T process_init
+00006e8e T process_start
+0000c074 t process_thread_stack_check_process
+00006edc T queuebuf_init
+00006fc2 T random_init
+00007f60 T rpl_dag_init
+00007e62 T rpl_dag_init_root
+000070c4 T rpl_dag_root_start
+00009850 T rpl_icmp6_init
+0000a080 T rpl_neighbor_init
+0000a694 T rpl_timers_init
+0000aab8 T rtimer_arch_init
+0000aada T rtimer_init
+0000ac40 T sicslowpan_init
+0000bfc0 T spi_init
+0000c020 T stack_check_get_usage
+0000bff2 T stack_check_init
+000011e2 D stack_check_process
+00002264 b stack_top.2424
+0000c754 T tmp102_init
+000111be T uart0_init
+00011d22 T uip_ds6_init
+0001122a T uip_ds6_neighbors_init
+000114e4 T uip_ds6_route_init
+000124cc T uip_icmp6_init
+0001301e T uip_init
+000128fe T uip_nd6_init
+00012b8c T uip_sr_init
+00013c20 T uipbuf_init
+00013d8a T watchdog_init
+00013d4e T watchdog_start
+00013de2 T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+000033c4 T __divhi3
+00003436 T __divsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+00013eba t call_vuprintf
+000062f8 T memb_free
+00006354 T memb_numfree
+0001484c T memcpy
+00014934 T memmove
+00014a1c T memset
+00013e88 T printf
+00006f58 T queuebuf_free
+00006eee T queuebuf_numfree
+00013ef0 T snprintf
+00012ca0 T uip_sr_free_all
+00014082 T vuprintf
+
+----------------------------------------
+FILE: ./udp-client.z1
+./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          65668 (bytes into file)
+  Number of program headers:         4
+  Number of section headers:         20
+
+[Section placement]
+  [ 1] .text             PROGBITS        00003100 0000b4 00a1b8 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000d2b8 00a26c 00057f 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a7ec 000150 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001250 00a93c 001720 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002970 00a93c 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a93c 000040 00  AX  0   0  1
+  [18] .symtab           SYMTAB          00000000 0103a4 004740 10     19 392  4
+  [19] .strtab           STRTAB          00000000 014ae4 003e32 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000304c 0x0000304c 0x0a7eb 0x0a7eb R E 0x1
+  LOAD           0x00a7ec 0x00001100 0x0000d838 0x00150 0x01870 RW  0x1
+  LOAD           0x00a93c 0x00002970 0x0000d988 0x00000 0x00002 RW  0x1
+  LOAD           0x00a93c 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data .bss 
+   03     .vectors 
+
+[Startup / reset / vector symbols]
+00002970 B __bss_end
+00001720 A __bss_size
+00001250 B __bss_start
+00003376 T __ctors_start
+0000d988 A __data_end_rom
+0000d838 A __data_load_start
+00000150 A __data_size
+00001100 D __data_start
+0000d838 A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+00003376 T __dtors_start
+00000000 T __far_bss_start
+00010000 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+00002972 B __noinit_end
+00002970 B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00002972 A _stack
+00010000 T _vectors_end
+0000396a T accm_init
+00003a3a T autostart_start
+00003ad6 T cc2420_arch_init
+00004436 T cc2420_init
+0000258c B cc2420_sfd_start_time
+0000453a T clock_init
+0000499c T csma_output_init
+00004b36 T ctimer_init
+00004c2c T energest_init
+         U gpio_hal_arch_init
+0000554e T i2c_receiveinit
+00005584 T i2c_transmitinit
+00004a76 t init
+000088ca t init
+00006a02 t init_dag
+000045ac T init_platform
+0000248f b initialized
+000024c1 b initialized.3799
+00005632 T leds_arch_init
+000056b2 T leds_init
+00005946 T link_stats_init
+0000598e T list_init
+00005aa8 T mac_sequence_init
+00005bd2 T memb_init
+00005d68 T msp430_cpu_init
+00005cc8 T msp430_init_dco
+00006210 T netstack_init
+000061ca T netstack_process_ip_callback
+0000626a T node_id_init
+00006432 T platform_init_stage_one
+000064fe T platform_init_stage_three
+00006444 T platform_init_stage_two
+00006a7a t process_dio_init_dag
+000066ca T process_init
+000067dc T process_start
+0000a336 t process_thread_stack_check_process
+0000682a T queuebuf_init
+00006902 T random_init
+00007130 T rpl_dag_init
+00007084 T rpl_dag_init_root
+0000696c T rpl_dag_root_start
+00007eda T rpl_icmp6_init
+000082aa T rpl_neighbor_init
+000087d8 T rpl_timers_init
+00008ac6 T rtimer_arch_init
+00008ae8 T rtimer_init
+00008c4e T sicslowpan_init
+0000a282 T spi_init
+0000a2e2 T stack_check_get_usage
+0000a2b4 T stack_check_init
+000011d6 D stack_check_process
+00002258 b stack_top.2424
+0000a72c T tmp102_init
+0000a870 T uart0_init
+0000b196 T uip_ds6_init
+0000aa6e T uip_ds6_neighbors_init
+0000aba2 T uip_ds6_route_init
+0000b5e8 T uip_icmp6_init
+0000bd08 T uip_init
+0000b88c T uip_nd6_init
+0000ba3e T uip_sr_init
+0000c460 T uipbuf_init
+0000c5ca T watchdog_init
+0000c58e T watchdog_start
+0000c622 T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+000033c4 T __divhi3
+00003436 T __divsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+0000c6fa t call_vuprintf
+00005c46 T memb_free
+00005ca2 T memb_numfree
+0000d08c T memcpy
+0000d174 T memmove
+0000d25c T memset
+0000c6c8 T printf
+000068a6 T queuebuf_free
+0000683c T queuebuf_numfree
+0000c730 T snprintf
+0000bae2 T uip_sr_free_all
+0000c8c2 T vuprintf
+
+----------------------------------------
+FILE: ./udp-server.z1
+./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          65412 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         20
+
+[Section placement]
+  [ 1] .text             PROGBITS        00003100 0000d4 00a0c6 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000d1c8 00a19c 000553 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a6f0 000150 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001250 00a840 0016e8 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002938 00a840 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a840 000040 00  AX  0   0  1
+  [18] .symtab           SYMTAB          00000000 0102a4 0046f0 10     19 387  4
+  [19] .strtab           STRTAB          00000000 014994 003de9 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000302c 0x0000302c 0x0a19a 0x0a19a R E 0x1
+  LOAD           0x00a19c 0x0000d1c8 0x0000d1c8 0x00553 0x00553 R   0x1
+  LOAD           0x00a6f0 0x00001100 0x0000d71c 0x00150 0x01838 RW  0x1
+  LOAD           0x00a840 0x00002938 0x0000d86c 0x00000 0x00002 RW  0x1
+  LOAD           0x00a840 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+00002938 B __bss_end
+000016e8 A __bss_size
+00001250 B __bss_start
+00003376 T __ctors_start
+0000d86c A __data_end_rom
+0000d71c A __data_load_start
+00000150 A __data_size
+00001100 D __data_start
+0000d71c A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+00003376 T __dtors_start
+00000000 T __far_bss_start
+00010000 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+0000293a B __noinit_end
+00002938 B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+0000293a A _stack
+00010000 T _vectors_end
+0000396a T accm_init
+00003a3a T autostart_start
+00003ad6 T cc2420_arch_init
+00004436 T cc2420_init
+00002554 B cc2420_sfd_start_time
+0000453a T clock_init
+0000499c T csma_output_init
+00004b36 T ctimer_init
+00004c2c T energest_init
+         U gpio_hal_arch_init
+0000554e T i2c_receiveinit
+00005584 T i2c_transmitinit
+00004a76 t init
+000088ca t init
+00006a02 t init_dag
+000045ac T init_platform
+00002477 b initialized
+000024a9 b initialized.3799
+00005632 T leds_arch_init
+000056b2 T leds_init
+00005946 T link_stats_init
+0000598e T list_init
+00005aa8 T mac_sequence_init
+00005bd2 T memb_init
+00005d68 T msp430_cpu_init
+00005cc8 T msp430_init_dco
+00006210 T netstack_init
+000061ca T netstack_process_ip_callback
+0000626a T node_id_init
+00006432 T platform_init_stage_one
+000064fe T platform_init_stage_three
+00006444 T platform_init_stage_two
+00006a7a t process_dio_init_dag
+000066ca T process_init
+000067dc T process_start
+0000a336 t process_thread_stack_check_process
+0000682a T queuebuf_init
+00006902 T random_init
+00007130 T rpl_dag_init
+00007084 T rpl_dag_init_root
+0000696c T rpl_dag_root_start
+00007eda T rpl_icmp6_init
+000082aa T rpl_neighbor_init
+000087d8 T rpl_timers_init
+00008ac6 T rtimer_arch_init
+00008ae8 T rtimer_init
+00008c4e T sicslowpan_init
+0000a282 T spi_init
+0000a2e2 T stack_check_get_usage
+0000a2b4 T stack_check_init
+000011d6 D stack_check_process
+00002258 b stack_top.2424
+0000a72c T tmp102_init
+0000a870 T uart0_init
+0000b0a4 T uip_ds6_init
+0000a97c T uip_ds6_neighbors_init
+0000aab0 T uip_ds6_route_init
+0000b4f6 T uip_icmp6_init
+0000bc16 T uip_init
+0000b79a T uip_nd6_init
+0000b94c T uip_sr_init
+0000c36e T uipbuf_init
+0000c4d8 T watchdog_init
+0000c49c T watchdog_start
+0000c530 T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+000033c4 T __divhi3
+00003436 T __divsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+0000c608 t call_vuprintf
+00005c46 T memb_free
+00005ca2 T memb_numfree
+0000cf9a T memcpy
+0000d082 T memmove
+0000d16a T memset
+0000c5d6 T printf
+000068a6 T queuebuf_free
+0000683c T queuebuf_numfree
+0000c63e T snprintf
+0000b9f0 T uip_sr_free_all
+0000c7d0 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x6751
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          663136 (bytes into file)
+  Number of program headers:         7
+  Number of section headers:         31
+
+[Section placement]
+  [ 1] .resetVecs        PROGBITS        00000000 010000 000040 00   A  0   0  4
+  [10] .text             PROGBITS        00000040 010040 010cd4 00  AX  0   0  4
+  [11] .rodata           PROGBITS        00010d14 020d14 00096d 00   A  0   0  4
+  [12] .data             PROGBITS        20001b20 021b20 0004a8 00  WA  0   0  4
+  [14] .ARM.exidx        ARM_EXIDX       00011c04 031c04 000008 00  AL 10   0  4
+  [16] .bss              NOBITS          200020d8 041830 003128 00  WA  0   0  8
+  [17] .heap             NOBITS          20005200 041830 000100 00  WA  0   0  4
+  [19] .ARM.attributes   ARM_ATTRIBUTES  00000000 03813a 000030 00      0   0  1
+  [28] .symtab           SYMTAB          00000000 090e7c 00bba0 10     29 2309  4
+  [29] .strtab           STRTAB          00000000 09ca1c 005277 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x6751
+  LOAD           0x010000 0x00000000 0x00000000 0x11681 0x11681 R E 0x10000
+  LOAD           0x021b20 0x20001b20 0x00011684 0x004a8 0x004a8 RW  0x10000
+  LOAD           0x022000 0x20002000 0x00011b2c 0x000d8 0x000d8 RW  0x10000
+  LOAD           0x031c04 0x00011c04 0x00011c04 0x00008 0x00008 R   0x10000
+  LOAD           0x037fa8 0x00057fa8 0x00057fa8 0x00058 0x00058 R   0x10000
+  LOAD           0x001830 0x20001830 0x20001830 0x00000 0x03ad0 RW  0x10000
+ Section to Segment mapping:
+  Segment Sections...
+   01     .resetVecs .text .rodata 
+   02     .data 
+   06     .dmaSpi0RxControlTableEntry .dmaSpi0TxControlTableEntry .dmaSpi1RxControlTableEntry .dmaSpi1TxControlTableEntry .dmaSpi0RxAltControlTableEntry .dmaSpi0TxAltControlTableEntry .dmaSpi1RxAltControlTableEntry .dmaSpi1TxAltControlTableEntry .bss .heap 
+
+[Startup / reset / vector symbols]
+00010d40 R BoardGpioInitTable
+0000feb6 T Board_initHook
+00008ad0 T ClockP_Params_init
+20005171 b ClockP_initialized
+00008cb0 T ClockP_start
+00008ae0 T ClockP_startup
+00008a28 t ClockP_startup.part.1
+0000bd1c T CryptoKeyPlaintext_initBlankKey
+00000100 A HEAPSIZE
+00009140 T HwiP_Params_init
+0000be2c T I2CCC26XX_init
+0000c1cc t I2CCC26XX_initHw.isra.11
+0000bdd8 T I2C_init
+00000600 A MIN_STACKSIZE
+00008888 T NoRTOS_start
+0000c598 T PIN_init
+0000d458 T PowerCC26X2_initiateCalibration
+0000ce3c T Power_init
+00009290 T QueueP_init
+0000ba2c T RF_Params_init
+0000b71c T RF_ScheduleCmdParams_init
+00009ed0 t RF_initRadioSetup
+0000d840 T SPICC26X2DMA_init
+0000d7f4 T SPI_init
+2000516e b SemaphoreP_initialized
+000093f4 T SwiP_Params_init
+20005173 b SwiP_initialized
+0000e5d0 T TRNG_Params_init
+0000e6c8 T TRNG_init
+00008de8 T TimerP_Params_init
+20005172 b TimerP_initialized
+00008e74 T TimerP_start
+0000e93c T UARTCC26XX_init
+0000ebc4 t UARTCC26XX_initHw.isra.5
+0000e910 T UART_Params_init
+0000e880 T UART_init
+0000f61c T WatchdogCC26XX_init
+0000f5e4 T Watchdog_Params_init
+0000f554 T Watchdog_init
+20005200 B __bss_end__
+200020d8 B __bss_start__
+20001fc8 D __data_end__
+00011684 A __data_load__
+20001b20 D __data_start__
+00011c04 R __exidx_start
+20005300 B __heap_end__
+20005200 B __heap_start__
+00010d14 T __init_array_end
+00010d14 T __init_array_start
+0000ed00 B __stack_size
+20005300 B _eheap
+000108a4 T _fini
+20005200 B _heap
+20005300 N _stack
+20014000 N _stack_end
+20014000 N _stack_origin
+0000fec4 T autostart_start
+00000858 T button_hal_init
+0000091c T clock_init
+00000f88 T csma_output_init
+0000114c T ctimer_init
+0000123c T data_queue_init
+20002000 d g_pfnRAMVectors
+00001670 T gpio_hal_arch_init
+000017f4 T gpio_hal_init
+000010a4 t init
+000029c0 t init
+00004a1c t init
+00000460 T initAntennaSwitch
+0000db58 t initHw.isra.8
+00002eac t init_dag
+20001fc7 d initial_iteration.8435
+20004aa5 b initialized
+2000514e b initialized
+20004aed b initialized.10393
+20005178 b isInitialized
+20005179 b isInitialized
+2000517a b isInitialized
+2000517b b isInitialized
+2000517c b isInitialized
+000018c0 T leds_init
+00001a9c T link_stats_init
+00001b28 T mac_sequence_init
+0001041e T memb_init
+20003418 b netstack_cmd_start_rat
+2000342c b netstack_cmd_stop_rat
+00004e60 T netstack_open
+00001f60 T netstack_process_ip_callback
+00004ea8 T netstack_sched_fs
+00004f60 T netstack_sched_prop_tx
+00005034 T netstack_sched_rx
+000050f8 T netstack_stop_rx
+000021c8 T platform_init_stage_one
+00002280 T platform_init_stage_three
+00002234 T platform_init_stage_two
+00002f2c t process_dio_init_dag
+00002458 T process_init
+0000253c T process_start
+000066d0 t process_thread_stack_check_process
+00002b7c T queuebuf_init
+00002c70 T random_init
+00002d38 T rat_init
+00006750 T resetISR
+00000000 r resetVectors
+200020d8 b rf_netstack
+20004af0 b rf_start_recalib_timer
+00003544 T rpl_dag_init
+000034a4 T rpl_dag_init_root
+00002e2c T rpl_dag_root_start
+00004140 T rpl_icmp6_init
+00004450 T rpl_neighbor_init
+00004934 T rpl_timers_init
+00004c00 T rtimer_arch_init
+000052d4 T serial_line_init
+0000532c T sicslowpan_init
+00006690 T stack_check_get_usage
+0000666c T stack_check_init
+20001dd4 D stack_check_process
+00007208 T uart0_init
+000077a8 T uip_ds6_init
+
+[Undefined / resolved external symbols]
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+00008ae0 T ClockP_startup
+00008a28 t ClockP_startup.part.1
+0000fa30 T NOROM_OSC_HPOSCRtcCompensate
+000097a4 t RF_issueRadioFreeCb
+0000a5f8 t RF_ratFreeChannel
+000003d0 W __aeabi_idiv0
+000003d0 W __aeabi_ldiv0
+00000040 T __aeabi_ldivmod
+000000e0 T __aeabi_uldivmod
+00000110 T __udivmoddi4
+00010466 T memb_free
+000104ae T memb_numfree
+00010c58 T memcpy
+00010c74 T memmove
+00010ca8 T memset
+00002344 T printf
+00002be8 T queuebuf_free
+00002b98 T queuebuf_numfree
+00010862 T snprintf
+0000803c T uip_sr_free_all
+00006644 T vsnprintf
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          96432 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         21
+
+[Section placement]
+  [ 1] .far.text         PROGBITS        00010000 00cfd2 0051d4 00  AX  0   0  2
+  [ 2] .text             PROGBITS        00003100 0000d4 009318 00  AX  0   0  2
+  [ 3] .rodata           PROGBITS        0000c418 0093ec 003a30 00   A  0   0  4
+  [ 4] .data             PROGBITS        00001100 00ce1c 000176 00  WA  0   0  2
+  [ 5] .bss              NOBITS          00001276 00cf92 001640 00  WA  0   0  2
+  [ 6] .noinit           NOBITS          000028b6 00cf92 000002 00  WA  0   0  2
+  [ 7] .vectors          PROGBITS        0000ffc0 00cf92 000040 00  AX  0   0  1
+  [19] .symtab           SYMTAB          00000000 017bf8 0046d0 10     20 386  4
+  [20] .strtab           STRTAB          00000000 01c2c8 003e3e 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000302c 0x0000302c 0x0ce1c 0x0ce1c R E 0x1
+  LOAD           0x00ce1c 0x00001100 0x0000fe48 0x00176 0x017b6 RW  0x1
+  LOAD           0x00cf92 0x000028b6 0x0000ffbe 0x00000 0x00002 RW  0x1
+  LOAD           0x00cf92 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+  LOAD           0x00cfd2 0x00010000 0x00010000 0x051d4 0x051d4 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data .bss 
+   03     .vectors 
+   04     .far.text 
+
+[Startup / reset / vector symbols]
+000028b6 B __bss_end
+00001640 A __bss_size
+00001276 B __bss_start
+000033b2 T __ctors_start
+0000ffbe A __data_end_rom
+0000fe48 A __data_load_start
+00000176 A __data_size
+00001100 D __data_start
+0000fe48 A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+000033b2 T __dtors_start
+00000000 T __far_bss_start
+000151d4 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+000028b8 B __noinit_end
+000028b6 B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+000028b8 A _stack
+00010000 T _vectors_end
+000039a0 T accm_init
+00003a70 T autostart_start
+00003b3e T cc2420_arch_init
+0000449e T cc2420_init
+000024de B cc2420_sfd_start_time
+000045a2 T clock_init
+00004d10 T csma_output_init
+00005018 T ctimer_init
+         U gpio_hal_arch_init
+00005cea T i2c_receiveinit
+00005d20 T i2c_transmitinit
+00004f42 t init
+0000aa6c t init
+000074ac t init_dag
+0000248d b initialized
+000024bf b initialized.3812
+00005dce T leds_arch_init
+00005e4e T leds_init
+000060f4 T link_stats_init
+00006238 T mac_sequence_init
+0000634e T memb_init
+000064e4 T msp430_cpu_init
+00006444 T msp430_init_dco
+00006926 T netstack_process_ip_callback
+00006b62 T platform_init_stage_one
+00006c32 T platform_init_stage_three
+00006b74 T platform_init_stage_two
+00007574 t process_dio_init_dag
+00006eda T process_init
+00007078 T process_start
+0001122e t process_thread_stack_check_process
+000070f4 T queuebuf_init
+000071da T random_init
+0000817c T rpl_dag_init
+0000807e T rpl_dag_init_root
+000072dc T rpl_dag_root_start
+00009b74 T rpl_icmp6_init
+0000a39c T rpl_neighbor_init
+0000a992 T rpl_timers_init
+0000ad9e T rtimer_arch_init
+0000af14 T sicslowpan_init
+0000c33e T spi_init
+0000c39e T stack_check_get_usage
+0000c370 T stack_check_init
+00001208 D stack_check_process
+0000228c b stack_top.2426
+000118b6 T tmp102_init
+000119fa T uart0_init
+00012526 T uip_ds6_init
+00011a66 T uip_ds6_neighbors_init
+00011d28 T uip_ds6_route_init
+00012cb6 T uip_icmp6_init
+000137dc T uip_init
+000130e6 T uip_nd6_init
+0001336a T uip_sr_init
+0001437c T uipbuf_init
+000144e6 T watchdog_init
+000144aa T watchdog_start
+0001453e T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+00003400 T __divhi3
+00003472 T __divsi3
+000033b8 T __mulsi3
+00003510 T __udivdi3
+000033de T __udivhi3
+0000354c T __udivmoddi4
+0000343a T __udivsi3
+00014616 t call_vuprintf
+000063c2 T memb_free
+0000641e T memb_numfree
+00014fa8 T memcpy
+00015090 T memmove
+00015178 T memset
+000145e4 T printf
+00007170 T queuebuf_free
+00007106 T queuebuf_numfree
+0001464c T snprintf
+0001346a T uip_sr_free_all
+000147de T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x4000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          61568 (bytes into file)
+  Number of program headers:         4
+  Number of section headers:         19
+
+[Section placement]
+  [ 1] .text             PROGBITS        00004000 0000b4 00a040 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000e040 00a0f4 00049d 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a592 000144 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001244 00a6d6 001a38 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002c7c 00a6d6 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00a6d6 000020 00  AX  0   0  1
+  [17] .symtab           SYMTAB          00000000 00f378 003e70 10     18 361  4
+  [18] .strtab           STRTAB          00000000 0131e8 0037c3 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x4000
+  LOAD           0x000000 0x00003f4c 0x00003f4c 0x0a591 0x0a591 R E 0x1
+  LOAD           0x00a592 0x00001100 0x0000e4de 0x00144 0x01b7c RW  0x1
+  LOAD           0x00a6d6 0x00002c7c 0x0000e622 0x00000 0x00002 RW  0x1
+  LOAD           0x00a6d6 0x0000ffe0 0x0000ffe0 0x00020 0x00020 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data .bss 
+   03     .vectors 
+
+[Startup / reset / vector symbols]
+         U InterruptVectors
+00002c7c B __bss_end
+00001a38 A __bss_size
+00001244 B __bss_start
+0000427c T __ctors_start
+0000e622 A __data_end_rom
+0000e4de A __data_load_start
+00000144 A __data_size
+00001100 D __data_start
+0000e4de A __data_start_rom
+00004028 W __do_clear_bss
+00004010 W __do_copy_data
+0000427c T __dtors_start
+00000000 T __far_bss_start
+00000000 A __far_data_load_start
+00000000 T __far_data_start
+0000400c W __init_stack
+00004010 W __low_level_init
+00002c7e B __noinit_end
+00002c7c B __noinit_start
+00003900 A __stack
+0000ffe0 T __vectors_start
+00004000 W __watchdog_support
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+00004000 W _reset_vector__
+00002c7e A _stack
+00010000 T _vectors_end
+00004280 T autostart_start
+000043a0 T cc2420_arch_init
+00004df0 T cc2420_init
+000027c6 B cc2420_sfd_start_time
+00004fcc T clock_init
+00005428 T csma_output_init
+000055b4 T ctimer_init
+000056e8 T ds2411_init
+         U gpio_hal_arch_init
+000054fa t init
+000096de t init
+00007652 t init_dag
+00001322 b initialized
+00001c7e b initialized.3752
+00006256 T leds_arch_init
+000062d6 T leds_init
+00006588 T link_stats_init
+000066d8 T mac_sequence_init
+0000680e T memb_init
+00006992 T msp430_cpu_init
+00006904 T msp430_init_dco
+00006ea2 T netstack_process_ip_callback
+000070b2 T platform_init_stage_one
+0000712c T platform_init_stage_three
+000070c4 T platform_init_stage_two
+000076d6 t process_dio_init_dag
+00007326 T process_init
+00007418 T process_start
+0000b2b0 t process_thread_stack_check_process
+00007466 T queuebuf_init
+00007542 T random_init
+00007de0 T rpl_dag_init
+00007d24 T rpl_dag_init_root
+000075b0 T rpl_dag_root_start
+00008cb4 T rpl_icmp6_init
+000090c4 T rpl_neighbor_init
+00009600 T rpl_timers_init
+00009952 T rtimer_arch_init
+00009ac8 T sicslowpan_init
+0000b20c T spi_init
+0000b26a T stack_check_get_usage
+0000b23c T stack_check_init
+00001202 D stack_check_process
+0000240c b stack_top.2366
+0000b658 T uart1_init
+0000beea T uip_ds6_init
+0000b76a T uip_ds6_neighbors_init
+0000b8b2 T uip_ds6_route_init
+0000c346 T uip_icmp6_init
+0000ca0e T uip_init
+0000c5f0 T uip_nd6_init
+0000c7bc T uip_sr_init
+0000d122 T uipbuf_init
+0000d2aa T watchdog_init
+0000d26e T watchdog_start
+0000d2bc T xmem_init
+
+[Undefined / resolved external symbols]
+         U InterruptVectors
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+0000de8a T __divhi3
+0000df04 T __divsi3
+0000de3c T __mulsi3
+0000dfae T __udivdi3
+0000de68 T __udivhi3
+0000e002 T __udivmoddi4
+0000dec4 T __udivsi3
+0000d32a t call_vuprintf
+00006882 T memb_free
+000068de T memb_numfree
+0000dbdc T memcpy
+0000dcd6 T memmove
+0000ddd0 T memset
+0000d2f8 T printf
+000074e6 T queuebuf_free
+00007478 T queuebuf_numfree
+0000d364 T snprintf
+0000c85a T uip_sr_free_all
+0000d512 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          64332 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         20
+
+[Section placement]
+  [ 1] .text             PROGBITS        00003100 0000d4 009d32 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000ce34 009e08 0004b6 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a2be 000148 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001248 00a406 00162a 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002872 00a406 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a406 000040 00  AX  0   0  1
+  [18] .symtab           SYMTAB          00000000 00fe6c 004500 10     19 377  4
+  [19] .strtab           STRTAB          00000000 01436c 003bf3 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000302c 0x0000302c 0x09e06 0x09e06 R E 0x1
+  LOAD           0x009e08 0x0000ce34 0x0000ce34 0x004b6 0x004b6 R   0x1
+  LOAD           0x00a2be 0x00001100 0x0000d2ea 0x00148 0x01772 RW  0x1
+  LOAD           0x00a406 0x00002872 0x0000d432 0x00000 0x00002 RW  0x1
+  LOAD           0x00a406 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+00002872 B __bss_end
+0000162a A __bss_size
+00001248 B __bss_start
+0000337c T __ctors_start
+0000d432 A __data_end_rom
+0000d2ea A __data_load_start
+00000148 A __data_size
+00001100 D __data_start
+0000d2ea A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+0000337c T __dtors_start
+00000000 T __far_bss_start
+00010000 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+00002874 B __noinit_end
+00002872 B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00002874 A _stack
+00010000 T _vectors_end
+0000396a T accm_init
+00003a3a T autostart_start
+00003ad0 T cc2420_arch_init
+00004430 T cc2420_init
+0000249a B cc2420_sfd_start_time
+00004534 T clock_init
+00004976 T csma_output_init
+00004afa T ctimer_init
+         U gpio_hal_arch_init
+0000559c T i2c_receiveinit
+000055d2 T i2c_transmitinit
+00004a48 t init
+0000886c t init
+000069ce t init_dag
+00002449 b initialized
+0000247b b initialized.3812
+00005680 T leds_arch_init
+00005700 T leds_init
+00005994 T link_stats_init
+00005ad8 T mac_sequence_init
+00005bee T memb_init
+00005d84 T msp430_cpu_init
+00005ce4 T msp430_init_dco
+000061c6 T netstack_process_ip_callback
+00006402 T platform_init_stage_one
+000064d2 T platform_init_stage_three
+00006414 T platform_init_stage_two
+00006a46 t process_dio_init_dag
+000066b4 T process_init
+000067a8 T process_start
+0000a25a t process_thread_stack_check_process
+000067f6 T queuebuf_init
+000068ce T random_init
+00007100 T rpl_dag_init
+00007054 T rpl_dag_init_root
+00006938 T rpl_dag_root_start
+00007eb2 T rpl_icmp6_init
+00008282 T rpl_neighbor_init
+00008792 T rpl_timers_init
+00008a68 T rtimer_arch_init
+00008bde T sicslowpan_init
+0000a1b4 T spi_init
+0000a214 T stack_check_get_usage
+0000a1e6 T stack_check_init
+000011da D stack_check_process
+00002248 b stack_top.2426
+0000a5be T tmp102_init
+0000a702 T uart0_init
+0000ae58 T uip_ds6_init
+0000a76e T uip_ds6_neighbors_init
+0000a8a2 T uip_ds6_route_init
+0000b290 T uip_icmp6_init
+0000b902 T uip_init
+0000b532 T uip_nd6_init
+0000b6da T uip_sr_init
+0000bfda T uipbuf_init
+0000c144 T watchdog_init
+0000c108 T watchdog_start
+0000c19c T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+000033ca T __divhi3
+0000343c T __divsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+0000c274 t call_vuprintf
+00005c62 T memb_free
+00005cbe T memb_numfree
+0000cc06 T memcpy
+0000ccee T memmove
+0000cdd6 T memset
+0000c242 T printf
+00006872 T queuebuf_free
+00006808 T queuebuf_numfree
+0000c2aa T snprintf
+0000b768 T uip_sr_free_all
+0000c43c T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x14b00
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          414288 (bytes into file)
+  Number of program headers:         11
+  Number of section headers:         31
+
+[Section placement]
+  [ 1] .bss              NOBITS           00000000000548a0  00053890
+  [ 2] .data             PROGBITS         0000000000053ec0  00052ec0
+  [12] .init             PROGBITS         0000000000011000  00011000
+  [16] .text             PROGBITS         0000000000014b00  00014b00
+  [17] .fini             PROGBITS         000000000004334c  0004334c
+  [18] .rodata           PROGBITS         0000000000044000  00044000
+  [21] .init_array       INIT_ARRAY       0000000000052378  00051378
+  [22] .fini_array       FINI_ARRAY       00000000000523b8  000513b8
+  [23] .data.rel.ro      PROGBITS         00000000000523c0  000513c0
+  [28] .symtab           SYMTAB           0000000000000000  000538e8
+  [29] .strtab           STRTAB           0000000000000000  0005e508
+
+[Program headers / load segments]
+Entry point 0x14b00
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+  LOAD           0x0000000000011000 0x0000000000011000 0x0000000000011000
+  LOAD           0x0000000000044000 0x0000000000044000 0x0000000000044000
+  LOAD           0x0000000000051378 0x0000000000052378 0x0000000000052378
+ Section to Segment mapping:
+  Segment Sections...
+   01     .init .plt .plt.got .plt.sec .text .fini 
+   02     .rodata .eh_frame_hdr .eh_frame 
+   03     .bss .data .init_array .fini_array .data.rel.ro .dynamic .got .got.plt 
+   10     .init_array .fini_array .data.rel.ro .dynamic .got 
+
+[Startup / reset / vector symbols]
+00000000000523b8 d __do_global_dtors_aux_fini_array_entry
+00000000000523b0 d __frame_dummy_init_array_entry
+                 w __gmon_start__
+                 U __stack_chk_fail@@GLIBC_2.4
+000000000004334c t _fini
+0000000000011000 t _init
+00000000000152f7 T autostart_start
+000000000001577d T button_hal_init
+0000000000016326 T circular_list_init
+000000000001652e T clock_init
+000000000001659e T compower_init
+00000000000218e9 T cooja_init
+0000000000017739 T cooja_mt_init
+000000000001781c T cooja_mt_start
+0000000000017da5 T ctimer_init
+00000000000949f8 b current_slot_start
+0000000000018040 T dbl_circ_list_init
+0000000000018451 T dbl_list_init
+000000000001898c T energest_init
+00000000000196f8 T etimer_start_time
+000000000001b9e4 T gpio_hal_arch_init
+000000000001be13 T gpio_hal_init
+000000000001743d t init
+0000000000019209 t init
+0000000000021709 t init
+0000000000022ab6 t init
+0000000000026b71 t init
+000000000002cc71 t init
+0000000000035545 t init
+000000000003d293 t init
+0000000000035633 t init_appstate
+0000000000027ac0 t init_dag
+0000000000027be3 t init_dag_from_dio
+00000000000346c4 t init_simple_udp
+00000000000953a0 b inited.0
+0000000000057b90 b initialized
+0000000000062b31 b initialized.0
+0000000000069390 b initialized.0
+0000000000062b30 b initialized.1
+000000000001cb04 T leds_arch_init
+000000000001cb55 T leds_init
+000000000001d3a3 T link_stats_init
+0000000000017c1c t list_init
+000000000001bd58 t list_init
+000000000001e1c5 t list_init
+00000000000217f2 t list_init
+000000000002d7d9 t list_init
+0000000000037f87 t list_init
+000000000003dba5 t list_init
+000000000003f7c1 t list_init
+0000000000040594 t list_init
+000000000001dc9a T mac_sequence_init
+000000000001deba T memb_init
+000000000001666c t netstack_init
+000000000002291d T netstack_ip_packet_processor_add
+000000000002287c T netstack_process_ip_callback
+0000000000031359 T netstack_sniffer_add
+0000000000031373 T netstack_sniffer_remove
+0000000000016699 t node_id_init
+0000000000023277 T platform_init_stage_one
+00000000000232a1 T platform_init_stage_three
+000000000002328c T platform_init_stage_two
+0000000000027d77 t process_dio_init_dag
+00000000000235e1 T process_init
+000000000002333b T process_start
+0000000000024274 T psock_init
+                 U pthread_attr_getstack@@GLIBC_2.2.5
+00000000000242fc T queuebuf_init
+0000000000024669 T random_init
+000000000002d42f t ringbuf_init
+00000000000247f4 T ringbufindex_init
+000000000002821c T rpl_dag_init
+000000000002809b T rpl_dag_init_root
+0000000000026e5d T rpl_dag_root_start
+000000000002a772 T rpl_icmp6_init
+000000000002b66e T rpl_neighbor_init
+000000000002c595 T rpl_timers_init
+000000000002cda8 T rs232_init
+000000000002cf41 T rtimer_arch_init
+0000000000094a68 b rx_start_time.13
+0000000000034c46 t rxbuf_init
+000000000002d66e T serial_line_init
+000000000002d7a2 T serial_shell_init
+00000000000306ce T shell_commands_init
+0000000000030c56 T shell_init
+0000000000034224 T sicslowpan_init
+000000000003463f T simple_energest_init
+0000000000034b5a T slip_arch_init
+000000000003c9a4 t tsch_init
+0000000000094c64 B tsch_is_initialized
+0000000000094c60 B tsch_is_started
+0000000000037d78 T tsch_queue_init
+0000000000037e0a T tsch_roots_init
+0000000000038c43 T tsch_schedule_init
+0000000000038f73 t tsch_security_init_nonce
+000000000003b13d T tsch_slot_operation_start
+000000000003bd47 t tsch_start_coordinator
+0000000000094a48 b tx_start_time.18
+000000000003e048 T uip_ds6_init
+000000000003d75e T uip_ds6_neighbors_init
+000000000003dc42 T uip_ds6_route_init
+000000000003f798 T uip_icmp6_init
+00000000000410da T uip_init
+000000000003f9dc T uip_mcast6_route_init
+000000000003fa05 T uip_mcast6_stats_init
+0000000000040381 T uip_nd6_init
+0000000000040998 T uip_sr_init
+0000000000042c39 T uipbuf_init
+0000000000043300 T watchdog_init
+000000000004330b T watchdog_start
+
+[Undefined / resolved external symbols]
+                 U __stack_chk_fail@@GLIBC_2.4
+                 U free@@GLIBC_2.2.5
+                 U getcontext@@GLIBC_2.2.5
+                 U makecontext@@GLIBC_2.2.5
+                 U memcmp@@GLIBC_2.2.5
+                 U memcpy@@GLIBC_2.14
+                 U memmove@@GLIBC_2.2.5
+                 U memset@@GLIBC_2.2.5
+                 U perror@@GLIBC_2.2.5
+                 U pthread_attr_getstack@@GLIBC_2.2.5
+                 U pthread_getattr_np@@GLIBC_2.2.5
+                 U pthread_self@@GLIBC_2.2.5
+                 U rand@@GLIBC_2.2.5
+                 U snprintf@@GLIBC_2.2.5
+                 U srand@@GLIBC_2.2.5
+                 U strchr@@GLIBC_2.2.5
+                 U strcmp@@GLIBC_2.2.5
+                 U strlen@@GLIBC_2.2.5
+                 U strncmp@@GLIBC_2.2.5
+                 U strtol@@GLIBC_2.2.5
+                 U swapcontext@@GLIBC_2.2.5
+                 U vasprintf@@GLIBC_2.2.5
+
+[Relocation sections]
+
+Relocation section '.rela.dyn' at offset 0xb680 contains 461 entries:
+  Offset          Info           Type           Sym. Value    Sym. Name + Addend
+000000052378  000000000008 R_X86_64_RELATIVE                    432e7
+000000052380  000000000008 R_X86_64_RELATIVE                    1e16c
+000000052388  000000000008 R_X86_64_RELATIVE                    2cf28
+000000052390  000000000008 R_X86_64_RELATIVE                    17720
+000000052398  000000000008 R_X86_64_RELATIVE                    15aa2
+0000000523a0  000000000008 R_X86_64_RELATIVE                    2319f
+0000000523a8  000000000008 R_X86_64_RELATIVE                    1c694
+0000000523b0  000000000008 R_X86_64_RELATIVE                    14bb0
+0000000523b8  000000000008 R_X86_64_RELATIVE                    14b70
+0000000523c0  000000000008 R_X86_64_RELATIVE                    14bf1
+0000000523c8  000000000008 R_X86_64_RELATIVE                    14e4f
+0000000523d0  000000000008 R_X86_64_RELATIVE                    15ec4
+0000000523d8  000000000008 R_X86_64_RELATIVE                    15eea
+0000000523e0  000000000008 R_X86_64_RELATIVE                    1743d
+0000000523e8  000000000008 R_X86_64_RELATIVE                    172d0
+0000000523f0  000000000008 R_X86_64_RELATIVE                    17302
+0000000523f8  000000000008 R_X86_64_RELATIVE                    171b4
+000000052400  000000000008 R_X86_64_RELATIVE                    170cc
+000000052408  000000000008 R_X86_64_RELATIVE                    17190
+000000052410  000000000008 R_X86_64_RELATIVE                    17344
+000000052418  000000000008 R_X86_64_RELATIVE                    1735b
+000000052420  000000000008 R_X86_64_RELATIVE                    1700f
+000000052428  000000000008 R_X86_64_RELATIVE                    17032
+000000052430  000000000008 R_X86_64_RELATIVE                    17460
+000000052438  000000000008 R_X86_64_RELATIVE                    175bb
+000000052440  000000000008 R_X86_64_RELATIVE                    176b9
+000000052448  000000000008 R_X86_64_RELATIVE                    17706
+000000052460  000000000008 R_X86_64_RELATIVE                    4432d
+000000052468  000000000008 R_X86_64_RELATIVE                    19209
+000000052470  000000000008 R_X86_64_RELATIVE                    19243
+000000052478  000000000008 R_X86_64_RELATIVE                    19009
+000000052480  000000000008 R_X86_64_RELATIVE                    1b7da
+000000052488  000000000008 R_X86_64_RELATIVE                    1b7ee
+000000052490  000000000008 R_X86_64_RELATIVE                    1b802
+0000000524a0  000000000008 R_X86_64_RELATIVE                    444f0
+0000000524a8  000000000008 R_X86_64_RELATIVE                    21709
+0000000524b0  000000000008 R_X86_64_RELATIVE                    21492
+0000000524b8  000000000008 R_X86_64_RELATIVE                    216c6
+0000000524c0  000000000008 R_X86_64_RELATIVE                    229cd
+0000000524c8  000000000008 R_X86_64_RELATIVE                    229dc
+0000000524d0  000000000008 R_X86_64_RELATIVE                    229eb
+0000000524e0  000000000008 R_X86_64_RELATIVE                    22ab6
+0000000524e8  000000000008 R_X86_64_RELATIVE                    22ac5
+0000000524f0  000000000008 R_X86_64_RELATIVE                    22ade
+0000000524f8  000000000008 R_X86_64_RELATIVE                    22af3
+000000052500  000000000008 R_X86_64_RELATIVE                    22b28
+000000052508  000000000008 R_X86_64_RELATIVE                    22b41
+000000052510  000000000008 R_X86_64_RELATIVE                    22b50
+000000052518  000000000008 R_X86_64_RELATIVE                    22b5f
+000000052520  000000000008 R_X86_64_RELATIVE                    22b6e
+000000052528  000000000008 R_X86_64_RELATIVE                    22b7d
+000000052530  000000000008 R_X86_64_RELATIVE                    22b8c
+000000052538  000000000008 R_X86_64_RELATIVE                    22bc7
+000000052540  000000000008 R_X86_64_RELATIVE                    22bdc
+000000052548  000000000008 R_X86_64_RELATIVE                    22bf6
+000000052560  000000000008 R_X86_64_RELATIVE                    44508
+000000052568  000000000008 R_X86_64_RELATIVE                    230b0
+000000052570  000000000008 R_X86_64_RELATIVE                    230ca
+000000052578  000000000008 R_X86_64_RELATIVE                    23119
+000000052580  000000000008 R_X86_64_RELATIVE                    4450c
+000000052588  000000000008 R_X86_64_RELATIVE                    26b71
+000000052590  000000000008 R_X86_64_RELATIVE                    26991
+000000052598  000000000008 R_X86_64_RELATIVE                    26b2e
+0000000525a0  000000000008 R_X86_64_RELATIVE                    44e9d
+0000000525a8  000000000008 R_X86_64_RELATIVE                    2ec1d
+0000000525b0  000000000008 R_X86_64_RELATIVE                    44ea2
+0000000525b8  000000000008 R_X86_64_RELATIVE                    44ebc
+0000000525c0  000000000008 R_X86_64_RELATIVE                    30378
+0000000525c8  000000000008 R_X86_64_RELATIVE                    44ec8
+0000000525d0  000000000008 R_X86_64_RELATIVE                    44efa
+0000000525d8  000000000008 R_X86_64_RELATIVE                    2e8ab
+0000000525e0  000000000008 R_X86_64_RELATIVE                    44f00
+0000000525e8  000000000008 R_X86_64_RELATIVE                    44f84
+0000000525f0  000000000008 R_X86_64_RELATIVE                    2f39f
+0000000525f8  000000000008 R_X86_64_RELATIVE                    44f90
+000000052600  000000000008 R_X86_64_RELATIVE                    44fbb
+000000052608  000000000008 R_X86_64_RELATIVE                    2f497
+
+[Archive / library-like symbols]
+0000000000016cde T __wrap_printf
+000000000001e283 t buffer_free
+000000000001e89f t domain_set_free
+                 U free@@GLIBC_2.2.5
+000000000001df97 T memb_free
+000000000001e081 T memb_numfree
+                 U memcpy@@GLIBC_2.14
+                 U memmove@@GLIBC_2.2.5
+                 U memset@@GLIBC_2.2.5
+000000000006c064 b next_free
+0000000000016cde T printf
+0000000000024490 T queuebuf_free
+0000000000024325 T queuebuf_numfree
+000000000001e79e t seed_set_free
+                 U snprintf@@GLIBC_2.2.5
+00000000000377b7 T tsch_queue_free_packet
+00000000000377f6 T tsch_queue_free_packets_to
+0000000000037979 T tsch_queue_free_unused_neighbors
+00000000000404ae T uip_packetqueue_free
+0000000000040b3e T uip_sr_free_all
+                 U vasprintf@@GLIBC_2.2.5
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          35908 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         20
+
+[Section placement]
+  [ 1] .text             PROGBITS        00003100 0000d4 004196 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        00007298 00426c 0003f4 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 004660 0000a6 00  WA  0   0  2
+  [ 4] .bss              NOBITS          000011a6 004706 0008be 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00001a64 004706 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 004706 000040 00  AX  0   0  1
+  [18] .symtab           SYMTAB          00000000 008f64 0030b0 10     19 239  4
+  [19] .strtab           STRTAB          00000000 00c014 002624 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000302c 0x0000302c 0x0426a 0x0426a R E 0x1
+  LOAD           0x00426c 0x00007298 0x00007298 0x003f4 0x003f4 R   0x1
+  LOAD           0x004660 0x00001100 0x0000768c 0x000a6 0x00964 RW  0x1
+  LOAD           0x004706 0x00001a64 0x00007732 0x00000 0x00002 RW  0x1
+  LOAD           0x004706 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+00001a64 B __bss_end
+000008be A __bss_size
+000011a6 B __bss_start
+00003308 T __ctors_start
+00007732 A __data_end_rom
+0000768c A __data_load_start
+000000a6 A __data_size
+00001100 D __data_start
+0000768c A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+00003308 T __dtors_start
+00000000 T __far_bss_start
+00010000 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+00001a66 B __noinit_end
+00001a64 B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00001a66 A _stack
+00010000 T _vectors_end
+00003876 T accm_init
+00003946 T autostart_start
+000039e2 T cc2420_arch_init
+00004342 T cc2420_init
+00001a08 B cc2420_sfd_start_time
+00004446 T clock_init
+0000488e T csma_output_init
+00004a28 T ctimer_init
+00004ac2 T energest_init
+         U gpio_hal_arch_init
+000053e4 T i2c_receiveinit
+0000541a T i2c_transmitinit
+00004968 t init
+00005a9c t init
+00005b20 t init
+0000449e T init_platform
+000019e1 b initialized
+000054c8 T leds_arch_init
+00005548 T leds_init
+00005598 T list_init
+0000566a T mac_sequence_init
+00005794 T memb_init
+00005904 T msp430_cpu_init
+00005864 T msp430_init_dco
+00005932 T netstack_init
+0000598c T node_id_init
+00005d14 T platform_init_stage_one
+00005dfc T platform_init_stage_three
+00005d26 T platform_init_stage_two
+00005fc8 T process_init
+000060da T process_start
+000063f0 t process_thread_stack_check_process
+00006128 T queuebuf_init
+000061f6 T random_init
+00005b24 t root_start
+00006202 T rtimer_arch_init
+00006224 T rtimer_init
+0000633c T spi_init
+0000639c T stack_check_get_usage
+0000636e T stack_check_init
+00001176 D stack_check_process
+000019b4 b stack_top.2107
+00006536 T tmp102_init
+0000667a T uart0_init
+00006704 T watchdog_init
+000066c8 T watchdog_start
+0000675c T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U slip_input_byte
+         U spi_arch_has_lock
+         U uip_aligned_buf
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+00005808 T memb_free
+00007152 T memcpy
+0000723a T memset
+00006802 T printf
+0000619a T queuebuf_free
+00006988 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x4000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          33208 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         19
+
+[Section placement]
+  [ 1] .text             PROGBITS        00004000 0000d4 0041ea 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        000081ec 0042c0 000377 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 004638 000136 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001236 00476e 000afc 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00001d32 00476e 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00476e 000020 00  AX  0   0  1
+  [17] .symtab           SYMTAB          00000000 0084b0 002a80 10     18 229  4
+  [18] .strtab           STRTAB          00000000 00af30 002273 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x4000
+  LOAD           0x000000 0x00003f2c 0x00003f2c 0x042be 0x042be R E 0x1
+  LOAD           0x0042c0 0x000081ec 0x000081ec 0x00377 0x00377 R   0x1
+  LOAD           0x004638 0x00001100 0x00008564 0x00136 0x00c32 RW  0x1
+  LOAD           0x00476e 0x00001d32 0x0000869a 0x00000 0x00002 RW  0x1
+  LOAD           0x00476e 0x0000ffe0 0x0000ffe0 0x00020 0x00020 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+         U InterruptVectors
+00001d32 B __bss_end
+00000afc A __bss_size
+00001236 B __bss_start
+0000421c T __ctors_start
+0000869a A __data_end_rom
+00008564 A __data_load_start
+00000136 A __data_size
+00001100 D __data_start
+00008564 A __data_start_rom
+00004028 W __do_clear_bss
+00004010 W __do_copy_data
+0000421c T __dtors_start
+00000000 T __far_bss_start
+00000000 A __far_data_load_start
+00000000 T __far_data_start
+0000400c W __init_stack
+00004010 W __low_level_init
+00001d34 B __noinit_end
+00001d32 B __noinit_start
+00003900 A __stack
+0000ffe0 T __vectors_start
+00004000 W __watchdog_support
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+00004000 W _reset_vector__
+00001d34 A _stack
+00010000 T _vectors_end
+00004220 T autostart_start
+00004340 T cc2420_arch_init
+00004e84 T cc2420_init
+00001caa B cc2420_sfd_start_time
+00005064 T clock_init
+000054a6 T csma_output_init
+00005632 T ctimer_init
+0000573c T ds2411_init
+0000585c T energest_init
+         U gpio_hal_arch_init
+00005578 t init
+0000686a t init
+000068f8 t init
+00001314 b initialized
+0000628a T leds_arch_init
+0000630a T leds_init
+00006412 T mac_sequence_init
+00006548 T memb_init
+000066a6 T msp430_cpu_init
+00006618 T msp430_init_dco
+00006b6e T platform_init_stage_one
+00006bec T platform_init_stage_three
+00006b80 T platform_init_stage_two
+00006e02 T process_init
+00006ef4 T process_start
+00007384 t process_thread_stack_check_process
+00006f42 T queuebuf_init
+00007014 T random_init
+000068fc t root_start
+000070b6 T rtimer_arch_init
+000072bc T serial_line_init
+000072e0 T spi_init
+0000733e T stack_check_get_usage
+00007310 T stack_check_init
+00001228 D stack_check_process
+00001bfe b stack_top.2049
+00007514 T uart1_init
+0000764a T watchdog_init
+0000760e T watchdog_start
+0000765c T xmem_init
+
+[Undefined / resolved external symbols]
+         U InterruptVectors
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U slip_input_byte
+         U spi_arch_has_lock
+         U uip_aligned_buf
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+0000806c T __mulsi3
+00008158 T __udivdi3
+00008098 T __udivhi3
+000081ac T __udivmoddi4
+000080ba T __udivsi3
+000065bc T memb_free
+00007f06 T memcpy
+00008000 T memset
+00007698 T printf
+00006fb8 T queuebuf_free
+0000783c T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x4000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          89448 (bytes into file)
+  Number of program headers:         4
+  Number of section headers:         19
+
+[Section placement]
+  [ 1] .text             PROGBITS        00004000 0000b4 006b0c 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000ab0c 006bc0 0006c7 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 007288 00114a 00  WA  0   0  2
+  [ 4] .bss              NOBITS          0000224a 0083d2 000c0c 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002e56 0083d2 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 0083d2 000020 00  AX  0   0  1
+  [17] .symtab           SYMTAB          00000000 016060 003140 10     18 262  4
+  [18] .strtab           STRTAB          00000000 0191a0 0026a9 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x4000
+  LOAD           0x000000 0x00003f4c 0x00003f4c 0x07287 0x07287 R E 0x1
+  LOAD           0x007288 0x00001100 0x0000b1d4 0x0114a 0x01d56 RW  0x1
+  LOAD           0x0083d2 0x00002e56 0x0000c31e 0x00000 0x00002 RW  0x1
+  LOAD           0x0083d2 0x0000ffe0 0x0000ffe0 0x00020 0x00020 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data .bss 
+   03     .vectors 
+
+[Startup / reset / vector symbols]
+         U InterruptVectors
+00002e56 B __bss_end
+00000c0c A __bss_size
+0000224a B __bss_start
+00004208 T __ctors_start
+0000c31e A __data_end_rom
+0000b1d4 A __data_load_start
+0000114a A __data_size
+00001100 D __data_start
+0000b1d4 A __data_start_rom
+00004028 W __do_clear_bss
+00004010 W __do_copy_data
+00004208 T __dtors_start
+00000000 T __far_bss_start
+00000000 A __far_data_load_start
+00000000 T __far_data_start
+0000400c W __init_stack
+00004010 W __low_level_init
+00002e58 B __noinit_end
+00002e56 B __noinit_start
+00003900 A __stack
+0000ffe0 T __vectors_start
+00004000 W __watchdog_support
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+00004000 W _reset_vector__
+00002e58 A _stack
+00010000 T _vectors_end
+0000420c T autostart_start
+00004332 T cc2420_arch_init
+00004d82 T cc2420_init
+00002de0 B cc2420_sfd_start_time
+00004f62 T clock_init
+000053c4 T csma_output_init
+00005566 T ctimer_init
+00005684 T ds2411_init
+000057a4 T energest_init
+         U gpio_hal_arch_init
+0000549e t init
+000070ba t init
+00007148 t init
+00004f96 T init_platform
+00002328 b initialized
+0000615e T leds_arch_init
+000061de T leds_init
+0000622e T list_init
+00006308 T mac_sequence_init
+00006452 T memb_init
+000065b0 T msp430_cpu_init
+00006522 T msp430_init_dco
+00006650 T netstack_init
+0000665e T node_id_init
+00007354 T platform_init_stage_one
+000073ce T platform_init_stage_three
+00007366 T platform_init_stage_two
+000075c2 T process_init
+000076ce T process_start
+00007b94 t process_thread_stack_check_process
+0000771c T queuebuf_init
+000077ee T random_init
+000077fa T ringbuf_init
+0000714c t root_start
+000078a6 T rtimer_arch_init
+000078c8 T rtimer_init
+00007ac6 T serial_line_init
+00007ae2 T spi_init
+00007b40 T stack_check_get_usage
+00007b12 T stack_check_init
+0000223c D stack_check_process
+00002d30 b stack_top.2047
+00007d7a T uart1_init
+00007eb0 T watchdog_init
+00007e74 T watchdog_start
+00007ec2 T xmem_init
+
+[Undefined / resolved external symbols]
+         U InterruptVectors
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U slip_input_byte
+         U spi_arch_has_lock
+         U uip_aligned_buf
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+00009606 T __divsf3
+0000a944 T __muldi3
+000093f6 T __mulsf3
+0000a918 T __mulsi3
+0000aa7a T __udivdi3
+0000a9ba T __udivhi3
+0000aace T __udivmoddi4
+0000a9dc T __udivsi3
+00009efe t call_vuprintf
+000064c6 T memb_free
+0000a7b2 T memcpy
+0000a8ac T memset
+00009ecc T printf
+00007792 T queuebuf_free
+00009f38 T sprintf
+0000a0e8 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          93488 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         20
+
+[Section placement]
+  [ 1] .text             PROGBITS        00003100 0000d4 00676e 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        00009870 006844 000613 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 006e58 0009b8 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001ab8 007810 000a46 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          000024fe 007810 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 007810 000040 00  AX  0   0  1
+  [18] .symtab           SYMTAB          00000000 017050 0035f0 10     19 271  4
+  [19] .strtab           STRTAB          00000000 01a640 0028c6 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000302c 0x0000302c 0x06842 0x06842 R E 0x1
+  LOAD           0x006844 0x00009870 0x00009870 0x00613 0x00613 R   0x1
+  LOAD           0x006e58 0x00001100 0x00009e84 0x009b8 0x013fe RW  0x1
+  LOAD           0x007810 0x000024fe 0x0000a83c 0x00000 0x00002 RW  0x1
+  LOAD           0x007810 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+000024fe B __bss_end
+00000a46 A __bss_size
+00001ab8 B __bss_start
+00003308 T __ctors_start
+0000a83c A __data_end_rom
+00009e84 A __data_load_start
+000009b8 A __data_size
+00001100 D __data_start
+00009e84 A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+00003308 T __dtors_start
+00000000 T __far_bss_start
+00010000 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+00002500 B __noinit_end
+000024fe B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00002500 A _stack
+00010000 T _vectors_end
+00003876 T accm_init
+00003946 T autostart_start
+000039e2 T cc2420_arch_init
+00004342 T cc2420_init
+00002412 B cc2420_sfd_start_time
+00004446 T clock_init
+0000488e T csma_output_init
+00004a28 T ctimer_init
+00004ac2 T energest_init
+         U gpio_hal_arch_init
+000053e4 T i2c_receiveinit
+0000541a T i2c_transmitinit
+00004968 t init
+00006124 t init
+000061a8 t init
+0000449e T init_platform
+000023eb b initialized
+000054c8 T leds_arch_init
+00005548 T leds_init
+00005598 T list_init
+0000566a T mac_sequence_init
+00005794 T memb_init
+00005904 T msp430_cpu_init
+00005864 T msp430_init_dco
+00005932 T netstack_init
+0000598c T node_id_init
+0000639c T platform_init_stage_one
+00006484 T platform_init_stage_three
+000063ae T platform_init_stage_two
+00006650 T process_init
+00006762 T process_start
+00006a78 t process_thread_stack_check_process
+000067b0 T queuebuf_init
+0000687e T random_init
+000061ac t root_start
+0000688a T rtimer_arch_init
+000068ac T rtimer_init
+000069c4 T spi_init
+00006a24 T stack_check_get_usage
+000069f6 T stack_check_init
+00001a24 D stack_check_process
+000023ba b stack_top.2107
+00006bbe T tmp102_init
+00006d02 T uart0_init
+00006d8c T watchdog_init
+00006d50 T watchdog_start
+00006de4 T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U slip_input_byte
+         U spi_arch_has_lock
+         U uip_aligned_buf
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+000084c0 T __divsf3
+000082c2 T __mulsf3
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+00008d9a t call_vuprintf
+00005808 T memb_free
+0000972a T memcpy
+00009812 T memset
+00008d68 T printf
+00006822 T queuebuf_free
+00008dd0 T sprintf
+00008f60 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x4000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          37612 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         19
+
+[Section placement]
+  [ 1] .text             PROGBITS        00004000 0000d4 0041c2 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        000081c4 004298 0003f9 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 004692 001212 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00002312 0058a4 000bb4 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002ec6 0058a4 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 0058a4 000020 00  AX  0   0  1
+  [17] .symtab           SYMTAB          00000000 0095e4 002d00 10     18 230  4
+  [18] .strtab           STRTAB          00000000 00c2e4 00248f 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x4000
+  LOAD           0x000000 0x00003f2c 0x00003f2c 0x04296 0x04296 R E 0x1
+  LOAD           0x004298 0x000081c4 0x000081c4 0x003f9 0x003f9 R   0x1
+  LOAD           0x004692 0x00001100 0x000085be 0x01212 0x01dc6 RW  0x1
+  LOAD           0x0058a4 0x00002ec6 0x000097d0 0x00000 0x00002 RW  0x1
+  LOAD           0x0058a4 0x0000ffe0 0x0000ffe0 0x00020 0x00020 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+         U InterruptVectors
+00002ec6 B __bss_end
+00000bb4 A __bss_size
+00002312 B __bss_start
+00004208 T __ctors_start
+000097d0 A __data_end_rom
+000085be A __data_load_start
+00001212 A __data_size
+00001100 D __data_start
+000085be A __data_start_rom
+00004028 W __do_clear_bss
+00004010 W __do_copy_data
+00004208 T __dtors_start
+00000000 T __far_bss_start
+00000000 A __far_data_load_start
+00000000 T __far_data_start
+0000400c W __init_stack
+00004010 W __low_level_init
+00002ec8 B __noinit_end
+00002ec6 B __noinit_start
+00003900 A __stack
+0000ffe0 T __vectors_start
+00004000 W __watchdog_support
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+00004000 W _reset_vector__
+00002ec8 A _stack
+00010000 T _vectors_end
+0000420c T autostart_start
+00004332 T cc2420_arch_init
+00004d82 T cc2420_init
+00002e7a B cc2420_sfd_start_time
+00004f62 T clock_init
+000053c4 T csma_output_init
+00005566 T ctimer_init
+00005684 T ds2411_init
+000057a4 T energest_init
+         U gpio_hal_arch_init
+0000549e t init
+0000682c t init
+000068ba t init
+00004f96 T init_platform
+000023f0 b initialized
+0000615e T leds_arch_init
+000061de T leds_init
+0000622e T list_init
+00006308 T mac_sequence_init
+00006452 T memb_init
+000065b0 T msp430_cpu_init
+00006522 T msp430_init_dco
+00006650 T netstack_init
+0000665e T node_id_init
+00006ac6 T platform_init_stage_one
+00006b40 T platform_init_stage_three
+00006ad8 T platform_init_stage_two
+00006d34 T process_init
+00006e40 T process_start
+00007306 t process_thread_stack_check_process
+00006e8e T queuebuf_init
+00006f60 T random_init
+00006f6c T ringbuf_init
+000068be t root_start
+00007018 T rtimer_arch_init
+0000703a T rtimer_init
+00007238 T serial_line_init
+00007254 T spi_init
+000072b2 T stack_check_get_usage
+00007284 T stack_check_init
+00002304 D stack_check_process
+00002dce b stack_top.2047
+000074ec T uart1_init
+00007622 T watchdog_init
+000075e6 T watchdog_start
+00007634 T xmem_init
+
+[Undefined / resolved external symbols]
+         U InterruptVectors
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U slip_input_byte
+         U spi_arch_has_lock
+         U uip_aligned_buf
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+00008044 T __mulsi3
+00008130 T __udivdi3
+00008070 T __udivhi3
+00008184 T __udivmoddi4
+00008092 T __udivsi3
+000064c6 T memb_free
+00007ede T memcpy
+00007fd8 T memset
+00007670 T printf
+00006f04 T queuebuf_free
+00007814 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x4000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          62756 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         19
+
+[Section placement]
+  [ 1] .text             PROGBITS        00004000 0000d4 00a432 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000e434 00a508 000528 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00aa30 00014a 00  WA  0   0  2
+  [ 4] .bss              NOBITS          0000124a 00ab7a 001b6e 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002db8 00ab7a 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00ab7a 000020 00  AX  0   0  1
+  [17] .symtab           SYMTAB          00000000 00f81c 003f60 10     18 372  4
+  [18] .strtab           STRTAB          00000000 01377c 0038d1 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x4000
+  LOAD           0x000000 0x00003f2c 0x00003f2c 0x0a506 0x0a506 R E 0x1
+  LOAD           0x00a508 0x0000e434 0x0000e434 0x00528 0x00528 R   0x1
+  LOAD           0x00aa30 0x00001100 0x0000e95c 0x0014a 0x01cb8 RW  0x1
+  LOAD           0x00ab7a 0x00002db8 0x0000eaa6 0x00000 0x00002 RW  0x1
+  LOAD           0x00ab7a 0x0000ffe0 0x0000ffe0 0x00020 0x00020 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+         U InterruptVectors
+00002db8 B __bss_end
+00001b6e A __bss_size
+0000124a B __bss_start
+0000427c T __ctors_start
+0000eaa6 A __data_end_rom
+0000e95c A __data_load_start
+0000014a A __data_size
+00001100 D __data_start
+0000e95c A __data_start_rom
+00004028 W __do_clear_bss
+00004010 W __do_copy_data
+0000427c T __dtors_start
+00000000 T __far_bss_start
+00000000 A __far_data_load_start
+00000000 T __far_data_start
+0000400c W __init_stack
+00004010 W __low_level_init
+00002dba B __noinit_end
+00002db8 B __noinit_start
+00003900 A __stack
+0000ffe0 T __vectors_start
+00004000 W __watchdog_support
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+00004000 W _reset_vector__
+00002dba A _stack
+00010000 T _vectors_end
+00004280 T autostart_start
+000043a0 T cc2420_arch_init
+00004df0 T cc2420_init
+00002902 B cc2420_sfd_start_time
+00004fcc T clock_init
+00005428 T csma_output_init
+000055b4 T ctimer_init
+000056e8 T ds2411_init
+         U gpio_hal_arch_init
+000054fa t init
+00009622 t init
+00007596 t init_dag
+00001328 b initialized
+00001c76 b initialized.3752
+0000619a T leds_arch_init
+0000621a T leds_init
+000064cc T link_stats_init
+0000661c T mac_sequence_init
+00006752 T memb_init
+000068d6 T msp430_cpu_init
+00006848 T msp430_init_dco
+00006de6 T netstack_process_ip_callback
+00006ff6 T platform_init_stage_one
+00007070 T platform_init_stage_three
+00007008 T platform_init_stage_two
+0000761a t process_dio_init_dag
+0000726a T process_init
+0000735c T process_start
+0000b372 t process_thread_stack_check_process
+000073aa T queuebuf_init
+00007486 T random_init
+00007d24 T rpl_dag_init
+00007c68 T rpl_dag_init_root
+000074f4 T rpl_dag_root_start
+00008bf8 T rpl_icmp6_init
+00009008 T rpl_neighbor_init
+00009544 T rpl_timers_init
+00009896 T rtimer_arch_init
+00009a0c T sicslowpan_init
+0000b2ce T spi_init
+0000b32c T stack_check_get_usage
+0000b2fe T stack_check_init
+000011fe D stack_check_process
+00002404 b stack_top.2366
+0000b734 T uart1_init
+0000c1a0 T uip_ds6_init
+0000ba20 T uip_ds6_neighbors_init
+0000bb68 T uip_ds6_route_init
+0000c5fc T uip_icmp6_init
+0000cd54 T uip_init
+0000c8a6 T uip_nd6_init
+0000ca72 T uip_sr_init
+0000d514 T uipbuf_init
+0000d69c T watchdog_init
+0000d660 T watchdog_start
+0000d6ae T xmem_init
+
+[Undefined / resolved external symbols]
+         U InterruptVectors
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+0000e27c T __divhi3
+0000e2f6 T __divsi3
+0000e22e T __mulsi3
+0000e3a0 T __udivdi3
+0000e25a T __udivhi3
+0000e3f4 T __udivmoddi4
+0000e2b6 T __udivsi3
+0000d71c t call_vuprintf
+000067c6 T memb_free
+00006822 T memb_numfree
+0000dfce T memcpy
+0000e0c8 T memmove
+0000e1c2 T memset
+0000d6ea T printf
+0000742a T queuebuf_free
+000073bc T queuebuf_numfree
+0000d756 T snprintf
+0000cb10 T uip_sr_free_all
+0000d904 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x3100
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          65340 (bytes into file)
+  Number of program headers:         4
+  Number of section headers:         20
+
+[Section placement]
+  [ 1] .text             PROGBITS        00003100 0000b4 00a0b4 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000d1b4 00a168 00053a 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a6a2 000150 00  WA  0   0  2
+  [ 4] .bss              NOBITS          00001250 00a7f2 0016fe 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          0000294e 00a7f2 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a7f2 000040 00  AX  0   0  1
+  [18] .symtab           SYMTAB          00000000 01025c 0045f0 10     19 388  4
+  [19] .strtab           STRTAB          00000000 01484c 003d01 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x3100
+  LOAD           0x000000 0x0000304c 0x0000304c 0x0a6a2 0x0a6a2 R E 0x1
+  LOAD           0x00a6a2 0x00001100 0x0000d6ee 0x00150 0x0184e RW  0x1
+  LOAD           0x00a7f2 0x0000294e 0x0000d83e 0x00000 0x00002 RW  0x1
+  LOAD           0x00a7f2 0x0000ffc0 0x0000ffc0 0x00040 0x00040 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text .rodata 
+   01     .data .bss 
+   03     .vectors 
+
+[Startup / reset / vector symbols]
+0000294e B __bss_end
+000016fe A __bss_size
+00001250 B __bss_start
+0000337c T __ctors_start
+0000d83e A __data_end_rom
+0000d6ee A __data_load_start
+00000150 A __data_size
+00001100 D __data_start
+0000d6ee A __data_start_rom
+00003128 W __do_clear_bss
+00003110 W __do_copy_data
+0000337c T __dtors_start
+00000000 T __far_bss_start
+00010000 A __far_data_load_start
+00000000 T __far_data_start
+0000310c W __init_stack
+00003110 W __low_level_init
+00002950 B __noinit_end
+0000294e B __noinit_start
+00003100 A __stack
+0000ffc0 T __vectors_start
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00002950 A _stack
+00010000 T _vectors_end
+0000396a T accm_init
+00003a3a T autostart_start
+00003ad0 T cc2420_arch_init
+00004430 T cc2420_init
+00002576 B cc2420_sfd_start_time
+00004534 T clock_init
+00004976 T csma_output_init
+00004afa T ctimer_init
+         U gpio_hal_arch_init
+000054cc T i2c_receiveinit
+00005502 T i2c_transmitinit
+00004a48 t init
+0000879c t init
+000068fe t init_dag
+00002479 b initialized
+000024ab b initialized.3812
+000055b0 T leds_arch_init
+00005630 T leds_init
+000058c4 T link_stats_init
+00005a08 T mac_sequence_init
+00005b1e T memb_init
+00005cb4 T msp430_cpu_init
+00005c14 T msp430_init_dco
+000060f6 T netstack_process_ip_callback
+00006332 T platform_init_stage_one
+00006402 T platform_init_stage_three
+00006344 T platform_init_stage_two
+00006976 t process_dio_init_dag
+000065e4 T process_init
+000066d8 T process_start
+0000a2e6 t process_thread_stack_check_process
+00006726 T queuebuf_init
+000067fe T random_init
+00007030 T rpl_dag_init
+00006f84 T rpl_dag_init_root
+00006868 T rpl_dag_root_start
+00007de2 T rpl_icmp6_init
+000081b2 T rpl_neighbor_init
+000086c2 T rpl_timers_init
+00008998 T rtimer_arch_init
+00008b0e T sicslowpan_init
+0000a240 T spi_init
+0000a2a0 T stack_check_get_usage
+0000a272 T stack_check_init
+000011d6 D stack_check_process
+00002242 b stack_top.2426
+0000a664 T tmp102_init
+0000a7a8 T uart0_init
+0000b0d6 T uip_ds6_init
+0000a9ec T uip_ds6_neighbors_init
+0000ab20 T uip_ds6_route_init
+0000b50e T uip_icmp6_init
+0000bc00 T uip_init
+0000b7b0 T uip_nd6_init
+0000b958 T uip_sr_init
+0000c35c T uipbuf_init
+0000c4c6 T watchdog_init
+0000c48a T watchdog_start
+0000c51e T xmem_init
+
+[Undefined / resolved external symbols]
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+000033ca T __divhi3
+0000343c T __divsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+0000c5f6 t call_vuprintf
+00005b92 T memb_free
+00005bee T memb_numfree
+0000cf88 T memcpy
+0000d070 T memmove
+0000d158 T memset
+0000c5c4 T printf
+000067a2 T queuebuf_free
+00006738 T queuebuf_numfree
+0000c62c T snprintf
+0000b9e6 T uip_sr_free_all
+0000c7be T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[ELF header: entry / headers]
+  Entry point address:               0x4000
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          62368 (bytes into file)
+  Number of program headers:         5
+  Number of section headers:         19
+
+[Section placement]
+  [ 1] .text             PROGBITS        00004000 0000d4 00a2f6 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000e2f8 00a3cc 0004e2 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a8ae 00014a 00  WA  0   0  2
+  [ 4] .bss              NOBITS          0000124a 00a9f8 001b36 00  WA  0   0  2
+  [ 5] .noinit           NOBITS          00002d80 00a9f8 000002 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00a9f8 000020 00  AX  0   0  1
+  [17] .symtab           SYMTAB          00000000 00f698 003f10 10     18 367  4
+  [18] .strtab           STRTAB          00000000 0135a8 003888 00      0   0  1
+
+[Program headers / load segments]
+Entry point 0x4000
+  LOAD           0x000000 0x00003f2c 0x00003f2c 0x0a3ca 0x0a3ca R E 0x1
+  LOAD           0x00a3cc 0x0000e2f8 0x0000e2f8 0x004e2 0x004e2 R   0x1
+  LOAD           0x00a8ae 0x00001100 0x0000e7da 0x0014a 0x01c80 RW  0x1
+  LOAD           0x00a9f8 0x00002d80 0x0000e924 0x00000 0x00002 RW  0x1
+  LOAD           0x00a9f8 0x0000ffe0 0x0000ffe0 0x00020 0x00020 R E 0x1
+ Section to Segment mapping:
+  Segment Sections...
+   00     .text 
+   01     .rodata 
+   02     .data .bss 
+   04     .vectors 
+
+[Startup / reset / vector symbols]
+         U InterruptVectors
+00002d80 B __bss_end
+00001b36 A __bss_size
+0000124a B __bss_start
+0000427c T __ctors_start
+0000e924 A __data_end_rom
+0000e7da A __data_load_start
+0000014a A __data_size
+00001100 D __data_start
+0000e7da A __data_start_rom
+00004028 W __do_clear_bss
+00004010 W __do_copy_data
+0000427c T __dtors_start
+00000000 T __far_bss_start
+00000000 A __far_data_load_start
+00000000 T __far_data_start
+0000400c W __init_stack
+00004010 W __low_level_init
+00002d82 B __noinit_end
+00002d80 B __noinit_start
+00003900 A __stack
+0000ffe0 T __vectors_start
+00004000 W __watchdog_support
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+00004000 W _reset_vector__
+00002d82 A _stack
+00010000 T _vectors_end
+00004280 T autostart_start
+000043a0 T cc2420_arch_init
+00004df0 T cc2420_init
+000028ca B cc2420_sfd_start_time
+00004fcc T clock_init
+00005428 T csma_output_init
+000055b4 T ctimer_init
+000056e8 T ds2411_init
+         U gpio_hal_arch_init
+000054fa t init
+00009622 t init
+00007596 t init_dag
+00001328 b initialized
+00001c76 b initialized.3752
+0000619a T leds_arch_init
+0000621a T leds_init
+000064cc T link_stats_init
+0000661c T mac_sequence_init
+00006752 T memb_init
+000068d6 T msp430_cpu_init
+00006848 T msp430_init_dco
+00006de6 T netstack_process_ip_callback
+00006ff6 T platform_init_stage_one
+00007070 T platform_init_stage_three
+00007008 T platform_init_stage_two
+0000761a t process_dio_init_dag
+0000726a T process_init
+0000735c T process_start
+0000b372 t process_thread_stack_check_process
+000073aa T queuebuf_init
+00007486 T random_init
+00007d24 T rpl_dag_init
+00007c68 T rpl_dag_init_root
+000074f4 T rpl_dag_root_start
+00008bf8 T rpl_icmp6_init
+00009008 T rpl_neighbor_init
+00009544 T rpl_timers_init
+00009896 T rtimer_arch_init
+00009a0c T sicslowpan_init
+0000b2ce T spi_init
+0000b32c T stack_check_get_usage
+0000b2fe T stack_check_init
+000011fe D stack_check_process
+00002404 b stack_top.2366
+0000b734 T uart1_init
+0000c064 T uip_ds6_init
+0000b8e4 T uip_ds6_neighbors_init
+0000ba2c T uip_ds6_route_init
+0000c4c0 T uip_icmp6_init
+0000cc18 T uip_init
+0000c76a T uip_nd6_init
+0000c936 T uip_sr_init
+0000d3d8 T uipbuf_init
+0000d560 T watchdog_init
+0000d524 T watchdog_start
+0000d572 T xmem_init
+
+[Undefined / resolved external symbols]
+         U InterruptVectors
+         U _clear_bss_init__
+         U _copy_data_init__
+         U _end_of_init__
+         U button_hal_button_count
+         U button_hal_buttons
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+         U spi_arch_has_lock
+
+[Relocation sections]
+
+There are no relocations in this file.
+
+[Archive / library-like symbols]
+0000e140 T __divhi3
+0000e1ba T __divsi3
+0000e0f2 T __mulsi3
+0000e264 T __udivdi3
+0000e11e T __udivhi3
+0000e2b8 T __udivmoddi4
+0000e17a T __udivsi3
+0000d5e0 t call_vuprintf
+000067c6 T memb_free
+00006822 T memb_numfree
+0000de92 T memcpy
+0000df8c T memmove
+0000e086 T memset
+0000d5ae T printf
+0000742a T queuebuf_free
+000073bc T queuebuf_numfree
+0000d61a T snprintf
+0000c9d4 T uip_sr_free_all
+0000d7c8 T vuprintf

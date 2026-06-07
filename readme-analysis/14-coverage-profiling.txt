@@ -1,0 +1,536 @@
+=== COVERAGE / PROFILING ANALYSIS ===
+/usr/local/bin/msp430-gcov
+/usr/local/bin/msp430-gprof
+/usr/bin/arm-none-eabi-gcov
+/usr/bin/arm-none-eabi-gprof
+/usr/bin/gcov
+/usr/bin/gprof
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+000082f8 000001b0 T rpl_ext_header_hbh_update
+00012212 000001c4 T uip_icmp6_error_output
+00009bc8 000001da T rpl_neighbor_snprint
+00004d66 000001ea t input_packet
+00008106 000001f2 T rpl_ext_header_srh_update
+000095be 000001f2 T rpl_icmp6_dao_output
+0000ae48 00000204 t add_fragment
+0000779c 00000204 T rpl_dag_update_state
+0000313e 00000232 T main
+00008aea 00000248 t dao_input
+00004a58 00000270 T csma_output_packet
+00011d22 00000282 T uip_ds6_init
+0000931c 000002a2 T rpl_icmp6_dio_output
+00004776 000002e2 t transmit_from_queue
+000079a0 00000344 T rpl_process_dio
+0000c1d2 000003e6 T tcpip_ipv6_output
+000124de 00000420 t ns_input
+00008568 00000438 T rpl_ext_header_update
+00008d32 00000454 t dio_input
+000015a8 00000550 b buframmem_memb_mem
+00001d0c 00000558 b frag_buf
+00014082 00000742 T vuprintf
+000130f2 00000992 T uip_process
+0000b1cc 00000df4 t output
+00010000 0000118a t input
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+000041b8 0000011e t get_value
+0000778a 00000128 t dao_input
+0000b430 00000136 T uip_icmp6_error_output
+00006ca8 00000138 T rpl_dag_update_state
+00004854 00000148 T csma_output_packet
+000042ec 0000014a t set_value
+0000a904 0000014c t process_thread_udp_client_process
+000051f6 0000015c T frame802154_parse
+0000b196 00000164 T uip_ds6_init
+00001b98 00000168 b frag_info
+00008eaa 0000016a t add_fragment
+0000c74c 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b5fa 00000292 t ns_input
+0000be0e 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c8c2 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+0000c388 00000114 T uiplib_ipaddr_snprint
+000041b8 0000011e t get_value
+0000778a 00000128 t dao_input
+0000b33e 00000136 T uip_icmp6_error_output
+00006ca8 00000138 T rpl_dag_update_state
+00004854 00000148 T csma_output_packet
+000042ec 0000014a t set_value
+000051f6 0000015c T frame802154_parse
+0000b0a4 00000164 T uip_ds6_init
+00001b98 00000168 b frag_info
+00008eaa 0000016a t add_fragment
+0000c65a 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b508 00000292 t ns_input
+0000bd1c 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c7d0 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00000a24 000001f8 T main
+0000c598 00000200 T PIN_init
+20002220 00000200 b RF_cmdPool
+0000ec90 00000224 T UARTCC26XX_open
+00003818 00000234 T rpl_ext_header_update
+0000dda4 00000244 t SPICC26X2DMA_hwiFxn
+0000a75c 00000248 T RF_open
+00003bb4 00000248 t dio_input
+20002964 00000260 b rx_data_queue
+00007bf4 0000027c t ns_input
+00000110 000002be T __udivmoddi4
+0000d4cc 000002c8 T PowerCC26X2_auxISR
+0000e2c0 000002c8 T SPICC26X2DMA_open
+0000dfe8 000002d8 T SPICC26X2DMA_transfer
+00008214 00000404 T uip_process
+2000395c 00000500 B uip_aligned_buf
+20004bfe 0000054c b frag_buf
+2000437a 00000550 b buframmem_memb_mem
+0000b0b0 00000584 t RF_fsmActiveState
+00005628 000006fc t output
+00006830 00000770 T format_str_v
+00005e70 000007d4 t input
+0000ed00 1fff6600 B __stack_size
+20014000 dffec13a N _stack_origin
+20005300 dfffae3a N _stack
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00007574 000001a4 t process_dio_init_dag
+000084b6 000001a6 T rpl_ext_header_hbh_update
+000129fc 000001c4 T uip_icmp6_error_output
+00009ee4 000001da T rpl_neighbor_snprint
+000082c4 000001f2 T rpl_ext_header_srh_update
+000098e2 000001f2 T rpl_icmp6_dao_output
+000079b4 00000208 T rpl_dag_update_state
+00004ab2 0000025e T csma_output_packet
+0000313e 0000026e T main
+00012526 00000282 T uip_ds6_init
+0000b11c 0000028e t add_fragment
+0000964a 00000298 T rpl_icmp6_dio_output
+000047d4 000002de t transmit_from_queue
+00007bbc 00000344 T rpl_process_dio
+00008c9e 0000036a t dao_input
+0001131a 00000412 T tcpip_ipv6_output
+00012cc8 0000041e t ns_input
+0000871c 00000438 T rpl_ext_header_update
+00009008 000004ac t dio_input
+000015e2 00000550 b buframmem_memb_mem
+00001d34 00000558 b frag_buf
+000147de 00000742 T vuprintf
+000138b0 00000930 T uip_process
+0000b562 00000ddc t output
+00010000 0000122e t input
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00002674 00000120 b nodememb_memb_mem
+0000d13c 0000012c T uiplib_ipaddr_snprint
+00007912 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c172 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d5a 00000158 b frag_info
+0000beea 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000084a6 0000016c t dao_input
+0000d37e 00000194 t print_field
+00007a56 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009d8a 000001fc t add_fragment
+00008954 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c358 00000298 t ns_input
+0000813e 000002aa T rpl_ext_header_update
+00008612 000002ba t dio_input
+0000caa8 000004c2 T uip_process
+00001716 00000550 b buframmem_memb_mem
+00001eb4 00000558 b frag_buf
+0000d512 0000063e T vuprintf
+0000a054 0000079e t output
+0000a7f2 00000a1a t input
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+0000bff4 00000114 T uiplib_ipaddr_snprint
+000041b2 0000011e t get_value
+00004840 00000136 T csma_output_packet
+0000b0d8 00000136 T uip_icmp6_error_output
+00006c74 0000013c T rpl_dag_update_state
+000042e6 0000014a t set_value
+00007722 00000158 t dao_input
+00001b98 00000158 b frag_info
+00005176 0000015c T frame802154_parse
+0000ae58 00000164 T uip_ds6_init
+0000c2c6 00000176 t print_field
+00006db0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008e3a 000001e8 t add_fragment
+00007b8c 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007406 00000266 T rpl_ext_header_update
+0000b2a2 00000290 t ns_input
+0000787a 00000292 t dio_input
+0000b984 000004ba T uip_process
+0000159e 00000550 b buframmem_memb_mem
+00001cf0 00000558 b frag_buf
+0000c43c 00000742 T vuprintf
+000090d2 00000746 t output
+00009818 0000099c t input
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Coverage / profiling related symbols]
+                 w __gmon_start__
+
+[Static largest functions as profiling substitute]
+0000000000039c52 000000000000081c t tsch_tx_slot
+0000000000020aeb 00000000000009a7 t accept
+0000000000025fe3 00000000000009ae t icmp_input
+0000000000097ce0 0000000000000ab0 b packets_memb_memb_mem
+000000000003287c 0000000000000e0b t uncompress_hdr_iphc
+0000000000053000 0000000000000ec0 d _GLOBAL_OFFSET_TABLE_
+000000000003193b 0000000000000f41 t compress_hdr_iphc
+00000000000415f3 0000000000000f5d T uip_process
+00000000000549c0 0000000000000fa0 B simCFSData
+000000000001fb44 0000000000000fa7 t icmp_in
+00000000000586c0 00000000000012c0 b _link_stats_mem
+0000000000069600 00000000000012c0 b _rpl_neighbors_mem
+0000000000062f60 00000000000012c0 b neighbor_addr_mem_memb_mem
+00000000000002f0 0000000000001974 r __TMC_END__
+0000000000067480 0000000000001ec0 b buffered_msgs
+00000000000559c0 0000000000002000 B simLoggedData
+0000000000059b60 00000000000021c0 b buffered_message_set
+00000000000457d8 000000000000227c r __GNU_EH_FRAME_HDR
+000000000005bfa0 00000000000023d0 b cooja_thread
+0000000000060760 00000000000023d0 b process_run_thread
+000000000005e380 00000000000023d0 b rtimer_thread
+00000000000953c0 0000000000002580 b _ds6_neighbors_mem
+00000000000648e0 0000000000002a80 b buframmem_memb_mem
+0000000000098900 0000000000002ee0 b nodememb_memb_mem
+000000000006d460 0000000000026ac0 b _tsch_neighbors_mem
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+000051e8 0000009e t parse
+00004988 000000a0 t process_thread_ctimer_process
+00004dbc 000000a8 t field_len
+00005286 000000b0 T framer_802154_setup_params
+000059a0 000000b2 t process_thread_nullnet_example_process
+00003e86 000000ba t cc2420_read
+00006250 000000c2 t process_thread_sensors_process
+00004b40 000000c4 t process_thread_etimer_process
+00003530 000000d0 T timera1
+000063f0 000000d2 t process_thread_stack_check_process
+00004f2c 000000d4 T frame802154_create
+00005d26 000000d6 T platform_init_stage_two
+00004cdc 000000e0 T frame802154_has_panid
+0000129a 000000e0 b received_seqnos
+00007152 000000e8 T memcpy
+00004342 000000ea T cc2420_init
+000040c4 0000011e t get_value
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+0000508c 0000015c T frame802154_parse
+00006812 00000176 t print_field
+00004596 000001b0 t transmit_from_queue
+0000313e 000001c4 T main
+0000144e 00000550 b buframmem_memb_mem
+00006988 00000742 T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00005bf0 000000aa t field_len
+00006122 000000b6 T framer_802154_setup_params
+00006746 000000ba t process_thread_nullnet_example_process
+00005e5c 000000bc T frame802154_parse_fcf
+00004930 000000be t cc2420_read
+000014bc 000000c0 b events
+000070ea 000000c2 t process_thread_sensors_process
+0000597a 000000cc t process_thread_etimer_process
+00005d8a 000000d2 T frame802154_create
+00004f6e 000000dc T timera1
+00005b10 000000e0 T frame802154_has_panid
+00001338 000000e0 b received_seqnos
+00004e84 000000ea T cc2420_init
+00007514 000000f4 T uart1_init
+00007f06 000000fa T memcpy
+00004c00 0000011e t get_value
+0000573c 00000120 T ds2411_init
+00005360 00000146 T csma_output_packet
+00004d34 00000150 t set_value
+00005f18 00000168 T frame802154_parse
+000076a8 00000194 t print_field
+000051a4 000001bc t transmit_from_queue
+0000403e 000001d8 T main
+00001584 00000550 b buframmem_memb_mem
+0000783c 0000063e T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+0000b0cc 00000100 R __clz_tab
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00008e76 00000124 T __fixunssfdi
+00009cec 0000013c T __unpack_f
+00008f9a 0000013e T __floatundisf
+00009606 00000148 T __divsf3
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00008cc2 00000172 T __ieee754_sqrtf
+00008b4e 00000174 T scalbnf
+00009f54 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00009b12 000001da T __pack_f
+00006672 000001e4 t process_thread_nullnet_example_process
+000093f6 00000210 T __mulsf3
+000090d8 00000282 t _fpadd_parts
+000019e4 000003e8 D node_positions
+00001520 000004c4 D anchor_nodes
+000026b6 00000550 b buframmem_memb_mem
+0000a0e8 0000063e T vuprintf
+00006856 00000864 T input_callback
+00007efe 00000c4a T __ieee754_powf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00001c8e 000000f2 B rssiList
+00009d7c 00000100 R __clz_tab
+00008ade 0000010c T __unpack_f
+000040c4 0000011e t get_value
+00007d78 00000120 T __fixunssfdi
+00007e98 00000124 T __floatundisf
+000084c0 00000142 T __divsf3
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+00007c22 00000156 T __ieee754_sqrtf
+0000508c 0000015c T frame802154_parse
+00007aba 00000168 T scalbnf
+00008dea 00000176 t print_field
+000059a0 00000194 t process_thread_nullnet_example_process
+00004596 000001b0 t transmit_from_queue
+0000891a 000001c4 T __pack_f
+0000313e 000001c4 T main
+000082c2 000001fe T __mulsf3
+00007fbc 0000026a t _fpadd_parts
+00001620 000003e8 D node_positions
+0000115c 000004c4 D anchor_nodes
+00001e54 00000550 b buframmem_memb_mem
+00005b34 000005f0 T input_callback
+00008f60 00000742 T vuprintf
+00006e8a 00000c2a T __ieee754_powf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00007066 000000c2 t process_thread_sensors_process
+00001e30 000000c8 D AnchorIndexes
+0000582a 000000cc t process_thread_etimer_process
+00004e6c 000000dc T timera1
+000059ce 000000e0 T frame802154_has_panid
+00002412 000000e0 b received_seqnos
+00005c4a 000000e4 T frame802154_create
+00004d82 000000ea T cc2420_init
+00007306 000000ea t process_thread_stack_check_process
+000024f4 000000f2 B rssiList
+000074ec 000000f4 T uart1_init
+00007ede 000000fa T memcpy
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00006672 00000126 t process_thread_nullnet_example_process
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00007680 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00001a48 000003e8 D node_positions
+00001584 000004c4 D anchor_nodes
+00002754 00000550 b buframmem_memb_mem
+00007814 0000063e T vuprintf
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+0000d52e 0000012c T uiplib_ipaddr_snprint
+00007856 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c428 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d52 00000158 b frag_info
+0000c1a0 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000083ea 0000016c t dao_input
+0000d770 00000194 t print_field
+0000b86e 00000194 t process_thread_udp_client_process
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c60e 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000ce9a 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d904 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+000041b2 0000011e t get_value
+00004840 00000136 T csma_output_packet
+0000b356 00000136 T uip_icmp6_error_output
+00006ba4 0000013c T rpl_dag_update_state
+000042e6 0000014a t set_value
+00007652 00000158 t dao_input
+00001b92 00000158 b frag_info
+00005176 0000015c T frame802154_parse
+0000b0d6 00000164 T uip_ds6_init
+0000c648 00000176 t print_field
+0000a83c 00000192 t process_thread_udp_client_process
+00006ce0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008d6a 000001e8 t add_fragment
+00007abc 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007336 00000266 T rpl_ext_header_update
+0000b520 00000290 t ns_input
+000077aa 00000292 t dio_input
+0000bd06 000004ba T uip_process
+00001598 00000550 b buframmem_memb_mem
+00001cea 00000558 b frag_buf
+0000c7be 00000742 T vuprintf
+00009002 00000746 t output
+00009748 0000099c t input
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Coverage / profiling related symbols]
+
+[Static largest functions as profiling substitute]
+00002688 00000120 b nodememb_memb_mem
+0000d3f2 0000012c T uiplib_ipaddr_snprint
+00007856 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c2ec 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d52 00000158 b frag_info
+0000c064 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000083ea 0000016c t dao_input
+0000d634 00000194 t print_field
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c4d2 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000cd5e 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d7c8 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input

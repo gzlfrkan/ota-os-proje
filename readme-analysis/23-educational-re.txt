@@ -1,0 +1,2691 @@
+=== 23. EDUCATIONAL REVERSE ENGINEERING TASKS ===
+
+FILE: ./new-firmware.z1
+ADXL345 sensor
+Button
+packet sent to 
+failed to create packet, seqno: %d
+packet sent: no metadata
+Failed to retrieve max radio driver payload length
+failed to parse %u
+received packet from 
+Hello world process
+failed to create a new RPL DAG
+failed to set prefix
+failed to initialize DAG
+failed to init DAG
+failed to add neighbor
+unicast DIS, reply to sender
+failed to add link on incoming DAO
+unicast
+packet sent to 
+RPL Lite
+Sensors
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: failed to calculate payload size - dropping packet
+input: failed to allocate new reassembly context
+
+FILE: ./udp-client.z1
+ADXL345 sensor
+Button
+RPL Lite
+Sensors
+Simple UDP process
+Check failed: %ld vs. %ld
+TMP102 sensor
+UDP client
+
+FILE: ./udp-server.z1
+ADXL345 sensor
+Button
+RPL Lite
+Sensors
+Simple UDP process
+Check failed: %ld vs. %ld
+TMP102 sensor
+UDP server
+
+FILE: extra-firmwares/base-demo.simplelink
+CC13xx/CC26xx base demo
+CC13xx/CC26xx base demo process
+Button HAL process
+CC13xx/CC26xx
+RPL Lite
+Check failed: %u vs. %u
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+TimerPCC26XX_nortos.c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+
+FILE: extra-firmwares/hardworker.z1
+ADXL345 sensor
+Button
+packet sent to 
+failed to create packet, seqno: %d
+packet sent: no metadata
+Failed to retrieve max radio driver payload length
+failed to parse %u
+received packet from 
+[SENSOR] Button pressed
+[SENSOR] Received UDP-triggered poll
+[LED] Toggled
+Sensor Event P.ID:06
+LED Toggle P.ID:03
+process '%s' called again with event %d
+<broadcast>
+failed to create a new RPL DAG
+failed to set prefix
+failed to initialize DAG
+failed to init DAG
+failed to add neighbor
+unicast DIS, reply to sender
+failed to add link on incoming DAO
+unicast
+packet sent to 
+RPL Lite
+
+FILE: extra-firmwares/hello-world.sky
+MButton
+Hello world process
+nullnet
+RPL Lite
+Sensors
+Check failed: %u vs. %u
+
+FILE: extra-firmwares/hello-world.z1
+ADXL345 sensor
+Button
+Hello world process
+RPL Lite
+Sensors
+Check failed: %u vs. %u
+TMP102 sensor
+
+FILE: extra-firmwares/mtype5756516.cooja
+button_hal_process
+button_hal_press_event
+button_hal_release_event
+button_hal_periodic_event
+button_hal_get_state
+button_hal_get_by_id
+button_hal_buttons
+button_hal_get_by_index
+button_hal_button_count
+button_hal_init
+simButtonChanged
+simButtonIsDown
+simButtonIsActive
+cooja_add_pre_tick_action
+cooja_radio_driver
+cooja_radio_process
+cooja_mt_yield
+cooja_mt_init
+cooja_mt_start
+cooja_mt_exec
+frame802154_is_broadcast_addr
+packetbuf_holds_broadcast
+int_master_is_enabled
+simLedsValue
+leds_get
+
+FILE: extra-firmwares/nullnet-broadcast.z1
+ADXL345 sensor
+Button
+NullNet broadcast example
+nullnet
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+N(N6NjNButton
+nullnet
+NullNet broadcast example
+nullnet
+Sensors
+Check failed: %u vs. %u
+
+FILE: extra-firmwares/nullnet-unicast.sky
+L&M4MhMButton
+nullnet
+Broadcast from %d, to all. %llu %llu 
+NullNet unicast example
+V:BsV)Bnullnet
+Sensors
+Check failed: %ld vs. %ld
+
+FILE: extra-firmwares/nullnet-unicast.z1
+ADXL345 sensor
+Button
+NullNet unicast example
+nullnet
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+L&M4MhMButton
+nullnet
+NullNet unicast example
+V:BsV)Bnullnet
+Sensors
+Check failed: %ld vs. %ld
+
+FILE: extra-firmwares/udp-client.sky
+MButton
+nullnet
+RPL Lite
+UDP client
+Sensors
+Simple UDP process
+Check failed: %u vs. %u
+
+FILE: extra-firmwares/udp-client.z1
+ADXL345 sensor
+Button
+RPL Lite
+Sensors
+Simple UDP process
+Check failed: %u vs. %u
+TMP102 sensor
+UDP client
+
+FILE: extra-firmwares/udp-server.sky
+MButton
+nullnet
+RPL Lite
+UDP server
+Sensors
+Simple UDP process
+Check failed: %u vs. %u
+
+FILE: ./new-firmware.z1
+UDP/simple_udp symbols:
+NullNet symbols:
+000054cc T frame802154_is_broadcast_addr
+0000a156 t handle_unicast_dio_timer
+00006ad6 T packetbuf_holds_broadcast
+0000a344 T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001b18 b _rpl_neighbors_mem
+0000116c D curr_log_level_rpl
+0000116a D curr_log_level_tcpip
+000011a0 d dao_ack_handler
+00008a26 t dao_ack_input
+00001198 d dao_handler
+00008aea t dao_input
+00001190 d dio_handler
+00008d32 t dio_input
+00001188 d dis_handler
+00009186 t dis_input
+00001b58 b dis_timer
+0000a1b4 t handle_dao_ack_timer
+0000a1c6 t handle_dio_timer
+0000a2c2 t handle_dis_timer
+0000a156 t handle_unicast_dio_timer
+00007294 t init_dag
+0000a0d0 t new_dio_interval
+0000735c t process_dio_init_dag
+0000c5f4 t process_thread_tcpip_process
+0000a190 t resend_dao
+00007512 T rpl_dag_get_root_ipaddr
+00007f60 T rpl_dag_init
+00007e62 T rpl_dag_init_root
+00007530 T rpl_dag_leave
+
+FILE: ./udp-client.z1
+UDP/simple_udp symbols:
+0000a11c t process_thread_simple_udp_process
+0000a904 t process_thread_udp_client_process
+000011ca D simple_udp_process
+0000a1f6 T simple_udp_register
+0000a1c4 T simple_udp_sendto
+000011ee D udp_client_process
+NullNet symbols:
+00004fce T frame802154_is_broadcast_addr
+00008380 t handle_unicast_dio_timer
+00006424 T packetbuf_holds_broadcast
+00008528 T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001b0c b _rpl_neighbors_mem
+00001188 d dao_ack_handler
+0000775a t dao_ack_input
+00001180 d dao_handler
+0000778a t dao_input
+00001178 d dio_handler
+000078b2 t dio_input
+00001170 d dis_handler
+00007b26 t dis_input
+00001b4c b dis_timer
+000083de t handle_dao_ack_timer
+000083f0 t handle_dio_timer
+000084d4 t handle_dis_timer
+00008380 t handle_unicast_dio_timer
+00006a02 t init_dag
+000082fa t new_dio_interval
+00006a7a t process_dio_init_dag
+0000a5cc t process_thread_tcpip_process
+000083ba t resend_dao
+00006b2a T rpl_dag_get_root_ipaddr
+00007130 T rpl_dag_init
+00007084 T rpl_dag_init_root
+00006b48 T rpl_dag_leave
+00006b9e T rpl_dag_periodic
+00006b92 T rpl_dag_poison_and_leave
+
+FILE: ./udp-server.z1
+UDP/simple_udp symbols:
+0000a11c t process_thread_simple_udp_process
+0000a8be t process_thread_udp_server_process
+000011ca D simple_udp_process
+0000a1f6 T simple_udp_register
+0000a1c4 T simple_udp_sendto
+000011ee D udp_server_process
+NullNet symbols:
+00004fce T frame802154_is_broadcast_addr
+00008380 t handle_unicast_dio_timer
+00006424 T packetbuf_holds_broadcast
+00008528 T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001b0c b _rpl_neighbors_mem
+00001188 d dao_ack_handler
+0000775a t dao_ack_input
+00001180 d dao_handler
+0000778a t dao_input
+00001178 d dio_handler
+000078b2 t dio_input
+00001170 d dis_handler
+00007b26 t dis_input
+00001b4c b dis_timer
+000083de t handle_dao_ack_timer
+000083f0 t handle_dio_timer
+000084d4 t handle_dis_timer
+00008380 t handle_unicast_dio_timer
+00006a02 t init_dag
+000082fa t new_dio_interval
+00006a7a t process_dio_init_dag
+0000a5cc t process_thread_tcpip_process
+000083ba t resend_dao
+00006b2a T rpl_dag_get_root_ipaddr
+00007130 T rpl_dag_init
+00007084 T rpl_dag_init_root
+00006b48 T rpl_dag_leave
+00006b9e T rpl_dag_periodic
+00006b92 T rpl_dag_poison_and_leave
+
+FILE: extra-firmwares/base-demo.simplelink
+UDP/simple_udp symbols:
+NullNet symbols:
+000100d4 T frame802154_is_broadcast_addr
+00004464 t handle_unicast_dio_timer
+000021b8 T packetbuf_holds_broadcast
+00004700 T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00009060 T HwiP_disable
+000090a0 T HwiP_disableInterrupt
+00009040 t HwiP_dispatch
+20003fa8 b HwiP_dispatchTable
+00009274 T PowerCC26XX_schedulerDisable
+0000cb1c T Power_disablePolicy
+0000ae28 t RF_calculateDispatchTime
+0000aa30 t RF_cmdDispatchTime
+000098e4 t RF_discardPendCmd
+0000aae4 t RF_dispatchNextCmd
+0000af08 t RF_dispatchNextEvent
+00009ed0 t RF_initRadioSetup
+000097a4 t RF_issueRadioFreeCb
+0000a4a0 t RF_radioOpDoneCb
+00009444 T SwiP_disable
+00009460 T SwiP_dispatch
+20003350 b _rpl_neighbors_mem
+20005177 b bDisableFlashInIdleConstraint
+00004d54 t cmd_rx_disable
+20001d4c d dao_ack_handler
+00003a4c t dao_ack_input
+20001d58 d dao_handler
+00003a84 t dao_input
+20001d64 d dio_handler
+00003bb4 t dio_input
+
+FILE: extra-firmwares/hardworker.z1
+UDP/simple_udp symbols:
+NullNet symbols:
+000054b2 T frame802154_is_broadcast_addr
+0000a3bc t handle_unicast_dio_timer
+00006b54 T packetbuf_holds_broadcast
+0000a65e T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001b52 b _rpl_neighbors_mem
+00001192 D curr_log_level_rpl
+00001190 D curr_log_level_tcpip
+000011c6 d dao_ack_handler
+00008bda t dao_ack_input
+000011be d dao_handler
+00008c9e t dao_input
+000011b6 d dio_handler
+00009008 t dio_input
+000011ae d dis_handler
+000094b4 t dis_input
+00001b92 b dis_timer
+0000a3ce t handle_dao_ack_timer
+0000a470 t handle_dio_timer
+0000a5dc t handle_dis_timer
+0000a3bc t handle_unicast_dio_timer
+000074ac t init_dag
+0000a3ee t new_dio_interval
+00007574 t process_dio_init_dag
+00011768 t process_thread_tcpip_process
+0000a52e t resend_dao
+0000772a T rpl_dag_get_root_ipaddr
+0000817c T rpl_dag_init
+0000807e T rpl_dag_init_root
+00007748 T rpl_dag_leave
+
+FILE: extra-firmwares/hello-world.sky
+UDP/simple_udp symbols:
+NullNet symbols:
+000013e8 B curr_log_level_nullnet
+00005baa T frame802154_is_broadcast_addr
+000090e4 t handle_unicast_dio_timer
+000070a4 T packetbuf_holds_broadcast
+0000934c T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001c90 b _rpl_neighbors_mem
+000013f0 B curr_log_level_rpl
+000013ee B curr_log_level_tcpip
+000011d6 d dao_ack_handler
+00008476 t dao_ack_input
+000011d0 d dao_handler
+000084a6 t dao_input
+000011ca d dio_handler
+00008612 t dio_input
+000011c4 d dis_handler
+000088cc t dis_input
+00001d10 b dis_timer
+000090f6 t handle_dao_ack_timer
+0000919c t handle_dio_timer
+000092f8 t handle_dis_timer
+000090e4 t handle_unicast_dio_timer
+00007652 t init_dag
+00009116 t new_dio_interval
+000076d6 t process_dio_init_dag
+0000b4d6 t process_thread_tcpip_process
+0000925e t resend_dao
+00007786 T rpl_dag_get_root_ipaddr
+00007de0 T rpl_dag_init
+00007d24 T rpl_dag_init_root
+000077a4 T rpl_dag_leave
+
+FILE: extra-firmwares/hello-world.z1
+UDP/simple_udp symbols:
+NullNet symbols:
+00004f64 T frame802154_is_broadcast_addr
+000082a2 t handle_unicast_dio_timer
+000063f4 T packetbuf_holds_broadcast
+000084fe T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001b0e b _rpl_neighbors_mem
+00001198 d dao_ack_handler
+000076f2 t dao_ack_input
+00001190 d dao_handler
+00007722 t dao_input
+00001188 d dio_handler
+0000787a t dio_input
+00001180 d dis_handler
+00007b0c t dis_input
+00001b4e b dis_timer
+000082b4 t handle_dao_ack_timer
+00008356 t handle_dio_timer
+000084aa t handle_dis_timer
+000082a2 t handle_unicast_dio_timer
+000069ce t init_dag
+000082d4 t new_dio_interval
+00006a46 t process_dio_init_dag
+0000a470 t process_thread_tcpip_process
+00008414 t resend_dao
+00006af6 T rpl_dag_get_root_ipaddr
+00007100 T rpl_dag_init
+00007054 T rpl_dag_init_root
+00006b14 T rpl_dag_leave
+00006b6a T rpl_dag_periodic
+00006b5e T rpl_dag_poison_and_leave
+
+FILE: extra-firmwares/mtype5756516.cooja
+UDP/simple_udp symbols:
+00000000000346c4 t init_simple_udp
+0000000000034971 t process_thread_simple_udp_process
+000000000003d576 t process_thread_udp_socket_process
+0000000000054580 D simple_udp_process
+0000000000034849 T simple_udp_register
+00000000000346f5 T simple_udp_send
+0000000000034767 T simple_udp_sendto
+00000000000347d9 T simple_udp_sendto_port
+000000000003d3c4 T udp_socket_bind
+000000000003d381 T udp_socket_close
+000000000003d417 T udp_socket_connect
+0000000000054720 D udp_socket_process
+000000000003d2c4 T udp_socket_register
+000000000003d48f T udp_socket_send
+000000000003d4e5 T udp_socket_sendto
+NullNet symbols:
+0000000000094e20 b broadcast_connection
+0000000000054700 D broadcast_example_process
+0000000000059998 B curr_log_level_nullnet
+0000000000019abb T frame802154_is_broadcast_addr
+000000000002bdc7 t handle_unicast_dio_timer
+0000000000022976 t is_broadcast_addr
+000000000006cc00 B n_broadcast
+0000000000023089 T packetbuf_holds_broadcast
+000000000003ce7a t process_thread_broadcast_example_process
+000000000002bd69 T rpl_timers_schedule_unicast_dio
+0000000000045668 R tsch_broadcast_address
+0000000000037b2e T tsch_queue_get_unicast_packet_for_any
+0000000000035784 T udp_broadcast_new
+RPL/uIP/6LoWPAN symbols:
+0000000000069600 b _rpl_neighbors_mem
+000000000002f219 t cmd_rpl_global_repair
+000000000002f2dc t cmd_rpl_local_repair
+000000000002ddcc t cmd_rpl_nbr
+000000000002e684 t cmd_rpl_refresh_routes
+000000000002ed78 t cmd_rpl_set_root
+000000000002df70 t cmd_rpl_status
+00000000000523e0 D cooja_radio_driver
+0000000000054000 D cooja_radio_process
+0000000000031102 t copy_frags2uip
+0000000000059988 B curr_log_level_rpl
+000000000005998c B curr_log_level_tcpip
+00000000000543e0 d dao_ack_handler
+000000000002a656 t dao_ack_input
+00000000000543c0 d dao_handler
+000000000002a018 t dao_input
+0000000000033687 t digest_paging_dispatch
+00000000000543a0 d dio_handler
+00000000000292dc t dio_input
+0000000000054380 d dis_handler
+0000000000029217 t dis_input
+000000000006a8c0 b dis_timer
+000000000001ba87 T gpio_hal_arch_no_port_interrupt_disable
+000000000002c0da t handle_dao_ack_timer
+000000000002bc58 t handle_dio_timer
+
+FILE: extra-firmwares/nullnet-broadcast.z1
+UDP/simple_udp symbols:
+NullNet symbols:
+00004e64 T frame802154_is_broadcast_addr
+00001a2a B nullnet_buf
+000073b2 R nullnet_driver
+0000114e D nullnet_example_process
+00001a2c B nullnet_len
+00005b1a T nullnet_set_input_callback
+00005d06 T packetbuf_holds_broadcast
+000059a0 t process_thread_nullnet_example_process
+RPL/uIP/6LoWPAN symbols:
+         U uip_aligned_buf
+
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+UDP/simple_udp symbols:
+NullNet symbols:
+0000132c B curr_log_level_nullnet
+00005c9a T frame802154_is_broadcast_addr
+00001cf6 B nullnet_buf
+000083ac R nullnet_driver
+00001192 D nullnet_example_process
+00001cf8 B nullnet_len
+000068f2 T nullnet_set_input_callback
+00006af2 T packetbuf_holds_broadcast
+00006746 t process_thread_nullnet_example_process
+RPL/uIP/6LoWPAN symbols:
+00001334 B curr_log_level_rpl
+00001332 B curr_log_level_tcpip
+         U uip_aligned_buf
+
+FILE: extra-firmwares/nullnet-unicast.sky
+UDP/simple_udp symbols:
+NullNet symbols:
+0000233e B curr_log_level_nullnet
+00005b5a T frame802154_is_broadcast_addr
+00002e1e B nullnet_buf
+0000aed0 R nullnet_driver
+00001192 D nullnet_example_process
+00002e20 B nullnet_len
+00007142 T nullnet_set_input_callback
+00007346 T packetbuf_holds_broadcast
+00006672 t process_thread_nullnet_example_process
+RPL/uIP/6LoWPAN symbols:
+00008f9a T __floatundisf
+00002346 B curr_log_level_rpl
+00002344 B curr_log_level_tcpip
+00002df4 B distance_zero
+         U uip_aligned_buf
+
+FILE: extra-firmwares/nullnet-unicast.z1
+UDP/simple_udp symbols:
+NullNet symbols:
+00004e64 T frame802154_is_broadcast_addr
+000024c4 B nullnet_buf
+0000998a R nullnet_driver
+00001150 D nullnet_example_process
+000024c6 B nullnet_len
+000061a2 T nullnet_set_input_callback
+0000638e T packetbuf_holds_broadcast
+000059a0 t process_thread_nullnet_example_process
+RPL/uIP/6LoWPAN symbols:
+00007e98 T __floatundisf
+         U uip_aligned_buf
+
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+UDP/simple_udp symbols:
+NullNet symbols:
+00002406 B curr_log_level_nullnet
+00005b5a T frame802154_is_broadcast_addr
+00002e8e B nullnet_buf
+000083da R nullnet_driver
+00001192 D nullnet_example_process
+00002e90 B nullnet_len
+000068b4 T nullnet_set_input_callback
+00006ab8 T packetbuf_holds_broadcast
+00006672 t process_thread_nullnet_example_process
+RPL/uIP/6LoWPAN symbols:
+0000240e B curr_log_level_rpl
+0000240c B curr_log_level_tcpip
+         U uip_aligned_buf
+
+FILE: extra-firmwares/udp-client.sky
+UDP/simple_udp symbols:
+0000b150 t process_thread_simple_udp_process
+0000b86e t process_thread_udp_client_process
+000011f4 D simple_udp_process
+0000b234 T simple_udp_register
+0000b208 T simple_udp_sendto
+00001212 D udp_client_process
+NullNet symbols:
+000013e0 B curr_log_level_nullnet
+00005baa T frame802154_is_broadcast_addr
+00009028 t handle_unicast_dio_timer
+00006fe8 T packetbuf_holds_broadcast
+00009290 T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001c88 b _rpl_neighbors_mem
+000013e8 B curr_log_level_rpl
+000013e6 B curr_log_level_tcpip
+000011c8 d dao_ack_handler
+000083ba t dao_ack_input
+000011c2 d dao_handler
+000083ea t dao_input
+000011bc d dio_handler
+00008556 t dio_input
+000011b6 d dis_handler
+00008810 t dis_input
+00001d08 b dis_timer
+0000903a t handle_dao_ack_timer
+000090e0 t handle_dio_timer
+0000923c t handle_dis_timer
+00009028 t handle_unicast_dio_timer
+00007596 t init_dag
+0000905a t new_dio_interval
+0000761a t process_dio_init_dag
+0000b5b2 t process_thread_tcpip_process
+000091a2 t resend_dao
+000076ca T rpl_dag_get_root_ipaddr
+00007d24 T rpl_dag_init
+00007c68 T rpl_dag_init_root
+000076e8 T rpl_dag_leave
+
+FILE: extra-firmwares/udp-client.z1
+UDP/simple_udp symbols:
+0000a0e4 t process_thread_simple_udp_process
+0000a83c t process_thread_udp_client_process
+000011ca D simple_udp_process
+0000a1b4 T simple_udp_register
+0000a18c T simple_udp_sendto
+000011ee D udp_client_process
+NullNet symbols:
+00004f64 T frame802154_is_broadcast_addr
+000081d2 t handle_unicast_dio_timer
+00006324 T packetbuf_holds_broadcast
+0000842e T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001b08 b _rpl_neighbors_mem
+00001188 d dao_ack_handler
+00007622 t dao_ack_input
+00001180 d dao_handler
+00007652 t dao_input
+00001178 d dio_handler
+000077aa t dio_input
+00001170 d dis_handler
+00007a3c t dis_input
+00001b48 b dis_timer
+000081e4 t handle_dao_ack_timer
+00008286 t handle_dio_timer
+000083da t handle_dis_timer
+000081d2 t handle_unicast_dio_timer
+000068fe t init_dag
+00008204 t new_dio_interval
+00006976 t process_dio_init_dag
+0000a516 t process_thread_tcpip_process
+00008344 t resend_dao
+00006a26 T rpl_dag_get_root_ipaddr
+00007030 T rpl_dag_init
+00006f84 T rpl_dag_init_root
+00006a44 T rpl_dag_leave
+00006a9a T rpl_dag_periodic
+00006a8e T rpl_dag_poison_and_leave
+
+FILE: extra-firmwares/udp-server.sky
+UDP/simple_udp symbols:
+0000b150 t process_thread_simple_udp_process
+0000b828 t process_thread_udp_server_process
+000011f4 D simple_udp_process
+0000b234 T simple_udp_register
+0000b208 T simple_udp_sendto
+00001212 D udp_server_process
+NullNet symbols:
+000013e0 B curr_log_level_nullnet
+00005baa T frame802154_is_broadcast_addr
+00009028 t handle_unicast_dio_timer
+00006fe8 T packetbuf_holds_broadcast
+00009290 T rpl_timers_schedule_unicast_dio
+RPL/uIP/6LoWPAN symbols:
+00001c88 b _rpl_neighbors_mem
+000013e8 B curr_log_level_rpl
+000013e6 B curr_log_level_tcpip
+000011c8 d dao_ack_handler
+000083ba t dao_ack_input
+000011c2 d dao_handler
+000083ea t dao_input
+000011bc d dio_handler
+00008556 t dio_input
+000011b6 d dis_handler
+00008810 t dis_input
+00001d08 b dis_timer
+0000903a t handle_dao_ack_timer
+000090e0 t handle_dio_timer
+0000923c t handle_dis_timer
+00009028 t handle_unicast_dio_timer
+00007596 t init_dag
+0000905a t new_dio_interval
+0000761a t process_dio_init_dag
+0000b5b2 t process_thread_tcpip_process
+000091a2 t resend_dao
+000076ca T rpl_dag_get_root_ipaddr
+00007d24 T rpl_dag_init
+00007c68 T rpl_dag_init_root
+000076e8 T rpl_dag_leave
+
+FILE: ./new-firmware.z1
+Hardware symbols:
+0000c8f4 R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000c902 R button_sensor
+0000244c b enabled
+0000249d b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005cf2 T leds_arch_get
+00005ce4 T leds_arch_init
+00005d26 T leds_arch_set
+00005d64 T leds_init
+00005d7c T leds_off
+00005d6a T leds_on
+00002499 b num_sensors
+0000ab06 t process_thread_sensors_process
+0000122c D sensors
+0000abc8 T sensors_changed
+00002891 B sensors_event
+00002893 B sensors_flags
+000011d6 D sensors_process
+0000c9f2 R tmp102
+0000c754 T tmp102_init
+0000c7a8 T tmp102_read_reg
+0000c806 T tmp102_read_temp_x100
+0000c778 T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+failed to create packet, seqno: %d
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+failed to create a new RPL DAG
+failed to set prefix
+failed to initialize DAG
+failed to init DAG
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+failed to add link on incoming DAO
+Sensors
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+
+FILE: ./udp-client.z1
+Hardware symbols:
+0000d33c R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000d34a R button_sensor
+00002476 b enabled
+00002554 b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005640 T leds_arch_get
+00005632 T leds_arch_init
+00005674 T leds_arch_set
+000056b2 T leds_init
+000056ca T leds_off
+000056b8 T leds_on
+000024c3 b num_sensors
+00008b14 t process_thread_sensors_process
+0000122c D sensors
+00008bd6 T sensors_changed
+00002969 B sensors_event
+0000296b B sensors_flags
+000011be D sensors_process
+0000d42e R tmp102
+0000a72c T tmp102_init
+0000a780 T tmp102_read_reg
+0000a7de T tmp102_read_temp_x100
+0000a750 T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+FILE: ./udp-server.z1
+Hardware symbols:
+0000d24c R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000d25a R button_sensor
+0000245e b enabled
+0000253c b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005640 T leds_arch_get
+00005632 T leds_arch_init
+00005674 T leds_arch_set
+000056b2 T leds_init
+000056ca T leds_off
+000056b8 T leds_on
+000024ab b num_sensors
+00008b14 t process_thread_sensors_process
+0000122c D sensors
+00008bd6 T sensors_changed
+00002931 B sensors_event
+00002933 B sensors_flags
+000011be D sensors_process
+0000d33e R tmp102
+0000a72c T tmp102_init
+0000a780 T tmp102_read_reg
+0000a7de T tmp102_read_temp_x100
+0000a750 T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+FILE: extra-firmwares/base-demo.simplelink
+Hardware symbols:
+00010d40 R BoardGpioInitTable
+20001e58 D HwiP_swiPIntNum
+0000f80c T NOROM_ChipInfo_GetChipFamily
+0000f828 T NOROM_ChipInfo_GetChipType
+0000f878 T NOROM_ChipInfo_GetHwRevision
+0000f7f4 T NOROM_ChipInfo_GetPackageType
+00010d84 R PINCC26XX_hwAttrs
+0000c468 t PINCC26XX_setIoCfg
+0000ca88 T PINCC26XX_setMux
+0000c9e8 T PIN_add
+0000c804 T PIN_close
+0000c8c0 T PIN_getConfig
+0000c824 T PIN_getInputValue
+0000c44c t PIN_hwi
+0000c598 T PIN_init
+0000c940 T PIN_open
+0000c8b4 T PIN_registerIntCb
+0000c798 T PIN_remove
+0000c90c T PIN_setConfig
+0000ca50 T PIN_setInterrupt
+0000c838 T PIN_setOutputEnable
+0000c880 T PIN_setOutputValue
+0000c408 t PIN_swi
+200027d4 b antennaPins
+00010e60 R batmon_sensor
+200027f8 b button_event_handlers
+20001b40 D button_hal_buttons
+0000fed8 T button_hal_get_state
+00000858 T button_hal_init
+20004a90 B button_hal_periodic_event
+20004a91 B button_hal_press_event
+20001b30 D button_hal_process
+20004a92 B button_hal_release_event
+20004244 b defaultPinConfig
+200027f4 b enabled
+Hardware strings:
+Battery Monitor
+Button HAL process
+Check failed: %u vs. %u
+chipinfo.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+PIN.h
+PINCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+PINCC26XX.c
+PINCC26XX.h
+PIN.h
+chipinfo.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+PIN.h
+PINCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+PIN.h
+PINCC26XX.h
+chipinfo.c
+chipinfo.h
+
+FILE: extra-firmwares/hardworker.z1
+Hardware symbols:
+0000c4a0 R adxl345
+0000125e d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000c4ae R button_sensor
+000024c5 b enabled
+00002474 b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000116e D led_process
+0000136a b led_timer
+00005ddc T leds_arch_get
+00005dce T leds_arch_init
+00005e10 T leds_arch_set
+00005e4e T leds_init
+00005e66 T leds_off
+00005e54 T leds_on
+00005e78 T leds_toggle
+000024c1 b num_sensors
+00005c8a t process_thread_led_process
+00005b74 t process_thread_sensor_process
+0000add2 t process_thread_sensors_process
+00001156 D sensor_process
+00001252 D sensors
+0000ae94 T sensors_changed
+000028b0 B sensors_event
+000028b2 B sensors_flags
+Hardware strings:
+ADXL345 sensor
+Button
+failed to create packet, seqno: %d
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+[SENSOR] Button pressed
+[SENSOR] Received UDP-triggered poll
+[LED] Toggled
+Sensor Event P.ID:06
+LED Toggle P.ID:03
+process '%s' called again with event %d
+failed to create a new RPL DAG
+failed to set prefix
+failed to initialize DAG
+failed to init DAG
+IPv6 cache full, dropping DIO
+failed to add neighbor
+
+FILE: extra-firmwares/hello-world.sky
+Hardware symbols:
+         U button_hal_button_count
+         U button_hal_buttons
+0000e08c R button_sensor
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00006264 T leds_arch_get
+00006256 T leds_arch_init
+00006298 T leds_arch_set
+000062d6 T leds_init
+000062ee T leds_off
+000062dc T leds_on
+00001d3a b num_sensors
+00009986 t process_thread_sensors_process
+000011b0 D sensors
+00009a48 T sensors_changed
+00002c7a B sensors_event
+00002c78 B sensors_flags
+000011f8 D sensors_process
+Hardware strings:
+MButton
+Sensors
+Check failed: %u vs. %u
+
+FILE: extra-firmwares/hello-world.z1
+Hardware symbols:
+0000cebc R adxl345
+00001230 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000ceca R button_sensor
+00002430 b enabled
+00002481 b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000568e T leds_arch_get
+00005680 T leds_arch_init
+000056c2 T leds_arch_set
+00005700 T leds_init
+00005718 T leds_off
+00005706 T leds_on
+0000247d b num_sensors
+00008a9c t process_thread_sensors_process
+00001224 D sensors
+00008b5e T sensors_changed
+0000286c B sensors_event
+0000286e B sensors_flags
+000011ce D sensors_process
+0000cfb2 R tmp102
+0000a5be T tmp102_init
+0000a612 T tmp102_read_reg
+0000a670 T tmp102_read_temp_x100
+0000a5e2 T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+Sensors
+Check failed: %u vs. %u
+TMP102 sensor
+
+FILE: extra-firmwares/mtype5756516.cooja
+Hardware symbols:
+000000000001543e T beep_spinup
+0000000000094a20 b burst_link_scheduled
+0000000000054990 b button_event_handlers
+0000000000044144 R button_hal_button_count
+0000000000053fb0 D button_hal_buttons
+0000000000015695 T button_hal_get_by_id
+00000000000156e3 T button_hal_get_by_index
+000000000001571a T button_hal_get_state
+000000000001577d T button_hal_init
+0000000000054982 B button_hal_periodic_event
+0000000000054980 B button_hal_press_event
+0000000000053ee0 D button_hal_process
+0000000000054981 B button_hal_release_event
+0000000000053f20 d button_user
+000000000002d8eb t cmd_ping
+000000000006b322 b curr_ping_datalen
+000000000006b310 b curr_ping_output_func
+000000000006b318 b curr_ping_process
+000000000006b320 b curr_ping_ttl
+000000000001abd5 T frame80215e_create_ie_tsch_channel_hopping_sequence
+000000000002d0d0 t get_sensor_index
+000000000001b9e4 T gpio_hal_arch_init
+000000000001bb88 T gpio_hal_arch_no_port_clear_pin
+000000000001bc52 T gpio_hal_arch_no_port_clear_pins
+000000000001ba87 T gpio_hal_arch_no_port_interrupt_disable
+000000000001ba3a T gpio_hal_arch_no_port_interrupt_enable
+000000000001bb0a T gpio_hal_arch_no_port_pin_cfg_get
+000000000001bad4 T gpio_hal_arch_no_port_pin_cfg_set
+000000000001bb3e T gpio_hal_arch_no_port_pin_set_input
+000000000001bb51 T gpio_hal_arch_no_port_pin_set_output
+000000000001bbac T gpio_hal_arch_no_port_read_pin
+000000000001bca1 T gpio_hal_arch_no_port_read_pins
+000000000001bb64 T gpio_hal_arch_no_port_set_pin
+000000000001bc03 T gpio_hal_arch_no_port_set_pins
+000000000001be9a T gpio_hal_arch_no_port_toggle_pin
+Hardware strings:
+beep_spinup
+button_hal_process
+button_hal_press_event
+button_hal_release_event
+button_hal_periodic_event
+button_hal_get_state
+button_hal_get_by_id
+button_hal_buttons
+button_hal_get_by_index
+button_hal_button_count
+gpio_hal_arch_no_port_read_pin
+button_hal_init
+gpio_hal_arch_no_port_pin_set_input
+gpio_hal_arch_no_port_pin_cfg_set
+gpio_hal_arch_no_port_interrupt_enable
+gpio_hal_register_handler
+simButtonChanged
+simButtonIsDown
+simButtonIsActive
+gpio_hal_arch_no_port_clear_pin
+
+FILE: extra-firmwares/nullnet-broadcast.z1
+Hardware symbols:
+0000731c R adxl345
+0000118e d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000732a R button_sensor
+000019c8 b enabled
+000019fc b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000054d6 T leds_arch_get
+000054c8 T leds_arch_init
+0000550a T leds_arch_set
+00005548 T leds_init
+00005560 T leds_off
+0000554e T leds_on
+000019fb b num_sensors
+00006250 t process_thread_sensors_process
+00001182 D sensors
+00006312 T sensors_changed
+00001a5f B sensors_event
+00001a60 B sensors_flags
+0000116a D sensors_process
+00007412 R tmp102
+00006536 T tmp102_init
+0000658a T tmp102_read_reg
+000065e8 T tmp102_read_temp_x100
+0000655a T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+Hardware symbols:
+         U button_hal_button_count
+         U button_hal_buttons
+00008238 R button_sensor
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00006298 T leds_arch_get
+0000628a T leds_arch_init
+000062cc T leds_arch_set
+0000630a T leds_init
+00006322 T leds_off
+00006310 T leds_on
+00001aee b num_sensors
+000070ea t process_thread_sensors_process
+00001200 D sensors
+000071ac T sensors_changed
+00001d30 B sensors_event
+00001d2e B sensors_flags
+00001214 D sensors_process
+Hardware strings:
+N(N6NjNButton
+Sensors
+Check failed: %u vs. %u
+
+FILE: extra-firmwares/nullnet-unicast.sky
+Hardware symbols:
+         U button_hal_button_count
+         U button_hal_buttons
+0000ab58 R button_sensor
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000616c T leds_arch_get
+0000615e T leds_arch_init
+000061a0 T leds_arch_set
+000061de T leds_init
+000061f6 T leds_off
+000061e4 T leds_on
+00002c20 b num_sensors
+000078f4 t process_thread_sensors_process
+0000110c D sensors
+000079b6 T sensors_changed
+00002e54 B sensors_event
+00002e4a B sensors_flags
+00002228 D sensors_process
+Hardware strings:
+L&M4MhMButton
+Sensors
+Check failed: %ld vs. %ld
+
+FILE: extra-firmwares/nullnet-unicast.z1
+Hardware symbols:
+000098f4 R adxl345
+00001a3c d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+00009902 R button_sensor
+000023d2 b enabled
+00002406 b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000054d6 T leds_arch_get
+000054c8 T leds_arch_init
+0000550a T leds_arch_set
+00005548 T leds_init
+00005560 T leds_off
+0000554e T leds_on
+00002405 b num_sensors
+000068d8 t process_thread_sensors_process
+00001a30 D sensors
+0000699a T sensors_changed
+000024f9 B sensors_event
+000024fa B sensors_flags
+00001a18 D sensors_process
+000099ea R tmp102
+00006bbe T tmp102_init
+00006c12 T tmp102_read_reg
+00006c70 T tmp102_read_temp_x100
+00006be2 T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+Hardware symbols:
+         U button_hal_button_count
+         U button_hal_buttons
+00008210 R button_sensor
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000616c T leds_arch_get
+0000615e T leds_arch_init
+000061a0 T leds_arch_set
+000061de T leds_init
+000061f6 T leds_off
+000061e4 T leds_on
+00002cbe b num_sensors
+00007066 t process_thread_sensors_process
+0000110c D sensors
+00007128 T sensors_changed
+00002ec4 B sensors_event
+00002eba B sensors_flags
+000022f0 D sensors_process
+Hardware strings:
+L&M4MhMButton
+Sensors
+Check failed: %ld vs. %ld
+
+FILE: extra-firmwares/udp-client.sky
+Hardware symbols:
+         U button_hal_button_count
+         U button_hal_buttons
+0000e480 R button_sensor
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000061a8 T leds_arch_get
+0000619a T leds_arch_init
+000061dc T leds_arch_set
+0000621a T leds_init
+00006232 T leds_off
+00006220 T leds_on
+00001d32 b num_sensors
+000098ca t process_thread_sensors_process
+000011a2 D sensors
+0000998c T sensors_changed
+00002db6 B sensors_event
+00002db4 B sensors_flags
+000011ea D sensors_process
+Hardware strings:
+MButton
+Sensors
+Check failed: %u vs. %u
+
+FILE: extra-firmwares/udp-client.z1
+Hardware symbols:
+0000d23c R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000d24a R button_sensor
+00002460 b enabled
+0000253e b enabled
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000055be T leds_arch_get
+000055b0 T leds_arch_init
+000055f2 T leds_arch_set
+00005630 T leds_init
+00005648 T leds_off
+00005636 T leds_on
+000024ad b num_sensors
+000089cc t process_thread_sensors_process
+0000122c D sensors
+00008a8e T sensors_changed
+00002948 B sensors_event
+0000294a B sensors_flags
+000011be D sensors_process
+0000d32e R tmp102
+0000a664 T tmp102_init
+0000a6b8 T tmp102_read_reg
+0000a716 T tmp102_read_temp_x100
+0000a688 T tmp102_stop
+Hardware strings:
+ADXL345 sensor
+Button
+Sensors
+Check failed: %u vs. %u
+TMP102 sensor
+
+FILE: extra-firmwares/udp-server.sky
+Hardware symbols:
+         U button_hal_button_count
+         U button_hal_buttons
+0000e344 R button_sensor
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000061a8 T leds_arch_get
+0000619a T leds_arch_init
+000061dc T leds_arch_set
+0000621a T leds_init
+00006232 T leds_off
+00006220 T leds_on
+00001d32 b num_sensors
+000098ca t process_thread_sensors_process
+000011a2 D sensors
+0000998c T sensors_changed
+00002d7e B sensors_event
+00002d7c B sensors_flags
+000011ea D sensors_process
+Hardware strings:
+MButton
+Sensors
+Check failed: %u vs. %u
+
+FILE: ./new-firmware.z1
+Vector sections:
+  [ 7] .vectors          PROGBITS        0000ffc0 00cfb2 000040 00  AX  0   0  1
+ISR symbols:
+00003376 W __isr_0
+00003376 W __isr_1
+00003376 W __isr_10
+00003376 W __isr_11
+00003376 W __isr_12
+00003376 W __isr_13
+00003376 W __isr_14
+00003376 W __isr_15
+000036f4 T __isr_16
+00003778 T __isr_17
+0000353e T __isr_18
+000035c2 T __isr_19
+00003376 W __isr_2
+00003376 W __isr_20
+00003376 W __isr_21
+00003376 W __isr_22
+000037ae T __isr_23
+00003624 T __isr_24
+0000378c T __isr_25
+000037d8 T __isr_26
+00003376 W __isr_27
+000035fe T __isr_28
+00003376 W __isr_29
+00003376 W __isr_3
+00003376 W __isr_30
+00003376 W __isr_4
+00003376 W __isr_5
+00003376 W __isr_6
+00003376 W __isr_7
+00003376 W __isr_8
+00003376 W __isr_9
+00003100 W _reset_vector__
+00004110 T cc2420_interrupt
+000035fe T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00003778 T i2c_rx_interrupt
+000036f4 T i2c_tx_interrupt
+000035c2 T irq_p2
+0000353e T port1_isr
+000037ae T uart0_rx_interrupt
+
+FILE: ./udp-client.z1
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffc0 00a93c 000040 00  AX  0   0  1
+ISR symbols:
+00003376 W __isr_0
+00003376 W __isr_1
+00003376 W __isr_10
+00003376 W __isr_11
+00003376 W __isr_12
+00003376 W __isr_13
+00003376 W __isr_14
+00003376 W __isr_15
+000036f4 T __isr_16
+00003778 T __isr_17
+0000353e T __isr_18
+000035c2 T __isr_19
+00003376 W __isr_2
+00003376 W __isr_20
+00003376 W __isr_21
+00003376 W __isr_22
+000037ae T __isr_23
+00003624 T __isr_24
+0000378c T __isr_25
+000037d8 T __isr_26
+00003376 W __isr_27
+000035fe T __isr_28
+00003376 W __isr_29
+00003376 W __isr_3
+00003376 W __isr_30
+00003376 W __isr_4
+00003376 W __isr_5
+00003376 W __isr_6
+00003376 W __isr_7
+00003376 W __isr_8
+00003376 W __isr_9
+00003100 W _reset_vector__
+00004110 T cc2420_interrupt
+000035fe T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00003778 T i2c_rx_interrupt
+000036f4 T i2c_tx_interrupt
+000035c2 T irq_p2
+0000353e T port1_isr
+000037ae T uart0_rx_interrupt
+
+FILE: ./udp-server.z1
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffc0 00a840 000040 00  AX  0   0  1
+ISR symbols:
+00003376 W __isr_0
+00003376 W __isr_1
+00003376 W __isr_10
+00003376 W __isr_11
+00003376 W __isr_12
+00003376 W __isr_13
+00003376 W __isr_14
+00003376 W __isr_15
+000036f4 T __isr_16
+00003778 T __isr_17
+0000353e T __isr_18
+000035c2 T __isr_19
+00003376 W __isr_2
+00003376 W __isr_20
+00003376 W __isr_21
+00003376 W __isr_22
+000037ae T __isr_23
+00003624 T __isr_24
+0000378c T __isr_25
+000037d8 T __isr_26
+00003376 W __isr_27
+000035fe T __isr_28
+00003376 W __isr_29
+00003376 W __isr_3
+00003376 W __isr_30
+00003376 W __isr_4
+00003376 W __isr_5
+00003376 W __isr_6
+00003376 W __isr_7
+00003376 W __isr_8
+00003376 W __isr_9
+00003100 W _reset_vector__
+00004110 T cc2420_interrupt
+000035fe T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00003778 T i2c_rx_interrupt
+000036f4 T i2c_tx_interrupt
+000035c2 T irq_p2
+0000353e T port1_isr
+000037ae T uart0_rx_interrupt
+
+FILE: extra-firmwares/base-demo.simplelink
+Vector sections:
+  [ 1] .resetVecs        PROGBITS        00000000 010000 000040 00   A  0   0  4
+  [14] .ARM.exidx        ARM_EXIDX       00011c04 031c04 000008 00  AL 10   0  4
+ISR symbols:
+00008b14 T ClockP_getTicksUntilInterrupt
+00009140 T HwiP_Params_init
+00009078 T HwiP_clearInterrupt
+000090b8 T HwiP_construct
+00009084 T HwiP_destruct
+00009060 T HwiP_disable
+000090a0 T HwiP_disableInterrupt
+00009040 t HwiP_dispatch
+20003fa8 b HwiP_dispatchTable
+0000905c T HwiP_enable
+000090ac T HwiP_enableInterrupt
+00009180 T HwiP_inISR
+00009154 T HwiP_plug
+00009174 T HwiP_post
+00009070 T HwiP_restore
+00009158 T HwiP_setFunc
+00009194 T HwiP_setPriority
+20001e58 D HwiP_swiPIntNum
+0000bea4 t I2CCC26XX_hwiFxn
+0000fb6c T NOROM_RFCHwIntGetAndClear
+0000c44c t PIN_hwi
+0000ca50 T PIN_setInterrupt
+0000ac8c t RF_hwiCpe0Active
+00009c98 t RF_hwiCpe0ChangePhy
+20004174 b RF_hwiCpe0Obj
+0000ada0 t RF_hwiCpe0PowerFsm
+00009b94 t RF_hwiHw
+20004190 b RF_hwiHwObj
+0000dda4 t SPICC26X2DMA_hwiFxn
+00009508 t SwiP_handleHwi
+20004088 b SwiP_hwiStruct
+0000e5ec t TRNGCC26XX_basicHwiFxn
+200042f8 b TRNGCC26XX_hwi
+20003f8c b TimerP_hwiStruct
+0000f020 T UARTCC26XX_hwiIntFxn
+0000bd28 T UDMACC26XX_hwiIntFxn
+000016f4 T gpio_hal_arch_no_port_interrupt_enable
+20003410 b hwi_dispatch_fxn
+20004268 b pinHwi
+00006750 T resetISR
+
+FILE: extra-firmwares/hardworker.z1
+Vector sections:
+  [ 7] .vectors          PROGBITS        0000ffc0 00cf92 000040 00  AX  0   0  1
+ISR symbols:
+000033b2 W __isr_0
+000033b2 W __isr_1
+000033b2 W __isr_10
+000033b2 W __isr_11
+000033b2 W __isr_12
+000033b2 W __isr_13
+000033b2 W __isr_14
+000033b2 W __isr_15
+0000372c T __isr_16
+000037b0 T __isr_17
+0000357a T __isr_18
+000035fe T __isr_19
+000033b2 W __isr_2
+000033b2 W __isr_20
+000033b2 W __isr_21
+000033b2 W __isr_22
+000037e4 T __isr_23
+00003660 T __isr_24
+000037c4 T __isr_25
+0000380e T __isr_26
+000033b2 W __isr_27
+0000363a T __isr_28
+000033b2 W __isr_29
+000033b2 W __isr_3
+000033b2 W __isr_30
+000033b2 W __isr_4
+000033b2 W __isr_5
+000033b2 W __isr_6
+000033b2 W __isr_7
+000033b2 W __isr_8
+000033b2 W __isr_9
+00003100 W _reset_vector__
+00004178 T cc2420_interrupt
+0000363a T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+000037b0 T i2c_rx_interrupt
+0000372c T i2c_tx_interrupt
+000035fe T irq_p2
+0000357a T port1_isr
+000037e4 T uart0_rx_interrupt
+
+FILE: extra-firmwares/hello-world.sky
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffe0 00a6d6 000020 00  AX  0   0  1
+ISR symbols:
+         U InterruptVectors
+0000427c W __isr_0
+00004314 T __isr_1
+0000d268 T __isr_10
+0000427c W __isr_11
+0000435a T __isr_12
+0000427c W __isr_13
+0000427c W __isr_14
+0000427c W __isr_2
+0000427c W __isr_3
+00004380 T __isr_4
+00004eda T __isr_5
+00009926 T __isr_6
+0000427c W __isr_7
+0000427c W __isr_8
+0000427c W __isr_9
+00004000 W _reset_vector__
+00004ac0 T cc2420_interrupt
+00004380 T cc2420_port1_interrupt
+0000435a T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00004314 T irq_p2
+0000d268 T watchdog_interrupt
+
+FILE: extra-firmwares/hello-world.z1
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffc0 00a406 000040 00  AX  0   0  1
+ISR symbols:
+0000337c W __isr_0
+0000337c W __isr_1
+0000337c W __isr_10
+0000337c W __isr_11
+0000337c W __isr_12
+0000337c W __isr_13
+0000337c W __isr_14
+0000337c W __isr_15
+000036f6 T __isr_16
+0000377a T __isr_17
+00003544 T __isr_18
+000035c8 T __isr_19
+0000337c W __isr_2
+0000337c W __isr_20
+0000337c W __isr_21
+0000337c W __isr_22
+000037ae T __isr_23
+0000362a T __isr_24
+0000378e T __isr_25
+000037d8 T __isr_26
+0000337c W __isr_27
+00003604 T __isr_28
+0000337c W __isr_29
+0000337c W __isr_3
+0000337c W __isr_30
+0000337c W __isr_4
+0000337c W __isr_5
+0000337c W __isr_6
+0000337c W __isr_7
+0000337c W __isr_8
+0000337c W __isr_9
+00003100 W _reset_vector__
+0000410a T cc2420_interrupt
+00003604 T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+0000377a T i2c_rx_interrupt
+000036f6 T i2c_tx_interrupt
+000035c8 T irq_p2
+00003544 T port1_isr
+000037ae T uart0_rx_interrupt
+
+FILE: extra-firmwares/mtype5756516.cooja
+Vector sections:
+ISR symbols:
+000000000001ba87 T gpio_hal_arch_no_port_interrupt_disable
+000000000001ba3a T gpio_hal_arch_no_port_interrupt_enable
+
+FILE: extra-firmwares/nullnet-broadcast.z1
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffc0 004706 000040 00  AX  0   0  1
+ISR symbols:
+00003308 W __isr_0
+00003308 W __isr_1
+00003308 W __isr_10
+00003308 W __isr_11
+00003308 W __isr_12
+00003308 W __isr_13
+00003308 W __isr_14
+00003308 W __isr_15
+00003600 T __isr_16
+00003684 T __isr_17
+0000344a T __isr_18
+000034ce T __isr_19
+00003308 W __isr_2
+00003308 W __isr_20
+00003308 W __isr_21
+00003308 W __isr_22
+000036ba T __isr_23
+00003530 T __isr_24
+00003698 T __isr_25
+000036e4 T __isr_26
+00003308 W __isr_27
+0000350a T __isr_28
+00003308 W __isr_29
+00003308 W __isr_3
+00003308 W __isr_30
+00003308 W __isr_4
+00003308 W __isr_5
+00003308 W __isr_6
+00003308 W __isr_7
+00003308 W __isr_8
+00003308 W __isr_9
+00003100 W _reset_vector__
+0000401c T cc2420_interrupt
+0000350a T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00003684 T i2c_rx_interrupt
+00003600 T i2c_tx_interrupt
+000034ce T irq_p2
+0000344a T port1_isr
+000036ba T uart0_rx_interrupt
+
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffe0 00476e 000020 00  AX  0   0  1
+ISR symbols:
+         U InterruptVectors
+0000421c W __isr_0
+000042b4 T __isr_1
+00007608 T __isr_10
+0000421c W __isr_11
+000042fa T __isr_12
+0000421c W __isr_13
+0000421c W __isr_14
+0000421c W __isr_2
+0000421c W __isr_3
+00004320 T __isr_4
+00004f6e T __isr_5
+0000708a T __isr_6
+0000421c W __isr_7
+0000421c W __isr_8
+0000421c W __isr_9
+00004000 W _reset_vector__
+00004b54 T cc2420_interrupt
+00004320 T cc2420_port1_interrupt
+000042fa T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+000042b4 T irq_p2
+00007608 T watchdog_interrupt
+
+FILE: extra-firmwares/nullnet-unicast.sky
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffe0 0083d2 000020 00  AX  0   0  1
+ISR symbols:
+         U InterruptVectors
+00004208 W __isr_0
+000042a6 T __isr_1
+00007e6e T __isr_10
+00004208 W __isr_11
+000042ec T __isr_12
+00004208 W __isr_13
+00004208 W __isr_14
+00004208 W __isr_2
+00004208 W __isr_3
+00004312 T __isr_4
+00004e6c T __isr_5
+00007878 T __isr_6
+00004208 W __isr_7
+00004208 W __isr_8
+00004208 W __isr_9
+00004000 W _reset_vector__
+00004a52 T cc2420_interrupt
+00004312 T cc2420_port1_interrupt
+000042ec T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+000042a6 T irq_p2
+00007e6e T watchdog_interrupt
+
+FILE: extra-firmwares/nullnet-unicast.z1
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffc0 007810 000040 00  AX  0   0  1
+ISR symbols:
+00003308 W __isr_0
+00003308 W __isr_1
+00003308 W __isr_10
+00003308 W __isr_11
+00003308 W __isr_12
+00003308 W __isr_13
+00003308 W __isr_14
+00003308 W __isr_15
+00003600 T __isr_16
+00003684 T __isr_17
+0000344a T __isr_18
+000034ce T __isr_19
+00003308 W __isr_2
+00003308 W __isr_20
+00003308 W __isr_21
+00003308 W __isr_22
+000036ba T __isr_23
+00003530 T __isr_24
+00003698 T __isr_25
+000036e4 T __isr_26
+00003308 W __isr_27
+0000350a T __isr_28
+00003308 W __isr_29
+00003308 W __isr_3
+00003308 W __isr_30
+00003308 W __isr_4
+00003308 W __isr_5
+00003308 W __isr_6
+00003308 W __isr_7
+00003308 W __isr_8
+00003308 W __isr_9
+00003100 W _reset_vector__
+0000401c T cc2420_interrupt
+0000350a T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00003684 T i2c_rx_interrupt
+00003600 T i2c_tx_interrupt
+000034ce T irq_p2
+0000344a T port1_isr
+000036ba T uart0_rx_interrupt
+
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffe0 0058a4 000020 00  AX  0   0  1
+ISR symbols:
+         U InterruptVectors
+00004208 W __isr_0
+000042a6 T __isr_1
+000075e0 T __isr_10
+00004208 W __isr_11
+000042ec T __isr_12
+00004208 W __isr_13
+00004208 W __isr_14
+00004208 W __isr_2
+00004208 W __isr_3
+00004312 T __isr_4
+00004e6c T __isr_5
+00006fea T __isr_6
+00004208 W __isr_7
+00004208 W __isr_8
+00004208 W __isr_9
+00004000 W _reset_vector__
+00004a52 T cc2420_interrupt
+00004312 T cc2420_port1_interrupt
+000042ec T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+000042a6 T irq_p2
+000075e0 T watchdog_interrupt
+
+FILE: extra-firmwares/udp-client.sky
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffe0 00ab7a 000020 00  AX  0   0  1
+ISR symbols:
+         U InterruptVectors
+0000427c W __isr_0
+00004314 T __isr_1
+0000d65a T __isr_10
+0000427c W __isr_11
+0000435a T __isr_12
+0000427c W __isr_13
+0000427c W __isr_14
+0000427c W __isr_2
+0000427c W __isr_3
+00004380 T __isr_4
+00004eda T __isr_5
+0000986a T __isr_6
+0000427c W __isr_7
+0000427c W __isr_8
+0000427c W __isr_9
+00004000 W _reset_vector__
+00004ac0 T cc2420_interrupt
+00004380 T cc2420_port1_interrupt
+0000435a T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00004314 T irq_p2
+0000d65a T watchdog_interrupt
+
+FILE: extra-firmwares/udp-client.z1
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffc0 00a7f2 000040 00  AX  0   0  1
+ISR symbols:
+0000337c W __isr_0
+0000337c W __isr_1
+0000337c W __isr_10
+0000337c W __isr_11
+0000337c W __isr_12
+0000337c W __isr_13
+0000337c W __isr_14
+0000337c W __isr_15
+000036f6 T __isr_16
+0000377a T __isr_17
+00003544 T __isr_18
+000035c8 T __isr_19
+0000337c W __isr_2
+0000337c W __isr_20
+0000337c W __isr_21
+0000337c W __isr_22
+000037ae T __isr_23
+0000362a T __isr_24
+0000378e T __isr_25
+000037d8 T __isr_26
+0000337c W __isr_27
+00003604 T __isr_28
+0000337c W __isr_29
+0000337c W __isr_3
+0000337c W __isr_30
+0000337c W __isr_4
+0000337c W __isr_5
+0000337c W __isr_6
+0000337c W __isr_7
+0000337c W __isr_8
+0000337c W __isr_9
+00003100 W _reset_vector__
+0000410a T cc2420_interrupt
+00003604 T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+0000377a T i2c_rx_interrupt
+000036f6 T i2c_tx_interrupt
+000035c8 T irq_p2
+00003544 T port1_isr
+000037ae T uart0_rx_interrupt
+
+FILE: extra-firmwares/udp-server.sky
+Vector sections:
+  [ 6] .vectors          PROGBITS        0000ffe0 00a9f8 000020 00  AX  0   0  1
+ISR symbols:
+         U InterruptVectors
+0000427c W __isr_0
+00004314 T __isr_1
+0000d51e T __isr_10
+0000427c W __isr_11
+0000435a T __isr_12
+0000427c W __isr_13
+0000427c W __isr_14
+0000427c W __isr_2
+0000427c W __isr_3
+00004380 T __isr_4
+00004eda T __isr_5
+0000986a T __isr_6
+0000427c W __isr_7
+0000427c W __isr_8
+0000427c W __isr_9
+00004000 W _reset_vector__
+00004ac0 T cc2420_interrupt
+00004380 T cc2420_port1_interrupt
+0000435a T cc2420_timerb1_interrupt
+         U gpio_hal_arch_port_interrupt_enable
+00004314 T irq_p2
+0000d51e T watchdog_interrupt
+
+FILE: ./new-firmware.z1
+Math/helper symbols:
+000033c4 T __divhi3
+00003436 T __divsi3
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+0000396a T accm_init
+000024b0 B accm_int1_cb
+000024ac B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+0000989e t nbr_path_cost
+0000389c t process_thread_accmeter_process
+00006fc2 T random_init
+00006fc8 T random_rand
+00003d8e t set_frame_filtering
+Largest functions:
+00004a58 00000270 T csma_output_packet
+00011d22 00000282 T uip_ds6_init
+0000931c 000002a2 T rpl_icmp6_dio_output
+00004776 000002e2 t transmit_from_queue
+000079a0 00000344 T rpl_process_dio
+0000c1d2 000003e6 T tcpip_ipv6_output
+000124de 00000420 t ns_input
+00008568 00000438 T rpl_ext_header_update
+00008d32 00000454 t dio_input
+000015a8 00000550 b buframmem_memb_mem
+00001d0c 00000558 b frag_buf
+00014082 00000742 T vuprintf
+000130f2 00000992 T uip_process
+0000b1cc 00000df4 t output
+00010000 0000118a t input
+
+FILE: ./udp-client.z1
+Math/helper symbols:
+000033c4 T __divhi3
+00003436 T __divsi3
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+0000396a T accm_init
+00002586 B accm_int1_cb
+00002582 B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+00007f2a t nbr_path_cost
+0000389c t process_thread_accmeter_process
+00006902 T random_init
+00006908 T random_rand
+00003d8e t set_frame_filtering
+Largest functions:
+00008eaa 0000016a t add_fragment
+0000c74c 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b5fa 00000292 t ns_input
+0000be0e 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c8c2 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+FILE: ./udp-server.z1
+Math/helper symbols:
+000033c4 T __divhi3
+00003436 T __divsi3
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+0000396a T accm_init
+0000254e B accm_int1_cb
+0000254a B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+00007f2a t nbr_path_cost
+0000389c t process_thread_accmeter_process
+00006902 T random_init
+00006908 T random_rand
+00003d8e t set_frame_filtering
+Largest functions:
+00008eaa 0000016a t add_fragment
+0000c65a 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b508 00000292 t ns_input
+0000bd1c 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c7d0 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+FILE: extra-firmwares/base-demo.simplelink
+Math/helper symbols:
+0000f9b8 T NOROM_OSCHF_SwitchToRcOscTurnOffXosc
+0000d7a8 T PowerCC26X2_RCOSC_clockFunc
+200041ac b RF_ratSyncCmd
+000003d0 W __aeabi_idiv0
+000003d0 W __aeabi_ldiv0
+00000040 T __aeabi_ldivmod
+000000e0 T __aeabi_uldivmod
+00000110 T __udivmoddi4
+20005178 b isInitialized
+20005179 b isInitialized
+2000517a b isInitialized
+2000517b b isInitialized
+2000517c b isInitialized
+000106e4 t nbr_path_cost
+00002c70 T random_init
+00002c44 T random_rand
+Largest functions:
+00000110 000002be T __udivmoddi4
+0000d4cc 000002c8 T PowerCC26X2_auxISR
+0000e2c0 000002c8 T SPICC26X2DMA_open
+0000dfe8 000002d8 T SPICC26X2DMA_transfer
+00008214 00000404 T uip_process
+2000395c 00000500 B uip_aligned_buf
+20004bfe 0000054c b frag_buf
+2000437a 00000550 b buframmem_memb_mem
+0000b0b0 00000584 t RF_fsmActiveState
+00005628 000006fc t output
+00006830 00000770 T format_str_v
+00005e70 000007d4 t input
+0000ed00 1fff6600 B __stack_size
+20014000 dffec13a N _stack_origin
+20005300 dfffae3a N _stack
+
+FILE: extra-firmwares/hardworker.z1
+Math/helper symbols:
+00003400 T __divhi3
+00003472 T __divsi3
+00003432 T __modhi3
+000034b4 T __modsi3
+000033b8 T __mulsi3
+00003510 T __udivdi3
+000033de T __udivhi3
+0000354c T __udivmoddi4
+0000343a T __udivsi3
+000039a0 T accm_init
+000024d8 B accm_int1_cb
+000024d4 B accm_int2_cb
+00003928 t accm_read_axis.part.0
+0000387e t accm_read_reg
+00003a18 T accm_stop
+00003826 t accm_write_reg
+00003854 t accm_write_stream
+00001100 D accmeter_process
+00009bc2 t nbr_path_cost
+000038d2 t process_thread_accmeter_process
+000071da T random_init
+000071e0 T random_rand
+00003df6 t set_frame_filtering
+Largest functions:
+0000b11c 0000028e t add_fragment
+0000964a 00000298 T rpl_icmp6_dio_output
+000047d4 000002de t transmit_from_queue
+00007bbc 00000344 T rpl_process_dio
+00008c9e 0000036a t dao_input
+0001131a 00000412 T tcpip_ipv6_output
+00012cc8 0000041e t ns_input
+0000871c 00000438 T rpl_ext_header_update
+00009008 000004ac t dio_input
+000015e2 00000550 b buframmem_memb_mem
+00001d34 00000558 b frag_buf
+000147de 00000742 T vuprintf
+000138b0 00000930 T uip_process
+0000b562 00000ddc t output
+00010000 0000122e t input
+
+FILE: extra-firmwares/hello-world.sky
+Math/helper symbols:
+0000de8a T __divhi3
+0000df04 T __divsi3
+0000debc T __modhi3
+0000df46 T __modsi3
+0000de3c T __mulsi3
+0000dfae T __udivdi3
+0000de68 T __udivhi3
+0000e002 T __udivmoddi4
+0000dec4 T __udivsi3
+0000e094 R cc2420_aes_128_driver
+00008d04 t nbr_path_cost
+00007542 T random_init
+00007548 T random_rand
+00004698 t set_frame_filtering
+Largest functions:
+0000d37e 00000194 t print_field
+00007a56 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009d8a 000001fc t add_fragment
+00008954 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c358 00000298 t ns_input
+0000813e 000002aa T rpl_ext_header_update
+00008612 000002ba t dio_input
+0000caa8 000004c2 T uip_process
+00001716 00000550 b buframmem_memb_mem
+00001eb4 00000558 b frag_buf
+0000d512 0000063e T vuprintf
+0000a054 0000079e t output
+0000a7f2 00000a1a t input
+
+FILE: extra-firmwares/hello-world.z1
+Math/helper symbols:
+000033ca T __divhi3
+0000343c T __divsi3
+000033fc T __modhi3
+0000347e T __modsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+0000396a T accm_init
+00002494 B accm_int1_cb
+00002490 B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+00007f02 t nbr_path_cost
+0000389c t process_thread_accmeter_process
+000068ce T random_init
+000068d4 T random_rand
+00003d88 t set_frame_filtering
+Largest functions:
+0000c2c6 00000176 t print_field
+00006db0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008e3a 000001e8 t add_fragment
+00007b8c 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007406 00000266 T rpl_ext_header_update
+0000b2a2 00000290 t ns_input
+0000787a 00000292 t dio_input
+0000b984 000004ba T uip_process
+0000159e 00000550 b buframmem_memb_mem
+00001cf0 00000558 b frag_buf
+0000c43c 00000742 T vuprintf
+000090d2 00000746 t output
+00009818 0000099c t input
+
+FILE: extra-firmwares/mtype5756516.cooja
+Math/helper symbols:
+0000000000044360 r SIN_TAB
+0000000000057b38 b addr_filter
+00000000000523c0 D aes_128_driver
+000000000006cb94 b asn_since_last_learning
+00000000000523d0 D ccm_star_driver
+000000000001c1e0 t cosI
+00000000000179de T crc16_add
+0000000000017a50 T crc16_data
+0000000000094d40 b current_channel_since.4
+000000000001c23c T ifft
+000000000005bf08 b l_missing.10
+000000000001cc0d T leds_single_off
+000000000001cba0 T leds_single_on
+000000000001cc7a T leds_single_toggle
+000000000002a810 t nbr_path_cost
+000000000002b72f t nbr_path_cost
+000000000005bf09 b r_missing.9
+0000000000024669 T random_init
+00000000000249d7 t random_interval
+0000000000024689 T random_rand
+0000000000016f47 t set_frame_filtering
+0000000000059b4c B simRandomSeed
+000000000001c17f t sinI
+Largest functions:
+00000000000586c0 00000000000012c0 b _link_stats_mem
+0000000000069600 00000000000012c0 b _rpl_neighbors_mem
+0000000000062f60 00000000000012c0 b neighbor_addr_mem_memb_mem
+00000000000002f0 0000000000001974 r __TMC_END__
+0000000000067480 0000000000001ec0 b buffered_msgs
+00000000000559c0 0000000000002000 B simLoggedData
+0000000000059b60 00000000000021c0 b buffered_message_set
+00000000000457d8 000000000000227c r __GNU_EH_FRAME_HDR
+000000000005bfa0 00000000000023d0 b cooja_thread
+0000000000060760 00000000000023d0 b process_run_thread
+000000000005e380 00000000000023d0 b rtimer_thread
+00000000000953c0 0000000000002580 b _ds6_neighbors_mem
+00000000000648e0 0000000000002a80 b buframmem_memb_mem
+0000000000098900 0000000000002ee0 b nodememb_memb_mem
+000000000006d460 0000000000026ac0 b _tsch_neighbors_mem
+
+FILE: extra-firmwares/nullnet-broadcast.z1
+Math/helper symbols:
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+00003876 T accm_init
+00001a02 B accm_int1_cb
+000019fe B accm_int2_cb
+000037fe t accm_read_axis.part.0
+00003754 t accm_read_reg
+000038ee T accm_stop
+000036fc t accm_write_reg
+0000372a t accm_write_stream
+00001100 D accmeter_process
+000037a8 t process_thread_accmeter_process
+000061f6 T random_init
+000061fc T random_rand
+00003c9a t set_frame_filtering
+Largest functions:
+00004f2c 000000d4 T frame802154_create
+00005d26 000000d6 T platform_init_stage_two
+00004cdc 000000e0 T frame802154_has_panid
+0000129a 000000e0 b received_seqnos
+00007152 000000e8 T memcpy
+00004342 000000ea T cc2420_init
+000040c4 0000011e t get_value
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+0000508c 0000015c T frame802154_parse
+00006812 00000176 t print_field
+00004596 000001b0 t transmit_from_queue
+0000313e 000001c4 T main
+0000144e 00000550 b buframmem_memb_mem
+00006988 00000742 T vuprintf
+
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+Math/helper symbols:
+0000806c T __mulsi3
+00008158 T __udivdi3
+00008098 T __udivhi3
+000081ac T __udivmoddi4
+000080ba T __udivsi3
+00008240 R cc2420_aes_128_driver
+00007014 T random_init
+0000701a T random_rand
+00004708 t set_frame_filtering
+Largest functions:
+00005b10 000000e0 T frame802154_has_panid
+00001338 000000e0 b received_seqnos
+00004e84 000000ea T cc2420_init
+00007514 000000f4 T uart1_init
+00007f06 000000fa T memcpy
+00004c00 0000011e t get_value
+0000573c 00000120 T ds2411_init
+00005360 00000146 T csma_output_packet
+00004d34 00000150 t set_value
+00005f18 00000168 T frame802154_parse
+000076a8 00000194 t print_field
+000051a4 000001bc t transmit_from_queue
+0000403e 000001d8 T main
+00001584 00000550 b buframmem_memb_mem
+0000783c 0000063e T vuprintf
+
+FILE: extra-firmwares/nullnet-unicast.sky
+Math/helper symbols:
+00009606 T __divsf3
+00008cc2 T __ieee754_sqrtf
+0000a944 T __muldi3
+000093f6 T __mulsf3
+0000a918 T __mulsi3
+0000aa7a T __udivdi3
+0000a9ba T __udivhi3
+0000aace T __udivmoddi4
+0000a9dc T __udivsi3
+0000ab60 R cc2420_aes_128_driver
+000077ee T random_init
+000077f4 T random_rand
+0000462a t set_frame_filtering
+Largest functions:
+00008cc2 00000172 T __ieee754_sqrtf
+00008b4e 00000174 T scalbnf
+00009f54 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00009b12 000001da T __pack_f
+00006672 000001e4 t process_thread_nullnet_example_process
+000093f6 00000210 T __mulsf3
+000090d8 00000282 t _fpadd_parts
+000019e4 000003e8 D node_positions
+00001520 000004c4 D anchor_nodes
+000026b6 00000550 b buframmem_memb_mem
+0000a0e8 0000063e T vuprintf
+00006856 00000864 T input_callback
+00007efe 00000c4a T __ieee754_powf
+
+FILE: extra-firmwares/nullnet-unicast.z1
+Math/helper symbols:
+000084c0 T __divsf3
+00007c22 T __ieee754_sqrtf
+000082c2 T __mulsf3
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+00003876 T accm_init
+0000240c B accm_int1_cb
+00002408 B accm_int2_cb
+000037fe t accm_read_axis.part.0
+00003754 t accm_read_reg
+000038ee T accm_stop
+000036fc t accm_write_reg
+0000372a t accm_write_stream
+00001100 D accmeter_process
+000037a8 t process_thread_accmeter_process
+0000687e T random_init
+00006884 T random_rand
+00003c9a t set_frame_filtering
+Largest functions:
+0000508c 0000015c T frame802154_parse
+00007aba 00000168 T scalbnf
+00008dea 00000176 t print_field
+000059a0 00000194 t process_thread_nullnet_example_process
+00004596 000001b0 t transmit_from_queue
+0000891a 000001c4 T __pack_f
+0000313e 000001c4 T main
+000082c2 000001fe T __mulsf3
+00007fbc 0000026a t _fpadd_parts
+00001620 000003e8 D node_positions
+0000115c 000004c4 D anchor_nodes
+00001e54 00000550 b buframmem_memb_mem
+00005b34 000005f0 T input_callback
+00008f60 00000742 T vuprintf
+00006e8a 00000c2a T __ieee754_powf
+
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+Math/helper symbols:
+00008044 T __mulsi3
+00008130 T __udivdi3
+00008070 T __udivhi3
+00008184 T __udivmoddi4
+00008092 T __udivsi3
+00008218 R cc2420_aes_128_driver
+00006f60 T random_init
+00006f66 T random_rand
+0000462a t set_frame_filtering
+Largest functions:
+000074ec 000000f4 T uart1_init
+00007ede 000000fa T memcpy
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00006672 00000126 t process_thread_nullnet_example_process
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00007680 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00001a48 000003e8 D node_positions
+00001584 000004c4 D anchor_nodes
+00002754 00000550 b buframmem_memb_mem
+00007814 0000063e T vuprintf
+
+FILE: extra-firmwares/udp-client.sky
+Math/helper symbols:
+0000e27c T __divhi3
+0000e2f6 T __divsi3
+0000e2ae T __modhi3
+0000e338 T __modsi3
+0000e22e T __mulsi3
+0000e3a0 T __udivdi3
+0000e25a T __udivhi3
+0000e3f4 T __udivmoddi4
+0000e2b6 T __udivsi3
+0000e488 R cc2420_aes_128_driver
+00008c48 t nbr_path_cost
+00007486 T random_init
+0000748c T random_rand
+00004698 t set_frame_filtering
+Largest functions:
+0000b86e 00000194 t process_thread_udp_client_process
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c60e 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000ce9a 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d904 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+FILE: extra-firmwares/udp-client.z1
+Math/helper symbols:
+000033ca T __divhi3
+0000343c T __divsi3
+000033fc T __modhi3
+0000347e T __modsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+0000396a T accm_init
+00002570 B accm_int1_cb
+0000256c B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+00007e32 t nbr_path_cost
+0000389c t process_thread_accmeter_process
+000067fe T random_init
+00006804 T random_rand
+00003d88 t set_frame_filtering
+Largest functions:
+0000a83c 00000192 t process_thread_udp_client_process
+00006ce0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008d6a 000001e8 t add_fragment
+00007abc 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007336 00000266 T rpl_ext_header_update
+0000b520 00000290 t ns_input
+000077aa 00000292 t dio_input
+0000bd06 000004ba T uip_process
+00001598 00000550 b buframmem_memb_mem
+00001cea 00000558 b frag_buf
+0000c7be 00000742 T vuprintf
+00009002 00000746 t output
+00009748 0000099c t input
+
+FILE: extra-firmwares/udp-server.sky
+Math/helper symbols:
+0000e140 T __divhi3
+0000e1ba T __divsi3
+0000e172 T __modhi3
+0000e1fc T __modsi3
+0000e0f2 T __mulsi3
+0000e264 T __udivdi3
+0000e11e T __udivhi3
+0000e2b8 T __udivmoddi4
+0000e17a T __udivsi3
+0000e34c R cc2420_aes_128_driver
+00008c48 t nbr_path_cost
+00007486 T random_init
+0000748c T random_rand
+00004698 t set_frame_filtering
+Largest functions:
+0000d634 00000194 t print_field
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c4d2 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000cd5e 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d7c8 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+ORIGINAL: ./new-firmware.z1
+Stripped file:
+readme-analysis/23-educational-re/new-firmware_z1.stripped.elf: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, stripped
+-rw-r--r-- 1 majnun majnun 127K Mar  5 00:51 ./new-firmware.z1
+-rw-r--r-- 1 majnun majnun  72K Jun  7 18:56 readme-analysis/23-educational-re/new-firmware_z1.stripped.elf
+Size comparison:
+   text	   data	    bss	    dec	    hex	filename
+  71715	    336	   5706	  77757	  12fbd	./new-firmware.z1
+  71715	    336	   5706	  77757	  12fbd	readme-analysis/23-educational-re/new-firmware_z1.stripped.elf
+Symbols after strip:
+Strings still useful after strip:
+ADXL345 sensor
+Button
+packet sent to 
+free_queued_packet, queue length %d, free packets %zu
+preparing packet for 
+failed to create packet, seqno: %d
+packet sent: no metadata
+, len %u, seqno %u, queue length %d, free packets %zu
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+drop duplicate link layer packet from 
+received packet from 
+Hello world process
+unicast DIS, reply to sender
+ext hdr: packet from 
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+unicast
+dio_input: malformed packet, discard
+packet sent to 
+RPL Lite
+Sensors
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: sending IPv6 packet with len %d
+
+ORIGINAL: ./udp-client.z1
+Stripped file:
+readme-analysis/23-educational-re/udp-client_z1.stripped.elf: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, stripped
+-rw-r--r-- 1 majnun majnun 99K Apr  2 08:05 ./udp-client.z1
+-rw-r--r-- 1 majnun majnun 43K Jun  7 18:56 readme-analysis/23-educational-re/udp-client_z1.stripped.elf
+Size comparison:
+   text	   data	    bss	    dec	    hex	filename
+  42871	    336	   5922	  49129	   bfe9	./udp-client.z1
+  42871	    336	   5922	  49129	   bfe9	readme-analysis/23-educational-re/udp-client_z1.stripped.elf
+Symbols after strip:
+Strings still useful after strip:
+ADXL345 sensor
+Button
+RPL Lite
+Sensors
+TMP102 sensor
+UDP client
+
+ORIGINAL: extra-firmwares/nullnet-broadcast.z1
+Stripped file:
+readme-analysis/23-educational-re/nullnet-broadcast_z1.stripped.elf: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, stripped
+-rw-r--r-- 1 majnun majnun 58K Jun  4 15:10 extra-firmwares/nullnet-broadcast.z1
+-rw-r--r-- 1 majnun majnun 19K Jun  7 18:56 readme-analysis/23-educational-re/nullnet-broadcast_z1.stripped.elf
+Size comparison:
+   text	   data	    bss	    dec	    hex	filename
+  17866	    166	   2240	  20272	   4f30	extra-firmwares/nullnet-broadcast.z1
+  17866	    166	   2240	  20272	   4f30	readme-analysis/23-educational-re/nullnet-broadcast_z1.stripped.elf
+Symbols after strip:
+Strings still useful after strip:
+ADXL345 sensor
+Button
+NullNet broadcast example
+nullnet
+Sensors
+TMP102 sensor
+
+ORIGINAL: extra-firmwares/base-demo.simplelink
+Stripped file:
+readme-analysis/23-educational-re/base-demo_simplelink.stripped.elf: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, stripped
+-rw-r--r-- 1 majnun majnun 649K Jun  4 15:10 extra-firmwares/base-demo.simplelink
+-rw-r--r-- 1 majnun majnun 226K Jun  7 18:56 readme-analysis/23-educational-re/base-demo_simplelink.stripped.elf
+Size comparison:
+   text	   data	    bss	    dec	    hex	filename
+  71393	   1408	  12968	  85769	  14f09	extra-firmwares/base-demo.simplelink
+  71393	   1408	  12968	  85769	  14f09	readme-analysis/23-educational-re/base-demo_simplelink.stripped.elf
+Symbols after strip:
+Strings still useful after strip:
+CC13xx/CC26xx base demo
+CC13xx/CC26xx base demo process
+Button HAL process
+CC13xx/CC26xx
+RPL Lite

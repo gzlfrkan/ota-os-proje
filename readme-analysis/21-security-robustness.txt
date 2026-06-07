@@ -1,0 +1,5882 @@
+=== 21. SECURITY / ROBUSTNESS ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  71715	    336	   5706	  77757	  12fbd	./new-firmware.z1
+
+[Credential / secret / backdoor string search]
+Heard old version from root
+Init root
+SRH root node not found
+NS: no space left for root node!
+  (DODAG root)
+
+[Error / assert / information leakage strings]
+failed to create packet, seqno: %d
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+drop duplicate link layer packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+framer-802154: cannot setup params because of invalid argument
+failed to create a new RPL DAG
+ignoring DIO with an unsupported OF: %u
+failed to set prefix
+ignoring DIO with an unsupported MOP: %d
+failed to initialize DAG
+unknown
+failed to init DAG
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+failed to add link on incoming DAO
+unable to add/update hop-by-hop extension header: incorrect instance
+Invalid SRH address pointer
+unknown instance: %u
+forward error!
+ going %s, sender closer %d (%d < %d), rank error %u, loop detected %u
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+dao_ack_input: unknown instance, discard
+dao_input: unknown RPL instance %u, discard
+dio_input: malformed packet, discard
+dio_input: invalid DAG MC, len %u, discard
+dio_input: unsupported DAG MC type %u, discard
+dio_input: invalid destination prefix option, len %u, discard
+dio_input: invalid route info option, len %u, discard
+dio_input: invalid DAG configuration option, len %u, discard
+dio_input: invalid DAG prefix info, len %u, discard
+dio_input: unsupported suboption type in DIO: %u, discard
+unable to send DIO because of unsupported DAG MC type %u
+prefix not included, not-supported or invalid
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: could not allocate queuebuf, dropping fragment
+output: error in fragment tx, dropping subsequent fragments.
+output: failed to calculate payload size - dropping packet
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+IPHC: cannot compress UDP headers
+output: fragmentation needed. fragments: %u, free queuebufs: %zu
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: failed to allocate new reassembly context
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: error context not found
+uncompression: error unsupported ext header
+uncompression: cannot write ext header beyond target buffer
+uncompression: cannot write UDP header beyond target buffer
+uncompression: error unsupported UDP compression
+uncompression: checksum included
+uncompression: checksum *NOT* included
+input: failed to decompress IPHC packet
+uncompression: unknown dispatch: 0x%02x, or IPHC disabled
+input: packet dropped due to header > total packet
+input: packet and fragment context %u dropped, minimum required IP_BUF size: %d+%d+%d=%u (current size: %u)
+input: cannot copy the payload into the buffer
+input: invalid total size of fragments
+input: invalid fragment offset
+Stack
+Check failed: %ld vs. %ld
+Stack check
+output: routing protocol extension header update error
+output: failed to autofill neighbor cache for host 
+TCP/IP stack
+Add drop ip addr 
+%s: invalid argument
+%s: input nbr cannot be removed
+%s: cannot allocate a new nbr for new_ll_addr
+, out of memory
+Unable to remove ext header before sending ICMPv6 ERROR message
+Sending ICMPv6 ERROR message type %d code %d to 
+invalid argument; dest is NULL
+NS received is bad
+Upper layer checksum len: %d from: %d
+Extension header option too long: dropping packet
+RPL Option Error: Dropping Packet
+uip_len too short compared to ext len
+invalid version
+dropping packet with length %d > %d
+invalid extension header chain
+Dropping packet, src is mcast
+LL source address with off link destination, dropping
+Dropping packet, not for me and link local or multicast
+fragment dropped.
+icmpv6 bad checksum
+Unknown ICMPv6 message type/code %d
+udp: bad checksum 0x%04x 0x%04x
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+0000289a A _stack
+0000396a T accm_init
+000024b0 B accm_int1_cb
+000024ac B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+00013eba t call_vuprintf
+00004cc8 T csma_output_init
+00004a58 T csma_output_packet
+00008a26 t dao_ack_input
+00008aea t dao_input
+00008d32 t dio_input
+00009186 t dis_input
+00011fa4 t echo_reply_input
+0001206c t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+00010000 t input
+00002372 b input_handler_list_list
+00004d66 t input_packet
+00005ed8 T link_stats_input_callback
+000062f8 T memb_free
+00006354 T memb_numfree
+0001484c T memcpy
+00014934 T memmove
+00014a1c T memset
+000068c2 T netstack_init
+0000687c T netstack_process_ip_callback
+000124de t ns_input
+0000121c d ns_input_handler
+0000b1cc t output
+0000c948 r output_power
+0000c5b8 t packet_input.part.2
+00006ac8 T packetbuf_addr
+000024ee B packetbuf_addrs
+000014ec b packetbuf_aligned
+00006aaa T packetbuf_attr
+000069f4 T packetbuf_attr_clear
+00006a7a T packetbuf_attr_copyfrom
+00006a58 T packetbuf_attr_copyto
+000024fe B packetbuf_attrs
+00006a1c T packetbuf_clear
+00006a2e T packetbuf_copyfrom
+00006972 T packetbuf_copyto
+00006956 T packetbuf_datalen
+00006966 T packetbuf_dataptr
+0000249b b packetbuf_hdr_len
+000069b8 T packetbuf_hdralloc
+0000695c T packetbuf_hdrlen
+00006950 T packetbuf_hdrptr
+00006930 T packetbuf_hdrreduce
+00006ad6 T packetbuf_holds_broadcast
+00001b9e b packetbuf_payload_len
+00001b96 b packetbuf_ptr
+00006ab4 T packetbuf_set_addr
+00006a9e T packetbuf_set_attr
+0000694a T packetbuf_set_datalen
+000069ac T packetbuf_totlen
+00013e88 T printf
+0000389c t process_thread_accmeter_process
+0000c074 t process_thread_stack_check_process
+00006fb4 T queuebuf_attr
+00006f58 T queuebuf_free
+00006edc T queuebuf_init
+00006ef8 T queuebuf_new_from_packetbuf
+00006eee T queuebuf_numfree
+00006f82 T queuebuf_to_packetbuf
+00006f46 T queuebuf_update_attr_from_packetbuf
+00006fc2 T random_init
+00006fc8 T random_rand
+000097b0 T rpl_icmp6_dao_ack_output
+000095be T rpl_icmp6_dao_output
+0000931c T rpl_icmp6_dio_output
+000092a6 T rpl_icmp6_dis_output
+00013ef0 T snprintf
+0000c020 T stack_check_get_usage
+0000bff2 T stack_check_init
+000011e2 D stack_check_process
+00002264 b stack_top.2424
+0000c1b4 T tcpip_input
+0000c1d2 T tcpip_ipv6_output
+0000c192 T tcpip_output
+0000227e b uart0_input_handler
+00012212 T uip_icmp6_error_output
+000121c2 T uip_icmp6_input
+00012206 T uip_icmp6_register_input_handler
+00012ca0 T uip_sr_free_all
+00013aae T uipbuf_add_ext_hdr
+00002426 b uipbuf_attrs
+00013c0e T uipbuf_clear
+00013bfc T uipbuf_clear_attr
+00002436 b uipbuf_default_attrs
+00013bd6 T uipbuf_get_attr
+00013b5a T uipbuf_get_last_header
+00013aea T uipbuf_get_len_field
+00013af8 T uipbuf_get_next_header
+00013c20 T uipbuf_init
+00013b90 T uipbuf_search_header
+00013be8 T uipbuf_set_attr
+00013aca T uipbuf_set_len
+00013adc T uipbuf_set_len_field
+00014082 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00001ba4 00000168 b frag_info
+00012e5a 0000016e t ext_hdr_options_process
+00013f0c 00000176 t print_field
+00012a0a 00000182 T uip_sr_update_node
+0000735c 000001a4 t process_dio_init_dag
+000082f8 000001b0 T rpl_ext_header_hbh_update
+00012212 000001c4 T uip_icmp6_error_output
+00009bc8 000001da T rpl_neighbor_snprint
+00004d66 000001ea t input_packet
+00008106 000001f2 T rpl_ext_header_srh_update
+000095be 000001f2 T rpl_icmp6_dao_output
+0000ae48 00000204 t add_fragment
+0000779c 00000204 T rpl_dag_update_state
+0000313e 00000232 T main
+00008aea 00000248 t dao_input
+00004a58 00000270 T csma_output_packet
+00011d22 00000282 T uip_ds6_init
+0000931c 000002a2 T rpl_icmp6_dio_output
+00004776 000002e2 t transmit_from_queue
+000079a0 00000344 T rpl_process_dio
+0000c1d2 000003e6 T tcpip_ipv6_output
+000124de 00000420 t ns_input
+00008568 00000438 T rpl_ext_header_update
+00008d32 00000454 t dio_input
+000015a8 00000550 b buframmem_memb_mem
+00001d0c 00000558 b frag_buf
+00014082 00000742 T vuprintf
+000130f2 00000992 T uip_process
+0000b1cc 00000df4 t output
+00010000 0000118a t input
+
+[Disassembly samples around buffer/string functions]
+00010000 <input>:
+   10000:	7b 14       	pushm.a	#8,	r11	
+   10002:	31 50 f2 ff 	add	#-14,	r1	;#0xfff2
+   10006:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+   1000a:	b0 13 c8 6a 	calla	#0x06ac8	
+   1000e:	b0 13 d8 5e 	calla	#0x05ed8	
+   10012:	c2 43 9a 24 	mov.b	#0,	&0x249a	;r3 As==00
+   10016:	c2 43 9b 24 	mov.b	#0,	&0x249b	;r3 As==00
+   1001a:	b0 13 66 69 	calla	#0x06966	
+   1001e:	82 4f 96 1b 	mov	r15,	&0x1b96	
+   10022:	b0 13 56 69 	calla	#0x06956	
+   10026:	0f 93       	tst	r15		
+   10028:	12 20       	jnz	$+38     	;abs 0x1004e
+   1002a:	a2 93 66 11 	cmp	#2,	&0x1166	;r3 As==10
+   1002e:	02 34       	jge	$+6      	;abs 0x10034
+   10030:	80 01 82 11 	bra	#0x11182	
+   10034:	30 12 6b e2 	push	#-7573		;#0xe26b
+   10038:	30 12 73 e2 	push	#-7565		;#0xe273
+   1003c:	30 12 78 e2 	push	#-7560		;#0xe278
+--
+00011fa4 <echo_reply_input>:
+   11fa4:	2b 14       	pushm.a	#3,	r11	
+   11fa6:	31 50 f0 ff 	add	#-16,	r1	;#0xfff0
+   11faa:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+   11fae:	68 11 
+   11fb0:	0f 38       	jl	$+32     	;abs 0x11fd0
+   11fb2:	30 12 d8 f6 	push	#-2344		;#0xf6d8
+   11fb6:	30 12 df f6 	push	#-2337		;#0xf6df
+   11fba:	30 12 e4 f6 	push	#-2332		;#0xf6e4
+   11fbe:	b1 13 88 3e 	calla	#0x13e88	
+   11fc2:	31 50 06 00 	add	#6,	r1	;#0x0006
+   11fc6:	30 12 f3 f6 	push	#-2317		;#0xf6f3
+   11fca:	b1 13 88 3e 	calla	#0x13e88	
+   11fce:	21 53       	incd	r1		
+   11fd0:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+   11fd4:	68 11 
+   11fd6:	04 38       	jl	$+10     	;abs 0x11fe0
+   11fd8:	3f 40 c6 27 	mov	#10182,	r15	;#0x27c6
+   11fdc:	b0 13 e8 60 	calla	#0x060e8	
+--
+0001206c <echo_request_input>:
+   1206c:	0b 14       	pushm.a	#1,	r11	
+   1206e:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+   12072:	68 11 
+   12074:	0f 38       	jl	$+32     	;abs 0x12094
+   12076:	30 12 d8 f6 	push	#-2344		;#0xf6d8
+   1207a:	30 12 df f6 	push	#-2337		;#0xf6df
+   1207e:	30 12 e4 f6 	push	#-2332		;#0xf6e4
+   12082:	b1 13 88 3e 	calla	#0x13e88	
+   12086:	31 50 06 00 	add	#6,	r1	;#0x0006
+   1208a:	30 12 12 f7 	push	#-2286		;#0xf712
+   1208e:	b1 13 88 3e 	calla	#0x13e88	
+   12092:	21 53       	incd	r1		
+   12094:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+   12098:	68 11 
+   1209a:	04 38       	jl	$+10     	;abs 0x120a4
+   1209c:	3f 40 c6 27 	mov	#10182,	r15	;#0x27c6
+   120a0:	b0 13 e8 60 	calla	#0x060e8	
+   120a4:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+--
+000121c2 <uip_icmp6_input>:
+   121c2:	1b 14       	pushm.a	#2,	r11	
+   121c4:	4b 4f       	mov.b	r15,	r11	
+   121c6:	4a 4e       	mov.b	r14,	r10	
+   121c8:	3f 40 72 23 	mov	#9074,	r15	;#0x2372
+   121cc:	b0 13 46 60 	calla	#0x06046	
+   121d0:	0b 3c       	jmp	$+24     	;abs 0x121e8
+   121d2:	cf 9b 02 00 	cmp.b	r11,	2(r15)	;0x0002(r15)
+   121d6:	06 20       	jnz	$+14     	;abs 0x121e4
+   121d8:	5d 4f 03 00 	mov.b	3(r15),	r13	;0x0003(r15)
+   121dc:	4d 9a       	cmp.b	r10,	r13	
+   121de:	0c 24       	jz	$+26     	;abs 0x121f8
+   121e0:	7d 93       	cmp.b	#-1,	r13	;r3 As==11
+   121e2:	0a 24       	jz	$+22     	;abs 0x121f8
+   121e4:	b0 13 dc 60 	calla	#0x060dc	
+   121e8:	0f 93       	tst	r15		
+   121ea:	f3 23       	jnz	$-24     	;abs 0x121d2
+   121ec:	03 3c       	jmp	$+8      	;abs 0x121f4
+   121ee:	4f 13       	calla	r15		
+--
+00012206 <uip_icmp6_register_input_handler>:
+   12206:	0e 4f       	mov	r15,	r14	
+   12208:	3f 40 72 23 	mov	#9074,	r15	;#0x2372
+   1220c:	b0 13 a6 60 	calla	#0x060a6	
+   12210:	10 01       	reta			
+
+00012212 <uip_icmp6_error_output>:
+   12212:	4b 14       	pushm.a	#5,	r11	
+   12214:	49 4f       	mov.b	r15,	r9	
+   12216:	48 4e       	mov.b	r14,	r8	
+   12218:	0a 4c       	mov	r12,	r10	
+   1221a:	0b 4d       	mov	r13,	r11	
+   1221c:	f2 90 3a 00 	cmp.b	#58,	&0x24a9	;#0x003a
+   12220:	a9 24 
+   12222:	0a 20       	jnz	$+22     	;abs 0x12238
+   12224:	1f 42 22 24 	mov	&0x2422,r15	
+   12228:	3f 50 28 00 	add	#40,	r15	;#0x0028
+   1222c:	cf 93 be 27 	tst.b	10174(r15)	;0x27be(r15)
+   12230:	03 38       	jl	$+8      	;abs 0x12238
+   12232:	b1 13 0e 3c 	calla	#0x13c0e	
+   12236:	cd 3c       	jmp	$+412    	;abs 0x123d2
+   12238:	82 93 c6 27 	tst	&0x27c6	
+   1223c:	15 20       	jnz	$+44     	;abs 0x12268
+   1223e:	82 93 c8 27 	tst	&0x27c8	
+   12242:	12 20       	jnz	$+38     	;abs 0x12268
+--
+000124de <ns_input>:
+   124de:	1b 14       	pushm.a	#2,	r11	
+   124e0:	31 82       	sub	#8,	r1	;r2 As==11
+   124e2:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+   124e6:	68 11 
+   124e8:	0f 38       	jl	$+32     	;abs 0x12508
+   124ea:	30 12 1b f8 	push	#-2021		;#0xf81b
+   124ee:	30 12 24 f8 	push	#-2012		;#0xf824
+   124f2:	30 12 29 f8 	push	#-2007		;#0xf829
+   124f6:	b1 13 88 3e 	calla	#0x13e88	
+   124fa:	31 50 06 00 	add	#6,	r1	;#0x0006
+   124fe:	30 12 38 f8 	push	#-1992		;#0xf838
+   12502:	b1 13 88 3e 	calla	#0x13e88	
+   12506:	21 53       	incd	r1		
+   12508:	b2 90 03 00 	cmp	#3,	&0x1168	;#0x0003
+   1250c:	68 11 
+   1250e:	04 38       	jl	$+10     	;abs 0x12518
+   12510:	3f 40 c6 27 	mov	#10182,	r15	;#0x27c6
+   12514:	b0 13 e8 60 	calla	#0x060e8	
+--
+00013aae <uipbuf_add_ext_hdr>:
+   13aae:	0e 4f       	mov	r15,	r14	
+   13ab0:	1e 52 b2 27 	add	&0x27b2,r14	
+   13ab4:	3e 90 01 05 	cmp	#1281,	r14	;#0x0501
+   13ab8:	06 2c       	jc	$+14     	;abs 0x13ac6
+   13aba:	82 5f 22 24 	add	r15,	&0x2422	
+   13abe:	82 4e b2 27 	mov	r14,	&0x27b2	
+   13ac2:	5f 43       	mov.b	#1,	r15	;r3 As==01
+   13ac4:	10 01       	reta			
+   13ac6:	4f 43       	clr.b	r15		
+   13ac8:	10 01       	reta			
+
+00013aca <uipbuf_set_len>:
+   13aca:	3f 90 01 05 	cmp	#1281,	r15	;#0x0501
+   13ace:	04 2c       	jc	$+10     	;abs 0x13ad8
+   13ad0:	82 4f b2 27 	mov	r15,	&0x27b2	
+   13ad4:	5f 43       	mov.b	#1,	r15	;r3 As==01
+   13ad6:	10 01       	reta			
+   13ad8:	4f 43       	clr.b	r15		
+   13ada:	10 01       	reta			
+
+00013adc <uipbuf_set_len_field>:
+   13adc:	0d 4e       	mov	r14,	r13	
+   13ade:	8d 10       	swpb	r13		
+   13ae0:	cf 4d 04 00 	mov.b	r13,	4(r15)	;0x0004(r15)
+   13ae4:	cf 4e 05 00 	mov.b	r14,	5(r15)	;0x0005(r15)
+   13ae8:	10 01       	reta			
+
+00013aea <uipbuf_get_len_field>:
+   13aea:	5e 4f 04 00 	mov.b	4(r15),	r14	;0x0004(r15)
+   13aee:	8e 10       	swpb	r14		
+   13af0:	5f 4f 05 00 	mov.b	5(r15),	r15	;0x0005(r15)
+   13af4:	0f 5e       	add	r14,	r15	
+   13af6:	10 01       	reta			
+
+00013af8 <uipbuf_get_next_header>:
+   13af8:	4c 93       	tst.b	r12		
+   13afa:	06 24       	jz	$+14     	;abs 0x13b08
+   13afc:	dd 4f 06 00 	mov.b	6(r15),	0(r13)	;0x0006(r15), 0x0000(r13)
+   13b00:	00 00 
+   13b02:	3c 40 28 00 	mov	#40,	r12	;#0x0028
+   13b06:	06 3c       	jmp	$+14     	;abs 0x13b14
+   13b08:	ed 4f 00 00 	mov.b	@r15,	0(r13)	;0x0000(r13)
+   13b0c:	5c 4f 01 00 	mov.b	1(r15),	r12	;0x0001(r15)
+   13b10:	5c 0a       	rlam	#3,	r12	
+   13b12:	3c 52       	add	#8,	r12	;r2 As==11
+   13b14:	0e 9c       	cmp	r12,	r14	
+   13b16:	02 2c       	jc	$+6      	;abs 0x13b1c
+   13b18:	0f 43       	clr	r15		
+   13b1a:	10 01       	reta			
+   13b1c:	0f 5c       	add	r12,	r15	
+   13b1e:	6d 4d       	mov.b	@r13,	r13	
+   13b20:	7d 90 06 00 	cmp.b	#6,	r13	;#0x0006
+   13b24:	12 24       	jz	$+38     	;abs 0x13b4a
+
+----------------------------------------
+FILE: ./udp-client.z1
+./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  42871	    336	   5922	  49129	   bfe9	./udp-client.z1
+
+[Credential / secret / backdoor string search]
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Stack
+Check failed: %ld vs. %ld
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+00002972 A _stack
+0000396a T accm_init
+00002586 B accm_int1_cb
+00002582 B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+0000c6fa t call_vuprintf
+0000499c T csma_output_init
+00004854 T csma_output_packet
+0000775a t dao_ack_input
+0000778a t dao_input
+000078b2 t dio_input
+00007b26 t dis_input
+0000b2fa t echo_reply_input
+0000b35a t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+00009804 t input
+0000239c b input_handler_list_list
+00004a16 t input_packet
+00005826 T link_stats_input_callback
+00005c46 T memb_free
+00005ca2 T memb_numfree
+0000d08c T memcpy
+0000d174 T memmove
+0000d25c T memset
+00006210 T netstack_init
+000061ca T netstack_process_ip_callback
+0000b5fa t ns_input
+0000121c d ns_input_handler
+000090aa t output
+0000d390 r output_power
+0000a5ba t packet_input.part.3
+00006416 T packetbuf_addr
+000025c4 B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000063f8 T packetbuf_attr
+00006342 T packetbuf_attr_clear
+000063c8 T packetbuf_attr_copyfrom
+000063a6 T packetbuf_attr_copyto
+000025d4 B packetbuf_attrs
+0000636a T packetbuf_clear
+0000637c T packetbuf_copyfrom
+000062c0 T packetbuf_copyto
+000062a4 T packetbuf_datalen
+000062b4 T packetbuf_dataptr
+000024c5 b packetbuf_hdr_len
+00006306 T packetbuf_hdralloc
+000062aa T packetbuf_hdrlen
+0000629e T packetbuf_hdrptr
+0000627e T packetbuf_hdrreduce
+00006424 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8a b packetbuf_ptr
+00006402 T packetbuf_set_addr
+000063ec T packetbuf_set_attr
+00006298 T packetbuf_set_datalen
+000062fa T packetbuf_totlen
+0000c6c8 T printf
+0000389c t process_thread_accmeter_process
+0000a336 t process_thread_stack_check_process
+000068a6 T queuebuf_free
+0000682a T queuebuf_init
+00006846 T queuebuf_new_from_packetbuf
+0000683c T queuebuf_numfree
+000068d0 T queuebuf_to_packetbuf
+00006894 T queuebuf_update_attr_from_packetbuf
+00006902 T random_init
+00006908 T random_rand
+00007e94 T rpl_icmp6_dao_ack_output
+00007dbe T rpl_icmp6_dao_output
+00007ba6 T rpl_icmp6_dio_output
+00007b72 T rpl_icmp6_dis_output
+0000c730 T snprintf
+0000a2e2 T stack_check_get_usage
+0000a2b4 T stack_check_init
+000011d6 D stack_check_process
+00002258 b stack_top.2424
+0000a490 T tcpip_input
+0000a4ae T tcpip_ipv6_output
+0000a454 T tcpip_output
+00002272 b uart0_input_handler
+0000b430 T uip_icmp6_error_output
+0000b3e0 T uip_icmp6_input
+0000b424 T uip_icmp6_register_input_handler
+0000bae2 T uip_sr_free_all
+0000c2ee T uipbuf_add_ext_hdr
+00002450 b uipbuf_attrs
+0000c44e T uipbuf_clear
+0000c43c T uipbuf_clear_attr
+00002460 b uipbuf_default_attrs
+0000c416 T uipbuf_get_attr
+0000c39a T uipbuf_get_last_header
+0000c32a T uipbuf_get_len_field
+0000c338 T uipbuf_get_next_header
+0000c460 T uipbuf_init
+0000c3d0 T uipbuf_search_header
+0000c428 T uipbuf_set_attr
+0000c30a T uipbuf_set_len
+0000c31c T uipbuf_set_len_field
+0000c8c2 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00005826 000000f6 T link_stats_input_callback
+000025ec 0000010c B curr_instance
+0000a4ae 0000010c T tcpip_ipv6_output
+00002710 00000110 B uip_ds6_if
+0000c47a 00000114 T uiplib_ipaddr_snprint
+000041b8 0000011e t get_value
+0000778a 00000128 t dao_input
+0000b430 00000136 T uip_icmp6_error_output
+00006ca8 00000138 T rpl_dag_update_state
+00004854 00000148 T csma_output_packet
+000042ec 0000014a t set_value
+0000a904 0000014c t process_thread_udp_client_process
+000051f6 0000015c T frame802154_parse
+0000b196 00000164 T uip_ds6_init
+00001b98 00000168 b frag_info
+00008eaa 0000016a t add_fragment
+0000c74c 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b5fa 00000292 t ns_input
+0000be0e 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c8c2 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+[Disassembly samples around buffer/string functions]
+00004854 <csma_output_packet>:
+    4854:	4b 14       	pushm.a	#5,	r11	
+    4856:	c8 0f       	mova	r15,	r8	
+    4858:	07 4e       	mov	r14,	r7	
+    485a:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    485e:	b0 13 16 64 	calla	#0x06416	
+    4862:	0a 4f       	mov	r15,	r10	
+    4864:	b0 13 b2 5a 	calla	#0x05ab2	
+    4868:	1e 43       	mov	#1,	r14	;r3 As==01
+    486a:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    486e:	b0 13 ec 63 	calla	#0x063ec	
+    4872:	3f 40 7e 12 	mov	#4734,	r15	;#0x127e
+    4876:	b0 13 94 59 	calla	#0x05994	
+    487a:	0a 3c       	jmp	$+22     	;abs 0x4890
+    487c:	0e 4a       	mov	r10,	r14	
+    487e:	0f 4b       	mov	r11,	r15	
+    4880:	2f 53       	incd	r15		
+    4882:	b0 13 70 59 	calla	#0x05970	
+    4886:	4f 93       	tst.b	r15		
+--
+0000499c <csma_output_init>:
+    499c:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    49a0:	b0 13 d2 5b 	calla	#0x05bd2	
+    49a4:	3f 40 28 11 	mov	#4392,	r15	;#0x1128
+    49a8:	b0 13 d2 5b 	calla	#0x05bd2	
+    49ac:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    49b0:	b0 13 d2 5b 	calla	#0x05bd2	
+    49b4:	10 01       	reta			
+
+000049b6 <csma_security_create_frame>:
+    49b6:	1e 43       	mov	#1,	r14	;r3 As==01
+    49b8:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    49bc:	b0 13 ec 63 	calla	#0x063ec	
+    49c0:	80 13 be d3 	calla	&0x0d3be	
+    49c4:	10 01       	reta			
+
+000049c6 <csma_security_parse_frame>:
+    49c6:	80 13 c2 d3 	calla	&0x0d3c2	
+    49ca:	10 01       	reta			
+--
+00004a16 <input_packet>:
+    4a16:	b0 13 a4 62 	calla	#0x062a4	
+    4a1a:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    4a1e:	2a 24       	jz	$+86     	;abs 0x4a74
+    4a20:	b0 13 c6 49 	calla	#0x049c6	
+    4a24:	0f 93       	tst	r15		
+    4a26:	26 38       	jl	$+78     	;abs 0x4a74
+    4a28:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    4a2c:	b0 13 16 64 	calla	#0x06416	
+    4a30:	3e 40 ba 25 	mov	#9658,	r14	;#0x25ba
+    4a34:	b0 13 70 59 	calla	#0x05970	
+    4a38:	4f 93       	tst.b	r15		
+    4a3a:	0a 20       	jnz	$+22     	;abs 0x4a50
+    4a3c:	b0 13 24 64 	calla	#0x06424	
+    4a40:	4f 93       	tst.b	r15		
+    4a42:	06 20       	jnz	$+14     	;abs 0x4a50
+    4a44:	30 12 6e d5 	push	#-10898	;#0xd56e
+    4a48:	b0 13 c8 c6 	calla	#0x0c6c8	
+    4a4c:	21 53       	incd	r1		
+--
+00005826 <link_stats_input_callback>:
+    5826:	3b 14       	pushm.a	#4,	r11	
+    5828:	0a 4f       	mov	r15,	r10	
+    582a:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    582c:	b0 13 f8 63 	calla	#0x063f8	
+    5830:	0b 4f       	mov	r15,	r11	
+    5832:	0e 4a       	mov	r10,	r14	
+    5834:	3f 40 4a 11 	mov	#4426,	r15	;#0x114a
+    5838:	b0 13 0e 60 	calla	#0x0600e	
+    583c:	09 4f       	mov	r15,	r9	
+    583e:	0f 93       	tst	r15		
+    5840:	0d 20       	jnz	$+28     	;abs 0x585c
+    5842:	0c 43       	clr	r12		
+    5844:	3d 42       	mov	#8,	r13	;r2 As==11
+    5846:	0e 4a       	mov	r10,	r14	
+    5848:	3f 40 4a 11 	mov	#4426,	r15	;#0x114a
+    584c:	b0 13 ae 60 	calla	#0x060ae	
+    5850:	09 4f       	mov	r15,	r9	
+    5852:	0f 93       	tst	r15		
+--
+0000627e <packetbuf_hdrreduce>:
+    627e:	1e 42 de 14 	mov	&0x14de,r14	
+    6282:	0e 9f       	cmp	r15,	r14	
+    6284:	07 28       	jnc	$+16     	;abs 0x6294
+    6286:	82 5f dc 14 	add	r15,	&0x14dc	
+    628a:	0e 8f       	sub	r15,	r14	
+    628c:	82 4e de 14 	mov	r14,	&0x14de	
+    6290:	1f 43       	mov	#1,	r15	;r3 As==01
+    6292:	10 01       	reta			
+    6294:	0f 43       	clr	r15		
+    6296:	10 01       	reta			
+
+00006298 <packetbuf_set_datalen>:
+    6298:	82 4f de 14 	mov	r15,	&0x14de	
+    629c:	10 01       	reta			
+
+0000629e <packetbuf_hdrptr>:
+    629e:	3f 40 e0 14 	mov	#5344,	r15	;#0x14e0
+    62a2:	10 01       	reta			
+
+000062a4 <packetbuf_datalen>:
+    62a4:	1f 42 de 14 	mov	&0x14de,r15	
+    62a8:	10 01       	reta			
+
+000062aa <packetbuf_hdrlen>:
+    62aa:	5f 42 ac 24 	mov.b	&0x24ac,r15	
+    62ae:	5f 52 dc 14 	add.b	&0x14dc,r15	
+    62b2:	10 01       	reta			
+
+000062b4 <packetbuf_dataptr>:
+    62b4:	b0 13 aa 62 	calla	#0x062aa	
+    62b8:	4f 4f       	mov.b	r15,	r15	
+    62ba:	3f 50 e0 14 	add	#5344,	r15	;#0x14e0
+    62be:	10 01       	reta			
+
+000062c0 <packetbuf_copyto>:
+    62c0:	3b 14       	pushm.a	#4,	r11	
+    62c2:	08 4f       	mov	r15,	r8	
+    62c4:	5b 42 ac 24 	mov.b	&0x24ac,r11	
+    62c8:	19 42 de 14 	mov	&0x14de,r9	
+    62cc:	0a 4b       	mov	r11,	r10	
+    62ce:	0a 59       	add	r9,	r10	
+    62d0:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    62d4:	0f 2c       	jc	$+32     	;abs 0x62f4
+    62d6:	0d 4b       	mov	r11,	r13	
+    62d8:	3e 40 e0 14 	mov	#5344,	r14	;#0x14e0
+    62dc:	b0 13 8c d0 	calla	#0x0d08c	
+    62e0:	b0 13 b4 62 	calla	#0x062b4	
+    62e4:	0d 49       	mov	r9,	r13	
+    62e6:	0e 4f       	mov	r15,	r14	
+    62e8:	0f 48       	mov	r8,	r15	
+    62ea:	0f 5b       	add	r11,	r15	
+    62ec:	b0 13 8c d0 	calla	#0x0d08c	
+    62f0:	0f 4a       	mov	r10,	r15	
+--
+000062fa <packetbuf_totlen>:
+    62fa:	b0 13 aa 62 	calla	#0x062aa	
+    62fe:	4f 4f       	mov.b	r15,	r15	
+    6300:	1f 52 de 14 	add	&0x14de,r15	
+    6304:	10 01       	reta			
+
+00006306 <packetbuf_hdralloc>:
+    6306:	0b 14       	pushm.a	#1,	r11	
+    6308:	0b 4f       	mov	r15,	r11	
+    630a:	b0 13 fa 62 	calla	#0x062fa	
+    630e:	0e 4f       	mov	r15,	r14	
+    6310:	0e 5b       	add	r11,	r14	
+    6312:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    6316:	12 2c       	jc	$+38     	;abs 0x633c
+    6318:	0e 4f       	mov	r15,	r14	
+    631a:	3e 53       	add	#-1,	r14	;r3 As==11
+    631c:	0f 4b       	mov	r11,	r15	
+    631e:	3f 50 e0 14 	add	#5344,	r15	;#0x14e0
+    6322:	06 3c       	jmp	$+14     	;abs 0x6330
+    6324:	0d 4f       	mov	r15,	r13	
+    6326:	0d 5e       	add	r14,	r13	
+    6328:	dd 4e e0 14 	mov.b	5344(r14),0(r13)	;0x14e0(r14), 0x0000(r13)
+    632c:	00 00 
+    632e:	3e 53       	add	#-1,	r14	;r3 As==11
+    6330:	0e 93       	tst	r14		
+--
+00006342 <packetbuf_attr_clear>:
+    6342:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    6346:	0e 43       	clr	r14		
+    6348:	3f 40 d4 25 	mov	#9684,	r15	;#0x25d4
+    634c:	b0 13 5c d2 	calla	#0x0d25c	
+    6350:	3e 40 c6 d3 	mov	#-11322,r14	;#0xd3c6
+    6354:	3f 40 c4 25 	mov	#9668,	r15	;#0x25c4
+    6358:	b0 13 68 59 	calla	#0x05968	
+    635c:	3e 40 c6 d3 	mov	#-11322,r14	;#0xd3c6
+    6360:	3f 40 cc 25 	mov	#9676,	r15	;#0x25cc
+    6364:	b0 13 68 59 	calla	#0x05968	
+    6368:	10 01       	reta			
+
+0000636a <packetbuf_clear>:
+    636a:	82 43 dc 14 	mov	#0,	&0x14dc	;r3 As==00
+    636e:	82 43 de 14 	mov	#0,	&0x14de	;r3 As==00
+    6372:	c2 43 ac 24 	mov.b	#0,	&0x24ac	;r3 As==00
+    6376:	b0 13 42 63 	calla	#0x06342	
+    637a:	10 01       	reta			
+
+----------------------------------------
+FILE: ./udp-server.z1
+./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  42585	    336	   5866	  48787	   be93	./udp-server.z1
+
+[Credential / secret / backdoor string search]
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Stack
+Check failed: %ld vs. %ld
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+0000293a A _stack
+0000396a T accm_init
+0000254e B accm_int1_cb
+0000254a B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+0000c608 t call_vuprintf
+0000499c T csma_output_init
+00004854 T csma_output_packet
+0000775a t dao_ack_input
+0000778a t dao_input
+000078b2 t dio_input
+00007b26 t dis_input
+0000b208 t echo_reply_input
+0000b268 t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+00009804 t input
+00002384 b input_handler_list_list
+00004a16 t input_packet
+00005826 T link_stats_input_callback
+00005c46 T memb_free
+00005ca2 T memb_numfree
+0000cf9a T memcpy
+0000d082 T memmove
+0000d16a T memset
+00006210 T netstack_init
+000061ca T netstack_process_ip_callback
+0000b508 t ns_input
+0000121c d ns_input_handler
+000090aa t output
+0000d2a0 r output_power
+0000a5ba t packet_input.part.3
+00006416 T packetbuf_addr
+0000258c B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000063f8 T packetbuf_attr
+00006342 T packetbuf_attr_clear
+000063c8 T packetbuf_attr_copyfrom
+000063a6 T packetbuf_attr_copyto
+0000259c B packetbuf_attrs
+0000636a T packetbuf_clear
+0000637c T packetbuf_copyfrom
+000062c0 T packetbuf_copyto
+000062a4 T packetbuf_datalen
+000062b4 T packetbuf_dataptr
+000024ad b packetbuf_hdr_len
+00006306 T packetbuf_hdralloc
+000062aa T packetbuf_hdrlen
+0000629e T packetbuf_hdrptr
+0000627e T packetbuf_hdrreduce
+00006424 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8a b packetbuf_ptr
+00006402 T packetbuf_set_addr
+000063ec T packetbuf_set_attr
+00006298 T packetbuf_set_datalen
+000062fa T packetbuf_totlen
+0000c5d6 T printf
+0000389c t process_thread_accmeter_process
+0000a336 t process_thread_stack_check_process
+000068a6 T queuebuf_free
+0000682a T queuebuf_init
+00006846 T queuebuf_new_from_packetbuf
+0000683c T queuebuf_numfree
+000068d0 T queuebuf_to_packetbuf
+00006894 T queuebuf_update_attr_from_packetbuf
+00006902 T random_init
+00006908 T random_rand
+00007e94 T rpl_icmp6_dao_ack_output
+00007dbe T rpl_icmp6_dao_output
+00007ba6 T rpl_icmp6_dio_output
+00007b72 T rpl_icmp6_dis_output
+0000c63e T snprintf
+0000a2e2 T stack_check_get_usage
+0000a2b4 T stack_check_init
+000011d6 D stack_check_process
+00002258 b stack_top.2424
+0000a490 T tcpip_input
+0000a4ae T tcpip_ipv6_output
+0000a454 T tcpip_output
+00002272 b uart0_input_handler
+0000b33e T uip_icmp6_error_output
+0000b2ee T uip_icmp6_input
+0000b332 T uip_icmp6_register_input_handler
+0000b9f0 T uip_sr_free_all
+0000c1fc T uipbuf_add_ext_hdr
+00002438 b uipbuf_attrs
+0000c35c T uipbuf_clear
+0000c34a T uipbuf_clear_attr
+00002448 b uipbuf_default_attrs
+0000c324 T uipbuf_get_attr
+0000c2a8 T uipbuf_get_last_header
+0000c238 T uipbuf_get_len_field
+0000c246 T uipbuf_get_next_header
+0000c36e T uipbuf_init
+0000c2de T uipbuf_search_header
+0000c336 T uipbuf_set_attr
+0000c218 T uipbuf_set_len
+0000c22a T uipbuf_set_len_field
+0000c7d0 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00004436 000000ea T cc2420_init
+00005826 000000f6 T link_stats_input_callback
+000025b4 0000010c B curr_instance
+0000a4ae 0000010c T tcpip_ipv6_output
+000026d8 00000110 B uip_ds6_if
+0000c388 00000114 T uiplib_ipaddr_snprint
+000041b8 0000011e t get_value
+0000778a 00000128 t dao_input
+0000b33e 00000136 T uip_icmp6_error_output
+00006ca8 00000138 T rpl_dag_update_state
+00004854 00000148 T csma_output_packet
+000042ec 0000014a t set_value
+000051f6 0000015c T frame802154_parse
+0000b0a4 00000164 T uip_ds6_init
+00001b98 00000168 b frag_info
+00008eaa 0000016a t add_fragment
+0000c65a 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b508 00000292 t ns_input
+0000bd1c 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c7d0 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+[Disassembly samples around buffer/string functions]
+00004854 <csma_output_packet>:
+    4854:	4b 14       	pushm.a	#5,	r11	
+    4856:	c8 0f       	mova	r15,	r8	
+    4858:	07 4e       	mov	r14,	r7	
+    485a:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    485e:	b0 13 16 64 	calla	#0x06416	
+    4862:	0a 4f       	mov	r15,	r10	
+    4864:	b0 13 b2 5a 	calla	#0x05ab2	
+    4868:	1e 43       	mov	#1,	r14	;r3 As==01
+    486a:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    486e:	b0 13 ec 63 	calla	#0x063ec	
+    4872:	3f 40 7e 12 	mov	#4734,	r15	;#0x127e
+    4876:	b0 13 94 59 	calla	#0x05994	
+    487a:	0a 3c       	jmp	$+22     	;abs 0x4890
+    487c:	0e 4a       	mov	r10,	r14	
+    487e:	0f 4b       	mov	r11,	r15	
+    4880:	2f 53       	incd	r15		
+    4882:	b0 13 70 59 	calla	#0x05970	
+    4886:	4f 93       	tst.b	r15		
+--
+0000499c <csma_output_init>:
+    499c:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    49a0:	b0 13 d2 5b 	calla	#0x05bd2	
+    49a4:	3f 40 28 11 	mov	#4392,	r15	;#0x1128
+    49a8:	b0 13 d2 5b 	calla	#0x05bd2	
+    49ac:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    49b0:	b0 13 d2 5b 	calla	#0x05bd2	
+    49b4:	10 01       	reta			
+
+000049b6 <csma_security_create_frame>:
+    49b6:	1e 43       	mov	#1,	r14	;r3 As==01
+    49b8:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    49bc:	b0 13 ec 63 	calla	#0x063ec	
+    49c0:	80 13 ce d2 	calla	&0x0d2ce	
+    49c4:	10 01       	reta			
+
+000049c6 <csma_security_parse_frame>:
+    49c6:	80 13 d2 d2 	calla	&0x0d2d2	
+    49ca:	10 01       	reta			
+--
+00004a16 <input_packet>:
+    4a16:	b0 13 a4 62 	calla	#0x062a4	
+    4a1a:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    4a1e:	2a 24       	jz	$+86     	;abs 0x4a74
+    4a20:	b0 13 c6 49 	calla	#0x049c6	
+    4a24:	0f 93       	tst	r15		
+    4a26:	26 38       	jl	$+78     	;abs 0x4a74
+    4a28:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    4a2c:	b0 13 16 64 	calla	#0x06416	
+    4a30:	3e 40 82 25 	mov	#9602,	r14	;#0x2582
+    4a34:	b0 13 70 59 	calla	#0x05970	
+    4a38:	4f 93       	tst.b	r15		
+    4a3a:	0a 20       	jnz	$+22     	;abs 0x4a50
+    4a3c:	b0 13 24 64 	calla	#0x06424	
+    4a40:	4f 93       	tst.b	r15		
+    4a42:	06 20       	jnz	$+14     	;abs 0x4a50
+    4a44:	30 12 7e d4 	push	#-11138	;#0xd47e
+    4a48:	b0 13 d6 c5 	calla	#0x0c5d6	
+    4a4c:	21 53       	incd	r1		
+--
+00005826 <link_stats_input_callback>:
+    5826:	3b 14       	pushm.a	#4,	r11	
+    5828:	0a 4f       	mov	r15,	r10	
+    582a:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    582c:	b0 13 f8 63 	calla	#0x063f8	
+    5830:	0b 4f       	mov	r15,	r11	
+    5832:	0e 4a       	mov	r10,	r14	
+    5834:	3f 40 4a 11 	mov	#4426,	r15	;#0x114a
+    5838:	b0 13 0e 60 	calla	#0x0600e	
+    583c:	09 4f       	mov	r15,	r9	
+    583e:	0f 93       	tst	r15		
+    5840:	0d 20       	jnz	$+28     	;abs 0x585c
+    5842:	0c 43       	clr	r12		
+    5844:	3d 42       	mov	#8,	r13	;r2 As==11
+    5846:	0e 4a       	mov	r10,	r14	
+    5848:	3f 40 4a 11 	mov	#4426,	r15	;#0x114a
+    584c:	b0 13 ae 60 	calla	#0x060ae	
+    5850:	09 4f       	mov	r15,	r9	
+    5852:	0f 93       	tst	r15		
+--
+0000627e <packetbuf_hdrreduce>:
+    627e:	1e 42 de 14 	mov	&0x14de,r14	
+    6282:	0e 9f       	cmp	r15,	r14	
+    6284:	07 28       	jnc	$+16     	;abs 0x6294
+    6286:	82 5f dc 14 	add	r15,	&0x14dc	
+    628a:	0e 8f       	sub	r15,	r14	
+    628c:	82 4e de 14 	mov	r14,	&0x14de	
+    6290:	1f 43       	mov	#1,	r15	;r3 As==01
+    6292:	10 01       	reta			
+    6294:	0f 43       	clr	r15		
+    6296:	10 01       	reta			
+
+00006298 <packetbuf_set_datalen>:
+    6298:	82 4f de 14 	mov	r15,	&0x14de	
+    629c:	10 01       	reta			
+
+0000629e <packetbuf_hdrptr>:
+    629e:	3f 40 e0 14 	mov	#5344,	r15	;#0x14e0
+    62a2:	10 01       	reta			
+
+000062a4 <packetbuf_datalen>:
+    62a4:	1f 42 de 14 	mov	&0x14de,r15	
+    62a8:	10 01       	reta			
+
+000062aa <packetbuf_hdrlen>:
+    62aa:	5f 42 94 24 	mov.b	&0x2494,r15	
+    62ae:	5f 52 dc 14 	add.b	&0x14dc,r15	
+    62b2:	10 01       	reta			
+
+000062b4 <packetbuf_dataptr>:
+    62b4:	b0 13 aa 62 	calla	#0x062aa	
+    62b8:	4f 4f       	mov.b	r15,	r15	
+    62ba:	3f 50 e0 14 	add	#5344,	r15	;#0x14e0
+    62be:	10 01       	reta			
+
+000062c0 <packetbuf_copyto>:
+    62c0:	3b 14       	pushm.a	#4,	r11	
+    62c2:	08 4f       	mov	r15,	r8	
+    62c4:	5b 42 94 24 	mov.b	&0x2494,r11	
+    62c8:	19 42 de 14 	mov	&0x14de,r9	
+    62cc:	0a 4b       	mov	r11,	r10	
+    62ce:	0a 59       	add	r9,	r10	
+    62d0:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    62d4:	0f 2c       	jc	$+32     	;abs 0x62f4
+    62d6:	0d 4b       	mov	r11,	r13	
+    62d8:	3e 40 e0 14 	mov	#5344,	r14	;#0x14e0
+    62dc:	b0 13 9a cf 	calla	#0x0cf9a	
+    62e0:	b0 13 b4 62 	calla	#0x062b4	
+    62e4:	0d 49       	mov	r9,	r13	
+    62e6:	0e 4f       	mov	r15,	r14	
+    62e8:	0f 48       	mov	r8,	r15	
+    62ea:	0f 5b       	add	r11,	r15	
+    62ec:	b0 13 9a cf 	calla	#0x0cf9a	
+    62f0:	0f 4a       	mov	r10,	r15	
+--
+000062fa <packetbuf_totlen>:
+    62fa:	b0 13 aa 62 	calla	#0x062aa	
+    62fe:	4f 4f       	mov.b	r15,	r15	
+    6300:	1f 52 de 14 	add	&0x14de,r15	
+    6304:	10 01       	reta			
+
+00006306 <packetbuf_hdralloc>:
+    6306:	0b 14       	pushm.a	#1,	r11	
+    6308:	0b 4f       	mov	r15,	r11	
+    630a:	b0 13 fa 62 	calla	#0x062fa	
+    630e:	0e 4f       	mov	r15,	r14	
+    6310:	0e 5b       	add	r11,	r14	
+    6312:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    6316:	12 2c       	jc	$+38     	;abs 0x633c
+    6318:	0e 4f       	mov	r15,	r14	
+    631a:	3e 53       	add	#-1,	r14	;r3 As==11
+    631c:	0f 4b       	mov	r11,	r15	
+    631e:	3f 50 e0 14 	add	#5344,	r15	;#0x14e0
+    6322:	06 3c       	jmp	$+14     	;abs 0x6330
+    6324:	0d 4f       	mov	r15,	r13	
+    6326:	0d 5e       	add	r14,	r13	
+    6328:	dd 4e e0 14 	mov.b	5344(r14),0(r13)	;0x14e0(r14), 0x0000(r13)
+    632c:	00 00 
+    632e:	3e 53       	add	#-1,	r14	;r3 As==11
+    6330:	0e 93       	tst	r14		
+--
+00006342 <packetbuf_attr_clear>:
+    6342:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    6346:	0e 43       	clr	r14		
+    6348:	3f 40 9c 25 	mov	#9628,	r15	;#0x259c
+    634c:	b0 13 6a d1 	calla	#0x0d16a	
+    6350:	3e 40 d6 d2 	mov	#-11562,r14	;#0xd2d6
+    6354:	3f 40 8c 25 	mov	#9612,	r15	;#0x258c
+    6358:	b0 13 68 59 	calla	#0x05968	
+    635c:	3e 40 d6 d2 	mov	#-11562,r14	;#0xd2d6
+    6360:	3f 40 94 25 	mov	#9620,	r15	;#0x2594
+    6364:	b0 13 68 59 	calla	#0x05968	
+    6368:	10 01       	reta			
+
+0000636a <packetbuf_clear>:
+    636a:	82 43 dc 14 	mov	#0,	&0x14dc	;r3 As==00
+    636e:	82 43 de 14 	mov	#0,	&0x14de	;r3 As==00
+    6372:	c2 43 94 24 	mov.b	#0,	&0x2494	;r3 As==00
+    6376:	b0 13 42 63 	calla	#0x06342	
+    637a:	10 01       	reta			
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  71393	   1408	  12968	  85769	  14f09	extra-firmwares/base-demo.simplelink
+
+[Credential / secret / backdoor string search]
+Key Right
+Key Left
+Heard old version from root
+Init root
+(key
+.key
+6key
+6key
+6key
+Dkey
+2key
+,key
+$key
+'key
+:key
+:key
+:key
+:key
+Dcmd
+:key
+Ukey
+:key
+:key
+:key
+:key
+:key
+:key
+:key
+:key
+:key
+Ukey
+]Ukey
+:key
+:key
+:key
+:key
+:key
+:key
+Ukey
+%key
++key
+/cmd
+3key
+P3key
+Ocmd
+Rkey
+8key
+2key
+Ikey
+&key
+:key
+:key
+:key
+:key
+:key
+:key
+:key
+*key
+.cmd
+0key
+0key
+0key
+L0key
+0key
+Ocmd
+=key
+=key
+)key
+-cmd
++key
++key
++key
++key
+Dcmd
++key
++key
++key
+Tkey
+Tkey
+*key
+.cmd
+'key
++key
++key
+<cmd
+rf_common_cmd.h
+rf_prop_cmd.h
+rf_ble_cmd.h
+cryptoutils/cryptokey
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/cryptoutils/cryptokey
+CryptoKeyPlaintextCC26XX.c
+CryptoKey.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/cryptoutils/cryptokey
+CryptoKey.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/cryptoutils/cryptokey
+CryptoKey.h
+rf_common_cmd.h
+hwiKey
+TimerP_StartMode_USER
+PowerCC26X2_swiKey
+
+[Error / assert / information leakage strings]
+%#!Stack
+Check failed: %u vs. %u
+Stack check
+                0000000000000000TCP/IP stack
+RF_ScheduleStatusError
+RF_StatInvalidParamsError
+error
+RF_StatError
+RF_StatCmdDoneError
+invalidValue
+RF_ConflictAbort
+RF_StatBusyError
+RF_StatRadioInactiveError
+CHIP_TYPE_Unknown
+RF_checkCmdFsError
+RF_abortCmd
+uDMAErrorStatusClear
+I2CCC26XX_ERROR
+PIN_UNSUPPORTED
+PACKAGE_Unknown
+pinsAllocated
+PIN_ALREADY_ALLOCATED
+NOROM_SysCtrlShutdownWithAbort
+PowerCC26X2_FSM_RESULT_ERROR
+SPI_TRANSFER_FAILED
+SPI_TRANSFER_PEND_CSN_ASSERT
+SPI_TRANSFER_CSN_DEASSERT
+errorSpin
+UART_FRAMING_ERROR
+UARTRxErrorClear
+UART_OVERRUN_ERROR
+UARTCC26XX_ErrorCallback
+errorFxn
+UART_BRAKE_ERROR
+UARTRxErrorGet
+UART_PARITY_ERROR
+Watchdog_DebugMode
+Watchdog_DEBUG_STALL_ON
+debugStallMode
+Watchdog_DebugMode_
+Watchdog_DEBUG_STALL_OFF
+FAMILY_Unknown
+HWREV_Unknown
+PROTOCOL_Unknown
+pDebugData
+NOROM_OSCHF_DebugGetExpectedAverageCrystalAmplitude
+HposcDebugData_t
+NOROM_OSC_HPOSC_Debug_InitFreqOffsetParams
+NOROM_OSCHF_DebugGetCrystalAmplitude
+debugHardfault
+netstack.c
+packetbuf.c
+packetbuf_aligned
+queuebuf.c
+check_rat_overflow
+rat_overflow_cb
+drop_route
+netstack_cmd_start_rat
+netstack_cmd_stop_rat
+rf_netstack
+packetbuf_hdr_len
+packetbuf_payload_len
+packetbuf_ptr
+stack-check.c
+process_thread_stack_check_process
+RF_abortCmd
+errorSpin
+packetbuf_copyto
+packetbuf_attr_copyto
+packetbuf_copyfrom
+packetbuf_attr
+__stack_size
+packetbuf_set_datalen
+packetbuf_datalen
+packetbuf_addrs
+netstack_sched_fs
+packetbuf_attr_copyfrom
+netstack_sched_rx
+stack_check_init
+queuebuf_free
+queuebuf_init
+netstack_stop_rx
+netstack_sched_prop_tx
+packetbuf_set_attr
+packetbuf_totlen
+packetbuf_attrs
+queuebuf_new_from_packetbuf
+netstack_open
+queuebuf_update_attr_from_packetbuf
+packetbuf_hdralloc
+packetbuf_set_addr
+netstack_process_ip_callback
+packetbuf_hdrlen
+packetbuf_addr
+packetbuf_holds_broadcast
+_stack_origin
+_stack_end
+packetbuf_hdrptr
+MIN_STACKSIZE
+queuebuf_to_packetbuf
+uip_icmp6_error_output
+stack_check_get_usage
+packetbuf_hdrreduce
+packetbuf_dataptr
+_stack
+packetbuf_clear
+packetbuf_attr_clear
+queuebuf_numfree
+.debug_frame
+.debug_info
+.debug_abbrev
+.debug_loc
+.debug_aranges
+.debug_ranges
+.debug_line
+.debug_str
+
+[Potentially unsafe / buffer-related symbols]
+00000100 A HEAPSIZE
+00000600 A MIN_STACKSIZE
+0000c824 T PIN_getInputValue
+0000c838 T PIN_setOutputEnable
+0000c880 T PIN_setOutputValue
+0000998c t RF_abortCmd
+000097a4 t RF_issueRadioFreeCb
+0000a5f8 t RF_ratFreeChannel
+200041ac b RF_ratSyncCmd
+20005300 B __heap_end__
+20005200 B __heap_start__
+0000ed00 B __stack_size
+20005300 B _eheap
+20005200 B _heap
+20005300 N _stack
+20014000 N _stack_end
+20014000 N _stack_origin
+00000f88 T csma_output_init
+00000e80 T csma_output_packet
+200035fc b curr_input_cb
+00003a4c t dao_ack_input
+00003a84 t dao_input
+00003bb4 t dio_input
+00003dfc t dis_input
+000078c8 t echo_reply_input
+00007928 t echo_request_input
+00001698 T gpio_hal_arch_no_port_pin_set_input
+000016c4 T gpio_hal_arch_no_port_pin_set_output
+00005e70 t input
+200037c4 b input_handler_list_list
+00001024 t input_packet
+000019ec T link_stats_input_callback
+00010466 T memb_free
+000104ae T memb_numfree
+00010c58 T memcpy
+00010c74 T memmove
+00010ca8 T memset
+20003418 b netstack_cmd_start_rat
+2000342c b netstack_cmd_stop_rat
+00004e60 T netstack_open
+00001f60 T netstack_process_ip_callback
+00004ea8 T netstack_sched_fs
+00004f60 T netstack_sched_prop_tx
+00005034 T netstack_sched_rx
+000050f8 T netstack_stop_rx
+00007bf4 t ns_input
+20001e28 d ns_input_handler
+00005628 t output
+000070dc t packet_input
+000021a8 T packetbuf_addr
+20004352 B packetbuf_addrs
+20002eac b packetbuf_aligned
+0000218c T packetbuf_attr
+000020a0 T packetbuf_attr_clear
+00002150 T packetbuf_attr_copyfrom
+00002120 T packetbuf_attr_copyto
+20004362 B packetbuf_attrs
+000020d4 T packetbuf_clear
+000020f4 T packetbuf_copyfrom
+00002008 T packetbuf_copyto
+00001fd4 T packetbuf_datalen
+00001ff8 T packetbuf_dataptr
+2000514a b packetbuf_hdr_len
+0000205c T packetbuf_hdralloc
+00001fe0 T packetbuf_hdrlen
+00001fcc T packetbuf_hdrptr
+00001f98 T packetbuf_hdrreduce
+000021b8 T packetbuf_holds_broadcast
+200035d0 b packetbuf_payload_len
+200035d4 b packetbuf_ptr
+00002198 T packetbuf_set_addr
+00002180 T packetbuf_set_attr
+00001fc0 T packetbuf_set_datalen
+00002048 T packetbuf_totlen
+00002344 T printf
+000066d0 t process_thread_stack_check_process
+00002be8 T queuebuf_free
+00002b7c T queuebuf_init
+00002ba4 T queuebuf_new_from_packetbuf
+00002b98 T queuebuf_numfree
+00002c14 T queuebuf_to_packetbuf
+0001061a T queuebuf_update_attr_from_packetbuf
+00002c70 T random_init
+00002c44 T random_rand
+200020d8 b rf_netstack
+00004100 T rpl_icmp6_dao_ack_output
+00004030 T rpl_icmp6_dao_output
+00003e60 T rpl_icmp6_dio_output
+00003e28 T rpl_icmp6_dis_output
+00010862 T snprintf
+00006690 T stack_check_get_usage
+0000666c T stack_check_init
+20001dd4 D stack_check_process
+00006fcc T tcpip_input
+00006ff0 T tcpip_ipv6_output
+00006fa0 T tcpip_output
+00007a00 T uip_icmp6_error_output
+000079c8 T uip_icmp6_input
+000079f4 T uip_icmp6_register_input_handler
+0000803c T uip_sr_free_all
+00008634 T uipbuf_add_ext_hdr
+20004a48 b uipbuf_attrs
+000086c4 T uipbuf_clear
+000086a4 T uipbuf_clear_attr
+20004a58 b uipbuf_default_attrs
+0000867c T uipbuf_get_attr
+00010bc4 T uipbuf_get_last_header
+00010b6a T uipbuf_get_len_field
+00010b76 T uipbuf_get_next_header
+000086e4 T uipbuf_init
+00010bf0 T uipbuf_search_header
+00008690 T uipbuf_set_attr
+00008668 T uipbuf_set_len
+00010b64 T uipbuf_set_len_field
+00006644 T vsnprintf
+
+[Large functions / stack-heavy candidates]
+0000aae4 000001a8 t RF_dispatchNextCmd
+0000d29c 000001bc t runCalibrateFsm
+00003e60 000001d0 T rpl_icmp6_dio_output
+0000f020 000001ec T UARTCC26XX_hwiIntFxn
+0000b72c 000001f8 T RF_scheduleCmd
+00000a24 000001f8 T main
+0000c598 00000200 T PIN_init
+20002220 00000200 b RF_cmdPool
+0000ec90 00000224 T UARTCC26XX_open
+00003818 00000234 T rpl_ext_header_update
+0000dda4 00000244 t SPICC26X2DMA_hwiFxn
+0000a75c 00000248 T RF_open
+00003bb4 00000248 t dio_input
+20002964 00000260 b rx_data_queue
+00007bf4 0000027c t ns_input
+00000110 000002be T __udivmoddi4
+0000d4cc 000002c8 T PowerCC26X2_auxISR
+0000e2c0 000002c8 T SPICC26X2DMA_open
+0000dfe8 000002d8 T SPICC26X2DMA_transfer
+00008214 00000404 T uip_process
+2000395c 00000500 B uip_aligned_buf
+20004bfe 0000054c b frag_buf
+2000437a 00000550 b buframmem_memb_mem
+0000b0b0 00000584 t RF_fsmActiveState
+00005628 000006fc t output
+00006830 00000770 T format_str_v
+00005e70 000007d4 t input
+0000ed00 1fff6600 B __stack_size
+20014000 dffec13a N _stack_origin
+20005300 dfffae3a N _stack
+
+[Disassembly samples around buffer/string functions]
+     402:	f00c fa3d 	bl	c880 <PIN_setOutputValue>
+     406:	2001      	movs	r0, #1
+     408:	f010 fc69 	bl	10cde <NOROM_CPUdelay>
+     40c:	2201      	movs	r2, #1
+     40e:	2114      	movs	r1, #20
+     410:	4620      	mov	r0, r4
+     412:	f00c fa35 	bl	c880 <PIN_setOutputValue>
+     416:	f44f 700c 	mov.w	r0, #560	@ 0x230
+     41a:	f010 fc60 	bl	10cde <NOROM_CPUdelay>
+     41e:	4620      	mov	r0, r4
+     420:	f00c f9f0 	bl	c804 <PIN_close>
+     424:	b006      	add	sp, #24
+     426:	bd10      	pop	{r4, pc}
+     428:	00010d14 	.word	0x00010d14
+
+0000042c <CC1352P1_LAUNCHXL_shutDownExtFlash>:
+     42c:	b530      	push	{r4, r5, lr}
+     42e:	4d0b      	ldr	r5, [pc, #44]	@ (45c <CC1352P1_LAUNCHXL_shutDownExtFlash+0x30>)
+     430:	b089      	sub	sp, #36	@ 0x24
+     432:	f7ff ffd7 	bl	3e4 <CC1352P1_LAUNCHXL_wakeUpExtFlash>
+     436:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+     438:	ac03      	add	r4, sp, #12
+     43a:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+     43c:	682b      	ldr	r3, [r5, #0]
+     43e:	6023      	str	r3, [r4, #0]
+--
+     8a0:	f000 fefa 	bl	1698 <gpio_hal_arch_no_port_pin_set_input>
+     8a4:	f856 3c04 	ldr.w	r3, [r6, #-4]
+     8a8:	4621      	mov	r1, r4
+     8aa:	f893 0049 	ldrb.w	r0, [r3, #73]	@ 0x49
+     8ae:	f000 ff35 	bl	171c <gpio_hal_arch_no_port_pin_cfg_set>
+     8b2:	f856 3c04 	ldr.w	r3, [r6, #-4]
+     8b6:	f893 0049 	ldrb.w	r0, [r3, #73]	@ 0x49
+     8ba:	f000 ff1b 	bl	16f4 <gpio_hal_arch_no_port_interrupt_enable>
+     8be:	f856 3c04 	ldr.w	r3, [r6, #-4]
+     8c2:	68aa      	ldr	r2, [r5, #8]
+     8c4:	f893 3049 	ldrb.w	r3, [r3, #73]	@ 0x49
+     8c8:	fa07 f303 	lsl.w	r3, r7, r3
+     8cc:	4313      	orrs	r3, r2
+     8ce:	60ab      	str	r3, [r5, #8]
+     8d0:	e7d6      	b.n	880 <button_hal_init+0x28>
+     8d2:	bf00      	nop
+     8d4:	20004a91 	.word	0x20004a91
+     8d8:	200027f8 	.word	0x200027f8
+     8dc:	20004a92 	.word	0x20004a92
+--
+     a5c:	f002 f88e 	bl	2b7c <queuebuf_init>
+     a60:	4b5c      	ldr	r3, [pc, #368]	@ (bd4 <main+0x1b0>)
+     a62:	681b      	ldr	r3, [r3, #0]
+     a64:	4798      	blx	r3
+     a66:	687b      	ldr	r3, [r7, #4]
+     a68:	4798      	blx	r3
+     a6a:	f8d8 3004 	ldr.w	r3, [r8, #4]
+     a6e:	4798      	blx	r3
+     a70:	79aa      	ldrb	r2, [r5, #6]
+     a72:	79eb      	ldrb	r3, [r5, #7]
+     a74:	eb03 2302 	add.w	r3, r3, r2, lsl #8
+     a78:	8033      	strh	r3, [r6, #0]
+     a7a:	6823      	ldr	r3, [r4, #0]
+     a7c:	2b02      	cmp	r3, #2
+     a7e:	dd69      	ble.n	b54 <main+0x130>
+     a80:	4a55      	ldr	r2, [pc, #340]	@ (bd8 <main+0x1b4>)
+     a82:	4956      	ldr	r1, [pc, #344]	@ (bdc <main+0x1b8>)
+     a84:	4856      	ldr	r0, [pc, #344]	@ (be0 <main+0x1bc>)
+     a86:	f001 fc5d 	bl	2344 <printf>
+--
+     c7c:	f001 ffb4 	bl	2be8 <queuebuf_free>
+     c80:	68a9      	ldr	r1, [r5, #8]
+     c82:	4813      	ldr	r0, [pc, #76]	@ (cd0 <tx_done+0x70>)
+     c84:	f00f fbef 	bl	10466 <memb_free>
+     c88:	4812      	ldr	r0, [pc, #72]	@ (cd4 <tx_done+0x74>)
+     c8a:	4629      	mov	r1, r5
+     c8c:	f00f fbeb 	bl	10466 <memb_free>
+     c90:	6b63      	ldr	r3, [r4, #52]	@ 0x34
+     c92:	681b      	ldr	r3, [r3, #0]
+     c94:	b163      	cbz	r3, cb0 <tx_done+0x50>
+     c96:	2300      	movs	r3, #0
+     c98:	85a3      	strh	r3, [r4, #44]	@ 0x2c
+     c9a:	4620      	mov	r0, r4
+     c9c:	f7ff ffbe 	bl	c1c <schedule_transmission>
+     ca0:	b19f      	cbz	r7, cca <tx_done+0x6a>
+     ca2:	464a      	mov	r2, r9
+     ca4:	4631      	mov	r1, r6
+     ca6:	4640      	mov	r0, r8
+     ca8:	463b      	mov	r3, r7
+--
+     cf8:	f001 ff8c 	bl	2c14 <queuebuf_to_packetbuf>
+     cfc:	495e      	ldr	r1, [pc, #376]	@ (e78 <transmit_from_queue+0x198>)
+     cfe:	200c      	movs	r0, #12
+     d00:	f001 fa4a 	bl	2198 <packetbuf_set_addr>
+     d04:	2101      	movs	r1, #1
+     d06:	2007      	movs	r0, #7
+     d08:	f001 fa3a 	bl	2180 <packetbuf_set_attr>
+     d0c:	f000 f94e 	bl	fac <csma_security_create_frame>
+     d10:	2800      	cmp	r0, #0
+     d12:	db6c      	blt.n	dee <transmit_from_queue+0x10e>
+     d14:	f001 f95a 	bl	1fcc <packetbuf_hdrptr>
+     d18:	4f58      	ldr	r7, [pc, #352]	@ (e7c <transmit_from_queue+0x19c>)
+     d1a:	f890 a002 	ldrb.w	sl, [r0, #2]
+     d1e:	687d      	ldr	r5, [r7, #4]
+     d20:	f001 f954 	bl	1fcc <packetbuf_hdrptr>
+     d24:	4680      	mov	r8, r0
+     d26:	f001 f98f 	bl	2048 <packetbuf_totlen>
+     d2a:	4601      	mov	r1, r0
+     d2c:	4640      	mov	r0, r8
+     d2e:	47a8      	blx	r5
+     d30:	f001 fa42 	bl	21b8 <packetbuf_holds_broadcast>
+     d34:	f8d7 9018 	ldr.w	r9, [r7, #24]
+     d38:	4680      	mov	r8, r0
+     d3a:	47c8      	blx	r9
+     d3c:	b108      	cbz	r0, d42 <transmit_from_queue+0x62>
+     d3e:	2501      	movs	r5, #1
+     d40:	e00c      	b.n	d5c <transmit_from_queue+0x7c>
+     d42:	f1b8 0f00 	cmp.w	r8, #0
+     d46:	d014      	beq.n	d72 <transmit_from_queue+0x92>
+     d48:	68bd      	ldr	r5, [r7, #8]
+     d4a:	f001 f97d 	bl	2048 <packetbuf_totlen>
+     d4e:	47a8      	blx	r5
+     d50:	4605      	mov	r5, r0
+     d52:	b198      	cbz	r0, d7c <transmit_from_queue+0x9c>
+     d54:	2802      	cmp	r0, #2
+     d56:	bf14      	ite	ne
+     d58:	2504      	movne	r5, #4
+     d5a:	2501      	moveq	r5, #1
+     d5c:	68b2      	ldr	r2, [r6, #8]
+     d5e:	2a00      	cmp	r2, #0
+     d60:	f000 8083 	beq.w	e6a <transmit_from_queue+0x18a>
+     d64:	2d03      	cmp	r5, #3
+     d66:	f200 8083 	bhi.w	e70 <transmit_from_queue+0x190>
+     d6a:	e8df f005 	tbb	[pc, r5]
+     d6e:	5f42      	.short	0x5f42
+     d70:	7e4f      	.short	0x7e4f
+     d72:	69fb      	ldr	r3, [r7, #28]
+     d74:	4798      	blx	r3
+     d76:	2800      	cmp	r0, #0
+--
+     e66:	f00f fbd8 	bl	1061a <queuebuf_update_attr_from_packetbuf>
+     e6a:	b003      	add	sp, #12
+     e6c:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+     e70:	4622      	mov	r2, r4
+     e72:	4631      	mov	r1, r6
+     e74:	4628      	mov	r0, r5
+     e76:	e7c6      	b.n	e06 <transmit_from_queue+0x126>
+     e78:	20004344 	.word	0x20004344
+     e7c:	00010e98 	.word	0x00010e98
+
+00000e80 <csma_output_packet>:
+     e80:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+     e84:	4606      	mov	r6, r0
+     e86:	200d      	movs	r0, #13
+     e88:	460f      	mov	r7, r1
+     e8a:	f001 f98d 	bl	21a8 <packetbuf_addr>
+     e8e:	4605      	mov	r5, r0
+     e90:	f000 fe52 	bl	1b38 <mac_sequence_set_dsn>
+     e94:	2101      	movs	r1, #1
+     e96:	200b      	movs	r0, #11
+     e98:	f001 f972 	bl	2180 <packetbuf_set_attr>
+     e9c:	4b36      	ldr	r3, [pc, #216]	@ (f78 <csma_output_packet+0xf8>)
+     e9e:	681c      	ldr	r4, [r3, #0]
+     ea0:	2c00      	cmp	r4, #0
+     ea2:	d143      	bne.n	f2c <csma_output_packet+0xac>
+     ea4:	4835      	ldr	r0, [pc, #212]	@ (f7c <csma_output_packet+0xfc>)
+     ea6:	f00f faca 	bl	1043e <memb_alloc>
+     eaa:	4604      	mov	r4, r0
+     eac:	2800      	cmp	r0, #0
+     eae:	d059      	beq.n	f64 <csma_output_packet+0xe4>
+     eb0:	4629      	mov	r1, r5
+     eb2:	1d20      	adds	r0, r4, #4
+     eb4:	f00f fa70 	bl	10398 <linkaddr_copy>
+     eb8:	2300      	movs	r3, #0
+     eba:	f104 0230 	add.w	r2, r4, #48	@ 0x30
+     ebe:	e9c4 320c 	strd	r3, r2, [r4, #48]	@ 0x30
+     ec2:	482d      	ldr	r0, [pc, #180]	@ (f78 <csma_output_packet+0xf8>)
+     ec4:	85a3      	strh	r3, [r4, #44]	@ 0x2c
+     ec6:	4621      	mov	r1, r4
+     ec8:	f00f fa8e 	bl	103e8 <list_add>
+     ecc:	6b60      	ldr	r0, [r4, #52]	@ 0x34
+     ece:	f00f fa9f 	bl	10410 <list_length>
+     ed2:	2807      	cmp	r0, #7
+     ed4:	dc46      	bgt.n	f64 <csma_output_packet+0xe4>
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  73564	    374	   5698	  79636	  13714	extra-firmwares/hardworker.z1
+
+[Credential / secret / backdoor string search]
+Heard old version from root
+Init root
+SRH root node not found
+NS: no space left for root node!
+  (DODAG root)
+
+[Error / assert / information leakage strings]
+failed to create packet, seqno: %d
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+drop duplicate link layer packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+framer-802154: cannot setup params because of invalid argument
+Cannot allocate another event number
+Cannot post event %d to %s from %s because the queue is full
+failed to create a new RPL DAG
+ignoring DIO with an unsupported OF: %u
+failed to set prefix
+ignoring DIO with an unsupported MOP: %d
+failed to initialize DAG
+unknown
+failed to init DAG
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+failed to add link on incoming DAO
+unable to add/update hop-by-hop extension header: incorrect instance
+Invalid SRH address pointer
+unknown instance: %u
+forward error!
+ going %s, sender closer %d (%d < %d), rank error %u, loop detected %u
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+dao_ack_input: unknown instance, discard
+dao_input: unknown RPL instance %u, discard
+dao_input: invalid DAO header, len %u, discard
+dao_input: malformed packet, discard
+dao_input: invalid target option, len %u, discard
+dao_input: invalid target option, len %u != %u, discard
+dao_input: invalid transit option, len %u, discard
+dio_input: invalid DIO header, len %u, discard
+dio_input: malformed packet, discard
+dio_input: invalid DAG MC, len %u, discard
+dio_input: unsupported DAG MC type %u, discard
+dio_input: invalid route info option, len %u, discard
+dio_input: invalid DAG configuration option, len %u, discard
+dio_input: invalid DAG prefix info, len %u, discard
+dio_input: invalid DAG prefix info, len %u > %zu
+dio_input: unsupported suboption type in DIO: %u, discard
+unable to send DIO because of unsupported DAG MC type %u
+prefix not included, not-supported or invalid
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: could not allocate queuebuf, dropping fragment
+output: error in fragment tx, dropping subsequent fragments.
+output: failed to calculate payload size - dropping packet
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+IPHC: cannot compress UDP headers
+output: fragmentation needed. fragments: %u, free queuebufs: %zu
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: failed to allocate new reassembly context
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: error source context not found
+uncompression: error destination context not found
+uncompression: error unsupported ext header
+uncompression: cannot write ext header beyond target buffer
+uncompression: cannot write UDP header beyond target buffer
+uncompression: error unsupported UDP compression
+uncompression: checksum included
+uncompression: checksum *NOT* included
+input: failed to decompress IPHC packet
+uncompression: unknown dispatch: 0x%02x, or IPHC disabled
+input: packet dropped due to header > total packet
+input: packet and fragment context %u dropped, minimum required IP_BUF size: %d+%d+%d=%u (current size: %u)
+input: cannot copy the payload into the buffer
+input: invalid total size of fragments
+input: invalid fragment offset
+Stack
+Check failed: %u vs. %u
+Stack check
+output: routing protocol extension header update error
+output: No next-hop found, dropping packet
+output: failed to autofill neighbor cache for host 
+TCP/IP stack
+Add drop ip addr 
+%s: invalid argument
+%s: input nbr cannot be removed
+%s: cannot allocate a new nbr for new_ll_addr
+, out of memory
+Unable to remove ext header before sending ICMPv6 ERROR message
+Sending ICMPv6 ERROR message type %d code %d to 
+invalid argument; dest is NULL
+NS received is bad
+Upper layer checksum len: %d from: %d
+Extension header option too long: dropping packet
+RPL Option Error: Dropping Packet
+uip_len too short compared to ext len
+invalid version
+dropping packet with length %d > %d
+invalid extension header chain
+Dropping packet, src is mcast
+LL source address with off link destination, dropping
+Dropping packet, not for me and link local or multicast
+fragment dropped.
+icmpv6 bad checksum
+Unknown ICMPv6 message type/code %d
+udp: bad checksum 0x%04x 0x%04x
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+000028b8 A _stack
+000039a0 T accm_init
+000024d8 B accm_int1_cb
+000024d4 B accm_int2_cb
+00003928 t accm_read_axis.part.0
+0000387e t accm_read_reg
+00003a18 T accm_stop
+00003826 t accm_write_reg
+00003854 t accm_write_stream
+00001100 D accmeter_process
+00014616 t call_vuprintf
+00004d10 T csma_output_init
+00004ab2 T csma_output_packet
+00008bda t dao_ack_input
+00008c9e t dao_input
+00009008 t dio_input
+000094b4 t dis_input
+000127a8 t echo_reply_input
+00012866 t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+00010000 t input
+0000239a b input_handler_list_list
+00004dae t input_packet
+00005fd4 T link_stats_input_callback
+000063c2 T memb_free
+0000641e T memb_numfree
+00014fa8 T memcpy
+00015090 T memmove
+00015178 T memset
+00006926 T netstack_process_ip_callback
+00012cc8 t ns_input
+00001242 d ns_input_handler
+0000b562 t output
+0000c4f4 r output_power
+0001172c t packet_input.part.2
+00006b46 T packetbuf_addr
+00002516 B packetbuf_addrs
+0000152a b packetbuf_aligned
+00006b2a T packetbuf_attr
+00006a76 T packetbuf_attr_clear
+00006afc T packetbuf_attr_copyfrom
+00006ada T packetbuf_attr_copyto
+00002526 B packetbuf_attrs
+00006a9e T packetbuf_clear
+00006ab0 T packetbuf_copyfrom
+000069f4 T packetbuf_copyto
+000069d8 T packetbuf_datalen
+000069e8 T packetbuf_dataptr
+000024c3 b packetbuf_hdr_len
+00006a3a T packetbuf_hdralloc
+000069de T packetbuf_hdrlen
+000069d2 T packetbuf_hdrptr
+000069b2 T packetbuf_hdrreduce
+00006b54 T packetbuf_holds_broadcast
+00001bd8 b packetbuf_payload_len
+00001bd0 b packetbuf_ptr
+00006b34 T packetbuf_set_addr
+00006b20 T packetbuf_set_attr
+000069cc T packetbuf_set_datalen
+00006a2e T packetbuf_totlen
+000145e4 T printf
+000038d2 t process_thread_accmeter_process
+0001122e t process_thread_stack_check_process
+000071cc T queuebuf_attr
+00007170 T queuebuf_free
+000070f4 T queuebuf_init
+00007110 T queuebuf_new_from_packetbuf
+00007106 T queuebuf_numfree
+0000719a T queuebuf_to_packetbuf
+0000715e T queuebuf_update_attr_from_packetbuf
+000071da T random_init
+000071e0 T random_rand
+00009ad4 T rpl_icmp6_dao_ack_output
+000098e2 T rpl_icmp6_dao_output
+0000964a T rpl_icmp6_dio_output
+000095d4 T rpl_icmp6_dis_output
+0001464c T snprintf
+0000c39e T stack_check_get_usage
+0000c370 T stack_check_init
+00001208 D stack_check_process
+0000228c b stack_top.2426
+000112fc T tcpip_input
+0001131a T tcpip_ipv6_output
+000112da T tcpip_output
+000022a6 b uart0_input_handler
+000129fc T uip_icmp6_error_output
+000129bc T uip_icmp6_input
+000129f0 T uip_icmp6_register_input_handler
+0001346a T uip_sr_free_all
+0001420a T uipbuf_add_ext_hdr
+0000244e b uipbuf_attrs
+0001436a T uipbuf_clear
+00014358 T uipbuf_clear_attr
+0000245e b uipbuf_default_attrs
+00014332 T uipbuf_get_attr
+000142b6 T uipbuf_get_last_header
+00014246 T uipbuf_get_len_field
+00014254 T uipbuf_get_next_header
+0001437c T uipbuf_init
+000142ec T uipbuf_search_header
+00014344 T uipbuf_set_attr
+00014226 T uipbuf_set_len
+00014238 T uipbuf_set_len_field
+000147de T vuprintf
+
+[Large functions / stack-heavy candidates]
+000056c4 0000015c T frame802154_parse
+00013618 0000016e t ext_hdr_options_process
+00014668 00000176 t print_field
+000131e8 00000182 T uip_sr_update_node
+00004dae 00000194 t input_packet
+00007574 000001a4 t process_dio_init_dag
+000084b6 000001a6 T rpl_ext_header_hbh_update
+000129fc 000001c4 T uip_icmp6_error_output
+00009ee4 000001da T rpl_neighbor_snprint
+000082c4 000001f2 T rpl_ext_header_srh_update
+000098e2 000001f2 T rpl_icmp6_dao_output
+000079b4 00000208 T rpl_dag_update_state
+00004ab2 0000025e T csma_output_packet
+0000313e 0000026e T main
+00012526 00000282 T uip_ds6_init
+0000b11c 0000028e t add_fragment
+0000964a 00000298 T rpl_icmp6_dio_output
+000047d4 000002de t transmit_from_queue
+00007bbc 00000344 T rpl_process_dio
+00008c9e 0000036a t dao_input
+0001131a 00000412 T tcpip_ipv6_output
+00012cc8 0000041e t ns_input
+0000871c 00000438 T rpl_ext_header_update
+00009008 000004ac t dio_input
+000015e2 00000550 b buframmem_memb_mem
+00001d34 00000558 b frag_buf
+000147de 00000742 T vuprintf
+000138b0 00000930 T uip_process
+0000b562 00000ddc t output
+00010000 0000122e t input
+
+[Disassembly samples around buffer/string functions]
+00010000 <input>:
+   10000:	7b 14       	pushm.a	#8,	r11	
+   10002:	31 50 f2 ff 	add	#-14,	r1	;#0xfff2
+   10006:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+   1000a:	b0 13 46 6b 	calla	#0x06b46	
+   1000e:	b0 13 d4 5f 	calla	#0x05fd4	
+   10012:	c2 43 c2 24 	mov.b	#0,	&0x24c2	;r3 As==00
+   10016:	c2 43 c3 24 	mov.b	#0,	&0x24c3	;r3 As==00
+   1001a:	b0 13 e8 69 	calla	#0x069e8	
+   1001e:	82 4f d0 1b 	mov	r15,	&0x1bd0	
+   10022:	b0 13 d8 69 	calla	#0x069d8	
+   10026:	0f 93       	tst	r15		
+   10028:	12 20       	jnz	$+38     	;abs 0x1004e
+   1002a:	a2 93 8c 11 	cmp	#2,	&0x118c	;r3 As==10
+   1002e:	02 34       	jge	$+6      	;abs 0x10034
+   10030:	80 01 26 12 	bra	#0x11226	
+   10034:	30 12 c9 e1 	push	#-7735		;#0xe1c9
+   10038:	30 12 d1 e1 	push	#-7727		;#0xe1d1
+   1003c:	30 12 d6 e1 	push	#-7722		;#0xe1d6
+--
+000112da <tcpip_output>:
+   112da:	0b 14       	pushm.a	#1,	r11	
+   112dc:	0b 4f       	mov	r15,	r11	
+   112de:	0e 4f       	mov	r15,	r14	
+   112e0:	5f 43       	mov.b	#1,	r15	;r3 As==01
+   112e2:	b0 13 26 69 	calla	#0x06926	
+   112e6:	0f 93       	tst	r15		
+   112e8:	04 20       	jnz	$+10     	;abs 0x112f2
+   112ea:	0f 4b       	mov	r11,	r15	
+   112ec:	80 13 a0 c5 	calla	&0x0c5a0	
+   112f0:	03 3c       	jmp	$+8      	;abs 0x112f8
+   112f2:	b1 13 6a 43 	calla	#0x1436a	
+   112f6:	4f 43       	clr.b	r15		
+   112f8:	0b 16       	popm.a	#1,	r11	
+   112fa:	10 01       	reta			
+
+000112fc <tcpip_input>:
+   112fc:	0e 43       	clr	r14		
+   112fe:	4f 43       	clr.b	r15		
+   11300:	b0 13 26 69 	calla	#0x06926	
+   11304:	0f 93       	tst	r15		
+   11306:	06 20       	jnz	$+14     	;abs 0x11314
+   11308:	0d 43       	clr	r13		
+   1130a:	6e 43       	mov.b	#2,	r14	;r3 As==10
+   1130c:	3f 40 14 12 	mov	#4628,	r15	;#0x1214
+   11310:	b0 13 66 70 	calla	#0x07066	
+   11314:	b1 13 6a 43 	calla	#0x1436a	
+   11318:	10 01       	reta			
+
+0001131a <tcpip_ipv6_output>:
+   1131a:	1b 14       	pushm.a	#2,	r11	
+   1131c:	31 50 e8 ff 	add	#-24,	r1	;#0xffe8
+   11320:	1f 42 d2 27 	mov	&0x27d2,r15	
+   11324:	0f 93       	tst	r15		
+   11326:	02 20       	jnz	$+6      	;abs 0x1132c
+   11328:	80 01 24 17 	bra	#0x11724	
+   1132c:	3f 90 01 05 	cmp	#1281,	r15	;#0x0501
+   11330:	12 28       	jnc	$+38     	;abs 0x11356
+   11332:	92 93 90 11 	cmp	#1,	&0x1190	;r3 As==01
+   11336:	02 34       	jge	$+6      	;abs 0x1133c
+   11338:	80 01 02 17 	bra	#0x11702	
+   1133c:	30 12 c2 f0 	push	#-3902		;#0xf0c2
+   11340:	30 12 c9 f0 	push	#-3895		;#0xf0c9
+   11344:	30 12 cd f0 	push	#-3891		;#0xf0cd
+   11348:	b1 13 e4 45 	calla	#0x145e4	
+   1134c:	31 50 06 00 	add	#6,	r1	;#0x0006
+   11350:	30 12 dc f0 	push	#-3876		;#0xf0dc
+   11354:	29 3c       	jmp	$+84     	;abs 0x113a8
+--
+0001172c <packet_input.part.2>:
+   1172c:	b2 90 03 00 	cmp	#3,	&0x1190	;#0x0003
+   11730:	90 11 
+   11732:	11 38       	jl	$+36     	;abs 0x11756
+   11734:	30 12 c2 f0 	push	#-3902		;#0xf0c2
+   11738:	30 12 52 f1 	push	#-3758		;#0xf152
+   1173c:	30 12 cd f0 	push	#-3891		;#0xf0cd
+   11740:	b1 13 e4 45 	calla	#0x145e4	
+   11744:	31 50 06 00 	add	#6,	r1	;#0x0006
+   11748:	12 12 d2 27 	push	&0x27d2	
+   1174c:	30 12 14 f3 	push	#-3308		;#0xf314
+   11750:	b1 13 e4 45 	calla	#0x145e4	
+   11754:	21 52       	add	#4,	r1	;r2 As==10
+   11756:	5f 43       	mov.b	#1,	r15	;r3 As==01
+   11758:	b1 13 b0 38 	calla	#0x138b0	
+   1175c:	82 93 d2 27 	tst	&0x27d2	
+   11760:	02 24       	jz	$+6      	;abs 0x11766
+   11762:	b1 13 1a 13 	calla	#0x1131a	
+   11766:	10 01       	reta			
+--
+000127a8 <echo_reply_input>:
+   127a8:	2b 14       	pushm.a	#3,	r11	
+   127aa:	31 50 f0 ff 	add	#-16,	r1	;#0xfff0
+   127ae:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+   127b2:	8e 11 
+   127b4:	0f 38       	jl	$+32     	;abs 0x127d4
+   127b6:	30 12 b3 f6 	push	#-2381		;#0xf6b3
+   127ba:	30 12 ba f6 	push	#-2374		;#0xf6ba
+   127be:	30 12 bf f6 	push	#-2369		;#0xf6bf
+   127c2:	b1 13 e4 45 	calla	#0x145e4	
+   127c6:	31 50 06 00 	add	#6,	r1	;#0x0006
+   127ca:	30 12 ce f6 	push	#-2354		;#0xf6ce
+   127ce:	b1 13 e4 45 	calla	#0x145e4	
+   127d2:	21 53       	incd	r1		
+   127d4:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+   127d8:	8e 11 
+   127da:	04 38       	jl	$+10     	;abs 0x127e4
+   127dc:	3f 40 e6 27 	mov	#10214,	r15	;#0x27e6
+   127e0:	b0 13 c6 61 	calla	#0x061c6	
+--
+00012866 <echo_request_input>:
+   12866:	0b 14       	pushm.a	#1,	r11	
+   12868:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+   1286c:	8e 11 
+   1286e:	0f 38       	jl	$+32     	;abs 0x1288e
+   12870:	30 12 b3 f6 	push	#-2381		;#0xf6b3
+   12874:	30 12 ba f6 	push	#-2374		;#0xf6ba
+   12878:	30 12 bf f6 	push	#-2369		;#0xf6bf
+   1287c:	b1 13 e4 45 	calla	#0x145e4	
+   12880:	31 50 06 00 	add	#6,	r1	;#0x0006
+   12884:	30 12 ed f6 	push	#-2323		;#0xf6ed
+   12888:	b1 13 e4 45 	calla	#0x145e4	
+   1288c:	21 53       	incd	r1		
+   1288e:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+   12892:	8e 11 
+   12894:	04 38       	jl	$+10     	;abs 0x1289e
+   12896:	3f 40 e6 27 	mov	#10214,	r15	;#0x27e6
+   1289a:	b0 13 c6 61 	calla	#0x061c6	
+   1289e:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+--
+000129bc <uip_icmp6_input>:
+   129bc:	1d 42 9a 23 	mov	&0x239a,r13	
+   129c0:	0a 3c       	jmp	$+22     	;abs 0x129d6
+   129c2:	cd 9f 06 00 	cmp.b	r15,	6(r13)	;0x0006(r13)
+   129c6:	06 20       	jnz	$+14     	;abs 0x129d4
+   129c8:	5c 4d 07 00 	mov.b	7(r13),	r12	;0x0007(r13)
+   129cc:	4c 9e       	cmp.b	r14,	r12	
+   129ce:	0b 24       	jz	$+24     	;abs 0x129e6
+   129d0:	7c 93       	cmp.b	#-1,	r12	;r3 As==11
+   129d2:	09 24       	jz	$+20     	;abs 0x129e6
+   129d4:	2d 4d       	mov	@r13,	r13	
+   129d6:	0d 93       	tst	r13		
+   129d8:	f4 23       	jnz	$-22     	;abs 0x129c2
+   129da:	03 3c       	jmp	$+8      	;abs 0x129e2
+   129dc:	4f 13       	calla	r15		
+   129de:	4f 43       	clr.b	r15		
+   129e0:	10 01       	reta			
+   129e2:	5f 43       	mov.b	#1,	r15	;r3 As==01
+   129e4:	10 01       	reta			
+--
+000129f0 <uip_icmp6_register_input_handler>:
+   129f0:	0e 4f       	mov	r15,	r14	
+   129f2:	3f 40 9a 23 	mov	#9114,	r15	;#0x239a
+   129f6:	b0 13 90 61 	calla	#0x06190	
+   129fa:	10 01       	reta			
+
+000129fc <uip_icmp6_error_output>:
+   129fc:	4b 14       	pushm.a	#5,	r11	
+   129fe:	49 4f       	mov.b	r15,	r9	
+   12a00:	48 4e       	mov.b	r14,	r8	
+   12a02:	0a 4c       	mov	r12,	r10	
+   12a04:	0b 4d       	mov	r13,	r11	
+   12a06:	f2 90 3a 00 	cmp.b	#58,	&0x24d1	;#0x003a
+   12a0a:	d1 24 
+   12a0c:	0a 20       	jnz	$+22     	;abs 0x12a22
+   12a0e:	1f 42 4a 24 	mov	&0x244a,r15	
+   12a12:	3f 50 28 00 	add	#40,	r15	;#0x0028
+   12a16:	cf 93 de 27 	tst.b	10206(r15)	;0x27de(r15)
+   12a1a:	03 38       	jl	$+8      	;abs 0x12a22
+   12a1c:	b1 13 6a 43 	calla	#0x1436a	
+   12a20:	cd 3c       	jmp	$+412    	;abs 0x12bbc
+   12a22:	82 93 e6 27 	tst	&0x27e6	
+   12a26:	15 20       	jnz	$+44     	;abs 0x12a52
+   12a28:	82 93 e8 27 	tst	&0x27e8	
+   12a2c:	12 20       	jnz	$+38     	;abs 0x12a52
+--
+00012cc8 <ns_input>:
+   12cc8:	1b 14       	pushm.a	#2,	r11	
+   12cca:	31 82       	sub	#8,	r1	;r2 As==11
+   12ccc:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+   12cd0:	8e 11 
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  42237	    324	   6714	  49275	   c07b	extra-firmwares/hello-world.sky
+
+[Credential / secret / backdoor string search]
+Debug
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Errors
+Warnings
+Debug
+unknown
+Stack
+Check failed: %u vs. %u
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+0000400c W __init_stack
+00003900 A __stack
+00002c7e A _stack
+0000d32a t call_vuprintf
+0000e094 R cc2420_aes_128_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00008476 t dao_ack_input
+000084a6 t dao_input
+00008612 t dio_input
+000088cc t dis_input
+0000c04e t echo_reply_input
+0000c0ac t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+0000a7f2 t input
+00002644 b input_handler_list_list
+000054a2 t input_packet
+00006458 T link_stats_input_callback
+00006882 T memb_free
+000068de T memb_numfree
+0000dbdc T memcpy
+0000dcd6 T memmove
+0000ddd0 T memset
+00006ea2 T netstack_process_ip_callback
+0000c358 t ns_input
+00001232 d ns_input_handler
+0000a054 t output
+0000e0c2 r output_power
+0000b4c4 t packet_input.part.3
+00007092 T packetbuf_addr
+000027ee B packetbuf_addrs
+000015c2 b packetbuf_aligned
+00007072 T packetbuf_attr
+00006fba T packetbuf_attr_clear
+00007044 T packetbuf_attr_copyfrom
+00007022 T packetbuf_attr_copyto
+000027fe B packetbuf_attrs
+00006fe2 T packetbuf_clear
+00006ff4 T packetbuf_copyfrom
+00006f2c T packetbuf_copyto
+00006f10 T packetbuf_datalen
+00006f20 T packetbuf_dataptr
+00001d4d b packetbuf_hdr_len
+00006f7e T packetbuf_hdralloc
+00006f16 T packetbuf_hdrlen
+00006f0a T packetbuf_hdrptr
+00006eea T packetbuf_hdrreduce
+000070a4 T packetbuf_holds_broadcast
+00001d58 b packetbuf_payload_len
+00001d4e b packetbuf_ptr
+0000707c T packetbuf_set_addr
+00007068 T packetbuf_set_attr
+00006f04 T packetbuf_set_datalen
+00006f72 T packetbuf_totlen
+0000d2f8 T printf
+0000b2b0 t process_thread_stack_check_process
+000074e6 T queuebuf_free
+00007466 T queuebuf_init
+00007482 T queuebuf_new_from_packetbuf
+00007478 T queuebuf_numfree
+00007510 T queuebuf_to_packetbuf
+000074d4 T queuebuf_update_attr_from_packetbuf
+00007542 T random_init
+00007548 T random_rand
+00008c66 T rpl_icmp6_dao_ack_output
+00008b84 T rpl_icmp6_dao_output
+00008954 T rpl_icmp6_dio_output
+00008920 T rpl_icmp6_dis_output
+0000d364 T snprintf
+0000b26a T stack_check_get_usage
+0000b23c T stack_check_init
+00001202 D stack_check_process
+0000240c b stack_top.2366
+0000b392 T tcpip_input
+0000b3b0 T tcpip_ipv6_output
+0000b370 T tcpip_output
+0000243c b uart1_input_handler
+0000c172 T uip_icmp6_error_output
+0000c132 T uip_icmp6_input
+0000c166 T uip_icmp6_register_input_handler
+0000c85a T uip_sr_free_all
+0000cf98 T uipbuf_add_ext_hdr
+0000279c b uipbuf_attrs
+0000d110 T uipbuf_clear
+0000d0fe T uipbuf_clear_attr
+000027ac b uipbuf_default_attrs
+0000d0d8 T uipbuf_get_attr
+0000d04c T uipbuf_get_last_header
+0000cfd4 T uipbuf_get_len_field
+0000cfe2 T uipbuf_get_next_header
+0000d122 T uipbuf_init
+0000d08a T uipbuf_search_header
+0000d0ea T uipbuf_set_attr
+0000cfb4 T uipbuf_set_len
+0000cfc6 T uipbuf_set_len_field
+0000d512 T vuprintf
+
+[Large functions / stack-heavy candidates]
+0000b3b0 00000114 T tcpip_ipv6_output
+00007ebe 00000118 T rpl_ext_header_srh_update
+00004b6c 0000011e t get_value
+000024c0 00000120 b _ds6_neighbors_mem
+000056e8 00000120 T ds2411_init
+00002674 00000120 b nodememb_memb_mem
+0000d13c 0000012c T uiplib_ipaddr_snprint
+00007912 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c172 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d5a 00000158 b frag_info
+0000beea 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000084a6 0000016c t dao_input
+0000d37e 00000194 t print_field
+00007a56 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009d8a 000001fc t add_fragment
+00008954 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c358 00000298 t ns_input
+0000813e 000002aa T rpl_ext_header_update
+00008612 000002ba t dio_input
+0000caa8 000004c2 T uip_process
+00001716 00000550 b buframmem_memb_mem
+00001eb4 00000558 b frag_buf
+0000d512 0000063e T vuprintf
+0000a054 0000079e t output
+0000a7f2 00000a1a t input
+
+[Disassembly samples around buffer/string functions]
+000052e2 <csma_output_packet>:
+    52e2:	0b 12       	push	r11		
+    52e4:	0a 12       	push	r10		
+    52e6:	09 12       	push	r9		
+    52e8:	08 12       	push	r8		
+    52ea:	07 12       	push	r7		
+    52ec:	08 4f       	mov	r15,	r8	
+    52ee:	07 4e       	mov	r14,	r7	
+    52f0:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    52f4:	b0 12 92 70 	call	#0x7092	
+    52f8:	0a 4f       	mov	r15,	r10	
+    52fa:	b0 12 e2 66 	call	#0x66e2	
+    52fe:	1e 43       	mov	#1,	r14	;r3 As==01
+    5300:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5304:	b0 12 68 70 	call	#0x7068	
+    5308:	1b 42 66 12 	mov	&0x1266,r11	
+    530c:	08 3c       	jmp	$+18     	;abs 0x531e
+    530e:	0e 4a       	mov	r10,	r14	
+    5310:	0f 4b       	mov	r11,	r15	
+--
+00005428 <csma_output_init>:
+    5428:	3f 40 14 11 	mov	#4372,	r15	;#0x1114
+    542c:	b0 12 0e 68 	call	#0x680e	
+    5430:	3f 40 1c 11 	mov	#4380,	r15	;#0x111c
+    5434:	b0 12 0e 68 	call	#0x680e	
+    5438:	3f 40 0c 11 	mov	#4364,	r15	;#0x110c
+    543c:	b0 12 0e 68 	call	#0x680e	
+    5440:	30 41       	ret			
+
+00005442 <csma_security_create_frame>:
+    5442:	1e 43       	mov	#1,	r14	;r3 As==01
+    5444:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5448:	b0 12 68 70 	call	#0x7068	
+    544c:	92 12 e8 e0 	call	&0xe0e8	
+    5450:	30 41       	ret			
+
+00005452 <csma_security_parse_frame>:
+    5452:	92 12 ea e0 	call	&0xe0ea	
+    5456:	30 41       	ret			
+--
+000054a2 <input_packet>:
+    54a2:	b0 12 10 6f 	call	#0x6f10	
+    54a6:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    54aa:	26 24       	jz	$+78     	;abs 0x54f8
+    54ac:	b0 12 52 54 	call	#0x5452	
+    54b0:	0f 93       	tst	r15		
+    54b2:	22 38       	jl	$+70     	;abs 0x54f8
+    54b4:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    54b8:	b0 12 92 70 	call	#0x7092	
+    54bc:	3e 40 e4 27 	mov	#10212,	r14	;#0x27e4
+    54c0:	b0 12 b6 65 	call	#0x65b6	
+    54c4:	4f 93       	tst.b	r15		
+    54c6:	0b 24       	jz	$+24     	;abs 0x54de
+    54c8:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    54cc:	b0 12 92 70 	call	#0x7092	
+    54d0:	3e 40 e4 27 	mov	#10212,	r14	;#0x27e4
+    54d4:	b0 12 b6 65 	call	#0x65b6	
+    54d8:	4f 93       	tst.b	r15		
+    54da:	0e 20       	jnz	$+30     	;abs 0x54f8
+--
+00006458 <link_stats_input_callback>:
+    6458:	0b 12       	push	r11		
+    645a:	0a 12       	push	r10		
+    645c:	09 12       	push	r9		
+    645e:	08 12       	push	r8		
+    6460:	0a 4f       	mov	r15,	r10	
+    6462:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    6464:	b0 12 72 70 	call	#0x7072	
+    6468:	0b 4f       	mov	r15,	r11	
+    646a:	0e 4a       	mov	r10,	r14	
+    646c:	3f 40 48 11 	mov	#4424,	r15	;#0x1148
+    6470:	b0 12 cc 6c 	call	#0x6ccc	
+    6474:	09 4f       	mov	r15,	r9	
+    6476:	0f 93       	tst	r15		
+    6478:	0d 20       	jnz	$+28     	;abs 0x6494
+    647a:	0c 43       	clr	r12		
+    647c:	3d 42       	mov	#8,	r13	;r2 As==11
+    647e:	0e 4a       	mov	r10,	r14	
+    6480:	3f 40 48 11 	mov	#4424,	r15	;#0x1148
+--
+00006eea <packetbuf_hdrreduce>:
+    6eea:	1e 42 be 15 	mov	&0x15be,r14	
+    6eee:	0e 9f       	cmp	r15,	r14	
+    6ef0:	07 28       	jnc	$+16     	;abs 0x6f00
+    6ef2:	82 5f bc 15 	add	r15,	&0x15bc	
+    6ef6:	0e 8f       	sub	r15,	r14	
+    6ef8:	82 4e be 15 	mov	r14,	&0x15be	
+    6efc:	1f 43       	mov	#1,	r15	;r3 As==01
+    6efe:	30 41       	ret			
+    6f00:	0f 43       	clr	r15		
+    6f02:	30 41       	ret			
+
+00006f04 <packetbuf_set_datalen>:
+    6f04:	82 4f be 15 	mov	r15,	&0x15be	
+    6f08:	30 41       	ret			
+
+00006f0a <packetbuf_hdrptr>:
+    6f0a:	3f 40 c2 15 	mov	#5570,	r15	;#0x15c2
+    6f0e:	30 41       	ret			
+
+00006f10 <packetbuf_datalen>:
+    6f10:	1f 42 be 15 	mov	&0x15be,r15	
+    6f14:	30 41       	ret			
+
+00006f16 <packetbuf_hdrlen>:
+    6f16:	5f 42 c0 15 	mov.b	&0x15c0,r15	
+    6f1a:	5f 52 bc 15 	add.b	&0x15bc,r15	
+    6f1e:	30 41       	ret			
+
+00006f20 <packetbuf_dataptr>:
+    6f20:	b0 12 16 6f 	call	#0x6f16	
+    6f24:	4f 4f       	mov.b	r15,	r15	
+    6f26:	3f 50 c2 15 	add	#5570,	r15	;#0x15c2
+    6f2a:	30 41       	ret			
+
+00006f2c <packetbuf_copyto>:
+    6f2c:	0b 12       	push	r11		
+    6f2e:	0a 12       	push	r10		
+    6f30:	09 12       	push	r9		
+    6f32:	08 12       	push	r8		
+    6f34:	08 4f       	mov	r15,	r8	
+    6f36:	5b 42 c0 15 	mov.b	&0x15c0,r11	
+    6f3a:	19 42 be 15 	mov	&0x15be,r9	
+    6f3e:	0a 4b       	mov	r11,	r10	
+    6f40:	0a 59       	add	r9,	r10	
+    6f42:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    6f46:	0f 2c       	jc	$+32     	;abs 0x6f66
+    6f48:	0d 4b       	mov	r11,	r13	
+    6f4a:	3e 40 c2 15 	mov	#5570,	r14	;#0x15c2
+    6f4e:	b0 12 dc db 	call	#0xdbdc	
+    6f52:	b0 12 20 6f 	call	#0x6f20	
+    6f56:	0d 49       	mov	r9,	r13	
+    6f58:	0e 4f       	mov	r15,	r14	
+    6f5a:	0f 48       	mov	r8,	r15	
+--
+00006f72 <packetbuf_totlen>:
+    6f72:	b0 12 16 6f 	call	#0x6f16	
+    6f76:	4f 4f       	mov.b	r15,	r15	
+    6f78:	1f 52 be 15 	add	&0x15be,r15	
+    6f7c:	30 41       	ret			
+
+00006f7e <packetbuf_hdralloc>:
+    6f7e:	0b 12       	push	r11		
+    6f80:	0b 4f       	mov	r15,	r11	
+    6f82:	b0 12 72 6f 	call	#0x6f72	
+    6f86:	0e 4f       	mov	r15,	r14	
+    6f88:	0e 5b       	add	r11,	r14	
+    6f8a:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    6f8e:	12 2c       	jc	$+38     	;abs 0x6fb4
+    6f90:	0e 4f       	mov	r15,	r14	
+    6f92:	3e 53       	add	#-1,	r14	;r3 As==11
+    6f94:	0f 4b       	mov	r11,	r15	
+    6f96:	3f 50 c2 15 	add	#5570,	r15	;#0x15c2
+    6f9a:	06 3c       	jmp	$+14     	;abs 0x6fa8
+    6f9c:	0d 4f       	mov	r15,	r13	
+    6f9e:	0d 5e       	add	r14,	r13	
+    6fa0:	dd 4e c2 15 	mov.b	5570(r14),0(r13)	;0x15c2(r14), 0x0000(r13)
+    6fa4:	00 00 
+    6fa6:	3e 53       	add	#-1,	r14	;r3 As==11
+    6fa8:	0e 93       	tst	r14		
+--
+00006fba <packetbuf_attr_clear>:
+    6fba:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    6fbe:	0e 43       	clr	r14		
+    6fc0:	3f 40 fe 27 	mov	#10238,	r15	;#0x27fe
+    6fc4:	b0 12 d0 dd 	call	#0xddd0	
+    6fc8:	3e 40 12 e1 	mov	#-7918,	r14	;#0xe112
+    6fcc:	3f 40 ee 27 	mov	#10222,	r15	;#0x27ee
+    6fd0:	b0 12 ae 65 	call	#0x65ae	
+    6fd4:	3e 40 12 e1 	mov	#-7918,	r14	;#0xe112
+    6fd8:	3f 40 f6 27 	mov	#10230,	r15	;#0x27f6
+    6fdc:	b0 12 ae 65 	call	#0x65ae	
+    6fe0:	30 41       	ret			
+
+00006fe2 <packetbuf_clear>:
+    6fe2:	82 43 bc 15 	mov	#0,	&0x15bc	;r3 As==00
+    6fe6:	82 43 be 15 	mov	#0,	&0x15be	;r3 As==00
+    6fea:	c2 43 c0 15 	mov.b	#0,	&0x15c0	;r3 As==00
+    6fee:	b0 12 ba 6f 	call	#0x6fba	
+    6ff2:	30 41       	ret			
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  41512	    328	   5676	  47516	   b99c	extra-firmwares/hello-world.z1
+
+[Credential / secret / backdoor string search]
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Stack
+Check failed: %u vs. %u
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+00002874 A _stack
+0000396a T accm_init
+00002494 B accm_int1_cb
+00002490 B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+0000c274 t call_vuprintf
+00004976 T csma_output_init
+00004840 T csma_output_packet
+000076f2 t dao_ack_input
+00007722 t dao_input
+0000787a t dio_input
+00007b0c t dis_input
+0000afbc t echo_reply_input
+0000b012 t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+00009818 t input
+00002356 b input_handler_list_list
+000049f0 t input_packet
+00005874 T link_stats_input_callback
+00005c62 T memb_free
+00005cbe T memb_numfree
+0000cc06 T memcpy
+0000ccee T memmove
+0000cdd6 T memset
+000061c6 T netstack_process_ip_callback
+0000b2a2 t ns_input
+00001214 d ns_input_handler
+000090d2 t output
+0000cf10 r output_power
+0000a45e t packet_input.part.3
+000063e6 T packetbuf_addr
+000024d2 B packetbuf_addrs
+000014e6 b packetbuf_aligned
+000063ca T packetbuf_attr
+00006316 T packetbuf_attr_clear
+0000639c T packetbuf_attr_copyfrom
+0000637a T packetbuf_attr_copyto
+000024e2 B packetbuf_attrs
+0000633e T packetbuf_clear
+00006350 T packetbuf_copyfrom
+00006294 T packetbuf_copyto
+00006278 T packetbuf_datalen
+00006288 T packetbuf_dataptr
+0000247f b packetbuf_hdr_len
+000062da T packetbuf_hdralloc
+0000627e T packetbuf_hdrlen
+00006272 T packetbuf_hdrptr
+00006252 T packetbuf_hdrreduce
+000063f4 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8c b packetbuf_ptr
+000063d4 T packetbuf_set_addr
+000063c0 T packetbuf_set_attr
+0000626c T packetbuf_set_datalen
+000062ce T packetbuf_totlen
+0000c242 T printf
+0000389c t process_thread_accmeter_process
+0000a25a t process_thread_stack_check_process
+00006872 T queuebuf_free
+000067f6 T queuebuf_init
+00006812 T queuebuf_new_from_packetbuf
+00006808 T queuebuf_numfree
+0000689c T queuebuf_to_packetbuf
+00006860 T queuebuf_update_attr_from_packetbuf
+000068ce T random_init
+000068d4 T random_rand
+00007e6c T rpl_icmp6_dao_ack_output
+00007d96 T rpl_icmp6_dao_output
+00007b8c T rpl_icmp6_dio_output
+00007b58 T rpl_icmp6_dis_output
+0000c2aa T snprintf
+0000a214 T stack_check_get_usage
+0000a1e6 T stack_check_init
+000011da D stack_check_process
+00002248 b stack_top.2426
+0000a334 T tcpip_input
+0000a352 T tcpip_ipv6_output
+0000a312 T tcpip_output
+00002262 b uart0_input_handler
+0000b0d8 T uip_icmp6_error_output
+0000b098 T uip_icmp6_input
+0000b0cc T uip_icmp6_register_input_handler
+0000b768 T uip_sr_free_all
+0000be68 T uipbuf_add_ext_hdr
+0000240a b uipbuf_attrs
+0000bfc8 T uipbuf_clear
+0000bfb6 T uipbuf_clear_attr
+0000241a b uipbuf_default_attrs
+0000bf90 T uipbuf_get_attr
+0000bf14 T uipbuf_get_last_header
+0000bea4 T uipbuf_get_len_field
+0000beb2 T uipbuf_get_next_header
+0000bfda T uipbuf_init
+0000bf4a T uipbuf_search_header
+0000bfa2 T uipbuf_set_attr
+0000be84 T uipbuf_set_len
+0000be96 T uipbuf_set_len_field
+0000c43c T vuprintf
+
+[Large functions / stack-heavy candidates]
+00004430 000000ea T cc2420_init
+00005874 000000f6 T link_stats_input_callback
+00002624 00000108 B uip_ds6_if
+00002500 0000010c B curr_instance
+0000a352 0000010c T tcpip_ipv6_output
+0000bff4 00000114 T uiplib_ipaddr_snprint
+000041b2 0000011e t get_value
+00004840 00000136 T csma_output_packet
+0000b0d8 00000136 T uip_icmp6_error_output
+00006c74 0000013c T rpl_dag_update_state
+000042e6 0000014a t set_value
+00007722 00000158 t dao_input
+00001b98 00000158 b frag_info
+00005176 0000015c T frame802154_parse
+0000ae58 00000164 T uip_ds6_init
+0000c2c6 00000176 t print_field
+00006db0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008e3a 000001e8 t add_fragment
+00007b8c 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007406 00000266 T rpl_ext_header_update
+0000b2a2 00000290 t ns_input
+0000787a 00000292 t dio_input
+0000b984 000004ba T uip_process
+0000159e 00000550 b buframmem_memb_mem
+00001cf0 00000558 b frag_buf
+0000c43c 00000742 T vuprintf
+000090d2 00000746 t output
+00009818 0000099c t input
+
+[Disassembly samples around buffer/string functions]
+00004840 <csma_output_packet>:
+    4840:	4b 14       	pushm.a	#5,	r11	
+    4842:	c8 0f       	mova	r15,	r8	
+    4844:	07 4e       	mov	r14,	r7	
+    4846:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    484a:	b0 13 e6 63 	calla	#0x063e6	
+    484e:	0a 4f       	mov	r15,	r10	
+    4850:	b0 13 e2 5a 	calla	#0x05ae2	
+    4854:	1e 43       	mov	#1,	r14	;r3 As==01
+    4856:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    485a:	b0 13 c0 63 	calla	#0x063c0	
+    485e:	1b 42 76 12 	mov	&0x1276,r11	
+    4862:	08 3c       	jmp	$+18     	;abs 0x4874
+    4864:	0e 4a       	mov	r10,	r14	
+    4866:	0f 4b       	mov	r11,	r15	
+    4868:	2f 53       	incd	r15		
+    486a:	b0 13 c2 59 	calla	#0x059c2	
+    486e:	4f 93       	tst.b	r15		
+    4870:	6f 20       	jnz	$+224    	;abs 0x4950
+--
+00004976 <csma_output_init>:
+    4976:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    497a:	b0 13 ee 5b 	calla	#0x05bee	
+    497e:	3f 40 28 11 	mov	#4392,	r15	;#0x1128
+    4982:	b0 13 ee 5b 	calla	#0x05bee	
+    4986:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    498a:	b0 13 ee 5b 	calla	#0x05bee	
+    498e:	10 01       	reta			
+
+00004990 <csma_security_create_frame>:
+    4990:	1e 43       	mov	#1,	r14	;r3 As==01
+    4992:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    4996:	b0 13 c0 63 	calla	#0x063c0	
+    499a:	80 13 3e cf 	calla	&0x0cf3e	
+    499e:	10 01       	reta			
+
+000049a0 <csma_security_parse_frame>:
+    49a0:	80 13 42 cf 	calla	&0x0cf42	
+    49a4:	10 01       	reta			
+--
+000049f0 <input_packet>:
+    49f0:	b0 13 78 62 	calla	#0x06278	
+    49f4:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    49f8:	26 24       	jz	$+78     	;abs 0x4a46
+    49fa:	b0 13 a0 49 	calla	#0x049a0	
+    49fe:	0f 93       	tst	r15		
+    4a00:	22 38       	jl	$+70     	;abs 0x4a46
+    4a02:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    4a06:	b0 13 e6 63 	calla	#0x063e6	
+    4a0a:	3e 40 c8 24 	mov	#9416,	r14	;#0x24c8
+    4a0e:	b0 13 c2 59 	calla	#0x059c2	
+    4a12:	4f 93       	tst.b	r15		
+    4a14:	0b 24       	jz	$+24     	;abs 0x4a2c
+    4a16:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    4a1a:	b0 13 e6 63 	calla	#0x063e6	
+    4a1e:	3e 40 c8 24 	mov	#9416,	r14	;#0x24c8
+    4a22:	b0 13 c2 59 	calla	#0x059c2	
+    4a26:	4f 93       	tst.b	r15		
+    4a28:	0e 20       	jnz	$+30     	;abs 0x4a46
+--
+00005874 <link_stats_input_callback>:
+    5874:	3b 14       	pushm.a	#4,	r11	
+    5876:	0a 4f       	mov	r15,	r10	
+    5878:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    587a:	b0 13 ca 63 	calla	#0x063ca	
+    587e:	0b 4f       	mov	r15,	r11	
+    5880:	0e 4a       	mov	r10,	r14	
+    5882:	3f 40 5a 11 	mov	#4442,	r15	;#0x115a
+    5886:	b0 13 16 60 	calla	#0x06016	
+    588a:	09 4f       	mov	r15,	r9	
+    588c:	0f 93       	tst	r15		
+    588e:	0d 20       	jnz	$+28     	;abs 0x58aa
+    5890:	0c 43       	clr	r12		
+    5892:	3d 42       	mov	#8,	r13	;r2 As==11
+    5894:	0e 4a       	mov	r10,	r14	
+    5896:	3f 40 5a 11 	mov	#4442,	r15	;#0x115a
+    589a:	b0 13 aa 60 	calla	#0x060aa	
+    589e:	09 4f       	mov	r15,	r9	
+    58a0:	0f 93       	tst	r15		
+--
+00006252 <packetbuf_hdrreduce>:
+    6252:	1e 42 e4 14 	mov	&0x14e4,r14	
+    6256:	0e 9f       	cmp	r15,	r14	
+    6258:	07 28       	jnc	$+16     	;abs 0x6268
+    625a:	82 5f e2 14 	add	r15,	&0x14e2	
+    625e:	0e 8f       	sub	r15,	r14	
+    6260:	82 4e e4 14 	mov	r14,	&0x14e4	
+    6264:	1f 43       	mov	#1,	r15	;r3 As==01
+    6266:	10 01       	reta			
+    6268:	0f 43       	clr	r15		
+    626a:	10 01       	reta			
+
+0000626c <packetbuf_set_datalen>:
+    626c:	82 4f e4 14 	mov	r15,	&0x14e4	
+    6270:	10 01       	reta			
+
+00006272 <packetbuf_hdrptr>:
+    6272:	3f 40 e6 14 	mov	#5350,	r15	;#0x14e6
+    6276:	10 01       	reta			
+
+00006278 <packetbuf_datalen>:
+    6278:	1f 42 e4 14 	mov	&0x14e4,r15	
+    627c:	10 01       	reta			
+
+0000627e <packetbuf_hdrlen>:
+    627e:	5f 42 66 24 	mov.b	&0x2466,r15	
+    6282:	5f 52 e2 14 	add.b	&0x14e2,r15	
+    6286:	10 01       	reta			
+
+00006288 <packetbuf_dataptr>:
+    6288:	b0 13 7e 62 	calla	#0x0627e	
+    628c:	4f 4f       	mov.b	r15,	r15	
+    628e:	3f 50 e6 14 	add	#5350,	r15	;#0x14e6
+    6292:	10 01       	reta			
+
+00006294 <packetbuf_copyto>:
+    6294:	3b 14       	pushm.a	#4,	r11	
+    6296:	08 4f       	mov	r15,	r8	
+    6298:	5b 42 66 24 	mov.b	&0x2466,r11	
+    629c:	19 42 e4 14 	mov	&0x14e4,r9	
+    62a0:	0a 4b       	mov	r11,	r10	
+    62a2:	0a 59       	add	r9,	r10	
+    62a4:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    62a8:	0f 2c       	jc	$+32     	;abs 0x62c8
+    62aa:	0d 4b       	mov	r11,	r13	
+    62ac:	3e 40 e6 14 	mov	#5350,	r14	;#0x14e6
+    62b0:	b0 13 06 cc 	calla	#0x0cc06	
+    62b4:	b0 13 88 62 	calla	#0x06288	
+    62b8:	0d 49       	mov	r9,	r13	
+    62ba:	0e 4f       	mov	r15,	r14	
+    62bc:	0f 48       	mov	r8,	r15	
+    62be:	0f 5b       	add	r11,	r15	
+    62c0:	b0 13 06 cc 	calla	#0x0cc06	
+    62c4:	0f 4a       	mov	r10,	r15	
+--
+000062ce <packetbuf_totlen>:
+    62ce:	b0 13 7e 62 	calla	#0x0627e	
+    62d2:	4f 4f       	mov.b	r15,	r15	
+    62d4:	1f 52 e4 14 	add	&0x14e4,r15	
+    62d8:	10 01       	reta			
+
+000062da <packetbuf_hdralloc>:
+    62da:	0b 14       	pushm.a	#1,	r11	
+    62dc:	0b 4f       	mov	r15,	r11	
+    62de:	b0 13 ce 62 	calla	#0x062ce	
+    62e2:	0e 4f       	mov	r15,	r14	
+    62e4:	0e 5b       	add	r11,	r14	
+    62e6:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    62ea:	12 2c       	jc	$+38     	;abs 0x6310
+    62ec:	0e 4f       	mov	r15,	r14	
+    62ee:	3e 53       	add	#-1,	r14	;r3 As==11
+    62f0:	0f 4b       	mov	r11,	r15	
+    62f2:	3f 50 e6 14 	add	#5350,	r15	;#0x14e6
+    62f6:	06 3c       	jmp	$+14     	;abs 0x6304
+    62f8:	0d 4f       	mov	r15,	r13	
+    62fa:	0d 5e       	add	r14,	r13	
+    62fc:	dd 4e e6 14 	mov.b	5350(r14),0(r13)	;0x14e6(r14), 0x0000(r13)
+    6300:	00 00 
+    6302:	3e 53       	add	#-1,	r14	;r3 As==11
+    6304:	0e 93       	tst	r14		
+--
+00006316 <packetbuf_attr_clear>:
+    6316:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    631a:	0e 43       	clr	r14		
+    631c:	3f 40 e2 24 	mov	#9442,	r15	;#0x24e2
+    6320:	b0 13 d6 cd 	calla	#0x0cdd6	
+    6324:	3e 40 4a cf 	mov	#-12470,r14	;#0xcf4a
+    6328:	3f 40 d2 24 	mov	#9426,	r15	;#0x24d2
+    632c:	b0 13 ba 59 	calla	#0x059ba	
+    6330:	3e 40 4a cf 	mov	#-12470,r14	;#0xcf4a
+    6334:	3f 40 da 24 	mov	#9434,	r15	;#0x24da
+    6338:	b0 13 ba 59 	calla	#0x059ba	
+    633c:	10 01       	reta			
+
+0000633e <packetbuf_clear>:
+    633e:	82 43 e2 14 	mov	#0,	&0x14e2	;r3 As==00
+    6342:	82 43 e4 14 	mov	#0,	&0x14e4	;r3 As==00
+    6346:	c2 43 66 24 	mov.b	#0,	&0x2466	;r3 As==00
+    634a:	b0 13 16 63 	calla	#0x06316	
+    634e:	10 01       	reta			
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+ 324415	   9488	 292376	 626279	  98e67	extra-firmwares/mtype5756516.cooja
+
+[Credential / secret / backdoor string search]
+serial_shell_init
+nbr_table_key_head
+nbr_table_key_next
+net_debug_lladdr_print
+queuebuf_debug_print
+rpl_dag_root_print_links
+rpl_dag_root_is_root
+rpl_dag_root_set_prefix
+rpl_dag_root_start
+rpl_dag_init_root
+rpl_dag_get_root_ipaddr
+serial_shell_process
+shell_input
+builtin_shell_commands
+shell_output_6addr
+shell_output_lladdr
+shell_commands_init
+shell_command_set_register
+shell_command_set_deregister
+shell_command_lookup
+tsch_roots_add_address
+tsch_roots_set_self_to_root
+tsch_roots_is_root
+tsch_roots_init
+User button
+Debug
+Heard old version from root
+Init root
+Contiki serial shell
+-- DAG root
+Shell
+Setting as DAG root with prefix 
+Node is already a DAG root
+Setting as non-root node: leaving DAG
+Node is not a DAG root
+rpl-set-root
+'> rpl-set-root 0/1 [prefix]': Sets node as root (1) or not (0). A /64 prefix can be optionally specified.
+  (DODAG root)
+round_keys
+set_key
+button_user
+debug_frame.0
+nbr_table_keys_list
+nbr_table_keys
+key_from_index
+index_from_key
+item_from_key
+key_from_item
+remove_key
+net-debug.c
+rpl-dag-root.c
+root_ipaddr.1
+global_repair_non_root
+serial-shell.c
+process_thread_serial_shell_process
+serial_shell_output
+shell_input_pt.0
+shell-commands.c
+builtin_shell_command_set
+shell_command_sets_list
+shell_command_sets
+cmd_ping
+cmd_rpl_nbr
+cmd_rpl_status
+cmd_rpl_refresh_routes
+shell_output_log_levels
+cmd_log
+cmd_help
+cmd_rpl_set_root
+cmd_rpl_global_repair
+cmd_rpl_local_repair
+cmd_macaddr
+cmd_ipaddr
+cmd_ip_neighbors
+cmd_tsch_set_coordinator
+cmd_tsch_status
+cmd_routes
+cmd_reboot
+cmd_tsch_schedule
+cmd_descr.1
+cmd_pt.0
+tsch-roots.c
+builtin_shell_commands
+shell_command_set_register
+shell_output_6addr
+rpl_dag_root_set_prefix
+shell_commands_init
+rpl_dag_root_print_links
+tsch_roots_add_address
+rpl_dag_root_is_root
+rpl_dag_init_root
+shell_command_set_deregister
+tsch_roots_is_root
+queuebuf_debug_print
+nbr_table_key_next
+nbr_table_key_head
+tsch_roots_set_self_to_root
+shell_input
+tsch_roots_init
+net_debug_lladdr_print
+
+[Error / assert / information leakage strings]
+_xassert
+__stack_chk_fail
+queuebuf_init
+packetbuf_set_attr
+packetbuf_clear
+packetbuf_dataptr
+packetbuf_set_datalen
+pthread_attr_getstack
+perror
+packetbuf_addr
+packetbuf_holds_broadcast
+packetbuf_datalen
+packetbuf_hdralloc
+packetbuf_hdrptr
+packetbuf_hdrreduce
+packetbuf_set_addr
+net_debug_lladdr_print
+netstack_process_ip_callback
+netstack_ip_packet_processor_add
+packetbuf_attrs
+packetbuf_addrs
+packetbuf_attr_clear
+packetbuf_copyfrom
+packetbuf_copyto
+packetbuf_totlen
+packetbuf_hdrlen
+packetbuf_remaininglen
+packetbuf_attr_copyto
+packetbuf_attr_copyfrom
+queuebuf_numfree
+queuebuf_new_from_packetbuf
+queuebuf_update_attr_from_packetbuf
+queuebuf_update_from_packetbuf
+queuebuf_free
+queuebuf_to_packetbuf
+queuebuf_dataptr
+queuebuf_datalen
+queuebuf_addr
+queuebuf_attr
+queuebuf_debug_print
+netstack_sniffer_add
+netstack_sniffer_remove
+tsch_security_set_packetbuf_attr
+uip_icmp6_error_output
+Assertion failed: file %s, line %d.
+cfs-cooja.c: warning: write truncated
+getcontext failed
+Errors
+Warnings
+Debug
+unknown
+Unknown
+Invalid IPv6 address: %s
+Invalid first argument: %s
+Invalid second argument: %s
+Invalid argument: %s
+Invalid Prefix: %s
+TCP/IP stack
+uip-ds6-route.c: assert_nbr_routes_list_sane route list is in infinite loop
+assert.c
+netstack_init
+debug_frame.0
+buffer_allocate
+domain_set_allocate
+seed_set_allocate
+nbr_table_allocate
+net-debug.c
+netstack.c
+packetbuf.c
+packetbuf_aligned
+queuebuf.c
+queuebuf_load_to_ram
+window_allocate
+drop_route
+overflow.2
+packetbuf_ptr
+packetbuf_hdr_len
+packetbuf_payload_len
+tick_conversion_error.2
+base_drift_tick_conversion_error.1
+input_queue_drop.15
+assert_nbr_routes_list_sane
+packetbuf_attr_copyto
+packetbuf_attr_copyfrom
+packetbuf_holds_broadcast
+packetbuf_copyfrom
+packetbuf_copyto
+packetbuf_set_addr
+packetbuf_hdrptr
+queuebuf_update_from_packetbuf
+netstack_sniffer_remove
+packetbuf_hdralloc
+queuebuf_update_attr_from_packetbuf
+__stack_chk_fail@@GLIBC_2.4
+uip_icmp6_error_output
+queuebuf_addr
+packetbuf_clear
+pthread_attr_getstack@@GLIBC_2.2.5
+netstack_sniffer_add
+netstack_process_ip_callback
+queuebuf_numfree
+packetbuf_dataptr
+queuebuf_datalen
+packetbuf_attrs
+packetbuf_set_attr
+queuebuf_init
+packetbuf_set_datalen
+queuebuf_debug_print
+queuebuf_dataptr
+queuebuf_to_packetbuf
+queuebuf_attr
+perror@@GLIBC_2.2.5
+packetbuf_hdrlen
+packetbuf_datalen
+packetbuf_remaininglen
+packetbuf_attr_clear
+queuebuf_new_from_packetbuf
+packetbuf_addr
+packetbuf_hdrreduce
+tsch_security_set_packetbuf_attr
+packetbuf_addrs
+net_debug_lladdr_print
+queuebuf_free
+_xassert
+netstack_ip_packet_processor_add
+packetbuf_totlen
+
+[Potentially unsafe / buffer-related symbols]
+                 U __stack_chk_fail@@GLIBC_2.4
+0000000000016cde T __wrap_printf
+000000000001523f T _xassert
+00000000000523c0 D aes_128_driver
+000000000003dbeb t assert_nbr_routes_list_sane
+000000000001e283 t buffer_free
+00000000000523d0 D ccm_star_driver
+00000000000179de T crc16_add
+0000000000017a50 T crc16_data
+0000000000017aa4 T csprng_feed
+0000000000017b01 T csprng_rand
+000000000006b310 b curr_ping_output_func
+0000000000094a70 b current_input.12
+000000000002a656 t dao_ack_input
+000000000002a018 t dao_input
+00000000000292dc t dio_input
+0000000000029217 t dis_input
+000000000001e89f t domain_set_free
+000000000003b8c6 t eb_input
+000000000003f63f t echo_reply_input
+000000000003f005 t echo_request_input
+                 U free@@GLIBC_2.2.5
+000000000001bb3e T gpio_hal_arch_no_port_pin_set_input
+000000000001bb51 T gpio_hal_arch_no_port_pin_set_output
+0000000000018cee t icmp_input
+0000000000025fe3 t icmp_input
+0000000000018b07 t icmp_output
+00000000000255f9 t icmp_output
+0000000000033cb5 t input
+0000000000094780 B input_array
+000000000006c598 b input_callback
+0000000000094d60 b input_eb.2
+000000000006b168 b input_handler
+0000000000054798 d input_handler_list
+0000000000097bf8 b input_handler_list_list
+000000000003ef01 t input_handler_lookup
+0000000000094a58 b input_index.16
+0000000000094a5c b input_queue_drop.15
+0000000000094760 B input_ringbuf
+000000000001d1e5 T link_stats_input_callback
+000000000001df97 T memb_free
+000000000001e081 T memb_numfree
+                 U memcpy@@GLIBC_2.14
+                 U memmove@@GLIBC_2.2.5
+                 U memset@@GLIBC_2.2.5
+000000000001666c t netstack_init
+000000000002291d T netstack_ip_packet_processor_add
+000000000002287c T netstack_process_ip_callback
+0000000000031359 T netstack_sniffer_add
+0000000000031373 T netstack_sniffer_remove
+000000000006c064 b next_free
+000000000003fbbb t ns_input
+0000000000054810 d ns_input_handler
+0000000000033888 t output
+0000000000035974 t output_fallback
+00000000000309ea t output_prompt
+00000000000356be t packet_input
+000000000003ccbf t packet_input
+00000000000542e8 d packetbuf
+000000000002305f T packetbuf_addr
+0000000000064260 B packetbuf_addrs
+0000000000064280 b packetbuf_aligned
+0000000000022ffc T packetbuf_attr
+0000000000022ed5 T packetbuf_attr_clear
+0000000000022f85 T packetbuf_attr_copyfrom
+0000000000022f3a T packetbuf_attr_copyto
+0000000000064240 B packetbuf_attrs
+0000000000022c10 T packetbuf_clear
+0000000000022c3e T packetbuf_copyfrom
+0000000000022c97 T packetbuf_copyto
+0000000000022e6e T packetbuf_datalen
+0000000000022e38 T packetbuf_dataptr
+000000000006b3a8 b packetbuf_hdr_len
+0000000000022d3d T packetbuf_hdralloc
+0000000000022e7f T packetbuf_hdrlen
+0000000000022e5d T packetbuf_hdrptr
+0000000000022dcc T packetbuf_hdrreduce
+0000000000023089 T packetbuf_holds_broadcast
+000000000006b3ac b packetbuf_payload_len
+000000000006b3a0 b packetbuf_ptr
+0000000000022ebd T packetbuf_remaininglen
+000000000002301d T packetbuf_set_addr
+0000000000022fd0 T packetbuf_set_attr
+0000000000022e1c T packetbuf_set_datalen
+0000000000022e9b T packetbuf_totlen
+0000000000016cde T printf
+                 U pthread_attr_getstack@@GLIBC_2.2.5
+00000000000245dc T queuebuf_addr
+0000000000024623 T queuebuf_attr
+00000000000245ac T queuebuf_datalen
+0000000000024565 T queuebuf_dataptr
+000000000002465e T queuebuf_debug_print
+0000000000024490 T queuebuf_free
+00000000000242fc T queuebuf_init
+00000000000242e7 t queuebuf_load_to_ram
+000000000002433e T queuebuf_new_from_packetbuf
+0000000000024325 T queuebuf_numfree
+00000000000244ec T queuebuf_to_packetbuf
+00000000000243f1 T queuebuf_update_attr_from_packetbuf
+0000000000024434 T queuebuf_update_from_packetbuf
+0000000000024669 T random_init
+00000000000249d7 t random_interval
+0000000000024689 T random_rand
+000000000002a6dc T rpl_icmp6_dao_ack_output
+000000000002a36b T rpl_icmp6_dao_output
+00000000000299e0 T rpl_icmp6_dio_output
+0000000000029264 T rpl_icmp6_dis_output
+000000000002cdc3 T rs232_set_input
+000000000001e79e t seed_set_free
+000000000002d473 T serial_line_input_byte
+000000000002d6ab t serial_shell_output
+0000000000030aa5 T shell_input
+000000000006b2e0 b shell_input_pt.0
+0000000000030816 T shell_output_6addr
+00000000000308b1 T shell_output_lladdr
+000000000002e73f t shell_output_log_levels
+0000000000059b4c B simRandomSeed
+0000000000035147 T slip_input_byte
+0000000000034b74 T slip_set_input_callback
+                 U snprintf@@GLIBC_2.2.5
+0000000000035938 T tcpip_input
+0000000000035b10 T tcpip_ipv6_output
+0000000000035663 T tcpip_output
+00000000000377b7 T tsch_queue_free_packet
+00000000000377f6 T tsch_queue_free_packets_to
+0000000000037979 T tsch_queue_free_unused_neighbors
+0000000000039694 T tsch_security_set_packetbuf_attr
+000000000003f171 T uip_icmp6_error_output
+000000000003ef7e T uip_icmp6_input
+000000000003efdc T uip_icmp6_register_input_handler
+00000000000404ae T uip_packetqueue_free
+0000000000040b3e T uip_sr_free_all
+00000000000426fc T uipbuf_add_ext_hdr
+000000000009be90 b uipbuf_attrs
+00000000000426ca T uipbuf_clear
+0000000000042ba1 T uipbuf_clear_attr
+0000000000042beb T uipbuf_clr_attr_flag
+000000000009bea0 b uipbuf_default_attrs
+0000000000042af0 T uipbuf_get_attr
+0000000000042996 T uipbuf_get_last_header
+00000000000427f9 T uipbuf_get_len_field
+0000000000042824 T uipbuf_get_next_header
+0000000000042c39 T uipbuf_init
+0000000000042c14 T uipbuf_is_attr_flag
+0000000000042a29 T uipbuf_search_header
+0000000000042b21 T uipbuf_set_attr
+0000000000042bc8 T uipbuf_set_attr_flag
+0000000000042b61 T uipbuf_set_default_attr
+0000000000042794 T uipbuf_set_len
+00000000000427c6 T uipbuf_set_len_field
+                 U vasprintf@@GLIBC_2.2.5
+
+[Large functions / stack-heavy candidates]
+000000000002df70 0000000000000714 t cmd_rpl_status
+000000000003a46e 0000000000000799 t tsch_rx_slot
+000000000003fbbb 00000000000007c6 t ns_input
+000000000006cc60 0000000000000800 b packet_memb_memb_mem
+000000000006a960 0000000000000800 B simSerialReceivingData
+0000000000039c52 000000000000081c t tsch_tx_slot
+0000000000020aeb 00000000000009a7 t accept
+0000000000025fe3 00000000000009ae t icmp_input
+0000000000097ce0 0000000000000ab0 b packets_memb_memb_mem
+000000000003287c 0000000000000e0b t uncompress_hdr_iphc
+0000000000053000 0000000000000ec0 d _GLOBAL_OFFSET_TABLE_
+000000000003193b 0000000000000f41 t compress_hdr_iphc
+00000000000415f3 0000000000000f5d T uip_process
+00000000000549c0 0000000000000fa0 B simCFSData
+000000000001fb44 0000000000000fa7 t icmp_in
+00000000000586c0 00000000000012c0 b _link_stats_mem
+0000000000069600 00000000000012c0 b _rpl_neighbors_mem
+0000000000062f60 00000000000012c0 b neighbor_addr_mem_memb_mem
+00000000000002f0 0000000000001974 r __TMC_END__
+0000000000067480 0000000000001ec0 b buffered_msgs
+00000000000559c0 0000000000002000 B simLoggedData
+0000000000059b60 00000000000021c0 b buffered_message_set
+00000000000457d8 000000000000227c r __GNU_EH_FRAME_HDR
+000000000005bfa0 00000000000023d0 b cooja_thread
+0000000000060760 00000000000023d0 b process_run_thread
+000000000005e380 00000000000023d0 b rtimer_thread
+00000000000953c0 0000000000002580 b _ds6_neighbors_mem
+00000000000648e0 0000000000002a80 b buframmem_memb_mem
+0000000000098900 0000000000002ee0 b nodememb_memb_mem
+000000000006d460 0000000000026ac0 b _tsch_neighbors_mem
+
+[Disassembly samples around buffer/string functions]
+0000000000012d80 <packetbuf_attr@plt>:
+   12d80:	f3 0f 1e fa          	endbr64
+   12d84:	f2 ff 25 bd ff 03 00 	bnd jmp *0x3ffbd(%rip)        # 52d48 <packetbuf_attr@@Base+0x2fd4c>
+   12d8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012d90 <uip_ds6_nbr_rm@plt>:
+   12d90:	f3 0f 1e fa          	endbr64
+   12d94:	f2 ff 25 f5 01 04 00 	bnd jmp *0x401f5(%rip)        # 52f90 <uip_ds6_nbr_rm@@Base+0x1576b>
+   12d9b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012da0 <__cxa_finalize@plt>:
+   12da0:	f3 0f 1e fa          	endbr64
+   12da4:	f2 ff 25 25 02 04 00 	bnd jmp *0x40225(%rip)        # 52fd0 <__cxa_finalize@GLIBC_2.2.5>
+   12dab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+Disassembly of section .plt.sec:
+
+0000000000012db0 <rpl_timers_notify_dao_ack@plt>:
+   12db0:	f3 0f 1e fa          	endbr64
+   12db4:	f2 ff 25 5d 02 04 00 	bnd jmp *0x4025d(%rip)        # 53018 <rpl_timers_notify_dao_ack@@Base+0x26efd>
+   12dbb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+--
+0000000000012dc0 <uip_icmp6_input@plt>:
+   12dc0:	f3 0f 1e fa          	endbr64
+   12dc4:	f2 ff 25 55 02 04 00 	bnd jmp *0x40255(%rip)        # 53020 <uip_icmp6_input@@Base+0x140a2>
+   12dcb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012dd0 <tsch_adaptive_timesync_get_drift_ppm@plt>:
+   12dd0:	f3 0f 1e fa          	endbr64
+   12dd4:	f2 ff 25 4d 02 04 00 	bnd jmp *0x4024d(%rip)        # 53028 <tsch_adaptive_timesync_get_drift_ppm@@Base+0x1cad9>
+   12ddb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012de0 <rpl_timers_schedule_dao@plt>:
+   12de0:	f3 0f 1e fa          	endbr64
+   12de4:	f2 ff 25 45 02 04 00 	bnd jmp *0x40245(%rip)        # 53030 <rpl_timers_schedule_dao@@Base+0x270e0>
+   12deb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012df0 <ringbuf_put@plt>:
+   12df0:	f3 0f 1e fa          	endbr64
+   12df4:	f2 ff 25 3d 02 04 00 	bnd jmp *0x4023d(%rip)        # 53038 <ringbuf_put@@Base+0x2e9a0>
+   12dfb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e00 <gpio_hal_arch_no_port_pin_set_output@plt>:
+   12e00:	f3 0f 1e fa          	endbr64
+   12e04:	f2 ff 25 35 02 04 00 	bnd jmp *0x40235(%rip)        # 53040 <gpio_hal_arch_no_port_pin_set_output@@Base+0x374ef>
+   12e0b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e10 <packetbuf_attr_copyto@plt>:
+   12e10:	f3 0f 1e fa          	endbr64
+   12e14:	f2 ff 25 2d 02 04 00 	bnd jmp *0x4022d(%rip)        # 53048 <packetbuf_attr_copyto@@Base+0x3010e>
+   12e1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e20 <uipbuf_get_last_header@plt>:
+   12e20:	f3 0f 1e fa          	endbr64
+   12e24:	f2 ff 25 25 02 04 00 	bnd jmp *0x40225(%rip)        # 53050 <uipbuf_get_last_header@@Base+0x106ba>
+   12e2b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e30 <packetbuf_attr_copyfrom@plt>:
+   12e30:	f3 0f 1e fa          	endbr64
+   12e34:	f2 ff 25 1d 02 04 00 	bnd jmp *0x4021d(%rip)        # 53058 <packetbuf_attr_copyfrom@@Base+0x300d3>
+   12e3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e40 <leds_get@plt>:
+   12e40:	f3 0f 1e fa          	endbr64
+   12e44:	f2 ff 25 15 02 04 00 	bnd jmp *0x40215(%rip)        # 53060 <leds_get@@Base+0x36207>
+   12e4b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e50 <packetbuf_holds_broadcast@plt>:
+   12e50:	f3 0f 1e fa          	endbr64
+   12e54:	f2 ff 25 0d 02 04 00 	bnd jmp *0x4020d(%rip)        # 53068 <packetbuf_holds_broadcast@@Base+0x2ffdf>
+   12e5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e60 <frame802154_set_pan_id@plt>:
+   12e60:	f3 0f 1e fa          	endbr64
+   12e64:	f2 ff 25 05 02 04 00 	bnd jmp *0x40205(%rip)        # 53070 <frame802154_set_pan_id@@Base+0x3984e>
+   12e6b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e70 <uip_ds6_get_link_local@plt>:
+   12e70:	f3 0f 1e fa          	endbr64
+   12e74:	f2 ff 25 fd 01 04 00 	bnd jmp *0x401fd(%rip)        # 53078 <uip_ds6_get_link_local@@Base+0x147cb>
+   12e7b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e80 <rtimer_run_next@plt>:
+   12e80:	f3 0f 1e fa          	endbr64
+   12e84:	f2 ff 25 f5 01 04 00 	bnd jmp *0x401f5(%rip)        # 53080 <rtimer_run_next@@Base+0x25fff>
+   12e8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012e90 <tsch_queue_reset@plt>:
+--
+0000000000012ee0 <packetbuf_copyfrom@plt>:
+   12ee0:	f3 0f 1e fa          	endbr64
+   12ee4:	f2 ff 25 c5 01 04 00 	bnd jmp *0x401c5(%rip)        # 530b0 <packetbuf_copyfrom@@Base+0x30472>
+   12eeb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012ef0 <tsch_schedule_add_slotframe@plt>:
+   12ef0:	f3 0f 1e fa          	endbr64
+   12ef4:	f2 ff 25 bd 01 04 00 	bnd jmp *0x401bd(%rip)        # 530b8 <tsch_schedule_add_slotframe@@Base+0x1b0bd>
+   12efb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f00 <tsch_queue_free_unused_neighbors@plt>:
+   12f00:	f3 0f 1e fa          	endbr64
+   12f04:	f2 ff 25 b5 01 04 00 	bnd jmp *0x401b5(%rip)        # 530c0 <tsch_queue_free_unused_neighbors@@Base+0x1b747>
+   12f0b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f10 <sensors_changed@plt>:
+   12f10:	f3 0f 1e fa          	endbr64
+   12f14:	f2 ff 25 ad 01 04 00 	bnd jmp *0x401ad(%rip)        # 530c8 <sensors_changed@@Base+0x25f6c>
+   12f1b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f20 <uip_ds6_nbr_ipaddr_from_lladdr@plt>:
+--
+0000000000012f30 <packetbuf_copyto@plt>:
+   12f30:	f3 0f 1e fa          	endbr64
+   12f34:	f2 ff 25 9d 01 04 00 	bnd jmp *0x4019d(%rip)        # 530d8 <packetbuf_copyto@@Base+0x30441>
+   12f3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f40 <ip64_addr_is_ip64@plt>:
+   12f40:	f3 0f 1e fa          	endbr64
+   12f44:	f2 ff 25 95 01 04 00 	bnd jmp *0x40195(%rip)        # 530e0 <ip64_addr_is_ip64@@Base+0x36913>
+   12f4b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f50 <rpl_icmp6_dao_ack_output@plt>:
+   12f50:	f3 0f 1e fa          	endbr64
+   12f54:	f2 ff 25 8d 01 04 00 	bnd jmp *0x4018d(%rip)        # 530e8 <rpl_icmp6_dao_ack_output@@Base+0x28a0c>
+   12f5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f60 <tsch_packet_get_frame_pending@plt>:
+   12f60:	f3 0f 1e fa          	endbr64
+   12f64:	f2 ff 25 85 01 04 00 	bnd jmp *0x40185(%rip)        # 530f0 <tsch_packet_get_frame_pending@@Base+0x1bf06>
+   12f6b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f70 <frame802154_is_broadcast_addr@plt>:
+   12f70:	f3 0f 1e fa          	endbr64
+   12f74:	f2 ff 25 7d 01 04 00 	bnd jmp *0x4017d(%rip)        # 530f8 <frame802154_is_broadcast_addr@@Base+0x3963d>
+   12f7b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f80 <uip_ds6_route_head@plt>:
+   12f80:	f3 0f 1e fa          	endbr64
+   12f84:	f2 ff 25 75 01 04 00 	bnd jmp *0x40175(%rip)        # 53100 <uip_ds6_route_head@@Base+0x15473>
+   12f8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f90 <platform_init_stage_two@plt>:
+--
+0000000000012fc0 <uipbuf_get_len_field@plt>:
+   12fc0:	f3 0f 1e fa          	endbr64
+   12fc4:	f2 ff 25 55 01 04 00 	bnd jmp *0x40155(%rip)        # 53120 <uipbuf_get_len_field@@Base+0x10927>
+   12fcb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012fd0 <pthread_getattr_np@plt>:
+   12fd0:	f3 0f 1e fa          	endbr64
+   12fd4:	f2 ff 25 4d 01 04 00 	bnd jmp *0x4014d(%rip)        # 53128 <pthread_getattr_np@GLIBC_2.2.5>
+   12fdb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012fe0 <dbl_list_tail@plt>:
+   12fe0:	f3 0f 1e fa          	endbr64
+   12fe4:	f2 ff 25 45 01 04 00 	bnd jmp *0x40145(%rip)        # 53130 <dbl_list_tail@@Base+0x3acb0>
+   12feb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012ff0 <rpl_timers_stop_dag_timers@plt>:
+   12ff0:	f3 0f 1e fa          	endbr64
+   12ff4:	f2 ff 25 3d 01 04 00 	bnd jmp *0x4013d(%rip)        # 53138 <rpl_timers_stop_dag_timers@@Base+0x26af1>
+   12ffb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013000 <tsch_slot_operation_start@plt>:
+--
+0000000000013020 <crc16_add@plt>:
+   13020:	f3 0f 1e fa          	endbr64
+   13024:	f2 ff 25 25 01 04 00 	bnd jmp *0x40125(%rip)        # 53150 <crc16_add@@Base+0x3b772>
+   1302b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013030 <packetbuf_set_addr@plt>:
+   13030:	f3 0f 1e fa          	endbr64
+   13034:	f2 ff 25 1d 01 04 00 	bnd jmp *0x4011d(%rip)        # 53158 <packetbuf_set_addr@@Base+0x3013b>
+   1303b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013040 <strncmp@plt>:
+   13040:	f3 0f 1e fa          	endbr64
+   13044:	f2 ff 25 15 01 04 00 	bnd jmp *0x40115(%rip)        # 53160 <strncmp@GLIBC_2.2.5>
+   1304b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  17866	    166	   2240	  20272	   4f30	extra-firmwares/nullnet-broadcast.z1
+
+[Credential / secret / backdoor string search]
+
+[Error / assert / information leakage strings]
+Stack
+Check failed: %ld vs. %ld
+Stack check
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+00001a66 A _stack
+00003876 T accm_init
+00001a02 B accm_int1_cb
+000019fe B accm_int2_cb
+000037fe t accm_read_axis.part.0
+00003754 t accm_read_reg
+000038ee T accm_stop
+000036fc t accm_write_reg
+0000372a t accm_write_stream
+00001100 D accmeter_process
+0000488e T csma_output_init
+00004746 T csma_output_packet
+         U gpio_hal_arch_port_pin_set_input
+00005ae6 t input
+00005a52 T input_callback
+00004908 t input_packet
+00005808 T memb_free
+00007152 T memcpy
+0000723a T memset
+00005932 T netstack_init
+00005b1a T nullnet_set_input_callback
+00005aa4 t output
+00007370 r output_power
+00005cf8 T packetbuf_addr
+00001a2e B packetbuf_addrs
+00001392 b packetbuf_aligned
+00005cda T packetbuf_attr
+00005c24 T packetbuf_attr_clear
+00005caa T packetbuf_attr_copyfrom
+00005c88 T packetbuf_attr_copyto
+00001a3e B packetbuf_attrs
+00005c4c T packetbuf_clear
+00005c5e T packetbuf_copyfrom
+00005ba2 T packetbuf_copyto
+00005b86 T packetbuf_datalen
+00005b96 T packetbuf_dataptr
+00005be8 T packetbuf_hdralloc
+00005b8c T packetbuf_hdrlen
+00005b80 T packetbuf_hdrptr
+00005b60 T packetbuf_hdrreduce
+00005d06 T packetbuf_holds_broadcast
+00005ce4 T packetbuf_set_addr
+00005cce T packetbuf_set_attr
+00005b7a T packetbuf_set_datalen
+00005bdc T packetbuf_totlen
+00006802 T printf
+000037a8 t process_thread_accmeter_process
+000063f0 t process_thread_stack_check_process
+0000619a T queuebuf_free
+00006128 T queuebuf_init
+0000613a T queuebuf_new_from_packetbuf
+000061c4 T queuebuf_to_packetbuf
+00006188 T queuebuf_update_attr_from_packetbuf
+000061f6 T random_init
+000061fc T random_rand
+         U slip_input_byte
+0000639c T stack_check_get_usage
+0000636e T stack_check_init
+00001176 D stack_check_process
+000019b4 b stack_top.2107
+000019c2 b uart0_input_handler
+00006988 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00005f02 00000088 t exit_process
+0000677a 00000088 T xmem_pread
+00005000 0000008c T frame802154_parse_fcf
+00005fe4 0000008c T process_run
+00005336 0000009e t create_frame
+000051e8 0000009e t parse
+00004988 000000a0 t process_thread_ctimer_process
+00004dbc 000000a8 t field_len
+00005286 000000b0 T framer_802154_setup_params
+000059a0 000000b2 t process_thread_nullnet_example_process
+00003e86 000000ba t cc2420_read
+00006250 000000c2 t process_thread_sensors_process
+00004b40 000000c4 t process_thread_etimer_process
+00003530 000000d0 T timera1
+000063f0 000000d2 t process_thread_stack_check_process
+00004f2c 000000d4 T frame802154_create
+00005d26 000000d6 T platform_init_stage_two
+00004cdc 000000e0 T frame802154_has_panid
+0000129a 000000e0 b received_seqnos
+00007152 000000e8 T memcpy
+00004342 000000ea T cc2420_init
+000040c4 0000011e t get_value
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+0000508c 0000015c T frame802154_parse
+00006812 00000176 t print_field
+00004596 000001b0 t transmit_from_queue
+0000313e 000001c4 T main
+0000144e 00000550 b buframmem_memb_mem
+00006988 00000742 T vuprintf
+
+[Disassembly samples around buffer/string functions]
+00004746 <csma_output_packet>:
+    4746:	4b 14       	pushm.a	#5,	r11	
+    4748:	c8 0f       	mova	r15,	r8	
+    474a:	07 4e       	mov	r14,	r7	
+    474c:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    4750:	b0 13 f8 5c 	calla	#0x05cf8	
+    4754:	0a 4f       	mov	r15,	r10	
+    4756:	b0 13 74 56 	calla	#0x05674	
+    475a:	1e 43       	mov	#1,	r14	;r3 As==01
+    475c:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    4760:	b0 13 ce 5c 	calla	#0x05cce	
+    4764:	3f 40 d4 11 	mov	#4564,	r15	;#0x11d4
+    4768:	b0 13 9e 55 	calla	#0x0559e	
+    476c:	0a 3c       	jmp	$+22     	;abs 0x4782
+    476e:	0e 4a       	mov	r10,	r14	
+    4770:	0f 4b       	mov	r11,	r15	
+    4772:	2f 53       	incd	r15		
+    4774:	b0 13 7a 55 	calla	#0x0557a	
+    4778:	4f 93       	tst.b	r15		
+--
+0000488e <csma_output_init>:
+    488e:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    4892:	b0 13 94 57 	calla	#0x05794	
+    4896:	3f 40 28 11 	mov	#4392,	r15	;#0x1128
+    489a:	b0 13 94 57 	calla	#0x05794	
+    489e:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    48a2:	b0 13 94 57 	calla	#0x05794	
+    48a6:	10 01       	reta			
+
+000048a8 <csma_security_create_frame>:
+    48a8:	1e 43       	mov	#1,	r14	;r3 As==01
+    48aa:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    48ae:	b0 13 ce 5c 	calla	#0x05cce	
+    48b2:	80 13 9e 73 	calla	&0x0739e	
+    48b6:	10 01       	reta			
+
+000048b8 <csma_security_parse_frame>:
+    48b8:	80 13 a2 73 	calla	&0x073a2	
+    48bc:	10 01       	reta			
+--
+00004908 <input_packet>:
+    4908:	b0 13 86 5b 	calla	#0x05b86	
+    490c:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    4910:	2a 24       	jz	$+86     	;abs 0x4966
+    4912:	b0 13 b8 48 	calla	#0x048b8	
+    4916:	0f 93       	tst	r15		
+    4918:	26 38       	jl	$+78     	;abs 0x4966
+    491a:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    491e:	b0 13 f8 5c 	calla	#0x05cf8	
+    4922:	3e 40 20 1a 	mov	#6688,	r14	;#0x1a20
+    4926:	b0 13 7a 55 	calla	#0x0557a	
+    492a:	4f 93       	tst.b	r15		
+    492c:	0a 20       	jnz	$+22     	;abs 0x4942
+    492e:	b0 13 06 5d 	calla	#0x05d06	
+    4932:	4f 93       	tst.b	r15		
+    4934:	06 20       	jnz	$+14     	;abs 0x4942
+    4936:	30 12 2a 75 	push	#29994		;#0x752a
+    493a:	b0 13 02 68 	calla	#0x06802	
+    493e:	21 53       	incd	r1		
+--
+00005a52 <input_callback>:
+    5a52:	0b 14       	pushm.a	#1,	r11	
+    5a54:	21 83       	decd	r1		
+    5a56:	0b 4d       	mov	r13,	r11	
+    5a58:	2e 93       	cmp	#2,	r14	;r3 As==10
+    5a5a:	1d 20       	jnz	$+60     	;abs 0x5a96
+    5a5c:	e1 4f 00 00 	mov.b	@r15,	0(r1)	;0x0000(r1)
+    5a60:	d1 4f 01 00 	mov.b	1(r15),	1(r1)	;0x0001(r15), 0x0001(r1)
+    5a64:	01 00 
+    5a66:	30 12 6e 75 	push	#30062		;#0x756e
+    5a6a:	30 12 72 75 	push	#30066		;#0x7572
+    5a6e:	30 12 77 75 	push	#30071		;#0x7577
+    5a72:	b0 13 02 68 	calla	#0x06802	
+    5a76:	31 50 06 00 	add	#6,	r1	;#0x0006
+    5a7a:	11 12 02 00 	push	2(r1)		;0x0002(r1)
+    5a7e:	30 12 95 75 	push	#30101		;#0x7595
+    5a82:	b0 13 02 68 	calla	#0x06802	
+    5a86:	21 52       	add	#4,	r1	;r2 As==10
+    5a88:	0f 4b       	mov	r11,	r15	
+--
+00005aa4 <output>:
+    5aa4:	0b 14       	pushm.a	#1,	r11	
+    5aa6:	0b 4f       	mov	r15,	r11	
+    5aa8:	b0 13 4c 5c 	calla	#0x05c4c	
+    5aac:	1e 42 2c 1a 	mov	&0x1a2c,r14	
+    5ab0:	1f 42 2a 1a 	mov	&0x1a2a,r15	
+    5ab4:	b0 13 5e 5c 	calla	#0x05c5e	
+    5ab8:	0b 93       	tst	r11		
+    5aba:	02 24       	jz	$+6      	;abs 0x5ac0
+    5abc:	0e 4b       	mov	r11,	r14	
+    5abe:	02 3c       	jmp	$+6      	;abs 0x5ac4
+    5ac0:	3e 40 a6 73 	mov	#29606,	r14	;#0x73a6
+    5ac4:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    5ac8:	b0 13 e4 5c 	calla	#0x05ce4	
+    5acc:	3e 40 20 1a 	mov	#6688,	r14	;#0x1a20
+    5ad0:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    5ad4:	b0 13 e4 5c 	calla	#0x05ce4	
+    5ad8:	0e 43       	clr	r14		
+    5ada:	cf 03       	clra	r15		
+--
+00005ae6 <input>:
+    5ae6:	3b 14       	pushm.a	#4,	r11	
+    5ae8:	2b 00 8a 13 	mova	&0x0138a,r11	
+    5aec:	db 03       	tsta	r11		
+    5aee:	13 24       	jz	$+40     	;abs 0x5b16
+    5af0:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    5af4:	b0 13 f8 5c 	calla	#0x05cf8	
+    5af8:	08 4f       	mov	r15,	r8	
+    5afa:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    5afe:	b0 13 f8 5c 	calla	#0x05cf8	
+    5b02:	09 4f       	mov	r15,	r9	
+    5b04:	b0 13 86 5b 	calla	#0x05b86	
+    5b08:	0a 4f       	mov	r15,	r10	
+    5b0a:	b0 13 96 5b 	calla	#0x05b96	
+    5b0e:	0c 48       	mov	r8,	r12	
+    5b10:	0d 49       	mov	r9,	r13	
+    5b12:	0e 4a       	mov	r10,	r14	
+    5b14:	4b 13       	calla	r11		
+    5b16:	38 16       	popm.a	#4,	r11	
+--
+00005b1a <nullnet_set_input_callback>:
+    5b1a:	60 0f 8a 13 	mova	r15,	&0x0138a
+    5b1e:	10 01       	reta			
+
+00005b20 <init>:
+    5b20:	10 01       	reta			
+
+00005b22 <root_set_prefix>:
+    5b22:	10 01       	reta			
+
+00005b24 <root_start>:
+    5b24:	0f 43       	clr	r15		
+    5b26:	10 01       	reta			
+
+00005b28 <node_is_root>:
+    5b28:	0f 43       	clr	r15		
+    5b2a:	10 01       	reta			
+
+00005b2c <get_root_ipaddr>:
+--
+00005b60 <packetbuf_hdrreduce>:
+    5b60:	1e 42 90 13 	mov	&0x1390,r14	
+    5b64:	0e 9f       	cmp	r15,	r14	
+    5b66:	07 28       	jnc	$+16     	;abs 0x5b76
+    5b68:	82 5f 8e 13 	add	r15,	&0x138e	
+    5b6c:	0e 8f       	sub	r15,	r14	
+    5b6e:	82 4e 90 13 	mov	r14,	&0x1390	
+    5b72:	1f 43       	mov	#1,	r15	;r3 As==01
+    5b74:	10 01       	reta			
+    5b76:	0f 43       	clr	r15		
+    5b78:	10 01       	reta			
+
+00005b7a <packetbuf_set_datalen>:
+    5b7a:	82 4f 90 13 	mov	r15,	&0x1390	
+    5b7e:	10 01       	reta			
+
+00005b80 <packetbuf_hdrptr>:
+    5b80:	3f 40 92 13 	mov	#5010,	r15	;#0x1392
+    5b84:	10 01       	reta			
+
+00005b86 <packetbuf_datalen>:
+    5b86:	1f 42 90 13 	mov	&0x1390,r15	
+    5b8a:	10 01       	reta			
+
+00005b8c <packetbuf_hdrlen>:
+    5b8c:	5f 42 e6 19 	mov.b	&0x19e6,r15	
+    5b90:	5f 52 8e 13 	add.b	&0x138e,r15	
+    5b94:	10 01       	reta			
+
+00005b96 <packetbuf_dataptr>:
+    5b96:	b0 13 8c 5b 	calla	#0x05b8c	
+    5b9a:	4f 4f       	mov.b	r15,	r15	
+    5b9c:	3f 50 92 13 	add	#5010,	r15	;#0x1392
+    5ba0:	10 01       	reta			
+
+00005ba2 <packetbuf_copyto>:
+    5ba2:	3b 14       	pushm.a	#4,	r11	
+    5ba4:	08 4f       	mov	r15,	r8	
+    5ba6:	5b 42 e6 19 	mov.b	&0x19e6,r11	
+    5baa:	19 42 90 13 	mov	&0x1390,r9	
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  17793	    310	   2814	  20917	   51b5	extra-firmwares/nullnet-unicast-u50.sky
+
+[Credential / secret / backdoor string search]
+Debug
+
+[Error / assert / information leakage strings]
+Errors
+Warnings
+Debug
+Stack
+Check failed: %u vs. %u
+Stack check
+
+[Potentially unsafe / buffer-related symbols]
+0000400c W __init_stack
+00003900 A __stack
+00001d34 A _stack
+00008240 R cc2420_aes_128_driver
+000054a6 T csma_output_init
+00005360 T csma_output_packet
+         U gpio_hal_arch_port_pin_set_input
+000068b2 t input
+00006800 T input_callback
+00005520 t input_packet
+000065bc T memb_free
+00007f06 T memcpy
+00008000 T memset
+000068f2 T nullnet_set_input_callback
+00006870 t output
+0000826e r output_power
+00006ae0 T packetbuf_addr
+00001cfa B packetbuf_addrs
+00001430 b packetbuf_aligned
+00006ac0 T packetbuf_attr
+00006a08 T packetbuf_attr_clear
+00006a92 T packetbuf_attr_copyfrom
+00006a70 T packetbuf_attr_copyto
+00001d0a B packetbuf_attrs
+00006a30 T packetbuf_clear
+00006a42 T packetbuf_copyfrom
+0000697a T packetbuf_copyto
+0000695e T packetbuf_datalen
+0000696e T packetbuf_dataptr
+000069cc T packetbuf_hdralloc
+00006964 T packetbuf_hdrlen
+00006958 T packetbuf_hdrptr
+00006938 T packetbuf_hdrreduce
+00006af2 T packetbuf_holds_broadcast
+00006aca T packetbuf_set_addr
+00006ab6 T packetbuf_set_attr
+00006952 T packetbuf_set_datalen
+000069c0 T packetbuf_totlen
+00007698 T printf
+00007384 t process_thread_stack_check_process
+00006fb8 T queuebuf_free
+00006f42 T queuebuf_init
+00006f54 T queuebuf_new_from_packetbuf
+00006fe2 T queuebuf_to_packetbuf
+00006fa6 T queuebuf_update_attr_from_packetbuf
+00007014 T random_init
+0000701a T random_rand
+0000727a T serial_line_input_byte
+         U slip_input_byte
+0000733e T stack_check_get_usage
+00007310 T stack_check_init
+00001228 D stack_check_process
+00001bfe b stack_top.2049
+00001c22 b uart1_input_handler
+000074d8 T uart1_set_input
+0000783c T vuprintf
+
+[Large functions / stack-heavy candidates]
+00005598 0000009a t process_thread_ctimer_process
+000045fe 0000009c t energest_off
+000061d8 000000a2 t create_frame
+00006080 000000a2 t parse
+000071d6 000000a4 t process_thread_serial_line_process
+00005bf0 000000aa t field_len
+00006122 000000b6 T framer_802154_setup_params
+00006746 000000ba t process_thread_nullnet_example_process
+00005e5c 000000bc T frame802154_parse_fcf
+00004930 000000be t cc2420_read
+000014bc 000000c0 b events
+000070ea 000000c2 t process_thread_sensors_process
+0000597a 000000cc t process_thread_etimer_process
+00005d8a 000000d2 T frame802154_create
+00004f6e 000000dc T timera1
+00005b10 000000e0 T frame802154_has_panid
+00001338 000000e0 b received_seqnos
+00004e84 000000ea T cc2420_init
+00007514 000000f4 T uart1_init
+00007f06 000000fa T memcpy
+00004c00 0000011e t get_value
+0000573c 00000120 T ds2411_init
+00005360 00000146 T csma_output_packet
+00004d34 00000150 t set_value
+00005f18 00000168 T frame802154_parse
+000076a8 00000194 t print_field
+000051a4 000001bc t transmit_from_queue
+0000403e 000001d8 T main
+00001584 00000550 b buframmem_memb_mem
+0000783c 0000063e T vuprintf
+
+[Disassembly samples around buffer/string functions]
+00005360 <csma_output_packet>:
+    5360:	0b 12       	push	r11		
+    5362:	0a 12       	push	r10		
+    5364:	09 12       	push	r9		
+    5366:	08 12       	push	r8		
+    5368:	07 12       	push	r7		
+    536a:	08 4f       	mov	r15,	r8	
+    536c:	07 4e       	mov	r14,	r7	
+    536e:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    5372:	b0 12 e0 6a 	call	#0x6ae0	
+    5376:	0a 4f       	mov	r15,	r10	
+    5378:	b0 12 1c 64 	call	#0x641c	
+    537c:	1e 43       	mov	#1,	r14	;r3 As==01
+    537e:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5382:	b0 12 b6 6a 	call	#0x6ab6	
+    5386:	1b 42 58 12 	mov	&0x1258,r11	
+    538a:	08 3c       	jmp	$+18     	;abs 0x539c
+    538c:	0e 4a       	mov	r10,	r14	
+    538e:	0f 4b       	mov	r11,	r15	
+--
+000054a6 <csma_output_init>:
+    54a6:	3f 40 14 11 	mov	#4372,	r15	;#0x1114
+    54aa:	b0 12 48 65 	call	#0x6548	
+    54ae:	3f 40 1c 11 	mov	#4380,	r15	;#0x111c
+    54b2:	b0 12 48 65 	call	#0x6548	
+    54b6:	3f 40 0c 11 	mov	#4364,	r15	;#0x110c
+    54ba:	b0 12 48 65 	call	#0x6548	
+    54be:	30 41       	ret			
+
+000054c0 <csma_security_create_frame>:
+    54c0:	1e 43       	mov	#1,	r14	;r3 As==01
+    54c2:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    54c6:	b0 12 b6 6a 	call	#0x6ab6	
+    54ca:	92 12 94 82 	call	&0x8294	
+    54ce:	30 41       	ret			
+
+000054d0 <csma_security_parse_frame>:
+    54d0:	92 12 96 82 	call	&0x8296	
+    54d4:	30 41       	ret			
+--
+00005520 <input_packet>:
+    5520:	b0 12 5e 69 	call	#0x695e	
+    5524:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    5528:	26 24       	jz	$+78     	;abs 0x5576
+    552a:	b0 12 d0 54 	call	#0x54d0	
+    552e:	0f 93       	tst	r15		
+    5530:	22 38       	jl	$+70     	;abs 0x5576
+    5532:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    5536:	b0 12 e0 6a 	call	#0x6ae0	
+    553a:	3e 40 ec 1c 	mov	#7404,	r14	;#0x1cec
+    553e:	b0 12 3c 63 	call	#0x633c	
+    5542:	4f 93       	tst.b	r15		
+    5544:	0b 24       	jz	$+24     	;abs 0x555c
+    5546:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    554a:	b0 12 e0 6a 	call	#0x6ae0	
+    554e:	3e 40 ec 1c 	mov	#7404,	r14	;#0x1cec
+    5552:	b0 12 3c 63 	call	#0x633c	
+    5556:	4f 93       	tst.b	r15		
+    5558:	0e 20       	jnz	$+30     	;abs 0x5576
+--
+00006800 <input_callback>:
+    6800:	0b 12       	push	r11		
+    6802:	0a 12       	push	r10		
+    6804:	21 83       	decd	r1		
+    6806:	0a 4d       	mov	r13,	r10	
+    6808:	1e 42 18 14 	mov	&0x1418,r14	
+    680c:	2e 93       	cmp	#2,	r14	;r3 As==10
+    680e:	29 24       	jz	$+84     	;abs 0x6862
+    6810:	3e 50 9c 11 	add	#4508,	r14	;#0x119c
+    6814:	ce 93 ff ff 	tst.b	-1(r14)	;0xffff(r14)
+    6818:	24 20       	jnz	$+74     	;abs 0x6862
+    681a:	e1 4f 00 00 	mov.b	@r15,	0(r1)	;0x0000(r1)
+    681e:	d1 4f 01 00 	mov.b	1(r15),	1(r1)	;0x0001(r15), 0x0001(r1)
+    6822:	01 00 
+    6824:	30 12 3e 83 	push	#-31938	;#0x833e
+    6828:	30 12 42 83 	push	#-31934	;#0x8342
+    682c:	30 12 47 83 	push	#-31929	;#0x8347
+    6830:	b0 12 98 76 	call	#0x7698	
+    6834:	31 50 06 00 	add	#6,	r1	;#0x0006
+--
+00006870 <output>:
+    6870:	0b 12       	push	r11		
+    6872:	0b 4f       	mov	r15,	r11	
+    6874:	b0 12 30 6a 	call	#0x6a30	
+    6878:	1e 42 f8 1c 	mov	&0x1cf8,r14	
+    687c:	1f 42 f6 1c 	mov	&0x1cf6,r15	
+    6880:	b0 12 42 6a 	call	#0x6a42	
+    6884:	0b 93       	tst	r11		
+    6886:	02 24       	jz	$+6      	;abs 0x688c
+    6888:	0e 4b       	mov	r11,	r14	
+    688a:	02 3c       	jmp	$+6      	;abs 0x6890
+    688c:	3e 40 98 82 	mov	#-32104,r14	;#0x8298
+    6890:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    6894:	b0 12 ca 6a 	call	#0x6aca	
+    6898:	3e 40 ec 1c 	mov	#7404,	r14	;#0x1cec
+    689c:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    68a0:	b0 12 ca 6a 	call	#0x6aca	
+    68a4:	0e 43       	clr	r14		
+    68a6:	0f 43       	clr	r15		
+--
+000068b2 <input>:
+    68b2:	0b 12       	push	r11		
+    68b4:	0a 12       	push	r10		
+    68b6:	09 12       	push	r9		
+    68b8:	08 12       	push	r8		
+    68ba:	1b 42 28 14 	mov	&0x1428,r11	
+    68be:	0b 93       	tst	r11		
+    68c0:	13 24       	jz	$+40     	;abs 0x68e8
+    68c2:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    68c6:	b0 12 e0 6a 	call	#0x6ae0	
+    68ca:	08 4f       	mov	r15,	r8	
+    68cc:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    68d0:	b0 12 e0 6a 	call	#0x6ae0	
+    68d4:	09 4f       	mov	r15,	r9	
+    68d6:	b0 12 5e 69 	call	#0x695e	
+    68da:	0a 4f       	mov	r15,	r10	
+    68dc:	b0 12 6e 69 	call	#0x696e	
+    68e0:	0c 48       	mov	r8,	r12	
+    68e2:	0d 49       	mov	r9,	r13	
+--
+000068f2 <nullnet_set_input_callback>:
+    68f2:	82 4f 28 14 	mov	r15,	&0x1428	
+    68f6:	30 41       	ret			
+
+000068f8 <init>:
+    68f8:	30 41       	ret			
+
+000068fa <root_set_prefix>:
+    68fa:	30 41       	ret			
+
+000068fc <root_start>:
+    68fc:	0f 43       	clr	r15		
+    68fe:	30 41       	ret			
+
+00006900 <node_is_root>:
+    6900:	0f 43       	clr	r15		
+    6902:	30 41       	ret			
+
+00006904 <get_root_ipaddr>:
+--
+00006938 <packetbuf_hdrreduce>:
+    6938:	1e 42 2c 14 	mov	&0x142c,r14	
+    693c:	0e 9f       	cmp	r15,	r14	
+    693e:	07 28       	jnc	$+16     	;abs 0x694e
+    6940:	82 5f 2a 14 	add	r15,	&0x142a	
+    6944:	0e 8f       	sub	r15,	r14	
+    6946:	82 4e 2c 14 	mov	r14,	&0x142c	
+    694a:	1f 43       	mov	#1,	r15	;r3 As==01
+    694c:	30 41       	ret			
+    694e:	0f 43       	clr	r15		
+    6950:	30 41       	ret			
+
+00006952 <packetbuf_set_datalen>:
+    6952:	82 4f 2c 14 	mov	r15,	&0x142c	
+    6956:	30 41       	ret			
+
+00006958 <packetbuf_hdrptr>:
+    6958:	3f 40 30 14 	mov	#5168,	r15	;#0x1430
+    695c:	30 41       	ret			
+
+0000695e <packetbuf_datalen>:
+    695e:	1f 42 2c 14 	mov	&0x142c,r15	
+    6962:	30 41       	ret			
+
+00006964 <packetbuf_hdrlen>:
+    6964:	5f 42 2e 14 	mov.b	&0x142e,r15	
+    6968:	5f 52 2a 14 	add.b	&0x142a,r15	
+    696c:	30 41       	ret			
+
+0000696e <packetbuf_dataptr>:
+    696e:	b0 12 64 69 	call	#0x6964	
+    6972:	4f 4f       	mov.b	r15,	r15	
+    6974:	3f 50 30 14 	add	#5168,	r15	;#0x1430
+    6978:	30 41       	ret			
+
+0000697a <packetbuf_copyto>:
+    697a:	0b 12       	push	r11		
+    697c:	0a 12       	push	r10		
+    697e:	09 12       	push	r9		
+    6980:	08 12       	push	r8		
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  29171	   4426	   3086	  36683	   8f4b	extra-firmwares/nullnet-unicast.sky
+
+[Credential / secret / backdoor string search]
+Debug
+
+[Error / assert / information leakage strings]
+Errors
+Warnings
+Debug
+Stack
+Check failed: %ld vs. %ld
+Stack check
+
+[Potentially unsafe / buffer-related symbols]
+0000400c W __init_stack
+00003900 A __stack
+00002e58 A _stack
+00009efe t call_vuprintf
+0000ab60 R cc2420_aes_128_driver
+000053c4 T csma_output_init
+0000526c T csma_output_packet
+         U gpio_hal_arch_port_pin_set_input
+00007102 t input
+00006856 T input_callback
+0000543e t input_packet
+000064c6 T memb_free
+0000a7b2 T memcpy
+0000a8ac T memset
+00006650 T netstack_init
+00007142 T nullnet_set_input_callback
+000070c0 t output
+0000ab8e r output_power
+00007334 T packetbuf_addr
+00002e22 B packetbuf_addrs
+0000255e b packetbuf_aligned
+00007312 T packetbuf_attr
+00007258 T packetbuf_attr_clear
+000072e2 T packetbuf_attr_copyfrom
+000072c0 T packetbuf_attr_copyto
+00002e32 B packetbuf_attrs
+00007280 T packetbuf_clear
+00007292 T packetbuf_copyfrom
+000071ca T packetbuf_copyto
+000071ae T packetbuf_datalen
+000071be T packetbuf_dataptr
+0000721c T packetbuf_hdralloc
+000071b4 T packetbuf_hdrlen
+000071a8 T packetbuf_hdrptr
+00007188 T packetbuf_hdrreduce
+00007346 T packetbuf_holds_broadcast
+0000731c T packetbuf_set_addr
+00007306 T packetbuf_set_attr
+000071a2 T packetbuf_set_datalen
+00007210 T packetbuf_totlen
+00009ecc T printf
+00007b94 t process_thread_stack_check_process
+00007792 T queuebuf_free
+0000771c T queuebuf_init
+0000772e T queuebuf_new_from_packetbuf
+000077bc T queuebuf_to_packetbuf
+00007780 T queuebuf_update_attr_from_packetbuf
+000077ee T random_init
+000077f4 T random_rand
+00007a84 T serial_line_input_byte
+         U slip_input_byte
+00009f38 T sprintf
+00007b40 T stack_check_get_usage
+00007b12 T stack_check_init
+0000223c D stack_check_process
+00002d30 b stack_top.2047
+00002d54 b uart1_input_handler
+00007d42 T uart1_set_input
+0000a0e8 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00004d82 000000ea T cc2420_init
+00007b94 000000ea t process_thread_stack_check_process
+00002454 000000f2 B rssiList
+00007d7a 000000f4 T uart1_init
+0000a7b2 000000fa T memcpy
+0000b0cc 00000100 R __clz_tab
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00008e76 00000124 T __fixunssfdi
+00009cec 0000013c T __unpack_f
+00008f9a 0000013e T __floatundisf
+00009606 00000148 T __divsf3
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00008cc2 00000172 T __ieee754_sqrtf
+00008b4e 00000174 T scalbnf
+00009f54 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00009b12 000001da T __pack_f
+00006672 000001e4 t process_thread_nullnet_example_process
+000093f6 00000210 T __mulsf3
+000090d8 00000282 t _fpadd_parts
+000019e4 000003e8 D node_positions
+00001520 000004c4 D anchor_nodes
+000026b6 00000550 b buframmem_memb_mem
+0000a0e8 0000063e T vuprintf
+00006856 00000864 T input_callback
+00007efe 00000c4a T __ieee754_powf
+
+[Disassembly samples around buffer/string functions]
+0000526c <csma_output_packet>:
+    526c:	0b 12       	push	r11		
+    526e:	0a 12       	push	r10		
+    5270:	09 12       	push	r9		
+    5272:	08 12       	push	r8		
+    5274:	07 12       	push	r7		
+    5276:	08 4f       	mov	r15,	r8	
+    5278:	07 4e       	mov	r14,	r7	
+    527a:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    527e:	b0 12 34 73 	call	#0x7334	
+    5282:	0a 4f       	mov	r15,	r10	
+    5284:	b0 12 12 63 	call	#0x6312	
+    5288:	1e 43       	mov	#1,	r14	;r3 As==01
+    528a:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    528e:	b0 12 06 73 	call	#0x7306	
+    5292:	3f 40 6c 22 	mov	#8812,	r15	;#0x226c
+    5296:	b0 12 34 62 	call	#0x6234	
+    529a:	0a 3c       	jmp	$+22     	;abs 0x52b0
+    529c:	0e 4a       	mov	r10,	r14	
+--
+000053c4 <csma_output_init>:
+    53c4:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    53c8:	b0 12 52 64 	call	#0x6452	
+    53cc:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    53d0:	b0 12 52 64 	call	#0x6452	
+    53d4:	3f 40 10 11 	mov	#4368,	r15	;#0x1110
+    53d8:	b0 12 52 64 	call	#0x6452	
+    53dc:	30 41       	ret			
+
+000053de <csma_security_create_frame>:
+    53de:	1e 43       	mov	#1,	r14	;r3 As==01
+    53e0:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    53e4:	b0 12 06 73 	call	#0x7306	
+    53e8:	92 12 c2 ab 	call	&0xabc2	
+    53ec:	30 41       	ret			
+
+000053ee <csma_security_parse_frame>:
+    53ee:	92 12 c4 ab 	call	&0xabc4	
+    53f2:	30 41       	ret			
+--
+0000543e <input_packet>:
+    543e:	b0 12 ae 71 	call	#0x71ae	
+    5442:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    5446:	2a 24       	jz	$+86     	;abs 0x549c
+    5448:	b0 12 ee 53 	call	#0x53ee	
+    544c:	0f 93       	tst	r15		
+    544e:	26 38       	jl	$+78     	;abs 0x549c
+    5450:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    5454:	b0 12 34 73 	call	#0x7334	
+    5458:	3e 40 ea 2d 	mov	#11754,	r14	;#0x2dea
+    545c:	b0 12 10 62 	call	#0x6210	
+    5460:	4f 93       	tst.b	r15		
+    5462:	0a 20       	jnz	$+22     	;abs 0x5478
+    5464:	b0 12 46 73 	call	#0x7346	
+    5468:	4f 93       	tst.b	r15		
+    546a:	06 20       	jnz	$+14     	;abs 0x5478
+    546c:	30 12 9e ab 	push	#-21602	;#0xab9e
+    5470:	b0 12 cc 9e 	call	#0x9ecc	
+    5474:	21 53       	incd	r1		
+--
+00006856 <input_callback>:
+    6856:	0b 12       	push	r11		
+    6858:	0a 12       	push	r10		
+    685a:	09 12       	push	r9		
+    685c:	08 12       	push	r8		
+    685e:	07 12       	push	r7		
+    6860:	06 12       	push	r6		
+    6862:	05 12       	push	r5		
+    6864:	04 12       	push	r4		
+    6866:	04 41       	mov	r1,	r4	
+    6868:	34 50 10 00 	add	#16,	r4	;#0x0010
+    686c:	31 50 fc fe 	add	#-260,	r1	;#0xfefc
+    6870:	0a 4f       	mov	r15,	r10	
+    6872:	09 4d       	mov	r13,	r9	
+    6874:	12 12 18 2e 	push	&0x2e18	
+    6878:	30 12 fe ac 	push	#-21250	;#0xacfe
+    687c:	b0 12 cc 9e 	call	#0x9ecc	
+    6880:	21 52       	add	#4,	r1	;r2 As==10
+    6882:	92 53 18 2e 	inc	&0x2e18	
+--
+000070c0 <output>:
+    70c0:	0b 12       	push	r11		
+    70c2:	0b 4f       	mov	r15,	r11	
+    70c4:	b0 12 80 72 	call	#0x7280	
+    70c8:	1e 42 20 2e 	mov	&0x2e20,r14	
+    70cc:	1f 42 1e 2e 	mov	&0x2e1e,r15	
+    70d0:	b0 12 92 72 	call	#0x7292	
+    70d4:	0b 93       	tst	r11		
+    70d6:	02 24       	jz	$+6      	;abs 0x70dc
+    70d8:	0e 4b       	mov	r11,	r14	
+    70da:	02 3c       	jmp	$+6      	;abs 0x70e0
+    70dc:	3e 40 c6 ab 	mov	#-21562,r14	;#0xabc6
+    70e0:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    70e4:	b0 12 1c 73 	call	#0x731c	
+    70e8:	3e 40 ea 2d 	mov	#11754,	r14	;#0x2dea
+    70ec:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    70f0:	b0 12 1c 73 	call	#0x731c	
+    70f4:	0e 43       	clr	r14		
+    70f6:	0f 43       	clr	r15		
+--
+00007102 <input>:
+    7102:	0b 12       	push	r11		
+    7104:	0a 12       	push	r10		
+    7106:	09 12       	push	r9		
+    7108:	08 12       	push	r8		
+    710a:	1b 42 56 25 	mov	&0x2556,r11	
+    710e:	0b 93       	tst	r11		
+    7110:	13 24       	jz	$+40     	;abs 0x7138
+    7112:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    7116:	b0 12 34 73 	call	#0x7334	
+    711a:	08 4f       	mov	r15,	r8	
+    711c:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    7120:	b0 12 34 73 	call	#0x7334	
+    7124:	09 4f       	mov	r15,	r9	
+    7126:	b0 12 ae 71 	call	#0x71ae	
+    712a:	0a 4f       	mov	r15,	r10	
+    712c:	b0 12 be 71 	call	#0x71be	
+    7130:	0c 48       	mov	r8,	r12	
+    7132:	0d 49       	mov	r9,	r13	
+--
+00007142 <nullnet_set_input_callback>:
+    7142:	82 4f 56 25 	mov	r15,	&0x2556	
+    7146:	30 41       	ret			
+
+00007148 <init>:
+    7148:	30 41       	ret			
+
+0000714a <root_set_prefix>:
+    714a:	30 41       	ret			
+
+0000714c <root_start>:
+    714c:	0f 43       	clr	r15		
+    714e:	30 41       	ret			
+
+00007150 <node_is_root>:
+    7150:	0f 43       	clr	r15		
+    7152:	30 41       	ret			
+
+00007154 <get_root_ipaddr>:
+--
+00007188 <packetbuf_hdrreduce>:
+    7188:	1e 42 5a 25 	mov	&0x255a,r14	
+    718c:	0e 9f       	cmp	r15,	r14	
+    718e:	07 28       	jnc	$+16     	;abs 0x719e
+    7190:	82 5f 58 25 	add	r15,	&0x2558	
+    7194:	0e 8f       	sub	r15,	r14	
+    7196:	82 4e 5a 25 	mov	r14,	&0x255a	
+    719a:	1f 43       	mov	#1,	r15	;r3 As==01
+    719c:	30 41       	ret			
+    719e:	0f 43       	clr	r15		
+    71a0:	30 41       	ret			
+
+000071a2 <packetbuf_set_datalen>:
+    71a2:	82 4f 5a 25 	mov	r15,	&0x255a	
+    71a6:	30 41       	ret			
+
+000071a8 <packetbuf_hdrptr>:
+    71a8:	3f 40 5e 25 	mov	#9566,	r15	;#0x255e
+    71ac:	30 41       	ret			
+
+000071ae <packetbuf_datalen>:
+    71ae:	1f 42 5a 25 	mov	&0x255a,r15	
+    71b2:	30 41       	ret			
+
+000071b4 <packetbuf_hdrlen>:
+    71b4:	5f 42 5c 25 	mov.b	&0x255c,r15	
+    71b8:	5f 52 58 25 	add.b	&0x2558,r15	
+    71bc:	30 41       	ret			
+
+000071be <packetbuf_dataptr>:
+    71be:	b0 12 b4 71 	call	#0x71b4	
+    71c2:	4f 4f       	mov.b	r15,	r15	
+    71c4:	3f 50 5e 25 	add	#9566,	r15	;#0x255e
+    71c8:	30 41       	ret			
+
+000071ca <packetbuf_copyto>:
+    71ca:	0b 12       	push	r11		
+    71cc:	0a 12       	push	r10		
+    71ce:	09 12       	push	r9		
+    71d0:	08 12       	push	r8		
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  28097	   2488	   2632	  33217	   81c1	extra-firmwares/nullnet-unicast.z1
+
+[Credential / secret / backdoor string search]
+
+[Error / assert / information leakage strings]
+Stack
+Check failed: %ld vs. %ld
+Stack check
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+00002500 A _stack
+00003876 T accm_init
+0000240c B accm_int1_cb
+00002408 B accm_int2_cb
+000037fe t accm_read_axis.part.0
+00003754 t accm_read_reg
+000038ee T accm_stop
+000036fc t accm_write_reg
+0000372a t accm_write_stream
+00001100 D accmeter_process
+00008d9a t call_vuprintf
+0000488e T csma_output_init
+00004746 T csma_output_packet
+         U gpio_hal_arch_port_pin_set_input
+0000616e t input
+00005b34 T input_callback
+00004908 t input_packet
+00005808 T memb_free
+0000972a T memcpy
+00009812 T memset
+00005932 T netstack_init
+000061a2 T nullnet_set_input_callback
+0000612c t output
+00009948 r output_power
+00006380 T packetbuf_addr
+000024c8 B packetbuf_addrs
+00001d98 b packetbuf_aligned
+00006362 T packetbuf_attr
+000062ac T packetbuf_attr_clear
+00006332 T packetbuf_attr_copyfrom
+00006310 T packetbuf_attr_copyto
+000024d8 B packetbuf_attrs
+000062d4 T packetbuf_clear
+000062e6 T packetbuf_copyfrom
+0000622a T packetbuf_copyto
+0000620e T packetbuf_datalen
+0000621e T packetbuf_dataptr
+00006270 T packetbuf_hdralloc
+00006214 T packetbuf_hdrlen
+00006208 T packetbuf_hdrptr
+000061e8 T packetbuf_hdrreduce
+0000638e T packetbuf_holds_broadcast
+0000636c T packetbuf_set_addr
+00006356 T packetbuf_set_attr
+00006202 T packetbuf_set_datalen
+00006264 T packetbuf_totlen
+00008d68 T printf
+000037a8 t process_thread_accmeter_process
+00006a78 t process_thread_stack_check_process
+00006822 T queuebuf_free
+000067b0 T queuebuf_init
+000067c2 T queuebuf_new_from_packetbuf
+0000684c T queuebuf_to_packetbuf
+00006810 T queuebuf_update_attr_from_packetbuf
+0000687e T random_init
+00006884 T random_rand
+         U slip_input_byte
+00008dd0 T sprintf
+00006a24 T stack_check_get_usage
+000069f6 T stack_check_init
+00001a24 D stack_check_process
+000023ba b stack_top.2107
+000023c8 b uart0_input_handler
+00008f60 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00004cdc 000000e0 T frame802154_has_panid
+00001bac 000000e0 b received_seqnos
+00008790 000000e4 T __floatunsisf
+0000972a 000000e8 T memcpy
+00004342 000000ea T cc2420_init
+00001c8e 000000f2 B rssiList
+00009d7c 00000100 R __clz_tab
+00008ade 0000010c T __unpack_f
+000040c4 0000011e t get_value
+00007d78 00000120 T __fixunssfdi
+00007e98 00000124 T __floatundisf
+000084c0 00000142 T __divsf3
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+00007c22 00000156 T __ieee754_sqrtf
+0000508c 0000015c T frame802154_parse
+00007aba 00000168 T scalbnf
+00008dea 00000176 t print_field
+000059a0 00000194 t process_thread_nullnet_example_process
+00004596 000001b0 t transmit_from_queue
+0000891a 000001c4 T __pack_f
+0000313e 000001c4 T main
+000082c2 000001fe T __mulsf3
+00007fbc 0000026a t _fpadd_parts
+00001620 000003e8 D node_positions
+0000115c 000004c4 D anchor_nodes
+00001e54 00000550 b buframmem_memb_mem
+00005b34 000005f0 T input_callback
+00008f60 00000742 T vuprintf
+00006e8a 00000c2a T __ieee754_powf
+
+[Disassembly samples around buffer/string functions]
+00004746 <csma_output_packet>:
+    4746:	4b 14       	pushm.a	#5,	r11	
+    4748:	c8 0f       	mova	r15,	r8	
+    474a:	07 4e       	mov	r14,	r7	
+    474c:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    4750:	b0 13 80 63 	calla	#0x06380	
+    4754:	0a 4f       	mov	r15,	r10	
+    4756:	b0 13 74 56 	calla	#0x05674	
+    475a:	1e 43       	mov	#1,	r14	;r3 As==01
+    475c:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    4760:	b0 13 56 63 	calla	#0x06356	
+    4764:	3f 40 e6 1a 	mov	#6886,	r15	;#0x1ae6
+    4768:	b0 13 9e 55 	calla	#0x0559e	
+    476c:	0a 3c       	jmp	$+22     	;abs 0x4782
+    476e:	0e 4a       	mov	r10,	r14	
+    4770:	0f 4b       	mov	r11,	r15	
+    4772:	2f 53       	incd	r15		
+    4774:	b0 13 7a 55 	calla	#0x0557a	
+    4778:	4f 93       	tst.b	r15		
+--
+0000488e <csma_output_init>:
+    488e:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    4892:	b0 13 94 57 	calla	#0x05794	
+    4896:	3f 40 28 11 	mov	#4392,	r15	;#0x1128
+    489a:	b0 13 94 57 	calla	#0x05794	
+    489e:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    48a2:	b0 13 94 57 	calla	#0x05794	
+    48a6:	10 01       	reta			
+
+000048a8 <csma_security_create_frame>:
+    48a8:	1e 43       	mov	#1,	r14	;r3 As==01
+    48aa:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    48ae:	b0 13 56 63 	calla	#0x06356	
+    48b2:	80 13 76 99 	calla	&0x09976	
+    48b6:	10 01       	reta			
+
+000048b8 <csma_security_parse_frame>:
+    48b8:	80 13 7a 99 	calla	&0x0997a	
+    48bc:	10 01       	reta			
+--
+00004908 <input_packet>:
+    4908:	b0 13 0e 62 	calla	#0x0620e	
+    490c:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    4910:	2a 24       	jz	$+86     	;abs 0x4966
+    4912:	b0 13 b8 48 	calla	#0x048b8	
+    4916:	0f 93       	tst	r15		
+    4918:	26 38       	jl	$+78     	;abs 0x4966
+    491a:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    491e:	b0 13 80 63 	calla	#0x06380	
+    4922:	3e 40 2a 24 	mov	#9258,	r14	;#0x242a
+    4926:	b0 13 7a 55 	calla	#0x0557a	
+    492a:	4f 93       	tst.b	r15		
+    492c:	0a 20       	jnz	$+22     	;abs 0x4942
+    492e:	b0 13 8e 63 	calla	#0x0638e	
+    4932:	4f 93       	tst.b	r15		
+    4934:	06 20       	jnz	$+14     	;abs 0x4942
+    4936:	30 12 22 9b 	push	#-25822	;#0x9b22
+    493a:	b0 13 68 8d 	calla	#0x08d68	
+    493e:	21 53       	incd	r1		
+--
+00005b34 <input_callback>:
+    5b34:	7b 14       	pushm.a	#8,	r11	
+    5b36:	04 41       	mov	r1,	r4	
+    5b38:	34 50 20 00 	add	#32,	r4	;#0x0020
+    5b3c:	31 50 74 ff 	add	#-140,	r1	;#0xff74
+    5b40:	0a 4f       	mov	r15,	r10	
+    5b42:	09 4d       	mov	r13,	r9	
+    5b44:	1f 42 8c 1c 	mov	&0x1c8c,r15	
+    5b48:	3f 50 54 1a 	add	#6740,	r15	;#0x1a54
+    5b4c:	cf 93 ff ff 	tst.b	-1(r15)	;0xffff(r15)
+    5b50:	02 24       	jz	$+6      	;abs 0x5b56
+    5b52:	80 00 1c 61 	bra	#0x0611c	
+    5b56:	0b 43       	clr	r11		
+    5b58:	0f 4b       	mov	r11,	r15	
+    5b5a:	5f 02       	rlam	#1,	r15	
+    5b5c:	1f 12 8e 1c 	push	7310(r15)	;0x1c8e(r15)
+    5b60:	0b 12       	push	r11		
+    5b62:	30 12 f7 9b 	push	#-25609	;#0x9bf7
+    5b66:	b0 13 68 8d 	calla	#0x08d68	
+--
+0000612c <output>:
+    612c:	0b 14       	pushm.a	#1,	r11	
+    612e:	0b 4f       	mov	r15,	r11	
+    6130:	b0 13 d4 62 	calla	#0x062d4	
+    6134:	1e 42 c6 24 	mov	&0x24c6,r14	
+    6138:	1f 42 c4 24 	mov	&0x24c4,r15	
+    613c:	b0 13 e6 62 	calla	#0x062e6	
+    6140:	0b 93       	tst	r11		
+    6142:	02 24       	jz	$+6      	;abs 0x6148
+    6144:	0e 4b       	mov	r11,	r14	
+    6146:	02 3c       	jmp	$+6      	;abs 0x614c
+    6148:	3e 40 7e 99 	mov	#-26242,r14	;#0x997e
+    614c:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    6150:	b0 13 6c 63 	calla	#0x0636c	
+    6154:	3e 40 2a 24 	mov	#9258,	r14	;#0x242a
+    6158:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    615c:	b0 13 6c 63 	calla	#0x0636c	
+    6160:	0e 43       	clr	r14		
+    6162:	cf 03       	clra	r15		
+--
+0000616e <input>:
+    616e:	3b 14       	pushm.a	#4,	r11	
+    6170:	2b 00 90 1d 	mova	&0x01d90,r11	
+    6174:	db 03       	tsta	r11		
+    6176:	13 24       	jz	$+40     	;abs 0x619e
+    6178:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    617c:	b0 13 80 63 	calla	#0x06380	
+    6180:	08 4f       	mov	r15,	r8	
+    6182:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    6186:	b0 13 80 63 	calla	#0x06380	
+    618a:	09 4f       	mov	r15,	r9	
+    618c:	b0 13 0e 62 	calla	#0x0620e	
+    6190:	0a 4f       	mov	r15,	r10	
+    6192:	b0 13 1e 62 	calla	#0x0621e	
+    6196:	0c 48       	mov	r8,	r12	
+    6198:	0d 49       	mov	r9,	r13	
+    619a:	0e 4a       	mov	r10,	r14	
+    619c:	4b 13       	calla	r11		
+    619e:	38 16       	popm.a	#4,	r11	
+--
+000061a2 <nullnet_set_input_callback>:
+    61a2:	60 0f 90 1d 	mova	r15,	&0x01d90
+    61a6:	10 01       	reta			
+
+000061a8 <init>:
+    61a8:	10 01       	reta			
+
+000061aa <root_set_prefix>:
+    61aa:	10 01       	reta			
+
+000061ac <root_start>:
+    61ac:	0f 43       	clr	r15		
+    61ae:	10 01       	reta			
+
+000061b0 <node_is_root>:
+    61b0:	0f 43       	clr	r15		
+    61b2:	10 01       	reta			
+
+000061b4 <get_root_ipaddr>:
+--
+000061e8 <packetbuf_hdrreduce>:
+    61e8:	1e 42 96 1d 	mov	&0x1d96,r14	
+    61ec:	0e 9f       	cmp	r15,	r14	
+    61ee:	07 28       	jnc	$+16     	;abs 0x61fe
+    61f0:	82 5f 94 1d 	add	r15,	&0x1d94	
+    61f4:	0e 8f       	sub	r15,	r14	
+    61f6:	82 4e 96 1d 	mov	r14,	&0x1d96	
+    61fa:	1f 43       	mov	#1,	r15	;r3 As==01
+    61fc:	10 01       	reta			
+    61fe:	0f 43       	clr	r15		
+    6200:	10 01       	reta			
+
+00006202 <packetbuf_set_datalen>:
+    6202:	82 4f 96 1d 	mov	r15,	&0x1d96	
+    6206:	10 01       	reta			
+
+00006208 <packetbuf_hdrptr>:
+    6208:	3f 40 98 1d 	mov	#7576,	r15	;#0x1d98
+    620c:	10 01       	reta			
+
+0000620e <packetbuf_datalen>:
+    620e:	1f 42 96 1d 	mov	&0x1d96,r15	
+    6212:	10 01       	reta			
+
+00006214 <packetbuf_hdrlen>:
+    6214:	5f 42 f0 23 	mov.b	&0x23f0,r15	
+    6218:	5f 52 94 1d 	add.b	&0x1d94,r15	
+    621c:	10 01       	reta			
+
+0000621e <packetbuf_dataptr>:
+    621e:	b0 13 14 62 	calla	#0x06214	
+    6222:	4f 4f       	mov.b	r15,	r15	
+    6224:	3f 50 98 1d 	add	#7576,	r15	;#0x1d98
+    6228:	10 01       	reta			
+
+0000622a <packetbuf_copyto>:
+    622a:	3b 14       	pushm.a	#4,	r11	
+    622c:	08 4f       	mov	r15,	r8	
+    622e:	5b 42 f0 23 	mov.b	&0x23f0,r11	
+    6232:	19 42 96 1d 	mov	&0x1d96,r9	
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  17883	   4626	   2998	  25507	   63a3	extra-firmwares/nullnet-unicast_eleco.sky
+
+[Credential / secret / backdoor string search]
+Debug
+
+[Error / assert / information leakage strings]
+Errors
+Warnings
+Debug
+Stack
+Check failed: %ld vs. %ld
+Stack check
+
+[Potentially unsafe / buffer-related symbols]
+0000400c W __init_stack
+00003900 A __stack
+00002ec8 A _stack
+00008218 R cc2420_aes_128_driver
+000053c4 T csma_output_init
+0000526c T csma_output_packet
+         U gpio_hal_arch_port_pin_set_input
+00006874 t input
+00006798 T input_callback
+0000543e t input_packet
+000064c6 T memb_free
+00007ede T memcpy
+00007fd8 T memset
+00006650 T netstack_init
+000068b4 T nullnet_set_input_callback
+00006832 t output
+00008246 r output_power
+00006aa6 T packetbuf_addr
+00002e92 B packetbuf_addrs
+000025fc b packetbuf_aligned
+00006a84 T packetbuf_attr
+000069ca T packetbuf_attr_clear
+00006a54 T packetbuf_attr_copyfrom
+00006a32 T packetbuf_attr_copyto
+00002ea2 B packetbuf_attrs
+000069f2 T packetbuf_clear
+00006a04 T packetbuf_copyfrom
+0000693c T packetbuf_copyto
+00006920 T packetbuf_datalen
+00006930 T packetbuf_dataptr
+0000698e T packetbuf_hdralloc
+00006926 T packetbuf_hdrlen
+0000691a T packetbuf_hdrptr
+000068fa T packetbuf_hdrreduce
+00006ab8 T packetbuf_holds_broadcast
+00006a8e T packetbuf_set_addr
+00006a78 T packetbuf_set_attr
+00006914 T packetbuf_set_datalen
+00006982 T packetbuf_totlen
+00007670 T printf
+00007306 t process_thread_stack_check_process
+00006f04 T queuebuf_free
+00006e8e T queuebuf_init
+00006ea0 T queuebuf_new_from_packetbuf
+00006f2e T queuebuf_to_packetbuf
+00006ef2 T queuebuf_update_attr_from_packetbuf
+00006f60 T random_init
+00006f66 T random_rand
+000071f6 T serial_line_input_byte
+         U slip_input_byte
+000072b2 T stack_check_get_usage
+00007284 T stack_check_init
+00002304 D stack_check_process
+00002dce b stack_top.2047
+00002df2 b uart1_input_handler
+000074b4 T uart1_set_input
+00007814 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00005aae 000000ac t field_len
+00005ff4 000000b8 T framer_802154_setup_params
+00005d2e 000000bc T frame802154_parse_fcf
+0000482e 000000be t cc2420_read
+0000268c 000000c0 b events
+00007066 000000c2 t process_thread_sensors_process
+00001e30 000000c8 D AnchorIndexes
+0000582a 000000cc t process_thread_etimer_process
+00004e6c 000000dc T timera1
+000059ce 000000e0 T frame802154_has_panid
+00002412 000000e0 b received_seqnos
+00005c4a 000000e4 T frame802154_create
+00004d82 000000ea T cc2420_init
+00007306 000000ea t process_thread_stack_check_process
+000024f4 000000f2 B rssiList
+000074ec 000000f4 T uart1_init
+00007ede 000000fa T memcpy
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00006672 00000126 t process_thread_nullnet_example_process
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00007680 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00001a48 000003e8 D node_positions
+00001584 000004c4 D anchor_nodes
+00002754 00000550 b buframmem_memb_mem
+00007814 0000063e T vuprintf
+
+[Disassembly samples around buffer/string functions]
+0000526c <csma_output_packet>:
+    526c:	0b 12       	push	r11		
+    526e:	0a 12       	push	r10		
+    5270:	09 12       	push	r9		
+    5272:	08 12       	push	r8		
+    5274:	07 12       	push	r7		
+    5276:	08 4f       	mov	r15,	r8	
+    5278:	07 4e       	mov	r14,	r7	
+    527a:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    527e:	b0 12 a6 6a 	call	#0x6aa6	
+    5282:	0a 4f       	mov	r15,	r10	
+    5284:	b0 12 12 63 	call	#0x6312	
+    5288:	1e 43       	mov	#1,	r14	;r3 As==01
+    528a:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    528e:	b0 12 78 6a 	call	#0x6a78	
+    5292:	3f 40 34 23 	mov	#9012,	r15	;#0x2334
+    5296:	b0 12 34 62 	call	#0x6234	
+    529a:	0a 3c       	jmp	$+22     	;abs 0x52b0
+    529c:	0e 4a       	mov	r10,	r14	
+--
+000053c4 <csma_output_init>:
+    53c4:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    53c8:	b0 12 52 64 	call	#0x6452	
+    53cc:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    53d0:	b0 12 52 64 	call	#0x6452	
+    53d4:	3f 40 10 11 	mov	#4368,	r15	;#0x1110
+    53d8:	b0 12 52 64 	call	#0x6452	
+    53dc:	30 41       	ret			
+
+000053de <csma_security_create_frame>:
+    53de:	1e 43       	mov	#1,	r14	;r3 As==01
+    53e0:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    53e4:	b0 12 78 6a 	call	#0x6a78	
+    53e8:	92 12 7a 82 	call	&0x827a	
+    53ec:	30 41       	ret			
+
+000053ee <csma_security_parse_frame>:
+    53ee:	92 12 7c 82 	call	&0x827c	
+    53f2:	30 41       	ret			
+--
+0000543e <input_packet>:
+    543e:	b0 12 20 69 	call	#0x6920	
+    5442:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    5446:	2a 24       	jz	$+86     	;abs 0x549c
+    5448:	b0 12 ee 53 	call	#0x53ee	
+    544c:	0f 93       	tst	r15		
+    544e:	26 38       	jl	$+78     	;abs 0x549c
+    5450:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    5454:	b0 12 a6 6a 	call	#0x6aa6	
+    5458:	3e 40 84 2e 	mov	#11908,	r14	;#0x2e84
+    545c:	b0 12 10 62 	call	#0x6210	
+    5460:	4f 93       	tst.b	r15		
+    5462:	0a 20       	jnz	$+22     	;abs 0x5478
+    5464:	b0 12 b8 6a 	call	#0x6ab8	
+    5468:	4f 93       	tst.b	r15		
+    546a:	06 20       	jnz	$+14     	;abs 0x5478
+    546c:	30 12 56 82 	push	#-32170	;#0x8256
+    5470:	b0 12 70 76 	call	#0x7670	
+    5474:	21 53       	incd	r1		
+--
+00006798 <input_callback>:
+    6798:	0b 12       	push	r11		
+    679a:	21 83       	decd	r1		
+    679c:	0b 4f       	mov	r15,	r11	
+    679e:	30 12 20 83 	push	#-31968	;#0x8320
+    67a2:	30 12 24 83 	push	#-31964	;#0x8324
+    67a6:	30 12 29 83 	push	#-31959	;#0x8329
+    67aa:	b0 12 70 76 	call	#0x7670	
+    67ae:	31 50 06 00 	add	#6,	r1	;#0x0006
+    67b2:	12 12 f2 24 	push	&0x24f2	
+    67b6:	30 12 83 83 	push	#-31869	;#0x8383
+    67ba:	b0 12 70 76 	call	#0x7670	
+    67be:	21 52       	add	#4,	r1	;r2 As==10
+    67c0:	3f 40 0a 00 	mov	#10,	r15	;#0x000a
+    67c4:	b0 12 52 74 	call	#0x7452	
+    67c8:	1f 42 f2 24 	mov	&0x24f2,r15	
+    67cc:	3f 50 d7 ff 	add	#-41,	r15	;#0xffd7
+    67d0:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    67d4:	28 2c       	jc	$+82     	;abs 0x6826
+--
+00006832 <output>:
+    6832:	0b 12       	push	r11		
+    6834:	0b 4f       	mov	r15,	r11	
+    6836:	b0 12 f2 69 	call	#0x69f2	
+    683a:	1e 42 90 2e 	mov	&0x2e90,r14	
+    683e:	1f 42 8e 2e 	mov	&0x2e8e,r15	
+    6842:	b0 12 04 6a 	call	#0x6a04	
+    6846:	0b 93       	tst	r11		
+    6848:	02 24       	jz	$+6      	;abs 0x684e
+    684a:	0e 4b       	mov	r11,	r14	
+    684c:	02 3c       	jmp	$+6      	;abs 0x6852
+    684e:	3e 40 7e 82 	mov	#-32130,r14	;#0x827e
+    6852:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    6856:	b0 12 8e 6a 	call	#0x6a8e	
+    685a:	3e 40 84 2e 	mov	#11908,	r14	;#0x2e84
+    685e:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    6862:	b0 12 8e 6a 	call	#0x6a8e	
+    6866:	0e 43       	clr	r14		
+    6868:	0f 43       	clr	r15		
+--
+00006874 <input>:
+    6874:	0b 12       	push	r11		
+    6876:	0a 12       	push	r10		
+    6878:	09 12       	push	r9		
+    687a:	08 12       	push	r8		
+    687c:	1b 42 f4 25 	mov	&0x25f4,r11	
+    6880:	0b 93       	tst	r11		
+    6882:	13 24       	jz	$+40     	;abs 0x68aa
+    6884:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    6888:	b0 12 a6 6a 	call	#0x6aa6	
+    688c:	08 4f       	mov	r15,	r8	
+    688e:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    6892:	b0 12 a6 6a 	call	#0x6aa6	
+    6896:	09 4f       	mov	r15,	r9	
+    6898:	b0 12 20 69 	call	#0x6920	
+    689c:	0a 4f       	mov	r15,	r10	
+    689e:	b0 12 30 69 	call	#0x6930	
+    68a2:	0c 48       	mov	r8,	r12	
+    68a4:	0d 49       	mov	r9,	r13	
+--
+000068b4 <nullnet_set_input_callback>:
+    68b4:	82 4f f4 25 	mov	r15,	&0x25f4	
+    68b8:	30 41       	ret			
+
+000068ba <init>:
+    68ba:	30 41       	ret			
+
+000068bc <root_set_prefix>:
+    68bc:	30 41       	ret			
+
+000068be <root_start>:
+    68be:	0f 43       	clr	r15		
+    68c0:	30 41       	ret			
+
+000068c2 <node_is_root>:
+    68c2:	0f 43       	clr	r15		
+    68c4:	30 41       	ret			
+
+000068c6 <get_root_ipaddr>:
+--
+000068fa <packetbuf_hdrreduce>:
+    68fa:	1e 42 f8 25 	mov	&0x25f8,r14	
+    68fe:	0e 9f       	cmp	r15,	r14	
+    6900:	07 28       	jnc	$+16     	;abs 0x6910
+    6902:	82 5f f6 25 	add	r15,	&0x25f6	
+    6906:	0e 8f       	sub	r15,	r14	
+    6908:	82 4e f8 25 	mov	r14,	&0x25f8	
+    690c:	1f 43       	mov	#1,	r15	;r3 As==01
+    690e:	30 41       	ret			
+    6910:	0f 43       	clr	r15		
+    6912:	30 41       	ret			
+
+00006914 <packetbuf_set_datalen>:
+    6914:	82 4f f8 25 	mov	r15,	&0x25f8	
+    6918:	30 41       	ret			
+
+0000691a <packetbuf_hdrptr>:
+    691a:	3f 40 fc 25 	mov	#9724,	r15	;#0x25fc
+    691e:	30 41       	ret			
+
+00006920 <packetbuf_datalen>:
+    6920:	1f 42 f8 25 	mov	&0x25f8,r15	
+    6924:	30 41       	ret			
+
+00006926 <packetbuf_hdrlen>:
+    6926:	5f 42 fa 25 	mov.b	&0x25fa,r15	
+    692a:	5f 52 f6 25 	add.b	&0x25f6,r15	
+    692e:	30 41       	ret			
+
+00006930 <packetbuf_dataptr>:
+    6930:	b0 12 26 69 	call	#0x6926	
+    6934:	4f 4f       	mov.b	r15,	r15	
+    6936:	3f 50 fc 25 	add	#9724,	r15	;#0x25fc
+    693a:	30 41       	ret			
+
+0000693c <packetbuf_copyto>:
+    693c:	0b 12       	push	r11		
+    693e:	0a 12       	push	r10		
+    6940:	09 12       	push	r9		
+    6942:	08 12       	push	r8		
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  43386	    330	   7024	  50740	   c634	extra-firmwares/udp-client.sky
+
+[Credential / secret / backdoor string search]
+Debug
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Errors
+Warnings
+Debug
+unknown
+Stack
+Check failed: %u vs. %u
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+0000400c W __init_stack
+00003900 A __stack
+00002dba A _stack
+0000d71c t call_vuprintf
+0000e488 R cc2420_aes_128_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+000083ba t dao_ack_input
+000083ea t dao_input
+00008556 t dio_input
+00008810 t dis_input
+0000c304 t echo_reply_input
+0000c362 t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+0000a736 t input
+00002690 b input_handler_list_list
+000054a2 t input_packet
+0000639c T link_stats_input_callback
+000067c6 T memb_free
+00006822 T memb_numfree
+0000dfce T memcpy
+0000e0c8 T memmove
+0000e1c2 T memset
+00006de6 T netstack_process_ip_callback
+0000c60e t ns_input
+00001238 d ns_input_handler
+00009f98 t output
+0000e4b6 r output_power
+0000b5a0 t packet_input.part.3
+00006fd6 T packetbuf_addr
+0000292a B packetbuf_addrs
+000015ba b packetbuf_aligned
+00006fb6 T packetbuf_attr
+00006efe T packetbuf_attr_clear
+00006f88 T packetbuf_attr_copyfrom
+00006f66 T packetbuf_attr_copyto
+0000293a B packetbuf_attrs
+00006f26 T packetbuf_clear
+00006f38 T packetbuf_copyfrom
+00006e70 T packetbuf_copyto
+00006e54 T packetbuf_datalen
+00006e64 T packetbuf_dataptr
+00001d45 b packetbuf_hdr_len
+00006ec2 T packetbuf_hdralloc
+00006e5a T packetbuf_hdrlen
+00006e4e T packetbuf_hdrptr
+00006e2e T packetbuf_hdrreduce
+00006fe8 T packetbuf_holds_broadcast
+00001d50 b packetbuf_payload_len
+00001d46 b packetbuf_ptr
+00006fc0 T packetbuf_set_addr
+00006fac T packetbuf_set_attr
+00006e48 T packetbuf_set_datalen
+00006eb6 T packetbuf_totlen
+0000d6ea T printf
+0000b372 t process_thread_stack_check_process
+0000742a T queuebuf_free
+000073aa T queuebuf_init
+000073c6 T queuebuf_new_from_packetbuf
+000073bc T queuebuf_numfree
+00007454 T queuebuf_to_packetbuf
+00007418 T queuebuf_update_attr_from_packetbuf
+00007486 T random_init
+0000748c T random_rand
+00008baa T rpl_icmp6_dao_ack_output
+00008ac8 T rpl_icmp6_dao_output
+00008898 T rpl_icmp6_dio_output
+00008864 T rpl_icmp6_dis_output
+0000d756 T snprintf
+0000b32c T stack_check_get_usage
+0000b2fe T stack_check_init
+000011fe D stack_check_process
+00002404 b stack_top.2366
+0000b46e T tcpip_input
+0000b48c T tcpip_ipv6_output
+0000b432 T tcpip_output
+00002434 b uart1_input_handler
+0000c428 T uip_icmp6_error_output
+0000c3e8 T uip_icmp6_input
+0000c41c T uip_icmp6_register_input_handler
+0000cb10 T uip_sr_free_all
+0000d38a T uipbuf_add_ext_hdr
+000027e8 b uipbuf_attrs
+0000d502 T uipbuf_clear
+0000d4f0 T uipbuf_clear_attr
+000027f8 b uipbuf_default_attrs
+0000d4ca T uipbuf_get_attr
+0000d43e T uipbuf_get_last_header
+0000d3c6 T uipbuf_get_len_field
+0000d3d4 T uipbuf_get_next_header
+0000d514 T uipbuf_init
+0000d47c T uipbuf_search_header
+0000d4dc T uipbuf_set_attr
+0000d3a6 T uipbuf_set_len
+0000d3b8 T uipbuf_set_len_field
+0000d904 T vuprintf
+
+[Large functions / stack-heavy candidates]
+00007e02 00000118 T rpl_ext_header_srh_update
+00004b6c 0000011e t get_value
+0000250c 00000120 b _ds6_neighbors_mem
+000056e8 00000120 T ds2411_init
+000026c0 00000120 b nodememb_memb_mem
+0000d52e 0000012c T uiplib_ipaddr_snprint
+00007856 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c428 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d52 00000158 b frag_info
+0000c1a0 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000083ea 0000016c t dao_input
+0000d770 00000194 t print_field
+0000b86e 00000194 t process_thread_udp_client_process
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c60e 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000ce9a 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d904 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+[Disassembly samples around buffer/string functions]
+000052e2 <csma_output_packet>:
+    52e2:	0b 12       	push	r11		
+    52e4:	0a 12       	push	r10		
+    52e6:	09 12       	push	r9		
+    52e8:	08 12       	push	r8		
+    52ea:	07 12       	push	r7		
+    52ec:	08 4f       	mov	r15,	r8	
+    52ee:	07 4e       	mov	r14,	r7	
+    52f0:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    52f4:	b0 12 d6 6f 	call	#0x6fd6	
+    52f8:	0a 4f       	mov	r15,	r10	
+    52fa:	b0 12 26 66 	call	#0x6626	
+    52fe:	1e 43       	mov	#1,	r14	;r3 As==01
+    5300:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5304:	b0 12 ac 6f 	call	#0x6fac	
+    5308:	1b 42 6c 12 	mov	&0x126c,r11	
+    530c:	08 3c       	jmp	$+18     	;abs 0x531e
+    530e:	0e 4a       	mov	r10,	r14	
+    5310:	0f 4b       	mov	r11,	r15	
+--
+00005428 <csma_output_init>:
+    5428:	3f 40 14 11 	mov	#4372,	r15	;#0x1114
+    542c:	b0 12 52 67 	call	#0x6752	
+    5430:	3f 40 1c 11 	mov	#4380,	r15	;#0x111c
+    5434:	b0 12 52 67 	call	#0x6752	
+    5438:	3f 40 0c 11 	mov	#4364,	r15	;#0x110c
+    543c:	b0 12 52 67 	call	#0x6752	
+    5440:	30 41       	ret			
+
+00005442 <csma_security_create_frame>:
+    5442:	1e 43       	mov	#1,	r14	;r3 As==01
+    5444:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5448:	b0 12 ac 6f 	call	#0x6fac	
+    544c:	92 12 dc e4 	call	&0xe4dc	
+    5450:	30 41       	ret			
+
+00005452 <csma_security_parse_frame>:
+    5452:	92 12 de e4 	call	&0xe4de	
+    5456:	30 41       	ret			
+--
+000054a2 <input_packet>:
+    54a2:	b0 12 54 6e 	call	#0x6e54	
+    54a6:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    54aa:	26 24       	jz	$+78     	;abs 0x54f8
+    54ac:	b0 12 52 54 	call	#0x5452	
+    54b0:	0f 93       	tst	r15		
+    54b2:	22 38       	jl	$+70     	;abs 0x54f8
+    54b4:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    54b8:	b0 12 d6 6f 	call	#0x6fd6	
+    54bc:	3e 40 20 29 	mov	#10528,	r14	;#0x2920
+    54c0:	b0 12 fa 64 	call	#0x64fa	
+    54c4:	4f 93       	tst.b	r15		
+    54c6:	0b 24       	jz	$+24     	;abs 0x54de
+    54c8:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    54cc:	b0 12 d6 6f 	call	#0x6fd6	
+    54d0:	3e 40 20 29 	mov	#10528,	r14	;#0x2920
+    54d4:	b0 12 fa 64 	call	#0x64fa	
+    54d8:	4f 93       	tst.b	r15		
+    54da:	0e 20       	jnz	$+30     	;abs 0x54f8
+--
+0000639c <link_stats_input_callback>:
+    639c:	0b 12       	push	r11		
+    639e:	0a 12       	push	r10		
+    63a0:	09 12       	push	r9		
+    63a2:	08 12       	push	r8		
+    63a4:	0a 4f       	mov	r15,	r10	
+    63a6:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    63a8:	b0 12 b6 6f 	call	#0x6fb6	
+    63ac:	0b 4f       	mov	r15,	r11	
+    63ae:	0e 4a       	mov	r10,	r14	
+    63b0:	3f 40 3a 11 	mov	#4410,	r15	;#0x113a
+    63b4:	b0 12 10 6c 	call	#0x6c10	
+    63b8:	09 4f       	mov	r15,	r9	
+    63ba:	0f 93       	tst	r15		
+    63bc:	0d 20       	jnz	$+28     	;abs 0x63d8
+    63be:	0c 43       	clr	r12		
+    63c0:	3d 42       	mov	#8,	r13	;r2 As==11
+    63c2:	0e 4a       	mov	r10,	r14	
+    63c4:	3f 40 3a 11 	mov	#4410,	r15	;#0x113a
+--
+00006e2e <packetbuf_hdrreduce>:
+    6e2e:	1e 42 b6 15 	mov	&0x15b6,r14	
+    6e32:	0e 9f       	cmp	r15,	r14	
+    6e34:	07 28       	jnc	$+16     	;abs 0x6e44
+    6e36:	82 5f b4 15 	add	r15,	&0x15b4	
+    6e3a:	0e 8f       	sub	r15,	r14	
+    6e3c:	82 4e b6 15 	mov	r14,	&0x15b6	
+    6e40:	1f 43       	mov	#1,	r15	;r3 As==01
+    6e42:	30 41       	ret			
+    6e44:	0f 43       	clr	r15		
+    6e46:	30 41       	ret			
+
+00006e48 <packetbuf_set_datalen>:
+    6e48:	82 4f b6 15 	mov	r15,	&0x15b6	
+    6e4c:	30 41       	ret			
+
+00006e4e <packetbuf_hdrptr>:
+    6e4e:	3f 40 ba 15 	mov	#5562,	r15	;#0x15ba
+    6e52:	30 41       	ret			
+
+00006e54 <packetbuf_datalen>:
+    6e54:	1f 42 b6 15 	mov	&0x15b6,r15	
+    6e58:	30 41       	ret			
+
+00006e5a <packetbuf_hdrlen>:
+    6e5a:	5f 42 b8 15 	mov.b	&0x15b8,r15	
+    6e5e:	5f 52 b4 15 	add.b	&0x15b4,r15	
+    6e62:	30 41       	ret			
+
+00006e64 <packetbuf_dataptr>:
+    6e64:	b0 12 5a 6e 	call	#0x6e5a	
+    6e68:	4f 4f       	mov.b	r15,	r15	
+    6e6a:	3f 50 ba 15 	add	#5562,	r15	;#0x15ba
+    6e6e:	30 41       	ret			
+
+00006e70 <packetbuf_copyto>:
+    6e70:	0b 12       	push	r11		
+    6e72:	0a 12       	push	r10		
+    6e74:	09 12       	push	r9		
+    6e76:	08 12       	push	r8		
+    6e78:	08 4f       	mov	r15,	r8	
+    6e7a:	5b 42 b8 15 	mov.b	&0x15b8,r11	
+    6e7e:	19 42 b6 15 	mov	&0x15b6,r9	
+    6e82:	0a 4b       	mov	r11,	r10	
+    6e84:	0a 59       	add	r9,	r10	
+    6e86:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    6e8a:	0f 2c       	jc	$+32     	;abs 0x6eaa
+    6e8c:	0d 4b       	mov	r11,	r13	
+    6e8e:	3e 40 ba 15 	mov	#5562,	r14	;#0x15ba
+    6e92:	b0 12 ce df 	call	#0xdfce	
+    6e96:	b0 12 64 6e 	call	#0x6e64	
+    6e9a:	0d 49       	mov	r9,	r13	
+    6e9c:	0e 4f       	mov	r15,	r14	
+    6e9e:	0f 48       	mov	r8,	r15	
+--
+00006eb6 <packetbuf_totlen>:
+    6eb6:	b0 12 5a 6e 	call	#0x6e5a	
+    6eba:	4f 4f       	mov.b	r15,	r15	
+    6ebc:	1f 52 b6 15 	add	&0x15b6,r15	
+    6ec0:	30 41       	ret			
+
+00006ec2 <packetbuf_hdralloc>:
+    6ec2:	0b 12       	push	r11		
+    6ec4:	0b 4f       	mov	r15,	r11	
+    6ec6:	b0 12 b6 6e 	call	#0x6eb6	
+    6eca:	0e 4f       	mov	r15,	r14	
+    6ecc:	0e 5b       	add	r11,	r14	
+    6ece:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    6ed2:	12 2c       	jc	$+38     	;abs 0x6ef8
+    6ed4:	0e 4f       	mov	r15,	r14	
+    6ed6:	3e 53       	add	#-1,	r14	;r3 As==11
+    6ed8:	0f 4b       	mov	r11,	r15	
+    6eda:	3f 50 ba 15 	add	#5562,	r15	;#0x15ba
+    6ede:	06 3c       	jmp	$+14     	;abs 0x6eec
+    6ee0:	0d 4f       	mov	r15,	r13	
+    6ee2:	0d 5e       	add	r14,	r13	
+    6ee4:	dd 4e ba 15 	mov.b	5562(r14),0(r13)	;0x15ba(r14), 0x0000(r13)
+    6ee8:	00 00 
+    6eea:	3e 53       	add	#-1,	r14	;r3 As==11
+    6eec:	0e 93       	tst	r14		
+--
+00006efe <packetbuf_attr_clear>:
+    6efe:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    6f02:	0e 43       	clr	r14		
+    6f04:	3f 40 3a 29 	mov	#10554,	r15	;#0x293a
+    6f08:	b0 12 c2 e1 	call	#0xe1c2	
+    6f0c:	3e 40 e0 e4 	mov	#-6944,	r14	;#0xe4e0
+    6f10:	3f 40 2a 29 	mov	#10538,	r15	;#0x292a
+    6f14:	b0 12 f2 64 	call	#0x64f2	
+    6f18:	3e 40 e0 e4 	mov	#-6944,	r14	;#0xe4e0
+    6f1c:	3f 40 32 29 	mov	#10546,	r15	;#0x2932
+    6f20:	b0 12 f2 64 	call	#0x64f2	
+    6f24:	30 41       	ret			
+
+00006f26 <packetbuf_clear>:
+    6f26:	82 43 b4 15 	mov	#0,	&0x15b4	;r3 As==00
+    6f2a:	82 43 b6 15 	mov	#0,	&0x15b6	;r3 As==00
+    6f2e:	c2 43 b8 15 	mov.b	#0,	&0x15b8	;r3 As==00
+    6f32:	b0 12 fe 6e 	call	#0x6efe	
+    6f36:	30 41       	ret			
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  42542	    336	   5888	  48766	   be7e	extra-firmwares/udp-client.z1
+
+[Credential / secret / backdoor string search]
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Stack
+Check failed: %u vs. %u
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+000010c0 A __TLV_CHECKSUM
+0000310c W __init_stack
+00003100 A __stack
+00002950 A _stack
+0000396a T accm_init
+00002570 B accm_int1_cb
+0000256c B accm_int2_cb
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000039e2 T accm_stop
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00001100 D accmeter_process
+0000c5f6 t call_vuprintf
+00004976 T csma_output_init
+00004840 T csma_output_packet
+00007622 t dao_ack_input
+00007652 t dao_input
+000077aa t dio_input
+00007a3c t dis_input
+0000b23a t echo_reply_input
+0000b290 t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+00009748 t input
+00002386 b input_handler_list_list
+000049f0 t input_packet
+000057a4 T link_stats_input_callback
+00005b92 T memb_free
+00005bee T memb_numfree
+0000cf88 T memcpy
+0000d070 T memmove
+0000d158 T memset
+000060f6 T netstack_process_ip_callback
+0000b520 t ns_input
+0000121c d ns_input_handler
+00009002 t output
+0000d290 r output_power
+0000a504 t packet_input.part.3
+00006316 T packetbuf_addr
+000025ae B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000062fa T packetbuf_attr
+00006246 T packetbuf_attr_clear
+000062cc T packetbuf_attr_copyfrom
+000062aa T packetbuf_attr_copyto
+000025be B packetbuf_attrs
+0000626e T packetbuf_clear
+00006280 T packetbuf_copyfrom
+000061c4 T packetbuf_copyto
+000061a8 T packetbuf_datalen
+000061b8 T packetbuf_dataptr
+000024af b packetbuf_hdr_len
+0000620a T packetbuf_hdralloc
+000061ae T packetbuf_hdrlen
+000061a2 T packetbuf_hdrptr
+00006182 T packetbuf_hdrreduce
+00006324 T packetbuf_holds_broadcast
+00001b90 b packetbuf_payload_len
+00001b86 b packetbuf_ptr
+00006304 T packetbuf_set_addr
+000062f0 T packetbuf_set_attr
+0000619c T packetbuf_set_datalen
+000061fe T packetbuf_totlen
+0000c5c4 T printf
+0000389c t process_thread_accmeter_process
+0000a2e6 t process_thread_stack_check_process
+000067a2 T queuebuf_free
+00006726 T queuebuf_init
+00006742 T queuebuf_new_from_packetbuf
+00006738 T queuebuf_numfree
+000067cc T queuebuf_to_packetbuf
+00006790 T queuebuf_update_attr_from_packetbuf
+000067fe T random_init
+00006804 T random_rand
+00007d9c T rpl_icmp6_dao_ack_output
+00007cc6 T rpl_icmp6_dao_output
+00007abc T rpl_icmp6_dio_output
+00007a88 T rpl_icmp6_dis_output
+0000c62c T snprintf
+0000a2a0 T stack_check_get_usage
+0000a272 T stack_check_init
+000011d6 D stack_check_process
+00002242 b stack_top.2426
+0000a3da T tcpip_input
+0000a3f8 T tcpip_ipv6_output
+0000a39e T tcpip_output
+0000225c b uart0_input_handler
+0000b356 T uip_icmp6_error_output
+0000b316 T uip_icmp6_input
+0000b34a T uip_icmp6_register_input_handler
+0000b9e6 T uip_sr_free_all
+0000c1ea T uipbuf_add_ext_hdr
+0000243a b uipbuf_attrs
+0000c34a T uipbuf_clear
+0000c338 T uipbuf_clear_attr
+0000244a b uipbuf_default_attrs
+0000c312 T uipbuf_get_attr
+0000c296 T uipbuf_get_last_header
+0000c226 T uipbuf_get_len_field
+0000c234 T uipbuf_get_next_header
+0000c35c T uipbuf_init
+0000c2cc T uipbuf_search_header
+0000c324 T uipbuf_set_attr
+0000c206 T uipbuf_set_len
+0000c218 T uipbuf_set_len_field
+0000c7be T vuprintf
+
+[Large functions / stack-heavy candidates]
+000057a4 000000f6 T link_stats_input_callback
+00002700 00000108 B uip_ds6_if
+000025dc 0000010c B curr_instance
+0000a3f8 0000010c T tcpip_ipv6_output
+0000c376 00000114 T uiplib_ipaddr_snprint
+000041b2 0000011e t get_value
+00004840 00000136 T csma_output_packet
+0000b356 00000136 T uip_icmp6_error_output
+00006ba4 0000013c T rpl_dag_update_state
+000042e6 0000014a t set_value
+00007652 00000158 t dao_input
+00001b92 00000158 b frag_info
+00005176 0000015c T frame802154_parse
+0000b0d6 00000164 T uip_ds6_init
+0000c648 00000176 t print_field
+0000a83c 00000192 t process_thread_udp_client_process
+00006ce0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008d6a 000001e8 t add_fragment
+00007abc 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007336 00000266 T rpl_ext_header_update
+0000b520 00000290 t ns_input
+000077aa 00000292 t dio_input
+0000bd06 000004ba T uip_process
+00001598 00000550 b buframmem_memb_mem
+00001cea 00000558 b frag_buf
+0000c7be 00000742 T vuprintf
+00009002 00000746 t output
+00009748 0000099c t input
+
+[Disassembly samples around buffer/string functions]
+00004840 <csma_output_packet>:
+    4840:	4b 14       	pushm.a	#5,	r11	
+    4842:	c8 0f       	mova	r15,	r8	
+    4844:	07 4e       	mov	r14,	r7	
+    4846:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    484a:	b0 13 16 63 	calla	#0x06316	
+    484e:	0a 4f       	mov	r15,	r10	
+    4850:	b0 13 12 5a 	calla	#0x05a12	
+    4854:	1e 43       	mov	#1,	r14	;r3 As==01
+    4856:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    485a:	b0 13 f0 62 	calla	#0x062f0	
+    485e:	1b 42 7e 12 	mov	&0x127e,r11	
+    4862:	08 3c       	jmp	$+18     	;abs 0x4874
+    4864:	0e 4a       	mov	r10,	r14	
+    4866:	0f 4b       	mov	r11,	r15	
+    4868:	2f 53       	incd	r15		
+    486a:	b0 13 f2 58 	calla	#0x058f2	
+    486e:	4f 93       	tst.b	r15		
+    4870:	6f 20       	jnz	$+224    	;abs 0x4950
+--
+00004976 <csma_output_init>:
+    4976:	3f 40 20 11 	mov	#4384,	r15	;#0x1120
+    497a:	b0 13 1e 5b 	calla	#0x05b1e	
+    497e:	3f 40 28 11 	mov	#4392,	r15	;#0x1128
+    4982:	b0 13 1e 5b 	calla	#0x05b1e	
+    4986:	3f 40 18 11 	mov	#4376,	r15	;#0x1118
+    498a:	b0 13 1e 5b 	calla	#0x05b1e	
+    498e:	10 01       	reta			
+
+00004990 <csma_security_create_frame>:
+    4990:	1e 43       	mov	#1,	r14	;r3 As==01
+    4992:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    4996:	b0 13 f0 62 	calla	#0x062f0	
+    499a:	80 13 be d2 	calla	&0x0d2be	
+    499e:	10 01       	reta			
+
+000049a0 <csma_security_parse_frame>:
+    49a0:	80 13 c2 d2 	calla	&0x0d2c2	
+    49a4:	10 01       	reta			
+--
+000049f0 <input_packet>:
+    49f0:	b0 13 a8 61 	calla	#0x061a8	
+    49f4:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    49f8:	26 24       	jz	$+78     	;abs 0x4a46
+    49fa:	b0 13 a0 49 	calla	#0x049a0	
+    49fe:	0f 93       	tst	r15		
+    4a00:	22 38       	jl	$+70     	;abs 0x4a46
+    4a02:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    4a06:	b0 13 16 63 	calla	#0x06316	
+    4a0a:	3e 40 a4 25 	mov	#9636,	r14	;#0x25a4
+    4a0e:	b0 13 f2 58 	calla	#0x058f2	
+    4a12:	4f 93       	tst.b	r15		
+    4a14:	0b 24       	jz	$+24     	;abs 0x4a2c
+    4a16:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    4a1a:	b0 13 16 63 	calla	#0x06316	
+    4a1e:	3e 40 a4 25 	mov	#9636,	r14	;#0x25a4
+    4a22:	b0 13 f2 58 	calla	#0x058f2	
+    4a26:	4f 93       	tst.b	r15		
+    4a28:	0e 20       	jnz	$+30     	;abs 0x4a46
+--
+000057a4 <link_stats_input_callback>:
+    57a4:	3b 14       	pushm.a	#4,	r11	
+    57a6:	0a 4f       	mov	r15,	r10	
+    57a8:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    57aa:	b0 13 fa 62 	calla	#0x062fa	
+    57ae:	0b 4f       	mov	r15,	r11	
+    57b0:	0e 4a       	mov	r10,	r14	
+    57b2:	3f 40 4a 11 	mov	#4426,	r15	;#0x114a
+    57b6:	b0 13 46 5f 	calla	#0x05f46	
+    57ba:	09 4f       	mov	r15,	r9	
+    57bc:	0f 93       	tst	r15		
+    57be:	0d 20       	jnz	$+28     	;abs 0x57da
+    57c0:	0c 43       	clr	r12		
+    57c2:	3d 42       	mov	#8,	r13	;r2 As==11
+    57c4:	0e 4a       	mov	r10,	r14	
+    57c6:	3f 40 4a 11 	mov	#4426,	r15	;#0x114a
+    57ca:	b0 13 da 5f 	calla	#0x05fda	
+    57ce:	09 4f       	mov	r15,	r9	
+    57d0:	0f 93       	tst	r15		
+--
+00006182 <packetbuf_hdrreduce>:
+    6182:	1e 42 de 14 	mov	&0x14de,r14	
+    6186:	0e 9f       	cmp	r15,	r14	
+    6188:	07 28       	jnc	$+16     	;abs 0x6198
+    618a:	82 5f dc 14 	add	r15,	&0x14dc	
+    618e:	0e 8f       	sub	r15,	r14	
+    6190:	82 4e de 14 	mov	r14,	&0x14de	
+    6194:	1f 43       	mov	#1,	r15	;r3 As==01
+    6196:	10 01       	reta			
+    6198:	0f 43       	clr	r15		
+    619a:	10 01       	reta			
+
+0000619c <packetbuf_set_datalen>:
+    619c:	82 4f de 14 	mov	r15,	&0x14de	
+    61a0:	10 01       	reta			
+
+000061a2 <packetbuf_hdrptr>:
+    61a2:	3f 40 e0 14 	mov	#5344,	r15	;#0x14e0
+    61a6:	10 01       	reta			
+
+000061a8 <packetbuf_datalen>:
+    61a8:	1f 42 de 14 	mov	&0x14de,r15	
+    61ac:	10 01       	reta			
+
+000061ae <packetbuf_hdrlen>:
+    61ae:	5f 42 96 24 	mov.b	&0x2496,r15	
+    61b2:	5f 52 dc 14 	add.b	&0x14dc,r15	
+    61b6:	10 01       	reta			
+
+000061b8 <packetbuf_dataptr>:
+    61b8:	b0 13 ae 61 	calla	#0x061ae	
+    61bc:	4f 4f       	mov.b	r15,	r15	
+    61be:	3f 50 e0 14 	add	#5344,	r15	;#0x14e0
+    61c2:	10 01       	reta			
+
+000061c4 <packetbuf_copyto>:
+    61c4:	3b 14       	pushm.a	#4,	r11	
+    61c6:	08 4f       	mov	r15,	r8	
+    61c8:	5b 42 96 24 	mov.b	&0x2496,r11	
+    61cc:	19 42 de 14 	mov	&0x14de,r9	
+    61d0:	0a 4b       	mov	r11,	r10	
+    61d2:	0a 59       	add	r9,	r10	
+    61d4:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    61d8:	0f 2c       	jc	$+32     	;abs 0x61f8
+    61da:	0d 4b       	mov	r11,	r13	
+    61dc:	3e 40 e0 14 	mov	#5344,	r14	;#0x14e0
+    61e0:	b0 13 88 cf 	calla	#0x0cf88	
+    61e4:	b0 13 b8 61 	calla	#0x061b8	
+    61e8:	0d 49       	mov	r9,	r13	
+    61ea:	0e 4f       	mov	r15,	r14	
+    61ec:	0f 48       	mov	r8,	r15	
+    61ee:	0f 5b       	add	r11,	r15	
+    61f0:	b0 13 88 cf 	calla	#0x0cf88	
+    61f4:	0f 4a       	mov	r10,	r15	
+--
+000061fe <packetbuf_totlen>:
+    61fe:	b0 13 ae 61 	calla	#0x061ae	
+    6202:	4f 4f       	mov.b	r15,	r15	
+    6204:	1f 52 de 14 	add	&0x14de,r15	
+    6208:	10 01       	reta			
+
+0000620a <packetbuf_hdralloc>:
+    620a:	0b 14       	pushm.a	#1,	r11	
+    620c:	0b 4f       	mov	r15,	r11	
+    620e:	b0 13 fe 61 	calla	#0x061fe	
+    6212:	0e 4f       	mov	r15,	r14	
+    6214:	0e 5b       	add	r11,	r14	
+    6216:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    621a:	12 2c       	jc	$+38     	;abs 0x6240
+    621c:	0e 4f       	mov	r15,	r14	
+    621e:	3e 53       	add	#-1,	r14	;r3 As==11
+    6220:	0f 4b       	mov	r11,	r15	
+    6222:	3f 50 e0 14 	add	#5344,	r15	;#0x14e0
+    6226:	06 3c       	jmp	$+14     	;abs 0x6234
+    6228:	0d 4f       	mov	r15,	r13	
+    622a:	0d 5e       	add	r14,	r13	
+    622c:	dd 4e e0 14 	mov.b	5344(r14),0(r13)	;0x14e0(r14), 0x0000(r13)
+    6230:	00 00 
+    6232:	3e 53       	add	#-1,	r14	;r3 As==11
+    6234:	0e 93       	tst	r14		
+--
+00006246 <packetbuf_attr_clear>:
+    6246:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    624a:	0e 43       	clr	r14		
+    624c:	3f 40 be 25 	mov	#9662,	r15	;#0x25be
+    6250:	b0 13 58 d1 	calla	#0x0d158	
+    6254:	3e 40 c6 d2 	mov	#-11578,r14	;#0xd2c6
+    6258:	3f 40 ae 25 	mov	#9646,	r15	;#0x25ae
+    625c:	b0 13 ea 58 	calla	#0x058ea	
+    6260:	3e 40 c6 d2 	mov	#-11578,r14	;#0xd2c6
+    6264:	3f 40 b6 25 	mov	#9654,	r15	;#0x25b6
+    6268:	b0 13 ea 58 	calla	#0x058ea	
+    626c:	10 01       	reta			
+
+0000626e <packetbuf_clear>:
+    626e:	82 43 dc 14 	mov	#0,	&0x14dc	;r3 As==00
+    6272:	82 43 de 14 	mov	#0,	&0x14de	;r3 As==00
+    6276:	c2 43 96 24 	mov.b	#0,	&0x2496	;r3 As==00
+    627a:	b0 13 46 62 	calla	#0x06246	
+    627e:	10 01       	reta			
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Memory footprint / stack-related context]
+   text	   data	    bss	    dec	    hex	filename
+  43000	    330	   6968	  50298	   c47a	extra-firmwares/udp-server.sky
+
+[Credential / secret / backdoor string search]
+Debug
+Heard old version from root
+Init root
+
+[Error / assert / information leakage strings]
+Errors
+Warnings
+Debug
+unknown
+Stack
+Check failed: %u vs. %u
+Stack check
+TCP/IP stack
+
+[Potentially unsafe / buffer-related symbols]
+0000400c W __init_stack
+00003900 A __stack
+00002d82 A _stack
+0000d5e0 t call_vuprintf
+0000e34c R cc2420_aes_128_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+000083ba t dao_ack_input
+000083ea t dao_input
+00008556 t dio_input
+00008810 t dis_input
+0000c1c8 t echo_reply_input
+0000c226 t echo_request_input
+         U gpio_hal_arch_port_pin_set_input
+0000a736 t input
+00002658 b input_handler_list_list
+000054a2 t input_packet
+0000639c T link_stats_input_callback
+000067c6 T memb_free
+00006822 T memb_numfree
+0000de92 T memcpy
+0000df8c T memmove
+0000e086 T memset
+00006de6 T netstack_process_ip_callback
+0000c4d2 t ns_input
+00001238 d ns_input_handler
+00009f98 t output
+0000e37a r output_power
+0000b5a0 t packet_input.part.3
+00006fd6 T packetbuf_addr
+000028f2 B packetbuf_addrs
+000015ba b packetbuf_aligned
+00006fb6 T packetbuf_attr
+00006efe T packetbuf_attr_clear
+00006f88 T packetbuf_attr_copyfrom
+00006f66 T packetbuf_attr_copyto
+00002902 B packetbuf_attrs
+00006f26 T packetbuf_clear
+00006f38 T packetbuf_copyfrom
+00006e70 T packetbuf_copyto
+00006e54 T packetbuf_datalen
+00006e64 T packetbuf_dataptr
+00001d45 b packetbuf_hdr_len
+00006ec2 T packetbuf_hdralloc
+00006e5a T packetbuf_hdrlen
+00006e4e T packetbuf_hdrptr
+00006e2e T packetbuf_hdrreduce
+00006fe8 T packetbuf_holds_broadcast
+00001d50 b packetbuf_payload_len
+00001d46 b packetbuf_ptr
+00006fc0 T packetbuf_set_addr
+00006fac T packetbuf_set_attr
+00006e48 T packetbuf_set_datalen
+00006eb6 T packetbuf_totlen
+0000d5ae T printf
+0000b372 t process_thread_stack_check_process
+0000742a T queuebuf_free
+000073aa T queuebuf_init
+000073c6 T queuebuf_new_from_packetbuf
+000073bc T queuebuf_numfree
+00007454 T queuebuf_to_packetbuf
+00007418 T queuebuf_update_attr_from_packetbuf
+00007486 T random_init
+0000748c T random_rand
+00008baa T rpl_icmp6_dao_ack_output
+00008ac8 T rpl_icmp6_dao_output
+00008898 T rpl_icmp6_dio_output
+00008864 T rpl_icmp6_dis_output
+0000d61a T snprintf
+0000b32c T stack_check_get_usage
+0000b2fe T stack_check_init
+000011fe D stack_check_process
+00002404 b stack_top.2366
+0000b46e T tcpip_input
+0000b48c T tcpip_ipv6_output
+0000b432 T tcpip_output
+00002434 b uart1_input_handler
+0000c2ec T uip_icmp6_error_output
+0000c2ac T uip_icmp6_input
+0000c2e0 T uip_icmp6_register_input_handler
+0000c9d4 T uip_sr_free_all
+0000d24e T uipbuf_add_ext_hdr
+000027b0 b uipbuf_attrs
+0000d3c6 T uipbuf_clear
+0000d3b4 T uipbuf_clear_attr
+000027c0 b uipbuf_default_attrs
+0000d38e T uipbuf_get_attr
+0000d302 T uipbuf_get_last_header
+0000d28a T uipbuf_get_len_field
+0000d298 T uipbuf_get_next_header
+0000d3d8 T uipbuf_init
+0000d340 T uipbuf_search_header
+0000d3a0 T uipbuf_set_attr
+0000d26a T uipbuf_set_len
+0000d27c T uipbuf_set_len_field
+0000d7c8 T vuprintf
+
+[Large functions / stack-heavy candidates]
+0000b48c 00000114 T tcpip_ipv6_output
+00007e02 00000118 T rpl_ext_header_srh_update
+00004b6c 0000011e t get_value
+000024d4 00000120 b _ds6_neighbors_mem
+000056e8 00000120 T ds2411_init
+00002688 00000120 b nodememb_memb_mem
+0000d3f2 0000012c T uiplib_ipaddr_snprint
+00007856 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c2ec 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d52 00000158 b frag_info
+0000c064 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000083ea 0000016c t dao_input
+0000d634 00000194 t print_field
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c4d2 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000cd5e 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d7c8 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+[Disassembly samples around buffer/string functions]
+000052e2 <csma_output_packet>:
+    52e2:	0b 12       	push	r11		
+    52e4:	0a 12       	push	r10		
+    52e6:	09 12       	push	r9		
+    52e8:	08 12       	push	r8		
+    52ea:	07 12       	push	r7		
+    52ec:	08 4f       	mov	r15,	r8	
+    52ee:	07 4e       	mov	r14,	r7	
+    52f0:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    52f4:	b0 12 d6 6f 	call	#0x6fd6	
+    52f8:	0a 4f       	mov	r15,	r10	
+    52fa:	b0 12 26 66 	call	#0x6626	
+    52fe:	1e 43       	mov	#1,	r14	;r3 As==01
+    5300:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5304:	b0 12 ac 6f 	call	#0x6fac	
+    5308:	1b 42 6c 12 	mov	&0x126c,r11	
+    530c:	08 3c       	jmp	$+18     	;abs 0x531e
+    530e:	0e 4a       	mov	r10,	r14	
+    5310:	0f 4b       	mov	r11,	r15	
+--
+00005428 <csma_output_init>:
+    5428:	3f 40 14 11 	mov	#4372,	r15	;#0x1114
+    542c:	b0 12 52 67 	call	#0x6752	
+    5430:	3f 40 1c 11 	mov	#4380,	r15	;#0x111c
+    5434:	b0 12 52 67 	call	#0x6752	
+    5438:	3f 40 0c 11 	mov	#4364,	r15	;#0x110c
+    543c:	b0 12 52 67 	call	#0x6752	
+    5440:	30 41       	ret			
+
+00005442 <csma_security_create_frame>:
+    5442:	1e 43       	mov	#1,	r14	;r3 As==01
+    5444:	7f 40 0b 00 	mov.b	#11,	r15	;#0x000b
+    5448:	b0 12 ac 6f 	call	#0x6fac	
+    544c:	92 12 a0 e3 	call	&0xe3a0	
+    5450:	30 41       	ret			
+
+00005452 <csma_security_parse_frame>:
+    5452:	92 12 a2 e3 	call	&0xe3a2	
+    5456:	30 41       	ret			
+--
+000054a2 <input_packet>:
+    54a2:	b0 12 54 6e 	call	#0x6e54	
+    54a6:	3f 90 03 00 	cmp	#3,	r15	;#0x0003
+    54aa:	26 24       	jz	$+78     	;abs 0x54f8
+    54ac:	b0 12 52 54 	call	#0x5452	
+    54b0:	0f 93       	tst	r15		
+    54b2:	22 38       	jl	$+70     	;abs 0x54f8
+    54b4:	7f 40 0d 00 	mov.b	#13,	r15	;#0x000d
+    54b8:	b0 12 d6 6f 	call	#0x6fd6	
+    54bc:	3e 40 e8 28 	mov	#10472,	r14	;#0x28e8
+    54c0:	b0 12 fa 64 	call	#0x64fa	
+    54c4:	4f 93       	tst.b	r15		
+    54c6:	0b 24       	jz	$+24     	;abs 0x54de
+    54c8:	7f 40 0c 00 	mov.b	#12,	r15	;#0x000c
+    54cc:	b0 12 d6 6f 	call	#0x6fd6	
+    54d0:	3e 40 e8 28 	mov	#10472,	r14	;#0x28e8
+    54d4:	b0 12 fa 64 	call	#0x64fa	
+    54d8:	4f 93       	tst.b	r15		
+    54da:	0e 20       	jnz	$+30     	;abs 0x54f8
+--
+0000639c <link_stats_input_callback>:
+    639c:	0b 12       	push	r11		
+    639e:	0a 12       	push	r10		
+    63a0:	09 12       	push	r9		
+    63a2:	08 12       	push	r8		
+    63a4:	0a 4f       	mov	r15,	r10	
+    63a6:	6f 42       	mov.b	#4,	r15	;r2 As==10
+    63a8:	b0 12 b6 6f 	call	#0x6fb6	
+    63ac:	0b 4f       	mov	r15,	r11	
+    63ae:	0e 4a       	mov	r10,	r14	
+    63b0:	3f 40 3a 11 	mov	#4410,	r15	;#0x113a
+    63b4:	b0 12 10 6c 	call	#0x6c10	
+    63b8:	09 4f       	mov	r15,	r9	
+    63ba:	0f 93       	tst	r15		
+    63bc:	0d 20       	jnz	$+28     	;abs 0x63d8
+    63be:	0c 43       	clr	r12		
+    63c0:	3d 42       	mov	#8,	r13	;r2 As==11
+    63c2:	0e 4a       	mov	r10,	r14	
+    63c4:	3f 40 3a 11 	mov	#4410,	r15	;#0x113a
+--
+00006e2e <packetbuf_hdrreduce>:
+    6e2e:	1e 42 b6 15 	mov	&0x15b6,r14	
+    6e32:	0e 9f       	cmp	r15,	r14	
+    6e34:	07 28       	jnc	$+16     	;abs 0x6e44
+    6e36:	82 5f b4 15 	add	r15,	&0x15b4	
+    6e3a:	0e 8f       	sub	r15,	r14	
+    6e3c:	82 4e b6 15 	mov	r14,	&0x15b6	
+    6e40:	1f 43       	mov	#1,	r15	;r3 As==01
+    6e42:	30 41       	ret			
+    6e44:	0f 43       	clr	r15		
+    6e46:	30 41       	ret			
+
+00006e48 <packetbuf_set_datalen>:
+    6e48:	82 4f b6 15 	mov	r15,	&0x15b6	
+    6e4c:	30 41       	ret			
+
+00006e4e <packetbuf_hdrptr>:
+    6e4e:	3f 40 ba 15 	mov	#5562,	r15	;#0x15ba
+    6e52:	30 41       	ret			
+
+00006e54 <packetbuf_datalen>:
+    6e54:	1f 42 b6 15 	mov	&0x15b6,r15	
+    6e58:	30 41       	ret			
+
+00006e5a <packetbuf_hdrlen>:
+    6e5a:	5f 42 b8 15 	mov.b	&0x15b8,r15	
+    6e5e:	5f 52 b4 15 	add.b	&0x15b4,r15	
+    6e62:	30 41       	ret			
+
+00006e64 <packetbuf_dataptr>:
+    6e64:	b0 12 5a 6e 	call	#0x6e5a	
+    6e68:	4f 4f       	mov.b	r15,	r15	
+    6e6a:	3f 50 ba 15 	add	#5562,	r15	;#0x15ba
+    6e6e:	30 41       	ret			
+
+00006e70 <packetbuf_copyto>:
+    6e70:	0b 12       	push	r11		
+    6e72:	0a 12       	push	r10		
+    6e74:	09 12       	push	r9		
+    6e76:	08 12       	push	r8		
+    6e78:	08 4f       	mov	r15,	r8	
+    6e7a:	5b 42 b8 15 	mov.b	&0x15b8,r11	
+    6e7e:	19 42 b6 15 	mov	&0x15b6,r9	
+    6e82:	0a 4b       	mov	r11,	r10	
+    6e84:	0a 59       	add	r9,	r10	
+    6e86:	3a 90 81 00 	cmp	#129,	r10	;#0x0081
+    6e8a:	0f 2c       	jc	$+32     	;abs 0x6eaa
+    6e8c:	0d 4b       	mov	r11,	r13	
+    6e8e:	3e 40 ba 15 	mov	#5562,	r14	;#0x15ba
+    6e92:	b0 12 92 de 	call	#0xde92	
+    6e96:	b0 12 64 6e 	call	#0x6e64	
+    6e9a:	0d 49       	mov	r9,	r13	
+    6e9c:	0e 4f       	mov	r15,	r14	
+    6e9e:	0f 48       	mov	r8,	r15	
+--
+00006eb6 <packetbuf_totlen>:
+    6eb6:	b0 12 5a 6e 	call	#0x6e5a	
+    6eba:	4f 4f       	mov.b	r15,	r15	
+    6ebc:	1f 52 b6 15 	add	&0x15b6,r15	
+    6ec0:	30 41       	ret			
+
+00006ec2 <packetbuf_hdralloc>:
+    6ec2:	0b 12       	push	r11		
+    6ec4:	0b 4f       	mov	r15,	r11	
+    6ec6:	b0 12 b6 6e 	call	#0x6eb6	
+    6eca:	0e 4f       	mov	r15,	r14	
+    6ecc:	0e 5b       	add	r11,	r14	
+    6ece:	3e 90 81 00 	cmp	#129,	r14	;#0x0081
+    6ed2:	12 2c       	jc	$+38     	;abs 0x6ef8
+    6ed4:	0e 4f       	mov	r15,	r14	
+    6ed6:	3e 53       	add	#-1,	r14	;r3 As==11
+    6ed8:	0f 4b       	mov	r11,	r15	
+    6eda:	3f 50 ba 15 	add	#5562,	r15	;#0x15ba
+    6ede:	06 3c       	jmp	$+14     	;abs 0x6eec
+    6ee0:	0d 4f       	mov	r15,	r13	
+    6ee2:	0d 5e       	add	r14,	r13	
+    6ee4:	dd 4e ba 15 	mov.b	5562(r14),0(r13)	;0x15ba(r14), 0x0000(r13)
+    6ee8:	00 00 
+    6eea:	3e 53       	add	#-1,	r14	;r3 As==11
+    6eec:	0e 93       	tst	r14		
+--
+00006efe <packetbuf_attr_clear>:
+    6efe:	3d 40 18 00 	mov	#24,	r13	;#0x0018
+    6f02:	0e 43       	clr	r14		
+    6f04:	3f 40 02 29 	mov	#10498,	r15	;#0x2902
+    6f08:	b0 12 86 e0 	call	#0xe086	
+    6f0c:	3e 40 a4 e3 	mov	#-7260,	r14	;#0xe3a4
+    6f10:	3f 40 f2 28 	mov	#10482,	r15	;#0x28f2
+    6f14:	b0 12 f2 64 	call	#0x64f2	
+    6f18:	3e 40 a4 e3 	mov	#-7260,	r14	;#0xe3a4
+    6f1c:	3f 40 fa 28 	mov	#10490,	r15	;#0x28fa
+    6f20:	b0 12 f2 64 	call	#0x64f2	
+    6f24:	30 41       	ret			
+
+00006f26 <packetbuf_clear>:
+    6f26:	82 43 b4 15 	mov	#0,	&0x15b4	;r3 As==00
+    6f2a:	82 43 b6 15 	mov	#0,	&0x15b6	;r3 As==00
+    6f2e:	c2 43 b8 15 	mov.b	#0,	&0x15b8	;r3 As==00
+    6f32:	b0 12 fe 6e 	call	#0x6efe	
+    6f36:	30 41       	ret			

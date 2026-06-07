@@ -1,0 +1,1757 @@
+=== SOURCE-LEVEL MAPPING / DEBUG INFO ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 8] .comment          PROGBITS        00000000 011a6a 000030 01  MS  0   0  1
+  [ 9] .debug_aranges    PROGBITS        00000000 011aa0 000308 00      0   0  8
+  [10] .debug_info       PROGBITS        00000000 011da8 001b26 00      0   0  1
+  [11] .debug_abbrev     PROGBITS        00000000 0138ce 0009bb 00      0   0  1
+  [12] .debug_line       PROGBITS        00000000 014289 001003 00      0   0  1
+  [13] .debug_frame      PROGBITS        00000000 01528c 000270 00      0   0  4
+  [14] .debug_str        PROGBITS        00000000 0154fc 00046e 01  MS  0   0  1
+  [15] .debug_loc        PROGBITS        00000000 01596a 00162d 00      0   0  1
+  [16] .debug_ranges     PROGBITS        00000000 016f97 000108 00      0   0  1
+  [19] .symtab           SYMTAB          00000000 0174c0 004770 10     20 385  4
+  [20] .strtab           STRTAB          00000000 01bc30 003eb0 00      0   0  1
+
+[Source file/path strings]
+BZ%.C
+14.H
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37             0x13e88
+printf.c                                      42             0x13e8e
+printf.c                                      45             0x13e96
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47             0x13e98
+sprintf.c                                     48             0x13e98
+sprintf.c                                     50             0x13ea0
+sprintf.c                                     51             0x13eae
+sprintf.c                                     52             0x13eb4
+sprintf.c                                     49             0x13eb6
+sprintf.c                                     53             0x13eb8
+sprintf.c                                     57             0x13eba
+sprintf.c                                     58             0x13ec2
+sprintf.c                                     59             0x13ec6
+sprintf.c                                     62             0x13eca
+sprintf.c                                     64             0x13ed6
+sprintf.c                                     65             0x13eda
+sprintf.c                                     67             0x13ee2
+sprintf.c                                     69             0x13eea
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x18
+sprintf.c                                     84             0x13ef0
+sprintf.c                                     88             0x13ef0
+sprintf.c                                     89             0x13ef6
+sprintf.c                                     90             0x13efc
+sprintf.c                                     91             0x13f0a
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137             0x13f0c
+vuprintf.c                                   141             0x13f22
+vuprintf.c                                   112             0x13f26
+vuprintf.c                                   114             0x13f2c
+vuprintf.c                                   115             0x13f32
+vuprintf.c                                   117             0x13f4e
+vuprintf.c                                   118             0x13f54
+vuprintf.c                                   119             0x13f5c
+vuprintf.c                                   120             0x13f60
+vuprintf.c                                   111             0x13f6a
+vuprintf.c                                   121             0x13f6c
+vuprintf.c                                   144             0x13f6e
+vuprintf.c                                   141             0x13f74
+vuprintf.c                                   145             0x13f78
+vuprintf.c                                   148             0x13f7a
+vuprintf.c                                   151             0x13f80
+vuprintf.c                                   154             0x13f8e
+vuprintf.c                                   155             0x13f92
+vuprintf.c                                   157             0x13f96
+vuprintf.c                                   160             0x13f98
+vuprintf.c                                   162             0x13f9c
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00a97c 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00a9b0 000308 00      0   0  8
+  [ 9] .debug_info       PROGBITS        00000000 00acb8 001b26 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c7de 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00d199 001003 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00e19c 000270 00      0   0  4
+  [13] .debug_str        PROGBITS        00000000 00e40c 00046e 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e87a 00162d 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00fea7 000108 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 0103a4 004740 10     19 392  4
+  [19] .strtab           STRTAB          00000000 014ae4 003e32 00      0   0  1
+
+[Source file/path strings]
+B0&.C
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xc6c8
+printf.c                                      42              0xc6ce
+printf.c                                      45              0xc6d6
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xc6d8
+sprintf.c                                     48              0xc6d8
+sprintf.c                                     50              0xc6e0
+sprintf.c                                     51              0xc6ee
+sprintf.c                                     52              0xc6f4
+sprintf.c                                     49              0xc6f6
+sprintf.c                                     53              0xc6f8
+sprintf.c                                     57              0xc6fa
+sprintf.c                                     58              0xc702
+sprintf.c                                     59              0xc706
+sprintf.c                                     62              0xc70a
+sprintf.c                                     64              0xc716
+sprintf.c                                     65              0xc71a
+sprintf.c                                     67              0xc722
+sprintf.c                                     69              0xc72a
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x18
+sprintf.c                                     84              0xc730
+sprintf.c                                     88              0xc730
+sprintf.c                                     89              0xc736
+sprintf.c                                     90              0xc73c
+sprintf.c                                     91              0xc74a
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xc74c
+vuprintf.c                                   141              0xc762
+vuprintf.c                                   112              0xc766
+vuprintf.c                                   114              0xc76c
+vuprintf.c                                   115              0xc772
+vuprintf.c                                   117              0xc78e
+vuprintf.c                                   118              0xc794
+vuprintf.c                                   119              0xc79c
+vuprintf.c                                   120              0xc7a0
+vuprintf.c                                   111              0xc7aa
+vuprintf.c                                   121              0xc7ac
+vuprintf.c                                   144              0xc7ae
+vuprintf.c                                   141              0xc7b4
+vuprintf.c                                   145              0xc7b8
+vuprintf.c                                   148              0xc7ba
+vuprintf.c                                   151              0xc7c0
+vuprintf.c                                   154              0xc7ce
+vuprintf.c                                   155              0xc7d2
+vuprintf.c                                   157              0xc7d6
+vuprintf.c                                   160              0xc7d8
+vuprintf.c                                   162              0xc7dc
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00a880 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00a8b0 000308 00      0   0  8
+  [ 9] .debug_info       PROGBITS        00000000 00abb8 001b26 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c6de 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00d099 001003 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00e09c 000270 00      0   0  4
+  [13] .debug_str        PROGBITS        00000000 00e30c 00046e 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e77a 00162d 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00fda7 000108 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 0102a4 0046f0 10     19 387  4
+  [19] .strtab           STRTAB          00000000 014994 003de9 00      0   0  1
+
+[Source file/path strings]
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xc5d6
+printf.c                                      42              0xc5dc
+printf.c                                      45              0xc5e4
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xc5e6
+sprintf.c                                     48              0xc5e6
+sprintf.c                                     50              0xc5ee
+sprintf.c                                     51              0xc5fc
+sprintf.c                                     52              0xc602
+sprintf.c                                     49              0xc604
+sprintf.c                                     53              0xc606
+sprintf.c                                     57              0xc608
+sprintf.c                                     58              0xc610
+sprintf.c                                     59              0xc614
+sprintf.c                                     62              0xc618
+sprintf.c                                     64              0xc624
+sprintf.c                                     65              0xc628
+sprintf.c                                     67              0xc630
+sprintf.c                                     69              0xc638
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x18
+sprintf.c                                     84              0xc63e
+sprintf.c                                     88              0xc63e
+sprintf.c                                     89              0xc644
+sprintf.c                                     90              0xc64a
+sprintf.c                                     91              0xc658
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xc65a
+vuprintf.c                                   141              0xc670
+vuprintf.c                                   112              0xc674
+vuprintf.c                                   114              0xc67a
+vuprintf.c                                   115              0xc680
+vuprintf.c                                   117              0xc69c
+vuprintf.c                                   118              0xc6a2
+vuprintf.c                                   119              0xc6aa
+vuprintf.c                                   120              0xc6ae
+vuprintf.c                                   111              0xc6b8
+vuprintf.c                                   121              0xc6ba
+vuprintf.c                                   144              0xc6bc
+vuprintf.c                                   141              0xc6c2
+vuprintf.c                                   145              0xc6c6
+vuprintf.c                                   148              0xc6c8
+vuprintf.c                                   151              0xc6ce
+vuprintf.c                                   154              0xc6dc
+vuprintf.c                                   155              0xc6e0
+vuprintf.c                                   157              0xc6e4
+vuprintf.c                                   160              0xc6e6
+vuprintf.c                                   162              0xc6ea
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [18] .comment          PROGBITS        00000000 038000 00013a 01  MS  0   0  1
+  [20] .debug_frame      PROGBITS        00000000 03816c 0031ac 00      0   0  4
+  [21] .debug_info       PROGBITS        00000000 03b318 026cc4 00      0   0  1
+  [22] .debug_abbrev     PROGBITS        00000000 061fdc 00624b 00      0   0  1
+  [23] .debug_loc        PROGBITS        00000000 068227 00f652 00      0   0  1
+  [24] .debug_aranges    PROGBITS        00000000 077879 001078 00      0   0  1
+  [25] .debug_ranges     PROGBITS        00000000 0788f1 002b20 00      0   0  1
+  [26] .debug_line       PROGBITS        00000000 07b411 00cf02 00      0   0  1
+  [27] .debug_str        PROGBITS        00000000 088313 008b68 01  MS  0   0  1
+  [28] .symtab           SYMTAB          00000000 090e7c 00bba0 10     29 2309  4
+  [29] .strtab           STRTAB          00000000 09ca1c 005277 00      0   0  1
+
+[Source file/path strings]
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+GCC: (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
+GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204]
+GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+NoRTOS.c
+_default_types.h
+_stdint.h
+ClockP.h
+HwiP.h
+SemaphoreP.h
+NoRTOS.h
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+SemaphoreP_nortos.c
+_default_types.h
+stddef.h
+lock.h
+_types.h
+reent.h
+_stdint.h
+stdlib.h
+HwiP.h
+SemaphoreP.h
+ClockP.h
+Power.h
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+ClockPTimer_nortos.c
+stddef.h
+_default_types.h
+lock.h
+_types.h
+reent.h
+stdlib.h
+_stdint.h
+ClockP.h
+HwiP.h
+SemaphoreP.h
+SwiP.h
+QueueP.h
+TimerP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+TimerPCC26XX_nortos.c
+aon_rtc.h
+_default_types.h
+lock.h
+_types.h
+stddef.h
+reent.h
+stdlib.h
+_stdint.h
+HwiP.h
+TimerP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+HwiPCC26XX_nortos.c
+interrupt.h
+_default_types.h
+stddef.h
+lock.h
+_types.h
+reent.h
+_stdint.h
+stdlib.h
+HwiP.h
+cpu.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+PowerCC26X2_nortos.c
+cpu.h
+sys_ctrl.h
+_default_types.h
+lock.h
+_types.h
+stddef.h
+reent.h
+_stdint.h
+stdlib.h
+List.h
+Power.h
+HwiP.h
+ClockP.h
+PowerCC26X2.h
+prcm.h
+SwiP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+QueueP_nortos.c
+_default_types.h
+_stdint.h
+QueueP.h
+HwiP.h
+
+[Decoded line info sample]
+NoRTOS.c:
+File name                        Line number    Starting address    View    Stmt
+NoRTOS.c                                  46                   0               x
+NoRTOS.c                                  47                   0       1       x
+NoRTOS.c                                  48                 0x2               x
+NoRTOS.c                                  49                 0x4               x
+NoRTOS.c                                  47                 0x6               x
+NoRTOS.c                                  48                 0x8               x
+NoRTOS.c                                  49                 0xa               x
+NoRTOS.c                                  48                 0xe               x
+NoRTOS.c                                  50                0x12               x
+NoRTOS.c                                   -                0x20
+NoRTOS.c                                  56                   0               x
+NoRTOS.c                                  56                 0x2               x
+NoRTOS.c                                  57                 0x4               x
+NoRTOS.c                                  60                 0x8               x
+NoRTOS.c                                  59                 0xc               x
+NoRTOS.c                                  60                 0xe               x
+NoRTOS.c                                  61                0x10               x
+NoRTOS.c                                  59                0x14               x
+NoRTOS.c                                  60                0x16               x
+NoRTOS.c                                  61                0x18               x
+NoRTOS.c                                  62                0x1a               x
+NoRTOS.c                                   -                0x28
+NoRTOS.c                                  68              0x8888               x
+NoRTOS.c                                  69              0x8888       1       x
+NoRTOS.c                                   -              0x888c
+SemaphoreP_nortos.c:
+File name                        Line number    Starting address    View    Stmt
+SemaphoreP_nortos.c                       72              0x888c               x
+SemaphoreP_nortos.c                       73              0x888c       1       x
+SemaphoreP_nortos.c                        -              0x888e
+SemaphoreP_nortos.c                       80              0x8890               x
+SemaphoreP_nortos.c                       83              0x8892               x
+SemaphoreP_nortos.c                       80              0x8896               x
+SemaphoreP_nortos.c                       83              0x889c               x
+SemaphoreP_nortos.c                       89              0x889e               x
+SemaphoreP_nortos.c                       90              0x88a0               x
+SemaphoreP_nortos.c                       95              0x88a2               x
+SemaphoreP_nortos.c                       96              0x88a4               x
+SemaphoreP_nortos.c                       95              0x88a8               x
+SemaphoreP_nortos.c                      100              0x88aa               x
+SemaphoreP_nortos.c                      105              0x88ae               x
+SemaphoreP_nortos.c                      106              0x88b2               x
+SemaphoreP_nortos.c                      110              0x88b4               x
+SemaphoreP_nortos.c                      116              0x88b6               x
+SemaphoreP_nortos.c                      102              0x88ba               x
+SemaphoreP_nortos.c                      101              0x88be               x
+SemaphoreP_nortos.c                      102              0x88c0               x
+SemaphoreP_nortos.c                      116              0x88c2               x
+SemaphoreP_nortos.c                       84              0x88c6               x
+SemaphoreP_nortos.c                       86              0x88ca               x
+SemaphoreP_nortos.c                      198              0x88d0               x
+SemaphoreP_nortos.c                       91              0x88d6               x
+SemaphoreP_nortos.c                      198              0x88d8               x
+SemaphoreP_nortos.c                      107              0x88de               x
+SemaphoreP_nortos.c                      116              0x88e0               x
+SemaphoreP_nortos.c                        -              0x88ec
+SemaphoreP_nortos.c                      123              0x88ec               x
+SemaphoreP_nortos.c                      198              0x88ee               x
+SemaphoreP_nortos.c                      123              0x88f0               x
+SemaphoreP_nortos.c                      198              0x88f4               x
+SemaphoreP_nortos.c                      123              0x88f8               x
+SemaphoreP_nortos.c                      198              0x88fa               x
+SemaphoreP_nortos.c                      127              0x8900               x
+SemaphoreP_nortos.c                      129              0x8902               x
+SemaphoreP_nortos.c                      127              0x8906               x
+SemaphoreP_nortos.c                      129              0x890a               x
+SemaphoreP_nortos.c                      130              0x890e               x
+SemaphoreP_nortos.c                        -              0x8918
+SemaphoreP_nortos.c                      137                   0               x
+SemaphoreP_nortos.c                      137                 0x2               x
+SemaphoreP_nortos.c                      140                 0x6               x
+SemaphoreP_nortos.c                      143                 0xc               x
+SemaphoreP_nortos.c                      146                0x10               x
+SemaphoreP_nortos.c                      143                0x14               x
+SemaphoreP_nortos.c                        -                0x18
+SemaphoreP_nortos.c                      152                   0               x
+SemaphoreP_nortos.c                      198                 0x2               x
+SemaphoreP_nortos.c                      152                 0x4               x
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 8] .comment          PROGBITS        00000000 0121a6 000030 01  MS  0   0  1
+  [ 9] .debug_aranges    PROGBITS        00000000 0121d8 000308 00      0   0  8
+  [10] .debug_info       PROGBITS        00000000 0124e0 001b26 00      0   0  1
+  [11] .debug_abbrev     PROGBITS        00000000 014006 0009bb 00      0   0  1
+  [12] .debug_line       PROGBITS        00000000 0149c1 001003 00      0   0  1
+  [13] .debug_frame      PROGBITS        00000000 0159c4 000270 00      0   0  4
+  [14] .debug_str        PROGBITS        00000000 015c34 00046e 01  MS  0   0  1
+  [15] .debug_loc        PROGBITS        00000000 0160a2 00162d 00      0   0  1
+  [16] .debug_ranges     PROGBITS        00000000 0176cf 000108 00      0   0  1
+  [19] .symtab           SYMTAB          00000000 017bf8 0046d0 10     20 386  4
+  [20] .strtab           STRTAB          00000000 01c2c8 003e3e 00      0   0  1
+
+[Source file/path strings]
+@=.C
+<=C.C
+14.H
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37             0x145e4
+printf.c                                      42             0x145ea
+printf.c                                      45             0x145f2
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47             0x145f4
+sprintf.c                                     48             0x145f4
+sprintf.c                                     50             0x145fc
+sprintf.c                                     51             0x1460a
+sprintf.c                                     52             0x14610
+sprintf.c                                     49             0x14612
+sprintf.c                                     53             0x14614
+sprintf.c                                     57             0x14616
+sprintf.c                                     58             0x1461e
+sprintf.c                                     59             0x14622
+sprintf.c                                     62             0x14626
+sprintf.c                                     64             0x14632
+sprintf.c                                     65             0x14636
+sprintf.c                                     67             0x1463e
+sprintf.c                                     69             0x14646
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x18
+sprintf.c                                     84             0x1464c
+sprintf.c                                     88             0x1464c
+sprintf.c                                     89             0x14652
+sprintf.c                                     90             0x14658
+sprintf.c                                     91             0x14666
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137             0x14668
+vuprintf.c                                   141             0x1467e
+vuprintf.c                                   112             0x14682
+vuprintf.c                                   114             0x14688
+vuprintf.c                                   115             0x1468e
+vuprintf.c                                   117             0x146aa
+vuprintf.c                                   118             0x146b0
+vuprintf.c                                   119             0x146b8
+vuprintf.c                                   120             0x146bc
+vuprintf.c                                   111             0x146c6
+vuprintf.c                                   121             0x146c8
+vuprintf.c                                   144             0x146ca
+vuprintf.c                                   141             0x146d0
+vuprintf.c                                   145             0x146d4
+vuprintf.c                                   148             0x146d6
+vuprintf.c                                   151             0x146dc
+vuprintf.c                                   154             0x146ea
+vuprintf.c                                   155             0x146ee
+vuprintf.c                                   157             0x146f2
+vuprintf.c                                   160             0x146f4
+vuprintf.c                                   162             0x146f8
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00a6f6 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00a728 0001dc 00      0   0  4
+  [ 9] .debug_info       PROGBITS        00000000 00a904 0017d7 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c0db 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00ca96 000f18 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00d9ae 000250 00      0   0  2
+  [13] .debug_str        PROGBITS        00000000 00dbfe 00044a 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e048 000efe 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00ef46 000084 00      0   0  1
+  [17] .symtab           SYMTAB          00000000 00f378 003e70 10     18 361  4
+  [18] .strtab           STRTAB          00000000 0131e8 0037c3 00      0   0  1
+
+[Source file/path strings]
+<=C.C
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd
+
+[Decoded line info sample]
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xd2f8
+printf.c                                      42              0xd2fe
+printf.c                                      45              0xd306
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xd308
+sprintf.c                                     48              0xd308
+sprintf.c                                     50              0xd310
+sprintf.c                                     51              0xd31e
+sprintf.c                                     52              0xd324
+sprintf.c                                     49              0xd326
+sprintf.c                                     53              0xd328
+sprintf.c                                     57              0xd32a
+sprintf.c                                     58              0xd334
+sprintf.c                                     59              0xd338
+sprintf.c                                     62              0xd33c
+sprintf.c                                     64              0xd348
+sprintf.c                                     65              0xd34c
+sprintf.c                                     67              0xd354
+sprintf.c                                     69              0xd35c
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x1a
+sprintf.c                                     84              0xd364
+sprintf.c                                     88              0xd364
+sprintf.c                                     89              0xd36a
+sprintf.c                                     90              0xd370
+sprintf.c                                     91              0xd37c
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xd37e
+vuprintf.c                                   141              0xd3a2
+vuprintf.c                                   112              0xd3a6
+vuprintf.c                                   114              0xd3ae
+vuprintf.c                                   115              0xd3b4
+vuprintf.c                                   117              0xd3d0
+vuprintf.c                                   118              0xd3d6
+vuprintf.c                                   119              0xd3de
+vuprintf.c                                   120              0xd3e2
+vuprintf.c                                   111              0xd3ec
+vuprintf.c                                   121              0xd3ee
+vuprintf.c                                   144              0xd3f0
+vuprintf.c                                   141              0xd3f6
+vuprintf.c                                   145              0xd3fa
+vuprintf.c                                   148              0xd3fc
+vuprintf.c                                   151              0xd402
+vuprintf.c                                   154              0xd410
+vuprintf.c                                   155              0xd414
+vuprintf.c                                   157              0xd418
+vuprintf.c                                   160              0xd41a
+vuprintf.c                                   162              0xd41e
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00a446 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00a478 000308 00      0   0  8
+  [ 9] .debug_info       PROGBITS        00000000 00a780 001b26 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c2a6 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00cc61 001003 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00dc64 000270 00      0   0  4
+  [13] .debug_str        PROGBITS        00000000 00ded4 00046e 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e342 00162d 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00f96f 000108 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 00fe6c 004500 10     19 377  4
+  [19] .strtab           STRTAB          00000000 01436c 003bf3 00      0   0  1
+
+[Source file/path strings]
+<=C.C
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xc242
+printf.c                                      42              0xc248
+printf.c                                      45              0xc250
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xc252
+sprintf.c                                     48              0xc252
+sprintf.c                                     50              0xc25a
+sprintf.c                                     51              0xc268
+sprintf.c                                     52              0xc26e
+sprintf.c                                     49              0xc270
+sprintf.c                                     53              0xc272
+sprintf.c                                     57              0xc274
+sprintf.c                                     58              0xc27c
+sprintf.c                                     59              0xc280
+sprintf.c                                     62              0xc284
+sprintf.c                                     64              0xc290
+sprintf.c                                     65              0xc294
+sprintf.c                                     67              0xc29c
+sprintf.c                                     69              0xc2a4
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x18
+sprintf.c                                     84              0xc2aa
+sprintf.c                                     88              0xc2aa
+sprintf.c                                     89              0xc2b0
+sprintf.c                                     90              0xc2b6
+sprintf.c                                     91              0xc2c4
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xc2c6
+vuprintf.c                                   141              0xc2dc
+vuprintf.c                                   112              0xc2e0
+vuprintf.c                                   114              0xc2e6
+vuprintf.c                                   115              0xc2ec
+vuprintf.c                                   117              0xc308
+vuprintf.c                                   118              0xc30e
+vuprintf.c                                   119              0xc316
+vuprintf.c                                   120              0xc31a
+vuprintf.c                                   111              0xc324
+vuprintf.c                                   121              0xc326
+vuprintf.c                                   144              0xc328
+vuprintf.c                                   141              0xc32e
+vuprintf.c                                   145              0xc332
+vuprintf.c                                   148              0xc334
+vuprintf.c                                   151              0xc33a
+vuprintf.c                                   154              0xc348
+vuprintf.c                                   155              0xc34c
+vuprintf.c                                   157              0xc350
+vuprintf.c                                   160              0xc352
+vuprintf.c                                   162              0xc356
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Debug related sections]
+  [27] .comment          PROGBITS         0000000000000000  00053890
+  [28] .symtab           SYMTAB           0000000000000000  000538e8
+  [29] .strtab           STRTAB           0000000000000000  0005e508
+
+[Source file/path strings]
+Starting Contiki-NG-develop/v4.9-544-g658c22679-dirty
+GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+crtstuff.c
+aes-128.c
+assert.c
+atomic.c
+autostart.c
+beep.c
+button-hal.c
+buttons.c
+ccm-star.c
+cfs-cooja.c
+circular-list.c
+clock.c
+compower.c
+contiki-main.c
+cooja-log.c
+cooja-radio.c
+cooja_mt.c
+crc16.c
+csprng.c
+ctimer.c
+dbl-circ-list.c
+dbl-list.c
+eeprom.c
+esmrf.c
+etimer.c
+frame802154.c
+frame802154e-ie.c
+framer-802154.c
+gpio-hal-arch.c
+gpio-hal.c
+heapmem.c
+hexconv.c
+ifft.c
+int-master.c
+ip64-addr.c
+iq-seeder.c
+leds-arch.c
+leds.c
+link-stats.c
+linkaddr.c
+mac-sequence.c
+memb.c
+moteid.c
+mpl.c
+mtype.c
+mutex.c
+nbr-table.c
+net-debug.c
+netstack.c
+node-id.c
+nullframer.c
+nullradio.c
+packetbuf.c
+pir-sensor.c
+platform.c
+process.c
+psock.c
+queuebuf.c
+random.c
+ringbuf.c
+ringbufindex.c
+roll-tm.c
+rpl-dag-root.c
+rpl-dag.c
+rpl-ext-header.c
+rpl-icmp6.c
+rpl-mrhof.c
+rpl-nbr-policy.c
+rpl-neighbor.c
+rpl-of0.c
+rpl-timers.c
+rs232.c
+rtimer-arch.c
+rtimer.c
+sensors.c
+serial-line.c
+serial-shell.c
+shell-commands.c
+sicslowpan.c
+simple-energest.c
+simple-udp.c
+slip-arch.c
+slip.c
+stimer.c
+tcp-socket.c
+tcpip.c
+trickle-timer.c
+tsch-adaptive-timesync.c
+tsch-log.c
+tsch-packet.c
+tsch-queue.c
+tsch-roots.c
+tsch-rpl.c
+tsch-schedule.c
+tsch-security.c
+tsch-slot-operation.c
+tsch-stats.c
+
+[Decoded line info sample]
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 004746 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 004778 000260 00      0   0  8
+  [ 9] .debug_info       PROGBITS        00000000 0049d8 001534 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 005f0c 00079c 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 0066a8 000cc2 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00736c 0001c0 00      0   0  4
+  [13] .debug_str        PROGBITS        00000000 00752c 0003ee 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00791a 001195 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 008aaf 0000c0 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 008f64 0030b0 10     19 239  4
+  [19] .strtab           STRTAB          00000000 00c014 002624 00      0   0  1
+
+[Source file/path strings]
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0x6802
+printf.c                                      42              0x6808
+printf.c                                      45              0x6810
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0x6812
+vuprintf.c                                   141              0x6828
+vuprintf.c                                   112              0x682c
+vuprintf.c                                   114              0x6832
+vuprintf.c                                   115              0x6838
+vuprintf.c                                   117              0x6854
+vuprintf.c                                   118              0x685a
+vuprintf.c                                   119              0x6862
+vuprintf.c                                   120              0x6866
+vuprintf.c                                   111              0x6870
+vuprintf.c                                   121              0x6872
+vuprintf.c                                   144              0x6874
+vuprintf.c                                   141              0x687a
+vuprintf.c                                   145              0x687e
+vuprintf.c                                   148              0x6880
+vuprintf.c                                   151              0x6886
+vuprintf.c                                   154              0x6894
+vuprintf.c                                   155              0x6898
+vuprintf.c                                   157              0x689c
+vuprintf.c                                   160              0x689e
+vuprintf.c                                   162              0x68a2
+vuprintf.c                                   163              0x68a6
+vuprintf.c                                   165              0x68aa
+vuprintf.c                                   173              0x68b2
+vuprintf.c                                   150              0x68b6
+vuprintf.c                                   140              0x68bc
+vuprintf.c                                   138              0x68be
+vuprintf.c                                   135              0x68c2
+vuprintf.c                                   178              0x68c6
+vuprintf.c                                   173              0x68d8
+vuprintf.c                                   177              0x68da
+vuprintf.c                                   177              0x68e6
+vuprintf.c                                   175              0x68e8
+vuprintf.c                                   135              0x68ee
+vuprintf.c                                   183              0x68f6
+vuprintf.c                                   184              0x6902
+vuprintf.c                                   181              0x6908
+vuprintf.c                                   140              0x6914
+vuprintf.c                                   138              0x6916
+vuprintf.c                                   135              0x6918
+vuprintf.c                                   193              0x6920
+vuprintf.c                                   135              0x6922
+vuprintf.c                                   193              0x6924
+vuprintf.c                                   135              0x692a
+vuprintf.c                                   190              0x6936
+vuprintf.c                                   197              0x693a
+vuprintf.c                                   135              0x6942
+vuprintf.c                                   135              0x6948
+vuprintf.c                                   201              0x6950
+vuprintf.c                                   199              0x6958
+vuprintf.c                                   209              0x695e
+vuprintf.c                                   211              0x6962
+vuprintf.c                                   135              0x6964
+vuprintf.c                                   207              0x6968
+vuprintf.c                                   207              0x696e
+vuprintf.c                                   216              0x6974
+vuprintf.c                                   217              0x697a
+vuprintf.c                                   214              0x697c
+vuprintf.c                                   221              0x6980
+vuprintf.c                                   264              0x6988
+vuprintf.c                                   271              0x6994
+vuprintf.c                                   278              0x6998
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00478e 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 0047c0 000178 00      0   0  4
+  [ 9] .debug_info       PROGBITS        00000000 004938 001272 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 005baa 00079c 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 006346 000bfb 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 006f42 0001b6 00      0   0  2
+  [13] .debug_str        PROGBITS        00000000 0070f8 0003ca 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 0074c2 000be1 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 0080a3 000060 00      0   0  1
+  [17] .symtab           SYMTAB          00000000 0084b0 002a80 10     18 229  4
+  [18] .strtab           STRTAB          00000000 00af30 002273 00      0   0  1
+
+[Source file/path strings]
+LE.C
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+
+[Decoded line info sample]
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0x7698
+printf.c                                      42              0x769e
+printf.c                                      45              0x76a6
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0x76a8
+vuprintf.c                                   141              0x76cc
+vuprintf.c                                   112              0x76d0
+vuprintf.c                                   114              0x76d8
+vuprintf.c                                   115              0x76de
+vuprintf.c                                   117              0x76fa
+vuprintf.c                                   118              0x7700
+vuprintf.c                                   119              0x7708
+vuprintf.c                                   120              0x770c
+vuprintf.c                                   111              0x7716
+vuprintf.c                                   121              0x7718
+vuprintf.c                                   144              0x771a
+vuprintf.c                                   141              0x7720
+vuprintf.c                                   145              0x7724
+vuprintf.c                                   148              0x7726
+vuprintf.c                                   151              0x772c
+vuprintf.c                                   154              0x773a
+vuprintf.c                                   155              0x773e
+vuprintf.c                                   157              0x7742
+vuprintf.c                                   160              0x7744
+vuprintf.c                                   162              0x7748
+vuprintf.c                                   163              0x774c
+vuprintf.c                                   165              0x7750
+vuprintf.c                                   173              0x7758
+vuprintf.c                                   150              0x775c
+vuprintf.c                                   140              0x7762
+vuprintf.c                                   138              0x7764
+vuprintf.c                                   135              0x7768
+vuprintf.c                                   178              0x776c
+vuprintf.c                                   173              0x777e
+vuprintf.c                                   177              0x7780
+vuprintf.c                                   177              0x778c
+vuprintf.c                                   175              0x778e
+vuprintf.c                                   135              0x7794
+vuprintf.c                                   183              0x779c
+vuprintf.c                                   184              0x77a8
+vuprintf.c                                   181              0x77ae
+vuprintf.c                                   140              0x77ba
+vuprintf.c                                   138              0x77bc
+vuprintf.c                                   135              0x77be
+vuprintf.c                                   193              0x77c6
+vuprintf.c                                   135              0x77c8
+vuprintf.c                                   193              0x77ca
+vuprintf.c                                   135              0x77d0
+vuprintf.c                                   190              0x77dc
+vuprintf.c                                   197              0x77e0
+vuprintf.c                                   135              0x77e8
+vuprintf.c                                   135              0x77ee
+vuprintf.c                                   201              0x77f6
+vuprintf.c                                   199              0x77fe
+vuprintf.c                                   209              0x7804
+vuprintf.c                                   211              0x7808
+vuprintf.c                                   135              0x780a
+vuprintf.c                                   207              0x780e
+vuprintf.c                                   207              0x7814
+vuprintf.c                                   216              0x781a
+vuprintf.c                                   217              0x7820
+vuprintf.c                                   214              0x7822
+vuprintf.c                                   221              0x7826
+vuprintf.c                                   264              0x783c
+vuprintf.c                                   271              0x7856
+vuprintf.c                                   278              0x785a
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 0083f2 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 008424 000374 00      0   0  4
+  [ 9] .debug_info       PROGBITS        00000000 008798 004e6a 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00d602 002684 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00fc86 001c0d 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 011894 000682 00      0   0  2
+  [13] .debug_str        PROGBITS        00000000 011f16 00089d 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 0127b3 0033b8 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 015b6b 000148 00      0   0  1
+  [17] .symtab           SYMTAB          00000000 016060 003140 10     18 262  4
+  [18] .strtab           STRTAB          00000000 0191a0 0026a9 00      0   0  1
+
+[Source file/path strings]
+XE.C
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ./libm/ef_pow.c:
+File name                            Line number    Starting address
+ef_pow.c                                      71              0x7efe
+ef_pow.c                                      78              0x7f16
+ef_pow.c                                      79              0x7f1e
+ef_pow.c                                      82              0x7f30
+ef_pow.c                                      77              0x7f3c
+ef_pow.c                                      79              0x7f44
+ef_pow.c                                      85              0x7f4e
+ef_pow.c                                      85              0x7f5e
+ef_pow.c                                      87              0x7f6e
+ef_pow.c                                      77              0x7f7e
+ef_pow.c                                      78              0x7f84
+ef_pow.c                                      95              0x7f8e
+ef_pow.c                                      94              0x7f94
+ef_pow.c                                      96              0x7f9e
+ef_pow.c                                      97              0x7fb0
+ef_pow.c                                      98              0x7fbc
+ef_pow.c                                      99              0x7fd6
+ef_pow.c                                     100              0x7ff4
+ef_pow.c                                     100              0x801a
+ef_pow.c                                     105              0x8030
+ef_pow.c                                     106              0x803e
+ef_pow.c                                     107              0x8048
+ef_pow.c                                     108              0x8058
+ef_pow.c                                     109              0x8064
+ef_pow.c                                     111              0x8074
+ef_pow.c                                     113              0x807a
+ef_pow.c                                     114              0x8088
+ef_pow.c                                     114              0x8090
+ef_pow.c                                     116              0x809c
+ef_pow.c                                     116              0x80a8
+ef_pow.c                                     117              0x80ae
+ef_pow.c                                     118              0x80b4
+ef_pow.c                                     119              0x80ba
+ef_pow.c                                     122              0x80c2
+ef_pow.c                                     124              0x80ca
+ef_pow.c                                     124              0x80d4
+ef_pow.c                                     126              0x80e6
+ef_pow.c                                     125              0x80ea
+ef_pow.c                                     126              0x80f0
+ef_pow.c                                     127              0x80fe
+ef_pow.c                                     128              0x8108
+ef_pow.c                                     131              0x8120
+ef_pow.c                                     130              0x8124
+ef_pow.c                                     131              0x8138
+ef_pow.c                                     137              0x8140
+ef_pow.c                                     137              0x817e
+ef_pow.c                                     140              0x8192
+ef_pow.c                                     142              0x81a2
+ef_pow.c                                     142              0x81b4
+ef_pow.c                                     143              0x81c8
+ef_pow.c                                     143              0x81d4
+ef_pow.c                                     146              0x81e4
+ef_pow.c                                     148              0x81f2
+ef_pow.c                                     149              0x8202
+ef_pow.c                                     147              0x821a
+ef_pow.c                                     149              0x826e
+ef_pow.c                                     150              0x828c
+ef_pow.c                                     152              0x8298
+ef_pow.c                                     153              0x82a6
+ef_pow.c                                     158              0x82ba
+ef_pow.c                                     156              0x82c0
+ef_pow.c                                     159              0x82c6
+ef_pow.c                                     160              0x82de
+ef_pow.c                                     161              0x830c
+ef_pow.c                                     163              0x8312
+ef_pow.c                                     164              0x831c
+ef_pow.c                                     165              0x832a
+ef_pow.c                                     166              0x8338
+ef_pow.c                                     164              0x8346
+ef_pow.c                                     165              0x8350
+ef_pow.c                                     167              0x8358
+ef_pow.c                                     170              0x8360
+ef_pow.c                                     171              0x8380
+ef_pow.c                                     172              0x83a2
+ef_pow.c                                     175              0x83b6
+ef_pow.c                                     177              0x83cc
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 007850 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 007880 000588 00      0   0  8
+  [ 9] .debug_info       PROGBITS        00000000 007e08 0052c2 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00d0ca 0026b3 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00f77d 001d41 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 0114c0 0006a4 00      0   0  4
+  [13] .debug_str        PROGBITS        00000000 011b64 0008e8 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 01244c 004424 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 016870 0003e8 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 017050 0035f0 10     19 271  4
+  [19] .strtab           STRTAB          00000000 01a640 0028c6 00      0   0  1
+
+[Source file/path strings]
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ./libm/ef_pow.c:
+File name                            Line number    Starting address
+ef_pow.c                                      71              0x6e8a
+ef_pow.c                                      78              0x6e94
+ef_pow.c                                      79              0x6e9c
+ef_pow.c                                      82              0x6eae
+ef_pow.c                                      77              0x6eba
+ef_pow.c                                      79              0x6ec2
+ef_pow.c                                      85              0x6ecc
+ef_pow.c                                      85              0x6edc
+ef_pow.c                                      87              0x6eec
+ef_pow.c                                      77              0x6efc
+ef_pow.c                                      78              0x6f02
+ef_pow.c                                      95              0x6f0c
+ef_pow.c                                      94              0x6f12
+ef_pow.c                                      96              0x6f1c
+ef_pow.c                                      97              0x6f2e
+ef_pow.c                                      98              0x6f3a
+ef_pow.c                                      99              0x6f54
+ef_pow.c                                     100              0x6f72
+ef_pow.c                                     100              0x6f98
+ef_pow.c                                     105              0x6fae
+ef_pow.c                                     106              0x6fbc
+ef_pow.c                                     107              0x6fc6
+ef_pow.c                                     108              0x6fd6
+ef_pow.c                                     109              0x6fe2
+ef_pow.c                                     111              0x6ff2
+ef_pow.c                                     113              0x6ff8
+ef_pow.c                                     114              0x7006
+ef_pow.c                                     114              0x700e
+ef_pow.c                                     116              0x701a
+ef_pow.c                                     116              0x7026
+ef_pow.c                                     117              0x702c
+ef_pow.c                                     118              0x7032
+ef_pow.c                                     119              0x7038
+ef_pow.c                                     122              0x7040
+ef_pow.c                                     124              0x7048
+ef_pow.c                                     124              0x7052
+ef_pow.c                                     126              0x7064
+ef_pow.c                                     125              0x7068
+ef_pow.c                                     126              0x706e
+ef_pow.c                                     127              0x707c
+ef_pow.c                                     128              0x7086
+ef_pow.c                                     131              0x709e
+ef_pow.c                                     130              0x70a2
+ef_pow.c                                     131              0x70b6
+ef_pow.c                                     137              0x70be
+ef_pow.c                                     137              0x70fc
+ef_pow.c                                     140              0x7110
+ef_pow.c                                     142              0x7120
+ef_pow.c                                     142              0x7132
+ef_pow.c                                     143              0x7146
+ef_pow.c                                     143              0x7152
+ef_pow.c                                     146              0x7162
+ef_pow.c                                     148              0x7170
+ef_pow.c                                     149              0x7180
+ef_pow.c                                     147              0x7198
+ef_pow.c                                     149              0x71ec
+ef_pow.c                                     150              0x720a
+ef_pow.c                                     152              0x7216
+ef_pow.c                                     153              0x7224
+ef_pow.c                                     158              0x7238
+ef_pow.c                                     156              0x723e
+ef_pow.c                                     159              0x7244
+ef_pow.c                                     160              0x725c
+ef_pow.c                                     161              0x728a
+ef_pow.c                                     163              0x7290
+ef_pow.c                                     164              0x729a
+ef_pow.c                                     165              0x72a8
+ef_pow.c                                     166              0x72b6
+ef_pow.c                                     164              0x72c4
+ef_pow.c                                     165              0x72ce
+ef_pow.c                                     167              0x72d6
+ef_pow.c                                     170              0x72de
+ef_pow.c                                     171              0x72fc
+ef_pow.c                                     172              0x731e
+ef_pow.c                                     175              0x7332
+ef_pow.c                                     177              0x7348
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 0058c4 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 0058f4 000178 00      0   0  4
+  [ 9] .debug_info       PROGBITS        00000000 005a6c 001272 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 006cde 00079c 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00747a 000bfb 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 008076 0001b6 00      0   0  2
+  [13] .debug_str        PROGBITS        00000000 00822c 0003ca 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 0085f6 000be1 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 0091d7 000060 00      0   0  1
+  [17] .symtab           SYMTAB          00000000 0095e4 002d00 10     18 230  4
+  [18] .strtab           STRTAB          00000000 00c2e4 00248f 00      0   0  1
+
+[Source file/path strings]
+XE.C
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+
+[Decoded line info sample]
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0x7670
+printf.c                                      42              0x7676
+printf.c                                      45              0x767e
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0x7680
+vuprintf.c                                   141              0x76a4
+vuprintf.c                                   112              0x76a8
+vuprintf.c                                   114              0x76b0
+vuprintf.c                                   115              0x76b6
+vuprintf.c                                   117              0x76d2
+vuprintf.c                                   118              0x76d8
+vuprintf.c                                   119              0x76e0
+vuprintf.c                                   120              0x76e4
+vuprintf.c                                   111              0x76ee
+vuprintf.c                                   121              0x76f0
+vuprintf.c                                   144              0x76f2
+vuprintf.c                                   141              0x76f8
+vuprintf.c                                   145              0x76fc
+vuprintf.c                                   148              0x76fe
+vuprintf.c                                   151              0x7704
+vuprintf.c                                   154              0x7712
+vuprintf.c                                   155              0x7716
+vuprintf.c                                   157              0x771a
+vuprintf.c                                   160              0x771c
+vuprintf.c                                   162              0x7720
+vuprintf.c                                   163              0x7724
+vuprintf.c                                   165              0x7728
+vuprintf.c                                   173              0x7730
+vuprintf.c                                   150              0x7734
+vuprintf.c                                   140              0x773a
+vuprintf.c                                   138              0x773c
+vuprintf.c                                   135              0x7740
+vuprintf.c                                   178              0x7744
+vuprintf.c                                   173              0x7756
+vuprintf.c                                   177              0x7758
+vuprintf.c                                   177              0x7764
+vuprintf.c                                   175              0x7766
+vuprintf.c                                   135              0x776c
+vuprintf.c                                   183              0x7774
+vuprintf.c                                   184              0x7780
+vuprintf.c                                   181              0x7786
+vuprintf.c                                   140              0x7792
+vuprintf.c                                   138              0x7794
+vuprintf.c                                   135              0x7796
+vuprintf.c                                   193              0x779e
+vuprintf.c                                   135              0x77a0
+vuprintf.c                                   193              0x77a2
+vuprintf.c                                   135              0x77a8
+vuprintf.c                                   190              0x77b4
+vuprintf.c                                   197              0x77b8
+vuprintf.c                                   135              0x77c0
+vuprintf.c                                   135              0x77c6
+vuprintf.c                                   201              0x77ce
+vuprintf.c                                   199              0x77d6
+vuprintf.c                                   209              0x77dc
+vuprintf.c                                   211              0x77e0
+vuprintf.c                                   135              0x77e2
+vuprintf.c                                   207              0x77e6
+vuprintf.c                                   207              0x77ec
+vuprintf.c                                   216              0x77f2
+vuprintf.c                                   217              0x77f8
+vuprintf.c                                   214              0x77fa
+vuprintf.c                                   221              0x77fe
+vuprintf.c                                   264              0x7814
+vuprintf.c                                   271              0x782e
+vuprintf.c                                   278              0x7832
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00ab9a 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00abcc 0001dc 00      0   0  4
+  [ 9] .debug_info       PROGBITS        00000000 00ada8 0017d7 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c57f 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00cf3a 000f18 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00de52 000250 00      0   0  2
+  [13] .debug_str        PROGBITS        00000000 00e0a2 00044a 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e4ec 000efe 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00f3ea 000084 00      0   0  1
+  [17] .symtab           SYMTAB          00000000 00f81c 003f60 10     18 372  4
+  [18] .strtab           STRTAB          00000000 01377c 0038d1 00      0   0  1
+
+[Source file/path strings]
+<=C.C
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd
+
+[Decoded line info sample]
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xd6ea
+printf.c                                      42              0xd6f0
+printf.c                                      45              0xd6f8
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xd6fa
+sprintf.c                                     48              0xd6fa
+sprintf.c                                     50              0xd702
+sprintf.c                                     51              0xd710
+sprintf.c                                     52              0xd716
+sprintf.c                                     49              0xd718
+sprintf.c                                     53              0xd71a
+sprintf.c                                     57              0xd71c
+sprintf.c                                     58              0xd726
+sprintf.c                                     59              0xd72a
+sprintf.c                                     62              0xd72e
+sprintf.c                                     64              0xd73a
+sprintf.c                                     65              0xd73e
+sprintf.c                                     67              0xd746
+sprintf.c                                     69              0xd74e
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x1a
+sprintf.c                                     84              0xd756
+sprintf.c                                     88              0xd756
+sprintf.c                                     89              0xd75c
+sprintf.c                                     90              0xd762
+sprintf.c                                     91              0xd76e
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xd770
+vuprintf.c                                   141              0xd794
+vuprintf.c                                   112              0xd798
+vuprintf.c                                   114              0xd7a0
+vuprintf.c                                   115              0xd7a6
+vuprintf.c                                   117              0xd7c2
+vuprintf.c                                   118              0xd7c8
+vuprintf.c                                   119              0xd7d0
+vuprintf.c                                   120              0xd7d4
+vuprintf.c                                   111              0xd7de
+vuprintf.c                                   121              0xd7e0
+vuprintf.c                                   144              0xd7e2
+vuprintf.c                                   141              0xd7e8
+vuprintf.c                                   145              0xd7ec
+vuprintf.c                                   148              0xd7ee
+vuprintf.c                                   151              0xd7f4
+vuprintf.c                                   154              0xd802
+vuprintf.c                                   155              0xd806
+vuprintf.c                                   157              0xd80a
+vuprintf.c                                   160              0xd80c
+vuprintf.c                                   162              0xd810
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00a832 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00a868 000308 00      0   0  8
+  [ 9] .debug_info       PROGBITS        00000000 00ab70 001b26 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c696 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00d051 001003 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00e054 000270 00      0   0  4
+  [13] .debug_str        PROGBITS        00000000 00e2c4 00046e 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e732 00162d 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00fd5f 000108 00      0   0  1
+  [18] .symtab           SYMTAB          00000000 01025c 0045f0 10     19 388  4
+  [19] .strtab           STRTAB          00000000 01484c 003d01 00      0   0  1
+
+[Source file/path strings]
+<=C.C
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+
+[Decoded line info sample]
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xc5c4
+printf.c                                      42              0xc5ca
+printf.c                                      45              0xc5d2
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xc5d4
+sprintf.c                                     48              0xc5d4
+sprintf.c                                     50              0xc5dc
+sprintf.c                                     51              0xc5ea
+sprintf.c                                     52              0xc5f0
+sprintf.c                                     49              0xc5f2
+sprintf.c                                     53              0xc5f4
+sprintf.c                                     57              0xc5f6
+sprintf.c                                     58              0xc5fe
+sprintf.c                                     59              0xc602
+sprintf.c                                     62              0xc606
+sprintf.c                                     64              0xc612
+sprintf.c                                     65              0xc616
+sprintf.c                                     67              0xc61e
+sprintf.c                                     69              0xc626
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x18
+sprintf.c                                     84              0xc62c
+sprintf.c                                     88              0xc62c
+sprintf.c                                     89              0xc632
+sprintf.c                                     90              0xc638
+sprintf.c                                     91              0xc646
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xc648
+vuprintf.c                                   141              0xc65e
+vuprintf.c                                   112              0xc662
+vuprintf.c                                   114              0xc668
+vuprintf.c                                   115              0xc66e
+vuprintf.c                                   117              0xc68a
+vuprintf.c                                   118              0xc690
+vuprintf.c                                   119              0xc698
+vuprintf.c                                   120              0xc69c
+vuprintf.c                                   111              0xc6a6
+vuprintf.c                                   121              0xc6a8
+vuprintf.c                                   144              0xc6aa
+vuprintf.c                                   141              0xc6b0
+vuprintf.c                                   145              0xc6b4
+vuprintf.c                                   148              0xc6b6
+vuprintf.c                                   151              0xc6bc
+vuprintf.c                                   154              0xc6ca
+vuprintf.c                                   155              0xc6ce
+vuprintf.c                                   157              0xc6d2
+vuprintf.c                                   160              0xc6d4
+vuprintf.c                                   162              0xc6d8
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Debug related sections]
+  [ 7] .comment          PROGBITS        00000000 00aa18 000030 01  MS  0   0  1
+  [ 8] .debug_aranges    PROGBITS        00000000 00aa48 0001dc 00      0   0  4
+  [ 9] .debug_info       PROGBITS        00000000 00ac24 0017d7 00      0   0  1
+  [10] .debug_abbrev     PROGBITS        00000000 00c3fb 0009bb 00      0   0  1
+  [11] .debug_line       PROGBITS        00000000 00cdb6 000f18 00      0   0  1
+  [12] .debug_frame      PROGBITS        00000000 00dcce 000250 00      0   0  2
+  [13] .debug_str        PROGBITS        00000000 00df1e 00044a 01  MS  0   0  1
+  [14] .debug_loc        PROGBITS        00000000 00e368 000efe 00      0   0  1
+  [15] .debug_ranges     PROGBITS        00000000 00f266 000084 00      0   0  1
+  [17] .symtab           SYMTAB          00000000 00f698 003f10 10     18 367  4
+  [18] .strtab           STRTAB          00000000 0135a8 003888 00      0   0  1
+
+[Source file/path strings]
+<=C.C
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd
+
+[Decoded line info sample]
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/crt0ivtbl.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ../../../../gcc-4.7.2/libgcc/config/msp430/libgcc.S:
+File name                            Line number    Starting address
+CU: ./stdlib/printf.c:
+File name                            Line number    Starting address
+printf.c                                      37              0xd5ae
+printf.c                                      42              0xd5b4
+printf.c                                      45              0xd5bc
+printf.c                                      49                   0
+printf.c                                      50                   0
+printf.c                                      51                 0xc
+CU: ./stdlib/sprintf.c:
+File name                            Line number    Starting address
+sprintf.c                                     47              0xd5be
+sprintf.c                                     48              0xd5be
+sprintf.c                                     50              0xd5c6
+sprintf.c                                     51              0xd5d4
+sprintf.c                                     52              0xd5da
+sprintf.c                                     49              0xd5dc
+sprintf.c                                     53              0xd5de
+sprintf.c                                     57              0xd5e0
+sprintf.c                                     58              0xd5ea
+sprintf.c                                     59              0xd5ee
+sprintf.c                                     62              0xd5f2
+sprintf.c                                     64              0xd5fe
+sprintf.c                                     65              0xd602
+sprintf.c                                     67              0xd60a
+sprintf.c                                     69              0xd612
+sprintf.c                                     73                   0
+sprintf.c                                     77                   0
+sprintf.c                                     78                 0x6
+sprintf.c                                     79                 0xc
+sprintf.c                                     80                0x1a
+sprintf.c                                     84              0xd61a
+sprintf.c                                     88              0xd61a
+sprintf.c                                     89              0xd620
+sprintf.c                                     90              0xd626
+sprintf.c                                     91              0xd632
+sprintf.c                                     95                   0
+sprintf.c                                     96                 0x2
+sprintf.c                                     97                 0x6
+sprintf.c                                     98                 0xc
+sprintf.c                                     99                0x14
+sprintf.c                                    103                   0
+sprintf.c                                    104                   0
+sprintf.c                                    105                 0x4
+sprintf.c                                    106                 0x8
+sprintf.c                                    107                0x10
+CU: ./stdlib/vuprintf.c:
+File name                            Line number    Starting address
+vuprintf.c                                   137              0xd634
+vuprintf.c                                   141              0xd658
+vuprintf.c                                   112              0xd65c
+vuprintf.c                                   114              0xd664
+vuprintf.c                                   115              0xd66a
+vuprintf.c                                   117              0xd686
+vuprintf.c                                   118              0xd68c
+vuprintf.c                                   119              0xd694
+vuprintf.c                                   120              0xd698
+vuprintf.c                                   111              0xd6a2
+vuprintf.c                                   121              0xd6a4
+vuprintf.c                                   144              0xd6a6
+vuprintf.c                                   141              0xd6ac
+vuprintf.c                                   145              0xd6b0
+vuprintf.c                                   148              0xd6b2
+vuprintf.c                                   151              0xd6b8
+vuprintf.c                                   154              0xd6c6
+vuprintf.c                                   155              0xd6ca
+vuprintf.c                                   157              0xd6ce
+vuprintf.c                                   160              0xd6d0
+vuprintf.c                                   162              0xd6d4

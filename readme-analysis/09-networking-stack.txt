@@ -1,0 +1,3048 @@
+=== NETWORKING STACK ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00002282 b _ds6_neighbors_mem
+00001350 b _link_stats_mem
+00001b18 b _rpl_neighbors_mem
+00003ad6 T cc2420_arch_init
+000024ba B cc2420_authority_level_of_sender
+00003f26 t cc2420_cca
+0000c910 R cc2420_driver
+00004152 T cc2420_get_txpower
+00004436 T cc2420_init
+00004110 T cc2420_interrupt
+000024b8 B cc2420_last_correlation
+000024b4 B cc2420_last_rssi
+00003ef6 T cc2420_off
+00003e5c T cc2420_on
+00003e1a t cc2420_prepare
+0000110c D cc2420_process
+00003f7a t cc2420_read
+00003c7e t cc2420_receiving_packet
+00004170 T cc2420_rssi
+00003ee4 t cc2420_send
+000042d6 T cc2420_set_cca_threshold
+0000408a T cc2420_set_channel
+000040c4 T cc2420_set_pan_addr
+00004126 T cc2420_set_txpower
+000024bc B cc2420_sfd_counter
+000024be B cc2420_sfd_end_time
+000024b6 B cc2420_sfd_start_time
+000035fe T cc2420_timerb1_interrupt
+00003e7e t cc2420_transmit
+0000c958 R csma_driver
+00004cc8 T csma_output_init
+00004a58 T csma_output_packet
+00004ce2 T csma_security_create_frame
+00004cf2 T csma_security_parse_frame
+00001162 D curr_log_level_framer
+00001168 D curr_log_level_ipv6
+00001164 D curr_log_level_mac
+0000116c D curr_log_level_rpl
+0000116a D curr_log_level_tcpip
+000011a0 d dao_ack_handler
+00008a26 t dao_ack_input
+00001198 d dao_handler
+00008aea t dao_input
+00002312 b defaultrouterlist_list
+00001204 d defaultroutermemb
+00002314 b defaultroutermemb_memb_mem
+0000249f b defaultroutermemb_memb_used
+00001190 d dio_handler
+00008d32 t dio_input
+00001188 d dis_handler
+00009186 t dis_input
+00001b58 b dis_timer
+0000a74e t drop_route
+000011fa d ds6_neighbors_struct
+00005594 T frame802154_create
+00005526 T frame802154_create_fcf
+0000533e T frame802154_get_pan_id
+00005344 T frame802154_has_panid
+000054f4 T frame802154_hdrlen
+000054cc T frame802154_is_broadcast_addr
+000056f4 T frame802154_parse
+00005668 T frame802154_parse_fcf
+0000c972 R framer_802154
+0000599e T framer_802154_setup_params
+0000a1b4 t handle_dao_ack_timer
+0000a1c6 t handle_dio_timer
+0000a2c2 t handle_dis_timer
+0000a156 t handle_unicast_dio_timer
+00007294 t init_dag
+00005dba T link_stats_from_lladdr
+00005ff8 T link_stats_init
+00005ed8 T link_stats_input_callback
+00005dc6 T link_stats_is_fresh
+00005df6 T link_stats_packet_sent
+00005fce T link_stats_reset
+00001156 d link_stats_struct
+00006022 T linkaddr_cmp
+0000601a T linkaddr_copy
+000024e4 B linkaddr_node_addr
+0000c982 R linkaddr_null
+00006034 T linkaddr_set_node_addr
+00006270 T mac_call_sent_callback
+00002469 b mac_dsn
+00001b98 b mac_max_payload
+00001148 d mac_pan_id
+0000615a T mac_sequence_init
+0000617c T mac_sequence_is_duplicate
+000061ea T mac_sequence_register_seqno
+00006164 T mac_sequence_set_dsn
+0000238a b nbr
+00006544 t nbr_get_bit.constprop.3
+0000988a t nbr_has_usable_link
+0000991e t nbr_is_acceptable_parent
+00009878 t nbr_link_metric
+0000989e t nbr_path_cost
+000064b6 t nbr_set_bit
+00006760 T nbr_table_add_lladdr
+000066c0 T nbr_table_get_from_lladdr
+0000685c T nbr_table_get_lladdr
+0000668a T nbr_table_head
+000065e0 T nbr_table_is_registered
+00001480 b nbr_table_keys_list
+0000683c T nbr_table_lock
+0000663e T nbr_table_next
+00006602 T nbr_table_register
+00006812 T nbr_table_remove
+0000684c T nbr_table_unlock
+00001170 d neighbor_addr_mem
+00001494 b neighbor_addr_mem_memb_mem
+0000247a b neighbor_addr_mem_memb_used
+0000127e b neighbor_list_list
+00001118 d neighbor_memb
+00001280 b neighbor_memb_memb_mem
+00002453 b neighbor_memb_memb_used
+0000a74c t neighbor_state_changed
+000068c2 T netstack_init
+0000687c T netstack_process_ip_callback
+0000a0d0 t new_dio_interval
+00002888 B node_mac
+00006ac8 T packetbuf_addr
+000024ee B packetbuf_addrs
+000014ec b packetbuf_aligned
+00006aaa T packetbuf_attr
+000069f4 T packetbuf_attr_clear
+00006a7a T packetbuf_attr_copyfrom
+00006a58 T packetbuf_attr_copyto
+000024fe B packetbuf_attrs
+00006a1c T packetbuf_clear
+00006a2e T packetbuf_copyfrom
+00006972 T packetbuf_copyto
+00006956 T packetbuf_datalen
+00006966 T packetbuf_dataptr
+0000249b b packetbuf_hdr_len
+000069b8 T packetbuf_hdralloc
+0000695c T packetbuf_hdrlen
+00006950 T packetbuf_hdrptr
+00006930 T packetbuf_hdrreduce
+00006ad6 T packetbuf_holds_broadcast
+00001b9e b packetbuf_payload_len
+00001b96 b packetbuf_ptr
+00006ab4 T packetbuf_set_addr
+00006a9e T packetbuf_set_attr
+0000694a T packetbuf_set_datalen
+000069ac T packetbuf_totlen
+0000735c t process_dio_init_dag
+00004034 t process_thread_cc2420_process
+0000c5f4 t process_thread_tcpip_process
+00006fb4 T queuebuf_attr
+00006f58 T queuebuf_free
+00006edc T queuebuf_init
+00006ef8 T queuebuf_new_from_packetbuf
+00006eee T queuebuf_numfree
+00006f82 T queuebuf_to_packetbuf
+00006f46 T queuebuf_update_attr_from_packetbuf
+00009946 t rank_via_nbr
+00009a7c t remove_neighbor
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+packet sent to 
+free_queued_packet, queue length %d, free packets %zu
+preparing packet for 
+failed to create packet, seqno: %d
+packet sent: no metadata
+, len %u, seqno %u, queue length %d, free packets %zu
+could not allocate queuebuf, dropping packet
+Neighbor queue full
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+CSMA
+Failed to retrieve max radio driver payload length
+drop duplicate link layer packet from 
+received packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+IPv6 addresses:
+created a new RPL DAG
+failed to create a new RPL DAG
+links: %u routing links in total (%s)
+No routing links
+ignoring DIO with an unsupported OF: %u
+ignoring DIO with an unsupported MOP: %d
+failed to initialize DAG
+initialized DAG with instance ID %u, DAG ID 
+leaving DAG 
+DAG expired, poison and leave
+DAG expiring in %u seconds, send DIS to preferred parent
+Poison routes
+, staying in DAG
+no parent, scheduling periodic DIS, will leave if no parent is found
+failed to init DAG
+inconsistent DIO version (current: %u, received: %u), initiate global repair
+Inconsistent DIO version
+new DIO version (current: %u, received: %u), apply global repair
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+DTSN increment %u->%u, schedule new DAO with DTSN %u
+Multicast DIS
+unicast DIS, reply to sender
+failed to add link on incoming DAO
+DAO-NACK received with seqno %u, status %u, poison and leave
+created DAG with instance ID %u, DAG ID 
+TTL value from rpl-lite: %u 
+ext hdr: packet from 
+SRH creating source routing header with destination 
+SRH destination not in our DAG, skip SRH insertion
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+dao_ack_input: unknown instance, discard
+received a DAO-%s with seqno %d (%d %d) and status %d from 
+dao_input: unknown RPL instance %u, discard
+dao_input: different DAG ID 
+, discard
+received a %sDAO from 
+unicast
+dio_input: malformed packet, discard
+dio_input: invalid DAG MC, len %u, discard
+dio_input: unsupported DAG MC type %u, discard
+dio_input: invalid destination prefix option, len %u, discard
+dio_input: invalid route info option, len %u, discard
+dio_input: invalid DAG configuration option, len %u, discard
+dio_input: invalid DAG prefix info, len %u, discard
+dio_input: unsupported suboption type in DIO: %u, discard
+received a %s-DIO from 
+, instance_id %u, DAG ID 
+dis_input: not in an instance yet, discard
+received a DIS from 
+could not add neighbor to cache 
+sending a DIS to 
+unable to send DIO because of unsupported DAG MC type %u
+sending a %s-DIO with rank %u to 
+rpl_icmp6_dao_output: not in an instance, skip sending DAO
+rpl_icmp6_dao_output: no preferred parent, skip sending DAO
+rpl_icmp6_dao_output: node not ready to send a DAO (prefix %p, parent addr %p, mop %u)
+sending a %sDAO seqno %u, tx count %u, lifetime %u, prefix 
+sending a DAO-%s seqno %d to 
+, DAG state: %s, MOP %u OCP %u rank %u max-rank %u, dioint %u, nbr count %u (%s)
+removing all neighbors
+DAO max rtx
+reset DIO timer (%s)
+no neighbor needs probing
+packet sent to 
+RPL Lite
+6LoWPAN
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+uncompression: address %d %d 
+output: sending IPv6 packet with len %d
+output: failed to calculate payload size - dropping packet
+compression: before (%d): 
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+compression: dest or src ipaddr - setting CID
+compression: addr unspecified - setting SAC
+compression: src with context - setting CID & SAC ctx: %d
+compression: first header: %d
+compression: next header: %d
+compression: next header %d (len:%d)
+compression: keeping the next header in this ext hdr: %d
+compression: inlined UDP ports on send side: %x, %x
+IPHC: remove 12 b of both source & dest with prefix 0xFOB
+IPHC: leave source, remove 8 bits of dest with prefix 0xF0
+IPHC: remove 8 bits of source with prefix 0xF0, leave dest. hch: %i
+IPHC: cannot compress UDP headers
+compression: could not handle compression of header
+compression: last header could is not compressed: %d
+compression: after (%d): 
+output: header len %d -> %d, total len %d -> %d, MAC max payload %d, frag_needed %d
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: empty packet
+input: received first element of a fragmented packet (tag %d, len %d)
+uncompression: IPHC dispatch
+uncompression: CID flag set - increase header with one
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: next header inline: %d
+uncompression: error context not found
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000022ac b _ds6_neighbors_mem
+00001344 b _link_stats_mem
+00001b0c b _rpl_neighbors_mem
+00003ad6 T cc2420_arch_init
+00002590 B cc2420_authority_level_of_sender
+00003f26 t cc2420_cca
+0000d358 R cc2420_driver
+00004152 T cc2420_get_txpower
+00004436 T cc2420_init
+00004110 T cc2420_interrupt
+0000258e B cc2420_last_correlation
+0000258a B cc2420_last_rssi
+00003ef6 T cc2420_off
+00003e5c T cc2420_on
+00003e1a t cc2420_prepare
+0000110c D cc2420_process
+00003f7a t cc2420_read
+00003c7e t cc2420_receiving_packet
+00004170 T cc2420_rssi
+00003ee4 t cc2420_send
+000042d6 T cc2420_set_cca_threshold
+0000408a T cc2420_set_channel
+000040c4 T cc2420_set_pan_addr
+00004126 T cc2420_set_txpower
+00002592 B cc2420_sfd_counter
+00002594 B cc2420_sfd_end_time
+0000258c B cc2420_sfd_start_time
+000035fe T cc2420_timerb1_interrupt
+00003e7e t cc2420_transmit
+0000d3a0 R csma_driver
+0000499c T csma_output_init
+00004854 T csma_output_packet
+000049b6 T csma_security_create_frame
+000049c6 T csma_security_parse_frame
+00001188 d dao_ack_handler
+0000775a t dao_ack_input
+00001180 d dao_handler
+0000778a t dao_input
+0000233c b defaultrouterlist_list
+00001204 d defaultroutermemb
+0000233e b defaultroutermemb_memb_mem
+00002576 b defaultroutermemb_memb_used
+00001178 d dio_handler
+000078b2 t dio_input
+00001170 d dis_handler
+00007b26 t dis_input
+00001b4c b dis_timer
+00008892 t drop_route
+000011fa d ds6_neighbors_struct
+00005096 T frame802154_create
+00005028 T frame802154_create_fcf
+00004e40 T frame802154_get_pan_id
+00004e46 T frame802154_has_panid
+00004ff6 T frame802154_hdrlen
+00004fce T frame802154_is_broadcast_addr
+000051f6 T frame802154_parse
+0000516a T frame802154_parse_fcf
+0000d3ba R framer_802154
+000053f0 T framer_802154_setup_params
+000083de t handle_dao_ack_timer
+000083f0 t handle_dio_timer
+000084d4 t handle_dis_timer
+00008380 t handle_unicast_dio_timer
+00006a02 t init_dag
+00005708 T link_stats_from_lladdr
+00005946 T link_stats_init
+00005826 T link_stats_input_callback
+00005714 T link_stats_is_fresh
+00005744 T link_stats_packet_sent
+0000591c T link_stats_reset
+0000114a d link_stats_struct
+00005970 T linkaddr_cmp
+00005968 T linkaddr_copy
+000025ba B linkaddr_node_addr
+0000d3c6 R linkaddr_null
+00005982 T linkaddr_set_node_addr
+00005bbe T mac_call_sent_callback
+00002493 b mac_dsn
+00001b8c b mac_max_payload
+00001148 d mac_pan_id
+00005aa8 T mac_sequence_init
+00005aca T mac_sequence_is_duplicate
+00005b38 T mac_sequence_register_seqno
+00005ab2 T mac_sequence_set_dsn
+000023b4 b nbr
+00005e92 t nbr_get_bit.constprop.3
+00007f16 t nbr_has_usable_link
+00007faa t nbr_is_acceptable_parent
+00007f04 t nbr_link_metric
+00007f2a t nbr_path_cost
+00005e04 t nbr_set_bit
+000060ae T nbr_table_add_lladdr
+0000600e T nbr_table_get_from_lladdr
+000061aa T nbr_table_get_lladdr
+00005fd8 T nbr_table_head
+00005f2e T nbr_table_is_registered
+00001474 b nbr_table_keys_list
+0000618a T nbr_table_lock
+00005f8c T nbr_table_next
+00005f50 T nbr_table_register
+00006160 T nbr_table_remove
+0000619a T nbr_table_unlock
+00001158 d neighbor_addr_mem
+00001488 b neighbor_addr_mem_memb_mem
+000024a4 b neighbor_addr_mem_memb_used
+0000127e b neighbor_list_list
+00001118 d neighbor_memb
+00001280 b neighbor_memb_memb_mem
+0000247d b neighbor_memb_memb_used
+00008890 t neighbor_state_changed
+00006210 T netstack_init
+000061ca T netstack_process_ip_callback
+000082fa t new_dio_interval
+00002960 B node_mac
+00006416 T packetbuf_addr
+000025c4 B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000063f8 T packetbuf_attr
+00006342 T packetbuf_attr_clear
+000063c8 T packetbuf_attr_copyfrom
+000063a6 T packetbuf_attr_copyto
+000025d4 B packetbuf_attrs
+0000636a T packetbuf_clear
+0000637c T packetbuf_copyfrom
+000062c0 T packetbuf_copyto
+000062a4 T packetbuf_datalen
+000062b4 T packetbuf_dataptr
+000024c5 b packetbuf_hdr_len
+00006306 T packetbuf_hdralloc
+000062aa T packetbuf_hdrlen
+0000629e T packetbuf_hdrptr
+0000627e T packetbuf_hdrreduce
+00006424 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8a b packetbuf_ptr
+00006402 T packetbuf_set_addr
+000063ec T packetbuf_set_attr
+00006298 T packetbuf_set_datalen
+000062fa T packetbuf_totlen
+00006a7a t process_dio_init_dag
+00004034 t process_thread_cc2420_process
+0000a11c t process_thread_simple_udp_process
+0000a5cc t process_thread_tcpip_process
+0000a904 t process_thread_udp_client_process
+000068a6 T queuebuf_free
+0000682a T queuebuf_init
+00006846 T queuebuf_new_from_packetbuf
+0000683c T queuebuf_numfree
+000068d0 T queuebuf_to_packetbuf
+00006894 T queuebuf_update_attr_from_packetbuf
+00007fd2 t rank_via_nbr
+000080bc t remove_neighbor
+000083ba t resend_dao
+00006b2a T rpl_dag_get_root_ipaddr
+00007130 T rpl_dag_init
+00007084 T rpl_dag_init_root
+
+[Network related strings]
+$dIO'
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+TTL value from rpl-lite: %u 
+DAO max rtx
+RPL Lite
+sicslowpan
+Simple UDP process
+UDP client
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00002294 b _ds6_neighbors_mem
+00001344 b _link_stats_mem
+00001b0c b _rpl_neighbors_mem
+00003ad6 T cc2420_arch_init
+00002558 B cc2420_authority_level_of_sender
+00003f26 t cc2420_cca
+0000d268 R cc2420_driver
+00004152 T cc2420_get_txpower
+00004436 T cc2420_init
+00004110 T cc2420_interrupt
+00002556 B cc2420_last_correlation
+00002552 B cc2420_last_rssi
+00003ef6 T cc2420_off
+00003e5c T cc2420_on
+00003e1a t cc2420_prepare
+0000110c D cc2420_process
+00003f7a t cc2420_read
+00003c7e t cc2420_receiving_packet
+00004170 T cc2420_rssi
+00003ee4 t cc2420_send
+000042d6 T cc2420_set_cca_threshold
+0000408a T cc2420_set_channel
+000040c4 T cc2420_set_pan_addr
+00004126 T cc2420_set_txpower
+0000255a B cc2420_sfd_counter
+0000255c B cc2420_sfd_end_time
+00002554 B cc2420_sfd_start_time
+000035fe T cc2420_timerb1_interrupt
+00003e7e t cc2420_transmit
+0000d2b0 R csma_driver
+0000499c T csma_output_init
+00004854 T csma_output_packet
+000049b6 T csma_security_create_frame
+000049c6 T csma_security_parse_frame
+00001188 d dao_ack_handler
+0000775a t dao_ack_input
+00001180 d dao_handler
+0000778a t dao_input
+00002324 b defaultrouterlist_list
+00001204 d defaultroutermemb
+00002326 b defaultroutermemb_memb_mem
+0000253e b defaultroutermemb_memb_used
+00001178 d dio_handler
+000078b2 t dio_input
+00001170 d dis_handler
+00007b26 t dis_input
+00001b4c b dis_timer
+00008892 t drop_route
+000011fa d ds6_neighbors_struct
+00005096 T frame802154_create
+00005028 T frame802154_create_fcf
+00004e40 T frame802154_get_pan_id
+00004e46 T frame802154_has_panid
+00004ff6 T frame802154_hdrlen
+00004fce T frame802154_is_broadcast_addr
+000051f6 T frame802154_parse
+0000516a T frame802154_parse_fcf
+0000d2ca R framer_802154
+000053f0 T framer_802154_setup_params
+000083de t handle_dao_ack_timer
+000083f0 t handle_dio_timer
+000084d4 t handle_dis_timer
+00008380 t handle_unicast_dio_timer
+00006a02 t init_dag
+00005708 T link_stats_from_lladdr
+00005946 T link_stats_init
+00005826 T link_stats_input_callback
+00005714 T link_stats_is_fresh
+00005744 T link_stats_packet_sent
+0000591c T link_stats_reset
+0000114a d link_stats_struct
+00005970 T linkaddr_cmp
+00005968 T linkaddr_copy
+00002582 B linkaddr_node_addr
+0000d2d6 R linkaddr_null
+00005982 T linkaddr_set_node_addr
+00005bbe T mac_call_sent_callback
+0000247b b mac_dsn
+00001b8c b mac_max_payload
+00001148 d mac_pan_id
+00005aa8 T mac_sequence_init
+00005aca T mac_sequence_is_duplicate
+00005b38 T mac_sequence_register_seqno
+00005ab2 T mac_sequence_set_dsn
+0000239c b nbr
+00005e92 t nbr_get_bit.constprop.3
+00007f16 t nbr_has_usable_link
+00007faa t nbr_is_acceptable_parent
+00007f04 t nbr_link_metric
+00007f2a t nbr_path_cost
+00005e04 t nbr_set_bit
+000060ae T nbr_table_add_lladdr
+0000600e T nbr_table_get_from_lladdr
+000061aa T nbr_table_get_lladdr
+00005fd8 T nbr_table_head
+00005f2e T nbr_table_is_registered
+00001474 b nbr_table_keys_list
+0000618a T nbr_table_lock
+00005f8c T nbr_table_next
+00005f50 T nbr_table_register
+00006160 T nbr_table_remove
+0000619a T nbr_table_unlock
+00001158 d neighbor_addr_mem
+00001488 b neighbor_addr_mem_memb_mem
+0000248c b neighbor_addr_mem_memb_used
+0000127e b neighbor_list_list
+00001118 d neighbor_memb
+00001280 b neighbor_memb_memb_mem
+00002465 b neighbor_memb_memb_used
+00008890 t neighbor_state_changed
+00006210 T netstack_init
+000061ca T netstack_process_ip_callback
+000082fa t new_dio_interval
+00002928 B node_mac
+00006416 T packetbuf_addr
+0000258c B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000063f8 T packetbuf_attr
+00006342 T packetbuf_attr_clear
+000063c8 T packetbuf_attr_copyfrom
+000063a6 T packetbuf_attr_copyto
+0000259c B packetbuf_attrs
+0000636a T packetbuf_clear
+0000637c T packetbuf_copyfrom
+000062c0 T packetbuf_copyto
+000062a4 T packetbuf_datalen
+000062b4 T packetbuf_dataptr
+000024ad b packetbuf_hdr_len
+00006306 T packetbuf_hdralloc
+000062aa T packetbuf_hdrlen
+0000629e T packetbuf_hdrptr
+0000627e T packetbuf_hdrreduce
+00006424 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8a b packetbuf_ptr
+00006402 T packetbuf_set_addr
+000063ec T packetbuf_set_attr
+00006298 T packetbuf_set_datalen
+000062fa T packetbuf_totlen
+00006a7a t process_dio_init_dag
+00004034 t process_thread_cc2420_process
+0000a11c t process_thread_simple_udp_process
+0000a5cc t process_thread_tcpip_process
+0000a8be t process_thread_udp_server_process
+000068a6 T queuebuf_free
+0000682a T queuebuf_init
+00006846 T queuebuf_new_from_packetbuf
+0000683c T queuebuf_numfree
+000068d0 T queuebuf_to_packetbuf
+00006894 T queuebuf_update_attr_from_packetbuf
+00007fd2 t rank_via_nbr
+000080bc t remove_neighbor
+000083ba t resend_dao
+00006b2a T rpl_dag_get_root_ipaddr
+00007130 T rpl_dag_init
+00007084 T rpl_dag_init_root
+
+[Network related strings]
+$dIO'
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+TTL value from rpl-lite: %u 
+DAO max rtx
+RPL Lite
+sicslowpan
+Simple UDP process
+UDP server
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00009060 T HwiP_disable
+000090a0 T HwiP_disableInterrupt
+00009040 t HwiP_dispatch
+20003fa8 b HwiP_dispatchTable
+00009274 T PowerCC26XX_schedulerDisable
+0000cb1c T Power_disablePolicy
+0000ba2c T RF_Params_init
+200040cc b RF_Sch
+0000b71c T RF_ScheduleCmdParams_init
+0000bb3c T RF_TxPowerTable_findPowerLevel
+0000bba4 T RF_TxPowerTable_findValue
+0000998c t RF_abortCmd
+00009b20 t RF_applyRfCorePatch
+00009690 t RF_attachOverrides
+0000ae28 t RF_calculateDispatchTime
+0000b9f4 T RF_cancelCmd
+0000a484 t RF_clkInactivityCallback
+200040f4 b RF_clkInactivityObj
+0000b634 t RF_clkPowerUp
+20004118 b RF_clkPowerUpObj
+00009820 t RF_clkReqAccess
+0000aa30 t RF_cmdDispatchTime
+20002220 b RF_cmdPool
+2000413c b RF_cmdQ
+0000976c t RF_cmdStoreEvents
+2000415c b RF_core
+2000416c b RF_currClient
+00009cbc t RF_decodeOverridePointers
+0000968c t RF_defaultCallback
+00009688 T RF_defaultConflictPolicy
+00011050 r RF_defaultParams
+0000a278 T RF_defaultSubmitPolicy
+000096fc t RF_detachOverrides
+000098e4 t RF_discardPendCmd
+0000aae4 t RF_dispatchNextCmd
+0000af08 t RF_dispatchNextEvent
+20004170 b RF_errTolValInUs
+0000ba10 T RF_flushCmd
+0000b0b0 t RF_fsmActiveState
+0000af7c t RF_fsmPowerUpState
+00009ff8 t RF_fsmSetupState
+00009c28 t RF_fsmXOSCState
+0000a9a4 T RF_getCurrentTime
+0000ba50 T RF_getRssi
+0000baa0 T RF_getTxPower
+0000ac8c t RF_hwiCpe0Active
+00009c98 t RF_hwiCpe0ChangePhy
+20004174 b RF_hwiCpe0Obj
+0000ada0 t RF_hwiCpe0PowerFsm
+00009b94 t RF_hwiHw
+20004190 b RF_hwiHwObj
+00009ed0 t RF_initRadioSetup
+000097a4 t RF_issueRadioFreeCb
+20005175 b RF_numClients
+0000a75c T RF_open
+0000b924 T RF_pendCmd
+0000a1ac t RF_pendCmd.part.17
+0000b658 T RF_postCmd
+20005176 b RF_powerConstraint
+0000a450 T RF_powerConstraintRelease
+0000a384 T RF_powerConstraintSet
+0000a4a0 t RF_radioOpDoneCb
+0000a5f8 t RF_ratFreeChannel
+20002420 b RF_ratModule
+0000a3a0 t RF_ratRestartChannels
+200041ac b RF_ratSyncCmd
+200041c0 b RF_rtcBeginSequence
+200041c4 b RF_rtcTimestampA
+0000b934 T RF_runCmd
+0000ba48 T RF_runDirectCmd
+0000a328 t RF_runDirectImmediateCmd
+0000b72c T RF_scheduleCmd
+000098b0 t RF_searchAndReplacePAOverride
+0000ba74 T RF_setTxPower
+00009c04 t RF_swiFsm
+200041c8 b RF_swiFsmObj
+0000a690 t RF_swiHw
+200041fc b RF_swiHwObj
+00009828 t RF_syncCb
+00009e0c t RF_updatePaConfiguration
+00009604 t RF_verifyGap
+0000a154 t RF_wakeupNotification
+20004230 b RF_wakeupNotifyObj
+0000b964 T RF_yield
+00009444 T SwiP_disable
+00009460 T SwiP_dispatch
+20001800 A UDMACC26XX_CONFIG_BASE
+0000bd94 T UDMACC26XX_close
+00010dc8 R UDMACC26XX_config
+00000000 A UDMACC26XX_dmaADCAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaADCPriControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaGPT0AAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaGPT0APriControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0RxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0RxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0TxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0TxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1RxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1RxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1TxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1TxControlTableEntry_is_placed
+0000bd28 T UDMACC26XX_hwiIntFxn
+0000bd34 T UDMACC26XX_open
+200048ee b _ds6_neighbors_mem
+20002be0 b _link_stats_mem
+20003350 b _rpl_neighbors_mem
+20005177 b bDisableFlashInIdleConstraint
+00004d54 t cmd_rx_disable
+00010e70 R csma_driver
+00000f88 T csma_output_init
+00000e80 T csma_output_packet
+00000fac T csma_security_create_frame
+00000fc4 T csma_security_parse_frame
+20001d4c d dao_ack_handler
+00003a4c t dao_ack_input
+20001d58 d dao_handler
+00003a84 t dao_input
+20003604 b defaultrouterlist_list
+20001e04 d defaultroutermemb
+20003608 b defaultroutermemb_memb_mem
+2000514f b defaultroutermemb_memb_used
+20001d64 d dio_handler
+00003bb4 t dio_input
+20001d70 d dis_handler
+00003dfc t dis_input
+200033d0 b dis_timer
+000107c8 t drop_route
+20001df4 d ds6_neighbors_struct
+00010182 T frame802154_create
+00010124 T frame802154_create_fcf
+000014a4 T frame802154_get_pan_id
+0000ff9e T frame802154_has_panid
+000100f2 T frame802154_hdrlen
+000100d4 T frame802154_is_broadcast_addr
+000014b0 T frame802154_parse
+00010208 T frame802154_parse_fcf
+00010e8c R framer_802154
+000102dc t framer_802154_setup_params.part.0
+00004480 t handle_dao_ack_timer
+000045a8 t handle_dio_timer
+00004650 t handle_dis_timer
+00004464 t handle_unicast_dio_timer
+20003410 b hwi_dispatch_fxn
+00002eac t init_dag
+0001036c T int_master_read_and_disable
+00001958 T link_stats_from_lladdr
+00001a9c T link_stats_init
+000019ec T link_stats_input_callback
+00010374 T link_stats_is_fresh
+00001964 T link_stats_packet_sent
+00001a74 T link_stats_reset
+20001c2c d link_stats_struct
+000103a2 T linkaddr_cmp
+00010398 T linkaddr_copy
+20004344 B linkaddr_node_addr
+000111f8 R linkaddr_null
+20004aa6 b mac_dsn
+200035cc b mac_max_payload
+20001f48 d mac_pan_id
+00001b28 T mac_sequence_init
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+DAO max rtx
+RPL Lite
+sicslowpan
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+UDMACC26XX.c
+UDMACC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+UDMACC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+HwiP_disable
+Power_disablePolicy
+distance
+nextScheduledTick
+AONRTCDisable
+HwiP_disableInterrupt
+HwiP_dispatch
+HwiP_dispatchTable
+alreadyDisabled
+IntMasterDisable
+SwiP_disable
+PowerCC26XX_schedulerDisable
+SwiP_dispatch
+rfc_CMD_RADIO_SETUP_PA_s
+rfc_CMD_RADIO_SETUP_PA_t
+radioSetup
+rfc_CMD_PROP_RADIO_DIV_SETUP_PA_t
+dispatchTimeClockTicks
+rfc_CMD_RADIO_SETUP_s
+rfc_CMD_RADIO_SETUP_t
+rfc_CMD_BLE5_RADIO_SETUP_s
+rfc_CMD_BLE5_RADIO_SETUP_t
+rfc_CMD_PROP_RADIO_DIV_SETUP_s
+rfc_CMD_PROP_RADIO_DIV_SETUP_t
+RF_discardPendCmd
+bDisableFlashInIdleConstraint
+RF_dispatchNextEvent
+RFCCpeIntDisable
+RF_issueRadioFreeCb
+rfc_CMD_PROP_RADIO_SETUP_PA_t
+rfc_CMD_PROP_RADIO_SETUP_PA_s
+issueRadioFreeCbFlags
+RF_ratDisableChannel
+RF_GlobalEventRadioPowerDown
+RF_isRadioSetup
+RF_ClientEventRadioFree
+RFCClockDisable
+RFCHwIntDisable
+bRadioState
+RF_PowerConstraintDisallow
+RF_dispatchNextCmd
+numDiscardedCmd
+clientHndRadioFreeCb
+RF_StatRadioInactiveError
+RF_GlobalEventRadioSetup
+rfc_CMD_PROP_RADIO_SETUP_s
+rfc_CMD_PROP_RADIO_SETUP_t
+pRadioSetup
+rfc_CMD_PROP_RADIO_DIV_SETUP_PA_s
+rfc_radioOp_s
+rfc_radioOp_t
+RF_radioOpDoneCb
+RF_cmdDispatchTime
+RF_calculateDispatchTime
+RF_GET_RADIO_STATE
+RF_fsmActiveState
+numActiveChannels
+RF_initRadioSetup
+RF_RadioSetup
+doDispatchNow
+RF_ratDispatchTime
+rfc_CMD_BLE5_RADIO_SETUP_PA_s
+rfc_CMD_BLE5_RADIO_SETUP_PA_t
+UDMACC26XX_HWAttrs
+UDMACC26XX_channelDisable
+UDMACC26XX_hwiIntFxn
+dma/UDMACC26XX.c
+UDMACC26XX_close
+UDMACC26XX_Handle
+UDMACC26XX_config
+UDMACC26XX_Config
+UDMACC26XX_initHw
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000022aa b _ds6_neighbors_mem
+0000138e b _link_stats_mem
+00001b52 b _rpl_neighbors_mem
+00003b3e T cc2420_arch_init
+000024e2 B cc2420_authority_level_of_sender
+00003f8e t cc2420_cca
+0000c4bc R cc2420_driver
+000041ba T cc2420_get_txpower
+0000449e T cc2420_init
+00004178 T cc2420_interrupt
+000024e0 B cc2420_last_correlation
+000024dc B cc2420_last_rssi
+00003f5e T cc2420_off
+00003ec4 T cc2420_on
+00003e82 t cc2420_prepare
+0000110c D cc2420_process
+00003fe2 t cc2420_read
+00003ce6 t cc2420_receiving_packet
+000041d8 T cc2420_rssi
+00003f4c t cc2420_send
+0000433e T cc2420_set_cca_threshold
+000040f2 T cc2420_set_channel
+0000412c T cc2420_set_pan_addr
+0000418e T cc2420_set_txpower
+000024e4 B cc2420_sfd_counter
+000024e6 B cc2420_sfd_end_time
+000024de B cc2420_sfd_start_time
+0000363a T cc2420_timerb1_interrupt
+00003ee6 t cc2420_transmit
+0000c504 R csma_driver
+00004d10 T csma_output_init
+00004ab2 T csma_output_packet
+00004d2a T csma_security_create_frame
+00004d3a T csma_security_parse_frame
+00001188 D curr_log_level_framer
+0000118e D curr_log_level_ipv6
+0000118a D curr_log_level_mac
+00001192 D curr_log_level_rpl
+00001190 D curr_log_level_tcpip
+000011c6 d dao_ack_handler
+00008bda t dao_ack_input
+000011be d dao_handler
+00008c9e t dao_input
+0000233a b defaultrouterlist_list
+0000122a d defaultroutermemb
+0000233c b defaultroutermemb_memb_mem
+000024c7 b defaultroutermemb_memb_used
+000011b6 d dio_handler
+00009008 t dio_input
+000011ae d dis_handler
+000094b4 t dis_input
+00001b92 b dis_timer
+0000aa34 t drop_route
+00001220 d ds6_neighbors_struct
+0000557a T frame802154_create
+0000550c T frame802154_create_fcf
+00005326 T frame802154_get_pan_id
+0000532c T frame802154_has_panid
+000054da T frame802154_hdrlen
+000054b2 T frame802154_is_broadcast_addr
+000056c4 T frame802154_parse
+00005638 T frame802154_parse_fcf
+0000c51e R framer_802154
+0000596e T framer_802154_setup_params
+0000a3ce t handle_dao_ack_timer
+0000a470 t handle_dio_timer
+0000a5dc t handle_dis_timer
+0000a3bc t handle_unicast_dio_timer
+000074ac t init_dag
+00005eb6 T link_stats_from_lladdr
+000060f4 T link_stats_init
+00005fd4 T link_stats_input_callback
+00005ec2 T link_stats_is_fresh
+00005ef2 T link_stats_packet_sent
+000060ca T link_stats_reset
+0000117a d link_stats_struct
+00006122 T linkaddr_cmp
+0000611a T linkaddr_copy
+0000250c B linkaddr_node_addr
+0000c534 R linkaddr_null
+00002491 b mac_dsn
+00001bd2 b mac_max_payload
+00001148 d mac_pan_id
+00006238 T mac_sequence_init
+0000625a T mac_sequence_is_duplicate
+000062c8 T mac_sequence_register_seqno
+00006242 T mac_sequence_set_dsn
+000023b2 b nbr
+00006600 t nbr_get_bit.constprop.3
+00009bae t nbr_has_usable_link
+00009c42 t nbr_is_acceptable_parent
+00009b9c t nbr_link_metric
+00009bc2 t nbr_path_cost
+00006580 t nbr_set_bit
+0000680a T nbr_table_add_lladdr
+00006776 T nbr_table_get_from_lladdr
+00006906 T nbr_table_get_lladdr
+00006744 T nbr_table_head
+00006698 T nbr_table_is_registered
+000014be b nbr_table_keys_list
+000068e6 T nbr_table_lock
+000066f6 T nbr_table_next
+000066ba T nbr_table_register
+000068bc T nbr_table_remove
+000068f6 T nbr_table_unlock
+00001196 d neighbor_addr_mem
+000014d2 b neighbor_addr_mem_memb_mem
+000024a2 b neighbor_addr_mem_memb_used
+000012a4 b neighbor_list_list
+00001118 d neighbor_memb
+000012a6 b neighbor_memb_memb_mem
+0000247b b neighbor_memb_memb_used
+0000aa32 t neighbor_state_changed
+00006926 T netstack_process_ip_callback
+0000a3ee t new_dio_interval
+000028a8 B node_mac
+00006b46 T packetbuf_addr
+00002516 B packetbuf_addrs
+0000152a b packetbuf_aligned
+00006b2a T packetbuf_attr
+00006a76 T packetbuf_attr_clear
+00006afc T packetbuf_attr_copyfrom
+00006ada T packetbuf_attr_copyto
+00002526 B packetbuf_attrs
+00006a9e T packetbuf_clear
+00006ab0 T packetbuf_copyfrom
+000069f4 T packetbuf_copyto
+000069d8 T packetbuf_datalen
+000069e8 T packetbuf_dataptr
+000024c3 b packetbuf_hdr_len
+00006a3a T packetbuf_hdralloc
+000069de T packetbuf_hdrlen
+000069d2 T packetbuf_hdrptr
+000069b2 T packetbuf_hdrreduce
+00006b54 T packetbuf_holds_broadcast
+00001bd8 b packetbuf_payload_len
+00001bd0 b packetbuf_ptr
+00006b34 T packetbuf_set_addr
+00006b20 T packetbuf_set_attr
+000069cc T packetbuf_set_datalen
+00006a2e T packetbuf_totlen
+00007574 t process_dio_init_dag
+0000409c t process_thread_cc2420_process
+00011768 t process_thread_tcpip_process
+00005c24 t process_thread_udp_process
+000071cc T queuebuf_attr
+00007170 T queuebuf_free
+000070f4 T queuebuf_init
+00007110 T queuebuf_new_from_packetbuf
+00007106 T queuebuf_numfree
+0000719a T queuebuf_to_packetbuf
+0000715e T queuebuf_update_attr_from_packetbuf
+00009c6a t rank_via_nbr
+00009da0 t remove_neighbor
+0000a52e t resend_dao
+0000772a T rpl_dag_get_root_ipaddr
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+packet sent to 
+free_queued_packet, queue length %d, free packets %zu
+preparing packet for 
+failed to create packet, seqno: %d
+packet sent: no metadata
+, len %u, seqno %u, queue length %d, free packets %zu
+could not allocate queuebuf, dropping packet
+Neighbor queue full
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+CSMA
+Failed to retrieve max radio driver payload length
+drop duplicate link layer packet from 
+received packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+[SENSOR] Received UDP-triggered poll
+[UDP] Sending simulated UDP packet................................
+Simulated UDP P.ID:34
+<broadcast>
+IPv6 addresses:
+created a new RPL DAG
+failed to create a new RPL DAG
+links: %u routing links in total (%s)
+No routing links
+ignoring DIO with an unsupported OF: %u
+ignoring DIO with an unsupported MOP: %d
+failed to initialize DAG
+initialized DAG with instance ID %u, DAG ID 
+leaving DAG 
+DAG expired, poison and leave
+DAG expiring in %u seconds, send DIS to preferred parent
+Poison routes
+, staying in DAG
+no parent, scheduling periodic DIS, will leave if no parent is found
+failed to init DAG
+inconsistent DIO version (current: %u, received: %u), initiate global repair
+Inconsistent DIO version
+new DIO version (current: %u, received: %u), apply global repair
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+DTSN increment %u->%u, schedule new DAO with DTSN %u
+Multicast DIS
+unicast DIS, reply to sender
+failed to add link on incoming DAO
+DAO-NACK received with seqno %u, status %u, poison and leave
+created DAG with instance ID %u, DAG ID 
+ext hdr: packet from 
+SRH creating source routing header with destination 
+SRH destination not in our DAG, skip SRH insertion
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+dao_ack_input: unknown instance, discard
+received a DAO-%s with seqno %d (%d %d) and status %d from 
+dao_input: unknown RPL instance %u, discard
+dao_input: invalid DAO header, len %u, discard
+dao_input: missing full DAG ID, len %u, discard
+dao_input: different DAG ID 
+, discard
+dao_input: malformed packet, discard
+dao_input: invalid target option, len %u, discard
+dao_input: invalid target option, len %u != %u, discard
+dao_input: invalid transit option, len %u, discard
+received a %sDAO from 
+unicast
+dio_input: invalid DIO header, len %u, discard
+dio_input: malformed packet, discard
+dio_input: invalid DAG MC, len %u, discard
+dio_input: unsupported DAG MC type %u, discard
+dio_input: invalid route info option, len %u, discard
+dio_input: invalid DAG configuration option, len %u, discard
+dio_input: invalid DAG prefix info, len %u, discard
+dio_input: invalid DAG prefix info, len %u > %zu
+dio_input: unsupported suboption type in DIO: %u, discard
+received a %s-DIO from 
+, instance_id %u, DAG ID 
+dis_input: not in an instance yet, discard
+received a DIS from 
+could not add neighbor to cache 
+sending a DIS to 
+unable to send DIO because of unsupported DAG MC type %u
+sending a %s-DIO with rank %u to 
+rpl_icmp6_dao_output: not in an instance, skip sending DAO
+rpl_icmp6_dao_output: no preferred parent, skip sending DAO
+rpl_icmp6_dao_output: node not ready to send a DAO (prefix %p, parent addr %p, mop %u)
+sending a %sDAO seqno %u, tx count %u, lifetime %u, prefix 
+sending a DAO-%s seqno %d to 
+, DAG state: %s, MOP %u OCP %u rank %u max-rank %u, dioint %u, nbr count %u (%s)
+removing all neighbors
+DAO max rtx
+reset DIO timer (%s)
+no neighbor needs probing
+packet sent to 
+RPL Lite
+6LoWPAN
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+uncompression: address %d %d 
+Insufficient packet data to decompress IP address
+output: sending IPv6 packet with len %d
+output: failed to calculate payload size - dropping packet
+compression: before (%d): 
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+compression: dest or src ipaddr - setting CID
+compression: addr unspecified - setting SAC
+compression: src with context - setting CID & SAC ctx: %d
+compression: first header: %d
+compression: next header: %d
+compression: next header %d (len:%d)
+compression: keeping the next header in this ext hdr: %d
+compression: inlined UDP ports on send side: %x, %x
+IPHC: remove 12 b of both source & dest with prefix 0xFOB
+IPHC: leave source, remove 8 bits of dest with prefix 0xF0
+IPHC: remove 8 bits of source with prefix 0xF0, leave dest. hch: %i
+IPHC: cannot compress UDP headers
+compression: could not handle compression of header
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000024c0 b _ds6_neighbors_mem
+0000133a b _link_stats_mem
+00001c90 b _rpl_neighbors_mem
+0000e094 R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+000027ca B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e098 R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+000027c8 B cc2420_last_correlation
+000027c4 B cc2420_last_rssi
+00004804 T cc2420_off
+0000476a T cc2420_on
+00004380 T cc2420_port1_interrupt
+00004724 t cc2420_prepare
+00001100 D cc2420_process
+0000489c t cc2420_read
+00004568 t cc2420_receiving_packet
+00004b20 T cc2420_rssi
+000047f2 t cc2420_send
+00004c8a T cc2420_set_cca_threshold
+00004a38 T cc2420_set_channel
+00004a74 T cc2420_set_pan_addr
+00004ad6 T cc2420_set_txpower
+000027cc B cc2420_sfd_counter
+000027ce B cc2420_sfd_end_time
+000027c6 B cc2420_sfd_start_time
+0000435a T cc2420_timerb1_interrupt
+0000478c t cc2420_transmit
+0000e0d8 R csma_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00005442 T csma_security_create_frame
+00005452 T csma_security_parse_frame
+000013e4 B curr_log_level_framer
+000013ec B curr_log_level_ipv6
+000013e6 B curr_log_level_mac
+000013e8 B curr_log_level_nullnet
+000013f0 B curr_log_level_rpl
+000013ee B curr_log_level_tcpip
+000011d6 d dao_ack_handler
+00008476 t dao_ack_input
+000011d0 d dao_handler
+000084a6 t dao_input
+000025e0 b defaultrouterlist_list
+0000121e d defaultroutermemb
+000025e4 b defaultroutermemb_memb_mem
+000025e2 b defaultroutermemb_memb_used
+000011ca d dio_handler
+00008612 t dio_input
+000011c4 d dis_handler
+000088cc t dis_input
+00001d10 b dis_timer
+000096a2 t drop_route
+00001216 d ds6_neighbors_struct
+00005c9a T frame802154_create
+00005c04 T frame802154_create_fcf
+00005a1a T frame802154_get_pan_id
+00005a20 T frame802154_has_panid
+00005bd2 T frame802154_hdrlen
+00005baa T frame802154_is_broadcast_addr
+00005e28 T frame802154_parse
+00005d6c T frame802154_parse_fcf
+0000e0e6 R framer_802154
+00006032 T framer_802154_setup_params
+000090f6 t handle_dao_ack_timer
+0000919c t handle_dio_timer
+000092f8 t handle_dis_timer
+000090e4 t handle_unicast_dio_timer
+00007652 t init_dag
+00006328 T link_stats_from_lladdr
+00006588 T link_stats_init
+00006458 T link_stats_input_callback
+00006334 T link_stats_is_fresh
+00006364 T link_stats_packet_sent
+0000655e T link_stats_reset
+00001148 d link_stats_struct
+000065b6 T linkaddr_cmp
+000065ae T linkaddr_copy
+000027e4 B linkaddr_node_addr
+0000e112 R linkaddr_null
+000013f2 b mac_dsn
+00001d50 b mac_max_payload
+00001138 d mac_pan_id
+000066d8 T mac_sequence_init
+000066fa T mac_sequence_is_duplicate
+0000677e T mac_sequence_register_seqno
+000066e2 T mac_sequence_set_dsn
+0000265c b nbr
+00006b2c t nbr_get_bit.constprop.3
+00008cf0 t nbr_has_usable_link
+00008d90 t nbr_is_acceptable_parent
+00008cde t nbr_link_metric
+00008d04 t nbr_path_cost
+00006aa0 t nbr_set_bit
+00006d6c T nbr_table_add_lladdr
+00006ccc T nbr_table_get_from_lladdr
+00006e80 T nbr_table_get_lladdr
+00006c96 T nbr_table_head
+00006bda T nbr_table_is_registered
+000014e4 b nbr_table_keys_list
+00006e60 T nbr_table_lock
+00006c3c T nbr_table_next
+00006bfc T nbr_table_register
+00006e2e T nbr_table_remove
+00006e70 T nbr_table_unlock
+000011a8 d neighbor_addr_mem
+00001518 b neighbor_addr_mem_memb_mem
+00001508 b neighbor_addr_mem_memb_used
+00001266 b neighbor_list_list
+0000110c d neighbor_memb
+0000126a b neighbor_memb_memb_mem
+00001268 b neighbor_memb_memb_used
+000096a0 t neighbor_state_changed
+00006ea2 T netstack_process_ip_callback
+00009116 t new_dio_interval
+00007092 T packetbuf_addr
+000027ee B packetbuf_addrs
+000015c2 b packetbuf_aligned
+00007072 T packetbuf_attr
+00006fba T packetbuf_attr_clear
+00007044 T packetbuf_attr_copyfrom
+00007022 T packetbuf_attr_copyto
+000027fe B packetbuf_attrs
+00006fe2 T packetbuf_clear
+00006ff4 T packetbuf_copyfrom
+00006f2c T packetbuf_copyto
+00006f10 T packetbuf_datalen
+00006f20 T packetbuf_dataptr
+00001d4d b packetbuf_hdr_len
+00006f7e T packetbuf_hdralloc
+00006f16 T packetbuf_hdrlen
+00006f0a T packetbuf_hdrptr
+00006eea T packetbuf_hdrreduce
+000070a4 T packetbuf_holds_broadcast
+00001d58 b packetbuf_payload_len
+00001d4e b packetbuf_ptr
+0000707c T packetbuf_set_addr
+00007068 T packetbuf_set_attr
+00006f04 T packetbuf_set_datalen
+00006f72 T packetbuf_totlen
+000076d6 t process_dio_init_dag
+0000495a t process_thread_cc2420_process
+0000b4d6 t process_thread_tcpip_process
+000074e6 T queuebuf_free
+00007466 T queuebuf_init
+00007482 T queuebuf_new_from_packetbuf
+00007478 T queuebuf_numfree
+00007510 T queuebuf_to_packetbuf
+000074d4 T queuebuf_update_attr_from_packetbuf
+00008dbc t rank_via_nbr
+00008ebe t remove_neighbor
+0000925e t resend_dao
+00007786 T rpl_dag_get_root_ipaddr
+
+[Network related strings]
+CSMA
+ipv6
+6lowpan
+nullnet
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+RPL Lite
+sicslowpan
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+DAO max rtx
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00002266 b _ds6_neighbors_mem
+0000134a b _link_stats_mem
+00001b0e b _rpl_neighbors_mem
+00003ad0 T cc2420_arch_init
+0000249e B cc2420_authority_level_of_sender
+00003f20 t cc2420_cca
+0000ced8 R cc2420_driver
+0000414c T cc2420_get_txpower
+00004430 T cc2420_init
+0000410a T cc2420_interrupt
+0000249c B cc2420_last_correlation
+00002498 B cc2420_last_rssi
+00003ef0 T cc2420_off
+00003e56 T cc2420_on
+00003e14 t cc2420_prepare
+0000110c D cc2420_process
+00003f74 t cc2420_read
+00003c78 t cc2420_receiving_packet
+0000416a T cc2420_rssi
+00003ede t cc2420_send
+000042d0 T cc2420_set_cca_threshold
+00004084 T cc2420_set_channel
+000040be T cc2420_set_pan_addr
+00004120 T cc2420_set_txpower
+000024a0 B cc2420_sfd_counter
+000024a2 B cc2420_sfd_end_time
+0000249a B cc2420_sfd_start_time
+00003604 T cc2420_timerb1_interrupt
+00003e78 t cc2420_transmit
+0000cf20 R csma_driver
+00004976 T csma_output_init
+00004840 T csma_output_packet
+00004990 T csma_security_create_frame
+000049a0 T csma_security_parse_frame
+00001198 d dao_ack_handler
+000076f2 t dao_ack_input
+00001190 d dao_handler
+00007722 t dao_input
+000022f6 b defaultrouterlist_list
+000011fc d defaultroutermemb
+000022f8 b defaultroutermemb_memb_mem
+00002483 b defaultroutermemb_memb_used
+00001188 d dio_handler
+0000787a t dio_input
+00001180 d dis_handler
+00007b0c t dis_input
+00001b4e b dis_timer
+00008834 t drop_route
+000011f2 d ds6_neighbors_struct
+0000502c T frame802154_create
+00004fbe T frame802154_create_fcf
+00004dd8 T frame802154_get_pan_id
+00004dde T frame802154_has_panid
+00004f8c T frame802154_hdrlen
+00004f64 T frame802154_is_broadcast_addr
+00005176 T frame802154_parse
+000050ea T frame802154_parse_fcf
+0000cf3a R framer_802154
+00005370 T framer_802154_setup_params
+000082b4 t handle_dao_ack_timer
+00008356 t handle_dio_timer
+000084aa t handle_dis_timer
+000082a2 t handle_unicast_dio_timer
+000069ce t init_dag
+00005756 T link_stats_from_lladdr
+00005994 T link_stats_init
+00005874 T link_stats_input_callback
+00005762 T link_stats_is_fresh
+00005792 T link_stats_packet_sent
+0000596a T link_stats_reset
+0000115a d link_stats_struct
+000059c2 T linkaddr_cmp
+000059ba T linkaddr_copy
+000024c8 B linkaddr_node_addr
+0000cf4a R linkaddr_null
+0000244d b mac_dsn
+00001b8e b mac_max_payload
+00001148 d mac_pan_id
+00005ad8 T mac_sequence_init
+00005afa T mac_sequence_is_duplicate
+00005b68 T mac_sequence_register_seqno
+00005ae2 T mac_sequence_set_dsn
+0000236e b nbr
+00005ea0 t nbr_get_bit.constprop.3
+00007eee t nbr_has_usable_link
+00007f82 t nbr_is_acceptable_parent
+00007edc t nbr_link_metric
+00007f02 t nbr_path_cost
+00005e20 t nbr_set_bit
+000060aa T nbr_table_add_lladdr
+00006016 T nbr_table_get_from_lladdr
+000061a6 T nbr_table_get_lladdr
+00005fe4 T nbr_table_head
+00005f38 T nbr_table_is_registered
+0000147a b nbr_table_keys_list
+00006186 T nbr_table_lock
+00005f96 T nbr_table_next
+00005f5a T nbr_table_register
+0000615c T nbr_table_remove
+00006196 T nbr_table_unlock
+00001168 d neighbor_addr_mem
+0000148e b neighbor_addr_mem_memb_mem
+0000245e b neighbor_addr_mem_memb_used
+00001276 b neighbor_list_list
+00001118 d neighbor_memb
+00001278 b neighbor_memb_memb_mem
+00002437 b neighbor_memb_memb_used
+00008832 t neighbor_state_changed
+000061c6 T netstack_process_ip_callback
+000082d4 t new_dio_interval
+00002864 B node_mac
+000063e6 T packetbuf_addr
+000024d2 B packetbuf_addrs
+000014e6 b packetbuf_aligned
+000063ca T packetbuf_attr
+00006316 T packetbuf_attr_clear
+0000639c T packetbuf_attr_copyfrom
+0000637a T packetbuf_attr_copyto
+000024e2 B packetbuf_attrs
+0000633e T packetbuf_clear
+00006350 T packetbuf_copyfrom
+00006294 T packetbuf_copyto
+00006278 T packetbuf_datalen
+00006288 T packetbuf_dataptr
+0000247f b packetbuf_hdr_len
+000062da T packetbuf_hdralloc
+0000627e T packetbuf_hdrlen
+00006272 T packetbuf_hdrptr
+00006252 T packetbuf_hdrreduce
+000063f4 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8c b packetbuf_ptr
+000063d4 T packetbuf_set_addr
+000063c0 T packetbuf_set_attr
+0000626c T packetbuf_set_datalen
+000062ce T packetbuf_totlen
+00006a46 t process_dio_init_dag
+0000402e t process_thread_cc2420_process
+0000a470 t process_thread_tcpip_process
+00006872 T queuebuf_free
+000067f6 T queuebuf_init
+00006812 T queuebuf_new_from_packetbuf
+00006808 T queuebuf_numfree
+0000689c T queuebuf_to_packetbuf
+00006860 T queuebuf_update_attr_from_packetbuf
+00007faa t rank_via_nbr
+00008094 t remove_neighbor
+00008414 t resend_dao
+00006af6 T rpl_dag_get_root_ipaddr
+00007100 T rpl_dag_init
+00007054 T rpl_dag_init_root
+00006b14 T rpl_dag_leave
+00006b6a T rpl_dag_periodic
+00006b5e T rpl_dag_poison_and_leave
+00006c52 T rpl_dag_ready_to_advertise
+000069ba T rpl_dag_root_is_root
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+DAO max rtx
+RPL Lite
+sicslowpan
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Network related symbols]
+00000000000953c0 b _ds6_neighbors_mem
+00000000000586c0 b _link_stats_mem
+0000000000069600 b _rpl_neighbors_mem
+000000000006d460 b _tsch_neighbors_mem
+000000000003dbeb t assert_nbr_routes_list_sane
+000000000002f67b t cmd_ip_neighbors
+000000000002f39f t cmd_macaddr
+0000000000030097 t cmd_routes
+000000000002f219 t cmd_rpl_global_repair
+000000000002f2dc t cmd_rpl_local_repair
+000000000002ddcc t cmd_rpl_nbr
+000000000002e684 t cmd_rpl_refresh_routes
+000000000002ed78 t cmd_rpl_set_root
+000000000002df70 t cmd_rpl_status
+0000000000030429 t cmd_tsch_schedule
+000000000002f8f2 t cmd_tsch_set_coordinator
+000000000002fcdd t cmd_tsch_status
+00000000000523e0 D cooja_radio_driver
+0000000000054000 D cooja_radio_process
+0000000000031102 t copy_frags2uip
+00000000000599a0 B curr_log_level_framer
+0000000000059990 B curr_log_level_ipv6
+000000000005999c B curr_log_level_mac
+0000000000059998 B curr_log_level_nullnet
+0000000000059988 B curr_log_level_rpl
+000000000005998c B curr_log_level_tcpip
+0000000000094a18 b current_neighbor
+00000000000543e0 d dao_ack_handler
+000000000002a656 t dao_ack_input
+00000000000543c0 d dao_handler
+000000000002a018 t dao_input
+00000000000388ac t default_tsch_link_comparator
+0000000000054760 d defaultrouterlist
+0000000000097940 b defaultrouterlist_list
+0000000000054770 d defaultroutermemb
+0000000000097960 b defaultroutermemb_memb_mem
+0000000000097948 b defaultroutermemb_memb_used
+0000000000033687 t digest_paging_dispatch
+00000000000543a0 d dio_handler
+00000000000292dc t dio_input
+0000000000054380 d dis_handler
+0000000000029217 t dis_input
+000000000006a8c0 b dis_timer
+000000000002cd6e t drop_route
+000000000002d81f t ds6_nbr_state_to_str
+0000000000054758 d ds6_neighbors
+0000000000054740 d ds6_neighbors_struct
+0000000000052460 D esmrf_driver
+0000000000054080 d esmrf_icmp_handler
+0000000000019a1d T frame802154_check_dest_panid
+0000000000019f00 T frame802154_create
+0000000000019e2e T frame802154_create_fcf
+0000000000019b12 T frame802154_extract_linkaddr
+0000000000019811 T frame802154_get_pan_id
+000000000001983e T frame802154_has_panid
+0000000000019daf T frame802154_hdrlen
+0000000000019abb T frame802154_is_broadcast_addr
+000000000001a195 T frame802154_parse
+000000000001a09e T frame802154_parse_fcf
+0000000000019822 T frame802154_set_pan_id
+000000000001ad4d t frame802154e_parse_header_ie
+000000000001b251 T frame802154e_parse_information_elements
+000000000001b180 t frame802154e_parse_mlme_long_ie
+000000000001adff t frame802154e_parse_mlme_short_ie
+000000000001abd5 T frame80215e_create_ie_tsch_channel_hopping_sequence
+000000000001a891 T frame80215e_create_ie_tsch_slotframe_and_link
+000000000001a7bf T frame80215e_create_ie_tsch_synchronization
+000000000001aadb T frame80215e_create_ie_tsch_timeslot
+0000000000052480 D framer_802154
+000000000001b681 T framer_802154_setup_params
+0000000000039979 t get_packet_and_neighbor_for_link
+000000000001ba87 T gpio_hal_arch_no_port_interrupt_disable
+000000000002c0da t handle_dao_ack_timer
+000000000002bc58 t handle_dio_timer
+000000000002ba6b t handle_dis_timer
+000000000002bdc7 t handle_unicast_dio_timer
+0000000000027ac0 t init_dag
+0000000000027be3 t init_dag_from_dio
+00000000000346c4 t init_simple_udp
+000000000001c63d T int_master_read_and_disable
+0000000000094ca8 b last_eb_nbr_addr
+0000000000094cb0 b last_eb_nbr_jp
+000000000006cb80 B last_timesource_neighbor
+0000000000054128 d link_stats
+000000000001cf42 T link_stats_from_lladdr
+000000000001cf6a T link_stats_get_lladdr
+000000000001d3a3 T link_stats_init
+000000000001d1e5 T link_stats_input_callback
+000000000001cf92 T link_stats_is_fresh
+000000000001d081 T link_stats_packet_sent
+000000000001d347 T link_stats_reset
+0000000000054110 d link_stats_struct
+000000000001d406 T linkaddr_cmp
+000000000001d3e5 T linkaddr_copy
+0000000000059980 B linkaddr_node_addr
+0000000000044428 R linkaddr_null
+00000000000231b8 t linkaddr_set_node_addr
+000000000003720b t mac_call_sent_callback
+000000000003b337 t mac_call_sent_callback
+0000000000059b40 b mac_dsn
+000000000006b3b4 b mac_max_payload
+00000000000540c0 d mac_pan_id
+000000000001dc9a T mac_sequence_init
+000000000001dcda T mac_sequence_is_duplicate
+000000000001ddbb T mac_sequence_register_seqno
+000000000001dcb0 T mac_sequence_set_dsn
+0000000000094a2c b mac_tx_status.25
+00000000000547e0 d mcast_route_list
+0000000000097c00 b mcast_route_list_list
+00000000000547f0 d mcast_route_memb
+0000000000097c20 b mcast_route_memb_memb_mem
+0000000000097c08 b mcast_route_memb_memb_used
+0000000000097c98 b nbr
+0000000000021cdf t nbr_get_bit
+000000000002a8ed t nbr_has_usable_link
+000000000002b7f9 t nbr_has_usable_link
+000000000002a91b t nbr_is_acceptable_parent
+000000000002b80c t nbr_is_acceptable_parent
+000000000002a7c4 t nbr_link_metric
+000000000002b6a0 t nbr_link_metric
+000000000002a810 t nbr_path_cost
+000000000002b72f t nbr_path_cost
+000000000002b6d8 t nbr_rank_increase
+0000000000021d46 t nbr_set_bit
+0000000000022492 T nbr_table_add_lladdr
+000000000002223d t nbr_table_allocate
+000000000002204d T nbr_table_can_accept_new
+0000000000022758 T nbr_table_clear
+0000000000021f68 T nbr_table_count_entries
+0000000000022203 T nbr_table_entry_is_allowed
+000000000002200a T nbr_table_gc_get_worst
+00000000000225f2 T nbr_table_get_from_lladdr
+0000000000022715 T nbr_table_get_lladdr
+00000000000223a7 T nbr_table_head
+0000000000022350 T nbr_table_is_registered
+0000000000022795 T nbr_table_key_head
+00000000000227ae T nbr_table_key_next
+00000000000542d8 d nbr_table_keys
+0000000000064220 b nbr_table_keys_list
+00000000000226ab T nbr_table_lock
+0000000000022415 T nbr_table_next
+00000000000222be T nbr_table_register
+0000000000022651 T nbr_table_remove
+00000000000226e0 T nbr_table_unlock
+00000000000542c0 d neighbor_addr_mem
+0000000000062f60 b neighbor_addr_mem_memb_mem
+0000000000062e20 b neighbor_addr_mem_memb_used
+000000000002cd5f t neighbor_state_changed
+000000000001666c t netstack_init
+000000000002291d T netstack_ip_packet_processor_add
+000000000002287c T netstack_process_ip_callback
+0000000000031359 T netstack_sniffer_add
+0000000000031373 T netstack_sniffer_remove
+000000000002bac6 t new_dio_interval
+00000000000524c0 D no_framer
+00000000000524e0 D nullradio_driver
+00000000000542e8 d packetbuf
+000000000002305f T packetbuf_addr
+0000000000064260 B packetbuf_addrs
+0000000000064280 b packetbuf_aligned
+
+[Network related strings]
+int_master_read_and_disable
+cooja_radio_driver
+tschmac_driver
+sicslowpan_driver
+linkaddr_node_addr
+rpl_lite_driver
+simLastPacketTimestamp
+simRadioHWOn
+simRadioChannel
+cooja_radio_process
+radio_set_channel
+radio_set_txpower
+radio_signal_strength_last
+radio_signal_strength_current
+radio_LQI
+packetbuf_set_attr
+packetbuf_clear
+packetbuf_dataptr
+packetbuf_set_datalen
+uip_udp_conn
+rpl_get_any_dag
+uip_icmp6chksum
+tcpip_ipv6_output
+uip_mcast6_route_lookup
+rpl_neighbor_get_ipaddr
+packetbuf_addr
+uip_mcast6_route_init
+uip_icmp6_register_input_handler
+frame802154_is_broadcast_addr
+frame802154_extract_linkaddr
+linkaddr_null
+linkaddr_copy
+frame80215e_create_ie_tsch_synchronization
+frame80215e_create_ie_tsch_slotframe_and_link
+frame80215e_create_ie_tsch_timeslot
+frame80215e_create_ie_tsch_channel_hopping_sequence
+packetbuf_holds_broadcast
+packetbuf_datalen
+packetbuf_hdralloc
+packetbuf_hdrptr
+packetbuf_hdrreduce
+packetbuf_set_addr
+gpio_hal_arch_no_port_interrupt_disable
+link_stats_packet_sent
+linkaddr_cmp
+curr_log_level_rpl
+curr_log_level_ipv6
+curr_log_level_6lowpan
+curr_log_level_nullnet
+curr_log_level_mac
+mac_sequence_init
+mac_sequence_set_dsn
+mac_sequence_is_duplicate
+mac_sequence_register_seqno
+icmp_out
+rpl_nbr_gc_get_worst
+netstack_ip_packet_processor_add
+uip_ds6_ip_packet_processor_rm
+nullradio_driver
+packetbuf_attrs
+packetbuf_addrs
+packetbuf_attr_clear
+packetbuf_copyfrom
+packetbuf_copyto
+packetbuf_totlen
+packetbuf_hdrlen
+packetbuf_remaininglen
+packetbuf_attr_copyto
+packetbuf_attr_copyfrom
+queuebuf_new_from_packetbuf
+queuebuf_update_attr_from_packetbuf
+queuebuf_update_from_packetbuf
+queuebuf_to_packetbuf
+rpl_dag_root_print_links
+rpl_dag_root_is_root
+rpl_dag_root_set_prefix
+rpl_dag_root_start
+rpl_get_global_address
+rpl_dag_init_root
+rpl_dag_update_state
+rpl_mrhof
+rpl_dag_state_to_str
+rpl_dag_get_root_ipaddr
+rpl_dag_leave
+rpl_icmp6_dao_output
+rpl_neighbor_remove_all
+rpl_timers_stop_dag_timers
+rpl_reset_prefix
+rpl_dag_poison_and_leave
+rpl_timers_schedule_state_update
+rpl_dag_periodic
+rpl_icmp6_dis_output
+rpl_is_addr_in_our_dag
+rpl_get_default_instance
+rpl_refresh_routes
+rpl_global_repair
+rpl_local_repair
+rpl_neighbor_set_preferred_parent
+rpl_timers_dio_reset
+rpl_dag_ready_to_advertise
+rpl_timers_schedule_leaving
+rpl_neighbor_select_best
+rpl_neighbor_rank_via_nbr
+rpl_neighbors
+rpl_timers_unschedule_leaving
+rpl_timers_schedule_dao
+rpl_timers_schedule_periodic_dis
+rpl_neighbor_get_from_ipaddr
+rpl_lollipop_greater_than
+rpl_icmp6_update_nbr_table
+rpl_set_prefix_from_addr
+rpl_schedule_probing
+rpl_process_dio
+rpl_process_dis
+rpl_icmp6_dio_output
+rpl_process_dao
+rpl_timers_schedule_dao_ack
+rpl_process_dao_ack
+rpl_timers_notify_dao_ack
+rpl_process_hbh
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000039e2 T cc2420_arch_init
+00001a0c B cc2420_authority_level_of_sender
+00003e32 t cc2420_cca
+00007338 R cc2420_driver
+0000405e T cc2420_get_txpower
+00004342 T cc2420_init
+0000401c T cc2420_interrupt
+00001a0a B cc2420_last_correlation
+00001a06 B cc2420_last_rssi
+00003e02 T cc2420_off
+00003d68 T cc2420_on
+00003d26 t cc2420_prepare
+0000110c D cc2420_process
+00003e86 t cc2420_read
+00003b8a t cc2420_receiving_packet
+0000407c T cc2420_rssi
+00003df0 t cc2420_send
+000041e2 T cc2420_set_cca_threshold
+00003f96 T cc2420_set_channel
+00003fd0 T cc2420_set_pan_addr
+00004032 T cc2420_set_txpower
+00001a0e B cc2420_sfd_counter
+00001a10 B cc2420_sfd_end_time
+00001a08 B cc2420_sfd_start_time
+0000350a T cc2420_timerb1_interrupt
+00003d8a t cc2420_transmit
+00007380 R csma_driver
+0000488e T csma_output_init
+00004746 T csma_output_packet
+000048a8 T csma_security_create_frame
+000048b8 T csma_security_parse_frame
+00005b5a t drop_route
+00004f2c T frame802154_create
+00004ebe T frame802154_create_fcf
+00004cd6 T frame802154_get_pan_id
+00004cdc T frame802154_has_panid
+00004e8c T frame802154_hdrlen
+00004e64 T frame802154_is_broadcast_addr
+0000508c T frame802154_parse
+00005000 T frame802154_parse_fcf
+0000739a R framer_802154
+00005286 T framer_802154_setup_params
+0000557a T linkaddr_cmp
+00005572 T linkaddr_copy
+00001a20 B linkaddr_node_addr
+000073a6 R linkaddr_null
+0000558c T linkaddr_set_node_addr
+00005780 T mac_call_sent_callback
+000019e5 b mac_dsn
+00001148 d mac_pan_id
+0000566a T mac_sequence_init
+0000568c T mac_sequence_is_duplicate
+000056fa T mac_sequence_register_seqno
+00005674 T mac_sequence_set_dsn
+000011d4 b neighbor_list_list
+00001118 d neighbor_memb
+000011d6 b neighbor_memb_memb_mem
+000019cf b neighbor_memb_memb_used
+00005b58 t neighbor_state_changed
+00005932 T netstack_init
+00001a56 B node_mac
+00001a2a B nullnet_buf
+000073b2 R nullnet_driver
+0000114e D nullnet_example_process
+00001a2c B nullnet_len
+00005b1a T nullnet_set_input_callback
+000073c0 R nullrouting_driver
+00005cf8 T packetbuf_addr
+00001a2e B packetbuf_addrs
+00001392 b packetbuf_aligned
+00005cda T packetbuf_attr
+00005c24 T packetbuf_attr_clear
+00005caa T packetbuf_attr_copyfrom
+00005c88 T packetbuf_attr_copyto
+00001a3e B packetbuf_attrs
+00005c4c T packetbuf_clear
+00005c5e T packetbuf_copyfrom
+00005ba2 T packetbuf_copyto
+00005b86 T packetbuf_datalen
+00005b96 T packetbuf_dataptr
+00005be8 T packetbuf_hdralloc
+00005b8c T packetbuf_hdrlen
+00005b80 T packetbuf_hdrptr
+00005b60 T packetbuf_hdrreduce
+00005d06 T packetbuf_holds_broadcast
+00005ce4 T packetbuf_set_addr
+00005cce T packetbuf_set_attr
+00005b7a T packetbuf_set_datalen
+00005bdc T packetbuf_totlen
+00003f40 t process_thread_cc2420_process
+000059a0 t process_thread_nullnet_example_process
+0000619a T queuebuf_free
+00006128 T queuebuf_init
+0000613a T queuebuf_new_from_packetbuf
+000061c4 T queuebuf_to_packetbuf
+00006188 T queuebuf_update_attr_from_packetbuf
+         U uip_aligned_buf
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+CSMA
+NullNet broadcast example
+nullnet
+nullrouting
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00008240 R cc2420_aes_128_driver
+00004340 T cc2420_arch_init
+00001cae B cc2420_authority_level_of_sender
+000048c8 t cc2420_cca
+00008244 R cc2420_driver
+00004b96 T cc2420_get_txpower
+00004e84 T cc2420_init
+00004b54 T cc2420_interrupt
+00001cac B cc2420_last_correlation
+00001ca8 B cc2420_last_rssi
+00004898 T cc2420_off
+000047da T cc2420_on
+00004320 T cc2420_port1_interrupt
+00004794 t cc2420_prepare
+00001100 D cc2420_process
+00004930 t cc2420_read
+000044ee t cc2420_receiving_packet
+00004bb4 T cc2420_rssi
+00004886 t cc2420_send
+00004d1e T cc2420_set_cca_threshold
+00004acc T cc2420_set_channel
+00004b08 T cc2420_set_pan_addr
+00004b6a T cc2420_set_txpower
+00001cb0 B cc2420_sfd_counter
+00001cb2 B cc2420_sfd_end_time
+00001caa B cc2420_sfd_start_time
+000042fa T cc2420_timerb1_interrupt
+000047fc t cc2420_transmit
+00008284 R csma_driver
+000054a6 T csma_output_init
+00005360 T csma_output_packet
+000054c0 T csma_security_create_frame
+000054d0 T csma_security_parse_frame
+00001328 B curr_log_level_framer
+00001330 B curr_log_level_ipv6
+0000132a B curr_log_level_mac
+0000132c B curr_log_level_nullnet
+00001334 B curr_log_level_rpl
+00001332 B curr_log_level_tcpip
+00006932 t drop_route
+00005d8a T frame802154_create
+00005cf4 T frame802154_create_fcf
+00005b0a T frame802154_get_pan_id
+00005b10 T frame802154_has_panid
+00005cc2 T frame802154_hdrlen
+00005c9a T frame802154_is_broadcast_addr
+00005f18 T frame802154_parse
+00005e5c T frame802154_parse_fcf
+00008292 R framer_802154
+00006122 T framer_802154_setup_params
+0000633c T linkaddr_cmp
+00006334 T linkaddr_copy
+00001cec B linkaddr_node_addr
+00008298 R linkaddr_null
+00001336 b mac_dsn
+00001138 d mac_pan_id
+00006412 T mac_sequence_init
+00006434 T mac_sequence_is_duplicate
+000064b8 T mac_sequence_register_seqno
+0000641c T mac_sequence_set_dsn
+00001258 b neighbor_list_list
+0000110c d neighbor_memb
+0000125c b neighbor_memb_memb_mem
+0000125a b neighbor_memb_memb_used
+00006930 t neighbor_state_changed
+00001cf6 B nullnet_buf
+000083ac R nullnet_driver
+00001192 D nullnet_example_process
+00001cf8 B nullnet_len
+000068f2 T nullnet_set_input_callback
+000083c0 R nullrouting_driver
+00006ae0 T packetbuf_addr
+00001cfa B packetbuf_addrs
+00001430 b packetbuf_aligned
+00006ac0 T packetbuf_attr
+00006a08 T packetbuf_attr_clear
+00006a92 T packetbuf_attr_copyfrom
+00006a70 T packetbuf_attr_copyto
+00001d0a B packetbuf_attrs
+00006a30 T packetbuf_clear
+00006a42 T packetbuf_copyfrom
+0000697a T packetbuf_copyto
+0000695e T packetbuf_datalen
+0000696e T packetbuf_dataptr
+000069cc T packetbuf_hdralloc
+00006964 T packetbuf_hdrlen
+00006958 T packetbuf_hdrptr
+00006938 T packetbuf_hdrreduce
+00006af2 T packetbuf_holds_broadcast
+00006aca T packetbuf_set_addr
+00006ab6 T packetbuf_set_attr
+00006952 T packetbuf_set_datalen
+000069c0 T packetbuf_totlen
+000049ee t process_thread_cc2420_process
+00006746 t process_thread_nullnet_example_process
+00006fb8 T queuebuf_free
+00006f42 T queuebuf_init
+00006f54 T queuebuf_new_from_packetbuf
+00006fe2 T queuebuf_to_packetbuf
+00006fa6 T queuebuf_update_attr_from_packetbuf
+         U uip_aligned_buf
+
+[Network related strings]
+diOO?P0
+diOO
+CSMA
+ipv6
+6lowpan
+nullnet
+NullNet broadcast example
+nullnet
+hphnullrouting
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00008f9a T __floatundisf
+0000ab60 R cc2420_aes_128_driver
+00004332 T cc2420_arch_init
+00002de4 B cc2420_authority_level_of_sender
+000047c6 t cc2420_cca
+0000ab64 R cc2420_driver
+00004a94 T cc2420_get_txpower
+00004d82 T cc2420_init
+00004a52 T cc2420_interrupt
+00002de2 B cc2420_last_correlation
+00002dde B cc2420_last_rssi
+00004796 T cc2420_off
+000046fc T cc2420_on
+00004312 T cc2420_port1_interrupt
+000046b6 t cc2420_prepare
+00001100 D cc2420_process
+0000482e t cc2420_read
+000044fa t cc2420_receiving_packet
+00004ab2 T cc2420_rssi
+00004784 t cc2420_send
+00004c1c T cc2420_set_cca_threshold
+000049ca T cc2420_set_channel
+00004a06 T cc2420_set_pan_addr
+00004a68 T cc2420_set_txpower
+00002de6 B cc2420_sfd_counter
+00002de8 B cc2420_sfd_end_time
+00002de0 B cc2420_sfd_start_time
+000042ec T cc2420_timerb1_interrupt
+0000471e t cc2420_transmit
+0000abb2 R csma_driver
+000053c4 T csma_output_init
+0000526c T csma_output_packet
+000053de T csma_security_create_frame
+000053ee T csma_security_parse_frame
+0000233a B curr_log_level_framer
+00002342 B curr_log_level_ipv6
+0000233c B curr_log_level_mac
+0000233e B curr_log_level_nullnet
+00002346 B curr_log_level_rpl
+00002344 B curr_log_level_tcpip
+00002df4 B distance_zero
+00007182 t drop_route
+00005c4a T frame802154_create
+00005bb4 T frame802154_create_fcf
+000059c8 T frame802154_get_pan_id
+000059ce T frame802154_has_panid
+00005b82 T frame802154_hdrlen
+00005b5a T frame802154_is_broadcast_addr
+00005dea T frame802154_parse
+00005d2e T frame802154_parse_fcf
+0000abc0 R framer_802154
+00005ff4 T framer_802154_setup_params
+00006210 T linkaddr_cmp
+00006208 T linkaddr_copy
+00002dea B linkaddr_node_addr
+0000abc6 R linkaddr_null
+00006222 T linkaddr_set_node_addr
+0000643e T mac_call_sent_callback
+00002348 b mac_dsn
+0000113c d mac_pan_id
+00006308 T mac_sequence_init
+0000632a T mac_sequence_is_duplicate
+000063ae T mac_sequence_register_seqno
+00006312 T mac_sequence_set_dsn
+0000226c b neighbor_list_list
+00001110 d neighbor_memb
+00002270 b neighbor_memb_memb_mem
+0000226e b neighbor_memb_memb_used
+00007180 t neighbor_state_changed
+00006650 T netstack_init
+00002e1e B nullnet_buf
+0000aed0 R nullnet_driver
+00001192 D nullnet_example_process
+00002e20 B nullnet_len
+00007142 T nullnet_set_input_callback
+0000aee4 R nullrouting_driver
+00007334 T packetbuf_addr
+00002e22 B packetbuf_addrs
+0000255e b packetbuf_aligned
+00007312 T packetbuf_attr
+00007258 T packetbuf_attr_clear
+000072e2 T packetbuf_attr_copyfrom
+000072c0 T packetbuf_attr_copyto
+00002e32 B packetbuf_attrs
+00007280 T packetbuf_clear
+00007292 T packetbuf_copyfrom
+000071ca T packetbuf_copyto
+000071ae T packetbuf_datalen
+000071be T packetbuf_dataptr
+0000721c T packetbuf_hdralloc
+000071b4 T packetbuf_hdrlen
+000071a8 T packetbuf_hdrptr
+00007188 T packetbuf_hdrreduce
+00007346 T packetbuf_holds_broadcast
+0000731c T packetbuf_set_addr
+00007306 T packetbuf_set_attr
+000071a2 T packetbuf_set_datalen
+00007210 T packetbuf_totlen
+000048ec t process_thread_cc2420_process
+00006672 t process_thread_nullnet_example_process
+00007792 T queuebuf_free
+0000771c T queuebuf_init
+0000772e T queuebuf_new_from_packetbuf
+000077bc T queuebuf_to_packetbuf
+00007780 T queuebuf_update_attr_from_packetbuf
+         U uip_aligned_buf
+
+[Network related strings]
+CSMA
+ipv6
+6lowpan
+nullnet
+linkaddr_node_addr iss 
+Broadcast from %d, to all. %llu %llu 
+zx:%llu zy:%llu zdis:%llu rssi:%d rssiList[count-1]:%d 
+NullNet unicast example
+V:BsV)Bnullnet
+pnullrouting
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00007e98 T __floatundisf
+000039e2 T cc2420_arch_init
+00002416 B cc2420_authority_level_of_sender
+00003e32 t cc2420_cca
+00009910 R cc2420_driver
+0000405e T cc2420_get_txpower
+00004342 T cc2420_init
+0000401c T cc2420_interrupt
+00002414 B cc2420_last_correlation
+00002410 B cc2420_last_rssi
+00003e02 T cc2420_off
+00003d68 T cc2420_on
+00003d26 t cc2420_prepare
+0000110c D cc2420_process
+00003e86 t cc2420_read
+00003b8a t cc2420_receiving_packet
+0000407c T cc2420_rssi
+00003df0 t cc2420_send
+000041e2 T cc2420_set_cca_threshold
+00003f96 T cc2420_set_channel
+00003fd0 T cc2420_set_pan_addr
+00004032 T cc2420_set_txpower
+00002418 B cc2420_sfd_counter
+0000241a B cc2420_sfd_end_time
+00002412 B cc2420_sfd_start_time
+0000350a T cc2420_timerb1_interrupt
+00003d8a t cc2420_transmit
+00009958 R csma_driver
+0000488e T csma_output_init
+00004746 T csma_output_packet
+000048a8 T csma_security_create_frame
+000048b8 T csma_security_parse_frame
+000061e2 t drop_route
+00004f2c T frame802154_create
+00004ebe T frame802154_create_fcf
+00004cd6 T frame802154_get_pan_id
+00004cdc T frame802154_has_panid
+00004e8c T frame802154_hdrlen
+00004e64 T frame802154_is_broadcast_addr
+0000508c T frame802154_parse
+00005000 T frame802154_parse_fcf
+00009972 R framer_802154
+00005286 T framer_802154_setup_params
+0000557a T linkaddr_cmp
+00005572 T linkaddr_copy
+0000242a B linkaddr_node_addr
+0000997e R linkaddr_null
+0000558c T linkaddr_set_node_addr
+00005780 T mac_call_sent_callback
+000023ef b mac_dsn
+00001148 d mac_pan_id
+0000566a T mac_sequence_init
+0000568c T mac_sequence_is_duplicate
+000056fa T mac_sequence_register_seqno
+00005674 T mac_sequence_set_dsn
+00001ae6 b neighbor_list_list
+00001118 d neighbor_memb
+00001ae8 b neighbor_memb_memb_mem
+000023d9 b neighbor_memb_memb_used
+000061e0 t neighbor_state_changed
+00005932 T netstack_init
+000024f0 B node_mac
+000024c4 B nullnet_buf
+0000998a R nullnet_driver
+00001150 D nullnet_example_process
+000024c6 B nullnet_len
+000061a2 T nullnet_set_input_callback
+00009998 R nullrouting_driver
+00006380 T packetbuf_addr
+000024c8 B packetbuf_addrs
+00001d98 b packetbuf_aligned
+00006362 T packetbuf_attr
+000062ac T packetbuf_attr_clear
+00006332 T packetbuf_attr_copyfrom
+00006310 T packetbuf_attr_copyto
+000024d8 B packetbuf_attrs
+000062d4 T packetbuf_clear
+000062e6 T packetbuf_copyfrom
+0000622a T packetbuf_copyto
+0000620e T packetbuf_datalen
+0000621e T packetbuf_dataptr
+00006270 T packetbuf_hdralloc
+00006214 T packetbuf_hdrlen
+00006208 T packetbuf_hdrptr
+000061e8 T packetbuf_hdrreduce
+0000638e T packetbuf_holds_broadcast
+0000636c T packetbuf_set_addr
+00006356 T packetbuf_set_attr
+00006202 T packetbuf_set_datalen
+00006264 T packetbuf_totlen
+00003f40 t process_thread_cc2420_process
+000059a0 t process_thread_nullnet_example_process
+00006822 T queuebuf_free
+000067b0 T queuebuf_init
+000067c2 T queuebuf_new_from_packetbuf
+0000684c T queuebuf_to_packetbuf
+00006810 T queuebuf_update_attr_from_packetbuf
+         U uip_aligned_buf
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+CSMA
+linkaddr_node_addr iss 
+Sending from node_id :%d, to linkaddr_node_addr :
+distance is: %llu wcl: %llu - wcwcl: %llu 
+NullNet unicast example
+nullnet
+nullrouting
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00008218 R cc2420_aes_128_driver
+00004332 T cc2420_arch_init
+00002e7e B cc2420_authority_level_of_sender
+000047c6 t cc2420_cca
+0000821c R cc2420_driver
+00004a94 T cc2420_get_txpower
+00004d82 T cc2420_init
+00004a52 T cc2420_interrupt
+00002e7c B cc2420_last_correlation
+00002e78 B cc2420_last_rssi
+00004796 T cc2420_off
+000046fc T cc2420_on
+00004312 T cc2420_port1_interrupt
+000046b6 t cc2420_prepare
+00001100 D cc2420_process
+0000482e t cc2420_read
+000044fa t cc2420_receiving_packet
+00004ab2 T cc2420_rssi
+00004784 t cc2420_send
+00004c1c T cc2420_set_cca_threshold
+000049ca T cc2420_set_channel
+00004a06 T cc2420_set_pan_addr
+00004a68 T cc2420_set_txpower
+00002e80 B cc2420_sfd_counter
+00002e82 B cc2420_sfd_end_time
+00002e7a B cc2420_sfd_start_time
+000042ec T cc2420_timerb1_interrupt
+0000471e t cc2420_transmit
+0000826a R csma_driver
+000053c4 T csma_output_init
+0000526c T csma_output_packet
+000053de T csma_security_create_frame
+000053ee T csma_security_parse_frame
+00002402 B curr_log_level_framer
+0000240a B curr_log_level_ipv6
+00002404 B curr_log_level_mac
+00002406 B curr_log_level_nullnet
+0000240e B curr_log_level_rpl
+0000240c B curr_log_level_tcpip
+000068f4 t drop_route
+00005c4a T frame802154_create
+00005bb4 T frame802154_create_fcf
+000059c8 T frame802154_get_pan_id
+000059ce T frame802154_has_panid
+00005b82 T frame802154_hdrlen
+00005b5a T frame802154_is_broadcast_addr
+00005dea T frame802154_parse
+00005d2e T frame802154_parse_fcf
+00008278 R framer_802154
+00005ff4 T framer_802154_setup_params
+00006210 T linkaddr_cmp
+00006208 T linkaddr_copy
+00002e84 B linkaddr_node_addr
+0000827e R linkaddr_null
+00006222 T linkaddr_set_node_addr
+0000643e T mac_call_sent_callback
+00002410 b mac_dsn
+0000113c d mac_pan_id
+00006308 T mac_sequence_init
+0000632a T mac_sequence_is_duplicate
+000063ae T mac_sequence_register_seqno
+00006312 T mac_sequence_set_dsn
+00002334 b neighbor_list_list
+00001110 d neighbor_memb
+00002338 b neighbor_memb_memb_mem
+00002336 b neighbor_memb_memb_used
+000068f2 t neighbor_state_changed
+00006650 T netstack_init
+00002e8e B nullnet_buf
+000083da R nullnet_driver
+00001192 D nullnet_example_process
+00002e90 B nullnet_len
+000068b4 T nullnet_set_input_callback
+000083ee R nullrouting_driver
+00006aa6 T packetbuf_addr
+00002e92 B packetbuf_addrs
+000025fc b packetbuf_aligned
+00006a84 T packetbuf_attr
+000069ca T packetbuf_attr_clear
+00006a54 T packetbuf_attr_copyfrom
+00006a32 T packetbuf_attr_copyto
+00002ea2 B packetbuf_attrs
+000069f2 T packetbuf_clear
+00006a04 T packetbuf_copyfrom
+0000693c T packetbuf_copyto
+00006920 T packetbuf_datalen
+00006930 T packetbuf_dataptr
+0000698e T packetbuf_hdralloc
+00006926 T packetbuf_hdrlen
+0000691a T packetbuf_hdrptr
+000068fa T packetbuf_hdrreduce
+00006ab8 T packetbuf_holds_broadcast
+00006a8e T packetbuf_set_addr
+00006a78 T packetbuf_set_attr
+00006914 T packetbuf_set_datalen
+00006982 T packetbuf_totlen
+000048ec t process_thread_cc2420_process
+00006672 t process_thread_nullnet_example_process
+00006f04 T queuebuf_free
+00006e8e T queuebuf_init
+00006ea0 T queuebuf_new_from_packetbuf
+00006f2e T queuebuf_to_packetbuf
+00006ef2 T queuebuf_update_attr_from_packetbuf
+         U uip_aligned_buf
+
+[Network related strings]
+CSMA
+ipv6
+6lowpan
+nullnet
+linkaddr_node_addr iss 
+NullNet unicast example
+V:BsV)Bnullnet
+,hth2hnullrouting
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+0000250c b _ds6_neighbors_mem
+00001332 b _link_stats_mem
+00001c88 b _rpl_neighbors_mem
+0000e488 R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+00002906 B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e48c R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+00002904 B cc2420_last_correlation
+00002900 B cc2420_last_rssi
+00004804 T cc2420_off
+0000476a T cc2420_on
+00004380 T cc2420_port1_interrupt
+00004724 t cc2420_prepare
+00001100 D cc2420_process
+0000489c t cc2420_read
+00004568 t cc2420_receiving_packet
+00004b20 T cc2420_rssi
+000047f2 t cc2420_send
+00004c8a T cc2420_set_cca_threshold
+00004a38 T cc2420_set_channel
+00004a74 T cc2420_set_pan_addr
+00004ad6 T cc2420_set_txpower
+00002908 B cc2420_sfd_counter
+0000290a B cc2420_sfd_end_time
+00002902 B cc2420_sfd_start_time
+0000435a T cc2420_timerb1_interrupt
+0000478c t cc2420_transmit
+0000e4cc R csma_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00005442 T csma_security_create_frame
+00005452 T csma_security_parse_frame
+000013dc B curr_log_level_framer
+000013e4 B curr_log_level_ipv6
+000013de B curr_log_level_mac
+000013e0 B curr_log_level_nullnet
+000013e8 B curr_log_level_rpl
+000013e6 B curr_log_level_tcpip
+000011c8 d dao_ack_handler
+000083ba t dao_ack_input
+000011c2 d dao_handler
+000083ea t dao_input
+0000262c b defaultrouterlist_list
+00001224 d defaultroutermemb
+00002630 b defaultroutermemb_memb_mem
+0000262e b defaultroutermemb_memb_used
+000011bc d dio_handler
+00008556 t dio_input
+000011b6 d dis_handler
+00008810 t dis_input
+00001d08 b dis_timer
+000095e6 t drop_route
+0000121c d ds6_neighbors_struct
+00005c9a T frame802154_create
+00005c04 T frame802154_create_fcf
+00005a1a T frame802154_get_pan_id
+00005a20 T frame802154_has_panid
+00005bd2 T frame802154_hdrlen
+00005baa T frame802154_is_broadcast_addr
+00005e28 T frame802154_parse
+00005d6c T frame802154_parse_fcf
+0000e4da R framer_802154
+00006032 T framer_802154_setup_params
+0000903a t handle_dao_ack_timer
+000090e0 t handle_dio_timer
+0000923c t handle_dis_timer
+00009028 t handle_unicast_dio_timer
+00007596 t init_dag
+0000626c T link_stats_from_lladdr
+000064cc T link_stats_init
+0000639c T link_stats_input_callback
+00006278 T link_stats_is_fresh
+000062a8 T link_stats_packet_sent
+000064a2 T link_stats_reset
+0000113a d link_stats_struct
+000064fa T linkaddr_cmp
+000064f2 T linkaddr_copy
+00002920 B linkaddr_node_addr
+0000e4e0 R linkaddr_null
+000013ea b mac_dsn
+00001d48 b mac_max_payload
+00001138 d mac_pan_id
+0000661c T mac_sequence_init
+0000663e T mac_sequence_is_duplicate
+000066c2 T mac_sequence_register_seqno
+00006626 T mac_sequence_set_dsn
+000026a8 b nbr
+00006a70 t nbr_get_bit.constprop.3
+00008c34 t nbr_has_usable_link
+00008cd4 t nbr_is_acceptable_parent
+00008c22 t nbr_link_metric
+00008c48 t nbr_path_cost
+000069e4 t nbr_set_bit
+00006cb0 T nbr_table_add_lladdr
+00006c10 T nbr_table_get_from_lladdr
+00006dc4 T nbr_table_get_lladdr
+00006bda T nbr_table_head
+00006b1e T nbr_table_is_registered
+000014dc b nbr_table_keys_list
+00006da4 T nbr_table_lock
+00006b80 T nbr_table_next
+00006b40 T nbr_table_register
+00006d72 T nbr_table_remove
+00006db4 T nbr_table_unlock
+0000119a d neighbor_addr_mem
+00001510 b neighbor_addr_mem_memb_mem
+00001500 b neighbor_addr_mem_memb_used
+0000126c b neighbor_list_list
+0000110c d neighbor_memb
+00001270 b neighbor_memb_memb_mem
+0000126e b neighbor_memb_memb_used
+000095e4 t neighbor_state_changed
+00006de6 T netstack_process_ip_callback
+0000905a t new_dio_interval
+00006fd6 T packetbuf_addr
+0000292a B packetbuf_addrs
+000015ba b packetbuf_aligned
+00006fb6 T packetbuf_attr
+00006efe T packetbuf_attr_clear
+00006f88 T packetbuf_attr_copyfrom
+00006f66 T packetbuf_attr_copyto
+0000293a B packetbuf_attrs
+00006f26 T packetbuf_clear
+00006f38 T packetbuf_copyfrom
+00006e70 T packetbuf_copyto
+00006e54 T packetbuf_datalen
+00006e64 T packetbuf_dataptr
+00001d45 b packetbuf_hdr_len
+00006ec2 T packetbuf_hdralloc
+00006e5a T packetbuf_hdrlen
+00006e4e T packetbuf_hdrptr
+00006e2e T packetbuf_hdrreduce
+00006fe8 T packetbuf_holds_broadcast
+00001d50 b packetbuf_payload_len
+00001d46 b packetbuf_ptr
+00006fc0 T packetbuf_set_addr
+00006fac T packetbuf_set_attr
+00006e48 T packetbuf_set_datalen
+00006eb6 T packetbuf_totlen
+0000761a t process_dio_init_dag
+0000495a t process_thread_cc2420_process
+0000b150 t process_thread_simple_udp_process
+0000b5b2 t process_thread_tcpip_process
+0000b86e t process_thread_udp_client_process
+0000742a T queuebuf_free
+000073aa T queuebuf_init
+000073c6 T queuebuf_new_from_packetbuf
+000073bc T queuebuf_numfree
+00007454 T queuebuf_to_packetbuf
+00007418 T queuebuf_update_attr_from_packetbuf
+00008d00 t rank_via_nbr
+00008e02 t remove_neighbor
+
+[Network related strings]
+CSMA
+ipv6
+6lowpan
+nullnet
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+RPL Lite
+sicslowpan
+UDP client
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+DAO max rtx
+Simple UDP process
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00002296 b _ds6_neighbors_mem
+00001344 b _link_stats_mem
+00001b08 b _rpl_neighbors_mem
+00003ad0 T cc2420_arch_init
+0000257a B cc2420_authority_level_of_sender
+00003f20 t cc2420_cca
+0000d258 R cc2420_driver
+0000414c T cc2420_get_txpower
+00004430 T cc2420_init
+0000410a T cc2420_interrupt
+00002578 B cc2420_last_correlation
+00002574 B cc2420_last_rssi
+00003ef0 T cc2420_off
+00003e56 T cc2420_on
+00003e14 t cc2420_prepare
+0000110c D cc2420_process
+00003f74 t cc2420_read
+00003c78 t cc2420_receiving_packet
+0000416a T cc2420_rssi
+00003ede t cc2420_send
+000042d0 T cc2420_set_cca_threshold
+00004084 T cc2420_set_channel
+000040be T cc2420_set_pan_addr
+00004120 T cc2420_set_txpower
+0000257c B cc2420_sfd_counter
+0000257e B cc2420_sfd_end_time
+00002576 B cc2420_sfd_start_time
+00003604 T cc2420_timerb1_interrupt
+00003e78 t cc2420_transmit
+0000d2a0 R csma_driver
+00004976 T csma_output_init
+00004840 T csma_output_packet
+00004990 T csma_security_create_frame
+000049a0 T csma_security_parse_frame
+00001188 d dao_ack_handler
+00007622 t dao_ack_input
+00001180 d dao_handler
+00007652 t dao_input
+00002326 b defaultrouterlist_list
+00001204 d defaultroutermemb
+00002328 b defaultroutermemb_memb_mem
+00002560 b defaultroutermemb_memb_used
+00001178 d dio_handler
+000077aa t dio_input
+00001170 d dis_handler
+00007a3c t dis_input
+00001b48 b dis_timer
+00008764 t drop_route
+000011fa d ds6_neighbors_struct
+0000502c T frame802154_create
+00004fbe T frame802154_create_fcf
+00004dd8 T frame802154_get_pan_id
+00004dde T frame802154_has_panid
+00004f8c T frame802154_hdrlen
+00004f64 T frame802154_is_broadcast_addr
+00005176 T frame802154_parse
+000050ea T frame802154_parse_fcf
+0000d2ba R framer_802154
+00005370 T framer_802154_setup_params
+000081e4 t handle_dao_ack_timer
+00008286 t handle_dio_timer
+000083da t handle_dis_timer
+000081d2 t handle_unicast_dio_timer
+000068fe t init_dag
+00005686 T link_stats_from_lladdr
+000058c4 T link_stats_init
+000057a4 T link_stats_input_callback
+00005692 T link_stats_is_fresh
+000056c2 T link_stats_packet_sent
+0000589a T link_stats_reset
+0000114a d link_stats_struct
+000058f2 T linkaddr_cmp
+000058ea T linkaddr_copy
+000025a4 B linkaddr_node_addr
+0000d2c6 R linkaddr_null
+0000247d b mac_dsn
+00001b88 b mac_max_payload
+00001148 d mac_pan_id
+00005a08 T mac_sequence_init
+00005a2a T mac_sequence_is_duplicate
+00005a98 T mac_sequence_register_seqno
+00005a12 T mac_sequence_set_dsn
+0000239e b nbr
+00005dd0 t nbr_get_bit.constprop.3
+00007e1e t nbr_has_usable_link
+00007eb2 t nbr_is_acceptable_parent
+00007e0c t nbr_link_metric
+00007e32 t nbr_path_cost
+00005d50 t nbr_set_bit
+00005fda T nbr_table_add_lladdr
+00005f46 T nbr_table_get_from_lladdr
+000060d6 T nbr_table_get_lladdr
+00005f14 T nbr_table_head
+00005e68 T nbr_table_is_registered
+00001474 b nbr_table_keys_list
+000060b6 T nbr_table_lock
+00005ec6 T nbr_table_next
+00005e8a T nbr_table_register
+0000608c T nbr_table_remove
+000060c6 T nbr_table_unlock
+00001158 d neighbor_addr_mem
+00001488 b neighbor_addr_mem_memb_mem
+0000248e b neighbor_addr_mem_memb_used
+0000127e b neighbor_list_list
+00001118 d neighbor_memb
+00001280 b neighbor_memb_memb_mem
+00002467 b neighbor_memb_memb_used
+00008762 t neighbor_state_changed
+000060f6 T netstack_process_ip_callback
+00008204 t new_dio_interval
+00002940 B node_mac
+00006316 T packetbuf_addr
+000025ae B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000062fa T packetbuf_attr
+00006246 T packetbuf_attr_clear
+000062cc T packetbuf_attr_copyfrom
+000062aa T packetbuf_attr_copyto
+000025be B packetbuf_attrs
+0000626e T packetbuf_clear
+00006280 T packetbuf_copyfrom
+000061c4 T packetbuf_copyto
+000061a8 T packetbuf_datalen
+000061b8 T packetbuf_dataptr
+000024af b packetbuf_hdr_len
+0000620a T packetbuf_hdralloc
+000061ae T packetbuf_hdrlen
+000061a2 T packetbuf_hdrptr
+00006182 T packetbuf_hdrreduce
+00006324 T packetbuf_holds_broadcast
+00001b90 b packetbuf_payload_len
+00001b86 b packetbuf_ptr
+00006304 T packetbuf_set_addr
+000062f0 T packetbuf_set_attr
+0000619c T packetbuf_set_datalen
+000061fe T packetbuf_totlen
+00006976 t process_dio_init_dag
+0000402e t process_thread_cc2420_process
+0000a0e4 t process_thread_simple_udp_process
+0000a516 t process_thread_tcpip_process
+0000a83c t process_thread_udp_client_process
+000067a2 T queuebuf_free
+00006726 T queuebuf_init
+00006742 T queuebuf_new_from_packetbuf
+00006738 T queuebuf_numfree
+000067cc T queuebuf_to_packetbuf
+00006790 T queuebuf_update_attr_from_packetbuf
+00007eda t rank_via_nbr
+00007fc4 t remove_neighbor
+00008344 t resend_dao
+00006a26 T rpl_dag_get_root_ipaddr
+00007030 T rpl_dag_init
+00006f84 T rpl_dag_init_root
+00006a44 T rpl_dag_leave
+00006a9a T rpl_dag_periodic
+00006a8e T rpl_dag_poison_and_leave
+
+[Network related strings]
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+CSMA
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+DAO max rtx
+RPL Lite
+sicslowpan
+Simple UDP process
+UDP client
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Network related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000024d4 b _ds6_neighbors_mem
+00001332 b _link_stats_mem
+00001c88 b _rpl_neighbors_mem
+0000e34c R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+000028ce B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e350 R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+000028cc B cc2420_last_correlation
+000028c8 B cc2420_last_rssi
+00004804 T cc2420_off
+0000476a T cc2420_on
+00004380 T cc2420_port1_interrupt
+00004724 t cc2420_prepare
+00001100 D cc2420_process
+0000489c t cc2420_read
+00004568 t cc2420_receiving_packet
+00004b20 T cc2420_rssi
+000047f2 t cc2420_send
+00004c8a T cc2420_set_cca_threshold
+00004a38 T cc2420_set_channel
+00004a74 T cc2420_set_pan_addr
+00004ad6 T cc2420_set_txpower
+000028d0 B cc2420_sfd_counter
+000028d2 B cc2420_sfd_end_time
+000028ca B cc2420_sfd_start_time
+0000435a T cc2420_timerb1_interrupt
+0000478c t cc2420_transmit
+0000e390 R csma_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00005442 T csma_security_create_frame
+00005452 T csma_security_parse_frame
+000013dc B curr_log_level_framer
+000013e4 B curr_log_level_ipv6
+000013de B curr_log_level_mac
+000013e0 B curr_log_level_nullnet
+000013e8 B curr_log_level_rpl
+000013e6 B curr_log_level_tcpip
+000011c8 d dao_ack_handler
+000083ba t dao_ack_input
+000011c2 d dao_handler
+000083ea t dao_input
+000025f4 b defaultrouterlist_list
+00001224 d defaultroutermemb
+000025f8 b defaultroutermemb_memb_mem
+000025f6 b defaultroutermemb_memb_used
+000011bc d dio_handler
+00008556 t dio_input
+000011b6 d dis_handler
+00008810 t dis_input
+00001d08 b dis_timer
+000095e6 t drop_route
+0000121c d ds6_neighbors_struct
+00005c9a T frame802154_create
+00005c04 T frame802154_create_fcf
+00005a1a T frame802154_get_pan_id
+00005a20 T frame802154_has_panid
+00005bd2 T frame802154_hdrlen
+00005baa T frame802154_is_broadcast_addr
+00005e28 T frame802154_parse
+00005d6c T frame802154_parse_fcf
+0000e39e R framer_802154
+00006032 T framer_802154_setup_params
+0000903a t handle_dao_ack_timer
+000090e0 t handle_dio_timer
+0000923c t handle_dis_timer
+00009028 t handle_unicast_dio_timer
+00007596 t init_dag
+0000626c T link_stats_from_lladdr
+000064cc T link_stats_init
+0000639c T link_stats_input_callback
+00006278 T link_stats_is_fresh
+000062a8 T link_stats_packet_sent
+000064a2 T link_stats_reset
+0000113a d link_stats_struct
+000064fa T linkaddr_cmp
+000064f2 T linkaddr_copy
+000028e8 B linkaddr_node_addr
+0000e3a4 R linkaddr_null
+000013ea b mac_dsn
+00001d48 b mac_max_payload
+00001138 d mac_pan_id
+0000661c T mac_sequence_init
+0000663e T mac_sequence_is_duplicate
+000066c2 T mac_sequence_register_seqno
+00006626 T mac_sequence_set_dsn
+00002670 b nbr
+00006a70 t nbr_get_bit.constprop.3
+00008c34 t nbr_has_usable_link
+00008cd4 t nbr_is_acceptable_parent
+00008c22 t nbr_link_metric
+00008c48 t nbr_path_cost
+000069e4 t nbr_set_bit
+00006cb0 T nbr_table_add_lladdr
+00006c10 T nbr_table_get_from_lladdr
+00006dc4 T nbr_table_get_lladdr
+00006bda T nbr_table_head
+00006b1e T nbr_table_is_registered
+000014dc b nbr_table_keys_list
+00006da4 T nbr_table_lock
+00006b80 T nbr_table_next
+00006b40 T nbr_table_register
+00006d72 T nbr_table_remove
+00006db4 T nbr_table_unlock
+0000119a d neighbor_addr_mem
+00001510 b neighbor_addr_mem_memb_mem
+00001500 b neighbor_addr_mem_memb_used
+0000126c b neighbor_list_list
+0000110c d neighbor_memb
+00001270 b neighbor_memb_memb_mem
+0000126e b neighbor_memb_memb_used
+000095e4 t neighbor_state_changed
+00006de6 T netstack_process_ip_callback
+0000905a t new_dio_interval
+00006fd6 T packetbuf_addr
+000028f2 B packetbuf_addrs
+000015ba b packetbuf_aligned
+00006fb6 T packetbuf_attr
+00006efe T packetbuf_attr_clear
+00006f88 T packetbuf_attr_copyfrom
+00006f66 T packetbuf_attr_copyto
+00002902 B packetbuf_attrs
+00006f26 T packetbuf_clear
+00006f38 T packetbuf_copyfrom
+00006e70 T packetbuf_copyto
+00006e54 T packetbuf_datalen
+00006e64 T packetbuf_dataptr
+00001d45 b packetbuf_hdr_len
+00006ec2 T packetbuf_hdralloc
+00006e5a T packetbuf_hdrlen
+00006e4e T packetbuf_hdrptr
+00006e2e T packetbuf_hdrreduce
+00006fe8 T packetbuf_holds_broadcast
+00001d50 b packetbuf_payload_len
+00001d46 b packetbuf_ptr
+00006fc0 T packetbuf_set_addr
+00006fac T packetbuf_set_attr
+00006e48 T packetbuf_set_datalen
+00006eb6 T packetbuf_totlen
+0000761a t process_dio_init_dag
+0000495a t process_thread_cc2420_process
+0000b150 t process_thread_simple_udp_process
+0000b5b2 t process_thread_tcpip_process
+0000b828 t process_thread_udp_server_process
+0000742a T queuebuf_free
+000073aa T queuebuf_init
+000073c6 T queuebuf_new_from_packetbuf
+000073bc T queuebuf_numfree
+00007454 T queuebuf_to_packetbuf
+00007418 T queuebuf_update_attr_from_packetbuf
+00008d00 t rank_via_nbr
+00008e02 t remove_neighbor
+
+[Network related strings]
+CSMA
+ipv6
+6lowpan
+nullnet
+Poison routes
+Inconsistent DIO version
+Multicast DIS
+RPL Lite
+sicslowpan
+UDP server
+- Routing: %s
+- MAC: %s
+Link-layer address: 
+Tentative link-local IPv6 address: 
+DAO max rtx
+Simple UDP process

@@ -1,0 +1,579 @@
+=== 18. BINARY TRANSFORMATION ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 127K Mar  5 00:51 ./new-firmware.z1
+   text	   data	    bss	    dec	    hex	filename
+  71715	    336	   5706	  77757	  12fbd	./new-firmware.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 71K Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 198K Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.hex
+
+[Extract important sections]
+  [ 1] .far.text         PROGBITS        00010000 00cff2 004a78 00  AX  0   0  2
+  [ 2] .text             PROGBITS        00003100 0000f4 00976e 00  AX  0   0  2
+  [ 3] .rodata           PROGBITS        0000c870 009864 0035fd 00   A  0   0  4
+  [ 4] .data             PROGBITS        00001100 00ce62 000150 00  WA  0   0  2
+  [ 7] .vectors          PROGBITS        0000ffc0 00cfb2 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 38K Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 14K Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 336 Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 103K Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 72K Jun  7 18:50 readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  71715	    336	   5706	  77757	  12fbd	readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  71715	    336	   5706	  77757	  12fbd	readme-analysis/18-transform/new-firmware_z1/new-firmware_z1.strip-all.elf
+
+----------------------------------------
+FILE: ./udp-client.z1
+./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 99K Apr  2 08:05 ./udp-client.z1
+   text	   data	    bss	    dec	    hex	filename
+  42871	    336	   5922	  49129	   bfe9	./udp-client.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 52K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 119K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00003100 0000b4 00a1b8 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000d2b8 00a26c 00057f 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a7ec 000150 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a93c 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 41K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 1.4K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 336 Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 75K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 43K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  42871	    336	   5922	  49129	   bfe9	readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  42871	    336	   5922	  49129	   bfe9	readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-all.elf
+
+----------------------------------------
+FILE: ./udp-server.z1
+./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 98K Apr  2 08:05 ./udp-server.z1
+   text	   data	    bss	    dec	    hex	filename
+  42585	    336	   5866	  48787	   be93	./udp-server.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 52K Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 118K Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00003100 0000d4 00a0c6 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000d1c8 00a19c 000553 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a6f0 000150 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a840 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 41K Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 1.4K Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 336 Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 74K Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 43K Jun  7 18:50 readme-analysis/18-transform/udp-server_z1/udp-server_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  42585	    336	   5866	  48787	   be93	readme-analysis/18-transform/udp-server_z1/udp-server_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  42585	    336	   5866	  48787	   be93	readme-analysis/18-transform/udp-server_z1/udp-server_z1.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 649K Jun  4 15:10 extra-firmwares/base-demo.simplelink
+   text	   data	    bss	    dec	    hex	filename
+  71393	   1408	  12968	  85769	  14f09	extra-firmwares/base-demo.simplelink
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 352K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 201K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.hex
+
+[Extract important sections]
+  [ 1] .resetVecs        PROGBITS        00000000 010000 000040 00   A  0   0  4
+  [10] .text             PROGBITS        00000040 010040 010cd4 00  AX  0   0  4
+  [11] .rodata           PROGBITS        00010d14 020d14 00096d 00   A  0   0  4
+  [12] .data             PROGBITS        20001b20 021b20 0004a8 00  WA  0   0  4
+-rwxr-xr-x 1 majnun majnun 68K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.text.bin
+-rwxr-xr-x 1 majnun majnun 2.4K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.rodata.bin
+-rwxr-xr-x 1 majnun majnun 1.2K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.data.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.vectors.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 290K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 226K Jun  7 18:50 readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  71393	   1408	  12968	  85769	  14f09	readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  71393	   1408	  12968	  85769	  14f09	readme-analysis/18-transform/base-demo_simplelink/base-demo_simplelink.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 129K Jun  4 15:10 extra-firmwares/hardworker.z1
+   text	   data	    bss	    dec	    hex	filename
+  73564	    374	   5698	  79636	  13714	extra-firmwares/hardworker.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 73K Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 204K Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.hex
+
+[Extract important sections]
+  [ 1] .far.text         PROGBITS        00010000 00cfd2 0051d4 00  AX  0   0  2
+  [ 2] .text             PROGBITS        00003100 0000d4 009318 00  AX  0   0  2
+  [ 3] .rodata           PROGBITS        0000c418 0093ec 003a30 00   A  0   0  4
+  [ 4] .data             PROGBITS        00001100 00ce1c 000176 00  WA  0   0  2
+  [ 7] .vectors          PROGBITS        0000ffc0 00cf92 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 37K Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 15K Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 374 Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 105K Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 73K Jun  7 18:50 readme-analysis/18-transform/hardworker_z1/hardworker_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  73564	    374	   5698	  79636	  13714	readme-analysis/18-transform/hardworker_z1/hardworker_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  73564	    374	   5698	  79636	  13714	readme-analysis/18-transform/hardworker_z1/hardworker_z1.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 91K Jun  4 15:10 extra-firmwares/hello-world.sky
+   text	   data	    bss	    dec	    hex	filename
+  42237	    324	   6714	  49275	   c07b	extra-firmwares/hello-world.sky
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 48K Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 117K Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00004000 0000b4 00a040 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000e040 00a0f4 00049d 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a592 000144 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00a6d6 000020 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 41K Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.text.bin
+-rwxr-xr-x 1 majnun majnun 1.2K Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.rodata.bin
+-rwxr-xr-x 1 majnun majnun 324 Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.data.bin
+-rwxr-xr-x 1 majnun majnun 32 Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 70K Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 43K Jun  7 18:50 readme-analysis/18-transform/hello-world_sky/hello-world_sky.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  42237	    324	   6714	  49275	   c07b	readme-analysis/18-transform/hello-world_sky/hello-world_sky.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  42237	    324	   6714	  49275	   c07b	readme-analysis/18-transform/hello-world_sky/hello-world_sky.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 96K Jun  4 15:10 extra-firmwares/hello-world.z1
+   text	   data	    bss	    dec	    hex	filename
+  41512	    328	   5676	  47516	   b99c	extra-firmwares/hello-world.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 52K Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 115K Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00003100 0000d4 009d32 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000ce34 009e08 0004b6 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a2be 000148 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a406 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 40K Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 1.2K Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 328 Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 72K Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 42K Jun  7 18:50 readme-analysis/18-transform/hello-world_z1/hello-world_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  41512	    328	   5676	  47516	   b99c	readme-analysis/18-transform/hello-world_z1/hello-world_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  41512	    328	   5676	  47516	   b99c	readme-analysis/18-transform/hello-world_z1/hello-world_z1.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 407K Jun  4 15:10 extra-firmwares/mtype5756516.cooja
+   text	   data	    bss	    dec	    hex	filename
+ 324415	   9488	 292376	 626279	  98e67	extra-firmwares/mtype5756516.cooja
+
+[ELF -> raw binary]
+-rw-r--r-- 1 majnun majnun 338K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 918K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.hex
+
+[Extract important sections]
+  [ 2] .data             PROGBITS         0000000000053ec0  00052ec0
+  [16] .text             PROGBITS         0000000000014b00  00014b00
+  [18] .rodata           PROGBITS         0000000000044000  00044000
+  [23] .data.rel.ro      PROGBITS         00000000000523c0  000513c0
+-rw-r--r-- 1 majnun majnun 187K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.text.bin
+-rw-r--r-- 1 majnun majnun 6.0K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.rodata.bin
+-rw-r--r-- 1 majnun majnun 2.5K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.data.bin
+-rw-r--r-- 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.vectors.bin
+-rw-r--r-- 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 402K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 337K Jun  7 18:50 readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+ 324415	   9488	 292376	 626279	  98e67	readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+ 324415	   9488	 292376	 626279	  98e67	readme-analysis/18-transform/mtype5756516_cooja/mtype5756516_cooja.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 58K Jun  4 15:10 extra-firmwares/nullnet-broadcast.z1
+   text	   data	    bss	    dec	    hex	filename
+  17866	    166	   2240	  20272	   4f30	extra-firmwares/nullnet-broadcast.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 52K Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 50K Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00003100 0000d4 004196 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        00007298 00426c 0003f4 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 004660 0000a6 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 004706 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 17K Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 1012 Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 166 Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 39K Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 19K Jun  7 18:50 readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  17866	    166	   2240	  20272	   4f30	readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  17866	    166	   2240	  20272	   4f30	readme-analysis/18-transform/nullnet-broadcast_z1/nullnet-broadcast_z1.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 53K Jun  4 15:10 extra-firmwares/nullnet-unicast-u50.sky
+   text	   data	    bss	    dec	    hex	filename
+  17793	    310	   2814	  20917	   51b5	extra-firmwares/nullnet-unicast-u50.sky
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 48K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 50K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00004000 0000d4 0041ea 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        000081ec 0042c0 000377 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 004638 000136 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00476e 000020 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 17K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.text.bin
+-rwxr-xr-x 1 majnun majnun 887 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.rodata.bin
+-rwxr-xr-x 1 majnun majnun 310 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.data.bin
+-rwxr-xr-x 1 majnun majnun 32 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 37K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 19K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  17793	    310	   2814	  20917	   51b5	readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  17793	    310	   2814	  20917	   51b5	readme-analysis/18-transform/nullnet-unicast-u50_sky/nullnet-unicast-u50_sky.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 111K Jun  4 15:10 extra-firmwares/nullnet-unicast.sky
+   text	   data	    bss	    dec	    hex	filename
+  29171	   4426	   3086	  36683	   8f4b	extra-firmwares/nullnet-unicast.sky
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 48K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 93K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00004000 0000b4 006b0c 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000ab0c 006bc0 0006c7 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 007288 00114a 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 0083d2 000020 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 27K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.text.bin
+-rwxr-xr-x 1 majnun majnun 1.7K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.rodata.bin
+-rwxr-xr-x 1 majnun majnun 4.4K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.data.bin
+-rwxr-xr-x 1 majnun majnun 32 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 54K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 34K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  29171	   4426	   3086	  36683	   8f4b	readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  29171	   4426	   3086	  36683	   8f4b	readme-analysis/18-transform/nullnet-unicast_sky/nullnet-unicast_sky.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 116K Jun  4 15:10 extra-firmwares/nullnet-unicast.z1
+   text	   data	    bss	    dec	    hex	filename
+  28097	   2488	   2632	  33217	   81c1	extra-firmwares/nullnet-unicast.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 52K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 85K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00003100 0000d4 00676e 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        00009870 006844 000613 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 006e58 0009b8 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 007810 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 26K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 1.6K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 2.5K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 53K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 31K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  28097	   2488	   2632	  33217	   81c1	readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  28097	   2488	   2632	  33217	   81c1	readme-analysis/18-transform/nullnet-unicast_z1/nullnet-unicast_z1.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 58K Jun  4 15:10 extra-firmwares/nullnet-unicast_eleco.sky
+   text	   data	    bss	    dec	    hex	filename
+  17883	   4626	   2998	  25507	   63a3	extra-firmwares/nullnet-unicast_eleco.sky
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 48K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 62K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00004000 0000d4 0041c2 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        000081c4 004298 0003f9 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 004692 001212 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 0058a4 000020 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 17K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.text.bin
+-rwxr-xr-x 1 majnun majnun 1017 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.rodata.bin
+-rwxr-xr-x 1 majnun majnun 4.6K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.data.bin
+-rwxr-xr-x 1 majnun majnun 32 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 42K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 23K Jun  7 18:50 readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  17883	   4626	   2998	  25507	   63a3	readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  17883	   4626	   2998	  25507	   63a3	readme-analysis/18-transform/nullnet-unicast_eleco_sky/nullnet-unicast_eleco_sky.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 93K Jun  4 15:10 extra-firmwares/udp-client.sky
+   text	   data	    bss	    dec	    hex	filename
+  43386	    330	   7024	  50740	   c634	extra-firmwares/udp-client.sky
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 48K Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 121K Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00004000 0000d4 00a432 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000e434 00a508 000528 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00aa30 00014a 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00ab7a 000020 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 42K Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.text.bin
+-rwxr-xr-x 1 majnun majnun 1.3K Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.rodata.bin
+-rwxr-xr-x 1 majnun majnun 330 Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.data.bin
+-rwxr-xr-x 1 majnun majnun 32 Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 72K Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 44K Jun  7 18:50 readme-analysis/18-transform/udp-client_sky/udp-client_sky.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  43386	    330	   7024	  50740	   c634	readme-analysis/18-transform/udp-client_sky/udp-client_sky.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  43386	    330	   7024	  50740	   c634	readme-analysis/18-transform/udp-client_sky/udp-client_sky.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 98K Jun  4 15:10 extra-firmwares/udp-client.z1
+   text	   data	    bss	    dec	    hex	filename
+  42542	    336	   5888	  48766	   be7e	extra-firmwares/udp-client.z1
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 52K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 118K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00003100 0000b4 00a0b4 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000d1b4 00a168 00053a 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a6a2 000150 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffc0 00a7f2 000040 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 41K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.text.bin
+-rwxr-xr-x 1 majnun majnun 1.4K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.rodata.bin
+-rwxr-xr-x 1 majnun majnun 336 Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.data.bin
+-rwxr-xr-x 1 majnun majnun 64 Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 74K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 43K Jun  7 18:50 readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  42542	    336	   5888	  48766	   be7e	readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  42542	    336	   5888	  48766	   be7e	readme-analysis/18-transform/udp-client_z1/udp-client_z1.strip-all.elf
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Original size]
+-rw-r--r-- 1 majnun majnun 92K Jun  4 15:10 extra-firmwares/udp-server.sky
+   text	   data	    bss	    dec	    hex	filename
+  43000	    330	   6968	  50298	   c47a	extra-firmwares/udp-server.sky
+
+[ELF -> raw binary]
+-rwxr-xr-x 1 majnun majnun 48K Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.bin
+
+[ELF -> Intel HEX]
+-rw-r--r-- 1 majnun majnun 120K Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.hex
+
+[Extract important sections]
+  [ 1] .text             PROGBITS        00004000 0000d4 00a2f6 00  AX  0   0  2
+  [ 2] .rodata           PROGBITS        0000e2f8 00a3cc 0004e2 00   A  0   0  4
+  [ 3] .data             PROGBITS        00001100 00a8ae 00014a 00  WA  0   0  2
+  [ 6] .vectors          PROGBITS        0000ffe0 00a9f8 000020 00  AX  0   0  1
+-rwxr-xr-x 1 majnun majnun 41K Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.text.bin
+-rwxr-xr-x 1 majnun majnun 1.3K Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.rodata.bin
+-rwxr-xr-x 1 majnun majnun 330 Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.data.bin
+-rwxr-xr-x 1 majnun majnun 32 Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.vectors.bin
+-rwxr-xr-x 1 majnun majnun 0 Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.resetVecs.bin
+
+[Strip / debug removal]
+-rwxr-xr-x 1 majnun majnun 71K Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.strip-debug.elf
+-rw-r--r-- 1 majnun majnun 43K Jun  7 18:50 readme-analysis/18-transform/udp-server_sky/udp-server_sky.strip-all.elf
+
+[After strip size info]
+   text	   data	    bss	    dec	    hex	filename
+  43000	    330	   6968	  50298	   c47a	readme-analysis/18-transform/udp-server_sky/udp-server_sky.strip-debug.elf
+   text	   data	    bss	    dec	    hex	filename
+  43000	    330	   6968	  50298	   c47a	readme-analysis/18-transform/udp-server_sky/udp-server_sky.strip-all.elf

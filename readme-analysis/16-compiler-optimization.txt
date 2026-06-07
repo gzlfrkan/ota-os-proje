@@ -1,0 +1,1605 @@
+=== 16. COMPILER / OPTIMIZATION ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000038f2 t accm_read_axis.part.0
+000066e8 t entry_is_allowed.isra.2
+00006544 t nbr_get_bit.constprop.3
+00012908 t node_matches_address.part.0
+0000c5b8 t packet_input.part.2
+
+[Function symbol count]
+530
+
+[Possible inlining / optimized helper function samples]
+000038f2 t accm_read_axis.part.0
+00013eba t call_vuprintf
+000066e8 t entry_is_allowed.isra.2
+0001484c T memcpy
+00014934 T memmove
+00014a1c T memset
+00006544 t nbr_get_bit.constprop.3
+00012908 t node_matches_address.part.0
+0000c5b8 t packet_input.part.2
+00013e88 T printf
+00013ef0 T snprintf
+00014082 T vuprintf
+
+[Branch / loop / register allocation samples]
+   10026:	0f 93       	tst	r15		
+   10028:	12 20       	jnz	$+38     	;abs 0x1004e
+   1002a:	a2 93 66 11 	cmp	#2,	&0x1166	;r3 As==10
+   1004c:	5e 3c       	jmp	$+190    	;abs 0x1010a
+   1008a:	3e 90 c0 00 	cmp	#192,	r14	;#0x00c0
+   1008e:	04 24       	jz	$+10     	;abs 0x10098
+   10090:	3e 90 e0 00 	cmp	#224,	r14	;#0x00e0
+   10094:	91 20       	jnz	$+292    	;abs 0x101b8
+   10096:	4f 3c       	jmp	$+160    	;abs 0x10136
+   100ac:	b2 90 03 00 	cmp	#3,	&0x1166	;#0x0003
+   100e4:	7f 93       	cmp.b	#-1,	r15	;r3 As==11
+   100e6:	15 20       	jnz	$+44     	;abs 0x10112
+   100e8:	92 93 66 11 	cmp	#1,	&0x1166	;r3 As==01
+   10134:	4b 3c       	jmp	$+152    	;abs 0x101cc
+   1015c:	7f 93       	cmp.b	#-1,	r15	;r3 As==11
+   1015e:	13 20       	jnz	$+40     	;abs 0x10186
+   10160:	92 93 66 11 	cmp	#1,	&0x1166	;r3 As==01
+   10184:	65 3c       	jmp	$+204    	;abs 0x10250
+   1019e:	8f 97 14 00 	cmp	r7,	20(r15)	;0x0014(r15)
+   101e2:	7d 90 f0 ff 	cmp.b	#-16,	r13	;#0xfff0
+   101e6:	07 20       	jnz	$+16     	;abs 0x101f6
+   101fa:	5f 93       	cmp.b	#1,	r15	;r3 As==01
+   101fc:	13 20       	jnz	$+40     	;abs 0x10224
+   101fe:	b2 90 03 00 	cmp	#3,	&0x1166	;#0x0003
+   10222:	1b 3c       	jmp	$+56     	;abs 0x1025a
+   10224:	6f 93       	cmp.b	#2,	r15	;r3 As==10
+   10228:	92 93 66 11 	cmp	#1,	&0x1166	;r3 As==01
+   1026a:	7e 90 60 00 	cmp.b	#96,	r14	;#0x0060
+   1026e:	02 24       	jz	$+6      	;abs 0x10274
+   10274:	a2 92 66 11 	cmp	#4,	&0x1166	;r2 As==10
+   102a4:	0a 9d       	cmp	r13,	r10	
+   102bc:	49 93       	tst.b	r9		
+   102c0:	a2 92 66 11 	cmp	#4,	&0x1166	;r2 As==10
+   102f0:	4e 93       	tst.b	r14		
+   102f2:	69 20       	jnz	$+212    	;abs 0x103c6
+   102f8:	4f 93       	tst.b	r15		
+   102fa:	2b 20       	jnz	$+88     	;abs 0x10352
+   10304:	0a 9f       	cmp	r15,	r10	
+   10350:	66 3c       	jmp	$+206    	;abs 0x1041e
+   10362:	0a 9f       	cmp	r15,	r10	
+   10366:	a2 93 66 11 	cmp	#2,	&0x1166	;r3 As==10
+   103c4:	2c 3c       	jmp	$+90     	;abs 0x1041e
+   103c6:	4f 93       	tst.b	r15		
+   103c8:	23 20       	jnz	$+72     	;abs 0x10410
+   103d6:	0a 9f       	cmp	r15,	r10	
+   1040e:	07 3c       	jmp	$+16     	;abs 0x1041e
+   10426:	23 20       	jnz	$+72     	;abs 0x1046e
+   10434:	0a 9f       	cmp	r15,	r10	
+   10440:	a2 92 66 11 	cmp	#4,	&0x1166	;r2 As==10
+   10472:	05 24       	jz	$+12     	;abs 0x1047e
+   1047c:	0f 3c       	jmp	$+32     	;abs 0x1049c
+   1048a:	0a 9e       	cmp	r14,	r10	
+   104a8:	36 24       	jz	$+110    	;abs 0x10516
+   104aa:	49 93       	tst.b	r9		
+   104bc:	01 3c       	jmp	$+4      	;abs 0x104c0
+   104c2:	44 93       	tst.b	r4		
+   104c4:	19 24       	jz	$+52     	;abs 0x104f8
+   104ce:	0f 93       	tst	r15		
+   104d0:	13 20       	jnz	$+40     	;abs 0x104f8
+   104d2:	92 93 66 11 	cmp	#1,	&0x1166	;r3 As==01
+
+----------------------------------------
+FILE: ./udp-client.z1
+./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000038f2 t accm_read_axis.part.0
+00006036 t entry_is_allowed.isra.2
+00005e92 t nbr_get_bit.constprop.3
+0000b896 t node_matches_address.part.0
+0000a5ba t packet_input.part.3
+
+[Function symbol count]
+525
+
+[Possible inlining / optimized helper function samples]
+000038f2 t accm_read_axis.part.0
+0000c6fa t call_vuprintf
+00006036 t entry_is_allowed.isra.2
+0000d08c T memcpy
+0000d174 T memmove
+0000d25c T memset
+00005e92 t nbr_get_bit.constprop.3
+0000b896 t node_matches_address.part.0
+0000a5ba t packet_input.part.3
+0000c6c8 T printf
+0000c730 T snprintf
+0000c8c2 T vuprintf
+
+[Branch / loop / register allocation samples]
+    3114:	0f 93       	tst	r15		
+    3116:	08 24       	jz	$+18     	;abs 0x3128
+    3126:	f8 23       	jnz	$-14     	;abs 0x3118
+    312c:	0f 93       	tst	r15		
+    312e:	07 24       	jz	$+16     	;abs 0x313e
+    313c:	f9 23       	jnz	$-12     	;abs 0x3130
+    3178:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    319c:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    31c6:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    31f0:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    321a:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3244:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    326e:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3298:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32be:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32ce:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32fe:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3324:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    332c:	0b 93       	tst	r11		
+    332e:	03 24       	jz	$+8      	;abs 0x3336
+    3334:	01 3c       	jmp	$+4      	;abs 0x3338
+    333c:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3366:	4b 93       	tst.b	r11		
+    3368:	f9 23       	jnz	$-12     	;abs 0x335c
+    336e:	f6 3f       	jmp	$-18     	;abs 0x335c
+    3374:	fd 3f       	jmp	$-4      	;abs 0x3370
+    3376:	30 40 7a 33 	br	#0x337a	
+    3382:	07 3c       	jmp	$+16     	;abs 0x3392
+    3392:	0c 93       	tst	r12		
+    3394:	f7 23       	jnz	$-16     	;abs 0x3384
+    3396:	0d 93       	tst	r13		
+    3398:	f5 23       	jnz	$-20     	;abs 0x3384
+    33ae:	0e 9d       	cmp	r13,	r14	
+    33b8:	f8 23       	jnz	$-14     	;abs 0x33aa
+    33c6:	0f 93       	tst	r15		
+    33d2:	0e 93       	tst	r14		
+    33e6:	02 24       	jz	$+6      	;abs 0x33ec
+    33ee:	02 24       	jz	$+6      	;abs 0x33f4
+    3414:	0d 9b       	cmp	r11,	r13	
+    3418:	02 20       	jnz	$+6      	;abs 0x341e
+    341a:	0c 9a       	cmp	r10,	r12	
+    3426:	f2 23       	jnz	$-26     	;abs 0x340c
+    343a:	0f 93       	tst	r15		
+    344a:	0d 93       	tst	r13		
+    345e:	04 24       	jz	$+10     	;abs 0x3468
+    346a:	04 24       	jz	$+10     	;abs 0x3474
+    34a8:	0b 97       	cmp	r7,	r11	
+    34ac:	08 20       	jnz	$+18     	;abs 0x34be
+    34ae:	0a 96       	cmp	r6,	r10	
+    34b2:	05 20       	jnz	$+12     	;abs 0x34be
+    34b4:	09 95       	cmp	r5,	r9	
+    34b8:	02 20       	jnz	$+6      	;abs 0x34be
+    34ba:	08 94       	cmp	r4,	r8	
+    34cc:	e5 23       	jnz	$-52     	;abs 0x3498
+    3546:	15 24       	jz	$+44     	;abs 0x3572
+    354c:	12 20       	jnz	$+38     	;abs 0x3572
+    3556:	0f 93       	tst	r15		
+    3558:	32 24       	jz	$+102    	;abs 0x35be
+    3570:	18 3c       	jmp	$+50     	;abs 0x35a2
+    3576:	4f 93       	tst.b	r15		
+
+----------------------------------------
+FILE: ./udp-server.z1
+./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000038f2 t accm_read_axis.part.0
+00006036 t entry_is_allowed.isra.2
+00005e92 t nbr_get_bit.constprop.3
+0000b7a4 t node_matches_address.part.0
+0000a5ba t packet_input.part.3
+
+[Function symbol count]
+525
+
+[Possible inlining / optimized helper function samples]
+000038f2 t accm_read_axis.part.0
+0000c608 t call_vuprintf
+00006036 t entry_is_allowed.isra.2
+0000cf9a T memcpy
+0000d082 T memmove
+0000d16a T memset
+00005e92 t nbr_get_bit.constprop.3
+0000b7a4 t node_matches_address.part.0
+0000a5ba t packet_input.part.3
+0000c5d6 T printf
+0000c63e T snprintf
+0000c7d0 T vuprintf
+
+[Branch / loop / register allocation samples]
+    3114:	0f 93       	tst	r15		
+    3116:	08 24       	jz	$+18     	;abs 0x3128
+    3126:	f8 23       	jnz	$-14     	;abs 0x3118
+    312c:	0f 93       	tst	r15		
+    312e:	07 24       	jz	$+16     	;abs 0x313e
+    313c:	f9 23       	jnz	$-12     	;abs 0x3130
+    3178:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    319c:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    31c6:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    31f0:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    321a:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3244:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    326e:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3298:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32be:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32ce:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32fe:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3324:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    332c:	0b 93       	tst	r11		
+    332e:	03 24       	jz	$+8      	;abs 0x3336
+    3334:	01 3c       	jmp	$+4      	;abs 0x3338
+    333c:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3366:	4b 93       	tst.b	r11		
+    3368:	f9 23       	jnz	$-12     	;abs 0x335c
+    336e:	f6 3f       	jmp	$-18     	;abs 0x335c
+    3374:	fd 3f       	jmp	$-4      	;abs 0x3370
+    3376:	30 40 7a 33 	br	#0x337a	
+    3382:	07 3c       	jmp	$+16     	;abs 0x3392
+    3392:	0c 93       	tst	r12		
+    3394:	f7 23       	jnz	$-16     	;abs 0x3384
+    3396:	0d 93       	tst	r13		
+    3398:	f5 23       	jnz	$-20     	;abs 0x3384
+    33ae:	0e 9d       	cmp	r13,	r14	
+    33b8:	f8 23       	jnz	$-14     	;abs 0x33aa
+    33c6:	0f 93       	tst	r15		
+    33d2:	0e 93       	tst	r14		
+    33e6:	02 24       	jz	$+6      	;abs 0x33ec
+    33ee:	02 24       	jz	$+6      	;abs 0x33f4
+    3414:	0d 9b       	cmp	r11,	r13	
+    3418:	02 20       	jnz	$+6      	;abs 0x341e
+    341a:	0c 9a       	cmp	r10,	r12	
+    3426:	f2 23       	jnz	$-26     	;abs 0x340c
+    343a:	0f 93       	tst	r15		
+    344a:	0d 93       	tst	r13		
+    345e:	04 24       	jz	$+10     	;abs 0x3468
+    346a:	04 24       	jz	$+10     	;abs 0x3474
+    34a8:	0b 97       	cmp	r7,	r11	
+    34ac:	08 20       	jnz	$+18     	;abs 0x34be
+    34ae:	0a 96       	cmp	r6,	r10	
+    34b2:	05 20       	jnz	$+12     	;abs 0x34be
+    34b4:	09 95       	cmp	r5,	r9	
+    34b8:	02 20       	jnz	$+6      	;abs 0x34be
+    34ba:	08 94       	cmp	r4,	r8	
+    34cc:	e5 23       	jnz	$-52     	;abs 0x3498
+    3546:	15 24       	jz	$+44     	;abs 0x3572
+    354c:	12 20       	jnz	$+38     	;abs 0x3572
+    3556:	0f 93       	tst	r15		
+    3558:	32 24       	jz	$+102    	;abs 0x35be
+    3570:	18 3c       	jmp	$+50     	;abs 0x35a2
+    3576:	4f 93       	tst.b	r15		
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
+  [    4c]  GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204]
+  [    ca]  GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]
+
+
+[Compiler / toolchain strings]
+GCC: (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
+GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204]
+GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+
+[Optimization-related symbols]
+00008a28 t ClockP_startup.part.1
+0000c1cc t I2CCC26XX_initHw.isra.11
+0000c00c t I2CCC26XX_primeTransfer.isra.10
+0000a1ac t RF_pendCmd.part.17
+000092f8 t SwiP_construct.part.0
+00008ef0 t TimerP_construct.part.0
+0000ebc4 t UARTCC26XX_initHw.isra.5
+00002364 t call_process.part.0
+0000fefc t check_etimer.part.0
+00004cac t cmd_rx_restore.part.0
+000044a4 t ctimer_set.constprop.0
+00001dd8 t entry_is_allowed.isra.0
+0000db14 t flushFifos.isra.6
+000102dc t framer_802154_setup_params.part.0
+0000db58 t initHw.isra.8
+00001c5c t nbr_get_bit.constprop.0
+00007e7c t node_matches_address.part.0
+0000eaf8 t readData.isra.2
+0000eb3c t readData2RingBuf.isra.3
+0000eb74 t startTxFifoEmptyClk.isra.4
+0000eab8 t writeData.isra.1
+
+[Function symbol count]
+761
+
+[Possible inlining / optimized helper function samples]
+00008a28 t ClockP_startup.part.1
+0000c1cc t I2CCC26XX_initHw.isra.11
+0000c00c t I2CCC26XX_primeTransfer.isra.10
+0000a1ac t RF_pendCmd.part.17
+000092f8 t SwiP_construct.part.0
+00008ef0 t TimerP_construct.part.0
+0000ebc4 t UARTCC26XX_initHw.isra.5
+00002364 t call_process.part.0
+0000fefc t check_etimer.part.0
+00004cac t cmd_rx_restore.part.0
+000044a4 t ctimer_set.constprop.0
+00001dd8 t entry_is_allowed.isra.0
+0000db14 t flushFifos.isra.6
+000102dc t framer_802154_setup_params.part.0
+0000db58 t initHw.isra.8
+00010c58 T memcpy
+00010c74 T memmove
+00010ca8 T memset
+00001c5c t nbr_get_bit.constprop.0
+00007e7c t node_matches_address.part.0
+00002344 T printf
+0000eaf8 t readData.isra.2
+0000eb3c t readData2RingBuf.isra.3
+00010862 T snprintf
+0000eb74 t startTxFifoEmptyClk.isra.4
+000003d4 T strlen
+00006644 T vsnprintf
+0000eab8 t writeData.isra.1
+
+[Branch / loop / register allocation samples]
+      40:	b97b      	cbnz	r3, 62 <__aeabi_ldivmod+0x22>
+      42:	b972      	cbnz	r2, 62 <__aeabi_ldivmod+0x22>
+      44:	2900      	cmp	r1, #0
+      50:	bf08      	it	eq
+      6a:	2900      	cmp	r1, #0
+      6e:	2b00      	cmp	r3, #0
+      88:	2b00      	cmp	r3, #0
+      e0:	b953      	cbnz	r3, f8 <__aeabi_uldivmod+0x18>
+      e2:	b94a      	cbnz	r2, f8 <__aeabi_uldivmod+0x18>
+      e4:	2900      	cmp	r1, #0
+      e6:	bf08      	it	eq
+     11c:	2b00      	cmp	r3, #0
+     11e:	f040 8082 	bne.w	226 <__udivmoddi4+0x116>
+     122:	428a      	cmp	r2, r1
+     12c:	b14a      	cbz	r2, 142 <__udivmoddi4+0x32>
+     15a:	4298      	cmp	r0, r3
+     168:	4298      	cmp	r0, r3
+     188:	42a1      	cmp	r1, r4
+     196:	42a1      	cmp	r1, r4
+     1a8:	b11e      	cbz	r6, 1b2 <__udivmoddi4+0xa2>
+     1b6:	b902      	cbnz	r2, 1ba <__udivmoddi4+0xaa>
+     1be:	2a00      	cmp	r2, #0
+     1c0:	d14f      	bne.n	262 <__udivmoddi4+0x152>
+     1e0:	42ab      	cmp	r3, r5
+     1ec:	42ab      	cmp	r3, r5
+     208:	45a0      	cmp	r8, r4
+     214:	45a0      	cmp	r8, r4
+     226:	428b      	cmp	r3, r1
+     22a:	2e00      	cmp	r6, #0
+     22c:	f000 80af 	beq.w	38e <__udivmoddi4+0x27e>
+     240:	2900      	cmp	r1, #0
+     242:	d14b      	bne.n	2dc <__udivmoddi4+0x1cc>
+     244:	42ab      	cmp	r3, r5
+     248:	4282      	cmp	r2, r0
+     258:	2e00      	cmp	r6, #0
+     25a:	d0aa      	beq.n	1b2 <__udivmoddi4+0xa2>
+     290:	42ab      	cmp	r3, r5
+     2a2:	42ab      	cmp	r3, r5
+     2c0:	42ab      	cmp	r3, r5
+     2cc:	42ab      	cmp	r3, r5
+     310:	45aa      	cmp	sl, r5
+     324:	45aa      	cmp	sl, r5
+     344:	45a0      	cmp	r8, r4
+     350:	45a0      	cmp	r8, r4
+     364:	454c      	cmp	r4, r9
+     36c:	d016      	beq.n	39c <__udivmoddi4+0x28c>
+     36e:	b15e      	cbz	r6, 388 <__udivmoddi4+0x278>
+     39c:	4543      	cmp	r3, r8
+     3da:	2a00      	cmp	r2, #0
+     3dc:	d1fb      	bne.n	3d6 <strlen+0x2>
+     4a6:	d056      	beq.n	556 <rfDriverCallback+0xce>
+     4ae:	f5b2 5fc1 	cmp.w	r2, #6176	@ 0x1820
+     4b6:	d007      	beq.n	4c8 <rfDriverCallback+0x40>
+     4bc:	428a      	cmp	r2, r1
+     4be:	d018      	beq.n	4f2 <rfDriverCallback+0x6a>
+     4c4:	428a      	cmp	r2, r1
+     4c6:	d128      	bne.n	51a <rfDriverCallback+0x92>
+     4cc:	d025      	beq.n	51a <rfDriverCallback+0x92>
+     4d4:	b183      	cbz	r3, 4f8 <rfDriverCallback+0x70>
+     51c:	b153      	cbz	r3, 534 <rfDriverCallback+0xac>
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+00003928 t accm_read_axis.part.0
+0000a3e0 t ctimer_set.constprop.3
+0000679e t entry_is_allowed.isra.2
+00006600 t nbr_get_bit.constprop.3
+000130f0 t node_matches_address.part.0
+0001172c t packet_input.part.2
+
+[Function symbol count]
+519
+
+[Possible inlining / optimized helper function samples]
+00003928 t accm_read_axis.part.0
+00014616 t call_vuprintf
+0000a3e0 t ctimer_set.constprop.3
+0000679e t entry_is_allowed.isra.2
+00014fa8 T memcpy
+00015090 T memmove
+00015178 T memset
+00006600 t nbr_get_bit.constprop.3
+000130f0 t node_matches_address.part.0
+0001172c t packet_input.part.2
+000145e4 T printf
+0001464c T snprintf
+000147de T vuprintf
+
+[Branch / loop / register allocation samples]
+   10026:	0f 93       	tst	r15		
+   10028:	12 20       	jnz	$+38     	;abs 0x1004e
+   1002a:	a2 93 8c 11 	cmp	#2,	&0x118c	;r3 As==10
+   1004c:	5e 3c       	jmp	$+190    	;abs 0x1010a
+   1008a:	3e 90 c0 00 	cmp	#192,	r14	;#0x00c0
+   1008e:	04 24       	jz	$+10     	;abs 0x10098
+   10090:	3e 90 e0 00 	cmp	#224,	r14	;#0x00e0
+   10094:	98 20       	jnz	$+306    	;abs 0x101c6
+   10096:	53 3c       	jmp	$+168    	;abs 0x1013e
+   100ac:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+   100e4:	7f 93       	cmp.b	#-1,	r15	;r3 As==11
+   100e6:	15 20       	jnz	$+44     	;abs 0x10112
+   100e8:	92 93 8c 11 	cmp	#1,	&0x118c	;r3 As==01
+   1013c:	4e 3c       	jmp	$+158    	;abs 0x101da
+   10164:	7f 93       	cmp.b	#-1,	r15	;r3 As==11
+   10166:	13 20       	jnz	$+40     	;abs 0x1018e
+   10168:	92 93 8c 11 	cmp	#1,	&0x118c	;r3 As==01
+   1018c:	68 3c       	jmp	$+210    	;abs 0x1025e
+   101ac:	8f 97 0c 00 	cmp	r7,	12(r15)	;0x000c(r15)
+   101f0:	7d 90 f0 ff 	cmp.b	#-16,	r13	;#0xfff0
+   101f4:	07 20       	jnz	$+16     	;abs 0x10204
+   10208:	5f 93       	cmp.b	#1,	r15	;r3 As==01
+   1020a:	13 20       	jnz	$+40     	;abs 0x10232
+   1020c:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+   10230:	1b 3c       	jmp	$+56     	;abs 0x10268
+   10232:	6f 93       	cmp.b	#2,	r15	;r3 As==10
+   10236:	92 93 8c 11 	cmp	#1,	&0x118c	;r3 As==01
+   10278:	7e 90 60 00 	cmp.b	#96,	r14	;#0x0060
+   1027c:	02 24       	jz	$+6      	;abs 0x10282
+   10282:	a2 92 8c 11 	cmp	#4,	&0x118c	;r2 As==10
+   102b2:	0a 9d       	cmp	r13,	r10	
+   102ca:	49 93       	tst.b	r9		
+   102ce:	a2 92 8c 11 	cmp	#4,	&0x118c	;r2 As==10
+   102fe:	4e 93       	tst.b	r14		
+   10300:	69 20       	jnz	$+212    	;abs 0x103d4
+   10306:	4f 93       	tst.b	r15		
+   10308:	2b 20       	jnz	$+88     	;abs 0x10360
+   10312:	0a 9f       	cmp	r15,	r10	
+   1035e:	66 3c       	jmp	$+206    	;abs 0x1042c
+   10370:	0a 9f       	cmp	r15,	r10	
+   10374:	a2 93 8c 11 	cmp	#2,	&0x118c	;r3 As==10
+   103d2:	2c 3c       	jmp	$+90     	;abs 0x1042c
+   103d4:	4f 93       	tst.b	r15		
+   103d6:	23 20       	jnz	$+72     	;abs 0x1041e
+   103e4:	0a 9f       	cmp	r15,	r10	
+   1041c:	07 3c       	jmp	$+16     	;abs 0x1042c
+   10434:	23 20       	jnz	$+72     	;abs 0x1047c
+   10442:	0a 9f       	cmp	r15,	r10	
+   1044e:	a2 92 8c 11 	cmp	#4,	&0x118c	;r2 As==10
+   10480:	05 24       	jz	$+12     	;abs 0x1048c
+   1048a:	0f 3c       	jmp	$+32     	;abs 0x104aa
+   10498:	0a 9e       	cmp	r14,	r10	
+   104b6:	45 24       	jz	$+140    	;abs 0x10542
+   104b8:	49 93       	tst.b	r9		
+   104ca:	01 3c       	jmp	$+4      	;abs 0x104ce
+   104ce:	05 93       	tst	r5		
+   104d0:	18 24       	jz	$+50     	;abs 0x10502
+   104d8:	0f 93       	tst	r15		
+   104da:	14 20       	jnz	$+42     	;abs 0x10504
+   104dc:	92 93 8c 11 	cmp	#1,	&0x118c	;r3 As==01
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+00009108 t ctimer_set.constprop.3
+00006cf8 t entry_is_allowed.isra.2
+00006b2c t nbr_get_bit.constprop.3
+0000c5fa t node_matches_address.part.0
+0000b4c4 t packet_input.part.3
+
+[Function symbol count]
+474
+
+[Possible inlining / optimized helper function samples]
+0000d32a t call_vuprintf
+00009108 t ctimer_set.constprop.3
+00006cf8 t entry_is_allowed.isra.2
+0000dbdc T memcpy
+0000dcd6 T memmove
+0000ddd0 T memset
+00006b2c t nbr_get_bit.constprop.3
+0000c5fa t node_matches_address.part.0
+0000b4c4 t packet_input.part.3
+0000d2f8 T printf
+0000d364 T snprintf
+0000d512 T vuprintf
+
+[Branch / loop / register allocation samples]
+    4014:	0f 93       	tst	r15		
+    4016:	08 24       	jz	$+18     	;abs 0x4028
+    4026:	f8 23       	jnz	$-14     	;abs 0x4018
+    402c:	0f 93       	tst	r15		
+    402e:	07 24       	jz	$+16     	;abs 0x403e
+    403c:	f9 23       	jnz	$-12     	;abs 0x4030
+    4088:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    40ac:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    40d6:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    4100:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    412a:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    4154:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    417e:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    41a8:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    41ce:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    41de:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    420e:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    4234:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    4242:	b2 90 03 00 	cmp	#3,	&0x11a4	;#0x0003
+    426c:	4b 93       	tst.b	r11		
+    426e:	f9 23       	jnz	$-12     	;abs 0x4262
+    4274:	f6 3f       	jmp	$-18     	;abs 0x4262
+    427a:	fd 3f       	jmp	$-4      	;abs 0x4276
+    427c:	30 40 3a de 	br	#0xde3a	
+    4284:	03 3c       	jmp	$+8      	;abs 0x428c
+    428e:	0f 93       	tst	r15		
+    4290:	fa 23       	jnz	$-10     	;abs 0x4286
+    429a:	2f 93       	cmp	#2,	r15	;r3 As==10
+    42b2:	4f 93       	tst.b	r15		
+    42c8:	3f 90 81 00 	cmp	#129,	r15	;#0x0081
+    42cc:	1f 20       	jnz	$+64     	;abs 0x430c
+    42d2:	0e 93       	tst	r14		
+    42d4:	16 24       	jz	$+46     	;abs 0x4302
+    42d6:	4f 93       	tst.b	r15		
+    4300:	02 3c       	jmp	$+6      	;abs 0x4306
+    430a:	02 3c       	jmp	$+6      	;abs 0x4310
+    4320:	4f 93       	tst.b	r15		
+    432c:	4f 93       	tst.b	r15		
+    432e:	0e 24       	jz	$+30     	;abs 0x434c
+    4364:	06 24       	jz	$+14     	;abs 0x4372
+    4370:	05 3c       	jmp	$+12     	;abs 0x437c
+    438c:	0f 93       	tst	r15		
+    438e:	03 24       	jz	$+8      	;abs 0x4396
+    43ca:	4e 93       	tst.b	r14		
+    43d6:	fd 27       	jz	$-4      	;abs 0x43d2
+    43e6:	4e 93       	tst.b	r14		
+    43f6:	fd 27       	jz	$-4      	;abs 0x43f2
+    4406:	fc 27       	jz	$-6      	;abs 0x4400
+    441a:	fc 27       	jz	$-6      	;abs 0x4414
+    4432:	4d 93       	tst.b	r13		
+    443e:	4f 93       	tst.b	r15		
+    4450:	4f 93       	tst.b	r15		
+    445c:	fd 27       	jz	$-4      	;abs 0x4458
+    4462:	4f 93       	tst.b	r15		
+    446e:	fd 27       	jz	$-4      	;abs 0x446a
+    4480:	4b 93       	tst.b	r11		
+    4492:	4b 93       	tst.b	r11		
+    44a2:	0c 93       	tst	r12		
+    44a4:	0a 24       	jz	$+22     	;abs 0x44ba
+    44a6:	0e 3c       	jmp	$+30     	;abs 0x44c4
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000038f2 t accm_read_axis.part.0
+000082c6 t ctimer_set.constprop.3
+0000603e t entry_is_allowed.isra.2
+00005ea0 t nbr_get_bit.constprop.3
+0000b53c t node_matches_address.part.0
+0000a45e t packet_input.part.3
+
+[Function symbol count]
+502
+
+[Possible inlining / optimized helper function samples]
+000038f2 t accm_read_axis.part.0
+0000c274 t call_vuprintf
+000082c6 t ctimer_set.constprop.3
+0000603e t entry_is_allowed.isra.2
+0000cc06 T memcpy
+0000ccee T memmove
+0000cdd6 T memset
+00005ea0 t nbr_get_bit.constprop.3
+0000b53c t node_matches_address.part.0
+0000a45e t packet_input.part.3
+0000c242 T printf
+0000c2aa T snprintf
+0000c43c T vuprintf
+
+[Branch / loop / register allocation samples]
+    3114:	0f 93       	tst	r15		
+    3116:	08 24       	jz	$+18     	;abs 0x3128
+    3126:	f8 23       	jnz	$-14     	;abs 0x3118
+    312c:	0f 93       	tst	r15		
+    312e:	07 24       	jz	$+16     	;abs 0x313e
+    313c:	f9 23       	jnz	$-12     	;abs 0x3130
+    3188:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    31ac:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    31d6:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    3200:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    322a:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    3254:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    327e:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    32a8:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    32ce:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    32de:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    330e:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    3334:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    3342:	b2 90 03 00 	cmp	#3,	&0x1164	;#0x0003
+    336c:	4b 93       	tst.b	r11		
+    336e:	f9 23       	jnz	$-12     	;abs 0x3362
+    3374:	f6 3f       	jmp	$-18     	;abs 0x3362
+    337a:	fd 3f       	jmp	$-4      	;abs 0x3376
+    337c:	30 40 80 33 	br	#0x3380	
+    3388:	07 3c       	jmp	$+16     	;abs 0x3398
+    3398:	0c 93       	tst	r12		
+    339a:	f7 23       	jnz	$-16     	;abs 0x338a
+    339c:	0d 93       	tst	r13		
+    339e:	f5 23       	jnz	$-20     	;abs 0x338a
+    33b4:	0e 9d       	cmp	r13,	r14	
+    33be:	f8 23       	jnz	$-14     	;abs 0x33b0
+    33cc:	0f 93       	tst	r15		
+    33d8:	0e 93       	tst	r14		
+    33ec:	02 24       	jz	$+6      	;abs 0x33f2
+    33f4:	02 24       	jz	$+6      	;abs 0x33fa
+    341a:	0d 9b       	cmp	r11,	r13	
+    341e:	02 20       	jnz	$+6      	;abs 0x3424
+    3420:	0c 9a       	cmp	r10,	r12	
+    342c:	f2 23       	jnz	$-26     	;abs 0x3412
+    3440:	0f 93       	tst	r15		
+    3450:	0d 93       	tst	r13		
+    3464:	04 24       	jz	$+10     	;abs 0x346e
+    3470:	04 24       	jz	$+10     	;abs 0x347a
+    34ae:	0b 97       	cmp	r7,	r11	
+    34b2:	08 20       	jnz	$+18     	;abs 0x34c4
+    34b4:	0a 96       	cmp	r6,	r10	
+    34b8:	05 20       	jnz	$+12     	;abs 0x34c4
+    34ba:	09 95       	cmp	r5,	r9	
+    34be:	02 20       	jnz	$+6      	;abs 0x34c4
+    34c0:	08 94       	cmp	r4,	r8	
+    34d2:	e5 23       	jnz	$-52     	;abs 0x349e
+    354c:	15 24       	jz	$+44     	;abs 0x3578
+    3552:	12 20       	jnz	$+38     	;abs 0x3578
+    355c:	4f 93       	tst.b	r15		
+    355e:	32 24       	jz	$+102    	;abs 0x35c4
+    3576:	18 3c       	jmp	$+50     	;abs 0x35a8
+    357c:	4f 93       	tst.b	r15		
+    3584:	18 20       	jnz	$+50     	;abs 0x35b6
+    358e:	4f 93       	tst.b	r15		
+    3590:	19 24       	jz	$+52     	;abs 0x35c4
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+  [    2b]  GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+
+
+[Compiler / toolchain strings]
+GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+
+[Optimization-related symbols]
+                 w _ITM_deregisterTMCloneTable
+                 w _ITM_registerTMCloneTable
+0000000000014b00 t deregister_tm_clones
+0000000000014b30 t register_tm_clones
+
+[Function symbol count]
+1109
+
+[Possible inlining / optimized helper function samples]
+0000000000016cde T __wrap_printf
+                 U memcpy@@GLIBC_2.14
+                 U memmove@@GLIBC_2.2.5
+                 U memset@@GLIBC_2.2.5
+0000000000016cde T printf
+                 U snprintf@@GLIBC_2.2.5
+                 U strcmp@@GLIBC_2.2.5
+                 U strlen@@GLIBC_2.2.5
+                 U vasprintf@@GLIBC_2.2.5
+
+[Branch / loop / register allocation samples]
+   11026:	f2 ff 25 e3 1f 04 00 	bnd jmp *0x41fe3(%rip)        # 53010 <_GLOBAL_OFFSET_TABLE_+0x10>
+   11039:	f2 e9 e1 ff ff ff    	bnd jmp 11020 <.plt>
+   11049:	f2 e9 d1 ff ff ff    	bnd jmp 11020 <.plt>
+   11059:	f2 e9 c1 ff ff ff    	bnd jmp 11020 <.plt>
+   11069:	f2 e9 b1 ff ff ff    	bnd jmp 11020 <.plt>
+   11079:	f2 e9 a1 ff ff ff    	bnd jmp 11020 <.plt>
+   11089:	f2 e9 91 ff ff ff    	bnd jmp 11020 <.plt>
+   11099:	f2 e9 81 ff ff ff    	bnd jmp 11020 <.plt>
+   110a9:	f2 e9 71 ff ff ff    	bnd jmp 11020 <.plt>
+   110b9:	f2 e9 61 ff ff ff    	bnd jmp 11020 <.plt>
+   110c9:	f2 e9 51 ff ff ff    	bnd jmp 11020 <.plt>
+   110d9:	f2 e9 41 ff ff ff    	bnd jmp 11020 <.plt>
+   110e9:	f2 e9 31 ff ff ff    	bnd jmp 11020 <.plt>
+   110f9:	f2 e9 21 ff ff ff    	bnd jmp 11020 <.plt>
+   11109:	f2 e9 11 ff ff ff    	bnd jmp 11020 <.plt>
+   11119:	f2 e9 01 ff ff ff    	bnd jmp 11020 <.plt>
+   11129:	f2 e9 f1 fe ff ff    	bnd jmp 11020 <.plt>
+   11139:	f2 e9 e1 fe ff ff    	bnd jmp 11020 <.plt>
+   11149:	f2 e9 d1 fe ff ff    	bnd jmp 11020 <.plt>
+   11159:	f2 e9 c1 fe ff ff    	bnd jmp 11020 <.plt>
+   11169:	f2 e9 b1 fe ff ff    	bnd jmp 11020 <.plt>
+   11179:	f2 e9 a1 fe ff ff    	bnd jmp 11020 <.plt>
+   11189:	f2 e9 91 fe ff ff    	bnd jmp 11020 <.plt>
+   11199:	f2 e9 81 fe ff ff    	bnd jmp 11020 <.plt>
+   111a9:	f2 e9 71 fe ff ff    	bnd jmp 11020 <.plt>
+   111b9:	f2 e9 61 fe ff ff    	bnd jmp 11020 <.plt>
+   111c9:	f2 e9 51 fe ff ff    	bnd jmp 11020 <.plt>
+   111d9:	f2 e9 41 fe ff ff    	bnd jmp 11020 <.plt>
+   111e9:	f2 e9 31 fe ff ff    	bnd jmp 11020 <.plt>
+   111f9:	f2 e9 21 fe ff ff    	bnd jmp 11020 <.plt>
+   11209:	f2 e9 11 fe ff ff    	bnd jmp 11020 <.plt>
+   11219:	f2 e9 01 fe ff ff    	bnd jmp 11020 <.plt>
+   11229:	f2 e9 f1 fd ff ff    	bnd jmp 11020 <.plt>
+   11239:	f2 e9 e1 fd ff ff    	bnd jmp 11020 <.plt>
+   11249:	f2 e9 d1 fd ff ff    	bnd jmp 11020 <.plt>
+   11259:	f2 e9 c1 fd ff ff    	bnd jmp 11020 <.plt>
+   11269:	f2 e9 b1 fd ff ff    	bnd jmp 11020 <.plt>
+   11279:	f2 e9 a1 fd ff ff    	bnd jmp 11020 <.plt>
+   11289:	f2 e9 91 fd ff ff    	bnd jmp 11020 <.plt>
+   11299:	f2 e9 81 fd ff ff    	bnd jmp 11020 <.plt>
+   112a9:	f2 e9 71 fd ff ff    	bnd jmp 11020 <.plt>
+   112b9:	f2 e9 61 fd ff ff    	bnd jmp 11020 <.plt>
+   112c9:	f2 e9 51 fd ff ff    	bnd jmp 11020 <.plt>
+   112d9:	f2 e9 41 fd ff ff    	bnd jmp 11020 <.plt>
+   112e9:	f2 e9 31 fd ff ff    	bnd jmp 11020 <.plt>
+   112f9:	f2 e9 21 fd ff ff    	bnd jmp 11020 <.plt>
+   11309:	f2 e9 11 fd ff ff    	bnd jmp 11020 <.plt>
+   11319:	f2 e9 01 fd ff ff    	bnd jmp 11020 <.plt>
+   11329:	f2 e9 f1 fc ff ff    	bnd jmp 11020 <.plt>
+   11339:	f2 e9 e1 fc ff ff    	bnd jmp 11020 <.plt>
+   11349:	f2 e9 d1 fc ff ff    	bnd jmp 11020 <.plt>
+   11359:	f2 e9 c1 fc ff ff    	bnd jmp 11020 <.plt>
+   11369:	f2 e9 b1 fc ff ff    	bnd jmp 11020 <.plt>
+   11379:	f2 e9 a1 fc ff ff    	bnd jmp 11020 <.plt>
+   11389:	f2 e9 91 fc ff ff    	bnd jmp 11020 <.plt>
+   11399:	f2 e9 81 fc ff ff    	bnd jmp 11020 <.plt>
+   113a9:	f2 e9 71 fc ff ff    	bnd jmp 11020 <.plt>
+   113b9:	f2 e9 61 fc ff ff    	bnd jmp 11020 <.plt>
+   113c9:	f2 e9 51 fc ff ff    	bnd jmp 11020 <.plt>
+   113d9:	f2 e9 41 fc ff ff    	bnd jmp 11020 <.plt>
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000037fe t accm_read_axis.part.0
+
+[Function symbol count]
+291
+
+[Possible inlining / optimized helper function samples]
+000037fe t accm_read_axis.part.0
+00007152 T memcpy
+0000723a T memset
+00006802 T printf
+00006988 T vuprintf
+
+[Branch / loop / register allocation samples]
+    3114:	0f 93       	tst	r15		
+    3116:	08 24       	jz	$+18     	;abs 0x3128
+    3126:	f8 23       	jnz	$-14     	;abs 0x3118
+    312c:	0f 93       	tst	r15		
+    312e:	07 24       	jz	$+16     	;abs 0x313e
+    313c:	f9 23       	jnz	$-12     	;abs 0x3130
+    3178:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    319c:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    31c6:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    31f0:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    321a:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    3244:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    326e:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    3298:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    32be:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    32ce:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    32f8:	4b 93       	tst.b	r11		
+    32fa:	f9 23       	jnz	$-12     	;abs 0x32ee
+    3300:	f6 3f       	jmp	$-18     	;abs 0x32ee
+    3306:	fd 3f       	jmp	$-4      	;abs 0x3302
+    3308:	30 40 0c 33 	br	#0x330c	
+    3314:	07 3c       	jmp	$+16     	;abs 0x3324
+    3324:	0c 93       	tst	r12		
+    3326:	f7 23       	jnz	$-16     	;abs 0x3316
+    3328:	0d 93       	tst	r13		
+    332a:	f5 23       	jnz	$-20     	;abs 0x3316
+    3340:	0e 9d       	cmp	r13,	r14	
+    334a:	f8 23       	jnz	$-14     	;abs 0x333c
+    336c:	0d 9b       	cmp	r11,	r13	
+    3370:	02 20       	jnz	$+6      	;abs 0x3376
+    3372:	0c 9a       	cmp	r10,	r12	
+    337e:	f2 23       	jnz	$-26     	;abs 0x3364
+    33b4:	0b 97       	cmp	r7,	r11	
+    33b8:	08 20       	jnz	$+18     	;abs 0x33ca
+    33ba:	0a 96       	cmp	r6,	r10	
+    33be:	05 20       	jnz	$+12     	;abs 0x33ca
+    33c0:	09 95       	cmp	r5,	r9	
+    33c4:	02 20       	jnz	$+6      	;abs 0x33ca
+    33c6:	08 94       	cmp	r4,	r8	
+    33d8:	e5 23       	jnz	$-52     	;abs 0x33a4
+    3452:	15 24       	jz	$+44     	;abs 0x347e
+    3458:	12 20       	jnz	$+38     	;abs 0x347e
+    3462:	0f 93       	tst	r15		
+    3464:	32 24       	jz	$+102    	;abs 0x34ca
+    347c:	18 3c       	jmp	$+50     	;abs 0x34ae
+    3482:	4f 93       	tst.b	r15		
+    348a:	18 20       	jnz	$+50     	;abs 0x34bc
+    3494:	0f 93       	tst	r15		
+    3496:	19 24       	jz	$+52     	;abs 0x34ca
+    34ba:	04 3c       	jmp	$+10     	;abs 0x34c4
+    34c0:	0f 93       	tst	r15		
+    34c2:	03 24       	jz	$+8      	;abs 0x34ca
+    34d8:	14 24       	jz	$+42     	;abs 0x3502
+    34e2:	0f 93       	tst	r15		
+    34e4:	0e 24       	jz	$+30     	;abs 0x3502
+    3514:	06 24       	jz	$+14     	;abs 0x3522
+    3520:	05 3c       	jmp	$+12     	;abs 0x352c
+    353a:	2f 93       	cmp	#2,	r15	;r3 As==10
+    353c:	5d 20       	jnz	$+188    	;abs 0x35f8
+    3544:	0b 24       	jz	$+24     	;abs 0x355c
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+
+[Function symbol count]
+262
+
+[Possible inlining / optimized helper function samples]
+00007f06 T memcpy
+00008000 T memset
+00007698 T printf
+0000783c T vuprintf
+
+[Branch / loop / register allocation samples]
+    4014:	0f 93       	tst	r15		
+    4016:	08 24       	jz	$+18     	;abs 0x4028
+    4026:	f8 23       	jnz	$-14     	;abs 0x4018
+    402c:	0f 93       	tst	r15		
+    402e:	07 24       	jz	$+16     	;abs 0x403e
+    403c:	f9 23       	jnz	$-12     	;abs 0x4030
+    408c:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    40b0:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    40da:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    4104:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    412e:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    4158:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    4182:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    41ac:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    41d2:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    41e2:	b2 90 03 00 	cmp	#3,	&0x118e	;#0x0003
+    420c:	4b 93       	tst.b	r11		
+    420e:	f9 23       	jnz	$-12     	;abs 0x4202
+    4214:	f6 3f       	jmp	$-18     	;abs 0x4202
+    421a:	fd 3f       	jmp	$-4      	;abs 0x4216
+    421c:	30 40 6a 80 	br	#0x806a	
+    4224:	03 3c       	jmp	$+8      	;abs 0x422c
+    422e:	0f 93       	tst	r15		
+    4230:	fa 23       	jnz	$-10     	;abs 0x4226
+    423a:	2f 93       	cmp	#2,	r15	;r3 As==10
+    4252:	4f 93       	tst.b	r15		
+    4268:	3f 90 81 00 	cmp	#129,	r15	;#0x0081
+    426c:	1f 20       	jnz	$+64     	;abs 0x42ac
+    4272:	0e 93       	tst	r14		
+    4274:	16 24       	jz	$+46     	;abs 0x42a2
+    4276:	4f 93       	tst.b	r15		
+    42a0:	02 3c       	jmp	$+6      	;abs 0x42a6
+    42aa:	02 3c       	jmp	$+6      	;abs 0x42b0
+    42c0:	4f 93       	tst.b	r15		
+    42cc:	4f 93       	tst.b	r15		
+    42ce:	0e 24       	jz	$+30     	;abs 0x42ec
+    4304:	06 24       	jz	$+14     	;abs 0x4312
+    4310:	05 3c       	jmp	$+12     	;abs 0x431c
+    432c:	0f 93       	tst	r15		
+    432e:	03 24       	jz	$+8      	;abs 0x4336
+    436a:	4e 93       	tst.b	r14		
+    4376:	fd 27       	jz	$-4      	;abs 0x4372
+    4386:	4e 93       	tst.b	r14		
+    4396:	fd 27       	jz	$-4      	;abs 0x4392
+    43a6:	fc 27       	jz	$-6      	;abs 0x43a0
+    43ba:	fc 27       	jz	$-6      	;abs 0x43b4
+    43d2:	4d 93       	tst.b	r13		
+    43de:	4f 93       	tst.b	r15		
+    43f0:	4f 93       	tst.b	r15		
+    43fc:	fd 27       	jz	$-4      	;abs 0x43f8
+    4402:	4f 93       	tst.b	r15		
+    440e:	fd 27       	jz	$-4      	;abs 0x440a
+    4420:	4b 93       	tst.b	r11		
+    4432:	4b 93       	tst.b	r11		
+    4442:	0c 93       	tst	r12		
+    4444:	0a 24       	jz	$+22     	;abs 0x445a
+    4446:	0e 3c       	jmp	$+30     	;abs 0x4464
+    444c:	4b 93       	tst.b	r11		
+    4458:	01 3c       	jmp	$+4      	;abs 0x445c
+    445e:	0c 9d       	cmp	r13,	r12	
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+
+[Function symbol count]
+300
+
+[Possible inlining / optimized helper function samples]
+00009e28 T __fpcmp_parts_f
+000090d8 t _fpadd_parts
+00009efe t call_vuprintf
+0000a7b2 T memcpy
+0000a8ac T memset
+00009ecc T printf
+00009f38 T sprintf
+0000a0e8 T vuprintf
+
+[Branch / loop / register allocation samples]
+    4014:	0f 93       	tst	r15		
+    4016:	08 24       	jz	$+18     	;abs 0x4028
+    4026:	f8 23       	jnz	$-14     	;abs 0x4018
+    402c:	0f 93       	tst	r15		
+    402e:	07 24       	jz	$+16     	;abs 0x403e
+    403c:	f9 23       	jnz	$-12     	;abs 0x4030
+    4078:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    409c:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    40c6:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    40f0:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    411a:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    4144:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    416e:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    4198:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    41be:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    41ce:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    41f8:	4b 93       	tst.b	r11		
+    41fa:	f9 23       	jnz	$-12     	;abs 0x41ee
+    4200:	f6 3f       	jmp	$-18     	;abs 0x41ee
+    4206:	fd 3f       	jmp	$-4      	;abs 0x4202
+    4208:	30 40 16 a9 	br	#0xa916	
+    4210:	03 3c       	jmp	$+8      	;abs 0x4218
+    421a:	0f 93       	tst	r15		
+    421c:	fa 23       	jnz	$-10     	;abs 0x4212
+    4226:	2f 93       	cmp	#2,	r15	;r3 As==10
+    423e:	4f 93       	tst.b	r15		
+    424c:	0f 93       	tst	r15		
+    424e:	01 24       	jz	$+4      	;abs 0x4252
+    425a:	3f 90 81 00 	cmp	#129,	r15	;#0x0081
+    425e:	1f 20       	jnz	$+64     	;abs 0x429e
+    4264:	0e 93       	tst	r14		
+    4266:	16 24       	jz	$+46     	;abs 0x4294
+    4268:	4f 93       	tst.b	r15		
+    4292:	02 3c       	jmp	$+6      	;abs 0x4298
+    429c:	02 3c       	jmp	$+6      	;abs 0x42a2
+    42b2:	4f 93       	tst.b	r15		
+    42be:	0f 93       	tst	r15		
+    42c0:	0e 24       	jz	$+30     	;abs 0x42de
+    42f6:	06 24       	jz	$+14     	;abs 0x4304
+    4302:	05 3c       	jmp	$+12     	;abs 0x430e
+    431e:	0f 93       	tst	r15		
+    4320:	03 24       	jz	$+8      	;abs 0x4328
+    435c:	4e 93       	tst.b	r14		
+    4368:	fd 27       	jz	$-4      	;abs 0x4364
+    4378:	4e 93       	tst.b	r14		
+    4388:	fd 27       	jz	$-4      	;abs 0x4384
+    4398:	fc 27       	jz	$-6      	;abs 0x4392
+    43ac:	fc 27       	jz	$-6      	;abs 0x43a6
+    43c4:	4d 93       	tst.b	r13		
+    43d0:	4f 93       	tst.b	r15		
+    43e2:	4f 93       	tst.b	r15		
+    43ee:	fd 27       	jz	$-4      	;abs 0x43ea
+    43f4:	4f 93       	tst.b	r15		
+    4400:	fd 27       	jz	$-4      	;abs 0x43fc
+    4412:	4b 93       	tst.b	r11		
+    4424:	4b 93       	tst.b	r11		
+    4434:	0c 93       	tst	r12		
+    4436:	0a 24       	jz	$+22     	;abs 0x444c
+    4438:	0e 3c       	jmp	$+30     	;abs 0x4456
+    443e:	4b 93       	tst.b	r11		
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000037fe t accm_read_axis.part.0
+
+[Function symbol count]
+317
+
+[Possible inlining / optimized helper function samples]
+00008bea T __fpcmp_parts_f
+00007fbc t _fpadd_parts
+000037fe t accm_read_axis.part.0
+00008d9a t call_vuprintf
+0000972a T memcpy
+00009812 T memset
+00008d68 T printf
+00008dd0 T sprintf
+00008f60 T vuprintf
+
+[Branch / loop / register allocation samples]
+    3114:	0f 93       	tst	r15		
+    3116:	08 24       	jz	$+18     	;abs 0x3128
+    3126:	f8 23       	jnz	$-14     	;abs 0x3118
+    312c:	0f 93       	tst	r15		
+    312e:	07 24       	jz	$+16     	;abs 0x313e
+    313c:	f9 23       	jnz	$-12     	;abs 0x3130
+    3178:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    319c:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    31c6:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    31f0:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    321a:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    3244:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    326e:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    3298:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    32be:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    32ce:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    32f8:	4b 93       	tst.b	r11		
+    32fa:	f9 23       	jnz	$-12     	;abs 0x32ee
+    3300:	f6 3f       	jmp	$-18     	;abs 0x32ee
+    3306:	fd 3f       	jmp	$-4      	;abs 0x3302
+    3308:	30 40 0c 33 	br	#0x330c	
+    3314:	07 3c       	jmp	$+16     	;abs 0x3324
+    3324:	0c 93       	tst	r12		
+    3326:	f7 23       	jnz	$-16     	;abs 0x3316
+    3328:	0d 93       	tst	r13		
+    332a:	f5 23       	jnz	$-20     	;abs 0x3316
+    3340:	0e 9d       	cmp	r13,	r14	
+    334a:	f8 23       	jnz	$-14     	;abs 0x333c
+    336c:	0d 9b       	cmp	r11,	r13	
+    3370:	02 20       	jnz	$+6      	;abs 0x3376
+    3372:	0c 9a       	cmp	r10,	r12	
+    337e:	f2 23       	jnz	$-26     	;abs 0x3364
+    33b4:	0b 97       	cmp	r7,	r11	
+    33b8:	08 20       	jnz	$+18     	;abs 0x33ca
+    33ba:	0a 96       	cmp	r6,	r10	
+    33be:	05 20       	jnz	$+12     	;abs 0x33ca
+    33c0:	09 95       	cmp	r5,	r9	
+    33c4:	02 20       	jnz	$+6      	;abs 0x33ca
+    33c6:	08 94       	cmp	r4,	r8	
+    33d8:	e5 23       	jnz	$-52     	;abs 0x33a4
+    3452:	15 24       	jz	$+44     	;abs 0x347e
+    3458:	12 20       	jnz	$+38     	;abs 0x347e
+    3462:	0f 93       	tst	r15		
+    3464:	32 24       	jz	$+102    	;abs 0x34ca
+    347c:	18 3c       	jmp	$+50     	;abs 0x34ae
+    3482:	4f 93       	tst.b	r15		
+    348a:	18 20       	jnz	$+50     	;abs 0x34bc
+    3494:	0f 93       	tst	r15		
+    3496:	19 24       	jz	$+52     	;abs 0x34ca
+    34ba:	04 3c       	jmp	$+10     	;abs 0x34c4
+    34c0:	0f 93       	tst	r15		
+    34c2:	03 24       	jz	$+8      	;abs 0x34ca
+    34d8:	14 24       	jz	$+42     	;abs 0x3502
+    34e2:	0f 93       	tst	r15		
+    34e4:	0e 24       	jz	$+30     	;abs 0x3502
+    3514:	06 24       	jz	$+14     	;abs 0x3522
+    3520:	05 3c       	jmp	$+12     	;abs 0x352c
+    353a:	2f 93       	cmp	#2,	r15	;r3 As==10
+    353c:	5d 20       	jnz	$+188    	;abs 0x35f8
+    3544:	0b 24       	jz	$+24     	;abs 0x355c
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+
+[Function symbol count]
+272
+
+[Possible inlining / optimized helper function samples]
+00007ede T memcpy
+00007fd8 T memset
+00007670 T printf
+00007814 T vuprintf
+
+[Branch / loop / register allocation samples]
+    4014:	0f 93       	tst	r15		
+    4016:	08 24       	jz	$+18     	;abs 0x4028
+    4026:	f8 23       	jnz	$-14     	;abs 0x4018
+    402c:	0f 93       	tst	r15		
+    402e:	07 24       	jz	$+16     	;abs 0x403e
+    403c:	f9 23       	jnz	$-12     	;abs 0x4030
+    4078:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    409c:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    40c6:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    40f0:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    411a:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    4144:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    416e:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    4198:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    41be:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    41ce:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    41f8:	4b 93       	tst.b	r11		
+    41fa:	f9 23       	jnz	$-12     	;abs 0x41ee
+    4200:	f6 3f       	jmp	$-18     	;abs 0x41ee
+    4206:	fd 3f       	jmp	$-4      	;abs 0x4202
+    4208:	30 40 42 80 	br	#0x8042	
+    4210:	03 3c       	jmp	$+8      	;abs 0x4218
+    421a:	0f 93       	tst	r15		
+    421c:	fa 23       	jnz	$-10     	;abs 0x4212
+    4226:	2f 93       	cmp	#2,	r15	;r3 As==10
+    423e:	4f 93       	tst.b	r15		
+    424c:	0f 93       	tst	r15		
+    424e:	01 24       	jz	$+4      	;abs 0x4252
+    425a:	3f 90 81 00 	cmp	#129,	r15	;#0x0081
+    425e:	1f 20       	jnz	$+64     	;abs 0x429e
+    4264:	0e 93       	tst	r14		
+    4266:	16 24       	jz	$+46     	;abs 0x4294
+    4268:	4f 93       	tst.b	r15		
+    4292:	02 3c       	jmp	$+6      	;abs 0x4298
+    429c:	02 3c       	jmp	$+6      	;abs 0x42a2
+    42b2:	4f 93       	tst.b	r15		
+    42be:	0f 93       	tst	r15		
+    42c0:	0e 24       	jz	$+30     	;abs 0x42de
+    42f6:	06 24       	jz	$+14     	;abs 0x4304
+    4302:	05 3c       	jmp	$+12     	;abs 0x430e
+    431e:	0f 93       	tst	r15		
+    4320:	03 24       	jz	$+8      	;abs 0x4328
+    435c:	4e 93       	tst.b	r14		
+    4368:	fd 27       	jz	$-4      	;abs 0x4364
+    4378:	4e 93       	tst.b	r14		
+    4388:	fd 27       	jz	$-4      	;abs 0x4384
+    4398:	fc 27       	jz	$-6      	;abs 0x4392
+    43ac:	fc 27       	jz	$-6      	;abs 0x43a6
+    43c4:	4d 93       	tst.b	r13		
+    43d0:	4f 93       	tst.b	r15		
+    43e2:	4f 93       	tst.b	r15		
+    43ee:	fd 27       	jz	$-4      	;abs 0x43ea
+    43f4:	4f 93       	tst.b	r15		
+    4400:	fd 27       	jz	$-4      	;abs 0x43fc
+    4412:	4b 93       	tst.b	r11		
+    4424:	4b 93       	tst.b	r11		
+    4434:	0c 93       	tst	r12		
+    4436:	0a 24       	jz	$+22     	;abs 0x444c
+    4438:	0e 3c       	jmp	$+30     	;abs 0x4456
+    443e:	4b 93       	tst.b	r11		
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+0000904c t ctimer_set.constprop.3
+00006c3c t entry_is_allowed.isra.2
+00006a70 t nbr_get_bit.constprop.3
+0000c8b0 t node_matches_address.part.0
+0000b5a0 t packet_input.part.3
+
+[Function symbol count]
+482
+
+[Possible inlining / optimized helper function samples]
+0000d71c t call_vuprintf
+0000904c t ctimer_set.constprop.3
+00006c3c t entry_is_allowed.isra.2
+0000dfce T memcpy
+0000e0c8 T memmove
+0000e1c2 T memset
+00006a70 t nbr_get_bit.constprop.3
+0000c8b0 t node_matches_address.part.0
+0000b5a0 t packet_input.part.3
+0000d6ea T printf
+0000d756 T snprintf
+0000d904 T vuprintf
+
+[Branch / loop / register allocation samples]
+    4014:	0f 93       	tst	r15		
+    4016:	08 24       	jz	$+18     	;abs 0x4028
+    4026:	f8 23       	jnz	$-14     	;abs 0x4018
+    402c:	0f 93       	tst	r15		
+    402e:	07 24       	jz	$+16     	;abs 0x403e
+    403c:	f9 23       	jnz	$-12     	;abs 0x4030
+    4088:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    40ac:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    40d6:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4100:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    412a:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4154:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    417e:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    41a8:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    41ce:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    41de:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    420e:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4234:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4242:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    426c:	4b 93       	tst.b	r11		
+    426e:	f9 23       	jnz	$-12     	;abs 0x4262
+    4274:	f6 3f       	jmp	$-18     	;abs 0x4262
+    427a:	fd 3f       	jmp	$-4      	;abs 0x4276
+    427c:	30 40 2c e2 	br	#0xe22c	
+    4284:	03 3c       	jmp	$+8      	;abs 0x428c
+    428e:	0f 93       	tst	r15		
+    4290:	fa 23       	jnz	$-10     	;abs 0x4286
+    429a:	2f 93       	cmp	#2,	r15	;r3 As==10
+    42b2:	4f 93       	tst.b	r15		
+    42c8:	3f 90 81 00 	cmp	#129,	r15	;#0x0081
+    42cc:	1f 20       	jnz	$+64     	;abs 0x430c
+    42d2:	0e 93       	tst	r14		
+    42d4:	16 24       	jz	$+46     	;abs 0x4302
+    42d6:	4f 93       	tst.b	r15		
+    4300:	02 3c       	jmp	$+6      	;abs 0x4306
+    430a:	02 3c       	jmp	$+6      	;abs 0x4310
+    4320:	4f 93       	tst.b	r15		
+    432c:	4f 93       	tst.b	r15		
+    432e:	0e 24       	jz	$+30     	;abs 0x434c
+    4364:	06 24       	jz	$+14     	;abs 0x4372
+    4370:	05 3c       	jmp	$+12     	;abs 0x437c
+    438c:	0f 93       	tst	r15		
+    438e:	03 24       	jz	$+8      	;abs 0x4396
+    43ca:	4e 93       	tst.b	r14		
+    43d6:	fd 27       	jz	$-4      	;abs 0x43d2
+    43e6:	4e 93       	tst.b	r14		
+    43f6:	fd 27       	jz	$-4      	;abs 0x43f2
+    4406:	fc 27       	jz	$-6      	;abs 0x4400
+    441a:	fc 27       	jz	$-6      	;abs 0x4414
+    4432:	4d 93       	tst.b	r13		
+    443e:	4f 93       	tst.b	r15		
+    4450:	4f 93       	tst.b	r15		
+    445c:	fd 27       	jz	$-4      	;abs 0x4458
+    4462:	4f 93       	tst.b	r15		
+    446e:	fd 27       	jz	$-4      	;abs 0x446a
+    4480:	4b 93       	tst.b	r11		
+    4492:	4b 93       	tst.b	r11		
+    44a2:	0c 93       	tst	r12		
+    44a4:	0a 24       	jz	$+22     	;abs 0x44ba
+    44a6:	0e 3c       	jmp	$+30     	;abs 0x44c4
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+000038f2 t accm_read_axis.part.0
+000081f6 t ctimer_set.constprop.3
+00005f6e t entry_is_allowed.isra.2
+00005dd0 t nbr_get_bit.constprop.3
+0000b7ba t node_matches_address.part.0
+0000a504 t packet_input.part.3
+
+[Function symbol count]
+510
+
+[Possible inlining / optimized helper function samples]
+000038f2 t accm_read_axis.part.0
+0000c5f6 t call_vuprintf
+000081f6 t ctimer_set.constprop.3
+00005f6e t entry_is_allowed.isra.2
+0000cf88 T memcpy
+0000d070 T memmove
+0000d158 T memset
+00005dd0 t nbr_get_bit.constprop.3
+0000b7ba t node_matches_address.part.0
+0000a504 t packet_input.part.3
+0000c5c4 T printf
+0000c62c T snprintf
+0000c7be T vuprintf
+
+[Branch / loop / register allocation samples]
+    3114:	0f 93       	tst	r15		
+    3116:	08 24       	jz	$+18     	;abs 0x3128
+    3126:	f8 23       	jnz	$-14     	;abs 0x3118
+    312c:	0f 93       	tst	r15		
+    312e:	07 24       	jz	$+16     	;abs 0x313e
+    313c:	f9 23       	jnz	$-12     	;abs 0x3130
+    3188:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    31ac:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    31d6:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3200:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    322a:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3254:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    327e:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32a8:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32ce:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    32de:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    330e:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3334:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    3342:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    336c:	4b 93       	tst.b	r11		
+    336e:	f9 23       	jnz	$-12     	;abs 0x3362
+    3374:	f6 3f       	jmp	$-18     	;abs 0x3362
+    337a:	fd 3f       	jmp	$-4      	;abs 0x3376
+    337c:	30 40 80 33 	br	#0x3380	
+    3388:	07 3c       	jmp	$+16     	;abs 0x3398
+    3398:	0c 93       	tst	r12		
+    339a:	f7 23       	jnz	$-16     	;abs 0x338a
+    339c:	0d 93       	tst	r13		
+    339e:	f5 23       	jnz	$-20     	;abs 0x338a
+    33b4:	0e 9d       	cmp	r13,	r14	
+    33be:	f8 23       	jnz	$-14     	;abs 0x33b0
+    33cc:	0f 93       	tst	r15		
+    33d8:	0e 93       	tst	r14		
+    33ec:	02 24       	jz	$+6      	;abs 0x33f2
+    33f4:	02 24       	jz	$+6      	;abs 0x33fa
+    341a:	0d 9b       	cmp	r11,	r13	
+    341e:	02 20       	jnz	$+6      	;abs 0x3424
+    3420:	0c 9a       	cmp	r10,	r12	
+    342c:	f2 23       	jnz	$-26     	;abs 0x3412
+    3440:	0f 93       	tst	r15		
+    3450:	0d 93       	tst	r13		
+    3464:	04 24       	jz	$+10     	;abs 0x346e
+    3470:	04 24       	jz	$+10     	;abs 0x347a
+    34ae:	0b 97       	cmp	r7,	r11	
+    34b2:	08 20       	jnz	$+18     	;abs 0x34c4
+    34b4:	0a 96       	cmp	r6,	r10	
+    34b8:	05 20       	jnz	$+12     	;abs 0x34c4
+    34ba:	09 95       	cmp	r5,	r9	
+    34be:	02 20       	jnz	$+6      	;abs 0x34c4
+    34c0:	08 94       	cmp	r4,	r8	
+    34d2:	e5 23       	jnz	$-52     	;abs 0x349e
+    354c:	15 24       	jz	$+44     	;abs 0x3578
+    3552:	12 20       	jnz	$+38     	;abs 0x3578
+    355c:	4f 93       	tst.b	r15		
+    355e:	32 24       	jz	$+102    	;abs 0x35c4
+    3576:	18 3c       	jmp	$+50     	;abs 0x35a8
+    357c:	4f 93       	tst.b	r15		
+    3584:	18 20       	jnz	$+50     	;abs 0x35b6
+    358e:	4f 93       	tst.b	r15		
+    3590:	19 24       	jz	$+52     	;abs 0x35c4
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Compiler / .comment section]
+
+String dump of section '.comment':
+  [     0]  GCC: (GNU) 4.7.2 20120920 (mspgcc dev 20120911)
+
+
+[Compiler / toolchain strings]
+
+[Optimization-related symbols]
+0000904c t ctimer_set.constprop.3
+00006c3c t entry_is_allowed.isra.2
+00006a70 t nbr_get_bit.constprop.3
+0000c774 t node_matches_address.part.0
+0000b5a0 t packet_input.part.3
+
+[Function symbol count]
+482
+
+[Possible inlining / optimized helper function samples]
+0000d5e0 t call_vuprintf
+0000904c t ctimer_set.constprop.3
+00006c3c t entry_is_allowed.isra.2
+0000de92 T memcpy
+0000df8c T memmove
+0000e086 T memset
+00006a70 t nbr_get_bit.constprop.3
+0000c774 t node_matches_address.part.0
+0000b5a0 t packet_input.part.3
+0000d5ae T printf
+0000d61a T snprintf
+0000d7c8 T vuprintf
+
+[Branch / loop / register allocation samples]
+    4014:	0f 93       	tst	r15		
+    4016:	08 24       	jz	$+18     	;abs 0x4028
+    4026:	f8 23       	jnz	$-14     	;abs 0x4018
+    402c:	0f 93       	tst	r15		
+    402e:	07 24       	jz	$+16     	;abs 0x403e
+    403c:	f9 23       	jnz	$-12     	;abs 0x4030
+    4088:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    40ac:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    40d6:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4100:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    412a:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4154:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    417e:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    41a8:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    41ce:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    41de:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    420e:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4234:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    4242:	b2 90 03 00 	cmp	#3,	&0x1196	;#0x0003
+    426c:	4b 93       	tst.b	r11		
+    426e:	f9 23       	jnz	$-12     	;abs 0x4262
+    4274:	f6 3f       	jmp	$-18     	;abs 0x4262
+    427a:	fd 3f       	jmp	$-4      	;abs 0x4276
+    427c:	30 40 f0 e0 	br	#0xe0f0	
+    4284:	03 3c       	jmp	$+8      	;abs 0x428c
+    428e:	0f 93       	tst	r15		
+    4290:	fa 23       	jnz	$-10     	;abs 0x4286
+    429a:	2f 93       	cmp	#2,	r15	;r3 As==10
+    42b2:	4f 93       	tst.b	r15		
+    42c8:	3f 90 81 00 	cmp	#129,	r15	;#0x0081
+    42cc:	1f 20       	jnz	$+64     	;abs 0x430c
+    42d2:	0e 93       	tst	r14		
+    42d4:	16 24       	jz	$+46     	;abs 0x4302
+    42d6:	4f 93       	tst.b	r15		
+    4300:	02 3c       	jmp	$+6      	;abs 0x4306
+    430a:	02 3c       	jmp	$+6      	;abs 0x4310
+    4320:	4f 93       	tst.b	r15		
+    432c:	4f 93       	tst.b	r15		
+    432e:	0e 24       	jz	$+30     	;abs 0x434c
+    4364:	06 24       	jz	$+14     	;abs 0x4372
+    4370:	05 3c       	jmp	$+12     	;abs 0x437c
+    438c:	0f 93       	tst	r15		
+    438e:	03 24       	jz	$+8      	;abs 0x4396
+    43ca:	4e 93       	tst.b	r14		
+    43d6:	fd 27       	jz	$-4      	;abs 0x43d2
+    43e6:	4e 93       	tst.b	r14		
+    43f6:	fd 27       	jz	$-4      	;abs 0x43f2
+    4406:	fc 27       	jz	$-6      	;abs 0x4400
+    441a:	fc 27       	jz	$-6      	;abs 0x4414
+    4432:	4d 93       	tst.b	r13		
+    443e:	4f 93       	tst.b	r15		
+    4450:	4f 93       	tst.b	r15		
+    445c:	fd 27       	jz	$-4      	;abs 0x4458
+    4462:	4f 93       	tst.b	r15		
+    446e:	fd 27       	jz	$-4      	;abs 0x446a
+    4480:	4b 93       	tst.b	r11		
+    4492:	4b 93       	tst.b	r11		
+    44a2:	0c 93       	tst	r12		
+    44a4:	0a 24       	jz	$+22     	;abs 0x44ba
+    44a6:	0e 3c       	jmp	$+30     	;abs 0x44c4

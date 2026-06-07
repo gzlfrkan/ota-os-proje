@@ -1,0 +1,2422 @@
+=== TSCH / MAC LAYER ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00001350 b _link_stats_mem
+00003ad6 T cc2420_arch_init
+000024ba B cc2420_authority_level_of_sender
+00003f26 t cc2420_cca
+0000c910 R cc2420_driver
+00004152 T cc2420_get_txpower
+00004436 T cc2420_init
+00004110 T cc2420_interrupt
+000024b8 B cc2420_last_correlation
+000024b4 B cc2420_last_rssi
+00003ef6 T cc2420_off
+00003e5c T cc2420_on
+00003e1a t cc2420_prepare
+0000110c D cc2420_process
+00003f7a t cc2420_read
+00003c7e t cc2420_receiving_packet
+00004170 T cc2420_rssi
+00003ee4 t cc2420_send
+000042d6 T cc2420_set_cca_threshold
+0000408a T cc2420_set_channel
+000040c4 T cc2420_set_pan_addr
+00004126 T cc2420_set_txpower
+000024bc B cc2420_sfd_counter
+000024be B cc2420_sfd_end_time
+000024b6 B cc2420_sfd_start_time
+000035fe T cc2420_timerb1_interrupt
+00003e7e t cc2420_transmit
+00001272 b channel
+0000c958 R csma_driver
+00004cc8 T csma_output_init
+00004a58 T csma_output_packet
+00004ce2 T csma_security_create_frame
+00004cf2 T csma_security_parse_frame
+00001166 D curr_log_level_6lowpan
+00001162 D curr_log_level_framer
+00001164 D curr_log_level_mac
+00005594 T frame802154_create
+00005526 T frame802154_create_fcf
+0000533e T frame802154_get_pan_id
+00005344 T frame802154_has_panid
+000054f4 T frame802154_hdrlen
+000054cc T frame802154_is_broadcast_addr
+000056f4 T frame802154_parse
+00005668 T frame802154_parse_fcf
+0000c972 R framer_802154
+0000599e T framer_802154_setup_params
+00005dba T link_stats_from_lladdr
+00005ff8 T link_stats_init
+00005ed8 T link_stats_input_callback
+00005dc6 T link_stats_is_fresh
+00005df6 T link_stats_packet_sent
+00005fce T link_stats_reset
+00001156 d link_stats_struct
+00006022 T linkaddr_cmp
+0000601a T linkaddr_copy
+000024e4 B linkaddr_node_addr
+0000c982 R linkaddr_null
+00006034 T linkaddr_set_node_addr
+00006270 T mac_call_sent_callback
+00002469 b mac_dsn
+00001b98 b mac_max_payload
+00001148 d mac_pan_id
+0000615a T mac_sequence_init
+0000617c T mac_sequence_is_duplicate
+000061ea T mac_sequence_register_seqno
+00006164 T mac_sequence_set_dsn
+00002888 B node_mac
+00006ac8 T packetbuf_addr
+000024ee B packetbuf_addrs
+000014ec b packetbuf_aligned
+00006aaa T packetbuf_attr
+000069f4 T packetbuf_attr_clear
+00006a7a T packetbuf_attr_copyfrom
+00006a58 T packetbuf_attr_copyto
+000024fe B packetbuf_attrs
+00006a1c T packetbuf_clear
+00006a2e T packetbuf_copyfrom
+00006972 T packetbuf_copyto
+00006956 T packetbuf_datalen
+00006966 T packetbuf_dataptr
+0000249b b packetbuf_hdr_len
+000069b8 T packetbuf_hdralloc
+0000695c T packetbuf_hdrlen
+00006950 T packetbuf_hdrptr
+00006930 T packetbuf_hdrreduce
+00006ad6 T packetbuf_holds_broadcast
+00001b9e b packetbuf_payload_len
+00001b96 b packetbuf_ptr
+00006ab4 T packetbuf_set_addr
+00006a9e T packetbuf_set_attr
+0000694a T packetbuf_set_datalen
+000069ac T packetbuf_totlen
+00004034 t process_thread_cc2420_process
+00006fb4 T queuebuf_attr
+00006f58 T queuebuf_free
+00006edc T queuebuf_init
+00006ef8 T queuebuf_new_from_packetbuf
+00006eee T queuebuf_numfree
+00006f82 T queuebuf_to_packetbuf
+00006f46 T queuebuf_update_attr_from_packetbuf
+00009b36 T rpl_neighbor_get_link_stats
+0000a544 T rpl_schedule_probing
+0000a62a T rpl_schedule_probing_now
+0000a364 T rpl_timers_schedule_dao
+0000a39c T rpl_timers_schedule_dao_ack
+0000a66a T rpl_timers_schedule_leaving
+0000a234 T rpl_timers_schedule_periodic_dis
+0000a70c T rpl_timers_schedule_state_update
+0000a344 T rpl_timers_schedule_unicast_dio
+0000a64e T rpl_timers_unschedule_leaving
+0000a6fc T rpl_timers_unschedule_state_update
+0000aad4 T rtimer_arch_schedule
+0000a0a0 t schedule_dao_retransmission
+000045b8 t schedule_transmission
+0000124e d send_on_cca
+0000c9e4 R sicslowpan_driver
+0000ac40 T sicslowpan_init
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+packet sent to 
+packet sent: no metadata
+could not allocate queuebuf, dropping packet
+CSMA
+Failed to retrieve max radio driver payload length
+drop duplicate link layer packet from 
+received packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+15.4: for another pan %u
+framer-802154: cannot setup params because of invalid argument
+CC2420 CCA threshold %i
+DTSN increment %u->%u, schedule new DAO with DTSN %u
+unicast DIS, reply to sender
+unicast
+best parent is not fresh, schedule urgent probing to 
+packet sent to 
+6LoWPAN
+output: could not allocate queuebuf, dropping fragment
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+output: header len %d -> %d, total len %d -> %d, MAC max payload %d, frag_needed %d
+output: fragmentation needed. fragments: %u, free queuebufs: %zu
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+sicslowpan
+, link-layer addr 
+%u unicast addresses
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00001344 b _link_stats_mem
+00003ad6 T cc2420_arch_init
+00002590 B cc2420_authority_level_of_sender
+00003f26 t cc2420_cca
+0000d358 R cc2420_driver
+00004152 T cc2420_get_txpower
+00004436 T cc2420_init
+00004110 T cc2420_interrupt
+0000258e B cc2420_last_correlation
+0000258a B cc2420_last_rssi
+00003ef6 T cc2420_off
+00003e5c T cc2420_on
+00003e1a t cc2420_prepare
+0000110c D cc2420_process
+00003f7a t cc2420_read
+00003c7e t cc2420_receiving_packet
+00004170 T cc2420_rssi
+00003ee4 t cc2420_send
+000042d6 T cc2420_set_cca_threshold
+0000408a T cc2420_set_channel
+000040c4 T cc2420_set_pan_addr
+00004126 T cc2420_set_txpower
+00002592 B cc2420_sfd_counter
+00002594 B cc2420_sfd_end_time
+0000258c B cc2420_sfd_start_time
+000035fe T cc2420_timerb1_interrupt
+00003e7e t cc2420_transmit
+00001272 b channel
+0000d3a0 R csma_driver
+0000499c T csma_output_init
+00004854 T csma_output_packet
+000049b6 T csma_security_create_frame
+000049c6 T csma_security_parse_frame
+00005096 T frame802154_create
+00005028 T frame802154_create_fcf
+00004e40 T frame802154_get_pan_id
+00004e46 T frame802154_has_panid
+00004ff6 T frame802154_hdrlen
+00004fce T frame802154_is_broadcast_addr
+000051f6 T frame802154_parse
+0000516a T frame802154_parse_fcf
+0000d3ba R framer_802154
+000053f0 T framer_802154_setup_params
+00005708 T link_stats_from_lladdr
+00005946 T link_stats_init
+00005826 T link_stats_input_callback
+00005714 T link_stats_is_fresh
+00005744 T link_stats_packet_sent
+0000591c T link_stats_reset
+0000114a d link_stats_struct
+00005970 T linkaddr_cmp
+00005968 T linkaddr_copy
+000025ba B linkaddr_node_addr
+0000d3c6 R linkaddr_null
+00005982 T linkaddr_set_node_addr
+00005bbe T mac_call_sent_callback
+00002493 b mac_dsn
+00001b8c b mac_max_payload
+00001148 d mac_pan_id
+00005aa8 T mac_sequence_init
+00005aca T mac_sequence_is_duplicate
+00005b38 T mac_sequence_register_seqno
+00005ab2 T mac_sequence_set_dsn
+00002960 B node_mac
+00006416 T packetbuf_addr
+000025c4 B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000063f8 T packetbuf_attr
+00006342 T packetbuf_attr_clear
+000063c8 T packetbuf_attr_copyfrom
+000063a6 T packetbuf_attr_copyto
+000025d4 B packetbuf_attrs
+0000636a T packetbuf_clear
+0000637c T packetbuf_copyfrom
+000062c0 T packetbuf_copyto
+000062a4 T packetbuf_datalen
+000062b4 T packetbuf_dataptr
+000024c5 b packetbuf_hdr_len
+00006306 T packetbuf_hdralloc
+000062aa T packetbuf_hdrlen
+0000629e T packetbuf_hdrptr
+0000627e T packetbuf_hdrreduce
+00006424 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8a b packetbuf_ptr
+00006402 T packetbuf_set_addr
+000063ec T packetbuf_set_attr
+00006298 T packetbuf_set_datalen
+000062fa T packetbuf_totlen
+00004034 t process_thread_cc2420_process
+000068a6 T queuebuf_free
+0000682a T queuebuf_init
+00006846 T queuebuf_new_from_packetbuf
+0000683c T queuebuf_numfree
+000068d0 T queuebuf_to_packetbuf
+00006894 T queuebuf_update_attr_from_packetbuf
+0000811a T rpl_neighbor_get_link_stats
+00008728 T rpl_schedule_probing
+0000876e T rpl_schedule_probing_now
+00008548 T rpl_timers_schedule_dao
+00008580 T rpl_timers_schedule_dao_ack
+000087ae T rpl_timers_schedule_leaving
+0000845e T rpl_timers_schedule_periodic_dis
+00008850 T rpl_timers_schedule_state_update
+00008528 T rpl_timers_schedule_unicast_dio
+00008792 T rpl_timers_unschedule_leaving
+00008840 T rpl_timers_unschedule_state_update
+00008ae2 T rtimer_arch_schedule
+000082ca t schedule_dao_retransmission
+000045b8 t schedule_transmission
+0000124e d send_on_cca
+0000d420 R sicslowpan_driver
+00008c4e T sicslowpan_init
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+CC2420 CCA threshold %i
+sicslowpan
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00001344 b _link_stats_mem
+00003ad6 T cc2420_arch_init
+00002558 B cc2420_authority_level_of_sender
+00003f26 t cc2420_cca
+0000d268 R cc2420_driver
+00004152 T cc2420_get_txpower
+00004436 T cc2420_init
+00004110 T cc2420_interrupt
+00002556 B cc2420_last_correlation
+00002552 B cc2420_last_rssi
+00003ef6 T cc2420_off
+00003e5c T cc2420_on
+00003e1a t cc2420_prepare
+0000110c D cc2420_process
+00003f7a t cc2420_read
+00003c7e t cc2420_receiving_packet
+00004170 T cc2420_rssi
+00003ee4 t cc2420_send
+000042d6 T cc2420_set_cca_threshold
+0000408a T cc2420_set_channel
+000040c4 T cc2420_set_pan_addr
+00004126 T cc2420_set_txpower
+0000255a B cc2420_sfd_counter
+0000255c B cc2420_sfd_end_time
+00002554 B cc2420_sfd_start_time
+000035fe T cc2420_timerb1_interrupt
+00003e7e t cc2420_transmit
+00001272 b channel
+0000d2b0 R csma_driver
+0000499c T csma_output_init
+00004854 T csma_output_packet
+000049b6 T csma_security_create_frame
+000049c6 T csma_security_parse_frame
+00005096 T frame802154_create
+00005028 T frame802154_create_fcf
+00004e40 T frame802154_get_pan_id
+00004e46 T frame802154_has_panid
+00004ff6 T frame802154_hdrlen
+00004fce T frame802154_is_broadcast_addr
+000051f6 T frame802154_parse
+0000516a T frame802154_parse_fcf
+0000d2ca R framer_802154
+000053f0 T framer_802154_setup_params
+00005708 T link_stats_from_lladdr
+00005946 T link_stats_init
+00005826 T link_stats_input_callback
+00005714 T link_stats_is_fresh
+00005744 T link_stats_packet_sent
+0000591c T link_stats_reset
+0000114a d link_stats_struct
+00005970 T linkaddr_cmp
+00005968 T linkaddr_copy
+00002582 B linkaddr_node_addr
+0000d2d6 R linkaddr_null
+00005982 T linkaddr_set_node_addr
+00005bbe T mac_call_sent_callback
+0000247b b mac_dsn
+00001b8c b mac_max_payload
+00001148 d mac_pan_id
+00005aa8 T mac_sequence_init
+00005aca T mac_sequence_is_duplicate
+00005b38 T mac_sequence_register_seqno
+00005ab2 T mac_sequence_set_dsn
+00002928 B node_mac
+00006416 T packetbuf_addr
+0000258c B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000063f8 T packetbuf_attr
+00006342 T packetbuf_attr_clear
+000063c8 T packetbuf_attr_copyfrom
+000063a6 T packetbuf_attr_copyto
+0000259c B packetbuf_attrs
+0000636a T packetbuf_clear
+0000637c T packetbuf_copyfrom
+000062c0 T packetbuf_copyto
+000062a4 T packetbuf_datalen
+000062b4 T packetbuf_dataptr
+000024ad b packetbuf_hdr_len
+00006306 T packetbuf_hdralloc
+000062aa T packetbuf_hdrlen
+0000629e T packetbuf_hdrptr
+0000627e T packetbuf_hdrreduce
+00006424 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8a b packetbuf_ptr
+00006402 T packetbuf_set_addr
+000063ec T packetbuf_set_attr
+00006298 T packetbuf_set_datalen
+000062fa T packetbuf_totlen
+00004034 t process_thread_cc2420_process
+000068a6 T queuebuf_free
+0000682a T queuebuf_init
+00006846 T queuebuf_new_from_packetbuf
+0000683c T queuebuf_numfree
+000068d0 T queuebuf_to_packetbuf
+00006894 T queuebuf_update_attr_from_packetbuf
+0000811a T rpl_neighbor_get_link_stats
+00008728 T rpl_schedule_probing
+0000876e T rpl_schedule_probing_now
+00008548 T rpl_timers_schedule_dao
+00008580 T rpl_timers_schedule_dao_ack
+000087ae T rpl_timers_schedule_leaving
+0000845e T rpl_timers_schedule_periodic_dis
+00008850 T rpl_timers_schedule_state_update
+00008528 T rpl_timers_schedule_unicast_dio
+00008792 T rpl_timers_unschedule_leaving
+00008840 T rpl_timers_unschedule_state_update
+00008ae2 T rtimer_arch_schedule
+000082ca t schedule_dao_retransmission
+000045b8 t schedule_transmission
+0000124e d send_on_cca
+0000d330 R sicslowpan_driver
+00008c4e T sicslowpan_init
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+CC2420 CCA threshold %i
+sicslowpan
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00009274 T PowerCC26XX_schedulerDisable
+00009284 T PowerCC26XX_schedulerRestore
+00011048 V RFCC26XX_schedulerPolicy
+0000ba2c T RF_Params_init
+200040cc b RF_Sch
+0000b71c T RF_ScheduleCmdParams_init
+0000bb3c T RF_TxPowerTable_findPowerLevel
+0000bba4 T RF_TxPowerTable_findValue
+0000998c t RF_abortCmd
+00009b20 t RF_applyRfCorePatch
+00009690 t RF_attachOverrides
+0000ae28 t RF_calculateDispatchTime
+0000b9f4 T RF_cancelCmd
+0000a484 t RF_clkInactivityCallback
+200040f4 b RF_clkInactivityObj
+0000b634 t RF_clkPowerUp
+20004118 b RF_clkPowerUpObj
+00009820 t RF_clkReqAccess
+0000aa30 t RF_cmdDispatchTime
+20002220 b RF_cmdPool
+2000413c b RF_cmdQ
+0000976c t RF_cmdStoreEvents
+2000415c b RF_core
+2000416c b RF_currClient
+00009cbc t RF_decodeOverridePointers
+0000968c t RF_defaultCallback
+00009688 T RF_defaultConflictPolicy
+00011050 r RF_defaultParams
+0000a278 T RF_defaultSubmitPolicy
+000096fc t RF_detachOverrides
+000098e4 t RF_discardPendCmd
+0000aae4 t RF_dispatchNextCmd
+0000af08 t RF_dispatchNextEvent
+20004170 b RF_errTolValInUs
+0000ba10 T RF_flushCmd
+0000b0b0 t RF_fsmActiveState
+0000af7c t RF_fsmPowerUpState
+00009ff8 t RF_fsmSetupState
+00009c28 t RF_fsmXOSCState
+0000a9a4 T RF_getCurrentTime
+0000ba50 T RF_getRssi
+0000baa0 T RF_getTxPower
+0000ac8c t RF_hwiCpe0Active
+00009c98 t RF_hwiCpe0ChangePhy
+20004174 b RF_hwiCpe0Obj
+0000ada0 t RF_hwiCpe0PowerFsm
+00009b94 t RF_hwiHw
+20004190 b RF_hwiHwObj
+00009ed0 t RF_initRadioSetup
+000097a4 t RF_issueRadioFreeCb
+20005175 b RF_numClients
+0000a75c T RF_open
+0000b924 T RF_pendCmd
+0000a1ac t RF_pendCmd.part.17
+0000b658 T RF_postCmd
+20005176 b RF_powerConstraint
+0000a450 T RF_powerConstraintRelease
+0000a384 T RF_powerConstraintSet
+0000a4a0 t RF_radioOpDoneCb
+0000a5f8 t RF_ratFreeChannel
+20002420 b RF_ratModule
+0000a3a0 t RF_ratRestartChannels
+200041ac b RF_ratSyncCmd
+200041c0 b RF_rtcBeginSequence
+200041c4 b RF_rtcTimestampA
+0000b934 T RF_runCmd
+0000ba48 T RF_runDirectCmd
+0000a328 t RF_runDirectImmediateCmd
+0000b72c T RF_scheduleCmd
+000098b0 t RF_searchAndReplacePAOverride
+0000ba74 T RF_setTxPower
+00009c04 t RF_swiFsm
+200041c8 b RF_swiFsmObj
+0000a690 t RF_swiHw
+200041fc b RF_swiHwObj
+00009828 t RF_syncCb
+00009e0c t RF_updatePaConfiguration
+00009604 t RF_verifyGap
+0000a154 t RF_wakeupNotification
+20004230 b RF_wakeupNotifyObj
+0000b964 T RF_yield
+20005174 b SwiP_schedulerRunning
+20001800 A UDMACC26XX_CONFIG_BASE
+0000bd94 T UDMACC26XX_close
+00010dc8 R UDMACC26XX_config
+00000000 A UDMACC26XX_dmaADCAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaADCPriControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaGPT0AAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaGPT0APriControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0RxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0RxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0TxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0TxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1RxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1RxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1TxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi1TxControlTableEntry_is_placed
+0000bd28 T UDMACC26XX_hwiIntFxn
+0000bd34 T UDMACC26XX_open
+20002be0 b _link_stats_mem
+00002aa0 t channel_clear
+00010e70 R csma_driver
+00000f88 T csma_output_init
+00000e80 T csma_output_packet
+00000fac T csma_security_create_frame
+00000fc4 T csma_security_parse_frame
+00010182 T frame802154_create
+00010124 T frame802154_create_fcf
+000014a4 T frame802154_get_pan_id
+0000ff9e T frame802154_has_panid
+000100f2 T frame802154_hdrlen
+000100d4 T frame802154_is_broadcast_addr
+000014b0 T frame802154_parse
+00010208 T frame802154_parse_fcf
+00010e8c R framer_802154
+000102dc t framer_802154_setup_params.part.0
+00002608 t get_rssi
+00001958 T link_stats_from_lladdr
+00001a9c T link_stats_init
+000019ec T link_stats_input_callback
+00010374 T link_stats_is_fresh
+00001964 T link_stats_packet_sent
+00001a74 T link_stats_reset
+20001c2c d link_stats_struct
+000103a2 T linkaddr_cmp
+00010398 T linkaddr_copy
+20004344 B linkaddr_node_addr
+000111f8 R linkaddr_null
+20004aa6 b mac_dsn
+200035cc b mac_max_payload
+20001f48 d mac_pan_id
+00001b28 T mac_sequence_init
+00001b4c T mac_sequence_is_duplicate
+00001b9c T mac_sequence_register_seqno
+00001b38 T mac_sequence_set_dsn
+000021a8 T packetbuf_addr
+20004352 B packetbuf_addrs
+20002eac b packetbuf_aligned
+0000218c T packetbuf_attr
+000020a0 T packetbuf_attr_clear
+00002150 T packetbuf_attr_copyfrom
+00002120 T packetbuf_attr_copyto
+20004362 B packetbuf_attrs
+000020d4 T packetbuf_clear
+000020f4 T packetbuf_copyfrom
+00002008 T packetbuf_copyto
+00001fd4 T packetbuf_datalen
+00001ff8 T packetbuf_dataptr
+2000514a b packetbuf_hdr_len
+0000205c T packetbuf_hdralloc
+00001fe0 T packetbuf_hdrlen
+00001fcc T packetbuf_hdrptr
+00001f98 T packetbuf_hdrreduce
+000021b8 T packetbuf_holds_broadcast
+200035d0 b packetbuf_payload_len
+200035d4 b packetbuf_ptr
+00002198 T packetbuf_set_addr
+00002180 T packetbuf_set_attr
+00001fc0 T packetbuf_set_datalen
+00002048 T packetbuf_totlen
+00005138 t process_thread_rf_sched_process
+200030b4 b prop_radio
+00002be8 T queuebuf_free
+00002b7c T queuebuf_init
+00002ba4 T queuebuf_new_from_packetbuf
+00002b98 T queuebuf_numfree
+00002c14 T queuebuf_to_packetbuf
+0001061a T queuebuf_update_attr_from_packetbuf
+20003440 B radio_mode
+20001c54 D rf_cmd_prop_fs
+20001c6c D rf_cmd_prop_radio_div_setup
+20001c9c D rf_cmd_prop_rx_adv
+20001ccc D rf_cmd_prop_tx_adv
+0001081c T rf_get_tx_power
+20004aef b rf_is_on
+200020d8 b rf_netstack
+00002b38 t rf_patch_cpe_multi_protocol
+20001cec D rf_prop_mode
+20001cfc D rf_prop_overrides
+20001d14 D rf_prop_overrides_tx_20
+
+[MAC / TSCH related strings]
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+RF: Channel %d
+, PANID 0x%04X
+RF Scheduler Process
+sicslowpan
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+rf_mailbox.h
+rf_common_cmd.h
+rf_prop_cmd.h
+rf_ble_cmd.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+UDMACC26XX.c
+UDMACC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+UDMACC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+rf_mailbox.h
+rf_common_cmd.h
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+scheduledDelta
+nextScheduledTick
+scheduledTick
+ClockP_scheduleNextTick
+ui32Channels
+ui32Channel
+AONRTCChannelEnable
+PowerCC26XX_schedulerRestore
+PowerCC26XX_schedulerDisable
+SwiP_schedulerRunning
+RF_setTxPower
+rfc_CMD_RADIO_SETUP_PA_s
+rfc_CMD_RADIO_SETUP_PA_t
+RF_Callback
+RF_CoreStatusPhySwitching
+RF_hwiHwObj
+RF_Params
+RF_RatCaptureModeBoth
+RF_verifyGap
+RF_cmdQ
+RF_clkInactivityCallback
+radioSetup
+RF_RatConfigCompare_init
+RF_getCmdOp
+rfc_CMD_PROP_RADIO_DIV_SETUP_PA_t
+rfc_CMD_RADIO_SETUP_s
+rfc_CMD_RADIO_SETUP_t
+RF_ScheduleStatus
+RF_dbellSubmitCmdAsync
+RF_dbellSyncOnAck
+RF_RatCaptureMode
+RF_RatChannel0
+RF_RatChannel1
+RF_RatChannel2
+RF_RatCaptureSourceEventGeneric
+RF_TxPowerTable_Entry
+RF_howToSchedule
+RF_RatOutputModePulse
+RF_extractPaConfiguration
+RF_RatCaptureRepeat
+RF_errTolValInUs
+RF_init
+RF_TxPowerTable_HighPA
+RF_FsmEventCpeInt
+RF_scheduleCmd
+RF_FsmEventPowerStep
+rfc_CMD_BLE5_RADIO_SETUP_s
+rfc_CMD_BLE5_RADIO_SETUP_t
+RF_open
+RF_ScheduleStatusMiddle
+availableRatChannels
+tuneTxPower
+RF_ScheduleStatusError
+RF_ratFreeChannel
+rfc_CMD_PROP_RADIO_DIV_SETUP_s
+rfc_CMD_PROP_RADIO_DIV_SETUP_t
+RF_CoreState
+RF_FsmEventInitChangePhy
+RF_Handle
+RF_ClientCallback
+RF_GlobalEvent
+RF_discardPendCmd
+RF_ConflictNone
+RF_TxPowerTable_DefaultPA
+RF_ratReleaseChannels
+RF_StatInvalidParamsError
+RF_RatCaptureSourceRfcGpi1
+RF_StatCmdDoneSuccess
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+0000138e b _link_stats_mem
+00003b3e T cc2420_arch_init
+000024e2 B cc2420_authority_level_of_sender
+00003f8e t cc2420_cca
+0000c4bc R cc2420_driver
+000041ba T cc2420_get_txpower
+0000449e T cc2420_init
+00004178 T cc2420_interrupt
+000024e0 B cc2420_last_correlation
+000024dc B cc2420_last_rssi
+00003f5e T cc2420_off
+00003ec4 T cc2420_on
+00003e82 t cc2420_prepare
+0000110c D cc2420_process
+00003fe2 t cc2420_read
+00003ce6 t cc2420_receiving_packet
+000041d8 T cc2420_rssi
+00003f4c t cc2420_send
+0000433e T cc2420_set_cca_threshold
+000040f2 T cc2420_set_channel
+0000412c T cc2420_set_pan_addr
+0000418e T cc2420_set_txpower
+000024e4 B cc2420_sfd_counter
+000024e6 B cc2420_sfd_end_time
+000024de B cc2420_sfd_start_time
+0000363a T cc2420_timerb1_interrupt
+00003ee6 t cc2420_transmit
+00001298 b channel
+0000c504 R csma_driver
+00004d10 T csma_output_init
+00004ab2 T csma_output_packet
+00004d2a T csma_security_create_frame
+00004d3a T csma_security_parse_frame
+0000118c D curr_log_level_6lowpan
+00001188 D curr_log_level_framer
+0000118a D curr_log_level_mac
+0000557a T frame802154_create
+0000550c T frame802154_create_fcf
+00005326 T frame802154_get_pan_id
+0000532c T frame802154_has_panid
+000054da T frame802154_hdrlen
+000054b2 T frame802154_is_broadcast_addr
+000056c4 T frame802154_parse
+00005638 T frame802154_parse_fcf
+0000c51e R framer_802154
+0000596e T framer_802154_setup_params
+00005eb6 T link_stats_from_lladdr
+000060f4 T link_stats_init
+00005fd4 T link_stats_input_callback
+00005ec2 T link_stats_is_fresh
+00005ef2 T link_stats_packet_sent
+000060ca T link_stats_reset
+0000117a d link_stats_struct
+00006122 T linkaddr_cmp
+0000611a T linkaddr_copy
+0000250c B linkaddr_node_addr
+0000c534 R linkaddr_null
+00002491 b mac_dsn
+00001bd2 b mac_max_payload
+00001148 d mac_pan_id
+00006238 T mac_sequence_init
+0000625a T mac_sequence_is_duplicate
+000062c8 T mac_sequence_register_seqno
+00006242 T mac_sequence_set_dsn
+000028a8 B node_mac
+00006b46 T packetbuf_addr
+00002516 B packetbuf_addrs
+0000152a b packetbuf_aligned
+00006b2a T packetbuf_attr
+00006a76 T packetbuf_attr_clear
+00006afc T packetbuf_attr_copyfrom
+00006ada T packetbuf_attr_copyto
+00002526 B packetbuf_attrs
+00006a9e T packetbuf_clear
+00006ab0 T packetbuf_copyfrom
+000069f4 T packetbuf_copyto
+000069d8 T packetbuf_datalen
+000069e8 T packetbuf_dataptr
+000024c3 b packetbuf_hdr_len
+00006a3a T packetbuf_hdralloc
+000069de T packetbuf_hdrlen
+000069d2 T packetbuf_hdrptr
+000069b2 T packetbuf_hdrreduce
+00006b54 T packetbuf_holds_broadcast
+00001bd8 b packetbuf_payload_len
+00001bd0 b packetbuf_ptr
+00006b34 T packetbuf_set_addr
+00006b20 T packetbuf_set_attr
+000069cc T packetbuf_set_datalen
+00006a2e T packetbuf_totlen
+0000409c t process_thread_cc2420_process
+000071cc T queuebuf_attr
+00007170 T queuebuf_free
+000070f4 T queuebuf_init
+00007110 T queuebuf_new_from_packetbuf
+00007106 T queuebuf_numfree
+0000719a T queuebuf_to_packetbuf
+0000715e T queuebuf_update_attr_from_packetbuf
+00009e52 T rpl_neighbor_get_link_stats
+0000a84e T rpl_schedule_probing
+0000a930 T rpl_schedule_probing_now
+0000a67a T rpl_timers_schedule_dao
+0000a6ae T rpl_timers_schedule_dao_ack
+0000a96c T rpl_timers_schedule_leaving
+0000a552 T rpl_timers_schedule_periodic_dis
+0000a9f6 T rpl_timers_schedule_state_update
+0000a65e T rpl_timers_schedule_unicast_dio
+0000a950 T rpl_timers_unschedule_leaving
+0000a4da t schedule_dao_retransmission
+00004614 t schedule_transmission
+00001274 d send_on_cca
+0000c596 R sicslowpan_driver
+0000af14 T sicslowpan_init
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+packet sent to 
+packet sent: no metadata
+could not allocate queuebuf, dropping packet
+CSMA
+Failed to retrieve max radio driver payload length
+drop duplicate link layer packet from 
+received packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+15.4: for another pan %u
+framer-802154: cannot setup params because of invalid argument
+CC2420 CCA threshold %i
+<broadcast>
+DTSN increment %u->%u, schedule new DAO with DTSN %u
+unicast DIS, reply to sender
+unicast
+best parent is not fresh, schedule urgent probing to 
+packet sent to 
+6LoWPAN
+output: could not allocate queuebuf, dropping fragment
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+output: header len %d -> %d, total len %d -> %d, MAC max payload %d, frag_needed %d
+output: fragmentation needed. fragments: %u, free queuebufs: %zu
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+sicslowpan
+, link-layer addr 
+%u unicast addresses
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+0000133a b _link_stats_mem
+0000e094 R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+000027ca B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e098 R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+000027c8 B cc2420_last_correlation
+000027c4 B cc2420_last_rssi
+00004804 T cc2420_off
+0000476a T cc2420_on
+00004380 T cc2420_port1_interrupt
+00004724 t cc2420_prepare
+00001100 D cc2420_process
+0000489c t cc2420_read
+00004568 t cc2420_receiving_packet
+00004b20 T cc2420_rssi
+000047f2 t cc2420_send
+00004c8a T cc2420_set_cca_threshold
+00004a38 T cc2420_set_channel
+00004a74 T cc2420_set_pan_addr
+00004ad6 T cc2420_set_txpower
+000027cc B cc2420_sfd_counter
+000027ce B cc2420_sfd_end_time
+000027c6 B cc2420_sfd_start_time
+0000435a T cc2420_timerb1_interrupt
+0000478c t cc2420_transmit
+0000125a b channel
+0000e0d8 R csma_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00005442 T csma_security_create_frame
+00005452 T csma_security_parse_frame
+000013ea B curr_log_level_6lowpan
+000013e4 B curr_log_level_framer
+000013e6 B curr_log_level_mac
+00005c9a T frame802154_create
+00005c04 T frame802154_create_fcf
+00005a1a T frame802154_get_pan_id
+00005a20 T frame802154_has_panid
+00005bd2 T frame802154_hdrlen
+00005baa T frame802154_is_broadcast_addr
+00005e28 T frame802154_parse
+00005d6c T frame802154_parse_fcf
+0000e0e6 R framer_802154
+00006032 T framer_802154_setup_params
+00006328 T link_stats_from_lladdr
+00006588 T link_stats_init
+00006458 T link_stats_input_callback
+00006334 T link_stats_is_fresh
+00006364 T link_stats_packet_sent
+0000655e T link_stats_reset
+00001148 d link_stats_struct
+000065b6 T linkaddr_cmp
+000065ae T linkaddr_copy
+000027e4 B linkaddr_node_addr
+0000e112 R linkaddr_null
+000013f2 b mac_dsn
+00001d50 b mac_max_payload
+00001138 d mac_pan_id
+000066d8 T mac_sequence_init
+000066fa T mac_sequence_is_duplicate
+0000677e T mac_sequence_register_seqno
+000066e2 T mac_sequence_set_dsn
+00007092 T packetbuf_addr
+000027ee B packetbuf_addrs
+000015c2 b packetbuf_aligned
+00007072 T packetbuf_attr
+00006fba T packetbuf_attr_clear
+00007044 T packetbuf_attr_copyfrom
+00007022 T packetbuf_attr_copyto
+000027fe B packetbuf_attrs
+00006fe2 T packetbuf_clear
+00006ff4 T packetbuf_copyfrom
+00006f2c T packetbuf_copyto
+00006f10 T packetbuf_datalen
+00006f20 T packetbuf_dataptr
+00001d4d b packetbuf_hdr_len
+00006f7e T packetbuf_hdralloc
+00006f16 T packetbuf_hdrlen
+00006f0a T packetbuf_hdrptr
+00006eea T packetbuf_hdrreduce
+000070a4 T packetbuf_holds_broadcast
+00001d58 b packetbuf_payload_len
+00001d4e b packetbuf_ptr
+0000707c T packetbuf_set_addr
+00007068 T packetbuf_set_attr
+00006f04 T packetbuf_set_datalen
+00006f72 T packetbuf_totlen
+0000495a t process_thread_cc2420_process
+000074e6 T queuebuf_free
+00007466 T queuebuf_init
+00007482 T queuebuf_new_from_packetbuf
+00007478 T queuebuf_numfree
+00007510 T queuebuf_to_packetbuf
+000074d4 T queuebuf_update_attr_from_packetbuf
+00008f1c T rpl_neighbor_get_link_stats
+00009558 T rpl_schedule_probing
+0000959e T rpl_schedule_probing_now
+00009368 T rpl_timers_schedule_dao
+000093a0 T rpl_timers_schedule_dao_ack
+000095da T rpl_timers_schedule_leaving
+00009282 T rpl_timers_schedule_periodic_dis
+00009664 T rpl_timers_schedule_state_update
+0000934c T rpl_timers_schedule_unicast_dio
+000095be T rpl_timers_unschedule_leaving
+00009206 t schedule_dao_retransmission
+0000501a t schedule_transmission
+0000110a d send_on_cca
+0000e2f4 R sicslowpan_driver
+00009ac8 T sicslowpan_init
+
+[MAC / TSCH related strings]
+CCC2420 driver
+CSMA
+6lowpan
+framer
+sicslowpan
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+0000134a b _link_stats_mem
+00003ad0 T cc2420_arch_init
+0000249e B cc2420_authority_level_of_sender
+00003f20 t cc2420_cca
+0000ced8 R cc2420_driver
+0000414c T cc2420_get_txpower
+00004430 T cc2420_init
+0000410a T cc2420_interrupt
+0000249c B cc2420_last_correlation
+00002498 B cc2420_last_rssi
+00003ef0 T cc2420_off
+00003e56 T cc2420_on
+00003e14 t cc2420_prepare
+0000110c D cc2420_process
+00003f74 t cc2420_read
+00003c78 t cc2420_receiving_packet
+0000416a T cc2420_rssi
+00003ede t cc2420_send
+000042d0 T cc2420_set_cca_threshold
+00004084 T cc2420_set_channel
+000040be T cc2420_set_pan_addr
+00004120 T cc2420_set_txpower
+000024a0 B cc2420_sfd_counter
+000024a2 B cc2420_sfd_end_time
+0000249a B cc2420_sfd_start_time
+00003604 T cc2420_timerb1_interrupt
+00003e78 t cc2420_transmit
+0000126a b channel
+0000cf20 R csma_driver
+00004976 T csma_output_init
+00004840 T csma_output_packet
+00004990 T csma_security_create_frame
+000049a0 T csma_security_parse_frame
+0000502c T frame802154_create
+00004fbe T frame802154_create_fcf
+00004dd8 T frame802154_get_pan_id
+00004dde T frame802154_has_panid
+00004f8c T frame802154_hdrlen
+00004f64 T frame802154_is_broadcast_addr
+00005176 T frame802154_parse
+000050ea T frame802154_parse_fcf
+0000cf3a R framer_802154
+00005370 T framer_802154_setup_params
+00005756 T link_stats_from_lladdr
+00005994 T link_stats_init
+00005874 T link_stats_input_callback
+00005762 T link_stats_is_fresh
+00005792 T link_stats_packet_sent
+0000596a T link_stats_reset
+0000115a d link_stats_struct
+000059c2 T linkaddr_cmp
+000059ba T linkaddr_copy
+000024c8 B linkaddr_node_addr
+0000cf4a R linkaddr_null
+0000244d b mac_dsn
+00001b8e b mac_max_payload
+00001148 d mac_pan_id
+00005ad8 T mac_sequence_init
+00005afa T mac_sequence_is_duplicate
+00005b68 T mac_sequence_register_seqno
+00005ae2 T mac_sequence_set_dsn
+00002864 B node_mac
+000063e6 T packetbuf_addr
+000024d2 B packetbuf_addrs
+000014e6 b packetbuf_aligned
+000063ca T packetbuf_attr
+00006316 T packetbuf_attr_clear
+0000639c T packetbuf_attr_copyfrom
+0000637a T packetbuf_attr_copyto
+000024e2 B packetbuf_attrs
+0000633e T packetbuf_clear
+00006350 T packetbuf_copyfrom
+00006294 T packetbuf_copyto
+00006278 T packetbuf_datalen
+00006288 T packetbuf_dataptr
+0000247f b packetbuf_hdr_len
+000062da T packetbuf_hdralloc
+0000627e T packetbuf_hdrlen
+00006272 T packetbuf_hdrptr
+00006252 T packetbuf_hdrreduce
+000063f4 T packetbuf_holds_broadcast
+00001b96 b packetbuf_payload_len
+00001b8c b packetbuf_ptr
+000063d4 T packetbuf_set_addr
+000063c0 T packetbuf_set_attr
+0000626c T packetbuf_set_datalen
+000062ce T packetbuf_totlen
+0000402e t process_thread_cc2420_process
+00006872 T queuebuf_free
+000067f6 T queuebuf_init
+00006812 T queuebuf_new_from_packetbuf
+00006808 T queuebuf_numfree
+0000689c T queuebuf_to_packetbuf
+00006860 T queuebuf_update_attr_from_packetbuf
+000080f2 T rpl_neighbor_get_link_stats
+000086ee T rpl_schedule_probing
+00008730 T rpl_schedule_probing_now
+0000851a T rpl_timers_schedule_dao
+0000854e T rpl_timers_schedule_dao_ack
+0000876c T rpl_timers_schedule_leaving
+00008438 T rpl_timers_schedule_periodic_dis
+000087f6 T rpl_timers_schedule_state_update
+000084fe T rpl_timers_schedule_unicast_dio
+00008750 T rpl_timers_unschedule_leaving
+000083c0 t schedule_dao_retransmission
+000045a6 t schedule_transmission
+00001246 d send_on_cca
+0000cfa4 R sicslowpan_driver
+00008bde T sicslowpan_init
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+CC2420 CCA threshold %i
+sicslowpan
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[MAC / TSCH related symbols]
+00000000000586c0 b _link_stats_mem
+000000000006d460 b _tsch_neighbors_mem
+0000000000094a20 b burst_link_scheduled
+0000000000017190 t channel_clear
+0000000000022b41 t channel_clear
+000000000002f39f t cmd_macaddr
+0000000000030429 t cmd_tsch_schedule
+000000000002f8f2 t cmd_tsch_set_coordinator
+000000000002fcdd t cmd_tsch_status
+00000000000523e0 D cooja_radio_driver
+0000000000054000 D cooja_radio_process
+0000000000059994 B curr_log_level_6lowpan
+00000000000599a0 B curr_log_level_framer
+000000000005999c B curr_log_level_mac
+0000000000094d48 b current_channel.3
+0000000000094d40 b current_channel_since.4
+00000000000949f8 b current_slot_start
+00000000000388ac t default_tsch_link_comparator
+0000000000052460 D esmrf_driver
+0000000000054080 d esmrf_icmp_handler
+0000000000019a1d T frame802154_check_dest_panid
+0000000000019f00 T frame802154_create
+0000000000019e2e T frame802154_create_fcf
+0000000000019b12 T frame802154_extract_linkaddr
+0000000000019811 T frame802154_get_pan_id
+000000000001983e T frame802154_has_panid
+0000000000019daf T frame802154_hdrlen
+0000000000019abb T frame802154_is_broadcast_addr
+000000000001a195 T frame802154_parse
+000000000001a09e T frame802154_parse_fcf
+0000000000019822 T frame802154_set_pan_id
+000000000001ad4d t frame802154e_parse_header_ie
+000000000001b251 T frame802154e_parse_information_elements
+000000000001b180 t frame802154e_parse_mlme_long_ie
+000000000001adff t frame802154e_parse_mlme_short_ie
+000000000001abd5 T frame80215e_create_ie_tsch_channel_hopping_sequence
+000000000001a891 T frame80215e_create_ie_tsch_slotframe_and_link
+000000000001a7bf T frame80215e_create_ie_tsch_synchronization
+000000000001aadb T frame80215e_create_ie_tsch_timeslot
+0000000000052480 D framer_802154
+000000000001b681 T framer_802154_setup_params
+000000000001cfda t guess_etx_from_rssi
+0000000000039966 t is_current_channel_in_join_sequence
+0000000000054128 d link_stats
+000000000001cf42 T link_stats_from_lladdr
+000000000001cf6a T link_stats_get_lladdr
+000000000001d3a3 T link_stats_init
+000000000001d1e5 T link_stats_input_callback
+000000000001cf92 T link_stats_is_fresh
+000000000001d081 T link_stats_packet_sent
+000000000001d347 T link_stats_reset
+0000000000054110 d link_stats_struct
+000000000001d406 T linkaddr_cmp
+000000000001d3e5 T linkaddr_copy
+0000000000059980 B linkaddr_node_addr
+0000000000044428 R linkaddr_null
+00000000000231b8 t linkaddr_set_node_addr
+000000000003720b t mac_call_sent_callback
+000000000003b337 t mac_call_sent_callback
+0000000000059b40 b mac_dsn
+000000000006b3b4 b mac_max_payload
+00000000000540c0 d mac_pan_id
+000000000001dc9a T mac_sequence_init
+000000000001dcda T mac_sequence_is_duplicate
+000000000001ddbb T mac_sequence_register_seqno
+000000000001dcb0 T mac_sequence_set_dsn
+0000000000094a2c b mac_tx_status.25
+00000000000524c0 D no_framer
+00000000000524e0 D nullradio_driver
+00000000000542e8 d packetbuf
+000000000002305f T packetbuf_addr
+0000000000064260 B packetbuf_addrs
+0000000000064280 b packetbuf_aligned
+0000000000022ffc T packetbuf_attr
+0000000000022ed5 T packetbuf_attr_clear
+0000000000022f85 T packetbuf_attr_copyfrom
+0000000000022f3a T packetbuf_attr_copyto
+0000000000064240 B packetbuf_attrs
+0000000000022c10 T packetbuf_clear
+0000000000022c3e T packetbuf_copyfrom
+0000000000022c97 T packetbuf_copyto
+0000000000022e6e T packetbuf_datalen
+0000000000022e38 T packetbuf_dataptr
+000000000006b3a8 b packetbuf_hdr_len
+0000000000022d3d T packetbuf_hdralloc
+0000000000022e7f T packetbuf_hdrlen
+0000000000022e5d T packetbuf_hdrptr
+0000000000022dcc T packetbuf_hdrreduce
+0000000000023089 T packetbuf_holds_broadcast
+000000000006b3ac b packetbuf_payload_len
+000000000006b3a0 b packetbuf_ptr
+0000000000022ebd T packetbuf_remaininglen
+000000000002301d T packetbuf_set_addr
+0000000000022fd0 T packetbuf_set_attr
+0000000000022e1c T packetbuf_set_datalen
+0000000000022e9b T packetbuf_totlen
+000000000001738c t process_thread_cooja_radio_process
+000000000003c926 t process_thread_tsch_pending_events_process
+000000000003c59d t process_thread_tsch_process
+000000000003c67a t process_thread_tsch_send_eb_process
+00000000000245dc T queuebuf_addr
+0000000000024623 T queuebuf_attr
+00000000000245ac T queuebuf_datalen
+0000000000024565 T queuebuf_dataptr
+000000000002465e T queuebuf_debug_print
+0000000000024490 T queuebuf_free
+00000000000242fc T queuebuf_init
+00000000000242e7 t queuebuf_load_to_ram
+000000000002433e T queuebuf_new_from_packetbuf
+0000000000024325 T queuebuf_numfree
+00000000000244ec T queuebuf_to_packetbuf
+00000000000243f1 T queuebuf_update_attr_from_packetbuf
+0000000000024434 T queuebuf_update_from_packetbuf
+0000000000016fe9 T radio_LQI
+0000000000016ffc t radio_lqi_last
+0000000000017032 t radio_off
+000000000001700f t radio_on
+00000000000170cc t radio_read
+0000000000022b28 t radio_read
+00000000000171b4 t radio_send
+0000000000016f8c T radio_set_channel
+0000000000016fa6 T radio_set_txpower
+0000000000016fd6 T radio_signal_strength_current
+0000000000016fc3 T radio_signal_strength_last
+000000000002b289 T rpl_neighbor_get_link_stats
+000000000002c415 T rpl_schedule_probing
+000000000002c45c T rpl_schedule_probing_now
+000000000002bf50 T rpl_timers_schedule_dao
+000000000002c056 T rpl_timers_schedule_dao_ack
+000000000002c537 T rpl_timers_schedule_leaving
+000000000002b9f4 T rpl_timers_schedule_periodic_dis
+000000000002c6e9 T rpl_timers_schedule_state_update
+000000000002bd69 T rpl_timers_schedule_unicast_dio
+000000000002c4ea T rpl_timers_unschedule_leaving
+0000000000026ffe t rpl_timers_unschedule_state_update
+000000000002cf67 T rtimer_arch_schedule
+000000000002be72 t schedule_dao_refresh
+000000000002be07 t schedule_dao_retransmission
+00000000000360a5 t schedule_for_end
+0000000000053fec d send_on_cca
+0000000000016f2d t set_send_on_cca
+00000000000528c0 D sicslowpan_driver
+0000000000034224 T sicslowpan_init
+0000000000053fe0 D simRadioChannel
+0000000000053fd0 D simRadioHWOn
+0000000000094a24 b slot_operation_pt
+0000000000094b90 b slot_operation_timer.0
+0000000000094b86 b slot_rx_pt.1
+0000000000094b84 b slot_tx_pt.2
+0000000000054658 d slotframe_list
+0000000000094500 b slotframe_list_list
+0000000000054640 d slotframe_memb
+0000000000094460 b slotframe_memb_memb_mem
+0000000000094440 b slotframe_memb_memb_used
+0000000000052760 D smrf_driver
+000000000003656f t timesync_entry_add
+000000000006cb90 b timesync_entry_count
+0000000000036645 t timesync_learn_drift_ticks
+000000000003654f T tsch_adaptive_timesync_get_drift_ppm
+00000000000368c0 T tsch_adaptive_timesync_reset
+000000000003be25 t tsch_associate
+0000000000094c70 B tsch_association_count
+0000000000045668 R tsch_broadcast_address
+000000000003979b t tsch_calculate_channel
+0000000000094c78 B tsch_current_asn
+00000000000949d8 B tsch_current_burst_count
+00000000000949c8 B tsch_current_channel
+00000000000949c9 B tsch_current_channel_offset
+0000000000094cc0 b tsch_current_eb_period
+0000000000094cc8 b tsch_current_ka_timeout
+0000000000094cb8 b tsch_default_timing_us
+000000000003bdeb T tsch_disassociate
+0000000000045670 R tsch_eb_address
+0000000000039781 t tsch_get_channel_offset
+00000000000396e1 T tsch_get_lock
+0000000000039af8 T tsch_get_network_uptime_ticks
+0000000000094bc0 B tsch_hopping_sequence
+0000000000094bc4 B tsch_hopping_sequence_length
+0000000000094a00 b tsch_in_slot_operation
+000000000003c9a4 t tsch_init
+
+[MAC / TSCH related strings]
+cooja_radio_driver
+tschmac_driver
+sicslowpan_driver
+linkaddr_node_addr
+queuebuf_init
+simRadioHWOn
+simRadioChannel
+cooja_radio_process
+radio_set_channel
+radio_set_txpower
+radio_signal_strength_last
+radio_signal_strength_current
+radio_LQI
+packetbuf_set_attr
+packetbuf_clear
+packetbuf_dataptr
+packetbuf_set_datalen
+packetbuf_addr
+esmrf_driver
+frame802154_get_pan_id
+frame802154_set_pan_id
+frame802154_has_panid
+frame802154_check_dest_panid
+frame802154_is_broadcast_addr
+frame802154_extract_linkaddr
+linkaddr_null
+linkaddr_copy
+frame802154_hdrlen
+frame802154_create_fcf
+frame802154_create
+frame802154_parse_fcf
+frame802154_parse
+frame80215e_create_ie_tsch_synchronization
+frame80215e_create_ie_tsch_slotframe_and_link
+frame80215e_create_ie_tsch_timeslot
+frame80215e_create_ie_tsch_channel_hopping_sequence
+frame802154e_parse_information_elements
+packetbuf_holds_broadcast
+framer_802154_setup_params
+packetbuf_datalen
+packetbuf_hdralloc
+packetbuf_hdrptr
+packetbuf_hdrreduce
+packetbuf_set_addr
+framer_802154
+linkaddr_cmp
+curr_log_level_6lowpan
+curr_log_level_mac
+curr_log_level_framer
+mac_sequence_init
+mac_sequence_set_dsn
+mac_sequence_is_duplicate
+mac_sequence_register_seqno
+no_framer
+nullradio_driver
+packetbuf_attrs
+packetbuf_addrs
+packetbuf_attr_clear
+packetbuf_copyfrom
+packetbuf_copyto
+packetbuf_totlen
+packetbuf_hdrlen
+packetbuf_remaininglen
+packetbuf_attr_copyto
+packetbuf_attr_copyfrom
+queuebuf_numfree
+queuebuf_new_from_packetbuf
+queuebuf_update_attr_from_packetbuf
+queuebuf_update_from_packetbuf
+queuebuf_free
+queuebuf_to_packetbuf
+queuebuf_dataptr
+queuebuf_datalen
+queuebuf_addr
+queuebuf_attr
+queuebuf_debug_print
+rpl_timers_schedule_state_update
+rpl_timers_schedule_leaving
+rpl_timers_unschedule_leaving
+rpl_timers_schedule_dao
+rpl_timers_schedule_periodic_dis
+rpl_schedule_probing
+rpl_timers_schedule_dao_ack
+rpl_timers_schedule_unicast_dio
+tsch_rpl_callback_parent_switch
+rpl_schedule_probing_now
+tsch_rpl_callback_new_dio_interval
+rtimer_arch_schedule
+tsch_set_pan_secured
+tsch_set_coordinator
+tsch_is_coordinator
+tsch_is_associated
+tsch_queue_get_time_source
+tsch_is_pan_secured
+tsch_join_priority
+tsch_queue_get_nbr_address
+tsch_last_sync_time
+tsch_adaptive_timesync_get_drift_ppm
+tsch_get_network_uptime_ticks
+tsch_is_locked
+tsch_schedule_slotframe_head
+tsch_schedule_slotframe_next
+sicslowpan_init
+udp_broadcast_new
+tsch_set_ka_timeout
+tsch_timing
+tsch_timesync_update
+tsch_adaptive_timesync_reset
+tsch_timing_us
+tsch_timesync_adaptive_compensate
+tsch_packet_eackbuf_set_attr
+tsch_packet_eackbuf_attr
+tsch_packet_create_eack
+tsch_packet_parse_eack
+tsch_packet_create_eb
+tsch_eb_address
+tsch_packet_update_eb
+tsch_current_asn
+tsch_packet_parse_eb
+tsch_packet_set_frame_pending
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000039e2 T cc2420_arch_init
+00001a0c B cc2420_authority_level_of_sender
+00003e32 t cc2420_cca
+00007338 R cc2420_driver
+0000405e T cc2420_get_txpower
+00004342 T cc2420_init
+0000401c T cc2420_interrupt
+00001a0a B cc2420_last_correlation
+00001a06 B cc2420_last_rssi
+00003e02 T cc2420_off
+00003d68 T cc2420_on
+00003d26 t cc2420_prepare
+0000110c D cc2420_process
+00003e86 t cc2420_read
+00003b8a t cc2420_receiving_packet
+0000407c T cc2420_rssi
+00003df0 t cc2420_send
+000041e2 T cc2420_set_cca_threshold
+00003f96 T cc2420_set_channel
+00003fd0 T cc2420_set_pan_addr
+00004032 T cc2420_set_txpower
+00001a0e B cc2420_sfd_counter
+00001a10 B cc2420_sfd_end_time
+00001a08 B cc2420_sfd_start_time
+0000350a T cc2420_timerb1_interrupt
+00003d8a t cc2420_transmit
+000011c8 b channel
+00007380 R csma_driver
+0000488e T csma_output_init
+00004746 T csma_output_packet
+000048a8 T csma_security_create_frame
+000048b8 T csma_security_parse_frame
+00004f2c T frame802154_create
+00004ebe T frame802154_create_fcf
+00004cd6 T frame802154_get_pan_id
+00004cdc T frame802154_has_panid
+00004e8c T frame802154_hdrlen
+00004e64 T frame802154_is_broadcast_addr
+0000508c T frame802154_parse
+00005000 T frame802154_parse_fcf
+0000739a R framer_802154
+00005286 T framer_802154_setup_params
+0000557a T linkaddr_cmp
+00005572 T linkaddr_copy
+00001a20 B linkaddr_node_addr
+000073a6 R linkaddr_null
+0000558c T linkaddr_set_node_addr
+00005780 T mac_call_sent_callback
+000019e5 b mac_dsn
+00001148 d mac_pan_id
+0000566a T mac_sequence_init
+0000568c T mac_sequence_is_duplicate
+000056fa T mac_sequence_register_seqno
+00005674 T mac_sequence_set_dsn
+00001a56 B node_mac
+00005cf8 T packetbuf_addr
+00001a2e B packetbuf_addrs
+00001392 b packetbuf_aligned
+00005cda T packetbuf_attr
+00005c24 T packetbuf_attr_clear
+00005caa T packetbuf_attr_copyfrom
+00005c88 T packetbuf_attr_copyto
+00001a3e B packetbuf_attrs
+00005c4c T packetbuf_clear
+00005c5e T packetbuf_copyfrom
+00005ba2 T packetbuf_copyto
+00005b86 T packetbuf_datalen
+00005b96 T packetbuf_dataptr
+00005be8 T packetbuf_hdralloc
+00005b8c T packetbuf_hdrlen
+00005b80 T packetbuf_hdrptr
+00005b60 T packetbuf_hdrreduce
+00005d06 T packetbuf_holds_broadcast
+00005ce4 T packetbuf_set_addr
+00005cce T packetbuf_set_attr
+00005b7a T packetbuf_set_datalen
+00005bdc T packetbuf_totlen
+00003f40 t process_thread_cc2420_process
+0000619a T queuebuf_free
+00006128 T queuebuf_init
+0000613a T queuebuf_new_from_packetbuf
+000061c4 T queuebuf_to_packetbuf
+00006188 T queuebuf_update_attr_from_packetbuf
+0000621e T rtimer_arch_schedule
+000044aa t schedule_transmission
+000011a4 d send_on_cca
+00003cca t set_auto_ack
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+NullNet broadcast example
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00008240 R cc2420_aes_128_driver
+00004340 T cc2420_arch_init
+00001cae B cc2420_authority_level_of_sender
+000048c8 t cc2420_cca
+00008244 R cc2420_driver
+00004b96 T cc2420_get_txpower
+00004e84 T cc2420_init
+00004b54 T cc2420_interrupt
+00001cac B cc2420_last_correlation
+00001ca8 B cc2420_last_rssi
+00004898 T cc2420_off
+000047da T cc2420_on
+00004320 T cc2420_port1_interrupt
+00004794 t cc2420_prepare
+00001100 D cc2420_process
+00004930 t cc2420_read
+000044ee t cc2420_receiving_packet
+00004bb4 T cc2420_rssi
+00004886 t cc2420_send
+00004d1e T cc2420_set_cca_threshold
+00004acc T cc2420_set_channel
+00004b08 T cc2420_set_pan_addr
+00004b6a T cc2420_set_txpower
+00001cb0 B cc2420_sfd_counter
+00001cb2 B cc2420_sfd_end_time
+00001caa B cc2420_sfd_start_time
+000042fa T cc2420_timerb1_interrupt
+000047fc t cc2420_transmit
+0000124c b channel
+00008284 R csma_driver
+000054a6 T csma_output_init
+00005360 T csma_output_packet
+000054c0 T csma_security_create_frame
+000054d0 T csma_security_parse_frame
+0000132e B curr_log_level_6lowpan
+00001328 B curr_log_level_framer
+0000132a B curr_log_level_mac
+00005d8a T frame802154_create
+00005cf4 T frame802154_create_fcf
+00005b0a T frame802154_get_pan_id
+00005b10 T frame802154_has_panid
+00005cc2 T frame802154_hdrlen
+00005c9a T frame802154_is_broadcast_addr
+00005f18 T frame802154_parse
+00005e5c T frame802154_parse_fcf
+00008292 R framer_802154
+00006122 T framer_802154_setup_params
+0000633c T linkaddr_cmp
+00006334 T linkaddr_copy
+00001cec B linkaddr_node_addr
+00008298 R linkaddr_null
+00001336 b mac_dsn
+00001138 d mac_pan_id
+00006412 T mac_sequence_init
+00006434 T mac_sequence_is_duplicate
+000064b8 T mac_sequence_register_seqno
+0000641c T mac_sequence_set_dsn
+00006ae0 T packetbuf_addr
+00001cfa B packetbuf_addrs
+00001430 b packetbuf_aligned
+00006ac0 T packetbuf_attr
+00006a08 T packetbuf_attr_clear
+00006a92 T packetbuf_attr_copyfrom
+00006a70 T packetbuf_attr_copyto
+00001d0a B packetbuf_attrs
+00006a30 T packetbuf_clear
+00006a42 T packetbuf_copyfrom
+0000697a T packetbuf_copyto
+0000695e T packetbuf_datalen
+0000696e T packetbuf_dataptr
+000069cc T packetbuf_hdralloc
+00006964 T packetbuf_hdrlen
+00006958 T packetbuf_hdrptr
+00006938 T packetbuf_hdrreduce
+00006af2 T packetbuf_holds_broadcast
+00006aca T packetbuf_set_addr
+00006ab6 T packetbuf_set_attr
+00006952 T packetbuf_set_datalen
+000069c0 T packetbuf_totlen
+000049ee t process_thread_cc2420_process
+00006fb8 T queuebuf_free
+00006f42 T queuebuf_init
+00006f54 T queuebuf_new_from_packetbuf
+00006fe2 T queuebuf_to_packetbuf
+00006fa6 T queuebuf_update_attr_from_packetbuf
+00005098 t schedule_transmission
+0000110a d send_on_cca
+
+[MAC / TSCH related strings]
+L4MZC^CCC2420 driver
+CSMA
+6lowpan
+framer
+recv fr:%u:rssi:%d:as:%d:
+NullNet broadcast example
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+0000ab60 R cc2420_aes_128_driver
+00004332 T cc2420_arch_init
+00002de4 B cc2420_authority_level_of_sender
+000047c6 t cc2420_cca
+0000ab64 R cc2420_driver
+00004a94 T cc2420_get_txpower
+00004d82 T cc2420_init
+00004a52 T cc2420_interrupt
+00002de2 B cc2420_last_correlation
+00002dde B cc2420_last_rssi
+00004796 T cc2420_off
+000046fc T cc2420_on
+00004312 T cc2420_port1_interrupt
+000046b6 t cc2420_prepare
+00001100 D cc2420_process
+0000482e t cc2420_read
+000044fa t cc2420_receiving_packet
+00004ab2 T cc2420_rssi
+00004784 t cc2420_send
+00004c1c T cc2420_set_cca_threshold
+000049ca T cc2420_set_channel
+00004a06 T cc2420_set_pan_addr
+00004a68 T cc2420_set_txpower
+00002de6 B cc2420_sfd_counter
+00002de8 B cc2420_sfd_end_time
+00002de0 B cc2420_sfd_start_time
+000042ec T cc2420_timerb1_interrupt
+0000471e t cc2420_transmit
+00002260 b channel
+0000abb2 R csma_driver
+000053c4 T csma_output_init
+0000526c T csma_output_packet
+000053de T csma_security_create_frame
+000053ee T csma_security_parse_frame
+00002340 B curr_log_level_6lowpan
+0000233a B curr_log_level_framer
+0000233c B curr_log_level_mac
+00005c4a T frame802154_create
+00005bb4 T frame802154_create_fcf
+000059c8 T frame802154_get_pan_id
+000059ce T frame802154_has_panid
+00005b82 T frame802154_hdrlen
+00005b5a T frame802154_is_broadcast_addr
+00005dea T frame802154_parse
+00005d2e T frame802154_parse_fcf
+0000abc0 R framer_802154
+00005ff4 T framer_802154_setup_params
+00006210 T linkaddr_cmp
+00006208 T linkaddr_copy
+00002dea B linkaddr_node_addr
+0000abc6 R linkaddr_null
+00006222 T linkaddr_set_node_addr
+0000643e T mac_call_sent_callback
+00002348 b mac_dsn
+0000113c d mac_pan_id
+00006308 T mac_sequence_init
+0000632a T mac_sequence_is_duplicate
+000063ae T mac_sequence_register_seqno
+00006312 T mac_sequence_set_dsn
+00007334 T packetbuf_addr
+00002e22 B packetbuf_addrs
+0000255e b packetbuf_aligned
+00007312 T packetbuf_attr
+00007258 T packetbuf_attr_clear
+000072e2 T packetbuf_attr_copyfrom
+000072c0 T packetbuf_attr_copyto
+00002e32 B packetbuf_attrs
+00007280 T packetbuf_clear
+00007292 T packetbuf_copyfrom
+000071ca T packetbuf_copyto
+000071ae T packetbuf_datalen
+000071be T packetbuf_dataptr
+0000721c T packetbuf_hdralloc
+000071b4 T packetbuf_hdrlen
+000071a8 T packetbuf_hdrptr
+00007188 T packetbuf_hdrreduce
+00007346 T packetbuf_holds_broadcast
+0000731c T packetbuf_set_addr
+00007306 T packetbuf_set_attr
+000071a2 T packetbuf_set_datalen
+00007210 T packetbuf_totlen
+000048ec t process_thread_cc2420_process
+00007792 T queuebuf_free
+0000771c T queuebuf_init
+0000772e T queuebuf_new_from_packetbuf
+000077bc T queuebuf_to_packetbuf
+00007780 T queuebuf_update_attr_from_packetbuf
+00002454 B rssiList
+000078c2 T rtimer_arch_schedule
+00004fa2 t schedule_transmission
+0000110a d send_on_cca
+
+[MAC / TSCH related strings]
+J2LLCPCCC2420 driver
+CSMA
+6lowpan
+framer
+linkaddr_node_addr iss 
+Broadcast from %d, to all. %llu %llu 
+ RSSI is : %d
+zx:%llu zy:%llu zdis:%llu rssi:%d rssiList[count-1]:%d 
+NullNet unicast example
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+000039e2 T cc2420_arch_init
+00002416 B cc2420_authority_level_of_sender
+00003e32 t cc2420_cca
+00009910 R cc2420_driver
+0000405e T cc2420_get_txpower
+00004342 T cc2420_init
+0000401c T cc2420_interrupt
+00002414 B cc2420_last_correlation
+00002410 B cc2420_last_rssi
+00003e02 T cc2420_off
+00003d68 T cc2420_on
+00003d26 t cc2420_prepare
+0000110c D cc2420_process
+00003e86 t cc2420_read
+00003b8a t cc2420_receiving_packet
+0000407c T cc2420_rssi
+00003df0 t cc2420_send
+000041e2 T cc2420_set_cca_threshold
+00003f96 T cc2420_set_channel
+00003fd0 T cc2420_set_pan_addr
+00004032 T cc2420_set_txpower
+00002418 B cc2420_sfd_counter
+0000241a B cc2420_sfd_end_time
+00002412 B cc2420_sfd_start_time
+0000350a T cc2420_timerb1_interrupt
+00003d8a t cc2420_transmit
+00001ada b channel
+00009958 R csma_driver
+0000488e T csma_output_init
+00004746 T csma_output_packet
+000048a8 T csma_security_create_frame
+000048b8 T csma_security_parse_frame
+00004f2c T frame802154_create
+00004ebe T frame802154_create_fcf
+00004cd6 T frame802154_get_pan_id
+00004cdc T frame802154_has_panid
+00004e8c T frame802154_hdrlen
+00004e64 T frame802154_is_broadcast_addr
+0000508c T frame802154_parse
+00005000 T frame802154_parse_fcf
+00009972 R framer_802154
+00005286 T framer_802154_setup_params
+0000557a T linkaddr_cmp
+00005572 T linkaddr_copy
+0000242a B linkaddr_node_addr
+0000997e R linkaddr_null
+0000558c T linkaddr_set_node_addr
+00005780 T mac_call_sent_callback
+000023ef b mac_dsn
+00001148 d mac_pan_id
+0000566a T mac_sequence_init
+0000568c T mac_sequence_is_duplicate
+000056fa T mac_sequence_register_seqno
+00005674 T mac_sequence_set_dsn
+000024f0 B node_mac
+00006380 T packetbuf_addr
+000024c8 B packetbuf_addrs
+00001d98 b packetbuf_aligned
+00006362 T packetbuf_attr
+000062ac T packetbuf_attr_clear
+00006332 T packetbuf_attr_copyfrom
+00006310 T packetbuf_attr_copyto
+000024d8 B packetbuf_attrs
+000062d4 T packetbuf_clear
+000062e6 T packetbuf_copyfrom
+0000622a T packetbuf_copyto
+0000620e T packetbuf_datalen
+0000621e T packetbuf_dataptr
+00006270 T packetbuf_hdralloc
+00006214 T packetbuf_hdrlen
+00006208 T packetbuf_hdrptr
+000061e8 T packetbuf_hdrreduce
+0000638e T packetbuf_holds_broadcast
+0000636c T packetbuf_set_addr
+00006356 T packetbuf_set_attr
+00006202 T packetbuf_set_datalen
+00006264 T packetbuf_totlen
+00003f40 t process_thread_cc2420_process
+00006822 T queuebuf_free
+000067b0 T queuebuf_init
+000067c2 T queuebuf_new_from_packetbuf
+0000684c T queuebuf_to_packetbuf
+00006810 T queuebuf_update_attr_from_packetbuf
+00001c8e B rssiList
+000068a6 T rtimer_arch_schedule
+000044aa t schedule_transmission
+00001a52 d send_on_cca
+00003cca t set_auto_ack
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+linkaddr_node_addr iss 
+Sending from node_id :%d, to linkaddr_node_addr :
+ RSSI is : %d
+NullNet unicast example
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00008218 R cc2420_aes_128_driver
+00004332 T cc2420_arch_init
+00002e7e B cc2420_authority_level_of_sender
+000047c6 t cc2420_cca
+0000821c R cc2420_driver
+00004a94 T cc2420_get_txpower
+00004d82 T cc2420_init
+00004a52 T cc2420_interrupt
+00002e7c B cc2420_last_correlation
+00002e78 B cc2420_last_rssi
+00004796 T cc2420_off
+000046fc T cc2420_on
+00004312 T cc2420_port1_interrupt
+000046b6 t cc2420_prepare
+00001100 D cc2420_process
+0000482e t cc2420_read
+000044fa t cc2420_receiving_packet
+00004ab2 T cc2420_rssi
+00004784 t cc2420_send
+00004c1c T cc2420_set_cca_threshold
+000049ca T cc2420_set_channel
+00004a06 T cc2420_set_pan_addr
+00004a68 T cc2420_set_txpower
+00002e80 B cc2420_sfd_counter
+00002e82 B cc2420_sfd_end_time
+00002e7a B cc2420_sfd_start_time
+000042ec T cc2420_timerb1_interrupt
+0000471e t cc2420_transmit
+00002328 b channel
+0000826a R csma_driver
+000053c4 T csma_output_init
+0000526c T csma_output_packet
+000053de T csma_security_create_frame
+000053ee T csma_security_parse_frame
+00002408 B curr_log_level_6lowpan
+00002402 B curr_log_level_framer
+00002404 B curr_log_level_mac
+00005c4a T frame802154_create
+00005bb4 T frame802154_create_fcf
+000059c8 T frame802154_get_pan_id
+000059ce T frame802154_has_panid
+00005b82 T frame802154_hdrlen
+00005b5a T frame802154_is_broadcast_addr
+00005dea T frame802154_parse
+00005d2e T frame802154_parse_fcf
+00008278 R framer_802154
+00005ff4 T framer_802154_setup_params
+00006210 T linkaddr_cmp
+00006208 T linkaddr_copy
+00002e84 B linkaddr_node_addr
+0000827e R linkaddr_null
+00006222 T linkaddr_set_node_addr
+0000643e T mac_call_sent_callback
+00002410 b mac_dsn
+0000113c d mac_pan_id
+00006308 T mac_sequence_init
+0000632a T mac_sequence_is_duplicate
+000063ae T mac_sequence_register_seqno
+00006312 T mac_sequence_set_dsn
+00006aa6 T packetbuf_addr
+00002e92 B packetbuf_addrs
+000025fc b packetbuf_aligned
+00006a84 T packetbuf_attr
+000069ca T packetbuf_attr_clear
+00006a54 T packetbuf_attr_copyfrom
+00006a32 T packetbuf_attr_copyto
+00002ea2 B packetbuf_attrs
+000069f2 T packetbuf_clear
+00006a04 T packetbuf_copyfrom
+0000693c T packetbuf_copyto
+00006920 T packetbuf_datalen
+00006930 T packetbuf_dataptr
+0000698e T packetbuf_hdralloc
+00006926 T packetbuf_hdrlen
+0000691a T packetbuf_hdrptr
+000068fa T packetbuf_hdrreduce
+00006ab8 T packetbuf_holds_broadcast
+00006a8e T packetbuf_set_addr
+00006a78 T packetbuf_set_attr
+00006914 T packetbuf_set_datalen
+00006982 T packetbuf_totlen
+000048ec t process_thread_cc2420_process
+00006f04 T queuebuf_free
+00006e8e T queuebuf_init
+00006ea0 T queuebuf_new_from_packetbuf
+00006f2e T queuebuf_to_packetbuf
+00006ef2 T queuebuf_update_attr_from_packetbuf
+000024f4 B rssiList
+00007034 T rtimer_arch_schedule
+00004fa2 t schedule_transmission
+0000110a d send_on_cca
+
+[MAC / TSCH related strings]
+J2LLCPCCC2420 driver
+CSMA
+6lowpan
+framer
+linkaddr_node_addr iss 
+NullNet unicast example
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00001332 b _link_stats_mem
+0000e488 R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+00002906 B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e48c R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+00002904 B cc2420_last_correlation
+00002900 B cc2420_last_rssi
+00004804 T cc2420_off
+0000476a T cc2420_on
+00004380 T cc2420_port1_interrupt
+00004724 t cc2420_prepare
+00001100 D cc2420_process
+0000489c t cc2420_read
+00004568 t cc2420_receiving_packet
+00004b20 T cc2420_rssi
+000047f2 t cc2420_send
+00004c8a T cc2420_set_cca_threshold
+00004a38 T cc2420_set_channel
+00004a74 T cc2420_set_pan_addr
+00004ad6 T cc2420_set_txpower
+00002908 B cc2420_sfd_counter
+0000290a B cc2420_sfd_end_time
+00002902 B cc2420_sfd_start_time
+0000435a T cc2420_timerb1_interrupt
+0000478c t cc2420_transmit
+00001260 b channel
+0000e4cc R csma_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00005442 T csma_security_create_frame
+00005452 T csma_security_parse_frame
+000013e2 B curr_log_level_6lowpan
+000013dc B curr_log_level_framer
+000013de B curr_log_level_mac
+00005c9a T frame802154_create
+00005c04 T frame802154_create_fcf
+00005a1a T frame802154_get_pan_id
+00005a20 T frame802154_has_panid
+00005bd2 T frame802154_hdrlen
+00005baa T frame802154_is_broadcast_addr
+00005e28 T frame802154_parse
+00005d6c T frame802154_parse_fcf
+0000e4da R framer_802154
+00006032 T framer_802154_setup_params
+0000626c T link_stats_from_lladdr
+000064cc T link_stats_init
+0000639c T link_stats_input_callback
+00006278 T link_stats_is_fresh
+000062a8 T link_stats_packet_sent
+000064a2 T link_stats_reset
+0000113a d link_stats_struct
+000064fa T linkaddr_cmp
+000064f2 T linkaddr_copy
+00002920 B linkaddr_node_addr
+0000e4e0 R linkaddr_null
+000013ea b mac_dsn
+00001d48 b mac_max_payload
+00001138 d mac_pan_id
+0000661c T mac_sequence_init
+0000663e T mac_sequence_is_duplicate
+000066c2 T mac_sequence_register_seqno
+00006626 T mac_sequence_set_dsn
+00006fd6 T packetbuf_addr
+0000292a B packetbuf_addrs
+000015ba b packetbuf_aligned
+00006fb6 T packetbuf_attr
+00006efe T packetbuf_attr_clear
+00006f88 T packetbuf_attr_copyfrom
+00006f66 T packetbuf_attr_copyto
+0000293a B packetbuf_attrs
+00006f26 T packetbuf_clear
+00006f38 T packetbuf_copyfrom
+00006e70 T packetbuf_copyto
+00006e54 T packetbuf_datalen
+00006e64 T packetbuf_dataptr
+00001d45 b packetbuf_hdr_len
+00006ec2 T packetbuf_hdralloc
+00006e5a T packetbuf_hdrlen
+00006e4e T packetbuf_hdrptr
+00006e2e T packetbuf_hdrreduce
+00006fe8 T packetbuf_holds_broadcast
+00001d50 b packetbuf_payload_len
+00001d46 b packetbuf_ptr
+00006fc0 T packetbuf_set_addr
+00006fac T packetbuf_set_attr
+00006e48 T packetbuf_set_datalen
+00006eb6 T packetbuf_totlen
+0000495a t process_thread_cc2420_process
+0000742a T queuebuf_free
+000073aa T queuebuf_init
+000073c6 T queuebuf_new_from_packetbuf
+000073bc T queuebuf_numfree
+00007454 T queuebuf_to_packetbuf
+00007418 T queuebuf_update_attr_from_packetbuf
+00008e60 T rpl_neighbor_get_link_stats
+0000949c T rpl_schedule_probing
+000094e2 T rpl_schedule_probing_now
+000092ac T rpl_timers_schedule_dao
+000092e4 T rpl_timers_schedule_dao_ack
+0000951e T rpl_timers_schedule_leaving
+000091c6 T rpl_timers_schedule_periodic_dis
+000095a8 T rpl_timers_schedule_state_update
+00009290 T rpl_timers_schedule_unicast_dio
+00009502 T rpl_timers_unschedule_leaving
+0000914a t schedule_dao_retransmission
+0000501a t schedule_transmission
+0000110a d send_on_cca
+0000e6c2 R sicslowpan_driver
+00009a0c T sicslowpan_init
+
+[MAC / TSCH related strings]
+CCC2420 driver
+CSMA
+6lowpan
+framer
+sicslowpan
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CC2420 CCA threshold %i
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00001344 b _link_stats_mem
+00003ad0 T cc2420_arch_init
+0000257a B cc2420_authority_level_of_sender
+00003f20 t cc2420_cca
+0000d258 R cc2420_driver
+0000414c T cc2420_get_txpower
+00004430 T cc2420_init
+0000410a T cc2420_interrupt
+00002578 B cc2420_last_correlation
+00002574 B cc2420_last_rssi
+00003ef0 T cc2420_off
+00003e56 T cc2420_on
+00003e14 t cc2420_prepare
+0000110c D cc2420_process
+00003f74 t cc2420_read
+00003c78 t cc2420_receiving_packet
+0000416a T cc2420_rssi
+00003ede t cc2420_send
+000042d0 T cc2420_set_cca_threshold
+00004084 T cc2420_set_channel
+000040be T cc2420_set_pan_addr
+00004120 T cc2420_set_txpower
+0000257c B cc2420_sfd_counter
+0000257e B cc2420_sfd_end_time
+00002576 B cc2420_sfd_start_time
+00003604 T cc2420_timerb1_interrupt
+00003e78 t cc2420_transmit
+00001272 b channel
+0000d2a0 R csma_driver
+00004976 T csma_output_init
+00004840 T csma_output_packet
+00004990 T csma_security_create_frame
+000049a0 T csma_security_parse_frame
+0000502c T frame802154_create
+00004fbe T frame802154_create_fcf
+00004dd8 T frame802154_get_pan_id
+00004dde T frame802154_has_panid
+00004f8c T frame802154_hdrlen
+00004f64 T frame802154_is_broadcast_addr
+00005176 T frame802154_parse
+000050ea T frame802154_parse_fcf
+0000d2ba R framer_802154
+00005370 T framer_802154_setup_params
+00005686 T link_stats_from_lladdr
+000058c4 T link_stats_init
+000057a4 T link_stats_input_callback
+00005692 T link_stats_is_fresh
+000056c2 T link_stats_packet_sent
+0000589a T link_stats_reset
+0000114a d link_stats_struct
+000058f2 T linkaddr_cmp
+000058ea T linkaddr_copy
+000025a4 B linkaddr_node_addr
+0000d2c6 R linkaddr_null
+0000247d b mac_dsn
+00001b88 b mac_max_payload
+00001148 d mac_pan_id
+00005a08 T mac_sequence_init
+00005a2a T mac_sequence_is_duplicate
+00005a98 T mac_sequence_register_seqno
+00005a12 T mac_sequence_set_dsn
+00002940 B node_mac
+00006316 T packetbuf_addr
+000025ae B packetbuf_addrs
+000014e0 b packetbuf_aligned
+000062fa T packetbuf_attr
+00006246 T packetbuf_attr_clear
+000062cc T packetbuf_attr_copyfrom
+000062aa T packetbuf_attr_copyto
+000025be B packetbuf_attrs
+0000626e T packetbuf_clear
+00006280 T packetbuf_copyfrom
+000061c4 T packetbuf_copyto
+000061a8 T packetbuf_datalen
+000061b8 T packetbuf_dataptr
+000024af b packetbuf_hdr_len
+0000620a T packetbuf_hdralloc
+000061ae T packetbuf_hdrlen
+000061a2 T packetbuf_hdrptr
+00006182 T packetbuf_hdrreduce
+00006324 T packetbuf_holds_broadcast
+00001b90 b packetbuf_payload_len
+00001b86 b packetbuf_ptr
+00006304 T packetbuf_set_addr
+000062f0 T packetbuf_set_attr
+0000619c T packetbuf_set_datalen
+000061fe T packetbuf_totlen
+0000402e t process_thread_cc2420_process
+000067a2 T queuebuf_free
+00006726 T queuebuf_init
+00006742 T queuebuf_new_from_packetbuf
+00006738 T queuebuf_numfree
+000067cc T queuebuf_to_packetbuf
+00006790 T queuebuf_update_attr_from_packetbuf
+00008022 T rpl_neighbor_get_link_stats
+0000861e T rpl_schedule_probing
+00008660 T rpl_schedule_probing_now
+0000844a T rpl_timers_schedule_dao
+0000847e T rpl_timers_schedule_dao_ack
+0000869c T rpl_timers_schedule_leaving
+00008368 T rpl_timers_schedule_periodic_dis
+00008726 T rpl_timers_schedule_state_update
+0000842e T rpl_timers_schedule_unicast_dio
+00008680 T rpl_timers_unschedule_leaving
+000082f0 t schedule_dao_retransmission
+000045a6 t schedule_transmission
+0000124e d send_on_cca
+0000d320 R sicslowpan_driver
+00008b0e T sicslowpan_init
+
+[MAC / TSCH related strings]
+CC2420 driver
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CSMA
+CC2420 CCA threshold %i
+sicslowpan
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[MAC / TSCH related symbols]
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000134 A __MAC
+00000136 A __MACS
+00001332 b _link_stats_mem
+0000e34c R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+000028ce B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e350 R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+000028cc B cc2420_last_correlation
+000028c8 B cc2420_last_rssi
+00004804 T cc2420_off
+0000476a T cc2420_on
+00004380 T cc2420_port1_interrupt
+00004724 t cc2420_prepare
+00001100 D cc2420_process
+0000489c t cc2420_read
+00004568 t cc2420_receiving_packet
+00004b20 T cc2420_rssi
+000047f2 t cc2420_send
+00004c8a T cc2420_set_cca_threshold
+00004a38 T cc2420_set_channel
+00004a74 T cc2420_set_pan_addr
+00004ad6 T cc2420_set_txpower
+000028d0 B cc2420_sfd_counter
+000028d2 B cc2420_sfd_end_time
+000028ca B cc2420_sfd_start_time
+0000435a T cc2420_timerb1_interrupt
+0000478c t cc2420_transmit
+00001260 b channel
+0000e390 R csma_driver
+00005428 T csma_output_init
+000052e2 T csma_output_packet
+00005442 T csma_security_create_frame
+00005452 T csma_security_parse_frame
+000013e2 B curr_log_level_6lowpan
+000013dc B curr_log_level_framer
+000013de B curr_log_level_mac
+00005c9a T frame802154_create
+00005c04 T frame802154_create_fcf
+00005a1a T frame802154_get_pan_id
+00005a20 T frame802154_has_panid
+00005bd2 T frame802154_hdrlen
+00005baa T frame802154_is_broadcast_addr
+00005e28 T frame802154_parse
+00005d6c T frame802154_parse_fcf
+0000e39e R framer_802154
+00006032 T framer_802154_setup_params
+0000626c T link_stats_from_lladdr
+000064cc T link_stats_init
+0000639c T link_stats_input_callback
+00006278 T link_stats_is_fresh
+000062a8 T link_stats_packet_sent
+000064a2 T link_stats_reset
+0000113a d link_stats_struct
+000064fa T linkaddr_cmp
+000064f2 T linkaddr_copy
+000028e8 B linkaddr_node_addr
+0000e3a4 R linkaddr_null
+000013ea b mac_dsn
+00001d48 b mac_max_payload
+00001138 d mac_pan_id
+0000661c T mac_sequence_init
+0000663e T mac_sequence_is_duplicate
+000066c2 T mac_sequence_register_seqno
+00006626 T mac_sequence_set_dsn
+00006fd6 T packetbuf_addr
+000028f2 B packetbuf_addrs
+000015ba b packetbuf_aligned
+00006fb6 T packetbuf_attr
+00006efe T packetbuf_attr_clear
+00006f88 T packetbuf_attr_copyfrom
+00006f66 T packetbuf_attr_copyto
+00002902 B packetbuf_attrs
+00006f26 T packetbuf_clear
+00006f38 T packetbuf_copyfrom
+00006e70 T packetbuf_copyto
+00006e54 T packetbuf_datalen
+00006e64 T packetbuf_dataptr
+00001d45 b packetbuf_hdr_len
+00006ec2 T packetbuf_hdralloc
+00006e5a T packetbuf_hdrlen
+00006e4e T packetbuf_hdrptr
+00006e2e T packetbuf_hdrreduce
+00006fe8 T packetbuf_holds_broadcast
+00001d50 b packetbuf_payload_len
+00001d46 b packetbuf_ptr
+00006fc0 T packetbuf_set_addr
+00006fac T packetbuf_set_attr
+00006e48 T packetbuf_set_datalen
+00006eb6 T packetbuf_totlen
+0000495a t process_thread_cc2420_process
+0000742a T queuebuf_free
+000073aa T queuebuf_init
+000073c6 T queuebuf_new_from_packetbuf
+000073bc T queuebuf_numfree
+00007454 T queuebuf_to_packetbuf
+00007418 T queuebuf_update_attr_from_packetbuf
+00008e60 T rpl_neighbor_get_link_stats
+0000949c T rpl_schedule_probing
+000094e2 T rpl_schedule_probing_now
+000092ac T rpl_timers_schedule_dao
+000092e4 T rpl_timers_schedule_dao_ack
+0000951e T rpl_timers_schedule_leaving
+000091c6 T rpl_timers_schedule_periodic_dis
+000095a8 T rpl_timers_schedule_state_update
+00009290 T rpl_timers_schedule_unicast_dio
+00009502 T rpl_timers_unschedule_leaving
+0000914a t schedule_dao_retransmission
+0000501a t schedule_transmission
+0000110a d send_on_cca
+0000e586 R sicslowpan_driver
+00009a0c T sicslowpan_init
+
+[MAC / TSCH related strings]
+CCC2420 driver
+CSMA
+6lowpan
+framer
+sicslowpan
+- MAC: %s
+- 802.15.4 PANID: 0x%04x
+- 802.15.4 Default channel: %u
+Link-layer address: 
+CC2420 CCA threshold %i

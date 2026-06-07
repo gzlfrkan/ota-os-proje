@@ -1,0 +1,3251 @@
+=== SENSOR / PERIPHERAL ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+0000526c t add_timer
+0000c8f4 R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000c902 R button_sensor
+00004152 T cc2420_get_txpower
+00004126 T cc2420_set_txpower
+000035fe T cc2420_timerb1_interrupt
+00004562 T clock_delay
+0000453a T clock_init
+00004592 T clock_seconds
+00004520 T clock_time
+0000456e T clock_wait
+000050fa T ctimer_expired
+00005034 T ctimer_init
+0000133c b ctimer_list_list
+00001130 D ctimer_process
+000050a6 T ctimer_reset
+00005096 T ctimer_set
+0000504c T ctimer_set_with_process
+000050d2 T ctimer_stop
+00001264 b debouncetimer
+00001b58 b dis_timer
+0000244c b enabled
+0000249d b enabled
+000052d0 T etimer_expired
+000052ea T etimer_next_expiration_time
+000052de T etimer_pending
+0000113c D etimer_process
+0000519e T etimer_request_poll
+000052be T etimer_reset
+000052ac T etimer_set
+00005300 T etimer_stop
+000054cc T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000a1b4 t handle_dao_ack_timer
+0000a1c6 t handle_dio_timer
+0000a2c2 t handle_dis_timer
+0000a094 t handle_leaving_timer
+0000a270 t handle_periodic_timer
+0000a564 t handle_probing_timer
+0000a156 t handle_unicast_dio_timer
+00005ca4 T i2c_busy
+00005cae T i2c_enable
+00005c66 T i2c_receive_n
+00005c00 T i2c_receiveinit
+00003778 T i2c_rx_interrupt
+00005cd0 T i2c_transmit_n
+00005c36 T i2c_transmitinit
+000036f4 T i2c_tx_interrupt
+00005cf2 T leds_arch_get
+00005ce4 T leds_arch_init
+00005d26 T leds_arch_set
+00005d64 T leds_init
+00005d7c T leds_off
+00005d6a T leds_on
+0000156c b mgt_timer
+00001b84 b next_rtimer
+00002499 b num_sensors
+0000c948 r output_power
+00006ad6 T packetbuf_holds_broadcast
+00001b6e b periodic_timer
+000024ce B periodic_timer
+00004f94 t process_thread_ctimer_process
+000051a8 t process_thread_etimer_process
+0000ab06 t process_thread_sensors_process
+0000a2e8 T rpl_timers_dio_reset
+0000a694 T rpl_timers_init
+0000a3d0 T rpl_timers_notify_dao_ack
+0000a364 T rpl_timers_schedule_dao
+0000a39c T rpl_timers_schedule_dao_ack
+0000a66a T rpl_timers_schedule_leaving
+0000a234 T rpl_timers_schedule_periodic_dis
+0000a70c T rpl_timers_schedule_state_update
+0000a344 T rpl_timers_schedule_unicast_dio
+0000a6b0 T rpl_timers_stop_dag_timers
+0000a64e T rpl_timers_unschedule_leaving
+0000a6fc T rpl_timers_unschedule_state_update
+0000aab8 T rtimer_arch_init
+0000aac6 T rtimer_arch_now
+0000aad4 T rtimer_arch_schedule
+0000aada T rtimer_init
+0000aae0 T rtimer_run_next
+0000122c D sensors
+0000abc8 T sensors_changed
+00002891 B sensors_event
+00002893 B sensors_flags
+000011d6 D sensors_process
+         U spi_arch_has_lock
+0000bfc0 T spi_init
+0000c162 T stimer_expired
+0000c146 T stimer_set
+00001254 b suppressTimer1
+0000125c b suppressTimer2
+00001344 b timer.1936
+0000c6fc T timer_expired
+0000c726 T timer_reset
+0000c6e0 T timer_set
+0000378c T timera0
+00003624 T timera1
+0000133e b timerlist
+0000c9f2 R tmp102
+0000c754 T tmp102_init
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+failed to create packet, seqno: %d
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+Ctimer process
+Event timer
+failed to create a new RPL DAG
+failed to set prefix
+failed to initialize DAG
+just joined, no parent yet, setting timer for leaving
+failed to init DAG
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+failed to add link on incoming DAO
+reset DIO timer (%s)
+Sensors
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: could not allocate queuebuf, dropping fragment
+output: error in fragment tx, dropping subsequent fragments.
+output: failed to calculate payload size - dropping packet
+compression: keeping the next header in this ext hdr: %d
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: failed to allocate new reassembly context
+input: failed to decompress IPHC packet
+uncompression: unknown dispatch: 0x%02x, or IPHC disabled
+Check failed: %ld vs. %ld
+output: failed to autofill neighbor cache for host 
+TMP102 sensor
+Extension header option too long: dropping packet
+RPL Option Error: Dropping Packet
+dropping packet with length %d > %d
+Dropping packet, src is mcast
+LL source address with off link destination, dropping
+Dropping packet, not for me and link local or multicast
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00004d6e t add_timer
+0000d33c R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000d34a R button_sensor
+00004152 T cc2420_get_txpower
+00004126 T cc2420_set_txpower
+000035fe T cc2420_timerb1_interrupt
+00004562 T clock_delay
+0000453a T clock_init
+00004592 T clock_seconds
+00004520 T clock_time
+0000456e T clock_wait
+00004bfc T ctimer_expired
+00004b36 T ctimer_init
+0000133c b ctimer_list_list
+00001130 D ctimer_process
+00004ba8 T ctimer_reset
+00004b98 T ctimer_set
+00004b4e T ctimer_set_with_process
+00004bd4 T ctimer_stop
+00001264 b debouncetimer
+00001b4c b dis_timer
+00002476 b enabled
+00002554 b enabled
+00004dd2 T etimer_expired
+00004dec T etimer_next_expiration_time
+00004de0 T etimer_pending
+0000113c D etimer_process
+00004ca0 T etimer_request_poll
+00004dc0 T etimer_reset
+00004dae T etimer_set
+00004e02 T etimer_stop
+00004fce T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000083de t handle_dao_ack_timer
+000083f0 t handle_dio_timer
+000084d4 t handle_dis_timer
+000082be t handle_leaving_timer
+0000849a t handle_periodic_timer
+00008748 t handle_probing_timer
+00008380 t handle_unicast_dio_timer
+000055f2 T i2c_busy
+000055fc T i2c_enable
+000055b4 T i2c_receive_n
+0000554e T i2c_receiveinit
+00003778 T i2c_rx_interrupt
+0000561e T i2c_transmit_n
+00005584 T i2c_transmitinit
+000036f4 T i2c_tx_interrupt
+00005640 T leds_arch_get
+00005632 T leds_arch_init
+00005674 T leds_arch_set
+000056b2 T leds_init
+000056ca T leds_off
+000056b8 T leds_on
+00001560 b mgt_timer
+00001b78 b next_rtimer
+000024c3 b num_sensors
+0000d390 r output_power
+00006424 T packetbuf_holds_broadcast
+00001b62 b periodic_timer
+000025a4 B periodic_timer
+00002294 b periodic_timer.3031
+00004a96 t process_thread_ctimer_process
+00004caa t process_thread_etimer_process
+00008b14 t process_thread_sensors_process
+000084fa T rpl_timers_dio_reset
+000087d8 T rpl_timers_init
+000085b4 T rpl_timers_notify_dao_ack
+00008548 T rpl_timers_schedule_dao
+00008580 T rpl_timers_schedule_dao_ack
+000087ae T rpl_timers_schedule_leaving
+0000845e T rpl_timers_schedule_periodic_dis
+00008850 T rpl_timers_schedule_state_update
+00008528 T rpl_timers_schedule_unicast_dio
+000087f4 T rpl_timers_stop_dag_timers
+00008792 T rpl_timers_unschedule_leaving
+00008840 T rpl_timers_unschedule_state_update
+00008ac6 T rtimer_arch_init
+00008ad4 T rtimer_arch_now
+00008ae2 T rtimer_arch_schedule
+00008ae8 T rtimer_init
+00008aee T rtimer_run_next
+0000122c D sensors
+00008bd6 T sensors_changed
+00002969 B sensors_event
+0000296b B sensors_flags
+000011be D sensors_process
+         U spi_arch_has_lock
+0000a282 T spi_init
+0000a424 T stimer_expired
+0000a408 T stimer_set
+00001254 b suppressTimer1
+0000125c b suppressTimer2
+0000a6d4 T timer_expired
+0000a6fe T timer_reset
+0000a6b8 T timer_set
+0000378c T timera0
+00003624 T timera1
+0000133e b timerlist
+0000d42e R tmp102
+0000a72c T tmp102_init
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00004d6e t add_timer
+0000d24c R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000d25a R button_sensor
+00004152 T cc2420_get_txpower
+00004126 T cc2420_set_txpower
+000035fe T cc2420_timerb1_interrupt
+00004562 T clock_delay
+0000453a T clock_init
+00004592 T clock_seconds
+00004520 T clock_time
+0000456e T clock_wait
+00004bfc T ctimer_expired
+00004b36 T ctimer_init
+0000133c b ctimer_list_list
+00001130 D ctimer_process
+00004ba8 T ctimer_reset
+00004b98 T ctimer_set
+00004b4e T ctimer_set_with_process
+00004bd4 T ctimer_stop
+00001264 b debouncetimer
+00001b4c b dis_timer
+0000245e b enabled
+0000253c b enabled
+00004dd2 T etimer_expired
+00004dec T etimer_next_expiration_time
+00004de0 T etimer_pending
+0000113c D etimer_process
+00004ca0 T etimer_request_poll
+00004dc0 T etimer_reset
+00004dae T etimer_set
+00004e02 T etimer_stop
+00004fce T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000083de t handle_dao_ack_timer
+000083f0 t handle_dio_timer
+000084d4 t handle_dis_timer
+000082be t handle_leaving_timer
+0000849a t handle_periodic_timer
+00008748 t handle_probing_timer
+00008380 t handle_unicast_dio_timer
+000055f2 T i2c_busy
+000055fc T i2c_enable
+000055b4 T i2c_receive_n
+0000554e T i2c_receiveinit
+00003778 T i2c_rx_interrupt
+0000561e T i2c_transmit_n
+00005584 T i2c_transmitinit
+000036f4 T i2c_tx_interrupt
+00005640 T leds_arch_get
+00005632 T leds_arch_init
+00005674 T leds_arch_set
+000056b2 T leds_init
+000056ca T leds_off
+000056b8 T leds_on
+00001560 b mgt_timer
+00001b78 b next_rtimer
+000024ab b num_sensors
+0000d2a0 r output_power
+00006424 T packetbuf_holds_broadcast
+00001b62 b periodic_timer
+0000256c B periodic_timer
+00004a96 t process_thread_ctimer_process
+00004caa t process_thread_etimer_process
+00008b14 t process_thread_sensors_process
+000084fa T rpl_timers_dio_reset
+000087d8 T rpl_timers_init
+000085b4 T rpl_timers_notify_dao_ack
+00008548 T rpl_timers_schedule_dao
+00008580 T rpl_timers_schedule_dao_ack
+000087ae T rpl_timers_schedule_leaving
+0000845e T rpl_timers_schedule_periodic_dis
+00008850 T rpl_timers_schedule_state_update
+00008528 T rpl_timers_schedule_unicast_dio
+000087f4 T rpl_timers_stop_dag_timers
+00008792 T rpl_timers_unschedule_leaving
+00008840 T rpl_timers_unschedule_state_update
+00008ac6 T rtimer_arch_init
+00008ad4 T rtimer_arch_now
+00008ae2 T rtimer_arch_schedule
+00008ae8 T rtimer_init
+00008aee T rtimer_run_next
+0000122c D sensors
+00008bd6 T sensors_changed
+00002931 B sensors_event
+00002933 B sensors_flags
+000011be D sensors_process
+         U spi_arch_has_lock
+0000a282 T spi_init
+0000a424 T stimer_expired
+0000a408 T stimer_set
+00001254 b suppressTimer1
+0000125c b suppressTimer2
+0000a6d4 T timer_expired
+0000a6fe T timer_reset
+0000a6b8 T timer_set
+0000378c T timera0
+00003624 T timera1
+0000133e b timerlist
+0000d33e R tmp102
+0000a72c T tmp102_init
+0000a780 T tmp102_read_reg
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+00010d40 R BoardGpioInitTable
+0000fe58 T CC1352P1_LAUNCHXL_sendExtFlashByte
+0000042c T CC1352P1_LAUNCHXL_shutDownExtFlash
+000003e4 T CC1352P1_LAUNCHXL_wakeUpExtFlash
+00008ad0 T ClockP_Params_init
+00008c74 T ClockP_add
+00008d34 T ClockP_construct
+20003f70 b ClockP_defaultParams
+00008c94 T ClockP_destruct
+00008a1c T ClockP_doTick
+00008dac T ClockP_getCpuFreq
+00008dbc T ClockP_getSystemTickPeriod
+00008af0 T ClockP_getTicks
+00008b14 T ClockP_getTicksUntilInterrupt
+00008d94 T ClockP_getTimeout
+20005171 b ClockP_initialized
+00008da8 T ClockP_isActive
+20002180 b ClockP_module
+00008d90 T ClockP_setTimeout
+00008cb0 T ClockP_start
+00008ae0 T ClockP_startup
+00008a28 t ClockP_startup.part.1
+00008d88 T ClockP_stop
+20001e48 D ClockP_tickPeriod
+00008b44 T ClockP_walkQueueDynamic
+00008bb4 T ClockP_workFuncDynamic
+20001a70 A DMA_ADC_ALT_CTEA
+20001870 A DMA_ADC_PRI_CTEA
+20001a90 A DMA_GPT0A_ALT_CTEA
+20001890 A DMA_GPT0A_PRI_CTEA
+20001a30 A DMA_SPI0_RX_ALT_CTEA
+20001830 A DMA_SPI0_RX_CTEA
+20001a40 A DMA_SPI0_TX_ALT_CTEA
+20001840 A DMA_SPI0_TX_CTEA
+20001b00 A DMA_SPI1_RX_ALT_CTEA
+20001900 A DMA_SPI1_RX_CTEA
+20001b10 A DMA_SPI1_TX_ALT_CTEA
+20001910 A DMA_SPI1_TX_CTEA
+20001e58 D HwiP_swiPIntNum
+0000be9c t I2CCC26XX_blockingCallback
+0000c224 T I2CCC26XX_cancel
+0000be38 T I2CCC26XX_close
+0000be24 T I2CCC26XX_control
+0001106c R I2CCC26XX_fxnTable
+0000bea4 t I2CCC26XX_hwiFxn
+0000be2c T I2CCC26XX_init
+0000c1cc t I2CCC26XX_initHw.isra.11
+0000c2bc T I2CCC26XX_open
+0000c00c t I2CCC26XX_primeTransfer.isra.10
+0000c090 t I2CCC26XX_swiFxn
+0000c0f0 T I2CCC26XX_transfer
+00010d78 R I2C_config
+0001123e R I2C_count
+0000bdd8 T I2C_init
+0000f80c T NOROM_ChipInfo_GetChipFamily
+0000f828 T NOROM_ChipInfo_GetChipType
+0000f878 T NOROM_ChipInfo_GetHwRevision
+0000f7f4 T NOROM_ChipInfo_GetPackageType
+0000fad4 T NOROM_RFCSynthPowerDown
+00010cb8 T NOROM_ThisLibraryIsFor_CC13x2_CC26x2_HwRev20AndLater_HaltIfViolated
+00010d84 R PINCC26XX_hwAttrs
+0000c468 t PINCC26XX_setIoCfg
+0000ca88 T PINCC26XX_setMux
+0000c9e8 T PIN_add
+0000c804 T PIN_close
+0000c8c0 T PIN_getConfig
+0000c824 T PIN_getInputValue
+0000c44c t PIN_hwi
+0000c598 T PIN_init
+0000c940 T PIN_open
+0000c8b4 T PIN_registerIntCb
+0000c798 T PIN_remove
+0000c90c T PIN_setConfig
+0000ca50 T PIN_setInterrupt
+0000c838 T PIN_setOutputEnable
+0000c880 T PIN_setOutputValue
+0000c408 t PIN_swi
+0000d7a8 T PowerCC26X2_RCOSC_clockFunc
+0000d4cc T PowerCC26X2_auxISR
+0000d794 T PowerCC26X2_calibrate
+00010d8c R PowerCC26X2_config
+0000d458 T PowerCC26X2_initiateCalibration
+20001e5c D PowerCC26X2_module
+20004080 b PowerCC26X2_swiKey
+0000d1f4 T PowerCC26XX_calibrate
+0000d20c T PowerCC26XX_isStableXOSC_HF
+00009274 T PowerCC26XX_schedulerDisable
+00009284 T PowerCC26XX_schedulerRestore
+000091a4 T PowerCC26XX_standbyPolicy
+0000d254 T PowerCC26XX_switchXOSC_HF
+0000cb1c T Power_disablePolicy
+0000cb30 T Power_enablePolicy
+0000cb40 T Power_getConstraintMask
+0000cb4c T Power_getDependencyCount
+0000cb5c T Power_getTransitionLatency
+0000cb78 T Power_idleFunc
+0000ce3c T Power_init
+0000cb90 T Power_registerNotify
+0000cbb4 T Power_releaseConstraint
+0000cce0 T Power_releaseDependency
+0000cd88 T Power_setConstraint
+0000cf80 T Power_setDependency
+0000d030 T Power_sleep
+0000d1d4 T Power_unregisterNotify
+00010d9c R RFCC26XX_hwAttrs
+00011048 V RFCC26XX_schedulerPolicy
+0000bb3c T RF_TxPowerTable_findPowerLevel
+0000bba4 T RF_TxPowerTable_findValue
+0000b634 t RF_clkPowerUp
+20004118 b RF_clkPowerUpObj
+0000af7c t RF_fsmPowerUpState
+0000baa0 T RF_getTxPower
+0000ada0 t RF_hwiCpe0PowerFsm
+20005176 b RF_powerConstraint
+0000a450 T RF_powerConstraintRelease
+0000a384 T RF_powerConstraintSet
+0000ba74 T RF_setTxPower
+0000d9c8 T SPICC26X2DMA_close
+0000da18 T SPICC26X2DMA_control
+000110e0 R SPICC26X2DMA_fxnTable
+0000dda4 t SPICC26X2DMA_hwiFxn
+0000d840 T SPICC26X2DMA_init
+0000e2c0 T SPICC26X2DMA_open
+0000e588 t SPICC26X2DMA_swiFxn
+0000dfe8 T SPICC26X2DMA_transfer
+0000dbc0 T SPICC26X2DMA_transferCancel
+00010da8 R SPI_config
+0001123f R SPI_count
+0000d7f4 T SPI_init
+200042dc b TRNGCC26XX_accessSemaphore
+0000e5ec t TRNGCC26XX_basicHwiFxn
+0000e714 T TRNGCC26XX_construct
+200042f8 b TRNGCC26XX_hwi
+20004314 b TRNGCC26XX_operationSemaphore
+00008de8 T TimerP_Params_init
+00008ff0 T TimerP_construct
+00008ef0 t TimerP_construct.part.0
+20001e4c d TimerP_defaultParams
+00008dc8 T TimerP_dynamicStub
+0000900c T TimerP_getCurrentTick
+00009000 T TimerP_getFreq
+00008df8 T TimerP_getMaxTicks
+20003f88 b TimerP_handle
+20003f8c b TimerP_hwiStruct
+20005172 b TimerP_initialized
+00008e1c T TimerP_setNextTick
+00008e74 T TimerP_start
+0000f2a8 T UARTCC26XX_close
+0000e9b0 T UARTCC26XX_control
+0001115c R UARTCC26XX_fxnTable
+0000f020 T UARTCC26XX_hwiIntFxn
+0000e93c T UARTCC26XX_init
+0000ebc4 t UARTCC26XX_initHw.isra.5
+0000ec90 T UARTCC26XX_open
+0000f3c4 T UARTCC26XX_read
+0000efb8 T UARTCC26XX_readCancel
+0000e944 T UARTCC26XX_readPolling
+0000f334 T UARTCC26XX_swiIntFxn
+0000eebc T UARTCC26XX_write
+0000f20c T UARTCC26XX_writeCancel
+0000eeb4 T UARTCC26XX_writePolling
+0000e910 T UART_Params_init
+00010dbc R UART_config
+00011240 R UART_count
+00011138 R UART_defaultParams
+0000e880 T UART_init
+0000e8cc T UART_open
+0000e92c T UART_read
+0000e934 T UART_write
+20001800 A UDMACC26XX_CONFIG_BASE
+0000bd94 T UDMACC26XX_close
+00010dc8 R UDMACC26XX_config
+00000000 A UDMACC26XX_dmaADCAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaADCPriControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaGPT0AAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaGPT0APriControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0RxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0RxControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0TxAltControlTableEntry_is_placed
+00000000 A UDMACC26XX_dmaSpi0TxControlTableEntry_is_placed
+
+[Sensor / peripheral strings]
+CC13xx/CC26xx base demo
+CC13xx/CC26xx base demo process
+Battery Monitor
+Button HAL process
+Ctimer process
+Event timer
+CC13xx/CC26xx
+Check failed: %u vs. %u
+Dmax
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+ClockP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+ClockP.h
+Power.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+ClockPTimer_nortos.c
+ClockP.h
+TimerP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+TimerPCC26XX_nortos.c
+TimerP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+HwiPCC26XX_nortos.c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+PowerCC26X2_nortos.c
+Power.h
+ClockP.h
+PowerCC26X2.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/rf
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+RFCC26X2_multiMode.c
+ClockP.h
+Power.h
+chipinfo.h
+PowerCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/cryptoutils/cryptokey
+CryptoKeyPlaintextCC26XX.c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dma
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+UDMACC26XX.c
+udma.h
+UDMACC26XX.h
+ClockP.h
+PowerCC26XX.h
+Power.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+I2C.c
+I2C.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/i2c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+I2CCC26XX.c
+i2c.h
+I2C.h
+PIN.h
+Power.h
+I2CCC26XX.h
+ClockP.h
+PINCC26XX.h
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00005262 t add_timer
+0000c4a0 R adxl345
+0000125e d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000c4ae R button_sensor
+000041ba T cc2420_get_txpower
+0000418e T cc2420_set_txpower
+0000363a T cc2420_timerb1_interrupt
+000045ca T clock_delay
+000045a2 T clock_init
+000045fa T clock_seconds
+00004588 T clock_time
+000045d6 T clock_wait
+000050fa T ctimer_expired
+00005018 T ctimer_init
+00001362 b ctimer_list_list
+00001130 D ctimer_process
+000050a6 T ctimer_reset
+0000a3e0 t ctimer_set.constprop.3
+0000502c T ctimer_set_with_process
+000050d2 T ctimer_stop
+0000128a b debouncetimer
+00001b92 b dis_timer
+000024c5 b enabled
+00002474 b enabled
+000052d2 T etimer_next_expiration_time
+000052c6 T etimer_pending
+0000113c D etimer_process
+00005194 T etimer_request_poll
+000052b4 T etimer_reset
+000052a2 T etimer_set
+000052e8 T etimer_stop
+000054b2 T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000a3ce t handle_dao_ack_timer
+0000a470 t handle_dio_timer
+0000a5dc t handle_dis_timer
+0000a3b0 t handle_leaving_timer
+0000a58a t handle_periodic_timer
+0000a86a t handle_probing_timer
+0000a3bc t handle_unicast_dio_timer
+00005d8e T i2c_busy
+00005d98 T i2c_enable
+00005d50 T i2c_receive_n
+00005cea T i2c_receiveinit
+000037b0 T i2c_rx_interrupt
+00005dba T i2c_transmit_n
+00005d20 T i2c_transmitinit
+0000372c T i2c_tx_interrupt
+0000116e D led_process
+0000136a b led_timer
+00005ddc T leds_arch_get
+00005dce T leds_arch_init
+00005e10 T leds_arch_set
+00005e4e T leds_init
+00005e66 T leds_off
+00005e54 T leds_on
+00005e78 T leds_toggle
+00001382 b loop_timer
+000015aa b mgt_timer
+00001bbe b next_rtimer
+000024c1 b num_sensors
+0000c4f4 r output_power
+00006b54 T packetbuf_holds_broadcast
+00001ba8 b periodic_timer
+000024f6 B periodic_timer
+00004f86 t process_thread_ctimer_process
+0000519e t process_thread_etimer_process
+00005c8a t process_thread_led_process
+00005b74 t process_thread_sensor_process
+0000add2 t process_thread_sensors_process
+0000a602 T rpl_timers_dio_reset
+0000a992 T rpl_timers_init
+0000a6de T rpl_timers_notify_dao_ack
+0000a67a T rpl_timers_schedule_dao
+0000a6ae T rpl_timers_schedule_dao_ack
+0000a96c T rpl_timers_schedule_leaving
+0000a552 T rpl_timers_schedule_periodic_dis
+0000a9f6 T rpl_timers_schedule_state_update
+0000a65e T rpl_timers_schedule_unicast_dio
+0000a9aa T rpl_timers_stop_dag_timers
+0000a950 T rpl_timers_unschedule_leaving
+0000ad9e T rtimer_arch_init
+0000adac T rtimer_arch_now
+0000adba T rtimer_run_next
+00001156 D sensor_process
+00001252 D sensors
+0000ae94 T sensors_changed
+000028b0 B sensors_event
+000028b2 B sensors_flags
+000011fc D sensors_process
+         U spi_arch_has_lock
+0000c33e T spi_init
+0000c3e4 T stimer_expired
+0000127a b suppressTimer1
+00001282 b suppressTimer2
+0001185e T timer_expired
+00011888 T timer_reset
+00011842 T timer_set
+000037c4 T timera0
+00003660 T timera1
+00001364 b timerlist
+0000c5a4 R tmp102
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+failed to create packet, seqno: %d
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+CTimer
+ctimer_set %p %lu
+Ctimer process
+Event timer
+[SENSOR] Button pressed
+[SENSOR] Received UDP-triggered poll
+[LED] Toggled
+Sensor Event P.ID:06
+LED Toggle P.ID:03
+process '%s' called again with event %d
+<broadcast>
+failed to create a new RPL DAG
+failed to set prefix
+failed to initialize DAG
+just joined, no parent yet, setting timer for leaving
+failed to init DAG
+IPv6 cache full, dropping DIO
+failed to add neighbor
+neighbor table full, dropping DIO
+failed to add link on incoming DAO
+reset DIO timer (%s)
+Sensors
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: could not allocate queuebuf, dropping fragment
+output: error in fragment tx, dropping subsequent fragments.
+output: failed to calculate payload size - dropping packet
+compression: keeping the next header in this ext hdr: %d
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: failed to allocate new reassembly context
+input: failed to decompress IPHC packet
+uncompression: unknown dispatch: 0x%02x, or IPHC disabled
+Check failed: %u vs. %u
+output: No next-hop found, dropping packet
+output: failed to autofill neighbor cache for host 
+TMP102 sensor
+Extension header option too long: dropping packet
+RPL Option Error: Dropping Packet
+dropping packet with length %d > %d
+Dropping packet, src is mcast
+LL source address with off link destination, dropping
+Dropping packet, not for me and link local or multicast
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001e0 A __DMA0CTL
+000001e4 A __DMA0DA
+000001e2 A __DMA0SA
+000001e6 A __DMA0SZ
+000001e8 A __DMA1CTL
+000001ec A __DMA1DA
+000001ea A __DMA1SA
+000001ee A __DMA1SZ
+000001f0 A __DMA2CTL
+000001f4 A __DMA2DA
+000001f2 A __DMA2SA
+000001f6 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004000 W __watchdog_support
+00005956 t add_timer
+         U button_hal_button_count
+         U button_hal_buttons
+0000e08c R button_sensor
+00004b02 T cc2420_get_txpower
+00004ad6 T cc2420_set_txpower
+0000435a T cc2420_timerb1_interrupt
+00004ff4 T clock_delay
+00004fcc T clock_init
+00005000 T clock_seconds
+00004fb2 T clock_time
+0000566e T ctimer_expired
+000055b4 T ctimer_init
+00001324 b ctimer_list_list
+00001124 D ctimer_process
+00005616 T ctimer_reset
+00009108 t ctimer_set.constprop.3
+000055c8 T ctimer_set_with_process
+00005646 T ctimer_stop
+00001244 b debouncetimer
+00001d10 b dis_timer
+000059c6 T etimer_next_expiration_time
+000059ba T etimer_pending
+0000112e D etimer_process
+00005880 T etimer_request_poll
+000059a8 T etimer_reset
+00005996 T etimer_set
+000059dc T etimer_stop
+00005baa T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000090f6 t handle_dao_ack_timer
+0000919c t handle_dio_timer
+000092f8 t handle_dis_timer
+000090d8 t handle_leaving_timer
+000092be t handle_periodic_timer
+00009574 t handle_probing_timer
+000090e4 t handle_unicast_dio_timer
+00006264 T leds_arch_get
+00006256 T leds_arch_init
+00006298 T leds_arch_set
+000062d6 T leds_init
+000062ee T leds_off
+000062dc T leds_on
+00001642 b mgt_timer
+00001d38 b next_rtimer
+00001d3a b num_sensors
+0000e0c2 r output_power
+000070a4 T packetbuf_holds_broadcast
+00001d24 b periodic_timer
+000027d0 B periodic_timer
+0000551a t process_thread_ctimer_process
+0000588a t process_thread_etimer_process
+00009986 t process_thread_sensors_process
+0000931e T rpl_timers_dio_reset
+00009600 T rpl_timers_init
+000093d0 T rpl_timers_notify_dao_ack
+00009368 T rpl_timers_schedule_dao
+000093a0 T rpl_timers_schedule_dao_ack
+000095da T rpl_timers_schedule_leaving
+00009282 T rpl_timers_schedule_periodic_dis
+00009664 T rpl_timers_schedule_state_update
+0000934c T rpl_timers_schedule_unicast_dio
+00009618 T rpl_timers_stop_dag_timers
+000095be T rpl_timers_unschedule_leaving
+00009952 T rtimer_arch_init
+00009960 T rtimer_arch_now
+0000996e T rtimer_run_next
+00002428 b rxdma_timer
+000011b0 D sensors
+00009a48 T sensors_changed
+00002c7a B sensors_event
+00002c78 B sensors_flags
+000011f8 D sensors_process
+         U spi_arch_has_lock
+0000b20c T spi_init
+0000b340 T stimer_expired
+0000132e b timer.1898
+0000b5d2 T timer_expired
+0000b5fc T timer_reset
+0000b5b6 T timer_set
+00009926 T timera0
+00004eda T timera1
+00001326 b timerlist
+0000b628 T uart1_active
+0000b658 T uart1_init
+0000243c b uart1_input_handler
+0000b640 T uart1_writeb
+00002a8e B uip_ds6_timer_periodic
+00002928 B uip_ds6_timer_ra
+0000d2aa T watchdog_init
+0000d268 T watchdog_interrupt
+0000d282 T watchdog_periodic
+0000d26e T watchdog_start
+0000d294 T watchdog_stop
+
+[Sensor / peripheral strings]
+MButton
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00004d14 t add_timer
+0000cebc R adxl345
+00001230 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000ceca R button_sensor
+0000414c T cc2420_get_txpower
+00004120 T cc2420_set_txpower
+00003604 T cc2420_timerb1_interrupt
+0000455c T clock_delay
+00004534 T clock_init
+0000458c T clock_seconds
+0000451a T clock_time
+00004568 T clock_wait
+00004bac T ctimer_expired
+00004afa T ctimer_init
+00001334 b ctimer_list_list
+00001130 D ctimer_process
+00004b58 T ctimer_reset
+000082c6 t ctimer_set.constprop.3
+00004b0e T ctimer_set_with_process
+00004b84 T ctimer_stop
+0000125c b debouncetimer
+00001b4e b dis_timer
+00002430 b enabled
+00002481 b enabled
+00004d84 T etimer_next_expiration_time
+00004d78 T etimer_pending
+0000113c D etimer_process
+00004c46 T etimer_request_poll
+00004d66 T etimer_reset
+00004d54 T etimer_set
+00004d9a T etimer_stop
+00004f64 T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000082b4 t handle_dao_ack_timer
+00008356 t handle_dio_timer
+000084aa t handle_dis_timer
+00008296 t handle_leaving_timer
+00008470 t handle_periodic_timer
+0000870a t handle_probing_timer
+000082a2 t handle_unicast_dio_timer
+00005640 T i2c_busy
+0000564a T i2c_enable
+00005602 T i2c_receive_n
+0000559c T i2c_receiveinit
+0000377a T i2c_rx_interrupt
+0000566c T i2c_transmit_n
+000055d2 T i2c_transmitinit
+000036f6 T i2c_tx_interrupt
+0000568e T leds_arch_get
+00005680 T leds_arch_init
+000056c2 T leds_arch_set
+00005700 T leds_init
+00005718 T leds_off
+00005706 T leds_on
+00001566 b mgt_timer
+00001b7a b next_rtimer
+0000247d b num_sensors
+0000cf10 r output_power
+000063f4 T packetbuf_holds_broadcast
+00001b64 b periodic_timer
+000024b2 B periodic_timer
+00004a68 t process_thread_ctimer_process
+00004c50 t process_thread_etimer_process
+00008a9c t process_thread_sensors_process
+000084d0 T rpl_timers_dio_reset
+00008792 T rpl_timers_init
+0000857e T rpl_timers_notify_dao_ack
+0000851a T rpl_timers_schedule_dao
+0000854e T rpl_timers_schedule_dao_ack
+0000876c T rpl_timers_schedule_leaving
+00008438 T rpl_timers_schedule_periodic_dis
+000087f6 T rpl_timers_schedule_state_update
+000084fe T rpl_timers_schedule_unicast_dio
+000087aa T rpl_timers_stop_dag_timers
+00008750 T rpl_timers_unschedule_leaving
+00008a68 T rtimer_arch_init
+00008a76 T rtimer_arch_now
+00008a84 T rtimer_run_next
+00001224 D sensors
+00008b5e T sensors_changed
+0000286c B sensors_event
+0000286e B sensors_flags
+000011ce D sensors_process
+         U spi_arch_has_lock
+0000a1b4 T spi_init
+0000a2e2 T stimer_expired
+0000124c b suppressTimer1
+00001254 b suppressTimer2
+0000133e b timer.2130
+0000a566 T timer_expired
+0000a590 T timer_reset
+0000a54a T timer_set
+0000378e T timera0
+0000362a T timera1
+00001336 b timerlist
+0000cfb2 R tmp102
+0000a5be T tmp102_init
+0000a612 T tmp102_read_reg
+0000a670 T tmp102_read_temp_x100
+0000a5e2 T tmp102_stop
+0000a6de T uart0_active
+0000a702 T uart0_init
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Sensor / peripheral symbols]
+0000000000019548 t add_timer
+000000000001543e T beep_spinup
+0000000000094e20 b broadcast_connection
+0000000000054700 D broadcast_example_process
+0000000000094a20 b burst_link_scheduled
+0000000000054990 b button_event_handlers
+0000000000044144 R button_hal_button_count
+0000000000053fb0 D button_hal_buttons
+0000000000015695 T button_hal_get_by_id
+00000000000156e3 T button_hal_get_by_index
+000000000001571a T button_hal_get_state
+000000000001577d T button_hal_init
+0000000000054982 B button_hal_periodic_event
+0000000000054980 B button_hal_press_event
+0000000000053ee0 D button_hal_process
+0000000000054981 B button_hal_release_event
+0000000000053f20 d button_user
+000000000003984d t check_timer_miss
+0000000000016579 T clock_delay
+000000000001652e T clock_init
+000000000001654d T clock_seconds
+0000000000016539 T clock_time
+000000000002d8eb t cmd_ping
+00000000000165b8 T compower_accumulate
+0000000000016642 T compower_clear
+0000000000055990 B compower_idle_activity
+000000000001659e T compower_init
+0000000000017fd4 T ctimer_expired
+0000000000017da5 T ctimer_init
+0000000000054040 d ctimer_list
+0000000000057b88 b ctimer_list_list
+0000000000054060 D ctimer_process
+0000000000017e94 T ctimer_reset
+0000000000017f05 T ctimer_restart
+0000000000015484 t ctimer_set
+0000000000018ac7 t ctimer_set
+000000000001cf02 t ctimer_set
+000000000001e185 t ctimer_set
+0000000000024997 t ctimer_set
+000000000002b9b4 t ctimer_set
+0000000000035298 t ctimer_set
+0000000000035fb1 t ctimer_set
+000000000003b2f7 t ctimer_set
+000000000004039b t ctimer_set
+0000000000017dda T ctimer_set_with_process
+0000000000017f76 T ctimer_stop
+000000000006b322 b curr_ping_datalen
+000000000006b310 b curr_ping_output_func
+000000000006b318 b curr_ping_process
+000000000006b320 b curr_ping_ttl
+000000000006a8c0 b dis_timer
+0000000000094e00 b eb_timer.0
+00000000000196a7 T etimer_adjust
+00000000000196d8 T etimer_expiration_time
+0000000000017c04 t etimer_expired
+000000000002d7c1 t etimer_expired
+000000000003424b t etimer_expired
+000000000003561b t etimer_expired
+000000000003b2df t etimer_expired
+000000000003ce62 t etimer_expired
+0000000000019727 T etimer_next_expiration_time
+000000000001970d T etimer_pending
+00000000000540a0 D etimer_process
+000000000001952e T etimer_request_poll
+0000000000019651 T etimer_reset
+0000000000019616 T etimer_reset_with_new_interval
+000000000001967c T etimer_restart
+00000000000195e0 T etimer_set
+00000000000196f8 T etimer_start_time
+0000000000019748 T etimer_stop
+0000000000019abb T frame802154_is_broadcast_addr
+000000000001abd5 T frame80215e_create_ie_tsch_channel_hopping_sequence
+000000000002d0d0 t get_sensor_index
+000000000001b9e4 T gpio_hal_arch_init
+000000000001bb88 T gpio_hal_arch_no_port_clear_pin
+000000000001bc52 T gpio_hal_arch_no_port_clear_pins
+000000000001ba87 T gpio_hal_arch_no_port_interrupt_disable
+000000000001ba3a T gpio_hal_arch_no_port_interrupt_enable
+000000000001bb0a T gpio_hal_arch_no_port_pin_cfg_get
+000000000001bad4 T gpio_hal_arch_no_port_pin_cfg_set
+000000000001bb3e T gpio_hal_arch_no_port_pin_set_input
+000000000001bb51 T gpio_hal_arch_no_port_pin_set_output
+000000000001bbac T gpio_hal_arch_no_port_read_pin
+000000000001bca1 T gpio_hal_arch_no_port_read_pins
+000000000001bb64 T gpio_hal_arch_no_port_set_pin
+000000000001bc03 T gpio_hal_arch_no_port_set_pins
+000000000001be9a T gpio_hal_arch_no_port_toggle_pin
+000000000001bed4 T gpio_hal_arch_no_port_toggle_pins
+000000000001bbd9 T gpio_hal_arch_no_port_write_pin
+000000000001bcef T gpio_hal_arch_no_port_write_pins
+000000000001be32 T gpio_hal_arch_port_toggle_pin
+000000000001be69 T gpio_hal_arch_port_toggle_pins
+000000000001b93d T gpio_hal_arch_register_pin_callback
+000000000001bda8 T gpio_hal_event_handler
+000000000001be13 T gpio_hal_init
+000000000001bd7f T gpio_hal_register_handler
+000000000002c0da t handle_dao_ack_timer
+000000000002bc58 t handle_dio_timer
+000000000002ba6b t handle_dis_timer
+000000000002c4c3 t handle_leaving_timer
+000000000002c5c8 t handle_periodic_timer
+000000000002c3c1 t handle_probing_timer
+0000000000024b3f t handle_timer
+000000000002bdc7 t handle_unicast_dio_timer
+000000000001c674 T int_master_is_enabled
+0000000000022976 t is_broadcast_addr
+0000000000094ce0 b keepalive_timer
+000000000001caeb t led_change_cb
+000000000001cb04 T leds_arch_init
+0000000000044421 R leds_arch_leds
+000000000001ce59 T leds_get
+000000000001cb55 T leds_init
+000000000001cd43 T leds_off
+000000000001ccb2 T leds_on
+000000000001ce30 T leds_set
+000000000001cc0d T leds_single_off
+000000000001cba0 T leds_single_on
+000000000001cc7a T leds_single_toggle
+000000000001cdd4 T leds_toggle
+000000000005be60 b lifetime_timer
+000000000001fa36 t lifetime_timer_expiration
+000000000006cb68 b loc_clock
+000000000006cc00 B n_broadcast
+000000000006b188 b next_rtimer
+000000000006b191 b num_sensors
+0000000000023089 T packetbuf_holds_broadcast
+000000000006a900 b periodic_timer
+0000000000058680 B periodic_timer
+000000000006bb20 b periodic_timer.0
+0000000000094e60 b periodic_timer.4936
+0000000000058620 b pin_callbacks
+0000000000058600 b pin_cfg
+0000000000058610 b pin_state
+0000000000052560 D pir_sensor
+000000000003ce7a t process_thread_broadcast_example_process
+0000000000015927 t process_thread_button_hal_process
+0000000000017c43 t process_thread_ctimer_process
+0000000000019348 t process_thread_etimer_process
+000000000002d22a t process_thread_sensors_process
+0000000000016fa6 T radio_set_txpower
+0000000000024f0c t reset_trickle_timer
+000000000002cc13 T rpl_set_prefix
+000000000002bbe5 T rpl_timers_dio_reset
+000000000002c595 T rpl_timers_init
+000000000002c11b T rpl_timers_notify_dao_ack
+000000000002bf50 T rpl_timers_schedule_dao
+000000000002c056 T rpl_timers_schedule_dao_ack
+000000000002c537 T rpl_timers_schedule_leaving
+000000000002b9f4 T rpl_timers_schedule_periodic_dis
+000000000002c6e9 T rpl_timers_schedule_state_update
+000000000002bd69 T rpl_timers_schedule_unicast_dio
+000000000002c647 T rpl_timers_stop_dag_timers
+000000000002c4ea T rpl_timers_unschedule_leaving
+0000000000026ffe t rpl_timers_unschedule_state_update
+000000000002cfb8 T rtimer_arch_check
+000000000002cf41 T rtimer_arch_init
+000000000002cf91 T rtimer_arch_next
+000000000002cff9 T rtimer_arch_now
+000000000002cfa5 T rtimer_arch_pending
+000000000002cf67 T rtimer_arch_schedule
+000000000002d081 T rtimer_run_next
+000000000002d00d T rtimer_set
+000000000005e380 b rtimer_thread
+00000000000218b3 t rtimer_thread_loop
+0000000000094d20 b scan_timer.5
+0000000000054300 D sensors
+000000000002d15c T sensors_changed
+000000000006b190 B sensors_event
+000000000002d1a9 T sensors_find
+000000000002d119 T sensors_first
+0000000000064308 B sensors_flags
+000000000002d12d T sensors_next
+00000000000544e0 D sensors_process
+000000000001b976 t set_pin_state
+00000000000549a8 B simButtonChanged
+0000000000053f00 D simButtonIsActive
+00000000000549a9 B simButtonIsDown
+0000000000064318 B simEtimerNextExpirationTime
+0000000000064310 B simEtimerPending
+0000000000058670 B simLedsValue
+
+[Sensor / peripheral strings]
+beep_spinup
+ctimer_set_with_process
+button_hal_process
+button_hal_press_event
+button_hal_release_event
+button_hal_periodic_event
+ctimer_expired
+button_hal_get_state
+ctimer_stop
+button_hal_get_by_id
+button_hal_buttons
+button_hal_get_by_index
+button_hal_button_count
+gpio_hal_arch_no_port_read_pin
+button_hal_init
+gpio_hal_arch_no_port_pin_set_input
+gpio_hal_arch_no_port_pin_cfg_set
+gpio_hal_arch_no_port_interrupt_enable
+gpio_hal_register_handler
+simButtonChanged
+simButtonIsDown
+simButtonIsActive
+gpio_hal_arch_no_port_clear_pin
+gpio_hal_arch_no_port_set_pin
+gpio_hal_arch_no_port_pin_cfg_get
+gpio_hal_event_handler
+clock_init
+clock_time
+clock_seconds
+clock_delay
+compower_idle_activity
+compower_init
+compower_clear
+compower_accumulate
+rtimer_arch_init
+etimer_process
+ctimer_init
+watchdog_init
+watchdog_start
+rtimer_arch_now
+simPower
+radio_set_txpower
+ctimer_process
+etimer_set
+ctimer_reset
+etimer_reset
+ctimer_restart
+etimer_restart
+etimer_stop
+etimer_request_poll
+etimer_reset_with_new_interval
+etimer_adjust
+etimer_expiration_time
+etimer_start_time
+etimer_pending
+etimer_next_expiration_time
+frame802154_is_broadcast_addr
+frame80215e_create_ie_tsch_channel_hopping_sequence
+packetbuf_holds_broadcast
+gpio_hal_arch_register_pin_callback
+gpio_hal_arch_init
+gpio_hal_arch_no_port_interrupt_disable
+gpio_hal_arch_no_port_pin_set_output
+gpio_hal_arch_no_port_write_pin
+gpio_hal_arch_no_port_set_pins
+gpio_hal_arch_no_port_clear_pins
+gpio_hal_arch_no_port_read_pins
+gpio_hal_arch_no_port_write_pins
+gpio_hal_init
+gpio_hal_arch_port_toggle_pin
+gpio_hal_arch_port_toggle_pins
+gpio_hal_arch_no_port_toggle_pin
+gpio_hal_arch_no_port_toggle_pins
+int_master_is_enabled
+simLedsValue
+leds_get
+leds_arch_init
+leds_arch_leds
+leds_init
+leds_off
+leds_single_on
+leds_single_off
+leds_single_toggle
+leds_on
+leds_toggle
+leds_set
+periodic_timer
+trickle_timer_inconsistency
+trickle_timer_config
+trickle_timer_set
+trickle_timer_consistency
+rtimer_arch_check
+simEtimerPending
+simEtimerNextExpirationTime
+pir_sensor
+sensors_changed
+sensors
+vib_sensor
+sensors_flags
+watchdog_periodic
+rpl_timers_stop_dag_timers
+rpl_timers_schedule_state_update
+rpl_timers_dio_reset
+rpl_timers_schedule_leaving
+rpl_timers_unschedule_leaving
+rpl_timers_schedule_dao
+rpl_timers_schedule_periodic_dis
+rpl_timers_schedule_dao_ack
+rpl_timers_notify_dao_ack
+rpl_timers_schedule_unicast_dio
+rpl_timers_init
+simRtimerPending
+simRtimerNextExpirationTime
+simRtimerCurrentTicks
+rtimer_arch_schedule
+rtimer_arch_next
+rtimer_arch_pending
+rtimer_run_next
+rtimer_set
+sensors_event
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00004c04 t add_timer
+0000731c R adxl345
+0000118e d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000732a R button_sensor
+0000405e T cc2420_get_txpower
+00004032 T cc2420_set_txpower
+0000350a T cc2420_timerb1_interrupt
+0000446e T clock_delay
+00004446 T clock_init
+0000442c T clock_time
+0000447a T clock_wait
+00004a28 T ctimer_init
+00001292 b ctimer_list_list
+00001130 D ctimer_process
+00004a8a T ctimer_set
+00004a40 T ctimer_set_with_process
+00004a9a T ctimer_stop
+000011ba b debouncetimer
+000019c8 b enabled
+000019fc b enabled
+00004c68 T etimer_expired
+00004c82 T etimer_next_expiration_time
+00004c76 T etimer_pending
+0000113c D etimer_process
+00004b36 T etimer_request_poll
+00004c56 T etimer_reset
+00004c44 T etimer_set
+00004c98 T etimer_stop
+00004e64 T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005488 T i2c_busy
+00005492 T i2c_enable
+0000544a T i2c_receive_n
+000053e4 T i2c_receiveinit
+00003684 T i2c_rx_interrupt
+000054b4 T i2c_transmit_n
+0000541a T i2c_transmitinit
+00003600 T i2c_tx_interrupt
+000054d6 T leds_arch_get
+000054c8 T leds_arch_init
+0000550a T leds_arch_set
+00005548 T leds_init
+00005560 T leds_off
+0000554e T leds_on
+00001412 b mgt_timer
+000019ae b next_rtimer
+000019fb b num_sensors
+00007370 r output_power
+00005d06 T packetbuf_holds_broadcast
+0000137e b periodic_timer.2287
+00004988 t process_thread_ctimer_process
+00004b40 t process_thread_etimer_process
+00006250 t process_thread_sensors_process
+00006202 T rtimer_arch_init
+00006210 T rtimer_arch_now
+0000621e T rtimer_arch_schedule
+00006224 T rtimer_init
+0000622a T rtimer_run_next
+00001182 D sensors
+00006312 T sensors_changed
+00001a5f B sensors_event
+00001a60 B sensors_flags
+0000116a D sensors_process
+         U spi_arch_has_lock
+0000633c T spi_init
+000011aa b suppressTimer1
+000011b2 b suppressTimer2
+000064de T timer_expired
+00006508 T timer_reset
+000064c2 T timer_set
+00003698 T timera0
+00003530 T timera1
+00001294 b timerlist
+00007412 R tmp102
+00006536 T tmp102_init
+0000658a T tmp102_read_reg
+000065e8 T tmp102_read_temp_x100
+0000655a T tmp102_stop
+00006656 T uart0_active
+0000667a T uart0_init
+000019c2 b uart0_input_handler
+000036ba T uart0_rx_interrupt
+00006664 T uart0_writeb
+00006704 T watchdog_init
+000036e4 T watchdog_interrupt
+000066dc T watchdog_periodic
+000066c8 T watchdog_start
+000066ee T watchdog_stop
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+Ctimer process
+Event timer
+NullNet broadcast example
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001e0 A __DMA0CTL
+000001e4 A __DMA0DA
+000001e2 A __DMA0SA
+000001e6 A __DMA0SZ
+000001e8 A __DMA1CTL
+000001ec A __DMA1DA
+000001ea A __DMA1SA
+000001ee A __DMA1SZ
+000001f0 A __DMA2CTL
+000001f4 A __DMA2DA
+000001f2 A __DMA2SA
+000001f6 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004000 W __watchdog_support
+00005a46 t add_timer
+00001adc b bufmem_memb_mem
+         U button_hal_button_count
+         U button_hal_buttons
+00008238 R button_sensor
+00004b96 T cc2420_get_txpower
+00004b6a T cc2420_set_txpower
+000042fa T cc2420_timerb1_interrupt
+0000508c T clock_delay
+00005064 T clock_init
+0000504a T clock_time
+00005632 T ctimer_init
+00001316 b ctimer_list_list
+00001124 D ctimer_process
+00005694 T ctimer_reset
+00005646 T ctimer_set_with_process
+000056c4 T ctimer_stop
+00001236 b debouncetimer
+00005ab6 T etimer_next_expiration_time
+00005aaa T etimer_pending
+0000112e D etimer_process
+00005970 T etimer_request_poll
+00005a98 T etimer_reset
+00005a86 T etimer_set
+00005acc T etimer_stop
+00005c9a T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00007486 t handle_rxdma_timer
+00006298 T leds_arch_get
+0000628a T leds_arch_init
+000062cc T leds_arch_set
+0000630a T leds_init
+00006322 T leds_off
+00006310 T leds_on
+000014b0 b mgt_timer
+00001aec b next_rtimer
+00001aee b num_sensors
+0000826e r output_power
+00006af2 T packetbuf_holds_broadcast
+0000141c b periodic_timer.2697
+00005598 t process_thread_ctimer_process
+0000597a t process_thread_etimer_process
+000070ea t process_thread_sensors_process
+000070b6 T rtimer_arch_init
+000070c4 T rtimer_arch_now
+000070d2 T rtimer_run_next
+00001c0e b rxdma_timer
+00001200 D sensors
+000071ac T sensors_changed
+00001d30 B sensors_event
+00001d2e B sensors_flags
+00001214 D sensors_process
+         U spi_arch_has_lock
+000072e0 T spi_init
+00007430 T timer_expired
+0000745a T timer_reset
+00007414 T timer_set
+0000708a T timera0
+00004f6e T timera1
+00001318 b timerlist
+000074c0 T uart1_active
+00007514 T uart1_init
+00001c22 b uart1_input_handler
+000074d8 T uart1_set_input
+000074fc T uart1_writeb
+0000764a T watchdog_init
+00007608 T watchdog_interrupt
+00007622 T watchdog_periodic
+0000760e T watchdog_start
+00007634 T watchdog_stop
+
+[Sensor / peripheral strings]
+N(N6NjNButton
+NullNet broadcast example
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001e0 A __DMA0CTL
+000001e4 A __DMA0DA
+000001e2 A __DMA0SA
+000001e6 A __DMA0SZ
+000001e8 A __DMA1CTL
+000001ec A __DMA1DA
+000001ea A __DMA1SA
+000001ee A __DMA1SZ
+000001f0 A __DMA2CTL
+000001f4 A __DMA2DA
+000001f2 A __DMA2SA
+000001f6 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004000 W __watchdog_support
+000058f6 t add_timer
+         U button_hal_button_count
+         U button_hal_buttons
+0000ab58 R button_sensor
+00004a94 T cc2420_get_txpower
+00004a68 T cc2420_set_txpower
+000042ec T cc2420_timerb1_interrupt
+00004f8a T clock_delay
+00004f62 T clock_init
+00004f48 T clock_time
+00005566 T ctimer_init
+0000232a b ctimer_list_list
+00001128 D ctimer_process
+000055dc T ctimer_reset
+000055cc T ctimer_set
+0000557e T ctimer_set_with_process
+0000560c T ctimer_stop
+0000224a b debouncetimer
+0000595a T etimer_expired
+00005974 T etimer_next_expiration_time
+00005968 T etimer_pending
+00001132 D etimer_process
+00005820 T etimer_request_poll
+00005948 T etimer_reset
+00005936 T etimer_set
+0000598a T etimer_stop
+00005b5a T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00007cf0 t handle_rxdma_timer
+0000616c T leds_arch_get
+0000615e T leds_arch_init
+000061a0 T leds_arch_set
+000061de T leds_init
+000061f6 T leds_off
+000061e4 T leds_on
+000025de b mgt_timer
+00002c1e b next_rtimer
+00002c20 b num_sensors
+0000ab8e r output_power
+00007346 T packetbuf_holds_broadcast
+00002548 b periodic_timer.3213
+000054be t process_thread_ctimer_process
+0000582a t process_thread_etimer_process
+000078f4 t process_thread_sensors_process
+000078a6 T rtimer_arch_init
+000078b4 T rtimer_arch_now
+000078c2 T rtimer_arch_schedule
+000078c8 T rtimer_init
+000078ce T rtimer_run_next
+00002d40 b rxdma_timer
+0000110c D sensors
+000079b6 T sensors_changed
+00002e54 B sensors_event
+00002e4a B sensors_flags
+00002228 D sensors_process
+         U spi_arch_has_lock
+00007ae2 T spi_init
+00007c9a T timer_expired
+00007cc4 T timer_reset
+00007c7e T timer_set
+00007878 T timera0
+00004e6c T timera1
+0000232c b timerlist
+00007d2a T uart1_active
+00007d7a T uart1_init
+00002d54 b uart1_input_handler
+00007d42 T uart1_set_input
+00007d62 T uart1_writeb
+00007eb0 T watchdog_init
+00007e6e T watchdog_interrupt
+00007e88 T watchdog_periodic
+00007e74 T watchdog_start
+00007e9a T watchdog_stop
+
+[Sensor / peripheral strings]
+L&M4MhMButton
+CLOCK_SECOND %lu
+Broadcast from %d, to all. %llu %llu 
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00004c04 t add_timer
+000098f4 R adxl345
+00001a3c d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+00009902 R button_sensor
+0000405e T cc2420_get_txpower
+00004032 T cc2420_set_txpower
+0000350a T cc2420_timerb1_interrupt
+0000446e T clock_delay
+00004446 T clock_init
+0000442c T clock_time
+0000447a T clock_wait
+00004a28 T ctimer_init
+00001ba4 b ctimer_list_list
+00001130 D ctimer_process
+00004a8a T ctimer_set
+00004a40 T ctimer_set_with_process
+00004a9a T ctimer_stop
+00001acc b debouncetimer
+000023d2 b enabled
+00002406 b enabled
+00004c68 T etimer_expired
+00004c82 T etimer_next_expiration_time
+00004c76 T etimer_pending
+0000113c D etimer_process
+00004b36 T etimer_request_poll
+00004c56 T etimer_reset
+00004c44 T etimer_set
+00004c98 T etimer_stop
+00004e64 T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005488 T i2c_busy
+00005492 T i2c_enable
+0000544a T i2c_receive_n
+000053e4 T i2c_receiveinit
+00003684 T i2c_rx_interrupt
+000054b4 T i2c_transmit_n
+0000541a T i2c_transmitinit
+00003600 T i2c_tx_interrupt
+00001adc b last_tar
+000054d6 T leds_arch_get
+000054c8 T leds_arch_init
+0000550a T leds_arch_set
+00005548 T leds_init
+00005560 T leds_off
+0000554e T leds_on
+00001e18 b mgt_timer
+000023b4 b next_rtimer
+00002405 b num_sensors
+00009948 r output_power
+0000638e T packetbuf_holds_broadcast
+00001d82 b periodic_timer.3282
+00004988 t process_thread_ctimer_process
+00004b40 t process_thread_etimer_process
+000068d8 t process_thread_sensors_process
+0000688a T rtimer_arch_init
+00006898 T rtimer_arch_now
+000068a6 T rtimer_arch_schedule
+000068ac T rtimer_init
+000068b2 T rtimer_run_next
+00001a30 D sensors
+0000699a T sensors_changed
+000024f9 B sensors_event
+000024fa B sensors_flags
+00001a18 D sensors_process
+         U spi_arch_has_lock
+000069c4 T spi_init
+00001abc b suppressTimer1
+00001ac4 b suppressTimer2
+00006b66 T timer_expired
+00006b90 T timer_reset
+00006b4a T timer_set
+00003698 T timera0
+00003530 T timera1
+00001ba6 b timerlist
+000099ea R tmp102
+00006bbe T tmp102_init
+00006c12 T tmp102_read_reg
+00006c70 T tmp102_read_temp_x100
+00006be2 T tmp102_stop
+00006cde T uart0_active
+00006d02 T uart0_init
+000023c8 b uart0_input_handler
+000036ba T uart0_rx_interrupt
+00006cec T uart0_writeb
+00006d8c T watchdog_init
+000036e4 T watchdog_interrupt
+00006d64 T watchdog_periodic
+00006d50 T watchdog_start
+00006d76 T watchdog_stop
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001e0 A __DMA0CTL
+000001e4 A __DMA0DA
+000001e2 A __DMA0SA
+000001e6 A __DMA0SZ
+000001e8 A __DMA1CTL
+000001ec A __DMA1DA
+000001ea A __DMA1SA
+000001ee A __DMA1SZ
+000001f0 A __DMA2CTL
+000001f4 A __DMA2DA
+000001f2 A __DMA2SA
+000001f6 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004000 W __watchdog_support
+000058f6 t add_timer
+         U button_hal_button_count
+         U button_hal_buttons
+00008210 R button_sensor
+00004a94 T cc2420_get_txpower
+00004a68 T cc2420_set_txpower
+000042ec T cc2420_timerb1_interrupt
+00004f8a T clock_delay
+00004f62 T clock_init
+00004f48 T clock_time
+00005566 T ctimer_init
+000023f2 b ctimer_list_list
+00001128 D ctimer_process
+000055dc T ctimer_reset
+000055cc T ctimer_set
+0000557e T ctimer_set_with_process
+0000560c T ctimer_stop
+00002312 b debouncetimer
+0000595a T etimer_expired
+00005974 T etimer_next_expiration_time
+00005968 T etimer_pending
+00001132 D etimer_process
+00005820 T etimer_request_poll
+00005948 T etimer_reset
+00005936 T etimer_set
+0000598a T etimer_stop
+00005b5a T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00007462 t handle_rxdma_timer
+0000616c T leds_arch_get
+0000615e T leds_arch_init
+000061a0 T leds_arch_set
+000061de T leds_init
+000061f6 T leds_off
+000061e4 T leds_on
+0000267c b mgt_timer
+00002cbc b next_rtimer
+00002cbe b num_sensors
+00008246 r output_power
+00006ab8 T packetbuf_holds_broadcast
+000025e8 b periodic_timer.3210
+000054be t process_thread_ctimer_process
+0000582a t process_thread_etimer_process
+00007066 t process_thread_sensors_process
+00007018 T rtimer_arch_init
+00007026 T rtimer_arch_now
+00007034 T rtimer_arch_schedule
+0000703a T rtimer_init
+00007040 T rtimer_run_next
+00002dde b rxdma_timer
+0000110c D sensors
+00007128 T sensors_changed
+00002ec4 B sensors_event
+00002eba B sensors_flags
+000022f0 D sensors_process
+         U spi_arch_has_lock
+00007254 T spi_init
+0000740c T timer_expired
+00007436 T timer_reset
+000073f0 T timer_set
+00006fea T timera0
+00004e6c T timera1
+000023f4 b timerlist
+0000749c T uart1_active
+000074ec T uart1_init
+00002df2 b uart1_input_handler
+000074b4 T uart1_set_input
+000074d4 T uart1_writeb
+00007622 T watchdog_init
+000075e0 T watchdog_interrupt
+000075fa T watchdog_periodic
+000075e6 T watchdog_start
+0000760c T watchdog_stop
+
+[Sensor / peripheral strings]
+L&M4MhMButton
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001e0 A __DMA0CTL
+000001e4 A __DMA0DA
+000001e2 A __DMA0SA
+000001e6 A __DMA0SZ
+000001e8 A __DMA1CTL
+000001ec A __DMA1DA
+000001ea A __DMA1SA
+000001ee A __DMA1SZ
+000001f0 A __DMA2CTL
+000001f4 A __DMA2DA
+000001f2 A __DMA2SA
+000001f6 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004000 W __watchdog_support
+00005956 t add_timer
+         U button_hal_button_count
+         U button_hal_buttons
+0000e480 R button_sensor
+00004b02 T cc2420_get_txpower
+00004ad6 T cc2420_set_txpower
+0000435a T cc2420_timerb1_interrupt
+00004ff4 T clock_delay
+00004fcc T clock_init
+00005000 T clock_seconds
+00004fb2 T clock_time
+0000566e T ctimer_expired
+000055b4 T ctimer_init
+0000132a b ctimer_list_list
+00001124 D ctimer_process
+00005616 T ctimer_reset
+0000904c t ctimer_set.constprop.3
+000055c8 T ctimer_set_with_process
+00005646 T ctimer_stop
+0000124a b debouncetimer
+00001d08 b dis_timer
+000059c6 T etimer_next_expiration_time
+000059ba T etimer_pending
+0000112e D etimer_process
+00005880 T etimer_request_poll
+000059a8 T etimer_reset
+00005996 T etimer_set
+000059dc T etimer_stop
+00005baa T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000903a t handle_dao_ack_timer
+000090e0 t handle_dio_timer
+0000923c t handle_dis_timer
+0000901c t handle_leaving_timer
+00009202 t handle_periodic_timer
+000094b8 t handle_probing_timer
+00009028 t handle_unicast_dio_timer
+000061a8 T leds_arch_get
+0000619a T leds_arch_init
+000061dc T leds_arch_set
+0000621a T leds_init
+00006232 T leds_off
+00006220 T leds_on
+0000163a b mgt_timer
+00001d30 b next_rtimer
+00001d32 b num_sensors
+0000e4b6 r output_power
+00006fe8 T packetbuf_holds_broadcast
+00001d1c b periodic_timer
+0000290c B periodic_timer
+000024d4 b periodic_timer.2980
+0000551a t process_thread_ctimer_process
+0000588a t process_thread_etimer_process
+000098ca t process_thread_sensors_process
+00009262 T rpl_timers_dio_reset
+00009544 T rpl_timers_init
+00009314 T rpl_timers_notify_dao_ack
+000092ac T rpl_timers_schedule_dao
+000092e4 T rpl_timers_schedule_dao_ack
+0000951e T rpl_timers_schedule_leaving
+000091c6 T rpl_timers_schedule_periodic_dis
+000095a8 T rpl_timers_schedule_state_update
+00009290 T rpl_timers_schedule_unicast_dio
+0000955c T rpl_timers_stop_dag_timers
+00009502 T rpl_timers_unschedule_leaving
+00009896 T rtimer_arch_init
+000098a4 T rtimer_arch_now
+000098b2 T rtimer_run_next
+00002420 b rxdma_timer
+000011a2 D sensors
+0000998c T sensors_changed
+00002db6 B sensors_event
+00002db4 B sensors_flags
+000011ea D sensors_process
+         U spi_arch_has_lock
+0000b2ce T spi_init
+0000b402 T stimer_expired
+0000b6ae T timer_expired
+0000b6d8 T timer_reset
+0000b692 T timer_set
+0000986a T timera0
+00004eda T timera1
+0000132c b timerlist
+0000b704 T uart1_active
+0000b734 T uart1_init
+00002434 b uart1_input_handler
+0000b71c T uart1_writeb
+00002bca B uip_ds6_timer_periodic
+00002a64 B uip_ds6_timer_ra
+0000d69c T watchdog_init
+0000d65a T watchdog_interrupt
+0000d674 T watchdog_periodic
+0000d660 T watchdog_start
+0000d686 T watchdog_stop
+
+[Sensor / peripheral strings]
+MButton
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001d0 A __DMA0CTL
+000001d6 A __DMA0DA
+000001d6 A __DMA0DAL
+000001d2 A __DMA0SA
+000001d2 A __DMA0SAL
+000001da A __DMA0SZ
+000001dc A __DMA1CTL
+000001e2 A __DMA1DA
+000001e2 A __DMA1DAL
+000001de A __DMA1SA
+000001de A __DMA1SAL
+000001e6 A __DMA1SZ
+000001e8 A __DMA2CTL
+000001ee A __DMA2DA
+000001ee A __DMA2DAL
+000001ea A __DMA2SA
+000001ea A __DMA2SAL
+000001f2 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000126 A __DMAIV
+000010db A __TLV_ADC12_1_LEN
+000010da A __TLV_ADC12_1_TAG
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003100 W __watchdog_support
+00004d14 t add_timer
+0000d23c R adxl345
+00001238 d adxl345_default_settings
+         U button_hal_button_count
+         U button_hal_buttons
+0000d24a R button_sensor
+0000414c T cc2420_get_txpower
+00004120 T cc2420_set_txpower
+00003604 T cc2420_timerb1_interrupt
+0000455c T clock_delay
+00004534 T clock_init
+0000458c T clock_seconds
+0000451a T clock_time
+00004568 T clock_wait
+00004bac T ctimer_expired
+00004afa T ctimer_init
+0000133c b ctimer_list_list
+00001130 D ctimer_process
+00004b58 T ctimer_reset
+000081f6 t ctimer_set.constprop.3
+00004b0e T ctimer_set_with_process
+00004b84 T ctimer_stop
+00001264 b debouncetimer
+00001b48 b dis_timer
+00002460 b enabled
+0000253e b enabled
+00004d84 T etimer_next_expiration_time
+00004d78 T etimer_pending
+0000113c D etimer_process
+00004c46 T etimer_request_poll
+00004d66 T etimer_reset
+00004d54 T etimer_set
+00004d9a T etimer_stop
+00004f64 T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000081e4 t handle_dao_ack_timer
+00008286 t handle_dio_timer
+000083da t handle_dis_timer
+000081c6 t handle_leaving_timer
+000083a0 t handle_periodic_timer
+0000863a t handle_probing_timer
+000081d2 t handle_unicast_dio_timer
+00005570 T i2c_busy
+0000557a T i2c_enable
+00005532 T i2c_receive_n
+000054cc T i2c_receiveinit
+0000377a T i2c_rx_interrupt
+0000559c T i2c_transmit_n
+00005502 T i2c_transmitinit
+000036f6 T i2c_tx_interrupt
+000055be T leds_arch_get
+000055b0 T leds_arch_init
+000055f2 T leds_arch_set
+00005630 T leds_init
+00005648 T leds_off
+00005636 T leds_on
+00001560 b mgt_timer
+00001b74 b next_rtimer
+000024ad b num_sensors
+0000d290 r output_power
+00006324 T packetbuf_holds_broadcast
+00001b5e b periodic_timer
+0000258e B periodic_timer
+0000227e b periodic_timer.3040
+00004a68 t process_thread_ctimer_process
+00004c50 t process_thread_etimer_process
+000089cc t process_thread_sensors_process
+00008400 T rpl_timers_dio_reset
+000086c2 T rpl_timers_init
+000084ae T rpl_timers_notify_dao_ack
+0000844a T rpl_timers_schedule_dao
+0000847e T rpl_timers_schedule_dao_ack
+0000869c T rpl_timers_schedule_leaving
+00008368 T rpl_timers_schedule_periodic_dis
+00008726 T rpl_timers_schedule_state_update
+0000842e T rpl_timers_schedule_unicast_dio
+000086da T rpl_timers_stop_dag_timers
+00008680 T rpl_timers_unschedule_leaving
+00008998 T rtimer_arch_init
+000089a6 T rtimer_arch_now
+000089b4 T rtimer_run_next
+0000122c D sensors
+00008a8e T sensors_changed
+00002948 B sensors_event
+0000294a B sensors_flags
+000011be D sensors_process
+         U spi_arch_has_lock
+0000a240 T spi_init
+0000a36e T stimer_expired
+00001254 b suppressTimer1
+0000125c b suppressTimer2
+0000a60c T timer_expired
+0000a636 T timer_reset
+0000a5f0 T timer_set
+0000378e T timera0
+0000362a T timera1
+0000133e b timerlist
+0000d32e R tmp102
+0000a664 T tmp102_init
+0000a6b8 T tmp102_read_reg
+0000a716 T tmp102_read_temp_x100
+0000a688 T tmp102_stop
+0000a784 T uart0_active
+0000a7a8 T uart0_init
+
+[Sensor / peripheral strings]
+ADXL345 sensor
+Button
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Sensor / peripheral symbols]
+000001a0 A __ADC12CTL0
+000001a2 A __ADC12CTL1
+000001a6 A __ADC12IE
+000001a4 A __ADC12IFG
+000001a8 A __ADC12IV
+00000080 A __ADC12MCTL0
+00000081 A __ADC12MCTL1
+0000008a A __ADC12MCTL10
+0000008b A __ADC12MCTL11
+0000008c A __ADC12MCTL12
+0000008d A __ADC12MCTL13
+0000008e A __ADC12MCTL14
+0000008f A __ADC12MCTL15
+00000082 A __ADC12MCTL2
+00000083 A __ADC12MCTL3
+00000084 A __ADC12MCTL4
+00000085 A __ADC12MCTL5
+00000086 A __ADC12MCTL6
+00000087 A __ADC12MCTL7
+00000088 A __ADC12MCTL8
+00000089 A __ADC12MCTL9
+00000140 A __ADC12MEM0
+00000142 A __ADC12MEM1
+00000154 A __ADC12MEM10
+00000156 A __ADC12MEM11
+00000158 A __ADC12MEM12
+0000015a A __ADC12MEM13
+0000015c A __ADC12MEM14
+0000015e A __ADC12MEM15
+00000144 A __ADC12MEM2
+00000146 A __ADC12MEM3
+00000148 A __ADC12MEM4
+0000014a A __ADC12MEM5
+0000014c A __ADC12MEM6
+0000014e A __ADC12MEM7
+00000150 A __ADC12MEM8
+00000152 A __ADC12MEM9
+000001e0 A __DMA0CTL
+000001e4 A __DMA0DA
+000001e2 A __DMA0SA
+000001e6 A __DMA0SZ
+000001e8 A __DMA1CTL
+000001ec A __DMA1DA
+000001ea A __DMA1SA
+000001ee A __DMA1SZ
+000001f0 A __DMA2CTL
+000001f4 A __DMA2DA
+000001f2 A __DMA2SA
+000001f6 A __DMA2SZ
+00000122 A __DMACTL0
+00000124 A __DMACTL1
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004000 W __watchdog_support
+00005956 t add_timer
+         U button_hal_button_count
+         U button_hal_buttons
+0000e344 R button_sensor
+00004b02 T cc2420_get_txpower
+00004ad6 T cc2420_set_txpower
+0000435a T cc2420_timerb1_interrupt
+00004ff4 T clock_delay
+00004fcc T clock_init
+00005000 T clock_seconds
+00004fb2 T clock_time
+0000566e T ctimer_expired
+000055b4 T ctimer_init
+0000132a b ctimer_list_list
+00001124 D ctimer_process
+00005616 T ctimer_reset
+0000904c t ctimer_set.constprop.3
+000055c8 T ctimer_set_with_process
+00005646 T ctimer_stop
+0000124a b debouncetimer
+00001d08 b dis_timer
+000059c6 T etimer_next_expiration_time
+000059ba T etimer_pending
+0000112e D etimer_process
+00005880 T etimer_request_poll
+000059a8 T etimer_reset
+00005996 T etimer_set
+000059dc T etimer_stop
+00005baa T frame802154_is_broadcast_addr
+         U gpio_hal_arch_init
+         U gpio_hal_arch_port_clear_pin
+         U gpio_hal_arch_port_interrupt_enable
+         U gpio_hal_arch_port_pin_cfg_set
+         U gpio_hal_arch_port_pin_set_input
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_set_pin
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+0000903a t handle_dao_ack_timer
+000090e0 t handle_dio_timer
+0000923c t handle_dis_timer
+0000901c t handle_leaving_timer
+00009202 t handle_periodic_timer
+000094b8 t handle_probing_timer
+00009028 t handle_unicast_dio_timer
+000061a8 T leds_arch_get
+0000619a T leds_arch_init
+000061dc T leds_arch_set
+0000621a T leds_init
+00006232 T leds_off
+00006220 T leds_on
+0000163a b mgt_timer
+00001d30 b next_rtimer
+00001d32 b num_sensors
+0000e37a r output_power
+00006fe8 T packetbuf_holds_broadcast
+00001d1c b periodic_timer
+000028d4 B periodic_timer
+0000551a t process_thread_ctimer_process
+0000588a t process_thread_etimer_process
+000098ca t process_thread_sensors_process
+00009262 T rpl_timers_dio_reset
+00009544 T rpl_timers_init
+00009314 T rpl_timers_notify_dao_ack
+000092ac T rpl_timers_schedule_dao
+000092e4 T rpl_timers_schedule_dao_ack
+0000951e T rpl_timers_schedule_leaving
+000091c6 T rpl_timers_schedule_periodic_dis
+000095a8 T rpl_timers_schedule_state_update
+00009290 T rpl_timers_schedule_unicast_dio
+0000955c T rpl_timers_stop_dag_timers
+00009502 T rpl_timers_unschedule_leaving
+00009896 T rtimer_arch_init
+000098a4 T rtimer_arch_now
+000098b2 T rtimer_run_next
+00002420 b rxdma_timer
+000011a2 D sensors
+0000998c T sensors_changed
+00002d7e B sensors_event
+00002d7c B sensors_flags
+000011ea D sensors_process
+         U spi_arch_has_lock
+0000b2ce T spi_init
+0000b402 T stimer_expired
+0000b6ae T timer_expired
+0000b6d8 T timer_reset
+0000b692 T timer_set
+0000986a T timera0
+00004eda T timera1
+0000132c b timerlist
+0000b704 T uart1_active
+0000b734 T uart1_init
+00002434 b uart1_input_handler
+0000b71c T uart1_writeb
+00002b92 B uip_ds6_timer_periodic
+00002a2c B uip_ds6_timer_ra
+0000d560 T watchdog_init
+0000d51e T watchdog_interrupt
+0000d538 T watchdog_periodic
+0000d524 T watchdog_start
+0000d54a T watchdog_stop
+
+[Sensor / peripheral strings]
+MButton
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u

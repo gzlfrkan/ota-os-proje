@@ -1,0 +1,739 @@
+=== STRING / METADATA ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+packet sent to 
+free_queued_packet, queue length %d, free packets %zu
+preparing packet for 
+failed to create packet, seqno: %d
+packet sent: no metadata
+, len %u, seqno %u, queue length %d, free packets %zu
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+drop duplicate link layer packet from 
+received packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+Ctimer process
+Event timer
+Hello, EK-D103
+Hello world process
+created a new RPL DAG
+failed to create a new RPL DAG
+links: %u routing links in total (%s)
+failed to set prefix
+failed to initialize DAG
+initialized DAG with instance ID %u, DAG ID 
+just joined, no parent yet, setting timer for leaving
+leaving DAG 
+DAG expired, poison and leave
+DAG expiring in %u seconds, send DIS to preferred parent
+initiating global repair (%s), version %u, rank %u
+, staying in DAG
+failed to init DAG
+Heard old version from root
+inconsistent DIO version (current: %u, received: %u), initiate global repair
+Inconsistent DIO version
+new DIO version (current: %u, received: %u), apply global repair
+participating in global repair, version %u, rank %u
+failed to add neighbor
+unicast DIS, reply to sender
+failed to add link on incoming DAO
+created DAG with instance ID %u, DAG ID 
+TTL value from rpl-lite: %u 
+forward error!
+ext hdr: packet from 
+ going %s, sender closer %d (%d < %d), rank error %u, loop detected %u
+SRH destination not in our DAG, skip SRH insertion
+SRH node not found, skip SRH insertion
+SRH root node not found
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+dao_input: unknown RPL instance %u, discard
+dao_input: different DAG ID 
+unicast
+dio_input: malformed packet, discard
+dio_input: invalid DAG MC, len %u, discard
+dio_input: unsupported DAG MC type %u, discard
+dio_input: invalid DAG configuration option, len %u, discard
+dio_input: invalid DAG prefix info, len %u, discard
+, instance_id %u, DAG ID 
+, version %u, dtsn %u, rank %u
+unable to send DIO because of unsupported DAG MC type %u
+rpl_icmp6_dao_output: not in an instance, skip sending DAO
+rpl_icmp6_dao_output: no preferred parent, skip sending DAO
+rpl_icmp6_dao_output: node not ready to send a DAO (prefix %p, parent addr %p, mop %u)
+, DAG state: %s, MOP %u OCP %u rank %u max-rank %u, dioint %u, nbr count %u (%s)
+reset DIO timer (%s)
+packet sent to 
+RPL Lite
+Sensors
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+output: error in fragment tx, dropping subsequent fragments.
+output: sending IPv6 packet with len %d
+output: failed to calculate payload size - dropping packet
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+compression: inlined UDP ports on send side: %x, %x
+IPHC: cannot compress UDP headers
+output: header len %d -> %d, total len %d -> %d, MAC max payload %d, frag_needed %d
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: empty packet
+input: received first element of a fragmented packet (tag %d, len %d)
+input: failed to allocate new reassembly context
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: error context not found
+uncompression: error unsupported ext header
+uncompression: cannot write UDP header beyond target buffer
+uncompression: UDP ports (ptr+5): %x, %x
+uncompression: UDP ports (ptr+4): %x, %x
+uncompression: UDP ports (ptr+2): %x, %x
+uncompression: error unsupported UDP compression
+uncompression: UDP length: %u (ext: %u) ip_len: %d udp_len: %d
+input: failed to decompress IPHC packet
+input: packet dropped due to header > total packet
+input: packet and fragment context %u dropped, minimum required IP_BUF size: %d+%d+%d=%u (current size: %u)
+input: invalid total size of fragments
+input: received IPv6 packet with len %d
+Check failed: %ld vs. %ld
+output: Packet too big
+output: routing protocol extension header update error
+output: processing %u bytes packet from 
+output: failed to autofill neighbor cache for host 
+TMP102 sensor
+%u unicast addresses
+Unable to remove ext header before sending ICMPv6 ERROR message
+Sending ICMPv6 ERROR message type %d code %d to 
+Sending ICMPv6 packet to 
+NS: no space left for root node!
+, lifetime %u, num_nodes %u
+NS: removing expired node 
+  (DODAG root)
+Extension header option too long: dropping packet
+Processing RPL option
+RPL Option Error: Dropping Packet
+invalid version
+packet shorter than reported in IP header
+dropping packet with length %d > %d
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Heard old version from root
+Inconsistent DIO version
+TTL value from rpl-lite: %u 
+RPL Lite
+Sensors
+Simple UDP process
+Check failed: %ld vs. %ld
+TMP102 sensor
+UDP client
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Heard old version from root
+Inconsistent DIO version
+TTL value from rpl-lite: %u 
+RPL Lite
+Sensors
+Simple UDP process
+Check failed: %ld vs. %ld
+TMP102 sensor
+UDP server
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Important strings]
+CC13xx/CC26xx base demo
+CC13xx/CC26xx base demo process
+Button HAL process
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+Node ID: %u
+Ctimer process
+Event timer
+CC13xx/CC26xx
+Heard old version from root
+Inconsistent DIO version
+RPL Lite
+Check failed: %u vs. %u
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+ClockPTimer_nortos.c
+TimerP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+TimerPCC26XX_nortos.c
+TimerP.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+HwiPCC26XX_nortos.c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+PowerCC26X2_nortos.c
+PowerCC26X2.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/rf
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+RFCC26X2_multiMode.c
+PowerCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/cryptoutils/cryptokey
+CryptoKeyPlaintextCC26XX.c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dma
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+UDMACC26XX.c
+UDMACC26XX.h
+PowerCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+I2C.c
+I2C.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/i2c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+I2CCC26XX.c
+i2c.h
+I2C.h
+I2CCC26XX.h
+PINCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+PINCC26XX.c
+PINCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+Node ID: %u
+packet sent to 
+free_queued_packet, queue length %d, free packets %zu
+preparing packet for 
+failed to create packet, seqno: %d
+packet sent: no metadata
+, len %u, seqno %u, queue length %d, free packets %zu
+could not allocate queuebuf, dropping packet
+could not allocate packet, dropping packet
+could not allocate neighbor, dropping packet
+Failed to retrieve max radio driver payload length
+failed to parse %u
+drop duplicate link layer packet from 
+received packet from 
+! radio does not support getting RADIO_CONST_MAX_PAYLOAD_LEN. Abort init.
+CTimer
+ctimer_set %p %lu
+Ctimer process
+Event timer
+[SENSOR] Button pressed
+[SENSOR] Received UDP-triggered poll
+[UDP] Sending simulated UDP packet................................
+Sensor Event P.ID:06
+Simulated UDP P.ID:34
+<broadcast>
+created a new RPL DAG
+failed to create a new RPL DAG
+links: %u routing links in total (%s)
+failed to set prefix
+failed to initialize DAG
+initialized DAG with instance ID %u, DAG ID 
+just joined, no parent yet, setting timer for leaving
+leaving DAG 
+DAG expired, poison and leave
+DAG expiring in %u seconds, send DIS to preferred parent
+initiating global repair (%s), version %u, rank %u
+, staying in DAG
+failed to init DAG
+Heard old version from root
+inconsistent DIO version (current: %u, received: %u), initiate global repair
+Inconsistent DIO version
+new DIO version (current: %u, received: %u), apply global repair
+participating in global repair, version %u, rank %u
+failed to add neighbor
+unicast DIS, reply to sender
+failed to add link on incoming DAO
+created DAG with instance ID %u, DAG ID 
+forward error!
+ext hdr: packet from 
+ going %s, sender closer %d (%d < %d), rank error %u, loop detected %u
+SRH destination not in our DAG, skip SRH insertion
+SRH node not found, skip SRH insertion
+SRH root node not found
+packet too long: impossible to add source routing header (%u bytes)
+packet too long: impossible to add hop-by-hop option
+dao_input: unknown RPL instance %u, discard
+dao_input: missing full DAG ID, len %u, discard
+dao_input: different DAG ID 
+dao_input: malformed packet, discard
+unicast
+dio_input: malformed packet, discard
+dio_input: invalid DAG MC, len %u, discard
+dio_input: unsupported DAG MC type %u, discard
+dio_input: invalid DAG configuration option, len %u, discard
+dio_input: invalid DAG prefix info, len %u, discard
+dio_input: invalid DAG prefix info, len %u > %zu
+, instance_id %u, DAG ID 
+, version %u, dtsn %u, rank %u
+unable to send DIO because of unsupported DAG MC type %u
+rpl_icmp6_dao_output: not in an instance, skip sending DAO
+rpl_icmp6_dao_output: no preferred parent, skip sending DAO
+rpl_icmp6_dao_output: node not ready to send a DAO (prefix %p, parent addr %p, mop %u)
+, DAG state: %s, MOP %u OCP %u rank %u max-rank %u, dioint %u, nbr count %u (%s)
+reset DIO timer (%s)
+packet sent to 
+RPL Lite
+Sensors
+reassembly: failed to store new fragment session - tag: %d
+reassembly: failed to store N-fragment - could not find session - tag: %d offset: %d
+reassembly: failed to store fragment - packet reassembly will fail tag:%d l
+Insufficient packet data to decompress IP address
+output: error in fragment tx, dropping subsequent fragments.
+output: sending IPv6 packet with len %d
+output: failed to calculate payload size - dropping packet
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+compression: inlined UDP ports on send side: %x, %x
+IPHC: cannot compress UDP headers
+output: header len %d -> %d, total len %d -> %d, MAC max payload %d, frag_needed %d
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+input: empty packet
+input: received first element of a fragmented packet (tag %d, len %d)
+input: failed to allocate new reassembly context
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: error source context not found
+uncompression: error destination context not found
+uncompression: error unsupported ext header
+uncompression: cannot write UDP header beyond target buffer
+uncompression: UDP ports (ptr+5): %x, %x
+uncompression: UDP ports (ptr+4): %x, %x
+uncompression: UDP ports (ptr+2): %x, %x
+uncompression: error unsupported UDP compression
+uncompression: UDP length: %u (ext: %u) ip_len: %d udp_len: %d
+input: failed to decompress IPHC packet
+input: packet dropped due to header > total packet
+input: packet and fragment context %u dropped, minimum required IP_BUF size: %d+%d+%d=%u (current size: %u)
+input: invalid total size of fragments
+input: received IPv6 packet with len %d
+Check failed: %u vs. %u
+output: Packet too big
+output: routing protocol extension header update error
+output: processing %u bytes packet from 
+output: No next-hop found, dropping packet
+output: failed to autofill neighbor cache for host 
+TMP102 sensor
+%u unicast addresses
+Unable to remove ext header before sending ICMPv6 ERROR message
+Sending ICMPv6 ERROR message type %d code %d to 
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+MButton
+Hello world process
+nullnet
+Errors
+Heard old version from root
+Inconsistent DIO version
+RPL Lite
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd
+Node ID: %u
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Hello world process
+Heard old version from root
+Inconsistent DIO version
+RPL Lite
+Sensors
+Check failed: %u vs. %u
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Important strings]
+beep_spinup
+ctimer_set_with_process
+button_hal_process
+button_hal_press_event
+button_hal_release_event
+button_hal_periodic_event
+ctimer_expired
+button_hal_get_state
+ctimer_stop
+button_hal_get_by_id
+button_hal_buttons
+button_hal_get_by_index
+button_hal_button_count
+button_hal_init
+simButtonChanged
+simButtonIsDown
+simButtonIsActive
+__stack_chk_fail
+energest_total_time
+cooja_radio_driver
+linkaddr_node_addr
+node_id
+rtimer_arch_init
+etimer_process
+ctimer_init
+watchdog_init
+rpl_lite_driver
+watchdog_start
+rtimer_arch_now
+simLastPacketTimestamp
+simRadioHWOn
+simRadioChannel
+cooja_radio_process
+radio_set_channel
+radio_set_txpower
+radio_signal_strength_last
+radio_signal_strength_current
+radio_LQI
+packetbuf_set_attr
+packetbuf_clear
+packetbuf_dataptr
+packetbuf_set_datalen
+perror
+crc16_add
+crc16_data
+ctimer_process
+etimer_set
+ctimer_reset
+etimer_reset
+ctimer_restart
+etimer_restart
+etimer_stop
+energest_get_total_time
+uip_udp_conn
+rpl_get_any_dag
+rpl_neighbor_get_ipaddr
+packetbuf_addr
+etimer_request_poll
+etimer_reset_with_new_interval
+etimer_adjust
+etimer_expiration_time
+etimer_start_time
+etimer_pending
+etimer_next_expiration_time
+frame802154_is_broadcast_addr
+frame80215e_create_ie_tsch_slotframe_and_link
+frame80215e_create_ie_tsch_timeslot
+packetbuf_holds_broadcast
+packetbuf_datalen
+packetbuf_hdralloc
+packetbuf_hdrptr
+packetbuf_hdrreduce
+packetbuf_set_addr
+periodic_timer
+link_stats_packet_sent
+curr_log_level_rpl
+curr_log_level_nullnet
+trickle_timer_inconsistency
+trickle_timer_config
+trickle_timer_set
+trickle_timer_consistency
+rtimer_arch_check
+simEtimerPending
+simEtimerNextExpirationTime
+rpl_nbr_gc_get_worst
+netstack_ip_packet_processor_add
+uip_ds6_ip_packet_processor_rm
+nullradio_driver
+packetbuf_attrs
+packetbuf_addrs
+packetbuf_attr_clear
+packetbuf_copyfrom
+packetbuf_copyto
+packetbuf_totlen
+packetbuf_hdrlen
+packetbuf_remaininglen
+packetbuf_attr_copyto
+packetbuf_attr_copyfrom
+pir_sensor
+sensors_changed
+sensors
+vib_sensor
+sensors_flags
+queuebuf_new_from_packetbuf
+queuebuf_update_attr_from_packetbuf
+queuebuf_update_from_packetbuf
+queuebuf_to_packetbuf
+watchdog_periodic
+rpl_dag_root_print_links
+rpl_dag_root_is_root
+uip_sr_num_nodes
+uip_sr_node_head
+uip_sr_node_next
+rpl_dag_root_set_prefix
+rpl_dag_root_start
+rpl_get_global_address
+rpl_dag_init_root
+rpl_dag_update_state
+rpl_mrhof
+rpl_dag_state_to_str
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+Ctimer process
+Event timer
+NullNet broadcast example
+nullnet
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+N(N6NjNButton
+nullnet
+Errors
+NullNet broadcast example
+nullnet
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Sensors
+Check failed: %u vs. %u
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+L&M4MhMButton
+nullnet
+Errors
+linkaddr_node_addr iss 
+Broadcast from %d, to all. %llu %llu 
+Received %u , node_id %d from 
+NullNet unicast example
+V:BsV)Bnullnet
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+Ctimer process
+Event timer
+linkaddr_node_addr iss 
+Sending from node_id :%d, to linkaddr_node_addr :
+Received %u , node_id %d from 
+NullNet unicast example
+nullnet
+Sensors
+Check failed: %ld vs. %ld
+TMP102 sensor
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+L&M4MhMButton
+nullnet
+Errors
+linkaddr_node_addr iss 
+NullNet unicast example
+V:BsV)Bnullnet
+Starting Contiki-NG-release/v4.8-625-g8518cbaff-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Sensors
+Check failed: %ld vs. %ld
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+MButton
+nullnet
+Errors
+Heard old version from root
+Inconsistent DIO version
+RPL Lite
+hello %lu     
+UDP client
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd
+Node ID: %u
+Ctimer process
+Event timer
+Sensors
+Simple UDP process
+Check failed: %u vs. %u
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+ADXL345 sensor
+Button
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd-dirty
+Node ID: %u
+Ctimer process
+Event timer
+Heard old version from root
+Inconsistent DIO version
+RPL Lite
+Sensors
+Simple UDP process
+Check failed: %u vs. %u
+TMP102 sensor
+hello %lu     
+UDP client
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Important strings]
+MButton
+nullnet
+Errors
+Heard old version from root
+Inconsistent DIO version
+RPL Lite
+UDP server
+Starting Contiki-NG-develop/v4.9-639-g6ac4608cd
+Node ID: %u
+Ctimer process
+Event timer
+Sensors
+Simple UDP process
+Check failed: %u vs. %u

@@ -1,0 +1,3444 @@
+=== ASSEMBLY / DISASSEMBLY ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .far.text     00004a78  00010000  00010000  0000cff2  2**1
+  1 .text         0000976e  00003100  00003100  000000f4  2**1
+  2 .rodata       000035fd  0000c870  0000c870  00009864  2**2
+  3 .data         00000150  00001100  0000fe6e  0000ce62  2**1
+  4 .bss          00001648  00001250  0000ffbe  0000cfb2  2**1
+  6 .vectors      00000040  0000ffc0  0000ffc0  0000cfb2  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003376 W __isr_0
+00003376 W __isr_1
+00003376 W __isr_10
+00003376 W __isr_11
+00003376 W __isr_12
+00003376 W __isr_13
+00003376 W __isr_14
+00003376 W __isr_15
+000036f4 T __isr_16
+00003778 T __isr_17
+0000353e T __isr_18
+000035c2 T __isr_19
+00003376 W __isr_2
+00003376 W __isr_20
+00003376 W __isr_21
+00003376 W __isr_22
+000037ae T __isr_23
+00003624 T __isr_24
+0000378c T __isr_25
+000037d8 T __isr_26
+00003376 W __isr_27
+000035fe T __isr_28
+00003376 W __isr_29
+00003376 W __isr_3
+00003376 W __isr_30
+00003376 W __isr_4
+00003376 W __isr_5
+00003376 W __isr_6
+00003376 W __isr_7
+00003376 W __isr_8
+00003376 W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00003ad6 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+000130f2 <uip_process>:
+   130f2:	2b 14       	pushm.a	#3,	r11	
+   130f4:	21 83       	decd	r1		
+   130f6:	6f 92       	cmp.b	#4,	r15	;r2 As==10
+   130f8:	02 20       	jnz	$+6      	;abs 0x130fe
+   130fa:	80 01 b8 38 	bra	#0x138b8	
+   130fe:	b2 40 fa 27 	mov	#10234,	&0x284e	;#0x27fa
+   13102:	4e 28 
+   13104:	b2 40 fa 27 	mov	#10234,	&0x27b4	;#0x27fa
+   13108:	b4 27 
+   1310a:	7f 90 05 00 	cmp.b	#5,	r15	;#0x0005
+   1310e:	17 20       	jnz	$+48     	;abs 0x1313e
+   13110:	1f 42 4c 28 	mov	&0x284c,r15	
+   13114:	8f 93 10 00 	tst	16(r15)	;0x0010(r15)
+   13118:	02 20       	jnz	$+6      	;abs 0x1311e
+   1311a:	80 01 4c 3a 	bra	#0x13a4c	
+   1311e:	82 43 50 28 	mov	#0,	&0x2850	;r3 As==00
+   13122:	b2 40 ee 27 	mov	#10222,	&0x284e	;#0x27ee
+   13126:	4e 28 
+--
+0000313e <main>:
+    313e:	b0 13 e4 6a 	calla	#0x06ae4	
+    3142:	b0 13 3a 45 	calla	#0x0453a	
+    3146:	b0 13 da aa 	calla	#0x0aada	
+    314a:	b0 13 7c 6d 	calla	#0x06d7c	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 8e 6e 	calla	#0x06e8e	
+    3158:	b0 13 34 50 	calla	#0x05034	
+    315c:	b1 13 8a 3d 	calla	#0x13d8a	
+    3160:	b0 13 2a 51 	calla	#0x0512a	
+    3164:	b0 13 f2 bf 	calla	#0x0bff2	
+    3168:	b0 13 f6 6a 	calla	#0x06af6	
+    316c:	b0 13 dc 6e 	calla	#0x06edc	
+    3170:	b0 13 c2 68 	calla	#0x068c2	
+    3174:	b0 13 1c 69 	calla	#0x0691c	
+    3178:	b2 90 03 00 	cmp	#3,	&0x1160	;#0x0003
+    317c:	60 11 
+    317e:	0e 38       	jl	$+30     	;abs 0x319c
+--
+000035fe <cc2420_timerb1_interrupt>:
+    35fe:	0f 14       	pushm.a	#1,	r15	
+    3600:	1f 42 1e 01 	mov	&0x011e,r15	
+    3604:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3608:	06 24       	jz	$+14     	;abs 0x3616
+    360a:	d2 53 bc 24 	inc.b	&0x24bc	
+    360e:	92 42 94 01 	mov	&0x0194,&0x24b6	
+    3612:	b6 24 
+    3614:	05 3c       	jmp	$+12     	;abs 0x3620
+    3616:	c2 43 bc 24 	mov.b	#0,	&0x24bc	;r3 As==00
+    361a:	92 42 94 01 	mov	&0x0194,&0x24be	
+    361e:	be 24 
+    3620:	0f 16       	popm.a	#1,	r15	
+    3622:	00 13       	reti			
+
+00003624 <timera1>:
+    3624:	3f 14       	pushm.a	#4,	r15	
+    3626:	b1 13 4e 3d 	calla	#0x13d4e	
+    362a:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+0000389c <process_thread_accmeter_process>:
+    389c:	0b 14       	pushm.a	#1,	r11	
+    389e:	0b 4f       	mov	r15,	r11	
+    38a0:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    38a4:	13 20       	jnz	$+40     	;abs 0x38cc
+    38a6:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    38aa:	b0 13 48 38 	calla	#0x03848	
+    38ae:	4e 4f       	mov.b	r15,	r14	
+    38b0:	1e b2 50 12 	bit	&0x1250,r14	
+    38b4:	03 24       	jz	$+8      	;abs 0x38bc
+    38b6:	2e 00 b0 24 	mova	&0x024b0,r14	
+    38ba:	05 3c       	jmp	$+12     	;abs 0x38c6
+    38bc:	1e b2 52 12 	bit	&0x1252,r14	
+    38c0:	05 24       	jz	$+12     	;abs 0x38cc
+    38c2:	2e 00 ac 24 	mova	&0x024ac,r14	
+    38c6:	de 03       	tsta	r14		
+    38c8:	01 24       	jz	$+4      	;abs 0x38cc
+    38ca:	4e 13       	calla	r14		
+    38cc:	2f 4b       	mov	@r11,	r15	
+--
+00003ad6 <cc2420_arch_init>:
+    3ad6:	b0 13 c0 bf 	calla	#0x0bfc0	
+    3ada:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    3ade:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    3ae2:	1e 00 
+    3ae4:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    3ae8:	1e 00 
+    3aea:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    3aee:	10 01       	reta			
+
+00003af0 <get_object>:
+    3af0:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af2:	10 01       	reta			
+
+00003af4 <set_object>:
+    3af4:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af6:	10 01       	reta			
+
+00003af8 <strobe>:
+--
+00003c7e <cc2420_receiving_packet>:
+    3c7e:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3c82:	5f 03       	rrum	#1,	r15	
+    3c84:	1f f3       	and	#1,	r15	;r3 As==01
+    3c86:	10 01       	reta			
+
+00003c88 <pending_packet>:
+    3c88:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3c8c:	5f 07       	rrum	#2,	r15	
+    3c8e:	1f f3       	and	#1,	r15	;r3 As==01
+    3c90:	10 01       	reta			
+
+00003c92 <wait_for_transmission>:
+    3c92:	0b 14       	pushm.a	#1,	r11	
+    3c94:	b0 13 c6 aa 	calla	#0x0aac6	
+    3c98:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3c9c:	0b 8f       	sub	r15,	r11	
+    3c9e:	b0 13 46 3c 	calla	#0x03c46	
+    3ca2:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003e1a <cc2420_prepare>:
+    3e1a:	1b 14       	pushm.a	#2,	r11	
+    3e1c:	21 83       	decd	r1		
+    3e1e:	0a 4f       	mov	r15,	r10	
+    3e20:	0b 4e       	mov	r14,	r11	
+    3e22:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3e26:	16 2c       	jc	$+46     	;abs 0x3e54
+    3e28:	d2 53 4e 24 	inc.b	&0x244e	
+    3e2c:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3e30:	b0 13 f8 3a 	calla	#0x03af8	
+    3e34:	4f 4b       	mov.b	r11,	r15	
+    3e36:	6f 53       	incd.b	r15		
+    3e38:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3e3c:	1e 43       	mov	#1,	r14	;r3 As==01
+    3e3e:	0f 41       	mov	r1,	r15	
+    3e40:	b0 13 0e 3c 	calla	#0x03c0e	
+    3e44:	0e 4b       	mov	r11,	r14	
+    3e46:	0f 4a       	mov	r10,	r15	
+    3e48:	b0 13 0e 3c 	calla	#0x03c0e	
+--
+00003e5c <cc2420_on>:
+    3e5c:	c2 93 51 24 	tst.b	&0x2451	
+    3e60:	0c 20       	jnz	$+26     	;abs 0x3e7a
+    3e62:	c2 93 4e 24 	tst.b	&0x244e	
+    3e66:	03 24       	jz	$+8      	;abs 0x3e6e
+    3e68:	d2 43 4f 24 	mov.b	#1,	&0x244f	;r3 As==01
+    3e6c:	06 3c       	jmp	$+14     	;abs 0x3e7a
+    3e6e:	d2 43 4e 24 	mov.b	#1,	&0x244e	;r3 As==01
+    3e72:	b0 13 64 3c 	calla	#0x03c64	
+    3e76:	b0 13 66 3d 	calla	#0x03d66	
+    3e7a:	1f 43       	mov	#1,	r15	;r3 As==01
+    3e7c:	10 01       	reta			
+
+00003e7e <cc2420_transmit>:
+    3e7e:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3e82:	01 24       	jz	$+4      	;abs 0x3e86
+    3e84:	2d 2c       	jc	$+92     	;abs 0x3ee0
+    3e86:	d2 53 4e 24 	inc.b	&0x244e	
+    3e8a:	c2 93 4e 12 	tst.b	&0x124e	
+    3e8e:	0a 24       	jz	$+22     	;abs 0x3ea4
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000a1b8  00003100  00003100  000000b4  2**1
+  1 .rodata       0000057f  0000d2b8  0000d2b8  0000a26c  2**2
+  2 .data         00000150  00001100  0000d838  0000a7ec  2**1
+  3 .bss          00001720  00001250  0000d988  0000a93c  2**1
+  5 .vectors      00000040  0000ffc0  0000ffc0  0000a93c  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003376 W __isr_0
+00003376 W __isr_1
+00003376 W __isr_10
+00003376 W __isr_11
+00003376 W __isr_12
+00003376 W __isr_13
+00003376 W __isr_14
+00003376 W __isr_15
+000036f4 T __isr_16
+00003778 T __isr_17
+0000353e T __isr_18
+000035c2 T __isr_19
+00003376 W __isr_2
+00003376 W __isr_20
+00003376 W __isr_21
+00003376 W __isr_22
+000037ae T __isr_23
+00003624 T __isr_24
+0000378c T __isr_25
+000037d8 T __isr_26
+00003376 W __isr_27
+000035fe T __isr_28
+00003376 W __isr_29
+00003376 W __isr_3
+00003376 W __isr_30
+00003376 W __isr_4
+00003376 W __isr_5
+00003376 W __isr_6
+00003376 W __isr_7
+00003376 W __isr_8
+00003376 W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00003ad6 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0000313e <main>:
+    313e:	b0 13 32 64 	calla	#0x06432	
+    3142:	b0 13 3a 45 	calla	#0x0453a	
+    3146:	b0 13 e8 8a 	calla	#0x08ae8	
+    314a:	b0 13 ca 66 	calla	#0x066ca	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 dc 67 	calla	#0x067dc	
+    3158:	b0 13 36 4b 	calla	#0x04b36	
+    315c:	b0 13 ca c5 	calla	#0x0c5ca	
+    3160:	b0 13 2c 4c 	calla	#0x04c2c	
+    3164:	b0 13 b4 a2 	calla	#0x0a2b4	
+    3168:	b0 13 44 64 	calla	#0x06444	
+    316c:	b0 13 2a 68 	calla	#0x0682a	
+    3170:	b0 13 10 62 	calla	#0x06210	
+    3174:	b0 13 6a 62 	calla	#0x0626a	
+    3178:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    317c:	54 11 
+    317e:	0e 38       	jl	$+30     	;abs 0x319c
+--
+000035fe <cc2420_timerb1_interrupt>:
+    35fe:	0f 14       	pushm.a	#1,	r15	
+    3600:	1f 42 1e 01 	mov	&0x011e,r15	
+    3604:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3608:	06 24       	jz	$+14     	;abs 0x3616
+    360a:	d2 53 92 25 	inc.b	&0x2592	
+    360e:	92 42 94 01 	mov	&0x0194,&0x258c	
+    3612:	8c 25 
+    3614:	05 3c       	jmp	$+12     	;abs 0x3620
+    3616:	c2 43 92 25 	mov.b	#0,	&0x2592	;r3 As==00
+    361a:	92 42 94 01 	mov	&0x0194,&0x2594	
+    361e:	94 25 
+    3620:	0f 16       	popm.a	#1,	r15	
+    3622:	00 13       	reti			
+
+00003624 <timera1>:
+    3624:	3f 14       	pushm.a	#4,	r15	
+    3626:	b0 13 8e c5 	calla	#0x0c58e	
+    362a:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+0000389c <process_thread_accmeter_process>:
+    389c:	0b 14       	pushm.a	#1,	r11	
+    389e:	0b 4f       	mov	r15,	r11	
+    38a0:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    38a4:	13 20       	jnz	$+40     	;abs 0x38cc
+    38a6:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    38aa:	b0 13 48 38 	calla	#0x03848	
+    38ae:	4e 4f       	mov.b	r15,	r14	
+    38b0:	1e b2 50 12 	bit	&0x1250,r14	
+    38b4:	03 24       	jz	$+8      	;abs 0x38bc
+    38b6:	2e 00 86 25 	mova	&0x02586,r14	
+    38ba:	05 3c       	jmp	$+12     	;abs 0x38c6
+    38bc:	1e b2 52 12 	bit	&0x1252,r14	
+    38c0:	05 24       	jz	$+12     	;abs 0x38cc
+    38c2:	2e 00 82 25 	mova	&0x02582,r14	
+    38c6:	de 03       	tsta	r14		
+    38c8:	01 24       	jz	$+4      	;abs 0x38cc
+    38ca:	4e 13       	calla	r14		
+    38cc:	2f 4b       	mov	@r11,	r15	
+--
+00003ad6 <cc2420_arch_init>:
+    3ad6:	b0 13 82 a2 	calla	#0x0a282	
+    3ada:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    3ade:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    3ae2:	1e 00 
+    3ae4:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    3ae8:	1e 00 
+    3aea:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    3aee:	10 01       	reta			
+
+00003af0 <get_object>:
+    3af0:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af2:	10 01       	reta			
+
+00003af4 <set_object>:
+    3af4:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af6:	10 01       	reta			
+
+00003af8 <strobe>:
+--
+00003c7e <cc2420_receiving_packet>:
+    3c7e:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3c82:	5f 03       	rrum	#1,	r15	
+    3c84:	1f f3       	and	#1,	r15	;r3 As==01
+    3c86:	10 01       	reta			
+
+00003c88 <pending_packet>:
+    3c88:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3c8c:	5f 07       	rrum	#2,	r15	
+    3c8e:	1f f3       	and	#1,	r15	;r3 As==01
+    3c90:	10 01       	reta			
+
+00003c92 <wait_for_transmission>:
+    3c92:	0b 14       	pushm.a	#1,	r11	
+    3c94:	b0 13 d4 8a 	calla	#0x08ad4	
+    3c98:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3c9c:	0b 8f       	sub	r15,	r11	
+    3c9e:	b0 13 46 3c 	calla	#0x03c46	
+    3ca2:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003e1a <cc2420_prepare>:
+    3e1a:	1b 14       	pushm.a	#2,	r11	
+    3e1c:	21 83       	decd	r1		
+    3e1e:	0a 4f       	mov	r15,	r10	
+    3e20:	0b 4e       	mov	r14,	r11	
+    3e22:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3e26:	16 2c       	jc	$+46     	;abs 0x3e54
+    3e28:	d2 53 78 24 	inc.b	&0x2478	
+    3e2c:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3e30:	b0 13 f8 3a 	calla	#0x03af8	
+    3e34:	4f 4b       	mov.b	r11,	r15	
+    3e36:	6f 53       	incd.b	r15		
+    3e38:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3e3c:	1e 43       	mov	#1,	r14	;r3 As==01
+    3e3e:	0f 41       	mov	r1,	r15	
+    3e40:	b0 13 0e 3c 	calla	#0x03c0e	
+    3e44:	0e 4b       	mov	r11,	r14	
+    3e46:	0f 4a       	mov	r10,	r15	
+    3e48:	b0 13 0e 3c 	calla	#0x03c0e	
+--
+00003e5c <cc2420_on>:
+    3e5c:	c2 93 7b 24 	tst.b	&0x247b	
+    3e60:	0c 20       	jnz	$+26     	;abs 0x3e7a
+    3e62:	c2 93 78 24 	tst.b	&0x2478	
+    3e66:	03 24       	jz	$+8      	;abs 0x3e6e
+    3e68:	d2 43 79 24 	mov.b	#1,	&0x2479	;r3 As==01
+    3e6c:	06 3c       	jmp	$+14     	;abs 0x3e7a
+    3e6e:	d2 43 78 24 	mov.b	#1,	&0x2478	;r3 As==01
+    3e72:	b0 13 64 3c 	calla	#0x03c64	
+    3e76:	b0 13 66 3d 	calla	#0x03d66	
+    3e7a:	1f 43       	mov	#1,	r15	;r3 As==01
+    3e7c:	10 01       	reta			
+
+00003e7e <cc2420_transmit>:
+    3e7e:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3e82:	01 24       	jz	$+4      	;abs 0x3e86
+    3e84:	2d 2c       	jc	$+92     	;abs 0x3ee0
+    3e86:	d2 53 78 24 	inc.b	&0x2478	
+    3e8a:	c2 93 4e 12 	tst.b	&0x124e	
+    3e8e:	0a 24       	jz	$+22     	;abs 0x3ea4
+    3e90:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    3e94:	b0 13 f8 3a 	calla	#0x03af8	
+    3e98:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    3e9a:	b0 13 b4 3c 	calla	#0x03cb4	
+    3e9e:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    3ea2:	01 3c       	jmp	$+4      	;abs 0x3ea6
+    3ea4:	2f 42       	mov	#4,	r15	;r2 As==10
+    3ea6:	b0 13 f8 3a 	calla	#0x03af8	
+    3eaa:	3f 40 16 05 	mov	#1302,	r15	;#0x0516
+    3eae:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3eb2:	13 24       	jz	$+40     	;abs 0x3eda
+    3eb4:	b0 13 46 3c 	calla	#0x03c46	
+--
+00003ee4 <cc2420_send>:
+    3ee4:	0b 14       	pushm.a	#1,	r11	
+    3ee6:	0b 4e       	mov	r14,	r11	
+    3ee8:	b0 13 1a 3e 	calla	#0x03e1a	
+    3eec:	0f 4b       	mov	r11,	r15	
+    3eee:	b0 13 7e 3e 	calla	#0x03e7e	
+    3ef2:	0b 16       	popm.a	#1,	r11	
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000a0c6  00003100  00003100  000000d4  2**1
+  1 .rodata       00000553  0000d1c8  0000d1c8  0000a19c  2**2
+  2 .data         00000150  00001100  0000d71c  0000a6f0  2**1
+  3 .bss          000016e8  00001250  0000d86c  0000a840  2**1
+  5 .vectors      00000040  0000ffc0  0000ffc0  0000a840  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003376 W __isr_0
+00003376 W __isr_1
+00003376 W __isr_10
+00003376 W __isr_11
+00003376 W __isr_12
+00003376 W __isr_13
+00003376 W __isr_14
+00003376 W __isr_15
+000036f4 T __isr_16
+00003778 T __isr_17
+0000353e T __isr_18
+000035c2 T __isr_19
+00003376 W __isr_2
+00003376 W __isr_20
+00003376 W __isr_21
+00003376 W __isr_22
+000037ae T __isr_23
+00003624 T __isr_24
+0000378c T __isr_25
+000037d8 T __isr_26
+00003376 W __isr_27
+000035fe T __isr_28
+00003376 W __isr_29
+00003376 W __isr_3
+00003376 W __isr_30
+00003376 W __isr_4
+00003376 W __isr_5
+00003376 W __isr_6
+00003376 W __isr_7
+00003376 W __isr_8
+00003376 W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00003ad6 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0000313e <main>:
+    313e:	b0 13 32 64 	calla	#0x06432	
+    3142:	b0 13 3a 45 	calla	#0x0453a	
+    3146:	b0 13 e8 8a 	calla	#0x08ae8	
+    314a:	b0 13 ca 66 	calla	#0x066ca	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 dc 67 	calla	#0x067dc	
+    3158:	b0 13 36 4b 	calla	#0x04b36	
+    315c:	b0 13 d8 c4 	calla	#0x0c4d8	
+    3160:	b0 13 2c 4c 	calla	#0x04c2c	
+    3164:	b0 13 b4 a2 	calla	#0x0a2b4	
+    3168:	b0 13 44 64 	calla	#0x06444	
+    316c:	b0 13 2a 68 	calla	#0x0682a	
+    3170:	b0 13 10 62 	calla	#0x06210	
+    3174:	b0 13 6a 62 	calla	#0x0626a	
+    3178:	b2 90 03 00 	cmp	#3,	&0x1154	;#0x0003
+    317c:	54 11 
+    317e:	0e 38       	jl	$+30     	;abs 0x319c
+--
+000035fe <cc2420_timerb1_interrupt>:
+    35fe:	0f 14       	pushm.a	#1,	r15	
+    3600:	1f 42 1e 01 	mov	&0x011e,r15	
+    3604:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3608:	06 24       	jz	$+14     	;abs 0x3616
+    360a:	d2 53 5a 25 	inc.b	&0x255a	
+    360e:	92 42 94 01 	mov	&0x0194,&0x2554	
+    3612:	54 25 
+    3614:	05 3c       	jmp	$+12     	;abs 0x3620
+    3616:	c2 43 5a 25 	mov.b	#0,	&0x255a	;r3 As==00
+    361a:	92 42 94 01 	mov	&0x0194,&0x255c	
+    361e:	5c 25 
+    3620:	0f 16       	popm.a	#1,	r15	
+    3622:	00 13       	reti			
+
+00003624 <timera1>:
+    3624:	3f 14       	pushm.a	#4,	r15	
+    3626:	b0 13 9c c4 	calla	#0x0c49c	
+    362a:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+0000389c <process_thread_accmeter_process>:
+    389c:	0b 14       	pushm.a	#1,	r11	
+    389e:	0b 4f       	mov	r15,	r11	
+    38a0:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    38a4:	13 20       	jnz	$+40     	;abs 0x38cc
+    38a6:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    38aa:	b0 13 48 38 	calla	#0x03848	
+    38ae:	4e 4f       	mov.b	r15,	r14	
+    38b0:	1e b2 50 12 	bit	&0x1250,r14	
+    38b4:	03 24       	jz	$+8      	;abs 0x38bc
+    38b6:	2e 00 4e 25 	mova	&0x0254e,r14	
+    38ba:	05 3c       	jmp	$+12     	;abs 0x38c6
+    38bc:	1e b2 52 12 	bit	&0x1252,r14	
+    38c0:	05 24       	jz	$+12     	;abs 0x38cc
+    38c2:	2e 00 4a 25 	mova	&0x0254a,r14	
+    38c6:	de 03       	tsta	r14		
+    38c8:	01 24       	jz	$+4      	;abs 0x38cc
+    38ca:	4e 13       	calla	r14		
+    38cc:	2f 4b       	mov	@r11,	r15	
+--
+00003ad6 <cc2420_arch_init>:
+    3ad6:	b0 13 82 a2 	calla	#0x0a282	
+    3ada:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    3ade:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    3ae2:	1e 00 
+    3ae4:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    3ae8:	1e 00 
+    3aea:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    3aee:	10 01       	reta			
+
+00003af0 <get_object>:
+    3af0:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af2:	10 01       	reta			
+
+00003af4 <set_object>:
+    3af4:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af6:	10 01       	reta			
+
+00003af8 <strobe>:
+--
+00003c7e <cc2420_receiving_packet>:
+    3c7e:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3c82:	5f 03       	rrum	#1,	r15	
+    3c84:	1f f3       	and	#1,	r15	;r3 As==01
+    3c86:	10 01       	reta			
+
+00003c88 <pending_packet>:
+    3c88:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3c8c:	5f 07       	rrum	#2,	r15	
+    3c8e:	1f f3       	and	#1,	r15	;r3 As==01
+    3c90:	10 01       	reta			
+
+00003c92 <wait_for_transmission>:
+    3c92:	0b 14       	pushm.a	#1,	r11	
+    3c94:	b0 13 d4 8a 	calla	#0x08ad4	
+    3c98:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3c9c:	0b 8f       	sub	r15,	r11	
+    3c9e:	b0 13 46 3c 	calla	#0x03c46	
+    3ca2:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003e1a <cc2420_prepare>:
+    3e1a:	1b 14       	pushm.a	#2,	r11	
+    3e1c:	21 83       	decd	r1		
+    3e1e:	0a 4f       	mov	r15,	r10	
+    3e20:	0b 4e       	mov	r14,	r11	
+    3e22:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3e26:	16 2c       	jc	$+46     	;abs 0x3e54
+    3e28:	d2 53 60 24 	inc.b	&0x2460	
+    3e2c:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3e30:	b0 13 f8 3a 	calla	#0x03af8	
+    3e34:	4f 4b       	mov.b	r11,	r15	
+    3e36:	6f 53       	incd.b	r15		
+    3e38:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3e3c:	1e 43       	mov	#1,	r14	;r3 As==01
+    3e3e:	0f 41       	mov	r1,	r15	
+    3e40:	b0 13 0e 3c 	calla	#0x03c0e	
+    3e44:	0e 4b       	mov	r11,	r14	
+    3e46:	0f 4a       	mov	r10,	r15	
+    3e48:	b0 13 0e 3c 	calla	#0x03c0e	
+--
+00003e5c <cc2420_on>:
+    3e5c:	c2 93 63 24 	tst.b	&0x2463	
+    3e60:	0c 20       	jnz	$+26     	;abs 0x3e7a
+    3e62:	c2 93 60 24 	tst.b	&0x2460	
+    3e66:	03 24       	jz	$+8      	;abs 0x3e6e
+    3e68:	d2 43 61 24 	mov.b	#1,	&0x2461	;r3 As==01
+    3e6c:	06 3c       	jmp	$+14     	;abs 0x3e7a
+    3e6e:	d2 43 60 24 	mov.b	#1,	&0x2460	;r3 As==01
+    3e72:	b0 13 64 3c 	calla	#0x03c64	
+    3e76:	b0 13 66 3d 	calla	#0x03d66	
+    3e7a:	1f 43       	mov	#1,	r15	;r3 As==01
+    3e7c:	10 01       	reta			
+
+00003e7e <cc2420_transmit>:
+    3e7e:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3e82:	01 24       	jz	$+4      	;abs 0x3e86
+    3e84:	2d 2c       	jc	$+92     	;abs 0x3ee0
+    3e86:	d2 53 60 24 	inc.b	&0x2460	
+    3e8a:	c2 93 4e 12 	tst.b	&0x124e	
+    3e8e:	0a 24       	jz	$+22     	;abs 0x3ea4
+    3e90:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    3e94:	b0 13 f8 3a 	calla	#0x03af8	
+    3e98:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    3e9a:	b0 13 b4 3c 	calla	#0x03cb4	
+    3e9e:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    3ea2:	01 3c       	jmp	$+4      	;abs 0x3ea6
+    3ea4:	2f 42       	mov	#4,	r15	;r2 As==10
+    3ea6:	b0 13 f8 3a 	calla	#0x03af8	
+    3eaa:	3f 40 16 05 	mov	#1302,	r15	;#0x0516
+    3eae:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3eb2:	13 24       	jz	$+40     	;abs 0x3eda
+    3eb4:	b0 13 46 3c 	calla	#0x03c46	
+--
+00003ee4 <cc2420_send>:
+    3ee4:	0b 14       	pushm.a	#1,	r11	
+    3ee6:	0b 4e       	mov	r14,	r11	
+    3ee8:	b0 13 1a 3e 	calla	#0x03e1a	
+    3eec:	0f 4b       	mov	r11,	r15	
+    3eee:	b0 13 7e 3e 	calla	#0x03e7e	
+    3ef2:	0b 16       	popm.a	#1,	r11	
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  9 .text         00010cd4  00000040  00000040  00010040  2**2
+ 10 .rodata       0000096d  00010d14  00010d14  00020d14  2**2
+ 11 .data         000004a8  20001b20  00011684  00021b20  2**2
+ 15 .bss          00003128  200020d8  200020d8  00041830  2**3
+
+[Important function symbols used for disassembly]
+20001a30 A DMA_SPI0_RX_ALT_CTEA
+20001830 A DMA_SPI0_RX_CTEA
+20001a40 A DMA_SPI0_TX_ALT_CTEA
+20001840 A DMA_SPI0_TX_CTEA
+20001b00 A DMA_SPI1_RX_ALT_CTEA
+20001900 A DMA_SPI1_RX_CTEA
+20001b10 A DMA_SPI1_TX_ALT_CTEA
+20001910 A DMA_SPI1_TX_CTEA
+0000be9c t I2CCC26XX_blockingCallback
+0000c224 T I2CCC26XX_cancel
+0000be38 T I2CCC26XX_close
+0000be24 T I2CCC26XX_control
+0001106c R I2CCC26XX_fxnTable
+0000bea4 t I2CCC26XX_hwiFxn
+0000be2c T I2CCC26XX_init
+0000c1cc t I2CCC26XX_initHw.isra.11
+0000c2bc T I2CCC26XX_open
+0000c00c t I2CCC26XX_primeTransfer.isra.10
+0000c090 t I2CCC26XX_swiFxn
+0000c0f0 T I2CCC26XX_transfer
+00010d78 R I2C_config
+0001123e R I2C_count
+0000bdd8 T I2C_init
+0000ba2c T RF_Params_init
+200040cc b RF_Sch
+0000b71c T RF_ScheduleCmdParams_init
+0000bb3c T RF_TxPowerTable_findPowerLevel
+0000bba4 T RF_TxPowerTable_findValue
+0000998c t RF_abortCmd
+00009b20 t RF_applyRfCorePatch
+00009690 t RF_attachOverrides
+0000ae28 t RF_calculateDispatchTime
+0000b9f4 T RF_cancelCmd
+0000a484 t RF_clkInactivityCallback
+200040f4 b RF_clkInactivityObj
+0000b634 t RF_clkPowerUp
+20004118 b RF_clkPowerUpObj
+00009820 t RF_clkReqAccess
+0000aa30 t RF_cmdDispatchTime
+20002220 b RF_cmdPool
+
+[Disassembly sample around important labels]
+     4a8:	f00b fafa 	bl	baa0 <RF_getTxPower>
+     4ac:	8832      	ldrh	r2, [r6, #0]
+     4ae:	f5b2 5fc1 	cmp.w	r2, #6176	@ 0x1820
+     4b2:	ea4f 73d0 	mov.w	r3, r0, lsr #31
+     4b6:	d007      	beq.n	4c8 <rfDriverCallback+0x40>
+     4b8:	f643 0107 	movw	r1, #14343	@ 0x3807
+     4bc:	428a      	cmp	r2, r1
+     4be:	d018      	beq.n	4f2 <rfDriverCallback+0x6a>
+     4c0:	f640 0102 	movw	r1, #2050	@ 0x802
+     4c4:	428a      	cmp	r2, r1
+     4c6:	d128      	bne.n	51a <rfDriverCallback+0x92>
+     4c8:	7bf2      	ldrb	r2, [r6, #15]
+     4ca:	0652      	lsls	r2, r2, #25
+     4cc:	d025      	beq.n	51a <rfDriverCallback+0x92>
+     4ce:	6820      	ldr	r0, [r4, #0]
+     4d0:	2200      	movs	r2, #0
+     4d2:	211c      	movs	r1, #28
+     4d4:	b183      	cbz	r3, 4f8 <rfDriverCallback+0x70>
+     4d6:	f00c fad7 	bl	ca88 <PINCC26XX_setMux>
+--
+000005b8 <process_thread_base_demo_process>:
+     5b8:	b538      	push	{r3, r4, r5, lr}
+     5ba:	8803      	ldrh	r3, [r0, #0]
+     5bc:	4605      	mov	r5, r0
+     5be:	4614      	mov	r4, r2
+     5c0:	b19b      	cbz	r3, 5ea <process_thread_base_demo_process+0x32>
+     5c2:	f240 126f 	movw	r2, #367	@ 0x16f
+     5c6:	4293      	cmp	r3, r2
+     5c8:	d14d      	bne.n	666 <MIN_STACKSIZE+0x66>
+     5ca:	2988      	cmp	r1, #136	@ 0x88
+     5cc:	d121      	bne.n	612 <MIN_STACKSIZE+0x12>
+     5ce:	4b28      	ldr	r3, [pc, #160]	@ (670 <MIN_STACKSIZE+0x70>)
+     5d0:	429c      	cmp	r4, r3
+     5d2:	d119      	bne.n	608 <MIN_STACKSIZE+0x8>
+     5d4:	2000      	movs	r0, #0
+     5d6:	f001 f983 	bl	18e0 <leds_toggle>
+     5da:	f7ff ffcf 	bl	57c <get_sync_sensor_readings>
+     5de:	f44f 6120 	mov.w	r1, #2560	@ 0xa00
+     5e2:	4620      	mov	r0, r4
+     5e4:	f00f fcc9 	bl	ff7a <etimer_set>
+     5e8:	e00e      	b.n	608 <MIN_STACKSIZE+0x8>
+     5ea:	4822      	ldr	r0, [pc, #136]	@ (674 <MIN_STACKSIZE+0x74>)
+     5ec:	f010 f808 	bl	10600 <puts>
+     5f0:	4b21      	ldr	r3, [pc, #132]	@ (678 <MIN_STACKSIZE+0x78>)
+--
+00000708 <process_thread_button_hal_process>:
+     708:	e92d 41f3 	stmdb	sp!, {r0, r1, r4, r5, r6, r7, r8, lr}
+     70c:	8803      	ldrh	r3, [r0, #0]
+     70e:	4604      	mov	r4, r0
+     710:	b1bb      	cbz	r3, 742 <process_thread_button_hal_process+0x3a>
+     712:	f5b3 7f86 	cmp.w	r3, #268	@ 0x10c
+     716:	d12d      	bne.n	774 <process_thread_button_hal_process+0x6c>
+     718:	2982      	cmp	r1, #130	@ 0x82
+     71a:	d115      	bne.n	748 <process_thread_button_hal_process+0x40>
+     71c:	f00f fe26 	bl	1036c <int_master_read_and_disable>
+     720:	f3bf 8f5f 	dmb	sy
+     724:	4b16      	ldr	r3, [pc, #88]	@ (780 <process_thread_button_hal_process+0x78>)
+     726:	2200      	movs	r2, #0
+     728:	681e      	ldr	r6, [r3, #0]
+     72a:	601a      	str	r2, [r3, #0]
+     72c:	f3bf 8f5f 	dmb	sy
+     730:	f00f fe1e 	bl	10370 <int_master_status_set>
+     734:	4d13      	ldr	r5, [pc, #76]	@ (784 <process_thread_button_hal_process+0x7c>)
+     736:	4f14      	ldr	r7, [pc, #80]	@ (788 <process_thread_button_hal_process+0x80>)
+     738:	f8df 8050 	ldr.w	r8, [pc, #80]	@ 78c <process_thread_button_hal_process+0x84>
+     73c:	f855 0b04 	ldr.w	r0, [r5], #4
+     740:	b920      	cbnz	r0, 74c <process_thread_button_hal_process+0x44>
+     742:	f44f 7386 	mov.w	r3, #268	@ 0x10c
+     746:	8023      	strh	r3, [r4, #0]
+     748:	2001      	movs	r0, #1
+     74a:	e016      	b.n	77a <process_thread_button_hal_process+0x72>
+     74c:	f890 3049 	ldrb.w	r3, [r0, #73]	@ 0x49
+     750:	fa26 f303 	lsr.w	r3, r6, r3
+     754:	07db      	lsls	r3, r3, #31
+     756:	d5f1      	bpl.n	73c <process_thread_button_hal_process+0x34>
+     758:	f000 fd5a 	bl	1210 <ctimer_expired>
+     75c:	2800      	cmp	r0, #0
+     75e:	d0ed      	beq.n	73c <process_thread_button_hal_process+0x34>
+     760:	683b      	ldr	r3, [r7, #0]
+     762:	9300      	str	r3, [sp, #0]
+     764:	f855 3c04 	ldr.w	r3, [r5, #-4]
+     768:	4642      	mov	r2, r8
+     76a:	2102      	movs	r1, #2
+     76c:	4618      	mov	r0, r3
+     76e:	f000 fcfb 	bl	1168 <ctimer_set_with_process>
+     772:	e7e3      	b.n	73c <process_thread_button_hal_process+0x34>
+     774:	2300      	movs	r3, #0
+     776:	8003      	strh	r3, [r0, #0]
+     778:	2003      	movs	r0, #3
+     77a:	b002      	add	sp, #8
+     77c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+     780:	20002804 	.word	0x20002804
+     784:	20001b40 	.word	0x20001b40
+     788:	200030ac 	.word	0x200030ac
+     78c:	000007e9 	.word	0x000007e9
+
+00000790 <press_release_handler>:
+     790:	4a03      	ldr	r2, [pc, #12]	@ (7a0 <press_release_handler+0x10>)
+     792:	6813      	ldr	r3, [r2, #0]
+     794:	4303      	orrs	r3, r0
+     796:	4803      	ldr	r0, [pc, #12]	@ (7a4 <press_release_handler+0x14>)
+     798:	6013      	str	r3, [r2, #0]
+     79a:	f001 bee7 	b.w	256c <process_poll>
+     79e:	bf00      	nop
+--
+00000a24 <main>:
+     a24:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+     a28:	f001 fbce 	bl	21c8 <platform_init_stage_one>
+     a2c:	f7ff ff76 	bl	91c <clock_init>
+     a30:	f004 f8e6 	bl	4c00 <rtimer_arch_init>
+     a34:	f001 fd10 	bl	2458 <process_init>
+     a38:	2100      	movs	r1, #0
+     a3a:	4861      	ldr	r0, [pc, #388]	@ (bc0 <main+0x19c>)
+     a3c:	4f61      	ldr	r7, [pc, #388]	@ (bc4 <main+0x1a0>)
+     a3e:	f8df 81d8 	ldr.w	r8, [pc, #472]	@ c18 <main+0x1f4>
+     a42:	4d61      	ldr	r5, [pc, #388]	@ (bc8 <main+0x1a4>)
+     a44:	4e61      	ldr	r6, [pc, #388]	@ (bcc <main+0x1a8>)
+     a46:	4c62      	ldr	r4, [pc, #392]	@ (bd0 <main+0x1ac>)
+     a48:	f001 fd78 	bl	253c <process_start>
+     a4c:	f000 fb7e 	bl	114c <ctimer_init>
+     a50:	f007 fed4 	bl	87fc <watchdog_init>
+     a54:	f005 fe0a 	bl	666c <stack_check_init>
+     a58:	f001 fbec 	bl	2234 <platform_init_stage_two>
+     a5c:	f002 f88e 	bl	2b7c <queuebuf_init>
+--
+000010dc <process_thread_ctimer_process>:
+    10dc:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+    10de:	8803      	ldrh	r3, [r0, #0]
+    10e0:	4605      	mov	r5, r0
+    10e2:	b1bb      	cbz	r3, 1114 <process_thread_ctimer_process+0x38>
+    10e4:	2b45      	cmp	r3, #69	@ 0x45
+    10e6:	d127      	bne.n	1138 <process_thread_ctimer_process+0x5c>
+    10e8:	2988      	cmp	r1, #136	@ 0x88
+    10ea:	d11b      	bne.n	1124 <process_thread_ctimer_process+0x48>
+    10ec:	4b14      	ldr	r3, [pc, #80]	@ (1140 <process_thread_ctimer_process+0x64>)
+    10ee:	681c      	ldr	r4, [r3, #0]
+    10f0:	b1b4      	cbz	r4, 1120 <process_thread_ctimer_process+0x44>
+    10f2:	1d23      	adds	r3, r4, #4
+    10f4:	429a      	cmp	r2, r3
+    10f6:	d11d      	bne.n	1134 <process_thread_ctimer_process+0x58>
+    10f8:	4e12      	ldr	r6, [pc, #72]	@ (1144 <process_thread_ctimer_process+0x68>)
+    10fa:	4811      	ldr	r0, [pc, #68]	@ (1140 <process_thread_ctimer_process+0x64>)
+    10fc:	4621      	mov	r1, r4
+    10fe:	f00f f960 	bl	103c2 <list_remove>
+    1102:	6962      	ldr	r2, [r4, #20]
+    1104:	6837      	ldr	r7, [r6, #0]
+    1106:	6032      	str	r2, [r6, #0]
+    1108:	69a2      	ldr	r2, [r4, #24]
+    110a:	b10a      	cbz	r2, 1110 <process_thread_ctimer_process+0x34>
+    110c:	69e0      	ldr	r0, [r4, #28]
+    110e:	4790      	blx	r2
+    1110:	6037      	str	r7, [r6, #0]
+    1112:	e005      	b.n	1120 <process_thread_ctimer_process+0x44>
+    1114:	4b0a      	ldr	r3, [pc, #40]	@ (1140 <process_thread_ctimer_process+0x64>)
+    1116:	681c      	ldr	r4, [r3, #0]
+    1118:	b934      	cbnz	r4, 1128 <process_thread_ctimer_process+0x4c>
+    111a:	4b0b      	ldr	r3, [pc, #44]	@ (1148 <process_thread_ctimer_process+0x6c>)
+    111c:	2201      	movs	r2, #1
+    111e:	701a      	strb	r2, [r3, #0]
+    1120:	2345      	movs	r3, #69	@ 0x45
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .far.text     000051d4  00010000  00010000  0000cfd2  2**1
+  1 .text         00009318  00003100  00003100  000000d4  2**1
+  2 .rodata       00003a30  0000c418  0000c418  000093ec  2**2
+  3 .data         00000176  00001100  0000fe48  0000ce1c  2**1
+  4 .bss          00001640  00001276  0000ffbe  0000cf92  2**1
+  6 .vectors      00000040  0000ffc0  0000ffc0  0000cf92  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+000033b2 W __isr_0
+000033b2 W __isr_1
+000033b2 W __isr_10
+000033b2 W __isr_11
+000033b2 W __isr_12
+000033b2 W __isr_13
+000033b2 W __isr_14
+000033b2 W __isr_15
+0000372c T __isr_16
+000037b0 T __isr_17
+0000357a T __isr_18
+000035fe T __isr_19
+000033b2 W __isr_2
+000033b2 W __isr_20
+000033b2 W __isr_21
+000033b2 W __isr_22
+000037e4 T __isr_23
+00003660 T __isr_24
+000037c4 T __isr_25
+0000380e T __isr_26
+000033b2 W __isr_27
+0000363a T __isr_28
+000033b2 W __isr_29
+000033b2 W __isr_3
+000033b2 W __isr_30
+000033b2 W __isr_4
+000033b2 W __isr_5
+000033b2 W __isr_6
+000033b2 W __isr_7
+000033b2 W __isr_8
+000033b2 W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00003b3e T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0001122e <process_thread_stack_check_process>:
+   1122e:	2b 14       	pushm.a	#3,	r11	
+   11230:	0a 4f       	mov	r15,	r10	
+   11232:	2f 4f       	mov	@r15,	r15	
+   11234:	0f 93       	tst	r15		
+   11236:	04 24       	jz	$+10     	;abs 0x11240
+   11238:	3f 90 97 00 	cmp	#151,	r15	;#0x0097
+   1123c:	41 20       	jnz	$+132    	;abs 0x112c0
+   1123e:	47 3c       	jmp	$+144    	;abs 0x112ce
+   11240:	3d 40 00 05 	mov	#1280,	r13	;#0x0500
+   11244:	0e 43       	clr	r14		
+   11246:	3f 40 8e 22 	mov	#8846,	r15	;#0x228e
+   1124a:	b0 13 a2 52 	calla	#0x052a2	
+   1124e:	ba 40 97 00 	mov	#151,	0(r10)	;#0x0097, 0x0000(r10)
+   11252:	00 00 
+   11254:	3a 3c       	jmp	$+118    	;abs 0x112ca
+   11256:	b0 13 9e c3 	calla	#0x0c39e	
+   1125a:	09 4f       	mov	r15,	r9	
+   1125c:	3b 40 00 31 	mov	#12544,	r11	;#0x3100
+--
+000112da <tcpip_output>:
+   112da:	0b 14       	pushm.a	#1,	r11	
+   112dc:	0b 4f       	mov	r15,	r11	
+   112de:	0e 4f       	mov	r15,	r14	
+   112e0:	5f 43       	mov.b	#1,	r15	;r3 As==01
+   112e2:	b0 13 26 69 	calla	#0x06926	
+   112e6:	0f 93       	tst	r15		
+   112e8:	04 20       	jnz	$+10     	;abs 0x112f2
+   112ea:	0f 4b       	mov	r11,	r15	
+   112ec:	80 13 a0 c5 	calla	&0x0c5a0	
+   112f0:	03 3c       	jmp	$+8      	;abs 0x112f8
+   112f2:	b1 13 6a 43 	calla	#0x1436a	
+   112f6:	4f 43       	clr.b	r15		
+   112f8:	0b 16       	popm.a	#1,	r11	
+   112fa:	10 01       	reta			
+
+000112fc <tcpip_input>:
+   112fc:	0e 43       	clr	r14		
+   112fe:	4f 43       	clr.b	r15		
+   11300:	b0 13 26 69 	calla	#0x06926	
+   11304:	0f 93       	tst	r15		
+   11306:	06 20       	jnz	$+14     	;abs 0x11314
+   11308:	0d 43       	clr	r13		
+   1130a:	6e 43       	mov.b	#2,	r14	;r3 As==10
+   1130c:	3f 40 14 12 	mov	#4628,	r15	;#0x1214
+   11310:	b0 13 66 70 	calla	#0x07066	
+   11314:	b1 13 6a 43 	calla	#0x1436a	
+   11318:	10 01       	reta			
+
+0001131a <tcpip_ipv6_output>:
+   1131a:	1b 14       	pushm.a	#2,	r11	
+   1131c:	31 50 e8 ff 	add	#-24,	r1	;#0xffe8
+   11320:	1f 42 d2 27 	mov	&0x27d2,r15	
+   11324:	0f 93       	tst	r15		
+   11326:	02 20       	jnz	$+6      	;abs 0x1132c
+   11328:	80 01 24 17 	bra	#0x11724	
+   1132c:	3f 90 01 05 	cmp	#1281,	r15	;#0x0501
+   11330:	12 28       	jnc	$+38     	;abs 0x11356
+   11332:	92 93 90 11 	cmp	#1,	&0x1190	;r3 As==01
+   11336:	02 34       	jge	$+6      	;abs 0x1133c
+   11338:	80 01 02 17 	bra	#0x11702	
+   1133c:	30 12 c2 f0 	push	#-3902		;#0xf0c2
+   11340:	30 12 c9 f0 	push	#-3895		;#0xf0c9
+   11344:	30 12 cd f0 	push	#-3891		;#0xf0cd
+   11348:	b1 13 e4 45 	calla	#0x145e4	
+   1134c:	31 50 06 00 	add	#6,	r1	;#0x0006
+   11350:	30 12 dc f0 	push	#-3876		;#0xf0dc
+   11354:	29 3c       	jmp	$+84     	;abs 0x113a8
+--
+00011768 <process_thread_tcpip_process>:
+   11768:	0b 14       	pushm.a	#1,	r11	
+   1176a:	0b 4f       	mov	r15,	r11	
+   1176c:	2f 4f       	mov	@r15,	r15	
+   1176e:	0f 93       	tst	r15		
+   11770:	04 24       	jz	$+10     	;abs 0x1177a
+   11772:	3f 90 35 03 	cmp	#821,	r15	;#0x0335
+   11776:	3a 20       	jnz	$+118    	;abs 0x117ec
+   11778:	3e 3c       	jmp	$+126    	;abs 0x117f6
+   1177a:	b0 13 9e 6e 	calla	#0x06e9e	
+   1177e:	c2 4f b1 28 	mov.b	r15,	&0x28b1	
+   11782:	3d 40 40 00 	mov	#64,	r13	;#0x0040
+   11786:	0e 43       	clr	r14		
+   11788:	3f 40 9a 22 	mov	#8858,	r15	;#0x229a
+   1178c:	b0 13 a2 52 	calla	#0x052a2	
+   11790:	b1 13 dc 37 	calla	#0x137dc	
+   11794:	80 13 46 c5 	calla	&0x0c546	
+   11798:	bb 40 35 03 	mov	#821,	0(r11)	;#0x0335, 0x0000(r11)
+   1179c:	00 00 
+--
+00011818 <tcpip_uipcall>:
+   11818:	1e 42 70 28 	mov	&0x2870,r14	
+   1181c:	0e 93       	tst	r14		
+   1181e:	03 24       	jz	$+8      	;abs 0x11826
+   11820:	3e 50 28 00 	add	#40,	r14	;#0x0028
+   11824:	04 3c       	jmp	$+10     	;abs 0x1182e
+   11826:	1e 42 6c 28 	mov	&0x286c,r14	
+   1182a:	3e 50 16 00 	add	#22,	r14	;#0x0016
+   1182e:	2f 4e       	mov	@r14,	r15	
+   11830:	0f 93       	tst	r15		
+   11832:	06 24       	jz	$+14     	;abs 0x11840
+   11834:	1d 4e 02 00 	mov	2(r14),	r13	;0x0002(r14)
+   11838:	5e 42 b1 28 	mov.b	&0x28b1,r14	
+   1183c:	b0 13 66 70 	calla	#0x07066	
+   11840:	10 01       	reta			
+
+00011842 <timer_set>:
+   11842:	0b 14       	pushm.a	#1,	r11	
+   11844:	0b 4f       	mov	r15,	r11	
+--
+000138b0 <uip_process>:
+   138b0:	2b 14       	pushm.a	#3,	r11	
+   138b2:	21 83       	decd	r1		
+   138b4:	6f 92       	cmp.b	#4,	r15	;r2 As==10
+   138b6:	02 20       	jnz	$+6      	;abs 0x138bc
+   138b8:	80 01 98 40 	bra	#0x14098	
+   138bc:	b2 40 1a 28 	mov	#10266,	&0x286e	;#0x281a
+   138c0:	6e 28 
+   138c2:	b2 40 1a 28 	mov	#10266,	&0x27d4	;#0x281a
+   138c6:	d4 27 
+   138c8:	7f 90 05 00 	cmp.b	#5,	r15	;#0x0005
+   138cc:	17 20       	jnz	$+48     	;abs 0x138fc
+   138ce:	1f 42 6c 28 	mov	&0x286c,r15	
+   138d2:	8f 93 10 00 	tst	16(r15)	;0x0010(r15)
+   138d6:	02 20       	jnz	$+6      	;abs 0x138dc
+   138d8:	80 01 a8 41 	bra	#0x141a8	
+   138dc:	82 43 70 28 	mov	#0,	&0x2870	;r3 As==00
+   138e0:	b2 40 0e 28 	mov	#10254,	&0x286e	;#0x280e
+   138e4:	6e 28 
+--
+0000313e <main>:
+    313e:	b0 13 62 6b 	calla	#0x06b62	
+    3142:	b0 13 a2 45 	calla	#0x045a2	
+    3146:	b0 13 9e ad 	calla	#0x0ad9e	
+    314a:	b0 13 da 6e 	calla	#0x06eda	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 78 70 	calla	#0x07078	
+    3158:	b0 13 18 50 	calla	#0x05018	
+    315c:	b1 13 e6 44 	calla	#0x144e6	
+    3160:	b0 13 70 c3 	calla	#0x0c370	
+    3164:	b0 13 74 6b 	calla	#0x06b74	
+    3168:	b0 13 f4 70 	calla	#0x070f4	
+    316c:	80 13 bc c4 	calla	&0x0c4bc	
+    3170:	80 13 06 c5 	calla	&0x0c506	
+    3174:	80 13 98 c5 	calla	&0x0c598	
+    3178:	5e 42 13 25 	mov.b	&0x2513,r14	
+    317c:	5f 42 12 25 	mov.b	&0x2512,r15	
+    3180:	8f 10       	swpb	r15		
+--
+0000363a <cc2420_timerb1_interrupt>:
+    363a:	0f 14       	pushm.a	#1,	r15	
+    363c:	1f 42 1e 01 	mov	&0x011e,r15	
+    3640:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3644:	06 24       	jz	$+14     	;abs 0x3652
+    3646:	d2 53 e4 24 	inc.b	&0x24e4	
+    364a:	92 42 94 01 	mov	&0x0194,&0x24de	
+    364e:	de 24 
+    3650:	05 3c       	jmp	$+12     	;abs 0x365c
+    3652:	c2 43 e4 24 	mov.b	#0,	&0x24e4	;r3 As==00
+    3656:	92 42 94 01 	mov	&0x0194,&0x24e6	
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000a040  00004000  00004000  000000b4  2**1
+  1 .rodata       0000049d  0000e040  0000e040  0000a0f4  2**2
+  2 .data         00000144  00001100  0000e4de  0000a592  2**1
+  3 .bss          00001a38  00001244  0000e622  0000a6d6  2**1
+  5 .vectors      00000020  0000ffe0  0000ffe0  0000a6d6  2**0
+
+[Important function symbols used for disassembly]
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+0000427c W __isr_0
+00004314 T __isr_1
+0000d268 T __isr_10
+0000427c W __isr_11
+0000435a T __isr_12
+0000427c W __isr_13
+0000427c W __isr_14
+0000427c W __isr_2
+0000427c W __isr_3
+00004380 T __isr_4
+00004eda T __isr_5
+00009926 T __isr_6
+0000427c W __isr_7
+0000427c W __isr_8
+0000427c W __isr_9
+00004000 W __watchdog_support
+00004000 W _reset_vector__
+0000e094 R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+000027ca B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e098 R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+000027c8 B cc2420_last_correlation
+000027c4 B cc2420_last_rssi
+
+[Disassembly sample around important labels]
+0000403e <main>:
+    403e:	b0 12 b2 70 	call	#0x70b2	
+    4042:	b0 12 cc 4f 	call	#0x4fcc	
+    4046:	b0 12 52 99 	call	#0x9952	
+    404a:	b0 12 26 73 	call	#0x7326	
+    404e:	0e 43       	clr	r14		
+    4050:	3f 40 2e 11 	mov	#4398,	r15	;#0x112e
+    4054:	b0 12 18 74 	call	#0x7418	
+    4058:	b0 12 b4 55 	call	#0x55b4	
+    405c:	b0 12 aa d2 	call	#0xd2aa	
+    4060:	b0 12 3c b2 	call	#0xb23c	
+    4064:	b0 12 c4 70 	call	#0x70c4	
+    4068:	b0 12 66 74 	call	#0x7466	
+    406c:	92 12 98 e0 	call	&0xe098	
+    4070:	92 12 da e0 	call	&0xe0da	
+    4074:	92 12 f6 e2 	call	&0xe2f6	
+    4078:	5e 42 eb 27 	mov.b	&0x27eb,r14	
+    407c:	5f 42 ea 27 	mov.b	&0x27ea,r15	
+    4080:	8f 10       	swpb	r15		
+--
+0000435a <cc2420_timerb1_interrupt>:
+    435a:	0f 12       	push	r15		
+    435c:	1f 42 1e 01 	mov	&0x011e,r15	
+    4360:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4364:	06 24       	jz	$+14     	;abs 0x4372
+    4366:	d2 53 cc 27 	inc.b	&0x27cc	
+    436a:	92 42 94 01 	mov	&0x0194,&0x27c6	
+    436e:	c6 27 
+    4370:	05 3c       	jmp	$+12     	;abs 0x437c
+    4372:	c2 43 cc 27 	mov.b	#0,	&0x27cc	;r3 As==00
+    4376:	92 42 94 01 	mov	&0x0194,&0x27ce	
+    437a:	ce 27 
+    437c:	3f 41       	pop	r15		
+    437e:	00 13       	reti			
+
+00004380 <cc2420_port1_interrupt>:
+    4380:	0f 12       	push	r15		
+    4382:	0e 12       	push	r14		
+    4384:	0d 12       	push	r13		
+    4386:	0c 12       	push	r12		
+    4388:	b0 12 c0 4a 	call	#0x4ac0	
+    438c:	0f 93       	tst	r15		
+    438e:	03 24       	jz	$+8      	;abs 0x4396
+    4390:	b1 c0 f0 00 	bic	#240,	8(r1)	;#0x00f0, 0x0008(r1)
+    4394:	08 00 
+    4396:	3c 41       	pop	r12		
+    4398:	3d 41       	pop	r13		
+    439a:	3e 41       	pop	r14		
+    439c:	3f 41       	pop	r15		
+    439e:	00 13       	reti			
+
+000043a0 <cc2420_arch_init>:
+    43a0:	b0 12 0c b2 	call	#0xb20c	
+    43a4:	e2 d2 1e 00 	bis.b	#4,	&0x001e	;r2 As==10
+    43a8:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    43ac:	1e 00 
+    43ae:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    43b2:	1e 00 
+    43b4:	e2 d2 1d 00 	bis.b	#4,	&0x001d	;r2 As==10
+    43b8:	30 41       	ret			
+
+000043ba <get_object>:
+    43ba:	1f 43       	mov	#1,	r15	;r3 As==01
+    43bc:	30 41       	ret			
+
+000043be <set_object>:
+    43be:	1f 43       	mov	#1,	r15	;r3 As==01
+    43c0:	30 41       	ret			
+
+000043c2 <strobe>:
+--
+00004568 <cc2420_receiving_packet>:
+    4568:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    456c:	12 c3       	clrc			
+    456e:	4f 10       	rrc.b	r15		
+    4570:	1f f3       	and	#1,	r15	;r3 As==01
+    4572:	30 41       	ret			
+
+00004574 <pending_packet>:
+    4574:	5f 42 20 00 	mov.b	&0x0020,r15	
+    4578:	1f f3       	and	#1,	r15	;r3 As==01
+    457a:	30 41       	ret			
+
+0000457c <wait_for_transmission>:
+    457c:	0b 12       	push	r11		
+    457e:	b0 12 60 99 	call	#0x9960	
+    4582:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    4586:	0b 8f       	sub	r15,	r11	
+    4588:	b0 12 2e 45 	call	#0x452e	
+    458c:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00004724 <cc2420_prepare>:
+    4724:	0b 12       	push	r11		
+    4726:	0a 12       	push	r10		
+    4728:	21 83       	decd	r1		
+    472a:	0a 4f       	mov	r15,	r10	
+    472c:	0b 4e       	mov	r14,	r11	
+    472e:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    4732:	16 2c       	jc	$+46     	;abs 0x4760
+    4734:	d2 53 50 12 	inc.b	&0x1250	
+    4738:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    473c:	b0 12 c2 43 	call	#0x43c2	
+    4740:	4f 4b       	mov.b	r11,	r15	
+    4742:	6f 53       	incd.b	r15		
+    4744:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    4748:	1e 43       	mov	#1,	r14	;r3 As==01
+    474a:	0f 41       	mov	r1,	r15	
+    474c:	b0 12 f2 44 	call	#0x44f2	
+    4750:	0e 4b       	mov	r11,	r14	
+    4752:	0f 4a       	mov	r10,	r15	
+--
+0000476a <cc2420_on>:
+    476a:	c2 93 53 12 	tst.b	&0x1253	
+    476e:	0c 20       	jnz	$+26     	;abs 0x4788
+    4770:	c2 93 50 12 	tst.b	&0x1250	
+    4774:	03 24       	jz	$+8      	;abs 0x477c
+    4776:	d2 43 51 12 	mov.b	#1,	&0x1251	;r3 As==01
+    477a:	06 3c       	jmp	$+14     	;abs 0x4788
+    477c:	d2 43 50 12 	mov.b	#1,	&0x1250	;r3 As==01
+    4780:	b0 12 4e 45 	call	#0x454e	
+    4784:	b0 12 58 46 	call	#0x4658	
+    4788:	1f 43       	mov	#1,	r15	;r3 As==01
+    478a:	30 41       	ret			
+
+0000478c <cc2420_transmit>:
+    478c:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    4790:	01 24       	jz	$+4      	;abs 0x4794
+    4792:	2d 2c       	jc	$+92     	;abs 0x47ee
+    4794:	d2 53 50 12 	inc.b	&0x1250	
+    4798:	c2 93 0a 11 	tst.b	&0x110a	
+    479c:	0a 24       	jz	$+22     	;abs 0x47b2
+    479e:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    47a2:	b0 12 c2 43 	call	#0x43c2	
+    47a6:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    47a8:	b0 12 9e 45 	call	#0x459e	
+    47ac:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    47b0:	01 3c       	jmp	$+4      	;abs 0x47b4
+    47b2:	2f 42       	mov	#4,	r15	;r2 As==10
+    47b4:	b0 12 c2 43 	call	#0x43c2	
+    47b8:	3f 40 20 03 	mov	#800,	r15	;#0x0320
+    47bc:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    47c0:	13 24       	jz	$+40     	;abs 0x47e8
+    47c2:	b0 12 2e 45 	call	#0x452e	
+--
+000047f2 <cc2420_send>:
+    47f2:	0b 12       	push	r11		
+    47f4:	0b 4e       	mov	r14,	r11	
+    47f6:	b0 12 24 47 	call	#0x4724	
+    47fa:	0f 4b       	mov	r11,	r15	
+    47fc:	b0 12 8c 47 	call	#0x478c	
+    4800:	3b 41       	pop	r11		
+    4802:	30 41       	ret			
+
+00004804 <cc2420_off>:
+    4804:	c2 93 53 12 	tst.b	&0x1253	
+    4808:	13 24       	jz	$+40     	;abs 0x4830
+    480a:	c2 93 50 12 	tst.b	&0x1250	
+    480e:	03 24       	jz	$+8      	;abs 0x4816
+    4810:	d2 43 52 12 	mov.b	#1,	&0x1252	;r3 As==01
+    4814:	0d 3c       	jmp	$+28     	;abs 0x4830
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         00009d32  00003100  00003100  000000d4  2**1
+  1 .rodata       000004b6  0000ce34  0000ce34  00009e08  2**2
+  2 .data         00000148  00001100  0000d2ea  0000a2be  2**1
+  3 .bss          0000162a  00001248  0000d432  0000a406  2**1
+  5 .vectors      00000040  0000ffc0  0000ffc0  0000a406  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+0000337c W __isr_0
+0000337c W __isr_1
+0000337c W __isr_10
+0000337c W __isr_11
+0000337c W __isr_12
+0000337c W __isr_13
+0000337c W __isr_14
+0000337c W __isr_15
+000036f6 T __isr_16
+0000377a T __isr_17
+00003544 T __isr_18
+000035c8 T __isr_19
+0000337c W __isr_2
+0000337c W __isr_20
+0000337c W __isr_21
+0000337c W __isr_22
+000037ae T __isr_23
+0000362a T __isr_24
+0000378e T __isr_25
+000037d8 T __isr_26
+0000337c W __isr_27
+00003604 T __isr_28
+0000337c W __isr_29
+0000337c W __isr_3
+0000337c W __isr_30
+0000337c W __isr_4
+0000337c W __isr_5
+0000337c W __isr_6
+0000337c W __isr_7
+0000337c W __isr_8
+0000337c W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00003ad0 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0000313e <main>:
+    313e:	b0 13 02 64 	calla	#0x06402	
+    3142:	b0 13 34 45 	calla	#0x04534	
+    3146:	b0 13 68 8a 	calla	#0x08a68	
+    314a:	b0 13 b4 66 	calla	#0x066b4	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 a8 67 	calla	#0x067a8	
+    3158:	b0 13 fa 4a 	calla	#0x04afa	
+    315c:	b0 13 44 c1 	calla	#0x0c144	
+    3160:	b0 13 e6 a1 	calla	#0x0a1e6	
+    3164:	b0 13 14 64 	calla	#0x06414	
+    3168:	b0 13 f6 67 	calla	#0x067f6	
+    316c:	80 13 d8 ce 	calla	&0x0ced8	
+    3170:	80 13 22 cf 	calla	&0x0cf22	
+    3174:	80 13 a6 cf 	calla	&0x0cfa6	
+    3178:	5e 42 cf 24 	mov.b	&0x24cf,r14	
+    317c:	5f 42 ce 24 	mov.b	&0x24ce,r15	
+    3180:	8f 10       	swpb	r15		
+--
+00003604 <cc2420_timerb1_interrupt>:
+    3604:	0f 14       	pushm.a	#1,	r15	
+    3606:	1f 42 1e 01 	mov	&0x011e,r15	
+    360a:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    360e:	06 24       	jz	$+14     	;abs 0x361c
+    3610:	d2 53 a0 24 	inc.b	&0x24a0	
+    3614:	92 42 94 01 	mov	&0x0194,&0x249a	
+    3618:	9a 24 
+    361a:	05 3c       	jmp	$+12     	;abs 0x3626
+    361c:	c2 43 a0 24 	mov.b	#0,	&0x24a0	;r3 As==00
+    3620:	92 42 94 01 	mov	&0x0194,&0x24a2	
+    3624:	a2 24 
+    3626:	0f 16       	popm.a	#1,	r15	
+    3628:	00 13       	reti			
+
+0000362a <timera1>:
+    362a:	3f 14       	pushm.a	#4,	r15	
+    362c:	b0 13 08 c1 	calla	#0x0c108	
+    3630:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+0000389c <process_thread_accmeter_process>:
+    389c:	0b 14       	pushm.a	#1,	r11	
+    389e:	0b 4f       	mov	r15,	r11	
+    38a0:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    38a4:	13 20       	jnz	$+40     	;abs 0x38cc
+    38a6:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    38aa:	b0 13 48 38 	calla	#0x03848	
+    38ae:	4e 4f       	mov.b	r15,	r14	
+    38b0:	1e b2 48 12 	bit	&0x1248,r14	
+    38b4:	03 24       	jz	$+8      	;abs 0x38bc
+    38b6:	2e 00 94 24 	mova	&0x02494,r14	
+    38ba:	05 3c       	jmp	$+12     	;abs 0x38c6
+    38bc:	1e b2 4a 12 	bit	&0x124a,r14	
+    38c0:	05 24       	jz	$+12     	;abs 0x38cc
+    38c2:	2e 00 90 24 	mova	&0x02490,r14	
+    38c6:	de 03       	tsta	r14		
+    38c8:	01 24       	jz	$+4      	;abs 0x38cc
+    38ca:	4e 13       	calla	r14		
+    38cc:	2f 4b       	mov	@r11,	r15	
+--
+00003ad0 <cc2420_arch_init>:
+    3ad0:	b0 13 b4 a1 	calla	#0x0a1b4	
+    3ad4:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    3ad8:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    3adc:	1e 00 
+    3ade:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    3ae2:	1e 00 
+    3ae4:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    3ae8:	10 01       	reta			
+
+00003aea <get_object>:
+    3aea:	1f 43       	mov	#1,	r15	;r3 As==01
+    3aec:	10 01       	reta			
+
+00003aee <set_object>:
+    3aee:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af0:	10 01       	reta			
+
+00003af2 <strobe>:
+--
+00003c78 <cc2420_receiving_packet>:
+    3c78:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3c7c:	5f 03       	rrum	#1,	r15	
+    3c7e:	1f f3       	and	#1,	r15	;r3 As==01
+    3c80:	10 01       	reta			
+
+00003c82 <pending_packet>:
+    3c82:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3c86:	5f 07       	rrum	#2,	r15	
+    3c88:	1f f3       	and	#1,	r15	;r3 As==01
+    3c8a:	10 01       	reta			
+
+00003c8c <wait_for_transmission>:
+    3c8c:	0b 14       	pushm.a	#1,	r11	
+    3c8e:	b0 13 76 8a 	calla	#0x08a76	
+    3c92:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3c96:	0b 8f       	sub	r15,	r11	
+    3c98:	b0 13 40 3c 	calla	#0x03c40	
+    3c9c:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003e14 <cc2420_prepare>:
+    3e14:	1b 14       	pushm.a	#2,	r11	
+    3e16:	21 83       	decd	r1		
+    3e18:	0a 4f       	mov	r15,	r10	
+    3e1a:	0b 4e       	mov	r14,	r11	
+    3e1c:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3e20:	16 2c       	jc	$+46     	;abs 0x3e4e
+    3e22:	d2 53 32 24 	inc.b	&0x2432	
+    3e26:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3e2a:	b0 13 f2 3a 	calla	#0x03af2	
+    3e2e:	4f 4b       	mov.b	r11,	r15	
+    3e30:	6f 53       	incd.b	r15		
+    3e32:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3e36:	1e 43       	mov	#1,	r14	;r3 As==01
+    3e38:	0f 41       	mov	r1,	r15	
+    3e3a:	b0 13 08 3c 	calla	#0x03c08	
+    3e3e:	0e 4b       	mov	r11,	r14	
+    3e40:	0f 4a       	mov	r10,	r15	
+    3e42:	b0 13 08 3c 	calla	#0x03c08	
+--
+00003e56 <cc2420_on>:
+    3e56:	c2 93 35 24 	tst.b	&0x2435	
+    3e5a:	0c 20       	jnz	$+26     	;abs 0x3e74
+    3e5c:	c2 93 32 24 	tst.b	&0x2432	
+    3e60:	03 24       	jz	$+8      	;abs 0x3e68
+    3e62:	d2 43 33 24 	mov.b	#1,	&0x2433	;r3 As==01
+    3e66:	06 3c       	jmp	$+14     	;abs 0x3e74
+    3e68:	d2 43 32 24 	mov.b	#1,	&0x2432	;r3 As==01
+    3e6c:	b0 13 5e 3c 	calla	#0x03c5e	
+    3e70:	b0 13 60 3d 	calla	#0x03d60	
+    3e74:	1f 43       	mov	#1,	r15	;r3 As==01
+    3e76:	10 01       	reta			
+
+00003e78 <cc2420_transmit>:
+    3e78:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3e7c:	01 24       	jz	$+4      	;abs 0x3e80
+    3e7e:	2d 2c       	jc	$+92     	;abs 0x3eda
+    3e80:	d2 53 32 24 	inc.b	&0x2432	
+    3e84:	c2 93 46 12 	tst.b	&0x1246	
+    3e88:	0a 24       	jz	$+22     	;abs 0x3e9e
+    3e8a:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    3e8e:	b0 13 f2 3a 	calla	#0x03af2	
+    3e92:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    3e94:	b0 13 ae 3c 	calla	#0x03cae	
+    3e98:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    3e9c:	01 3c       	jmp	$+4      	;abs 0x3ea0
+    3e9e:	2f 42       	mov	#4,	r15	;r2 As==10
+    3ea0:	b0 13 f2 3a 	calla	#0x03af2	
+    3ea4:	3f 40 16 05 	mov	#1302,	r15	;#0x0516
+    3ea8:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3eac:	13 24       	jz	$+40     	;abs 0x3ed4
+    3eae:	b0 13 40 3c 	calla	#0x03c40	
+--
+00003ede <cc2420_send>:
+    3ede:	0b 14       	pushm.a	#1,	r11	
+    3ee0:	0b 4e       	mov	r14,	r11	
+    3ee2:	b0 13 14 3e 	calla	#0x03e14	
+    3ee6:	0f 4b       	mov	r11,	r15	
+    3ee8:	b0 13 78 3e 	calla	#0x03e78	
+    3eec:	0b 16       	popm.a	#1,	r11	
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Disassembly section headers]
+  0 .bss          00047618  00000000000548a0  00000000000548a0  00053890  2**5
+  1 .data         000009d0  0000000000053ec0  0000000000053ec0  00052ec0  2**5
+ 11 .init         0000001b  0000000000011000  0000000000011000  00011000  2**2
+ 15 .text         0002e849  0000000000014b00  0000000000014b00  00014b00  2**4
+ 17 .rodata       000017d7  0000000000044000  0000000000044000  00044000  2**5
+ 20 .init_array   00000040  0000000000052378  0000000000052378  00051378  2**3
+ 22 .data.rel.ro  00000530  00000000000523c0  00000000000523c0  000513c0  2**5
+
+[Important function symbols used for disassembly]
+000000000001543e T beep_spinup
+0000000000059998 B curr_log_level_nullnet
+000000000005998c B curr_log_level_tcpip
+0000000000052460 D esmrf_driver
+0000000000054080 d esmrf_icmp_handler
+00000000000166cb T main
+000000000003ce7a t process_thread_broadcast_example_process
+0000000000015927 t process_thread_button_hal_process
+000000000001738c t process_thread_cooja_radio_process
+0000000000017c43 t process_thread_ctimer_process
+0000000000019348 t process_thread_etimer_process
+000000000002d22a t process_thread_sensors_process
+000000000002d4f3 t process_thread_serial_line_process
+000000000002d6d9 t process_thread_serial_shell_process
+000000000003459f t process_thread_simple_energest_process
+0000000000034971 t process_thread_simple_udp_process
+0000000000035091 t process_thread_slip_process
+0000000000035e0d t process_thread_tcpip_process
+000000000003c926 t process_thread_tsch_pending_events_process
+000000000003c59d t process_thread_tsch_process
+000000000003c67a t process_thread_tsch_send_eb_process
+000000000003d576 t process_thread_udp_socket_process
+0000000000027085 T rpl_dag_get_root_ipaddr
+000000000002821c T rpl_dag_init
+000000000002809b T rpl_dag_init_root
+00000000000270cf T rpl_dag_leave
+0000000000027198 T rpl_dag_periodic
+000000000002717a T rpl_dag_poison_and_leave
+00000000000274d2 T rpl_dag_ready_to_advertise
+0000000000026fbe T rpl_dag_root_is_root
+0000000000026cac T rpl_dag_root_print_links
+0000000000026e21 T rpl_dag_root_set_prefix
+0000000000026e5d T rpl_dag_root_start
+0000000000027027 T rpl_dag_state_to_str
+000000000002752a T rpl_dag_update_state
+000000000002a6dc T rpl_icmp6_dao_ack_output
+000000000002a36b T rpl_icmp6_dao_output
+00000000000299e0 T rpl_icmp6_dio_output
+0000000000029264 T rpl_icmp6_dis_output
+000000000002a772 T rpl_icmp6_init
+
+[Disassembly sample around important labels]
+0000000000012f50 <rpl_icmp6_dao_ack_output@plt>:
+   12f50:	f3 0f 1e fa          	endbr64
+   12f54:	f2 ff 25 8d 01 04 00 	bnd jmp *0x4018d(%rip)        # 530e8 <rpl_icmp6_dao_ack_output@@Base+0x28a0c>
+   12f5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f60 <tsch_packet_get_frame_pending@plt>:
+   12f60:	f3 0f 1e fa          	endbr64
+   12f64:	f2 ff 25 85 01 04 00 	bnd jmp *0x40185(%rip)        # 530f0 <tsch_packet_get_frame_pending@@Base+0x1bf06>
+   12f6b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f70 <frame802154_is_broadcast_addr@plt>:
+   12f70:	f3 0f 1e fa          	endbr64
+   12f74:	f2 ff 25 7d 01 04 00 	bnd jmp *0x4017d(%rip)        # 530f8 <frame802154_is_broadcast_addr@@Base+0x3963d>
+   12f7b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f80 <uip_ds6_route_head@plt>:
+   12f80:	f3 0f 1e fa          	endbr64
+   12f84:	f2 ff 25 75 01 04 00 	bnd jmp *0x40175(%rip)        # 53100 <uip_ds6_route_head@@Base+0x15473>
+   12f8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000012f90 <platform_init_stage_two@plt>:
+--
+0000000000013210 <rpl_icmp6_dis_output@plt>:
+   13210:	f3 0f 1e fa          	endbr64
+   13214:	f2 ff 25 2d 00 04 00 	bnd jmp *0x4002d(%rip)        # 53248 <rpl_icmp6_dis_output@@Base+0x29fe4>
+   1321b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013220 <nbr_table_is_registered@plt>:
+   13220:	f3 0f 1e fa          	endbr64
+   13224:	f2 ff 25 25 00 04 00 	bnd jmp *0x40025(%rip)        # 53250 <nbr_table_is_registered@@Base+0x30f00>
+   1322b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013230 <nbr_table_unlock@plt>:
+   13230:	f3 0f 1e fa          	endbr64
+   13234:	f2 ff 25 1d 00 04 00 	bnd jmp *0x4001d(%rip)        # 53258 <nbr_table_unlock@@Base+0x30b78>
+   1323b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013240 <list_pop@plt>:
+   13240:	f3 0f 1e fa          	endbr64
+   13244:	f2 ff 25 15 00 04 00 	bnd jmp *0x40015(%rip)        # 53260 <list_pop@@Base+0x35caa>
+   1324b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013250 <nbr_table_lock@plt>:
+--
+0000000000013410 <uip_process@plt>:
+   13410:	f3 0f 1e fa          	endbr64
+   13414:	f2 ff 25 2d ff 03 00 	bnd jmp *0x3ff2d(%rip)        # 53348 <uip_process@@Base+0x11d55>
+   1341b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013420 <frame802154_hdrlen@plt>:
+   13420:	f3 0f 1e fa          	endbr64
+   13424:	f2 ff 25 25 ff 03 00 	bnd jmp *0x3ff25(%rip)        # 53350 <frame802154_hdrlen@@Base+0x395a1>
+   1342b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013430 <gpio_hal_arch_no_port_clear_pin@plt>:
+   13430:	f3 0f 1e fa          	endbr64
+   13434:	f2 ff 25 1d ff 03 00 	bnd jmp *0x3ff1d(%rip)        # 53358 <gpio_hal_arch_no_port_clear_pin@@Base+0x377d0>
+   1343b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013440 <tcpip_output@plt>:
+   13440:	f3 0f 1e fa          	endbr64
+   13444:	f2 ff 25 15 ff 03 00 	bnd jmp *0x3ff15(%rip)        # 53360 <tcpip_output@@Base+0x1dcfd>
+   1344b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013450 <dbl_circ_list_remove@plt>:
+   13450:	f3 0f 1e fa          	endbr64
+   13454:	f2 ff 25 0d ff 03 00 	bnd jmp *0x3ff0d(%rip)        # 53368 <dbl_circ_list_remove@@Base+0x3b2a9>
+   1345b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013460 <uip_packetqueue_buflen@plt>:
+   13460:	f3 0f 1e fa          	endbr64
+   13464:	f2 ff 25 05 ff 03 00 	bnd jmp *0x3ff05(%rip)        # 53370 <uip_packetqueue_buflen@@Base+0x12e3e>
+   1346b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013470 <tsch_packet_create_eb@plt>:
+   13470:	f3 0f 1e fa          	endbr64
+   13474:	f2 ff 25 fd fe 03 00 	bnd jmp *0x3fefd(%rip)        # 53378 <tsch_packet_create_eb@@Base+0x1c66b>
+   1347b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013480 <tsch_packet_update_eb@plt>:
+--
+0000000000013b20 <rpl_icmp6_init@plt>:
+   13b20:	f3 0f 1e fa          	endbr64
+   13b24:	f2 ff 25 a5 fb 03 00 	bnd jmp *0x3fba5(%rip)        # 536d0 <rpl_icmp6_init@@Base+0x28f5e>
+   13b2b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b30 <log_6addr@plt>:
+   13b30:	f3 0f 1e fa          	endbr64
+   13b34:	f2 ff 25 9d fb 03 00 	bnd jmp *0x3fb9d(%rip)        # 536d8 <log_6addr@@Base+0x35f77>
+   13b3b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b40 <uiplib_ip6addrconv@plt>:
+   13b40:	f3 0f 1e fa          	endbr64
+   13b44:	f2 ff 25 95 fb 03 00 	bnd jmp *0x3fb95(%rip)        # 536e0 <uiplib_ip6addrconv@@Base+0x10a65>
+   13b4b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b50 <rpl_icmp6_update_nbr_table@plt>:
+   13b50:	f3 0f 1e fa          	endbr64
+   13b54:	f2 ff 25 8d fb 03 00 	bnd jmp *0x3fb8d(%rip)        # 536e8 <rpl_icmp6_update_nbr_table@@Base+0x2a539>
+   13b5b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b60 <netstack_process_ip_callback@plt>:
+   13b60:	f3 0f 1e fa          	endbr64
+   13b64:	f2 ff 25 85 fb 03 00 	bnd jmp *0x3fb85(%rip)        # 536f0 <netstack_process_ip_callback@@Base+0x30e74>
+   13b6b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b70 <uipbuf_set_len_field@plt>:
+   13b70:	f3 0f 1e fa          	endbr64
+   13b74:	f2 ff 25 7d fb 03 00 	bnd jmp *0x3fb7d(%rip)        # 536f8 <uipbuf_set_len_field@@Base+0x10f32>
+   13b7b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b80 <queuebuf_numfree@plt>:
+   13b80:	f3 0f 1e fa          	endbr64
+   13b84:	f2 ff 25 75 fb 03 00 	bnd jmp *0x3fb75(%rip)        # 53700 <queuebuf_numfree@@Base+0x2f3db>
+   13b8b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013b90 <tcpip_ipv6_output@plt>:
+   13b90:	f3 0f 1e fa          	endbr64
+   13b94:	f2 ff 25 6d fb 03 00 	bnd jmp *0x3fb6d(%rip)        # 53708 <tcpip_ipv6_output@@Base+0x1dbf8>
+   13b9b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013ba0 <strtol@plt>:
+   13ba0:	f3 0f 1e fa          	endbr64
+   13ba4:	f2 ff 25 65 fb 03 00 	bnd jmp *0x3fb65(%rip)        # 53710 <strtol@GLIBC_2.2.5>
+   13bab:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013bb0 <tsch_is_locked@plt>:
+   13bb0:	f3 0f 1e fa          	endbr64
+   13bb4:	f2 ff 25 5d fb 03 00 	bnd jmp *0x3fb5d(%rip)        # 53718 <tsch_is_locked@@Base+0x1a047>
+   13bbb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013bc0 <rtimer_set@plt>:
+   13bc0:	f3 0f 1e fa          	endbr64
+   13bc4:	f2 ff 25 55 fb 03 00 	bnd jmp *0x3fb55(%rip)        # 53720 <rtimer_set@@Base+0x26713>
+   13bcb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013bd0 <tsch_packet_eackbuf_set_attr@plt>:
+--
+0000000000014020 <rpl_icmp6_dao_output@plt>:
+   14020:	f3 0f 1e fa          	endbr64
+   14024:	f2 ff 25 25 f9 03 00 	bnd jmp *0x3f925(%rip)        # 53950 <rpl_icmp6_dao_output@@Base+0x295e5>
+   1402b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000014030 <frame802154_parse@plt>:
+   14030:	f3 0f 1e fa          	endbr64
+   14034:	f2 ff 25 1d f9 03 00 	bnd jmp *0x3f91d(%rip)        # 53958 <frame802154_parse@@Base+0x397c3>
+   1403b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000014040 <uip_ds6_route_rm@plt>:
+   14040:	f3 0f 1e fa          	endbr64
+   14044:	f2 ff 25 15 f9 03 00 	bnd jmp *0x3f915(%rip)        # 53960 <uip_ds6_route_rm@@Base+0x15c60>
+   1404b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000014050 <queuebuf_init@plt>:
+   14050:	f3 0f 1e fa          	endbr64
+   14054:	f2 ff 25 0d f9 03 00 	bnd jmp *0x3f90d(%rip)        # 53968 <queuebuf_init@@Base+0x2f66c>
+   1405b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000014060 <serial_line_init@plt>:
+--
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         00004196  00003100  00003100  000000d4  2**1
+  1 .rodata       000003f4  00007298  00007298  0000426c  2**2
+  2 .data         000000a6  00001100  0000768c  00004660  2**1
+  3 .bss          000008be  000011a6  00007732  00004706  2**1
+  5 .vectors      00000040  0000ffc0  0000ffc0  00004706  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003308 W __isr_0
+00003308 W __isr_1
+00003308 W __isr_10
+00003308 W __isr_11
+00003308 W __isr_12
+00003308 W __isr_13
+00003308 W __isr_14
+00003308 W __isr_15
+00003600 T __isr_16
+00003684 T __isr_17
+0000344a T __isr_18
+000034ce T __isr_19
+00003308 W __isr_2
+00003308 W __isr_20
+00003308 W __isr_21
+00003308 W __isr_22
+000036ba T __isr_23
+00003530 T __isr_24
+00003698 T __isr_25
+000036e4 T __isr_26
+00003308 W __isr_27
+0000350a T __isr_28
+00003308 W __isr_29
+00003308 W __isr_3
+00003308 W __isr_30
+00003308 W __isr_4
+00003308 W __isr_5
+00003308 W __isr_6
+00003308 W __isr_7
+00003308 W __isr_8
+00003308 W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+000039e2 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0000313e <main>:
+    313e:	b0 13 14 5d 	calla	#0x05d14	
+    3142:	b0 13 46 44 	calla	#0x04446	
+    3146:	b0 13 24 62 	calla	#0x06224	
+    314a:	b0 13 c8 5f 	calla	#0x05fc8	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 da 60 	calla	#0x060da	
+    3158:	b0 13 28 4a 	calla	#0x04a28	
+    315c:	b0 13 04 67 	calla	#0x06704	
+    3160:	b0 13 c2 4a 	calla	#0x04ac2	
+    3164:	b0 13 6e 63 	calla	#0x0636e	
+    3168:	b0 13 26 5d 	calla	#0x05d26	
+    316c:	b0 13 28 61 	calla	#0x06128	
+    3170:	b0 13 32 59 	calla	#0x05932	
+    3174:	b0 13 8c 59 	calla	#0x0598c	
+    3178:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    317c:	4a 11 
+    317e:	0e 38       	jl	$+30     	;abs 0x319c
+--
+0000350a <cc2420_timerb1_interrupt>:
+    350a:	0f 14       	pushm.a	#1,	r15	
+    350c:	1f 42 1e 01 	mov	&0x011e,r15	
+    3510:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3514:	06 24       	jz	$+14     	;abs 0x3522
+    3516:	d2 53 0e 1a 	inc.b	&0x1a0e	
+    351a:	92 42 94 01 	mov	&0x0194,&0x1a08	
+    351e:	08 1a 
+    3520:	05 3c       	jmp	$+12     	;abs 0x352c
+    3522:	c2 43 0e 1a 	mov.b	#0,	&0x1a0e	;r3 As==00
+    3526:	92 42 94 01 	mov	&0x0194,&0x1a10	
+    352a:	10 1a 
+    352c:	0f 16       	popm.a	#1,	r15	
+    352e:	00 13       	reti			
+
+00003530 <timera1>:
+    3530:	3f 14       	pushm.a	#4,	r15	
+    3532:	b0 13 c8 66 	calla	#0x066c8	
+    3536:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+000037a8 <process_thread_accmeter_process>:
+    37a8:	0b 14       	pushm.a	#1,	r11	
+    37aa:	0b 4f       	mov	r15,	r11	
+    37ac:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    37b0:	13 20       	jnz	$+40     	;abs 0x37d8
+    37b2:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    37b6:	b0 13 54 37 	calla	#0x03754	
+    37ba:	4e 4f       	mov.b	r15,	r14	
+    37bc:	1e b2 a6 11 	bit	&0x11a6,r14	
+    37c0:	03 24       	jz	$+8      	;abs 0x37c8
+    37c2:	2e 00 02 1a 	mova	&0x01a02,r14	
+    37c6:	05 3c       	jmp	$+12     	;abs 0x37d2
+    37c8:	1e b2 a8 11 	bit	&0x11a8,r14	
+    37cc:	05 24       	jz	$+12     	;abs 0x37d8
+    37ce:	2e 00 fe 19 	mova	&0x019fe,r14	
+    37d2:	de 03       	tsta	r14		
+    37d4:	01 24       	jz	$+4      	;abs 0x37d8
+    37d6:	4e 13       	calla	r14		
+    37d8:	2f 4b       	mov	@r11,	r15	
+--
+000039e2 <cc2420_arch_init>:
+    39e2:	b0 13 3c 63 	calla	#0x0633c	
+    39e6:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    39ea:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    39ee:	1e 00 
+    39f0:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    39f4:	1e 00 
+    39f6:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    39fa:	10 01       	reta			
+
+000039fc <get_object>:
+    39fc:	1f 43       	mov	#1,	r15	;r3 As==01
+    39fe:	10 01       	reta			
+
+00003a00 <set_object>:
+    3a00:	1f 43       	mov	#1,	r15	;r3 As==01
+    3a02:	10 01       	reta			
+
+00003a04 <strobe>:
+--
+00003b8a <cc2420_receiving_packet>:
+    3b8a:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3b8e:	5f 03       	rrum	#1,	r15	
+    3b90:	1f f3       	and	#1,	r15	;r3 As==01
+    3b92:	10 01       	reta			
+
+00003b94 <pending_packet>:
+    3b94:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3b98:	5f 07       	rrum	#2,	r15	
+    3b9a:	1f f3       	and	#1,	r15	;r3 As==01
+    3b9c:	10 01       	reta			
+
+00003b9e <wait_for_transmission>:
+    3b9e:	0b 14       	pushm.a	#1,	r11	
+    3ba0:	b0 13 10 62 	calla	#0x06210	
+    3ba4:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3ba8:	0b 8f       	sub	r15,	r11	
+    3baa:	b0 13 52 3b 	calla	#0x03b52	
+    3bae:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003d26 <cc2420_prepare>:
+    3d26:	1b 14       	pushm.a	#2,	r11	
+    3d28:	21 83       	decd	r1		
+    3d2a:	0a 4f       	mov	r15,	r10	
+    3d2c:	0b 4e       	mov	r14,	r11	
+    3d2e:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3d32:	16 2c       	jc	$+46     	;abs 0x3d60
+    3d34:	d2 53 ca 19 	inc.b	&0x19ca	
+    3d38:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3d3c:	b0 13 04 3a 	calla	#0x03a04	
+    3d40:	4f 4b       	mov.b	r11,	r15	
+    3d42:	6f 53       	incd.b	r15		
+    3d44:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3d48:	1e 43       	mov	#1,	r14	;r3 As==01
+    3d4a:	0f 41       	mov	r1,	r15	
+    3d4c:	b0 13 1a 3b 	calla	#0x03b1a	
+    3d50:	0e 4b       	mov	r11,	r14	
+    3d52:	0f 4a       	mov	r10,	r15	
+    3d54:	b0 13 1a 3b 	calla	#0x03b1a	
+--
+00003d68 <cc2420_on>:
+    3d68:	c2 93 cd 19 	tst.b	&0x19cd	
+    3d6c:	0c 20       	jnz	$+26     	;abs 0x3d86
+    3d6e:	c2 93 ca 19 	tst.b	&0x19ca	
+    3d72:	03 24       	jz	$+8      	;abs 0x3d7a
+    3d74:	d2 43 cb 19 	mov.b	#1,	&0x19cb	;r3 As==01
+    3d78:	06 3c       	jmp	$+14     	;abs 0x3d86
+    3d7a:	d2 43 ca 19 	mov.b	#1,	&0x19ca	;r3 As==01
+    3d7e:	b0 13 70 3b 	calla	#0x03b70	
+    3d82:	b0 13 72 3c 	calla	#0x03c72	
+    3d86:	1f 43       	mov	#1,	r15	;r3 As==01
+    3d88:	10 01       	reta			
+
+00003d8a <cc2420_transmit>:
+    3d8a:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3d8e:	01 24       	jz	$+4      	;abs 0x3d92
+    3d90:	2d 2c       	jc	$+92     	;abs 0x3dec
+    3d92:	d2 53 ca 19 	inc.b	&0x19ca	
+    3d96:	c2 93 a4 11 	tst.b	&0x11a4	
+    3d9a:	0a 24       	jz	$+22     	;abs 0x3db0
+    3d9c:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    3da0:	b0 13 04 3a 	calla	#0x03a04	
+    3da4:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    3da6:	b0 13 c0 3b 	calla	#0x03bc0	
+    3daa:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    3dae:	01 3c       	jmp	$+4      	;abs 0x3db2
+    3db0:	2f 42       	mov	#4,	r15	;r2 As==10
+    3db2:	b0 13 04 3a 	calla	#0x03a04	
+    3db6:	3f 40 16 05 	mov	#1302,	r15	;#0x0516
+    3dba:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3dbe:	13 24       	jz	$+40     	;abs 0x3de6
+    3dc0:	b0 13 52 3b 	calla	#0x03b52	
+--
+00003df0 <cc2420_send>:
+    3df0:	0b 14       	pushm.a	#1,	r11	
+    3df2:	0b 4e       	mov	r14,	r11	
+    3df4:	b0 13 26 3d 	calla	#0x03d26	
+    3df8:	0f 4b       	mov	r11,	r15	
+    3dfa:	b0 13 8a 3d 	calla	#0x03d8a	
+    3dfe:	0b 16       	popm.a	#1,	r11	
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         000041ea  00004000  00004000  000000d4  2**1
+  1 .rodata       00000377  000081ec  000081ec  000042c0  2**2
+  2 .data         00000136  00001100  00008564  00004638  2**1
+  3 .bss          00000afc  00001236  0000869a  0000476e  2**1
+  5 .vectors      00000020  0000ffe0  0000ffe0  0000476e  2**0
+
+[Important function symbols used for disassembly]
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+0000421c W __isr_0
+000042b4 T __isr_1
+00007608 T __isr_10
+0000421c W __isr_11
+000042fa T __isr_12
+0000421c W __isr_13
+0000421c W __isr_14
+0000421c W __isr_2
+0000421c W __isr_3
+00004320 T __isr_4
+00004f6e T __isr_5
+0000708a T __isr_6
+0000421c W __isr_7
+0000421c W __isr_8
+0000421c W __isr_9
+00004000 W __watchdog_support
+00004000 W _reset_vector__
+00008240 R cc2420_aes_128_driver
+00004340 T cc2420_arch_init
+00001cae B cc2420_authority_level_of_sender
+000048c8 t cc2420_cca
+00008244 R cc2420_driver
+00004b96 T cc2420_get_txpower
+00004e84 T cc2420_init
+00004b54 T cc2420_interrupt
+00001cac B cc2420_last_correlation
+00001ca8 B cc2420_last_rssi
+
+[Disassembly sample around important labels]
+0000403e <main>:
+    403e:	b0 12 6e 6b 	call	#0x6b6e	
+    4042:	b0 12 64 50 	call	#0x5064	
+    4046:	b0 12 b6 70 	call	#0x70b6	
+    404a:	b0 12 02 6e 	call	#0x6e02	
+    404e:	0e 43       	clr	r14		
+    4050:	3f 40 2e 11 	mov	#4398,	r15	;#0x112e
+    4054:	b0 12 f4 6e 	call	#0x6ef4	
+    4058:	b0 12 32 56 	call	#0x5632	
+    405c:	b0 12 4a 76 	call	#0x764a	
+    4060:	b0 12 5c 58 	call	#0x585c	
+    4064:	b0 12 10 73 	call	#0x7310	
+    4068:	b0 12 80 6b 	call	#0x6b80	
+    406c:	b0 12 42 6f 	call	#0x6f42	
+    4070:	92 12 44 82 	call	&0x8244	
+    4074:	92 12 86 82 	call	&0x8286	
+    4078:	92 12 ae 83 	call	&0x83ae	
+    407c:	5e 42 f3 1c 	mov.b	&0x1cf3,r14	
+    4080:	5f 42 f2 1c 	mov.b	&0x1cf2,r15	
+--
+000042fa <cc2420_timerb1_interrupt>:
+    42fa:	0f 12       	push	r15		
+    42fc:	1f 42 1e 01 	mov	&0x011e,r15	
+    4300:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4304:	06 24       	jz	$+14     	;abs 0x4312
+    4306:	d2 53 b0 1c 	inc.b	&0x1cb0	
+    430a:	92 42 94 01 	mov	&0x0194,&0x1caa	
+    430e:	aa 1c 
+    4310:	05 3c       	jmp	$+12     	;abs 0x431c
+    4312:	c2 43 b0 1c 	mov.b	#0,	&0x1cb0	;r3 As==00
+    4316:	92 42 94 01 	mov	&0x0194,&0x1cb2	
+    431a:	b2 1c 
+    431c:	3f 41       	pop	r15		
+    431e:	00 13       	reti			
+
+00004320 <cc2420_port1_interrupt>:
+    4320:	0f 12       	push	r15		
+    4322:	0e 12       	push	r14		
+    4324:	0d 12       	push	r13		
+    4326:	0c 12       	push	r12		
+    4328:	b0 12 54 4b 	call	#0x4b54	
+    432c:	0f 93       	tst	r15		
+    432e:	03 24       	jz	$+8      	;abs 0x4336
+    4330:	b1 c0 f0 00 	bic	#240,	8(r1)	;#0x00f0, 0x0008(r1)
+    4334:	08 00 
+    4336:	3c 41       	pop	r12		
+    4338:	3d 41       	pop	r13		
+    433a:	3e 41       	pop	r14		
+    433c:	3f 41       	pop	r15		
+    433e:	00 13       	reti			
+
+00004340 <cc2420_arch_init>:
+    4340:	b0 12 e0 72 	call	#0x72e0	
+    4344:	e2 d2 1e 00 	bis.b	#4,	&0x001e	;r2 As==10
+    4348:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    434c:	1e 00 
+    434e:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    4352:	1e 00 
+    4354:	e2 d2 1d 00 	bis.b	#4,	&0x001d	;r2 As==10
+    4358:	30 41       	ret			
+
+0000435a <get_object>:
+    435a:	1f 43       	mov	#1,	r15	;r3 As==01
+    435c:	30 41       	ret			
+
+0000435e <set_object>:
+    435e:	1f 43       	mov	#1,	r15	;r3 As==01
+    4360:	30 41       	ret			
+
+00004362 <strobe>:
+--
+000044ee <cc2420_receiving_packet>:
+    44ee:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    44f2:	12 c3       	clrc			
+    44f4:	4f 10       	rrc.b	r15		
+    44f6:	1f f3       	and	#1,	r15	;r3 As==01
+    44f8:	30 41       	ret			
+
+000044fa <pending_packet>:
+    44fa:	5f 42 20 00 	mov.b	&0x0020,r15	
+    44fe:	1f f3       	and	#1,	r15	;r3 As==01
+    4500:	30 41       	ret			
+
+00004502 <wait_for_transmission>:
+    4502:	0b 12       	push	r11		
+    4504:	b0 12 c4 70 	call	#0x70c4	
+    4508:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    450c:	0b 8f       	sub	r15,	r11	
+    450e:	b0 12 ce 44 	call	#0x44ce	
+    4512:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00004794 <cc2420_prepare>:
+    4794:	0b 12       	push	r11		
+    4796:	0a 12       	push	r10		
+    4798:	21 83       	decd	r1		
+    479a:	0a 4f       	mov	r15,	r10	
+    479c:	0b 4e       	mov	r14,	r11	
+    479e:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    47a2:	16 2c       	jc	$+46     	;abs 0x47d0
+    47a4:	d2 53 42 12 	inc.b	&0x1242	
+    47a8:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    47ac:	b0 12 62 43 	call	#0x4362	
+    47b0:	4f 4b       	mov.b	r11,	r15	
+    47b2:	6f 53       	incd.b	r15		
+    47b4:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    47b8:	1e 43       	mov	#1,	r14	;r3 As==01
+    47ba:	0f 41       	mov	r1,	r15	
+    47bc:	b0 12 92 44 	call	#0x4492	
+    47c0:	0e 4b       	mov	r11,	r14	
+    47c2:	0f 4a       	mov	r10,	r15	
+--
+000047da <cc2420_on>:
+    47da:	c2 93 45 12 	tst.b	&0x1245	
+    47de:	0c 20       	jnz	$+26     	;abs 0x47f8
+    47e0:	c2 93 42 12 	tst.b	&0x1242	
+    47e4:	03 24       	jz	$+8      	;abs 0x47ec
+    47e6:	d2 43 43 12 	mov.b	#1,	&0x1243	;r3 As==01
+    47ea:	06 3c       	jmp	$+14     	;abs 0x47f8
+    47ec:	d2 43 42 12 	mov.b	#1,	&0x1242	;r3 As==01
+    47f0:	b0 12 de 45 	call	#0x45de	
+    47f4:	b0 12 c8 46 	call	#0x46c8	
+    47f8:	1f 43       	mov	#1,	r15	;r3 As==01
+    47fa:	30 41       	ret			
+
+000047fc <cc2420_transmit>:
+    47fc:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    4800:	01 24       	jz	$+4      	;abs 0x4804
+    4802:	3f 2c       	jc	$+128    	;abs 0x4882
+    4804:	d2 53 42 12 	inc.b	&0x1242	
+    4808:	c2 93 0a 11 	tst.b	&0x110a	
+    480c:	0a 24       	jz	$+22     	;abs 0x4822
+    480e:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    4812:	b0 12 62 43 	call	#0x4362	
+    4816:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    4818:	b0 12 24 45 	call	#0x4524	
+    481c:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    4820:	01 3c       	jmp	$+4      	;abs 0x4824
+    4822:	2f 42       	mov	#4,	r15	;r2 As==10
+    4824:	b0 12 62 43 	call	#0x4362	
+    4828:	3f 40 20 03 	mov	#800,	r15	;#0x0320
+    482c:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4830:	25 24       	jz	$+76     	;abs 0x487c
+    4832:	b0 12 ce 44 	call	#0x44ce	
+--
+00004886 <cc2420_send>:
+    4886:	0b 12       	push	r11		
+    4888:	0b 4e       	mov	r14,	r11	
+    488a:	b0 12 94 47 	call	#0x4794	
+    488e:	0f 4b       	mov	r11,	r15	
+    4890:	b0 12 fc 47 	call	#0x47fc	
+    4894:	3b 41       	pop	r11		
+    4896:	30 41       	ret			
+
+00004898 <cc2420_off>:
+    4898:	c2 93 45 12 	tst.b	&0x1245	
+    489c:	13 24       	jz	$+40     	;abs 0x48c4
+    489e:	c2 93 42 12 	tst.b	&0x1242	
+    48a2:	03 24       	jz	$+8      	;abs 0x48aa
+    48a4:	d2 43 44 12 	mov.b	#1,	&0x1244	;r3 As==01
+    48a8:	0d 3c       	jmp	$+28     	;abs 0x48c4
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         00006b0c  00004000  00004000  000000b4  2**1
+  1 .rodata       000006c7  0000ab0c  0000ab0c  00006bc0  2**2
+  2 .data         0000114a  00001100  0000b1d4  00007288  2**1
+  3 .bss          00000c0c  0000224a  0000c31e  000083d2  2**1
+  5 .vectors      00000020  0000ffe0  0000ffe0  000083d2  2**0
+
+[Important function symbols used for disassembly]
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004208 W __isr_0
+000042a6 T __isr_1
+00007e6e T __isr_10
+00004208 W __isr_11
+000042ec T __isr_12
+00004208 W __isr_13
+00004208 W __isr_14
+00004208 W __isr_2
+00004208 W __isr_3
+00004312 T __isr_4
+00004e6c T __isr_5
+00007878 T __isr_6
+00004208 W __isr_7
+00004208 W __isr_8
+00004208 W __isr_9
+00004000 W __watchdog_support
+00004000 W _reset_vector__
+0000ab60 R cc2420_aes_128_driver
+00004332 T cc2420_arch_init
+00002de4 B cc2420_authority_level_of_sender
+000047c6 t cc2420_cca
+0000ab64 R cc2420_driver
+00004a94 T cc2420_get_txpower
+00004d82 T cc2420_init
+00004a52 T cc2420_interrupt
+00002de2 B cc2420_last_correlation
+00002dde B cc2420_last_rssi
+
+[Disassembly sample around important labels]
+0000403e <main>:
+    403e:	b0 12 54 73 	call	#0x7354	
+    4042:	b0 12 62 4f 	call	#0x4f62	
+    4046:	b0 12 c8 78 	call	#0x78c8	
+    404a:	b0 12 c2 75 	call	#0x75c2	
+    404e:	0e 43       	clr	r14		
+    4050:	3f 40 32 11 	mov	#4402,	r15	;#0x1132
+    4054:	b0 12 ce 76 	call	#0x76ce	
+    4058:	b0 12 66 55 	call	#0x5566	
+    405c:	b0 12 b0 7e 	call	#0x7eb0	
+    4060:	b0 12 a4 57 	call	#0x57a4	
+    4064:	b0 12 12 7b 	call	#0x7b12	
+    4068:	b0 12 66 73 	call	#0x7366	
+    406c:	b0 12 1c 77 	call	#0x771c	
+    4070:	b0 12 50 66 	call	#0x6650	
+    4074:	b0 12 5e 66 	call	#0x665e	
+    4078:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    407c:	8c 11 
+    407e:	0e 38       	jl	$+30     	;abs 0x409c
+--
+000042ec <cc2420_timerb1_interrupt>:
+    42ec:	0f 12       	push	r15		
+    42ee:	1f 42 1e 01 	mov	&0x011e,r15	
+    42f2:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    42f6:	06 24       	jz	$+14     	;abs 0x4304
+    42f8:	d2 53 e6 2d 	inc.b	&0x2de6	
+    42fc:	92 42 94 01 	mov	&0x0194,&0x2de0	
+    4300:	e0 2d 
+    4302:	05 3c       	jmp	$+12     	;abs 0x430e
+    4304:	c2 43 e6 2d 	mov.b	#0,	&0x2de6	;r3 As==00
+    4308:	92 42 94 01 	mov	&0x0194,&0x2de8	
+    430c:	e8 2d 
+    430e:	3f 41       	pop	r15		
+    4310:	00 13       	reti			
+
+00004312 <cc2420_port1_interrupt>:
+    4312:	0f 12       	push	r15		
+    4314:	0e 12       	push	r14		
+    4316:	0d 12       	push	r13		
+    4318:	0c 12       	push	r12		
+    431a:	b0 12 52 4a 	call	#0x4a52	
+    431e:	0f 93       	tst	r15		
+    4320:	03 24       	jz	$+8      	;abs 0x4328
+    4322:	b1 c0 f0 00 	bic	#240,	8(r1)	;#0x00f0, 0x0008(r1)
+    4326:	08 00 
+    4328:	3c 41       	pop	r12		
+    432a:	3d 41       	pop	r13		
+    432c:	3e 41       	pop	r14		
+    432e:	3f 41       	pop	r15		
+    4330:	00 13       	reti			
+
+00004332 <cc2420_arch_init>:
+    4332:	b0 12 e2 7a 	call	#0x7ae2	
+    4336:	e2 d2 1e 00 	bis.b	#4,	&0x001e	;r2 As==10
+    433a:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    433e:	1e 00 
+    4340:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    4344:	1e 00 
+    4346:	e2 d2 1d 00 	bis.b	#4,	&0x001d	;r2 As==10
+    434a:	30 41       	ret			
+
+0000434c <get_object>:
+    434c:	1f 43       	mov	#1,	r15	;r3 As==01
+    434e:	30 41       	ret			
+
+00004350 <set_object>:
+    4350:	1f 43       	mov	#1,	r15	;r3 As==01
+    4352:	30 41       	ret			
+
+00004354 <strobe>:
+--
+000044fa <cc2420_receiving_packet>:
+    44fa:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    44fe:	12 c3       	clrc			
+    4500:	4f 10       	rrc.b	r15		
+    4502:	1f f3       	and	#1,	r15	;r3 As==01
+    4504:	30 41       	ret			
+
+00004506 <pending_packet>:
+    4506:	5f 42 20 00 	mov.b	&0x0020,r15	
+    450a:	1f f3       	and	#1,	r15	;r3 As==01
+    450c:	30 41       	ret			
+
+0000450e <wait_for_transmission>:
+    450e:	0b 12       	push	r11		
+    4510:	b0 12 b4 78 	call	#0x78b4	
+    4514:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    4518:	0b 8f       	sub	r15,	r11	
+    451a:	b0 12 c0 44 	call	#0x44c0	
+    451e:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+000046b6 <cc2420_prepare>:
+    46b6:	0b 12       	push	r11		
+    46b8:	0a 12       	push	r10		
+    46ba:	21 83       	decd	r1		
+    46bc:	0a 4f       	mov	r15,	r10	
+    46be:	0b 4e       	mov	r14,	r11	
+    46c0:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    46c4:	16 2c       	jc	$+46     	;abs 0x46f2
+    46c6:	d2 53 56 22 	inc.b	&0x2256	
+    46ca:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    46ce:	b0 12 54 43 	call	#0x4354	
+    46d2:	4f 4b       	mov.b	r11,	r15	
+    46d4:	6f 53       	incd.b	r15		
+    46d6:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    46da:	1e 43       	mov	#1,	r14	;r3 As==01
+    46dc:	0f 41       	mov	r1,	r15	
+    46de:	b0 12 84 44 	call	#0x4484	
+    46e2:	0e 4b       	mov	r11,	r14	
+    46e4:	0f 4a       	mov	r10,	r15	
+--
+000046fc <cc2420_on>:
+    46fc:	c2 93 59 22 	tst.b	&0x2259	
+    4700:	0c 20       	jnz	$+26     	;abs 0x471a
+    4702:	c2 93 56 22 	tst.b	&0x2256	
+    4706:	03 24       	jz	$+8      	;abs 0x470e
+    4708:	d2 43 57 22 	mov.b	#1,	&0x2257	;r3 As==01
+    470c:	06 3c       	jmp	$+14     	;abs 0x471a
+    470e:	d2 43 56 22 	mov.b	#1,	&0x2256	;r3 As==01
+    4712:	b0 12 e0 44 	call	#0x44e0	
+    4716:	b0 12 ea 45 	call	#0x45ea	
+    471a:	1f 43       	mov	#1,	r15	;r3 As==01
+    471c:	30 41       	ret			
+
+0000471e <cc2420_transmit>:
+    471e:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    4722:	01 24       	jz	$+4      	;abs 0x4726
+    4724:	2d 2c       	jc	$+92     	;abs 0x4780
+    4726:	d2 53 56 22 	inc.b	&0x2256	
+    472a:	c2 93 0a 11 	tst.b	&0x110a	
+    472e:	0a 24       	jz	$+22     	;abs 0x4744
+    4730:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    4734:	b0 12 54 43 	call	#0x4354	
+    4738:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    473a:	b0 12 30 45 	call	#0x4530	
+    473e:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    4742:	01 3c       	jmp	$+4      	;abs 0x4746
+    4744:	2f 42       	mov	#4,	r15	;r2 As==10
+    4746:	b0 12 54 43 	call	#0x4354	
+    474a:	3f 40 20 03 	mov	#800,	r15	;#0x0320
+    474e:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4752:	13 24       	jz	$+40     	;abs 0x477a
+    4754:	b0 12 c0 44 	call	#0x44c0	
+--
+00004784 <cc2420_send>:
+    4784:	0b 12       	push	r11		
+    4786:	0b 4e       	mov	r14,	r11	
+    4788:	b0 12 b6 46 	call	#0x46b6	
+    478c:	0f 4b       	mov	r11,	r15	
+    478e:	b0 12 1e 47 	call	#0x471e	
+    4792:	3b 41       	pop	r11		
+    4794:	30 41       	ret			
+
+00004796 <cc2420_off>:
+    4796:	c2 93 59 22 	tst.b	&0x2259	
+    479a:	13 24       	jz	$+40     	;abs 0x47c2
+    479c:	c2 93 56 22 	tst.b	&0x2256	
+    47a0:	03 24       	jz	$+8      	;abs 0x47a8
+    47a2:	d2 43 58 22 	mov.b	#1,	&0x2258	;r3 As==01
+    47a6:	0d 3c       	jmp	$+28     	;abs 0x47c2
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000676e  00003100  00003100  000000d4  2**1
+  1 .rodata       00000613  00009870  00009870  00006844  2**2
+  2 .data         000009b8  00001100  00009e84  00006e58  2**1
+  3 .bss          00000a46  00001ab8  0000a83c  00007810  2**1
+  5 .vectors      00000040  0000ffc0  0000ffc0  00007810  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+00003308 W __isr_0
+00003308 W __isr_1
+00003308 W __isr_10
+00003308 W __isr_11
+00003308 W __isr_12
+00003308 W __isr_13
+00003308 W __isr_14
+00003308 W __isr_15
+00003600 T __isr_16
+00003684 T __isr_17
+0000344a T __isr_18
+000034ce T __isr_19
+00003308 W __isr_2
+00003308 W __isr_20
+00003308 W __isr_21
+00003308 W __isr_22
+000036ba T __isr_23
+00003530 T __isr_24
+00003698 T __isr_25
+000036e4 T __isr_26
+00003308 W __isr_27
+0000350a T __isr_28
+00003308 W __isr_29
+00003308 W __isr_3
+00003308 W __isr_30
+00003308 W __isr_4
+00003308 W __isr_5
+00003308 W __isr_6
+00003308 W __isr_7
+00003308 W __isr_8
+00003308 W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+000039e2 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0000313e <main>:
+    313e:	b0 13 9c 63 	calla	#0x0639c	
+    3142:	b0 13 46 44 	calla	#0x04446	
+    3146:	b0 13 ac 68 	calla	#0x068ac	
+    314a:	b0 13 50 66 	calla	#0x06650	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 62 67 	calla	#0x06762	
+    3158:	b0 13 28 4a 	calla	#0x04a28	
+    315c:	b0 13 8c 6d 	calla	#0x06d8c	
+    3160:	b0 13 c2 4a 	calla	#0x04ac2	
+    3164:	b0 13 f6 69 	calla	#0x069f6	
+    3168:	b0 13 ae 63 	calla	#0x063ae	
+    316c:	b0 13 b0 67 	calla	#0x067b0	
+    3170:	b0 13 32 59 	calla	#0x05932	
+    3174:	b0 13 8c 59 	calla	#0x0598c	
+    3178:	b2 90 03 00 	cmp	#3,	&0x114a	;#0x0003
+    317c:	4a 11 
+    317e:	0e 38       	jl	$+30     	;abs 0x319c
+--
+0000350a <cc2420_timerb1_interrupt>:
+    350a:	0f 14       	pushm.a	#1,	r15	
+    350c:	1f 42 1e 01 	mov	&0x011e,r15	
+    3510:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3514:	06 24       	jz	$+14     	;abs 0x3522
+    3516:	d2 53 18 24 	inc.b	&0x2418	
+    351a:	92 42 94 01 	mov	&0x0194,&0x2412	
+    351e:	12 24 
+    3520:	05 3c       	jmp	$+12     	;abs 0x352c
+    3522:	c2 43 18 24 	mov.b	#0,	&0x2418	;r3 As==00
+    3526:	92 42 94 01 	mov	&0x0194,&0x241a	
+    352a:	1a 24 
+    352c:	0f 16       	popm.a	#1,	r15	
+    352e:	00 13       	reti			
+
+00003530 <timera1>:
+    3530:	3f 14       	pushm.a	#4,	r15	
+    3532:	b0 13 50 6d 	calla	#0x06d50	
+    3536:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+000037a8 <process_thread_accmeter_process>:
+    37a8:	0b 14       	pushm.a	#1,	r11	
+    37aa:	0b 4f       	mov	r15,	r11	
+    37ac:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    37b0:	13 20       	jnz	$+40     	;abs 0x37d8
+    37b2:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    37b6:	b0 13 54 37 	calla	#0x03754	
+    37ba:	4e 4f       	mov.b	r15,	r14	
+    37bc:	1e b2 b8 1a 	bit	&0x1ab8,r14	
+    37c0:	03 24       	jz	$+8      	;abs 0x37c8
+    37c2:	2e 00 0c 24 	mova	&0x0240c,r14	
+    37c6:	05 3c       	jmp	$+12     	;abs 0x37d2
+    37c8:	1e b2 ba 1a 	bit	&0x1aba,r14	
+    37cc:	05 24       	jz	$+12     	;abs 0x37d8
+    37ce:	2e 00 08 24 	mova	&0x02408,r14	
+    37d2:	de 03       	tsta	r14		
+    37d4:	01 24       	jz	$+4      	;abs 0x37d8
+    37d6:	4e 13       	calla	r14		
+    37d8:	2f 4b       	mov	@r11,	r15	
+--
+000039e2 <cc2420_arch_init>:
+    39e2:	b0 13 c4 69 	calla	#0x069c4	
+    39e6:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    39ea:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    39ee:	1e 00 
+    39f0:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    39f4:	1e 00 
+    39f6:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    39fa:	10 01       	reta			
+
+000039fc <get_object>:
+    39fc:	1f 43       	mov	#1,	r15	;r3 As==01
+    39fe:	10 01       	reta			
+
+00003a00 <set_object>:
+    3a00:	1f 43       	mov	#1,	r15	;r3 As==01
+    3a02:	10 01       	reta			
+
+00003a04 <strobe>:
+--
+00003b8a <cc2420_receiving_packet>:
+    3b8a:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3b8e:	5f 03       	rrum	#1,	r15	
+    3b90:	1f f3       	and	#1,	r15	;r3 As==01
+    3b92:	10 01       	reta			
+
+00003b94 <pending_packet>:
+    3b94:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3b98:	5f 07       	rrum	#2,	r15	
+    3b9a:	1f f3       	and	#1,	r15	;r3 As==01
+    3b9c:	10 01       	reta			
+
+00003b9e <wait_for_transmission>:
+    3b9e:	0b 14       	pushm.a	#1,	r11	
+    3ba0:	b0 13 98 68 	calla	#0x06898	
+    3ba4:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3ba8:	0b 8f       	sub	r15,	r11	
+    3baa:	b0 13 52 3b 	calla	#0x03b52	
+    3bae:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003d26 <cc2420_prepare>:
+    3d26:	1b 14       	pushm.a	#2,	r11	
+    3d28:	21 83       	decd	r1		
+    3d2a:	0a 4f       	mov	r15,	r10	
+    3d2c:	0b 4e       	mov	r14,	r11	
+    3d2e:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3d32:	16 2c       	jc	$+46     	;abs 0x3d60
+    3d34:	d2 53 d4 23 	inc.b	&0x23d4	
+    3d38:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3d3c:	b0 13 04 3a 	calla	#0x03a04	
+    3d40:	4f 4b       	mov.b	r11,	r15	
+    3d42:	6f 53       	incd.b	r15		
+    3d44:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3d48:	1e 43       	mov	#1,	r14	;r3 As==01
+    3d4a:	0f 41       	mov	r1,	r15	
+    3d4c:	b0 13 1a 3b 	calla	#0x03b1a	
+    3d50:	0e 4b       	mov	r11,	r14	
+    3d52:	0f 4a       	mov	r10,	r15	
+    3d54:	b0 13 1a 3b 	calla	#0x03b1a	
+--
+00003d68 <cc2420_on>:
+    3d68:	c2 93 d7 23 	tst.b	&0x23d7	
+    3d6c:	0c 20       	jnz	$+26     	;abs 0x3d86
+    3d6e:	c2 93 d4 23 	tst.b	&0x23d4	
+    3d72:	03 24       	jz	$+8      	;abs 0x3d7a
+    3d74:	d2 43 d5 23 	mov.b	#1,	&0x23d5	;r3 As==01
+    3d78:	06 3c       	jmp	$+14     	;abs 0x3d86
+    3d7a:	d2 43 d4 23 	mov.b	#1,	&0x23d4	;r3 As==01
+    3d7e:	b0 13 70 3b 	calla	#0x03b70	
+    3d82:	b0 13 72 3c 	calla	#0x03c72	
+    3d86:	1f 43       	mov	#1,	r15	;r3 As==01
+    3d88:	10 01       	reta			
+
+00003d8a <cc2420_transmit>:
+    3d8a:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3d8e:	01 24       	jz	$+4      	;abs 0x3d92
+    3d90:	2d 2c       	jc	$+92     	;abs 0x3dec
+    3d92:	d2 53 d4 23 	inc.b	&0x23d4	
+    3d96:	c2 93 52 1a 	tst.b	&0x1a52	
+    3d9a:	0a 24       	jz	$+22     	;abs 0x3db0
+    3d9c:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    3da0:	b0 13 04 3a 	calla	#0x03a04	
+    3da4:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    3da6:	b0 13 c0 3b 	calla	#0x03bc0	
+    3daa:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    3dae:	01 3c       	jmp	$+4      	;abs 0x3db2
+    3db0:	2f 42       	mov	#4,	r15	;r2 As==10
+    3db2:	b0 13 04 3a 	calla	#0x03a04	
+    3db6:	3f 40 16 05 	mov	#1302,	r15	;#0x0516
+    3dba:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3dbe:	13 24       	jz	$+40     	;abs 0x3de6
+    3dc0:	b0 13 52 3b 	calla	#0x03b52	
+--
+00003df0 <cc2420_send>:
+    3df0:	0b 14       	pushm.a	#1,	r11	
+    3df2:	0b 4e       	mov	r14,	r11	
+    3df4:	b0 13 26 3d 	calla	#0x03d26	
+    3df8:	0f 4b       	mov	r11,	r15	
+    3dfa:	b0 13 8a 3d 	calla	#0x03d8a	
+    3dfe:	0b 16       	popm.a	#1,	r11	
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         000041c2  00004000  00004000  000000d4  2**1
+  1 .rodata       000003f9  000081c4  000081c4  00004298  2**2
+  2 .data         00001212  00001100  000085be  00004692  2**1
+  3 .bss          00000bb4  00002312  000097d0  000058a4  2**1
+  5 .vectors      00000020  0000ffe0  0000ffe0  000058a4  2**0
+
+[Important function symbols used for disassembly]
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+00004208 W __isr_0
+000042a6 T __isr_1
+000075e0 T __isr_10
+00004208 W __isr_11
+000042ec T __isr_12
+00004208 W __isr_13
+00004208 W __isr_14
+00004208 W __isr_2
+00004208 W __isr_3
+00004312 T __isr_4
+00004e6c T __isr_5
+00006fea T __isr_6
+00004208 W __isr_7
+00004208 W __isr_8
+00004208 W __isr_9
+00004000 W __watchdog_support
+00004000 W _reset_vector__
+00008218 R cc2420_aes_128_driver
+00004332 T cc2420_arch_init
+00002e7e B cc2420_authority_level_of_sender
+000047c6 t cc2420_cca
+0000821c R cc2420_driver
+00004a94 T cc2420_get_txpower
+00004d82 T cc2420_init
+00004a52 T cc2420_interrupt
+00002e7c B cc2420_last_correlation
+00002e78 B cc2420_last_rssi
+
+[Disassembly sample around important labels]
+0000403e <main>:
+    403e:	b0 12 c6 6a 	call	#0x6ac6	
+    4042:	b0 12 62 4f 	call	#0x4f62	
+    4046:	b0 12 3a 70 	call	#0x703a	
+    404a:	b0 12 34 6d 	call	#0x6d34	
+    404e:	0e 43       	clr	r14		
+    4050:	3f 40 32 11 	mov	#4402,	r15	;#0x1132
+    4054:	b0 12 40 6e 	call	#0x6e40	
+    4058:	b0 12 66 55 	call	#0x5566	
+    405c:	b0 12 22 76 	call	#0x7622	
+    4060:	b0 12 a4 57 	call	#0x57a4	
+    4064:	b0 12 84 72 	call	#0x7284	
+    4068:	b0 12 d8 6a 	call	#0x6ad8	
+    406c:	b0 12 8e 6e 	call	#0x6e8e	
+    4070:	b0 12 50 66 	call	#0x6650	
+    4074:	b0 12 5e 66 	call	#0x665e	
+    4078:	b2 90 03 00 	cmp	#3,	&0x118c	;#0x0003
+    407c:	8c 11 
+    407e:	0e 38       	jl	$+30     	;abs 0x409c
+--
+000042ec <cc2420_timerb1_interrupt>:
+    42ec:	0f 12       	push	r15		
+    42ee:	1f 42 1e 01 	mov	&0x011e,r15	
+    42f2:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    42f6:	06 24       	jz	$+14     	;abs 0x4304
+    42f8:	d2 53 80 2e 	inc.b	&0x2e80	
+    42fc:	92 42 94 01 	mov	&0x0194,&0x2e7a	
+    4300:	7a 2e 
+    4302:	05 3c       	jmp	$+12     	;abs 0x430e
+    4304:	c2 43 80 2e 	mov.b	#0,	&0x2e80	;r3 As==00
+    4308:	92 42 94 01 	mov	&0x0194,&0x2e82	
+    430c:	82 2e 
+    430e:	3f 41       	pop	r15		
+    4310:	00 13       	reti			
+
+00004312 <cc2420_port1_interrupt>:
+    4312:	0f 12       	push	r15		
+    4314:	0e 12       	push	r14		
+    4316:	0d 12       	push	r13		
+    4318:	0c 12       	push	r12		
+    431a:	b0 12 52 4a 	call	#0x4a52	
+    431e:	0f 93       	tst	r15		
+    4320:	03 24       	jz	$+8      	;abs 0x4328
+    4322:	b1 c0 f0 00 	bic	#240,	8(r1)	;#0x00f0, 0x0008(r1)
+    4326:	08 00 
+    4328:	3c 41       	pop	r12		
+    432a:	3d 41       	pop	r13		
+    432c:	3e 41       	pop	r14		
+    432e:	3f 41       	pop	r15		
+    4330:	00 13       	reti			
+
+00004332 <cc2420_arch_init>:
+    4332:	b0 12 54 72 	call	#0x7254	
+    4336:	e2 d2 1e 00 	bis.b	#4,	&0x001e	;r2 As==10
+    433a:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    433e:	1e 00 
+    4340:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    4344:	1e 00 
+    4346:	e2 d2 1d 00 	bis.b	#4,	&0x001d	;r2 As==10
+    434a:	30 41       	ret			
+
+0000434c <get_object>:
+    434c:	1f 43       	mov	#1,	r15	;r3 As==01
+    434e:	30 41       	ret			
+
+00004350 <set_object>:
+    4350:	1f 43       	mov	#1,	r15	;r3 As==01
+    4352:	30 41       	ret			
+
+00004354 <strobe>:
+--
+000044fa <cc2420_receiving_packet>:
+    44fa:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    44fe:	12 c3       	clrc			
+    4500:	4f 10       	rrc.b	r15		
+    4502:	1f f3       	and	#1,	r15	;r3 As==01
+    4504:	30 41       	ret			
+
+00004506 <pending_packet>:
+    4506:	5f 42 20 00 	mov.b	&0x0020,r15	
+    450a:	1f f3       	and	#1,	r15	;r3 As==01
+    450c:	30 41       	ret			
+
+0000450e <wait_for_transmission>:
+    450e:	0b 12       	push	r11		
+    4510:	b0 12 26 70 	call	#0x7026	
+    4514:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    4518:	0b 8f       	sub	r15,	r11	
+    451a:	b0 12 c0 44 	call	#0x44c0	
+    451e:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+000046b6 <cc2420_prepare>:
+    46b6:	0b 12       	push	r11		
+    46b8:	0a 12       	push	r10		
+    46ba:	21 83       	decd	r1		
+    46bc:	0a 4f       	mov	r15,	r10	
+    46be:	0b 4e       	mov	r14,	r11	
+    46c0:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    46c4:	16 2c       	jc	$+46     	;abs 0x46f2
+    46c6:	d2 53 1e 23 	inc.b	&0x231e	
+    46ca:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    46ce:	b0 12 54 43 	call	#0x4354	
+    46d2:	4f 4b       	mov.b	r11,	r15	
+    46d4:	6f 53       	incd.b	r15		
+    46d6:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    46da:	1e 43       	mov	#1,	r14	;r3 As==01
+    46dc:	0f 41       	mov	r1,	r15	
+    46de:	b0 12 84 44 	call	#0x4484	
+    46e2:	0e 4b       	mov	r11,	r14	
+    46e4:	0f 4a       	mov	r10,	r15	
+--
+000046fc <cc2420_on>:
+    46fc:	c2 93 21 23 	tst.b	&0x2321	
+    4700:	0c 20       	jnz	$+26     	;abs 0x471a
+    4702:	c2 93 1e 23 	tst.b	&0x231e	
+    4706:	03 24       	jz	$+8      	;abs 0x470e
+    4708:	d2 43 1f 23 	mov.b	#1,	&0x231f	;r3 As==01
+    470c:	06 3c       	jmp	$+14     	;abs 0x471a
+    470e:	d2 43 1e 23 	mov.b	#1,	&0x231e	;r3 As==01
+    4712:	b0 12 e0 44 	call	#0x44e0	
+    4716:	b0 12 ea 45 	call	#0x45ea	
+    471a:	1f 43       	mov	#1,	r15	;r3 As==01
+    471c:	30 41       	ret			
+
+0000471e <cc2420_transmit>:
+    471e:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    4722:	01 24       	jz	$+4      	;abs 0x4726
+    4724:	2d 2c       	jc	$+92     	;abs 0x4780
+    4726:	d2 53 1e 23 	inc.b	&0x231e	
+    472a:	c2 93 0a 11 	tst.b	&0x110a	
+    472e:	0a 24       	jz	$+22     	;abs 0x4744
+    4730:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    4734:	b0 12 54 43 	call	#0x4354	
+    4738:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    473a:	b0 12 30 45 	call	#0x4530	
+    473e:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    4742:	01 3c       	jmp	$+4      	;abs 0x4746
+    4744:	2f 42       	mov	#4,	r15	;r2 As==10
+    4746:	b0 12 54 43 	call	#0x4354	
+    474a:	3f 40 20 03 	mov	#800,	r15	;#0x0320
+    474e:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4752:	13 24       	jz	$+40     	;abs 0x477a
+    4754:	b0 12 c0 44 	call	#0x44c0	
+--
+00004784 <cc2420_send>:
+    4784:	0b 12       	push	r11		
+    4786:	0b 4e       	mov	r14,	r11	
+    4788:	b0 12 b6 46 	call	#0x46b6	
+    478c:	0f 4b       	mov	r11,	r15	
+    478e:	b0 12 1e 47 	call	#0x471e	
+    4792:	3b 41       	pop	r11		
+    4794:	30 41       	ret			
+
+00004796 <cc2420_off>:
+    4796:	c2 93 21 23 	tst.b	&0x2321	
+    479a:	13 24       	jz	$+40     	;abs 0x47c2
+    479c:	c2 93 1e 23 	tst.b	&0x231e	
+    47a0:	03 24       	jz	$+8      	;abs 0x47a8
+    47a2:	d2 43 20 23 	mov.b	#1,	&0x2320	;r3 As==01
+    47a6:	0d 3c       	jmp	$+28     	;abs 0x47c2
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000a432  00004000  00004000  000000d4  2**1
+  1 .rodata       00000528  0000e434  0000e434  0000a508  2**2
+  2 .data         0000014a  00001100  0000e95c  0000aa30  2**1
+  3 .bss          00001b6e  0000124a  0000eaa6  0000ab7a  2**1
+  5 .vectors      00000020  0000ffe0  0000ffe0  0000ab7a  2**0
+
+[Important function symbols used for disassembly]
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+0000427c W __isr_0
+00004314 T __isr_1
+0000d65a T __isr_10
+0000427c W __isr_11
+0000435a T __isr_12
+0000427c W __isr_13
+0000427c W __isr_14
+0000427c W __isr_2
+0000427c W __isr_3
+00004380 T __isr_4
+00004eda T __isr_5
+0000986a T __isr_6
+0000427c W __isr_7
+0000427c W __isr_8
+0000427c W __isr_9
+00004000 W __watchdog_support
+00004000 W _reset_vector__
+0000e488 R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+00002906 B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e48c R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+00002904 B cc2420_last_correlation
+00002900 B cc2420_last_rssi
+
+[Disassembly sample around important labels]
+0000403e <main>:
+    403e:	b0 12 f6 6f 	call	#0x6ff6	
+    4042:	b0 12 cc 4f 	call	#0x4fcc	
+    4046:	b0 12 96 98 	call	#0x9896	
+    404a:	b0 12 6a 72 	call	#0x726a	
+    404e:	0e 43       	clr	r14		
+    4050:	3f 40 2e 11 	mov	#4398,	r15	;#0x112e
+    4054:	b0 12 5c 73 	call	#0x735c	
+    4058:	b0 12 b4 55 	call	#0x55b4	
+    405c:	b0 12 9c d6 	call	#0xd69c	
+    4060:	b0 12 fe b2 	call	#0xb2fe	
+    4064:	b0 12 08 70 	call	#0x7008	
+    4068:	b0 12 aa 73 	call	#0x73aa	
+    406c:	92 12 8c e4 	call	&0xe48c	
+    4070:	92 12 ce e4 	call	&0xe4ce	
+    4074:	92 12 c4 e6 	call	&0xe6c4	
+    4078:	5e 42 27 29 	mov.b	&0x2927,r14	
+    407c:	5f 42 26 29 	mov.b	&0x2926,r15	
+    4080:	8f 10       	swpb	r15		
+--
+0000435a <cc2420_timerb1_interrupt>:
+    435a:	0f 12       	push	r15		
+    435c:	1f 42 1e 01 	mov	&0x011e,r15	
+    4360:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4364:	06 24       	jz	$+14     	;abs 0x4372
+    4366:	d2 53 08 29 	inc.b	&0x2908	
+    436a:	92 42 94 01 	mov	&0x0194,&0x2902	
+    436e:	02 29 
+    4370:	05 3c       	jmp	$+12     	;abs 0x437c
+    4372:	c2 43 08 29 	mov.b	#0,	&0x2908	;r3 As==00
+    4376:	92 42 94 01 	mov	&0x0194,&0x290a	
+    437a:	0a 29 
+    437c:	3f 41       	pop	r15		
+    437e:	00 13       	reti			
+
+00004380 <cc2420_port1_interrupt>:
+    4380:	0f 12       	push	r15		
+    4382:	0e 12       	push	r14		
+    4384:	0d 12       	push	r13		
+    4386:	0c 12       	push	r12		
+    4388:	b0 12 c0 4a 	call	#0x4ac0	
+    438c:	0f 93       	tst	r15		
+    438e:	03 24       	jz	$+8      	;abs 0x4396
+    4390:	b1 c0 f0 00 	bic	#240,	8(r1)	;#0x00f0, 0x0008(r1)
+    4394:	08 00 
+    4396:	3c 41       	pop	r12		
+    4398:	3d 41       	pop	r13		
+    439a:	3e 41       	pop	r14		
+    439c:	3f 41       	pop	r15		
+    439e:	00 13       	reti			
+
+000043a0 <cc2420_arch_init>:
+    43a0:	b0 12 ce b2 	call	#0xb2ce	
+    43a4:	e2 d2 1e 00 	bis.b	#4,	&0x001e	;r2 As==10
+    43a8:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    43ac:	1e 00 
+    43ae:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    43b2:	1e 00 
+    43b4:	e2 d2 1d 00 	bis.b	#4,	&0x001d	;r2 As==10
+    43b8:	30 41       	ret			
+
+000043ba <get_object>:
+    43ba:	1f 43       	mov	#1,	r15	;r3 As==01
+    43bc:	30 41       	ret			
+
+000043be <set_object>:
+    43be:	1f 43       	mov	#1,	r15	;r3 As==01
+    43c0:	30 41       	ret			
+
+000043c2 <strobe>:
+--
+00004568 <cc2420_receiving_packet>:
+    4568:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    456c:	12 c3       	clrc			
+    456e:	4f 10       	rrc.b	r15		
+    4570:	1f f3       	and	#1,	r15	;r3 As==01
+    4572:	30 41       	ret			
+
+00004574 <pending_packet>:
+    4574:	5f 42 20 00 	mov.b	&0x0020,r15	
+    4578:	1f f3       	and	#1,	r15	;r3 As==01
+    457a:	30 41       	ret			
+
+0000457c <wait_for_transmission>:
+    457c:	0b 12       	push	r11		
+    457e:	b0 12 a4 98 	call	#0x98a4	
+    4582:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    4586:	0b 8f       	sub	r15,	r11	
+    4588:	b0 12 2e 45 	call	#0x452e	
+    458c:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00004724 <cc2420_prepare>:
+    4724:	0b 12       	push	r11		
+    4726:	0a 12       	push	r10		
+    4728:	21 83       	decd	r1		
+    472a:	0a 4f       	mov	r15,	r10	
+    472c:	0b 4e       	mov	r14,	r11	
+    472e:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    4732:	16 2c       	jc	$+46     	;abs 0x4760
+    4734:	d2 53 56 12 	inc.b	&0x1256	
+    4738:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    473c:	b0 12 c2 43 	call	#0x43c2	
+    4740:	4f 4b       	mov.b	r11,	r15	
+    4742:	6f 53       	incd.b	r15		
+    4744:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    4748:	1e 43       	mov	#1,	r14	;r3 As==01
+    474a:	0f 41       	mov	r1,	r15	
+    474c:	b0 12 f2 44 	call	#0x44f2	
+    4750:	0e 4b       	mov	r11,	r14	
+    4752:	0f 4a       	mov	r10,	r15	
+--
+0000476a <cc2420_on>:
+    476a:	c2 93 59 12 	tst.b	&0x1259	
+    476e:	0c 20       	jnz	$+26     	;abs 0x4788
+    4770:	c2 93 56 12 	tst.b	&0x1256	
+    4774:	03 24       	jz	$+8      	;abs 0x477c
+    4776:	d2 43 57 12 	mov.b	#1,	&0x1257	;r3 As==01
+    477a:	06 3c       	jmp	$+14     	;abs 0x4788
+    477c:	d2 43 56 12 	mov.b	#1,	&0x1256	;r3 As==01
+    4780:	b0 12 4e 45 	call	#0x454e	
+    4784:	b0 12 58 46 	call	#0x4658	
+    4788:	1f 43       	mov	#1,	r15	;r3 As==01
+    478a:	30 41       	ret			
+
+0000478c <cc2420_transmit>:
+    478c:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    4790:	01 24       	jz	$+4      	;abs 0x4794
+    4792:	2d 2c       	jc	$+92     	;abs 0x47ee
+    4794:	d2 53 56 12 	inc.b	&0x1256	
+    4798:	c2 93 0a 11 	tst.b	&0x110a	
+    479c:	0a 24       	jz	$+22     	;abs 0x47b2
+    479e:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    47a2:	b0 12 c2 43 	call	#0x43c2	
+    47a6:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    47a8:	b0 12 9e 45 	call	#0x459e	
+    47ac:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    47b0:	01 3c       	jmp	$+4      	;abs 0x47b4
+    47b2:	2f 42       	mov	#4,	r15	;r2 As==10
+    47b4:	b0 12 c2 43 	call	#0x43c2	
+    47b8:	3f 40 20 03 	mov	#800,	r15	;#0x0320
+    47bc:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    47c0:	13 24       	jz	$+40     	;abs 0x47e8
+    47c2:	b0 12 2e 45 	call	#0x452e	
+--
+000047f2 <cc2420_send>:
+    47f2:	0b 12       	push	r11		
+    47f4:	0b 4e       	mov	r14,	r11	
+    47f6:	b0 12 24 47 	call	#0x4724	
+    47fa:	0f 4b       	mov	r11,	r15	
+    47fc:	b0 12 8c 47 	call	#0x478c	
+    4800:	3b 41       	pop	r11		
+    4802:	30 41       	ret			
+
+00004804 <cc2420_off>:
+    4804:	c2 93 59 12 	tst.b	&0x1259	
+    4808:	13 24       	jz	$+40     	;abs 0x4830
+    480a:	c2 93 56 12 	tst.b	&0x1256	
+    480e:	03 24       	jz	$+8      	;abs 0x4816
+    4810:	d2 43 58 12 	mov.b	#1,	&0x1258	;r3 As==01
+    4814:	0d 3c       	jmp	$+28     	;abs 0x4830
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000a0b4  00003100  00003100  000000b4  2**1
+  1 .rodata       0000053a  0000d1b4  0000d1b4  0000a168  2**2
+  2 .data         00000150  00001100  0000d6ee  0000a6a2  2**1
+  3 .bss          000016fe  00001250  0000d83e  0000a7f2  2**1
+  5 .vectors      00000040  0000ffc0  0000ffc0  0000a7f2  2**0
+
+[Important function symbols used for disassembly]
+0000006c A __UCB0I2CIE
+00000118 A __UCB0I2COA
+0000011a A __UCB0I2CSA
+000000dc A __UCB1I2CIE
+0000017c A __UCB1I2COA
+0000017e A __UCB1I2CSA
+0000337c W __isr_0
+0000337c W __isr_1
+0000337c W __isr_10
+0000337c W __isr_11
+0000337c W __isr_12
+0000337c W __isr_13
+0000337c W __isr_14
+0000337c W __isr_15
+000036f6 T __isr_16
+0000377a T __isr_17
+00003544 T __isr_18
+000035c8 T __isr_19
+0000337c W __isr_2
+0000337c W __isr_20
+0000337c W __isr_21
+0000337c W __isr_22
+000037ae T __isr_23
+0000362a T __isr_24
+0000378e T __isr_25
+000037d8 T __isr_26
+0000337c W __isr_27
+00003604 T __isr_28
+0000337c W __isr_29
+0000337c W __isr_3
+0000337c W __isr_30
+0000337c W __isr_4
+0000337c W __isr_5
+0000337c W __isr_6
+0000337c W __isr_7
+0000337c W __isr_8
+0000337c W __isr_9
+00003100 W __watchdog_support
+00003100 W _reset_vector__
+00003ad0 T cc2420_arch_init
+
+[Disassembly sample around important labels]
+0000313e <main>:
+    313e:	b0 13 32 63 	calla	#0x06332	
+    3142:	b0 13 34 45 	calla	#0x04534	
+    3146:	b0 13 98 89 	calla	#0x08998	
+    314a:	b0 13 e4 65 	calla	#0x065e4	
+    314e:	0e 43       	clr	r14		
+    3150:	3f 40 3c 11 	mov	#4412,	r15	;#0x113c
+    3154:	b0 13 d8 66 	calla	#0x066d8	
+    3158:	b0 13 fa 4a 	calla	#0x04afa	
+    315c:	b0 13 c6 c4 	calla	#0x0c4c6	
+    3160:	b0 13 72 a2 	calla	#0x0a272	
+    3164:	b0 13 44 63 	calla	#0x06344	
+    3168:	b0 13 26 67 	calla	#0x06726	
+    316c:	80 13 58 d2 	calla	&0x0d258	
+    3170:	80 13 a2 d2 	calla	&0x0d2a2	
+    3174:	80 13 22 d3 	calla	&0x0d322	
+    3178:	5e 42 ab 25 	mov.b	&0x25ab,r14	
+    317c:	5f 42 aa 25 	mov.b	&0x25aa,r15	
+    3180:	8f 10       	swpb	r15		
+--
+00003604 <cc2420_timerb1_interrupt>:
+    3604:	0f 14       	pushm.a	#1,	r15	
+    3606:	1f 42 1e 01 	mov	&0x011e,r15	
+    360a:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    360e:	06 24       	jz	$+14     	;abs 0x361c
+    3610:	d2 53 7c 25 	inc.b	&0x257c	
+    3614:	92 42 94 01 	mov	&0x0194,&0x2576	
+    3618:	76 25 
+    361a:	05 3c       	jmp	$+12     	;abs 0x3626
+    361c:	c2 43 7c 25 	mov.b	#0,	&0x257c	;r3 As==00
+    3620:	92 42 94 01 	mov	&0x0194,&0x257e	
+    3624:	7e 25 
+    3626:	0f 16       	popm.a	#1,	r15	
+    3628:	00 13       	reti			
+
+0000362a <timera1>:
+    362a:	3f 14       	pushm.a	#4,	r15	
+    362c:	b0 13 8a c4 	calla	#0x0c48a	
+    3630:	1f 42 2e 01 	mov	&0x012e,r15	
+--
+0000389c <process_thread_accmeter_process>:
+    389c:	0b 14       	pushm.a	#1,	r11	
+    389e:	0b 4f       	mov	r15,	r11	
+    38a0:	7e 90 82 ff 	cmp.b	#-126,	r14	;#0xff82
+    38a4:	13 20       	jnz	$+40     	;abs 0x38cc
+    38a6:	7f 40 30 00 	mov.b	#48,	r15	;#0x0030
+    38aa:	b0 13 48 38 	calla	#0x03848	
+    38ae:	4e 4f       	mov.b	r15,	r14	
+    38b0:	1e b2 50 12 	bit	&0x1250,r14	
+    38b4:	03 24       	jz	$+8      	;abs 0x38bc
+    38b6:	2e 00 70 25 	mova	&0x02570,r14	
+    38ba:	05 3c       	jmp	$+12     	;abs 0x38c6
+    38bc:	1e b2 52 12 	bit	&0x1252,r14	
+    38c0:	05 24       	jz	$+12     	;abs 0x38cc
+    38c2:	2e 00 6c 25 	mova	&0x0256c,r14	
+    38c6:	de 03       	tsta	r14		
+    38c8:	01 24       	jz	$+4      	;abs 0x38cc
+    38ca:	4e 13       	calla	r14		
+    38cc:	2f 4b       	mov	@r11,	r15	
+--
+00003ad0 <cc2420_arch_init>:
+    3ad0:	b0 13 40 a2 	calla	#0x0a240	
+    3ad4:	d2 d3 1a 00 	bis.b	#1,	&0x001a	;r3 As==01
+    3ad8:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    3adc:	1e 00 
+    3ade:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    3ae2:	1e 00 
+    3ae4:	d2 d3 19 00 	bis.b	#1,	&0x0019	;r3 As==01
+    3ae8:	10 01       	reta			
+
+00003aea <get_object>:
+    3aea:	1f 43       	mov	#1,	r15	;r3 As==01
+    3aec:	10 01       	reta			
+
+00003aee <set_object>:
+    3aee:	1f 43       	mov	#1,	r15	;r3 As==01
+    3af0:	10 01       	reta			
+
+00003af2 <strobe>:
+--
+00003c78 <cc2420_receiving_packet>:
+    3c78:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    3c7c:	5f 03       	rrum	#1,	r15	
+    3c7e:	1f f3       	and	#1,	r15	;r3 As==01
+    3c80:	10 01       	reta			
+
+00003c82 <pending_packet>:
+    3c82:	5f 42 20 00 	mov.b	&0x0020,r15	
+    3c86:	5f 07       	rrum	#2,	r15	
+    3c88:	1f f3       	and	#1,	r15	;r3 As==01
+    3c8a:	10 01       	reta			
+
+00003c8c <wait_for_transmission>:
+    3c8c:	0b 14       	pushm.a	#1,	r11	
+    3c8e:	b0 13 a6 89 	calla	#0x089a6	
+    3c92:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    3c96:	0b 8f       	sub	r15,	r11	
+    3c98:	b0 13 40 3c 	calla	#0x03c40	
+    3c9c:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00003e14 <cc2420_prepare>:
+    3e14:	1b 14       	pushm.a	#2,	r11	
+    3e16:	21 83       	decd	r1		
+    3e18:	0a 4f       	mov	r15,	r10	
+    3e1a:	0b 4e       	mov	r14,	r11	
+    3e1c:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    3e20:	16 2c       	jc	$+46     	;abs 0x3e4e
+    3e22:	d2 53 62 24 	inc.b	&0x2462	
+    3e26:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    3e2a:	b0 13 f2 3a 	calla	#0x03af2	
+    3e2e:	4f 4b       	mov.b	r11,	r15	
+    3e30:	6f 53       	incd.b	r15		
+    3e32:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    3e36:	1e 43       	mov	#1,	r14	;r3 As==01
+    3e38:	0f 41       	mov	r1,	r15	
+    3e3a:	b0 13 08 3c 	calla	#0x03c08	
+    3e3e:	0e 4b       	mov	r11,	r14	
+    3e40:	0f 4a       	mov	r10,	r15	
+    3e42:	b0 13 08 3c 	calla	#0x03c08	
+--
+00003e56 <cc2420_on>:
+    3e56:	c2 93 65 24 	tst.b	&0x2465	
+    3e5a:	0c 20       	jnz	$+26     	;abs 0x3e74
+    3e5c:	c2 93 62 24 	tst.b	&0x2462	
+    3e60:	03 24       	jz	$+8      	;abs 0x3e68
+    3e62:	d2 43 63 24 	mov.b	#1,	&0x2463	;r3 As==01
+    3e66:	06 3c       	jmp	$+14     	;abs 0x3e74
+    3e68:	d2 43 62 24 	mov.b	#1,	&0x2462	;r3 As==01
+    3e6c:	b0 13 5e 3c 	calla	#0x03c5e	
+    3e70:	b0 13 60 3d 	calla	#0x03d60	
+    3e74:	1f 43       	mov	#1,	r15	;r3 As==01
+    3e76:	10 01       	reta			
+
+00003e78 <cc2420_transmit>:
+    3e78:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    3e7c:	01 24       	jz	$+4      	;abs 0x3e80
+    3e7e:	2d 2c       	jc	$+92     	;abs 0x3eda
+    3e80:	d2 53 62 24 	inc.b	&0x2462	
+    3e84:	c2 93 4e 12 	tst.b	&0x124e	
+    3e88:	0a 24       	jz	$+22     	;abs 0x3e9e
+    3e8a:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    3e8e:	b0 13 f2 3a 	calla	#0x03af2	
+    3e92:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    3e94:	b0 13 ae 3c 	calla	#0x03cae	
+    3e98:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    3e9c:	01 3c       	jmp	$+4      	;abs 0x3ea0
+    3e9e:	2f 42       	mov	#4,	r15	;r2 As==10
+    3ea0:	b0 13 f2 3a 	calla	#0x03af2	
+    3ea4:	3f 40 16 05 	mov	#1302,	r15	;#0x0516
+    3ea8:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    3eac:	13 24       	jz	$+40     	;abs 0x3ed4
+    3eae:	b0 13 40 3c 	calla	#0x03c40	
+--
+00003ede <cc2420_send>:
+    3ede:	0b 14       	pushm.a	#1,	r11	
+    3ee0:	0b 4e       	mov	r14,	r11	
+    3ee2:	b0 13 14 3e 	calla	#0x03e14	
+    3ee6:	0f 4b       	mov	r11,	r15	
+    3ee8:	b0 13 78 3e 	calla	#0x03e78	
+    3eec:	0b 16       	popm.a	#1,	r11	
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Disassembly section headers]
+  0 .text         0000a2f6  00004000  00004000  000000d4  2**1
+  1 .rodata       000004e2  0000e2f8  0000e2f8  0000a3cc  2**2
+  2 .data         0000014a  00001100  0000e7da  0000a8ae  2**1
+  3 .bss          00001b36  0000124a  0000e924  0000a9f8  2**1
+  5 .vectors      00000020  0000ffe0  0000ffe0  0000a9f8  2**0
+
+[Important function symbols used for disassembly]
+00000072 A __I2CDCTL
+00000076 A __I2CDRB
+00000076 A __I2CDRW
+00000050 A __I2CIE
+00000051 A __I2CIFG
+0000011c A __I2CIV
+00000052 A __I2CNDAT
+00000118 A __I2COA
+00000073 A __I2CPSC
+0000011a A __I2CSA
+00000074 A __I2CSCLH
+00000075 A __I2CSCLL
+00000071 A __I2CTCTL
+0000427c W __isr_0
+00004314 T __isr_1
+0000d51e T __isr_10
+0000427c W __isr_11
+0000435a T __isr_12
+0000427c W __isr_13
+0000427c W __isr_14
+0000427c W __isr_2
+0000427c W __isr_3
+00004380 T __isr_4
+00004eda T __isr_5
+0000986a T __isr_6
+0000427c W __isr_7
+0000427c W __isr_8
+0000427c W __isr_9
+00004000 W __watchdog_support
+00004000 W _reset_vector__
+0000e34c R cc2420_aes_128_driver
+000043a0 T cc2420_arch_init
+000028ce B cc2420_authority_level_of_sender
+00004834 t cc2420_cca
+0000e350 R cc2420_driver
+00004b02 T cc2420_get_txpower
+00004df0 T cc2420_init
+00004ac0 T cc2420_interrupt
+000028cc B cc2420_last_correlation
+000028c8 B cc2420_last_rssi
+
+[Disassembly sample around important labels]
+0000403e <main>:
+    403e:	b0 12 f6 6f 	call	#0x6ff6	
+    4042:	b0 12 cc 4f 	call	#0x4fcc	
+    4046:	b0 12 96 98 	call	#0x9896	
+    404a:	b0 12 6a 72 	call	#0x726a	
+    404e:	0e 43       	clr	r14		
+    4050:	3f 40 2e 11 	mov	#4398,	r15	;#0x112e
+    4054:	b0 12 5c 73 	call	#0x735c	
+    4058:	b0 12 b4 55 	call	#0x55b4	
+    405c:	b0 12 60 d5 	call	#0xd560	
+    4060:	b0 12 fe b2 	call	#0xb2fe	
+    4064:	b0 12 08 70 	call	#0x7008	
+    4068:	b0 12 aa 73 	call	#0x73aa	
+    406c:	92 12 50 e3 	call	&0xe350	
+    4070:	92 12 92 e3 	call	&0xe392	
+    4074:	92 12 88 e5 	call	&0xe588	
+    4078:	5e 42 ef 28 	mov.b	&0x28ef,r14	
+    407c:	5f 42 ee 28 	mov.b	&0x28ee,r15	
+    4080:	8f 10       	swpb	r15		
+--
+0000435a <cc2420_timerb1_interrupt>:
+    435a:	0f 12       	push	r15		
+    435c:	1f 42 1e 01 	mov	&0x011e,r15	
+    4360:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    4364:	06 24       	jz	$+14     	;abs 0x4372
+    4366:	d2 53 d0 28 	inc.b	&0x28d0	
+    436a:	92 42 94 01 	mov	&0x0194,&0x28ca	
+    436e:	ca 28 
+    4370:	05 3c       	jmp	$+12     	;abs 0x437c
+    4372:	c2 43 d0 28 	mov.b	#0,	&0x28d0	;r3 As==00
+    4376:	92 42 94 01 	mov	&0x0194,&0x28d2	
+    437a:	d2 28 
+    437c:	3f 41       	pop	r15		
+    437e:	00 13       	reti			
+
+00004380 <cc2420_port1_interrupt>:
+    4380:	0f 12       	push	r15		
+    4382:	0e 12       	push	r14		
+    4384:	0d 12       	push	r13		
+    4386:	0c 12       	push	r12		
+    4388:	b0 12 c0 4a 	call	#0x4ac0	
+    438c:	0f 93       	tst	r15		
+    438e:	03 24       	jz	$+8      	;abs 0x4396
+    4390:	b1 c0 f0 00 	bic	#240,	8(r1)	;#0x00f0, 0x0008(r1)
+    4394:	08 00 
+    4396:	3c 41       	pop	r12		
+    4398:	3d 41       	pop	r13		
+    439a:	3e 41       	pop	r14		
+    439c:	3f 41       	pop	r15		
+    439e:	00 13       	reti			
+
+000043a0 <cc2420_arch_init>:
+    43a0:	b0 12 ce b2 	call	#0xb2ce	
+    43a4:	e2 d2 1e 00 	bis.b	#4,	&0x001e	;r2 As==10
+    43a8:	f2 d0 20 00 	bis.b	#32,	&0x001e	;#0x0020
+    43ac:	1e 00 
+    43ae:	f2 d0 40 00 	bis.b	#64,	&0x001e	;#0x0040
+    43b2:	1e 00 
+    43b4:	e2 d2 1d 00 	bis.b	#4,	&0x001d	;r2 As==10
+    43b8:	30 41       	ret			
+
+000043ba <get_object>:
+    43ba:	1f 43       	mov	#1,	r15	;r3 As==01
+    43bc:	30 41       	ret			
+
+000043be <set_object>:
+    43be:	1f 43       	mov	#1,	r15	;r3 As==01
+    43c0:	30 41       	ret			
+
+000043c2 <strobe>:
+--
+00004568 <cc2420_receiving_packet>:
+    4568:	5f 42 1c 00 	mov.b	&0x001c,r15	
+    456c:	12 c3       	clrc			
+    456e:	4f 10       	rrc.b	r15		
+    4570:	1f f3       	and	#1,	r15	;r3 As==01
+    4572:	30 41       	ret			
+
+00004574 <pending_packet>:
+    4574:	5f 42 20 00 	mov.b	&0x0020,r15	
+    4578:	1f f3       	and	#1,	r15	;r3 As==01
+    457a:	30 41       	ret			
+
+0000457c <wait_for_transmission>:
+    457c:	0b 12       	push	r11		
+    457e:	b0 12 a4 98 	call	#0x98a4	
+    4582:	3b 40 34 f3 	mov	#-3276,	r11	;#0xf334
+    4586:	0b 8f       	sub	r15,	r11	
+    4588:	b0 12 2e 45 	call	#0x452e	
+    458c:	7f f2       	and.b	#8,	r15	;r2 As==11
+--
+00004724 <cc2420_prepare>:
+    4724:	0b 12       	push	r11		
+    4726:	0a 12       	push	r10		
+    4728:	21 83       	decd	r1		
+    472a:	0a 4f       	mov	r15,	r10	
+    472c:	0b 4e       	mov	r14,	r11	
+    472e:	3e 90 7e 00 	cmp	#126,	r14	;#0x007e
+    4732:	16 2c       	jc	$+46     	;abs 0x4760
+    4734:	d2 53 56 12 	inc.b	&0x1256	
+    4738:	3f 40 09 00 	mov	#9,	r15	;#0x0009
+    473c:	b0 12 c2 43 	call	#0x43c2	
+    4740:	4f 4b       	mov.b	r11,	r15	
+    4742:	6f 53       	incd.b	r15		
+    4744:	c1 4f 00 00 	mov.b	r15,	0(r1)	;0x0000(r1)
+    4748:	1e 43       	mov	#1,	r14	;r3 As==01
+    474a:	0f 41       	mov	r1,	r15	
+    474c:	b0 12 f2 44 	call	#0x44f2	
+    4750:	0e 4b       	mov	r11,	r14	
+    4752:	0f 4a       	mov	r10,	r15	
+--
+0000476a <cc2420_on>:
+    476a:	c2 93 59 12 	tst.b	&0x1259	
+    476e:	0c 20       	jnz	$+26     	;abs 0x4788
+    4770:	c2 93 56 12 	tst.b	&0x1256	
+    4774:	03 24       	jz	$+8      	;abs 0x477c
+    4776:	d2 43 57 12 	mov.b	#1,	&0x1257	;r3 As==01
+    477a:	06 3c       	jmp	$+14     	;abs 0x4788
+    477c:	d2 43 56 12 	mov.b	#1,	&0x1256	;r3 As==01
+    4780:	b0 12 4e 45 	call	#0x454e	
+    4784:	b0 12 58 46 	call	#0x4658	
+    4788:	1f 43       	mov	#1,	r15	;r3 As==01
+    478a:	30 41       	ret			
+
+0000478c <cc2420_transmit>:
+    478c:	3f 90 7d 00 	cmp	#125,	r15	;#0x007d
+    4790:	01 24       	jz	$+4      	;abs 0x4794
+    4792:	2d 2c       	jc	$+92     	;abs 0x47ee
+    4794:	d2 53 56 12 	inc.b	&0x1256	
+    4798:	c2 93 0a 11 	tst.b	&0x110a	
+    479c:	0a 24       	jz	$+22     	;abs 0x47b2
+    479e:	3f 40 03 00 	mov	#3,	r15	;#0x0003
+    47a2:	b0 12 c2 43 	call	#0x43c2	
+    47a6:	6f 43       	mov.b	#2,	r15	;r3 As==10
+    47a8:	b0 12 9e 45 	call	#0x459e	
+    47ac:	3f 40 05 00 	mov	#5,	r15	;#0x0005
+    47b0:	01 3c       	jmp	$+4      	;abs 0x47b4
+    47b2:	2f 42       	mov	#4,	r15	;r2 As==10
+    47b4:	b0 12 c2 43 	call	#0x43c2	
+    47b8:	3f 40 20 03 	mov	#800,	r15	;#0x0320
+    47bc:	e2 b3 1c 00 	bit.b	#2,	&0x001c	;r3 As==10
+    47c0:	13 24       	jz	$+40     	;abs 0x47e8
+    47c2:	b0 12 2e 45 	call	#0x452e	
+--
+000047f2 <cc2420_send>:
+    47f2:	0b 12       	push	r11		
+    47f4:	0b 4e       	mov	r14,	r11	
+    47f6:	b0 12 24 47 	call	#0x4724	
+    47fa:	0f 4b       	mov	r11,	r15	
+    47fc:	b0 12 8c 47 	call	#0x478c	
+    4800:	3b 41       	pop	r11		
+    4802:	30 41       	ret			
+
+00004804 <cc2420_off>:
+    4804:	c2 93 59 12 	tst.b	&0x1259	
+    4808:	13 24       	jz	$+40     	;abs 0x4830
+    480a:	c2 93 56 12 	tst.b	&0x1256	
+    480e:	03 24       	jz	$+8      	;abs 0x4816
+    4810:	d2 43 58 12 	mov.b	#1,	&0x1258	;r3 As==01
+    4814:	0d 3c       	jmp	$+28     	;abs 0x4830

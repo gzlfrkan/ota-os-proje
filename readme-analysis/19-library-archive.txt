@@ -1,0 +1,1397 @@
+=== 19. LIBRARY / ARCHIVE ANALYSIS ===
+./build/sky/obj/aes-128.o
+./build/sky/obj/anti-replay.o
+./build/sky/obj/assert.o
+./build/sky/obj/atomic.o
+./build/sky/obj/autostart.o
+./build/sky/obj/battery-sensor.o
+./build/sky/obj/button-hal.o
+./build/sky/obj/button-sensor.o
+./build/sky/obj/cc2420-arch-sfd.o
+./build/sky/obj/cc2420-arch.o
+./build/sky/obj/cc2420-tsch-15ms.o
+./build/sky/obj/cc2420.o
+./build/sky/obj/ccm-star-packetbuf.o
+./build/sky/obj/ccm-star.o
+./build/sky/obj/cfs-coffee.o
+./build/sky/obj/circular-list.o
+./build/sky/obj/clock.o
+./build/sky/obj/compower.o
+./build/sky/obj/contiki-main.o
+./build/sky/obj/contiki-sky-platform.o
+./build/sky/obj/crc16.o
+./build/sky/obj/csma-output.o
+./build/sky/obj/csma-security.o
+./build/sky/obj/csma.o
+./build/sky/obj/ctimer.o
+./build/sky/obj/dbl-circ-list.o
+./build/sky/obj/dbl-list.o
+./build/sky/obj/ds2411.o
+./build/sky/obj/energest.o
+./build/sky/obj/etimer.o
+./build/sky/obj/flash.o
+./build/sky/obj/frame802154.o
+./build/sky/obj/frame802154e-ie.o
+./build/sky/obj/framer-802154.o
+./build/sky/obj/gpio-hal.o
+./build/sky/obj/heapmem.o
+./build/sky/obj/hexconv.o
+./build/sky/obj/i2c.o
+./build/sky/obj/ifft.o
+./build/sky/obj/int-master.o
+./build/sky/obj/ip64-addr.o
+./build/sky/obj/leds-arch.o
+./build/sky/obj/leds.o
+./build/sky/obj/light-sensor.o
+./build/sky/obj/link-stats.o
+./build/sky/obj/linkaddr.o
+./build/sky/obj/list.o
+./build/sky/obj/log.o
+./build/sky/obj/lpm.o
+./build/sky/obj/mac-sequence.o
+./build/sky/obj/mac.o
+./build/sky/obj/memb.o
+./build/sky/obj/msp430.o
+./build/sky/obj/mutex.o
+./build/sky/obj/nbr-table.o
+./build/sky/obj/net-debug.o
+./build/sky/obj/netstack.o
+./build/sky/obj/node-id.o
+./build/sky/obj/nullframer.o
+./build/sky/obj/nullradio.o
+./build/sky/obj/packetbuf.o
+./build/sky/obj/platform.o
+./build/sky/obj/process.o
+./build/sky/obj/psock.o
+./build/sky/obj/queuebuf.o
+./build/sky/obj/random.o
+./build/sky/obj/ringbuf.o
+./build/sky/obj/ringbufindex.o
+./build/sky/obj/rpl-dag-root.o
+./build/sky/obj/rpl-dag.o
+./build/sky/obj/rpl-ext-header.o
+./build/sky/obj/rpl-icmp6.o
+./build/sky/obj/rpl-mrhof.o
+./build/sky/obj/rpl-nbr-policy.o
+./build/sky/obj/rpl-neighbor.o
+./build/sky/obj/rpl-of0.o
+./build/sky/obj/rpl-timers.o
+./build/sky/obj/rpl.o
+./build/sky/obj/rtimer-arch.o
+./build/sky/obj/rtimer.o
+./build/sky/obj/sensors.o
+./build/sky/obj/serial-line.o
+./build/sky/obj/sht11-sensor.o
+./build/sky/obj/sht11.o
+./build/sky/obj/sicslowpan.o
+./build/sky/obj/simple-udp.o
+./build/sky/obj/sky-sensors.o
+./build/sky/obj/slip.o
+./build/sky/obj/slip_uart1.o
+./build/sky/obj/spi-legacy.o
+./build/sky/obj/spi.o
+./build/sky/obj/stack-check.o
+./build/sky/obj/stimer.o
+./build/sky/obj/tcp-socket.o
+./build/sky/obj/tcpip.o
+./build/sky/obj/timer.o
+./build/sky/obj/trickle-timer.o
+./build/sky/obj/uart1-putchar.o
+./build/sky/obj/uart1.o
+./build/sky/obj/udp-client.o
+./build/sky/obj/udp-server.o
+./build/sky/obj/udp-socket.o
+./build/sky/obj/uip-ds6-nbr.o
+./build/sky/obj/uip-ds6-route.o
+./build/sky/obj/uip-ds6.o
+./build/sky/obj/uip-icmp6.o
+./build/sky/obj/uip-ipchksum.o
+./build/sky/obj/uip-nameserver.o
+./build/sky/obj/uip-nd6.o
+./build/sky/obj/uip-packetqueue.o
+./build/sky/obj/uip-sr.o
+./build/sky/obj/uip-udp-packet.o
+./build/sky/obj/uip6.o
+./build/sky/obj/uipbuf.o
+./build/sky/obj/uiplib.o
+./build/sky/obj/watchdog.o
+./build/sky/obj/xmem.o
+./build/z1/obj/adxl345.o
+./build/z1/obj/aes-128.o
+./build/z1/obj/anti-replay.o
+./build/z1/obj/assert.o
+./build/z1/obj/atomic.o
+./build/z1/obj/autostart.o
+./build/z1/obj/battery-sensor.o
+./build/z1/obj/bitrev.o
+./build/z1/obj/button-hal.o
+./build/z1/obj/button-sensor.o
+./build/z1/obj/cbor.o
+./build/z1/obj/cc2420-arch-sfd.o
+./build/z1/obj/cc2420-arch.o
+./build/z1/obj/cc2420-tsch-15ms.o
+./build/z1/obj/cc2420.o
+./build/z1/obj/ccm-star-packetbuf.o
+./build/z1/obj/ccm-star.o
+./build/z1/obj/cfs-coffee.o
+./build/z1/obj/circular-list.o
+./build/z1/obj/clock.o
+./build/z1/obj/compower.o
+./build/z1/obj/contiki-main.o
+./build/z1/obj/crc16.o
+./build/z1/obj/csma-output.o
+./build/z1/obj/csma-security.o
+./build/z1/obj/csma.o
+./build/z1/obj/csprng.o
+./build/z1/obj/ctimer.o
+./build/z1/obj/dbl-circ-list.o
+./build/z1/obj/dbl-list.o
+./build/z1/obj/ecc-curve.o
+./build/z1/obj/energest.o
+./build/z1/obj/etimer.o
+./build/z1/obj/flash.o
+./build/z1/obj/frame802154.o
+./build/z1/obj/frame802154e-ie.o
+./build/z1/obj/framer-802154.o
+./build/z1/obj/gpio-hal.o
+./build/z1/obj/heapmem.o
+./build/z1/obj/hexconv.o
+./build/z1/obj/i2cmaster.o
+./build/z1/obj/ifft.o
+./build/z1/obj/int-master.o
+./build/z1/obj/ip64-addr.o
+./build/z1/obj/iq-seeder.o
+./build/z1/obj/leds-arch.o
+./build/z1/obj/leds.o
+./build/z1/obj/light-sensor.o
+./build/z1/obj/link-stats.o
+./build/z1/obj/linkaddr.o
+./build/z1/obj/list.o
+./build/z1/obj/log.o
+./build/z1/obj/lpm.o
+./build/z1/obj/mac-sequence.o
+./build/z1/obj/memb.o
+./build/z1/obj/msp430.o
+./build/z1/obj/mutex.o
+./build/z1/obj/nbr-table.o
+./build/z1/obj/net-debug.o
+./build/z1/obj/netstack.o
+./build/z1/obj/node-id-z1.o
+./build/z1/obj/node-id.o
+./build/z1/obj/nullframer.o
+./build/z1/obj/nullradio.o
+./build/z1/obj/ota-metadata.o
+./build/z1/obj/packetbuf.o
+./build/z1/obj/platform.o
+./build/z1/obj/process-mutex.o
+./build/z1/obj/process.o
+./build/z1/obj/psock.o
+./build/z1/obj/queuebuf.o
+./build/z1/obj/random.o
+./build/z1/obj/ringbuf.o
+./build/z1/obj/ringbufindex.o
+./build/z1/obj/rpl-dag-root.o
+./build/z1/obj/rpl-dag.o
+./build/z1/obj/rpl-ext-header.o
+./build/z1/obj/rpl-icmp6.o
+./build/z1/obj/rpl-mrhof.o
+./build/z1/obj/rpl-nbr-policy.o
+./build/z1/obj/rpl-neighbor.o
+./build/z1/obj/rpl-of0.o
+./build/z1/obj/rpl-timers.o
+./build/z1/obj/rpl.o
+./build/z1/obj/rtimer-arch.o
+./build/z1/obj/rtimer.o
+./build/z1/obj/sensors.o
+./build/z1/obj/serial-line.o
+./build/z1/obj/sfc16-prng.o
+./build/z1/obj/sfc32-prng.o
+./build/z1/obj/sha-256.o
+./build/z1/obj/sicslowpan.o
+./build/z1/obj/simple-udp.o
+./build/z1/obj/sky-sensors.o
+./build/z1/obj/slip.o
+./build/z1/obj/slip_uart0.o
+./build/z1/obj/spi-legacy.o
+./build/z1/obj/spi.o
+./build/z1/obj/stack-check.o
+./build/z1/obj/stimer.o
+./build/z1/obj/tcp-socket.o
+./build/z1/obj/tcpip.o
+./build/z1/obj/temperature-sensor.o
+./build/z1/obj/timer.o
+./build/z1/obj/tmp102.o
+./build/z1/obj/trickle-timer.o
+./build/z1/obj/uart-putchar.o
+./build/z1/obj/uart0.o
+./build/z1/obj/udp-client.o
+./build/z1/obj/udp-server.o
+./build/z1/obj/udp-socket.o
+./build/z1/obj/uip-ds6-nbr.o
+./build/z1/obj/uip-ds6-route.o
+./build/z1/obj/uip-ds6.o
+./build/z1/obj/uip-icmp6.o
+./build/z1/obj/uip-ipchksum.o
+./build/z1/obj/uip-nameserver.o
+./build/z1/obj/uip-nd6.o
+./build/z1/obj/uip-packetqueue.o
+./build/z1/obj/uip-sr.o
+./build/z1/obj/uip-udp-packet.o
+./build/z1/obj/uip6.o
+./build/z1/obj/uipbuf.o
+./build/z1/obj/uiplib.o
+./build/z1/obj/watchdog.o
+./build/z1/obj/xmem.o
+./build/z1/obj/z1-phidgets.o
+./build/z1/obj/z1-sensors.o
+
+OBJECT: ./build/sky/obj/aes-128.o
+./build/sky/obj/aes-128.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/anti-replay.o
+./build/sky/obj/anti-replay.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/assert.o
+./build/sky/obj/assert.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/atomic.o
+./build/sky/obj/atomic.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/autostart.o
+./build/sky/obj/autostart.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/battery-sensor.o
+./build/sky/obj/battery-sensor.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/button-hal.o
+./build/sky/obj/button-hal.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/button-sensor.o
+./build/sky/obj/button-sensor.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/cc2420-arch-sfd.o
+./build/sky/obj/cc2420-arch-sfd.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/cc2420-arch.o
+./build/sky/obj/cc2420-arch.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/cc2420-tsch-15ms.o
+./build/sky/obj/cc2420-tsch-15ms.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/cc2420.o
+./build/sky/obj/cc2420.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ccm-star-packetbuf.o
+./build/sky/obj/ccm-star-packetbuf.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ccm-star.o
+./build/sky/obj/ccm-star.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/cfs-coffee.o
+./build/sky/obj/cfs-coffee.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/circular-list.o
+./build/sky/obj/circular-list.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/clock.o
+./build/sky/obj/clock.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/compower.o
+./build/sky/obj/compower.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/contiki-main.o
+./build/sky/obj/contiki-main.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/contiki-sky-platform.o
+./build/sky/obj/contiki-sky-platform.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/crc16.o
+./build/sky/obj/crc16.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/csma-output.o
+./build/sky/obj/csma-output.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/csma-security.o
+./build/sky/obj/csma-security.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/csma.o
+./build/sky/obj/csma.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ctimer.o
+./build/sky/obj/ctimer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/dbl-circ-list.o
+./build/sky/obj/dbl-circ-list.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/dbl-list.o
+./build/sky/obj/dbl-list.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ds2411.o
+./build/sky/obj/ds2411.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/energest.o
+./build/sky/obj/energest.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/etimer.o
+./build/sky/obj/etimer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/flash.o
+./build/sky/obj/flash.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/frame802154.o
+./build/sky/obj/frame802154.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/frame802154e-ie.o
+./build/sky/obj/frame802154e-ie.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/framer-802154.o
+./build/sky/obj/framer-802154.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/gpio-hal.o
+./build/sky/obj/gpio-hal.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/heapmem.o
+./build/sky/obj/heapmem.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/hexconv.o
+./build/sky/obj/hexconv.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/i2c.o
+./build/sky/obj/i2c.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ifft.o
+./build/sky/obj/ifft.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/int-master.o
+./build/sky/obj/int-master.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ip64-addr.o
+./build/sky/obj/ip64-addr.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/leds-arch.o
+./build/sky/obj/leds-arch.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/leds.o
+./build/sky/obj/leds.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/light-sensor.o
+./build/sky/obj/light-sensor.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/link-stats.o
+./build/sky/obj/link-stats.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/linkaddr.o
+./build/sky/obj/linkaddr.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/list.o
+./build/sky/obj/list.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/log.o
+./build/sky/obj/log.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/lpm.o
+./build/sky/obj/lpm.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/mac-sequence.o
+./build/sky/obj/mac-sequence.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/mac.o
+./build/sky/obj/mac.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/memb.o
+./build/sky/obj/memb.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/msp430.o
+./build/sky/obj/msp430.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/mutex.o
+./build/sky/obj/mutex.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/nbr-table.o
+./build/sky/obj/nbr-table.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/net-debug.o
+./build/sky/obj/net-debug.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/netstack.o
+./build/sky/obj/netstack.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/node-id.o
+./build/sky/obj/node-id.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/nullframer.o
+./build/sky/obj/nullframer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/nullradio.o
+./build/sky/obj/nullradio.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/packetbuf.o
+./build/sky/obj/packetbuf.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/platform.o
+./build/sky/obj/platform.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/process.o
+./build/sky/obj/process.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/psock.o
+./build/sky/obj/psock.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/queuebuf.o
+./build/sky/obj/queuebuf.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/random.o
+./build/sky/obj/random.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ringbuf.o
+./build/sky/obj/ringbuf.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/ringbufindex.o
+./build/sky/obj/ringbufindex.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-dag-root.o
+./build/sky/obj/rpl-dag-root.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-dag.o
+./build/sky/obj/rpl-dag.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-ext-header.o
+./build/sky/obj/rpl-ext-header.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-icmp6.o
+./build/sky/obj/rpl-icmp6.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-mrhof.o
+./build/sky/obj/rpl-mrhof.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-nbr-policy.o
+./build/sky/obj/rpl-nbr-policy.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-neighbor.o
+./build/sky/obj/rpl-neighbor.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-of0.o
+./build/sky/obj/rpl-of0.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl-timers.o
+./build/sky/obj/rpl-timers.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rpl.o
+./build/sky/obj/rpl.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rtimer-arch.o
+./build/sky/obj/rtimer-arch.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/rtimer.o
+./build/sky/obj/rtimer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/sensors.o
+./build/sky/obj/sensors.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/serial-line.o
+./build/sky/obj/serial-line.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/sht11-sensor.o
+./build/sky/obj/sht11-sensor.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/sht11.o
+./build/sky/obj/sht11.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/sicslowpan.o
+./build/sky/obj/sicslowpan.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/simple-udp.o
+./build/sky/obj/simple-udp.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/sky-sensors.o
+./build/sky/obj/sky-sensors.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/slip.o
+./build/sky/obj/slip.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/slip_uart1.o
+./build/sky/obj/slip_uart1.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/spi-legacy.o
+./build/sky/obj/spi-legacy.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/spi.o
+./build/sky/obj/spi.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/stack-check.o
+./build/sky/obj/stack-check.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/stimer.o
+./build/sky/obj/stimer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/tcp-socket.o
+./build/sky/obj/tcp-socket.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/tcpip.o
+./build/sky/obj/tcpip.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/timer.o
+./build/sky/obj/timer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/trickle-timer.o
+./build/sky/obj/trickle-timer.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uart1-putchar.o
+./build/sky/obj/uart1-putchar.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uart1.o
+./build/sky/obj/uart1.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/udp-client.o
+./build/sky/obj/udp-client.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/udp-server.o
+./build/sky/obj/udp-server.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/udp-socket.o
+./build/sky/obj/udp-socket.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-ds6-nbr.o
+./build/sky/obj/uip-ds6-nbr.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-ds6-route.o
+./build/sky/obj/uip-ds6-route.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-ds6.o
+./build/sky/obj/uip-ds6.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-icmp6.o
+./build/sky/obj/uip-icmp6.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-ipchksum.o
+./build/sky/obj/uip-ipchksum.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-nameserver.o
+./build/sky/obj/uip-nameserver.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-nd6.o
+./build/sky/obj/uip-nd6.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-packetqueue.o
+./build/sky/obj/uip-packetqueue.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-sr.o
+./build/sky/obj/uip-sr.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip-udp-packet.o
+./build/sky/obj/uip-udp-packet.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uip6.o
+./build/sky/obj/uip6.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uipbuf.o
+./build/sky/obj/uipbuf.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/uiplib.o
+./build/sky/obj/uiplib.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/watchdog.o
+./build/sky/obj/watchdog.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/sky/obj/xmem.o
+./build/sky/obj/xmem.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/z1/obj/adxl345.o
+./build/z1/obj/adxl345.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/z1/obj/aes-128.o
+./build/z1/obj/aes-128.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+OBJECT: ./build/z1/obj/anti-replay.o
+./build/z1/obj/anti-replay.o: ELF 32-bit LSB relocatable, TI msp430, version 1 (embedded), not stripped
+
+----------------------------------------
+FILE: ./new-firmware.z1
+./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+000033c4 T __divhi3
+00003436 T __divsi3
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+00013eba t call_vuprintf
+00003f7a t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000062f8 T memb_free
+00006354 T memb_numfree
+0001484c T memcpy
+00014934 T memmove
+00014a1c T memset
+00013e88 T printf
+00006f58 T queuebuf_free
+00006eee T queuebuf_numfree
+0000777a T rpl_dag_ready_to_advertise
+00013ef0 T snprintf
+0000c7a8 T tmp102_read_reg
+0000c806 T tmp102_read_temp_x100
+000111a8 T uart0_writeb
+00012ca0 T uip_sr_free_all
+00014082 T vuprintf
+00013d9c t wait_ready
+
+[Source/library path strings]
+free_queued_packet, queue length %d, free packets %zu
+, len %u, seqno %u, queue length %d, free packets %zu
+output: fragmentation needed. fragments: %u, free queuebufs: %zu
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+
+----------------------------------------
+FILE: ./udp-client.z1
+./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+000033c4 T __divhi3
+00003436 T __divsi3
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+0000c6fa t call_vuprintf
+00003f7a t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005c46 T memb_free
+00005ca2 T memb_numfree
+0000d08c T memcpy
+0000d174 T memmove
+0000d25c T memset
+0000c6c8 T printf
+000068a6 T queuebuf_free
+0000683c T queuebuf_numfree
+00006c86 T rpl_dag_ready_to_advertise
+0000c730 T snprintf
+0000a780 T tmp102_read_reg
+0000a7de T tmp102_read_temp_x100
+0000a85a T uart0_writeb
+0000bae2 T uip_sr_free_all
+0000c8c2 T vuprintf
+0000c5dc t wait_ready
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: ./udp-server.z1
+./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+000033c4 T __divhi3
+00003436 T __divsi3
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+0000c608 t call_vuprintf
+00003f7a t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005c46 T memb_free
+00005ca2 T memb_numfree
+0000cf9a T memcpy
+0000d082 T memmove
+0000d16a T memset
+0000c5d6 T printf
+000068a6 T queuebuf_free
+0000683c T queuebuf_numfree
+00006c86 T rpl_dag_ready_to_advertise
+0000c63e T snprintf
+0000a780 T tmp102_read_reg
+0000a7de T tmp102_read_temp_x100
+0000a85a T uart0_writeb
+0000b9f0 T uip_sr_free_all
+0000c7d0 T vuprintf
+0000c4ea t wait_ready
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+00008ae0 T ClockP_startup
+00008a28 t ClockP_startup.part.1
+0000be38 T I2CCC26XX_close
+0000fa30 T NOROM_OSC_HPOSCRtcCompensate
+0000c804 T PIN_close
+000097a4 t RF_issueRadioFreeCb
+0000a5f8 t RF_ratFreeChannel
+0000d9c8 T SPICC26X2DMA_close
+200040a8 b SwiP_readyList
+200040c8 b SwiP_readyMask
+0000e790 T TRNG_close
+0000f2a8 T UARTCC26XX_close
+0000f3c4 T UARTCC26XX_read
+0000efb8 T UARTCC26XX_readCancel
+0000e944 T UARTCC26XX_readPolling
+0000eebc T UARTCC26XX_write
+0000f20c T UARTCC26XX_writeCancel
+0000eeb4 T UARTCC26XX_writePolling
+0000e92c T UART_read
+0000e934 T UART_write
+0000bd94 T UDMACC26XX_close
+0000f610 T WatchdogCC26XX_close
+000003d0 W __aeabi_idiv0
+000003d0 W __aeabi_ldiv0
+00000040 T __aeabi_ldivmod
+000000e0 T __aeabi_uldivmod
+00000110 T __udivmoddi4
+0000057c t get_sync_sensor_readings
+000017a0 T gpio_hal_arch_no_port_read_pin
+0001036c T int_master_read_and_disable
+00010466 T memb_free
+000104ae T memb_numfree
+00010c58 T memcpy
+00010c74 T memmove
+00010ca8 T memset
+00002344 T printf
+00002be8 T queuebuf_free
+00002b98 T queuebuf_numfree
+00003118 T rpl_dag_ready_to_advertise
+00010862 T snprintf
+000003d4 T strlen
+00007250 T uart0_write
+0000803c T uip_sr_free_all
+00006644 T vsnprintf
+
+[Source/library path strings]
+GCC: (GNU Arm Embedded Toolchain 9-2020-q2-update) 9.3.1 20200408 (release)
+GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM/embedded-7-branch revision 255204]
+GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150529 (release) [ARM/embedded-4_9-branch revision 227977]
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+TRNGCC26XX.c
+TRNGCC26XX.h
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+WatchdogCC26XX.c
+WatchdogCC26XX.h
+/db/vendors/linaro/gcc-arm-none-eabi-7-2017-q4-major/lib/gcc/arm-none-eabi/7.2.1/include
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\machine
+c:\ti\ccs6.2.0.00019_win32-beta2\ccsv6\tools\compiler\gcc-arm-none-eabi-4_9-2015q3\arm-none-eabi\include\sys
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+00003400 T __divhi3
+00003472 T __divsi3
+00003432 T __modhi3
+000034b4 T __modsi3
+000033b8 T __mulsi3
+00003510 T __udivdi3
+000033de T __udivhi3
+0000354c T __udivmoddi4
+0000343a T __udivsi3
+00003928 t accm_read_axis.part.0
+0000387e t accm_read_reg
+00003826 t accm_write_reg
+00003854 t accm_write_stream
+00014616 t call_vuprintf
+00003fe2 t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000063c2 T memb_free
+0000641e T memb_numfree
+00014fa8 T memcpy
+00015090 T memmove
+00015178 T memset
+000145e4 T printf
+00007170 T queuebuf_free
+00007106 T queuebuf_numfree
+00007992 T rpl_dag_ready_to_advertise
+0001464c T snprintf
+0001190a T tmp102_read_reg
+00011968 T tmp102_read_temp_x100
+000119e4 T uart0_writeb
+0001346a T uip_sr_free_all
+000147de T vuprintf
+000144f8 t wait_ready
+
+[Source/library path strings]
+free_queued_packet, queue length %d, free packets %zu
+, len %u, seqno %u, queue length %d, free packets %zu
+output: fragmentation needed. fragments: %u, free queuebufs: %zu
+output: dropping packet, not enough free bufs (needed: %zu, free: %zu)
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+0000de8a T __divhi3
+0000df04 T __divsi3
+0000debc T __modhi3
+0000df46 T __modsi3
+0000de3c T __mulsi3
+0000dfae T __udivdi3
+0000de68 T __udivhi3
+0000e002 T __udivmoddi4
+0000dec4 T __udivsi3
+0000d32a t call_vuprintf
+0000489c t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00006882 T memb_free
+000068de T memb_numfree
+0000dbdc T memcpy
+0000dcd6 T memmove
+0000ddd0 T memset
+0000d2f8 T printf
+000074e6 T queuebuf_free
+00007478 T queuebuf_numfree
+000078f0 T rpl_dag_ready_to_advertise
+0000d364 T snprintf
+0000b640 T uart1_writeb
+0000c85a T uip_sr_free_all
+0000d512 T vuprintf
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+000033ca T __divhi3
+0000343c T __divsi3
+000033fc T __modhi3
+0000347e T __modsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+0000c274 t call_vuprintf
+00003f74 t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005c62 T memb_free
+00005cbe T memb_numfree
+0000cc06 T memcpy
+0000ccee T memmove
+0000cdd6 T memset
+0000c242 T printf
+00006872 T queuebuf_free
+00006808 T queuebuf_numfree
+00006c52 T rpl_dag_ready_to_advertise
+0000c2aa T snprintf
+0000a612 T tmp102_read_reg
+0000a670 T tmp102_read_temp_x100
+0000a6ec T uart0_writeb
+0000b768 T uip_sr_free_all
+0000c43c T vuprintf
+0000c156 t wait_ready
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Library/runtime/helper symbols]
+0000000000016cde T __wrap_printf
+000000000001e283 t buffer_free
+000000000001601e T cfs_close
+0000000000016317 T cfs_closedir
+0000000000016033 T cfs_read
+0000000000016300 T cfs_readdir
+00000000000160fa T cfs_write
+000000000001e89f t domain_set_free
+00000000000187f6 T eeprom_read
+0000000000018895 T eeprom_write
+                 U free@@GLIBC_2.2.5
+000000000001bbac T gpio_hal_arch_no_port_read_pin
+000000000001bca1 T gpio_hal_arch_no_port_read_pins
+000000000001bbd9 T gpio_hal_arch_no_port_write_pin
+000000000001bcef T gpio_hal_arch_no_port_write_pins
+000000000001c63d T int_master_read_and_disable
+000000000001df97 T memb_free
+000000000001e081 T memb_numfree
+                 U memcpy@@GLIBC_2.14
+                 U memmove@@GLIBC_2.2.5
+                 U memset@@GLIBC_2.2.5
+000000000006c064 b next_free
+0000000000054680 d packet_ready.19
+0000000000016cde T printf
+000000000002413b T psock_readbuf_len
+000000000002401b T psock_readto
+0000000000024490 T queuebuf_free
+0000000000024325 T queuebuf_numfree
+00000000000170cc t radio_read
+0000000000022b28 t radio_read
+00000000000274d2 T rpl_dag_ready_to_advertise
+000000000001e79e t seed_set_free
+000000000002ce2a T slip_arch_writeb
+0000000000034bb7 T slip_write
+                 U snprintf@@GLIBC_2.2.5
+                 U strcmp@@GLIBC_2.2.5
+                 U strlen@@GLIBC_2.2.5
+00000000000377b7 T tsch_queue_free_packet
+00000000000377f6 T tsch_queue_free_packets_to
+0000000000037979 T tsch_queue_free_unused_neighbors
+000000000003d381 T udp_socket_close
+00000000000404ae T uip_packetqueue_free
+0000000000040b3e T uip_sr_free_all
+                 U vasprintf@@GLIBC_2.2.5
+
+[Source/library path strings]
+memcpy
+memset
+memb_free
+memb_numfree
+queuebuf_numfree
+queuebuf_free
+uip_sr_free_all
+uip_packetqueue_free
+tsch_queue_free_packet
+tsch_queue_free_packets_to
+tsch_queue_free_unused_neighbors
+libc.so.6
+GLIBC_2.2.5
+GLIBC_2.14
+GLIBC_2.4
+GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.2) 9.4.0
+GCC: (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
+crtstuff.c
+buffer_free
+seed_set_free
+domain_set_free
+next_free
+free@@GLIBC_2.2.5
+tsch_queue_free_unused_neighbors
+pthread_getattr_np@@GLIBC_2.2.5
+strncmp@@GLIBC_2.2.5
+memb_free
+tsch_queue_free_packet
+vasprintf@@GLIBC_2.2.5
+strlen@@GLIBC_2.2.5
+__stack_chk_fail@@GLIBC_2.4
+strchr@@GLIBC_2.2.5
+memb_numfree
+swapcontext@@GLIBC_2.2.5
+snprintf@@GLIBC_2.2.5
+memset@@GLIBC_2.2.5
+pthread_attr_getstack@@GLIBC_2.2.5
+srand@@GLIBC_2.2.5
+memcmp@@GLIBC_2.2.5
+uip_sr_free_all
+strcmp@@GLIBC_2.2.5
+queuebuf_numfree
+strtol@@GLIBC_2.2.5
+memcpy@@GLIBC_2.14
+makecontext@@GLIBC_2.2.5
+uip_packetqueue_free
+tsch_queue_free_packets_to
+memmove@@GLIBC_2.2.5
+pthread_self@@GLIBC_2.2.5
+perror@@GLIBC_2.2.5
+queuebuf_free
+getcontext@@GLIBC_2.2.5
+__cxa_finalize@@GLIBC_2.2.5
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+000037fe t accm_read_axis.part.0
+00003754 t accm_read_reg
+000036fc t accm_write_reg
+0000372a t accm_write_stream
+00003e86 t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005808 T memb_free
+00007152 T memcpy
+0000723a T memset
+00006802 T printf
+0000619a T queuebuf_free
+0000658a T tmp102_read_reg
+000065e8 T tmp102_read_temp_x100
+00006664 T uart0_writeb
+00006988 T vuprintf
+00006716 t wait_ready
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+0000806c T __mulsi3
+00008158 T __udivdi3
+00008098 T __udivhi3
+000081ac T __udivmoddi4
+000080ba T __udivsi3
+00004930 t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000065bc T memb_free
+00007f06 T memcpy
+00008000 T memset
+00007698 T printf
+00006fb8 T queuebuf_free
+000074fc T uart1_writeb
+0000783c T vuprintf
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+00009606 T __divsf3
+0000992e T __fixsfsi
+00008e76 T __fixunssfdi
+00008e34 T __fixunssfsi
+00009886 T __floatsisf
+00008f9a T __floatundisf
+000099ba T __floatunsisf
+0000a944 T __muldi3
+000093f6 T __mulsf3
+0000a918 T __mulsi3
+0000aa7a T __udivdi3
+0000a9ba T __udivhi3
+0000aace T __udivmoddi4
+0000a9dc T __udivsi3
+00009efe t call_vuprintf
+0000482e t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000064c6 T memb_free
+0000a7b2 T memcpy
+0000a8ac T memset
+00009ecc T printf
+00007792 T queuebuf_free
+00009f38 T sprintf
+00007d62 T uart1_writeb
+0000a0e8 T vuprintf
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+000084c0 T __divsf3
+00008cdc T __fixsfsi
+00007d78 T __fixunssfdi
+000088de T __fixunssfsi
+000086ec T __floatsisf
+00007e98 T __floatundisf
+00008790 T __floatunsisf
+000082c2 T __mulsf3
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+000037fe t accm_read_axis.part.0
+00003754 t accm_read_reg
+000036fc t accm_write_reg
+0000372a t accm_write_stream
+00008d9a t call_vuprintf
+00003e86 t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005808 T memb_free
+0000972a T memcpy
+00009812 T memset
+00008d68 T printf
+00006822 T queuebuf_free
+00008dd0 T sprintf
+00006c12 T tmp102_read_reg
+00006c70 T tmp102_read_temp_x100
+00006cec T uart0_writeb
+00008f60 T vuprintf
+00006d9e t wait_ready
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+00008044 T __mulsi3
+00008130 T __udivdi3
+00008070 T __udivhi3
+00008184 T __udivmoddi4
+00008092 T __udivsi3
+0000482e t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000064c6 T memb_free
+00007ede T memcpy
+00007fd8 T memset
+00007670 T printf
+00006f04 T queuebuf_free
+000074d4 T uart1_writeb
+00007814 T vuprintf
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+0000e27c T __divhi3
+0000e2f6 T __divsi3
+0000e2ae T __modhi3
+0000e338 T __modsi3
+0000e22e T __mulsi3
+0000e3a0 T __udivdi3
+0000e25a T __udivhi3
+0000e3f4 T __udivmoddi4
+0000e2b6 T __udivsi3
+0000d71c t call_vuprintf
+0000489c t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000067c6 T memb_free
+00006822 T memb_numfree
+0000dfce T memcpy
+0000e0c8 T memmove
+0000e1c2 T memset
+0000d6ea T printf
+0000742a T queuebuf_free
+000073bc T queuebuf_numfree
+00007834 T rpl_dag_ready_to_advertise
+0000d756 T snprintf
+0000b71c T uart1_writeb
+0000cb10 T uip_sr_free_all
+0000d904 T vuprintf
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+000033ca T __divhi3
+0000343c T __divsi3
+000033fc T __modhi3
+0000347e T __modsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+000038f2 t accm_read_axis.part.0
+00003848 t accm_read_reg
+000037f0 t accm_write_reg
+0000381e t accm_write_stream
+0000c5f6 t call_vuprintf
+00003f74 t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+00005b92 T memb_free
+00005bee T memb_numfree
+0000cf88 T memcpy
+0000d070 T memmove
+0000d158 T memset
+0000c5c4 T printf
+000067a2 T queuebuf_free
+00006738 T queuebuf_numfree
+00006b82 T rpl_dag_ready_to_advertise
+0000c62c T snprintf
+0000a6b8 T tmp102_read_reg
+0000a716 T tmp102_read_temp_x100
+0000a792 T uart0_writeb
+0000b9e6 T uip_sr_free_all
+0000c7be T vuprintf
+0000c4d8 t wait_ready
+
+[Source/library path strings]
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Library/runtime/helper symbols]
+0000e140 T __divhi3
+0000e1ba T __divsi3
+0000e172 T __modhi3
+0000e1fc T __modsi3
+0000e0f2 T __mulsi3
+0000e264 T __udivdi3
+0000e11e T __udivhi3
+0000e2b8 T __udivmoddi4
+0000e17a T __udivsi3
+0000d5e0 t call_vuprintf
+0000489c t cc2420_read
+         U gpio_hal_arch_port_read_pin
+         U gpio_hal_arch_port_read_pins
+         U gpio_hal_arch_port_write_pin
+         U gpio_hal_arch_port_write_pins
+000067c6 T memb_free
+00006822 T memb_numfree
+0000de92 T memcpy
+0000df8c T memmove
+0000e086 T memset
+0000d5ae T printf
+0000742a T queuebuf_free
+000073bc T queuebuf_numfree
+00007834 T rpl_dag_ready_to_advertise
+0000d61a T snprintf
+0000b71c T uart1_writeb
+0000c9d4 T uip_sr_free_all
+0000d7c8 T vuprintf
+
+[Source/library path strings]

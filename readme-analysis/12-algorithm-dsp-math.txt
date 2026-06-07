@@ -1,0 +1,4468 @@
+=== ALGORITHM / DSP / MATHEMATICAL ANALYSIS ===
+
+----------------------------------------
+FILE: ./new-firmware.z1
+TYPE: ./new-firmware.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+00003376 t __br_unexpected_
+000033c4 T __divhi3
+00003436 T __divsi3
+000033c4 T __ext_divmod16
+00003436 T __ext_divmod32
+000033a2 T __ext_udivmod16
+000033fe T __ext_udivmod32
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+000034ee T __umoddi3
+000033bc T __umodhi3
+0000342c T __umodsi3
+0000ffc0 T __vectors_start
+00003482 T __xabi_udivmod64
+00003100 W _reset_vector__
+0000337a W _unexpected_
+00010000 T _vectors_end
+00004152 T cc2420_get_txpower
+00004126 T cc2420_set_txpower
+000050fa T ctimer_expired
+00002516 B curr_instance
+00001166 D curr_log_level_6lowpan
+00001162 D curr_log_level_framer
+00001168 D curr_log_level_ipv6
+00001164 D curr_log_level_mac
+00001160 D curr_log_level_main
+0000116c D curr_log_level_rpl
+0000116a D curr_log_level_tcpip
+000052d0 T etimer_expired
+000052ea T etimer_next_expiration_time
+000060e8 T log_6addr
+0000611a T log_lladdr
+0000989e t nbr_path_cost
+00001340 b next_expiration
+0000c948 r output_power
+0000244d b poll_mode
+00002622 B rpl_multicast_addr
+00003d8e t set_frame_filtering
+00003dee t set_poll_mode
+0000c162 T stimer_expired
+0000c6fc T timer_expired
+000129c2 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+00001ba4 00000168 b frag_info
+00012e5a 0000016e t ext_hdr_options_process
+00013f0c 00000176 t print_field
+00012a0a 00000182 T uip_sr_update_node
+0000735c 000001a4 t process_dio_init_dag
+000082f8 000001b0 T rpl_ext_header_hbh_update
+00012212 000001c4 T uip_icmp6_error_output
+00009bc8 000001da T rpl_neighbor_snprint
+00004d66 000001ea t input_packet
+00008106 000001f2 T rpl_ext_header_srh_update
+000095be 000001f2 T rpl_icmp6_dao_output
+0000ae48 00000204 t add_fragment
+0000779c 00000204 T rpl_dag_update_state
+0000313e 00000232 T main
+00008aea 00000248 t dao_input
+00004a58 00000270 T csma_output_packet
+00011d22 00000282 T uip_ds6_init
+0000931c 000002a2 T rpl_icmp6_dio_output
+00004776 000002e2 t transmit_from_queue
+000079a0 00000344 T rpl_process_dio
+0000c1d2 000003e6 T tcpip_ipv6_output
+000124de 00000420 t ns_input
+00008568 00000438 T rpl_ext_header_update
+00008d32 00000454 t dio_input
+000015a8 00000550 b buframmem_memb_mem
+00001d0c 00000558 b frag_buf
+00014082 00000742 T vuprintf
+000130f2 00000992 T uip_process
+0000b1cc 00000df4 t output
+00010000 0000118a t input
+
+[Math / DSP related strings]
+initialized DAG with instance ID %u, DAG ID 
+, instance %u
+DAG expired, poison and leave
+DAG expiring in %u seconds, send DIS to preferred parent
+created DAG with instance ID %u, DAG ID 
+unable to add/update hop-by-hop extension header: incorrect instance
+unknown instance: %u
+dao_ack_input: unknown instance, discard
+dao_input: unknown RPL instance %u, discard
+, instance_id %u, DAG ID 
+dis_input: not in an instance yet, discard
+rpl_icmp6_dao_output: not in an instance, skip sending DAO
+, better since %u min)
+uncompression: address %d %d 
+compression: before (%d): 
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+compression: dest or src ipaddr - setting CID
+compression: addr unspecified - setting SAC
+compression: src with context - setting CID & SAC ctx: %d
+compression: first header: %d
+compression: next header: %d
+compression: next header %d (len:%d)
+compression: keeping the next header in this ext hdr: %d
+compression: inlined UDP ports on send side: %x, %x
+IPHC: cannot compress UDP headers
+compression: could not handle compression of header
+compression: last header could is not compressed: %d
+compression: after (%d): 
+output: compressed header does not fit first fragment
+input: received first element of a fragmented packet (tag %d, len %d)
+uncompression: IPHC dispatch
+uncompression: CID flag set - increase header with one
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: next header inline: %d
+uncompression: error context not found
+uncompression: next header is inlined. Next: %d
+uncompression: found ext header id: %d next: %d len: %d
+uncompression: error unsupported ext header
+uncompression: cannot write ext header beyond target buffer
+uncompression: %d len: %d exthdr len: %d (calc: %d)
+uncompression: cannot write UDP header beyond target buffer
+uncompression: incoming header value: %i
+uncompression: UDP ports (ptr+5): %x, %x
+uncompression: destination address
+uncompression: UDP ports (ptr+4): %x, %x
+uncompression: source address
+uncompression: UDP ports (ptr+2): %x, %x
+uncompression: error unsupported UDP compression
+uncompression: checksum included
+uncompression: checksum *NOT* included
+uncompression: UDP length: %u (ext: %u) ip_len: %d udp_len: %d
+uncompression: IP payload length: %d. %u - %u + %u - %u
+input: failed to decompress IPHC packet
+uncompression: IPV6 dispatch
+uncompression: unknown dispatch: 0x%02x, or IPHC disabled
+uncompression: after (%u):
+output: processing %u bytes packet from 
+output: no route found, using default route: 
+Default route periodic: defrt lifetime expired
+NS: removing expired node 
+Upper layer checksum len: %d from: %d
+Processing PAD1 option
+Processing PADN option
+Processing RPL option
+Processing hbh header
+Processing desto header
+Processing Routing header
+icmpv6 bad checksum
+udp: bad checksum 0x%04x 0x%04x
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000337c <__mulsi3>:
+    337c:	1b 14       	pushm.a	#2,	r11	
+    337e:	0b 43       	clr	r11		
+    3380:	0a 43       	clr	r10		
+    3382:	07 3c       	jmp	$+16     	;abs 0x3392
+    3384:	5d 03       	rrum	#1,	r13	
+    3386:	0c 10       	rrc	r12		
+    3388:	02 28       	jnc	$+6      	;abs 0x338e
+    338a:	0a 5e       	add	r14,	r10	
+    338c:	0b 6f       	addc	r15,	r11	
+    338e:	0e 5e       	rla	r14		
+    3390:	0f 6f       	rlc	r15		
+    3392:	0c 93       	tst	r12		
+    3394:	f7 23       	jnz	$-16     	;abs 0x3384
+    3396:	0d 93       	tst	r13		
+    3398:	f5 23       	jnz	$-20     	;abs 0x3384
+    339a:	0e 4a       	mov	r10,	r14	
+    339c:	0f 4b       	mov	r11,	r15	
+    339e:	1a 16       	popm.a	#2,	r11	
+--
+000033a2 <__udivhi3>:
+    33a2:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    33a6:	0d 4e       	mov	r14,	r13	
+    33a8:	0e 43       	clr	r14		
+    33aa:	0f 5f       	rla	r15		
+    33ac:	0e 6e       	rlc	r14		
+    33ae:	0e 9d       	cmp	r13,	r14	
+    33b0:	02 28       	jnc	$+6      	;abs 0x33b6
+    33b2:	0e 8d       	sub	r13,	r14	
+    33b4:	1f d3       	bis	#1,	r15	;r3 As==01
+    33b6:	1c 83       	dec	r12		
+    33b8:	f8 23       	jnz	$-14     	;abs 0x33aa
+    33ba:	10 01       	reta			
+
+000033bc <__umodhi3>:
+    33bc:	b0 13 a2 33 	calla	#0x033a2	
+    33c0:	0f 4e       	mov	r14,	r15	
+    33c2:	10 01       	reta			
+
+000033c4 <__divhi3>:
+    33c4:	0d 43       	clr	r13		
+    33c6:	0f 93       	tst	r15		
+    33c8:	04 34       	jge	$+10     	;abs 0x33d2
+    33ca:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    33ce:	3f e3       	inv	r15		
+    33d0:	1f 53       	inc	r15		
+    33d2:	0e 93       	tst	r14		
+    33d4:	03 34       	jge	$+8      	;abs 0x33dc
+    33d6:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    33d8:	3e e3       	inv	r14		
+    33da:	1e 53       	inc	r14		
+    33dc:	0d 12       	push	r13		
+    33de:	b0 13 a2 33 	calla	#0x033a2	
+    33e2:	3d 41       	pop	r13		
+    33e4:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    33e6:	02 24       	jz	$+6      	;abs 0x33ec
+    33e8:	3e e3       	inv	r14		
+    33ea:	1e 53       	inc	r14		
+--
+000033fe <__udivsi3>:
+    33fe:	2b 14       	pushm.a	#3,	r11	
+    3400:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    3404:	0a 4c       	mov	r12,	r10	
+    3406:	0b 4d       	mov	r13,	r11	
+    3408:	0c 43       	clr	r12		
+    340a:	0d 43       	clr	r13		
+    340c:	0e 5e       	rla	r14		
+    340e:	0f 6f       	rlc	r15		
+    3410:	0c 6c       	rlc	r12		
+    3412:	0d 6d       	rlc	r13		
+    3414:	0d 9b       	cmp	r11,	r13	
+    3416:	06 28       	jnc	$+14     	;abs 0x3424
+    3418:	02 20       	jnz	$+6      	;abs 0x341e
+    341a:	0c 9a       	cmp	r10,	r12	
+    341c:	03 28       	jnc	$+8      	;abs 0x3424
+    341e:	0c 8a       	sub	r10,	r12	
+    3420:	0d 7b       	subc	r11,	r13	
+    3422:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+00003436 <__divsi3>:
+    3436:	0b 14       	pushm.a	#1,	r11	
+    3438:	0b 43       	clr	r11		
+    343a:	0f 93       	tst	r15		
+    343c:	06 34       	jge	$+14     	;abs 0x344a
+    343e:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    3442:	3e e3       	inv	r14		
+    3444:	3f e3       	inv	r15		
+    3446:	1e 53       	inc	r14		
+    3448:	0f 63       	adc	r15		
+    344a:	0d 93       	tst	r13		
+    344c:	05 34       	jge	$+12     	;abs 0x3458
+    344e:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    3450:	3c e3       	inv	r12		
+    3452:	3d e3       	inv	r13		
+    3454:	1c 53       	inc	r12		
+    3456:	0d 63       	adc	r13		
+    3458:	b0 13 fe 33 	calla	#0x033fe	
+    345c:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+00003482 <__xabi_udivmod64>:
+    3482:	37 14       	pushm.a	#4,	r7	
+    3484:	30 12 40 00 	push	#64		;#0x0040
+    3488:	04 48       	mov	r8,	r4	
+    348a:	05 49       	mov	r9,	r5	
+    348c:	06 4a       	mov	r10,	r6	
+    348e:	07 4b       	mov	r11,	r7	
+    3490:	08 43       	clr	r8		
+    3492:	09 43       	clr	r9		
+    3494:	0a 43       	clr	r10		
+    3496:	0b 43       	clr	r11		
+    3498:	0c 5c       	rla	r12		
+    349a:	0d 6d       	rlc	r13		
+    349c:	0e 6e       	rlc	r14		
+    349e:	0f 6f       	rlc	r15		
+    34a0:	08 68       	rlc	r8		
+    34a2:	09 69       	rlc	r9		
+    34a4:	0a 6a       	rlc	r10		
+    34a6:	0b 6b       	rlc	r11		
+--
+000034d4 <__udivdi3>:
+    34d4:	3b 14       	pushm.a	#4,	r11	
+    34d6:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34da:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34de:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34e2:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    34e6:	b0 13 82 34 	calla	#0x03482	
+    34ea:	38 16       	popm.a	#4,	r11	
+    34ec:	10 01       	reta			
+
+000034ee <__umoddi3>:
+    34ee:	3b 14       	pushm.a	#4,	r11	
+    34f0:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34f4:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34f8:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34fc:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    3500:	b0 13 82 34 	calla	#0x03482	
+    3504:	0c 48       	mov	r8,	r12	
+    3506:	0d 49       	mov	r9,	r13	
+--
+00003510 <__udivmoddi4>:
+    3510:	4b 14       	pushm.a	#5,	r11	
+    3512:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    3516:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    351a:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    351e:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    3522:	b0 13 82 34 	calla	#0x03482	
+    3526:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    352a:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    352e:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    3532:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    3536:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    353a:	47 16       	popm.a	#5,	r11	
+    353c:	10 01       	reta			
+
+0000353e <port1_isr>:
+    353e:	3f 14       	pushm.a	#4,	r15	
+    3540:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    3544:	23 00 
+--
+00003d8e <set_frame_filtering>:
+
+----------------------------------------
+FILE: ./udp-client.z1
+TYPE: ./udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+00003376 t __br_unexpected_
+000033c4 T __divhi3
+00003436 T __divsi3
+000033c4 T __ext_divmod16
+00003436 T __ext_divmod32
+000033a2 T __ext_udivmod16
+000033fe T __ext_udivmod32
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+000034ee T __umoddi3
+000033bc T __umodhi3
+0000342c T __umodsi3
+0000ffc0 T __vectors_start
+00003482 T __xabi_udivmod64
+00003100 W _reset_vector__
+0000337a W _unexpected_
+00010000 T _vectors_end
+00004152 T cc2420_get_txpower
+00004126 T cc2420_set_txpower
+00004bfc T ctimer_expired
+000025ec B curr_instance
+00001154 D curr_log_level_main
+00004dd2 T etimer_expired
+00004dec T etimer_next_expiration_time
+00005a36 T log_6addr
+00005a68 T log_lladdr
+00007f2a t nbr_path_cost
+00001340 b next_expiration
+0000d390 r output_power
+00002477 b poll_mode
+000026f8 B rpl_multicast_addr
+00003d8e t set_frame_filtering
+00003dee t set_poll_mode
+0000a424 T stimer_expired
+0000a6d4 T timer_expired
+0000b94a T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+00005826 000000f6 T link_stats_input_callback
+000025ec 0000010c B curr_instance
+0000a4ae 0000010c T tcpip_ipv6_output
+00002710 00000110 B uip_ds6_if
+0000c47a 00000114 T uiplib_ipaddr_snprint
+000041b8 0000011e t get_value
+0000778a 00000128 t dao_input
+0000b430 00000136 T uip_icmp6_error_output
+00006ca8 00000138 T rpl_dag_update_state
+00004854 00000148 T csma_output_packet
+000042ec 0000014a t set_value
+0000a904 0000014c t process_thread_udp_client_process
+000051f6 0000015c T frame802154_parse
+0000b196 00000164 T uip_ds6_init
+00001b98 00000168 b frag_info
+00008eaa 0000016a t add_fragment
+0000c74c 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b5fa 00000292 t ns_input
+0000be0e 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c8c2 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000337c <__mulsi3>:
+    337c:	1b 14       	pushm.a	#2,	r11	
+    337e:	0b 43       	clr	r11		
+    3380:	0a 43       	clr	r10		
+    3382:	07 3c       	jmp	$+16     	;abs 0x3392
+    3384:	5d 03       	rrum	#1,	r13	
+    3386:	0c 10       	rrc	r12		
+    3388:	02 28       	jnc	$+6      	;abs 0x338e
+    338a:	0a 5e       	add	r14,	r10	
+    338c:	0b 6f       	addc	r15,	r11	
+    338e:	0e 5e       	rla	r14		
+    3390:	0f 6f       	rlc	r15		
+    3392:	0c 93       	tst	r12		
+    3394:	f7 23       	jnz	$-16     	;abs 0x3384
+    3396:	0d 93       	tst	r13		
+    3398:	f5 23       	jnz	$-20     	;abs 0x3384
+    339a:	0e 4a       	mov	r10,	r14	
+    339c:	0f 4b       	mov	r11,	r15	
+    339e:	1a 16       	popm.a	#2,	r11	
+--
+000033a2 <__udivhi3>:
+    33a2:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    33a6:	0d 4e       	mov	r14,	r13	
+    33a8:	0e 43       	clr	r14		
+    33aa:	0f 5f       	rla	r15		
+    33ac:	0e 6e       	rlc	r14		
+    33ae:	0e 9d       	cmp	r13,	r14	
+    33b0:	02 28       	jnc	$+6      	;abs 0x33b6
+    33b2:	0e 8d       	sub	r13,	r14	
+    33b4:	1f d3       	bis	#1,	r15	;r3 As==01
+    33b6:	1c 83       	dec	r12		
+    33b8:	f8 23       	jnz	$-14     	;abs 0x33aa
+    33ba:	10 01       	reta			
+
+000033bc <__umodhi3>:
+    33bc:	b0 13 a2 33 	calla	#0x033a2	
+    33c0:	0f 4e       	mov	r14,	r15	
+    33c2:	10 01       	reta			
+
+000033c4 <__divhi3>:
+    33c4:	0d 43       	clr	r13		
+    33c6:	0f 93       	tst	r15		
+    33c8:	04 34       	jge	$+10     	;abs 0x33d2
+    33ca:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    33ce:	3f e3       	inv	r15		
+    33d0:	1f 53       	inc	r15		
+    33d2:	0e 93       	tst	r14		
+    33d4:	03 34       	jge	$+8      	;abs 0x33dc
+    33d6:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    33d8:	3e e3       	inv	r14		
+    33da:	1e 53       	inc	r14		
+    33dc:	0d 12       	push	r13		
+    33de:	b0 13 a2 33 	calla	#0x033a2	
+    33e2:	3d 41       	pop	r13		
+    33e4:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    33e6:	02 24       	jz	$+6      	;abs 0x33ec
+    33e8:	3e e3       	inv	r14		
+    33ea:	1e 53       	inc	r14		
+--
+000033fe <__udivsi3>:
+    33fe:	2b 14       	pushm.a	#3,	r11	
+    3400:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    3404:	0a 4c       	mov	r12,	r10	
+    3406:	0b 4d       	mov	r13,	r11	
+    3408:	0c 43       	clr	r12		
+    340a:	0d 43       	clr	r13		
+    340c:	0e 5e       	rla	r14		
+    340e:	0f 6f       	rlc	r15		
+    3410:	0c 6c       	rlc	r12		
+    3412:	0d 6d       	rlc	r13		
+    3414:	0d 9b       	cmp	r11,	r13	
+    3416:	06 28       	jnc	$+14     	;abs 0x3424
+    3418:	02 20       	jnz	$+6      	;abs 0x341e
+    341a:	0c 9a       	cmp	r10,	r12	
+    341c:	03 28       	jnc	$+8      	;abs 0x3424
+    341e:	0c 8a       	sub	r10,	r12	
+    3420:	0d 7b       	subc	r11,	r13	
+    3422:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+00003436 <__divsi3>:
+    3436:	0b 14       	pushm.a	#1,	r11	
+    3438:	0b 43       	clr	r11		
+    343a:	0f 93       	tst	r15		
+    343c:	06 34       	jge	$+14     	;abs 0x344a
+    343e:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    3442:	3e e3       	inv	r14		
+    3444:	3f e3       	inv	r15		
+    3446:	1e 53       	inc	r14		
+    3448:	0f 63       	adc	r15		
+    344a:	0d 93       	tst	r13		
+    344c:	05 34       	jge	$+12     	;abs 0x3458
+    344e:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    3450:	3c e3       	inv	r12		
+    3452:	3d e3       	inv	r13		
+    3454:	1c 53       	inc	r12		
+    3456:	0d 63       	adc	r13		
+    3458:	b0 13 fe 33 	calla	#0x033fe	
+    345c:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+00003482 <__xabi_udivmod64>:
+    3482:	37 14       	pushm.a	#4,	r7	
+    3484:	30 12 40 00 	push	#64		;#0x0040
+    3488:	04 48       	mov	r8,	r4	
+    348a:	05 49       	mov	r9,	r5	
+    348c:	06 4a       	mov	r10,	r6	
+    348e:	07 4b       	mov	r11,	r7	
+    3490:	08 43       	clr	r8		
+    3492:	09 43       	clr	r9		
+    3494:	0a 43       	clr	r10		
+    3496:	0b 43       	clr	r11		
+    3498:	0c 5c       	rla	r12		
+    349a:	0d 6d       	rlc	r13		
+    349c:	0e 6e       	rlc	r14		
+    349e:	0f 6f       	rlc	r15		
+    34a0:	08 68       	rlc	r8		
+    34a2:	09 69       	rlc	r9		
+    34a4:	0a 6a       	rlc	r10		
+    34a6:	0b 6b       	rlc	r11		
+--
+000034d4 <__udivdi3>:
+    34d4:	3b 14       	pushm.a	#4,	r11	
+    34d6:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34da:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34de:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34e2:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    34e6:	b0 13 82 34 	calla	#0x03482	
+    34ea:	38 16       	popm.a	#4,	r11	
+    34ec:	10 01       	reta			
+
+000034ee <__umoddi3>:
+    34ee:	3b 14       	pushm.a	#4,	r11	
+    34f0:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34f4:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34f8:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34fc:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    3500:	b0 13 82 34 	calla	#0x03482	
+    3504:	0c 48       	mov	r8,	r12	
+    3506:	0d 49       	mov	r9,	r13	
+--
+00003510 <__udivmoddi4>:
+    3510:	4b 14       	pushm.a	#5,	r11	
+    3512:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    3516:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    351a:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    351e:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    3522:	b0 13 82 34 	calla	#0x03482	
+    3526:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    352a:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    352e:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    3532:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    3536:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    353a:	47 16       	popm.a	#5,	r11	
+    353c:	10 01       	reta			
+
+0000353e <port1_isr>:
+    353e:	3f 14       	pushm.a	#4,	r15	
+    3540:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    3544:	23 00 
+--
+00003d8e <set_frame_filtering>:
+
+----------------------------------------
+FILE: ./udp-server.z1
+TYPE: ./udp-server.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+00003376 t __br_unexpected_
+000033c4 T __divhi3
+00003436 T __divsi3
+000033c4 T __ext_divmod16
+00003436 T __ext_divmod32
+000033a2 T __ext_udivmod16
+000033fe T __ext_udivmod32
+000033f6 T __modhi3
+00003478 T __modsi3
+0000337c T __mulsi3
+000034d4 T __udivdi3
+000033a2 T __udivhi3
+00003510 T __udivmoddi4
+000033fe T __udivsi3
+000034ee T __umoddi3
+000033bc T __umodhi3
+0000342c T __umodsi3
+0000ffc0 T __vectors_start
+00003482 T __xabi_udivmod64
+00003100 W _reset_vector__
+0000337a W _unexpected_
+00010000 T _vectors_end
+00004152 T cc2420_get_txpower
+00004126 T cc2420_set_txpower
+00004bfc T ctimer_expired
+000025b4 B curr_instance
+00001154 D curr_log_level_main
+00004dd2 T etimer_expired
+00004dec T etimer_next_expiration_time
+00005a36 T log_6addr
+00005a68 T log_lladdr
+00007f2a t nbr_path_cost
+00001340 b next_expiration
+0000d2a0 r output_power
+0000245f b poll_mode
+000026c0 B rpl_multicast_addr
+00003d8e t set_frame_filtering
+00003dee t set_poll_mode
+0000a424 T stimer_expired
+0000a6d4 T timer_expired
+0000b858 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+00004436 000000ea T cc2420_init
+00005826 000000f6 T link_stats_input_callback
+000025b4 0000010c B curr_instance
+0000a4ae 0000010c T tcpip_ipv6_output
+000026d8 00000110 B uip_ds6_if
+0000c388 00000114 T uiplib_ipaddr_snprint
+000041b8 0000011e t get_value
+0000778a 00000128 t dao_input
+0000b33e 00000136 T uip_icmp6_error_output
+00006ca8 00000138 T rpl_dag_update_state
+00004854 00000148 T csma_output_packet
+000042ec 0000014a t set_value
+000051f6 0000015c T frame802154_parse
+0000b0a4 00000164 T uip_ds6_init
+00001b98 00000168 b frag_info
+00008eaa 0000016a t add_fragment
+0000c65a 00000176 t print_field
+00006de0 0000019e T rpl_process_dio
+000046a4 000001b0 t transmit_from_queue
+00007ba6 00000218 T rpl_icmp6_dio_output
+0000313e 00000232 T main
+0000746e 00000266 T rpl_ext_header_update
+000078b2 00000274 t dio_input
+0000b508 00000292 t ns_input
+0000bd1c 000004b6 T uip_process
+0000159c 00000550 b buframmem_memb_mem
+00001d00 00000558 b frag_buf
+0000c7d0 00000742 T vuprintf
+000090aa 0000075a t output
+00009804 00000918 t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000337c <__mulsi3>:
+    337c:	1b 14       	pushm.a	#2,	r11	
+    337e:	0b 43       	clr	r11		
+    3380:	0a 43       	clr	r10		
+    3382:	07 3c       	jmp	$+16     	;abs 0x3392
+    3384:	5d 03       	rrum	#1,	r13	
+    3386:	0c 10       	rrc	r12		
+    3388:	02 28       	jnc	$+6      	;abs 0x338e
+    338a:	0a 5e       	add	r14,	r10	
+    338c:	0b 6f       	addc	r15,	r11	
+    338e:	0e 5e       	rla	r14		
+    3390:	0f 6f       	rlc	r15		
+    3392:	0c 93       	tst	r12		
+    3394:	f7 23       	jnz	$-16     	;abs 0x3384
+    3396:	0d 93       	tst	r13		
+    3398:	f5 23       	jnz	$-20     	;abs 0x3384
+    339a:	0e 4a       	mov	r10,	r14	
+    339c:	0f 4b       	mov	r11,	r15	
+    339e:	1a 16       	popm.a	#2,	r11	
+--
+000033a2 <__udivhi3>:
+    33a2:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    33a6:	0d 4e       	mov	r14,	r13	
+    33a8:	0e 43       	clr	r14		
+    33aa:	0f 5f       	rla	r15		
+    33ac:	0e 6e       	rlc	r14		
+    33ae:	0e 9d       	cmp	r13,	r14	
+    33b0:	02 28       	jnc	$+6      	;abs 0x33b6
+    33b2:	0e 8d       	sub	r13,	r14	
+    33b4:	1f d3       	bis	#1,	r15	;r3 As==01
+    33b6:	1c 83       	dec	r12		
+    33b8:	f8 23       	jnz	$-14     	;abs 0x33aa
+    33ba:	10 01       	reta			
+
+000033bc <__umodhi3>:
+    33bc:	b0 13 a2 33 	calla	#0x033a2	
+    33c0:	0f 4e       	mov	r14,	r15	
+    33c2:	10 01       	reta			
+
+000033c4 <__divhi3>:
+    33c4:	0d 43       	clr	r13		
+    33c6:	0f 93       	tst	r15		
+    33c8:	04 34       	jge	$+10     	;abs 0x33d2
+    33ca:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    33ce:	3f e3       	inv	r15		
+    33d0:	1f 53       	inc	r15		
+    33d2:	0e 93       	tst	r14		
+    33d4:	03 34       	jge	$+8      	;abs 0x33dc
+    33d6:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    33d8:	3e e3       	inv	r14		
+    33da:	1e 53       	inc	r14		
+    33dc:	0d 12       	push	r13		
+    33de:	b0 13 a2 33 	calla	#0x033a2	
+    33e2:	3d 41       	pop	r13		
+    33e4:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    33e6:	02 24       	jz	$+6      	;abs 0x33ec
+    33e8:	3e e3       	inv	r14		
+    33ea:	1e 53       	inc	r14		
+--
+000033fe <__udivsi3>:
+    33fe:	2b 14       	pushm.a	#3,	r11	
+    3400:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    3404:	0a 4c       	mov	r12,	r10	
+    3406:	0b 4d       	mov	r13,	r11	
+    3408:	0c 43       	clr	r12		
+    340a:	0d 43       	clr	r13		
+    340c:	0e 5e       	rla	r14		
+    340e:	0f 6f       	rlc	r15		
+    3410:	0c 6c       	rlc	r12		
+    3412:	0d 6d       	rlc	r13		
+    3414:	0d 9b       	cmp	r11,	r13	
+    3416:	06 28       	jnc	$+14     	;abs 0x3424
+    3418:	02 20       	jnz	$+6      	;abs 0x341e
+    341a:	0c 9a       	cmp	r10,	r12	
+    341c:	03 28       	jnc	$+8      	;abs 0x3424
+    341e:	0c 8a       	sub	r10,	r12	
+    3420:	0d 7b       	subc	r11,	r13	
+    3422:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+00003436 <__divsi3>:
+    3436:	0b 14       	pushm.a	#1,	r11	
+    3438:	0b 43       	clr	r11		
+    343a:	0f 93       	tst	r15		
+    343c:	06 34       	jge	$+14     	;abs 0x344a
+    343e:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    3442:	3e e3       	inv	r14		
+    3444:	3f e3       	inv	r15		
+    3446:	1e 53       	inc	r14		
+    3448:	0f 63       	adc	r15		
+    344a:	0d 93       	tst	r13		
+    344c:	05 34       	jge	$+12     	;abs 0x3458
+    344e:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    3450:	3c e3       	inv	r12		
+    3452:	3d e3       	inv	r13		
+    3454:	1c 53       	inc	r12		
+    3456:	0d 63       	adc	r13		
+    3458:	b0 13 fe 33 	calla	#0x033fe	
+    345c:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+00003482 <__xabi_udivmod64>:
+    3482:	37 14       	pushm.a	#4,	r7	
+    3484:	30 12 40 00 	push	#64		;#0x0040
+    3488:	04 48       	mov	r8,	r4	
+    348a:	05 49       	mov	r9,	r5	
+    348c:	06 4a       	mov	r10,	r6	
+    348e:	07 4b       	mov	r11,	r7	
+    3490:	08 43       	clr	r8		
+    3492:	09 43       	clr	r9		
+    3494:	0a 43       	clr	r10		
+    3496:	0b 43       	clr	r11		
+    3498:	0c 5c       	rla	r12		
+    349a:	0d 6d       	rlc	r13		
+    349c:	0e 6e       	rlc	r14		
+    349e:	0f 6f       	rlc	r15		
+    34a0:	08 68       	rlc	r8		
+    34a2:	09 69       	rlc	r9		
+    34a4:	0a 6a       	rlc	r10		
+    34a6:	0b 6b       	rlc	r11		
+--
+000034d4 <__udivdi3>:
+    34d4:	3b 14       	pushm.a	#4,	r11	
+    34d6:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34da:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34de:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34e2:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    34e6:	b0 13 82 34 	calla	#0x03482	
+    34ea:	38 16       	popm.a	#4,	r11	
+    34ec:	10 01       	reta			
+
+000034ee <__umoddi3>:
+    34ee:	3b 14       	pushm.a	#4,	r11	
+    34f0:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34f4:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34f8:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34fc:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    3500:	b0 13 82 34 	calla	#0x03482	
+    3504:	0c 48       	mov	r8,	r12	
+    3506:	0d 49       	mov	r9,	r13	
+--
+00003510 <__udivmoddi4>:
+    3510:	4b 14       	pushm.a	#5,	r11	
+    3512:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    3516:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    351a:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    351e:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    3522:	b0 13 82 34 	calla	#0x03482	
+    3526:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    352a:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    352e:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    3532:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    3536:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    353a:	47 16       	popm.a	#5,	r11	
+    353c:	10 01       	reta			
+
+0000353e <port1_isr>:
+    353e:	3f 14       	pushm.a	#4,	r15	
+    3540:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    3544:	23 00 
+--
+00003d8e <set_frame_filtering>:
+
+----------------------------------------
+FILE: extra-firmwares/base-demo.simplelink
+TYPE: extra-firmwares/base-demo.simplelink: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+20002180 b ClockP_module
+0000fe1c T NOROM_AUXSYSIFOpModeChange
+0000f9b8 T NOROM_OSCHF_SwitchToRcOscTurnOffXosc
+0000fb2c T NOROM_RFCAnaDivTxOverride
+0000fa9c T NOROM_RFCCpeIntGetAndClear
+0000fb6c T NOROM_RFCHwIntGetAndClear
+0000fad4 T NOROM_RFCSynthPowerDown
+0000fd14 T NOROM_SysCtrlStandby
+0000d7a8 T PowerCC26X2_RCOSC_clockFunc
+0000d4cc T PowerCC26X2_auxISR
+0000d794 T PowerCC26X2_calibrate
+00010d8c R PowerCC26X2_config
+0000d458 T PowerCC26X2_initiateCalibration
+20001e5c D PowerCC26X2_module
+20004080 b PowerCC26X2_swiKey
+0000d1f4 T PowerCC26XX_calibrate
+0000d20c T PowerCC26XX_isStableXOSC_HF
+00009274 T PowerCC26XX_schedulerDisable
+00009284 T PowerCC26XX_schedulerRestore
+000091a4 T PowerCC26XX_standbyPolicy
+0000d254 T PowerCC26XX_switchXOSC_HF
+0000cb1c T Power_disablePolicy
+0000cb30 T Power_enablePolicy
+0000cb40 T Power_getConstraintMask
+0000cb4c T Power_getDependencyCount
+0000cb5c T Power_getTransitionLatency
+0000cb78 T Power_idleFunc
+0000ce3c T Power_init
+0000cb90 T Power_registerNotify
+0000cbb4 T Power_releaseConstraint
+0000cce0 T Power_releaseDependency
+0000cd88 T Power_setConstraint
+0000cf80 T Power_setDependency
+0000d030 T Power_sleep
+0000d1d4 T Power_unregisterNotify
+0000bb3c T RF_TxPowerTable_findPowerLevel
+0000bba4 T RF_TxPowerTable_findValue
+0000b634 t RF_clkPowerUp
+20004118 b RF_clkPowerUpObj
+0000af7c t RF_fsmPowerUpState
+0000baa0 T RF_getTxPower
+0000ada0 t RF_hwiCpe0PowerFsm
+20005176 b RF_powerConstraint
+0000a450 T RF_powerConstraintRelease
+0000a384 T RF_powerConstraintSet
+20002420 b RF_ratModule
+0000ba74 T RF_setTxPower
+000003d0 W __aeabi_idiv0
+000003d0 W __aeabi_ldiv0
+00000040 T __aeabi_ldivmod
+000000e0 T __aeabi_uldivmod
+00000110 T __udivmoddi4
+20004adc b bMultiProtocolPatchEntered
+000008fc T clock_arch_standby_policy
+00001210 T ctimer_expired
+200031f0 B curr_instance
+20001c3c D curr_log_level_main
+0000145c T etimer_next_expiration_time
+0001167d r g_OpMode_to_order
+00011679 r g_Order_to_OpMode
+20002000 d g_pfnRAMVectors
+00000460 T initAntennaSwitch
+20005178 b isInitialized
+20005179 b isInitialized
+2000517a b isInitialized
+2000517b b isInitialized
+2000517c b isInitialized
+00001ad0 T log_6addr
+00001af0 T log_lladdr
+000106e4 t nbr_path_cost
+20002bc4 b next_expiration
+00010ed0 r patchImageMultiProtocol
+00010e98 R prop_mode_driver
+20003440 B radio_mode
+00000000 r resetVectors
+20001c6c D rf_cmd_prop_radio_div_setup
+0001081c T rf_get_tx_power
+00002b38 t rf_patch_cpe_multi_protocol
+20001cec D rf_prop_mode
+20001f4a D rf_prop_tx_power_table_cc1352p
+00010800 T rf_set_tx_power
+00010fcc R rf_tx_power_table
+00010fd0 R rf_tx_power_table_size
+200048da B rpl_multicast_addr
+000108a6 T stimer_expired
+000108d2 T timer_expired
+00010ad6 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+0000aae4 000001a8 t RF_dispatchNextCmd
+0000d29c 000001bc t runCalibrateFsm
+00003e60 000001d0 T rpl_icmp6_dio_output
+0000f020 000001ec T UARTCC26XX_hwiIntFxn
+0000b72c 000001f8 T RF_scheduleCmd
+00000a24 000001f8 T main
+0000c598 00000200 T PIN_init
+20002220 00000200 b RF_cmdPool
+0000ec90 00000224 T UARTCC26XX_open
+00003818 00000234 T rpl_ext_header_update
+0000dda4 00000244 t SPICC26X2DMA_hwiFxn
+0000a75c 00000248 T RF_open
+00003bb4 00000248 t dio_input
+20002964 00000260 b rx_data_queue
+00007bf4 0000027c t ns_input
+00000110 000002be T __udivmoddi4
+0000d4cc 000002c8 T PowerCC26X2_auxISR
+0000e2c0 000002c8 T SPICC26X2DMA_open
+0000dfe8 000002d8 T SPICC26X2DMA_transfer
+00008214 00000404 T uip_process
+2000395c 00000500 B uip_aligned_buf
+20004bfe 0000054c b frag_buf
+2000437a 00000550 b buframmem_memb_mem
+0000b0b0 00000584 t RF_fsmActiveState
+00005628 000006fc t output
+00006830 00000770 T format_str_v
+00005e70 000007d4 t input
+0000ed00 1fff6600 B __stack_size
+20014000 dffec13a N _stack_origin
+20005300 dfffae3a N _stack
+
+[Math / DSP related strings]
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+Power.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+PowerCC26X2_nortos.c
+Power.h
+PowerCC26X2.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/rf
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+Power.h
+PowerCC26XX.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/cryptoutils/cryptokey
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dma
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/power
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+PowerCC26XX.h
+Power.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/i2c
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+Power.h
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/pin
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+Power.h
+power
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/devices/cc13x2_cc26x2/driverlib
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/machine
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include/sys
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/kernel/tirtos/packages/gnu/targets/arm//libs/install-native/arm-none-eabi/include
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/dpl
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers/utils
+/db/vtree/library/trees/mcpi/mcpi-4.10.02.00/exports/coresdk_cc13xx_cc26xx_4_10_02_00/source/ti/drivers
+
+[Instruction samples: multiply/divide/float-like operations]
+     148:	fbbe fcf8 	udiv	ip, lr, r8
+     156:	fb0c f001 	mul.w	r0, ip, r1
+     178:	fbb3 f0f8 	udiv	r0, r3, r8
+     184:	fb00 f101 	mul.w	r1, r0, r1
+     1ce:	fbb3 fcfe 	udiv	ip, r3, lr
+     1dc:	fb08 f30c 	mul.w	r3, r8, ip
+     1f8:	fbb5 f0fe 	udiv	r0, r5, lr
+     204:	fb08 f800 	mul.w	r8, r8, r0
+     27a:	fbbc f1fe 	udiv	r1, ip, lr
+     28c:	fb01 f308 	mul.w	r3, r1, r8
+     2b0:	fbb3 f0fe 	udiv	r0, r3, lr
+     2bc:	fb00 f308 	mul.w	r3, r0, r8
+     2fc:	fbb5 f9fe 	udiv	r9, r5, lr
+     30c:	fb09 fa08 	mul.w	sl, r9, r8
+     334:	fbb5 f0fe 	udiv	r0, r5, lr
+     340:	fb00 f808 	mul.w	r8, r0, r8
+     360:	fba0 8902 	umull	r8, r9, r0, r2
+     59a:	4341      	muls	r1, r0
+     9ce:	fbb4 f1f0 	udiv	r1, r4, r0
+     9fa:	fba4 0100 	umull	r0, r1, r4, r0
+     c42:	fbb0 f1f4 	udiv	r1, r0, r4
+    19d8:	4355      	muls	r5, r2
+    19da:	fb01 5503 	mla	r5, r1, r3, r5
+    19e0:	fbb5 f5f3 	udiv	r5, r5, r3
+    1a32:	fb94 f4f2 	sdiv	r4, r4, r2
+    1a5a:	fbb2 f2f1 	udiv	r2, r2, r1
+    1c10:	4358      	muls	r0, r3
+    1d70:	fb07 f300 	mul.w	r3, r7, r0
+    1e98:	fb03 4400 	mla	r4, r3, r0, r4
+    1f4c:	fb02 3000 	mla	r0, r2, r0, r3
+    2482:	435a      	muls	r2, r3
+    2504:	436c      	muls	r4, r5
+    25ce:	436b      	muls	r3, r5
+    25dc:	fbb2 f3f1 	udiv	r3, r2, r1
+    25ea:	fbb3 f3f1 	udiv	r3, r3, r1
+    26c6:	fb03 4202 	mla	r2, r3, r2, r4
+    26ca:	4343      	muls	r3, r0
+    26da:	fbb3 f3f2 	udiv	r3, r3, r2
+    282c:	fbb3 f3f2 	udiv	r3, r3, r2
+    3366:	4353      	muls	r3, r2
+    366c:	fb93 f3f2 	sdiv	r3, r3, r2
+    3680:	fb02 f603 	mul.w	r6, r2, r3
+    38b2:	fb04 340b 	mla	r4, r4, fp, r3
+    44c6:	fbb0 f3f1 	udiv	r3, r0, r1
+    4568:	fbb1 f3f3 	udiv	r3, r1, r3
+    456c:	fbb1 f4f4 	udiv	r4, r1, r4
+    457a:	fb04 f100 	mul.w	r1, r4, r0
+    4582:	fbb1 f1f0 	udiv	r1, r1, r0
+    462a:	fbb0 f3f1 	udiv	r3, r0, r1
+    47a4:	434c      	muls	r4, r1
+    47ae:	fbb0 f2f3 	udiv	r2, r0, r3
+    480e:	fbb0 f5f5 	udiv	r5, r0, r5
+    4fba:	4355      	muls	r5, r2
+    4fc4:	fb93 f3f2 	sdiv	r3, r3, r2
+    516a:	fbb0 f3f1 	udiv	r3, r0, r1
+    51fe:	fbb4 f1f0 	udiv	r1, r4, r0
+    52f8:	fb03 1300 	mla	r3, r3, r0, r1
+    5552:	4353      	muls	r3, r2
+    5d62:	4365      	muls	r5, r4
+    5e3c:	fb03 6604 	mla	r6, r3, r4, r6
+    6030:	fb04 3400 	mla	r4, r4, r0, r3
+    6066:	fb03 2300 	mla	r3, r3, r0, r2
+    6562:	fb03 1305 	mla	r3, r3, r5, r1
+    6578:	436b      	muls	r3, r5
+    68c8:	fb01 2a0a 	mla	sl, r1, sl, r2
+    693c:	fb01 2808 	mla	r8, r1, r8, r2
+    7466:	f009 fadd 	bl	10a24 <uip_ds6_list_loop>
+    7796:	fbb0 f3f2 	udiv	r3, r0, r2
+    8840:	fba0 0101 	umull	r0, r1, r0, r1
+    8aa6:	fbb3 f3f1 	udiv	r3, r3, r1
+    8e28:	fba2 2301 	umull	r2, r3, r2, r1
+    8e32:	fb01 3306 	mla	r3, r1, r6, r3
+    9028:	fb04 f101 	mul.w	r1, r4, r1
+    902c:	fba4 2300 	umull	r2, r3, r4, r0
+    9030:	fb05 1500 	mla	r5, r5, r0, r1
+    9212:	fb03 f708 	mul.w	r7, r3, r8
+    9228:	fbb1 f1f3 	udiv	r1, r1, r3
+    9c46:	fbb1 f1f3 	udiv	r1, r1, r3
+    a176:	fb03 f000 	mul.w	r0, r3, r0
+    a5c0:	fbb3 f1f1 	udiv	r1, r3, r1
+
+[Disassembly around math/helper functions]
+00000040 <__aeabi_ldivmod>:
+      40:	b97b      	cbnz	r3, 62 <__aeabi_ldivmod+0x22>
+      42:	b972      	cbnz	r2, 62 <__aeabi_ldivmod+0x22>
+      44:	2900      	cmp	r1, #0
+      46:	bfbe      	ittt	lt
+      48:	2000      	movlt	r0, #0
+      4a:	f04f 4100 	movlt.w	r1, #2147483648	@ 0x80000000
+      4e:	e006      	blt.n	5e <__aeabi_ldivmod+0x1e>
+      50:	bf08      	it	eq
+      52:	2800      	cmpeq	r0, #0
+      54:	bf1c      	itt	ne
+      56:	f06f 4100 	mvnne.w	r1, #2147483648	@ 0x80000000
+      5a:	f04f 30ff 	movne.w	r0, #4294967295	@ 0xffffffff
+      5e:	f000 b9b7 	b.w	3d0 <__aeabi_idiv0>
+      62:	f1ad 0c08 	sub.w	ip, sp, #8
+      66:	e96d ce04 	strd	ip, lr, [sp, #-16]!
+      6a:	2900      	cmp	r1, #0
+      6c:	db09      	blt.n	82 <__aeabi_ldivmod+0x42>
+      6e:	2b00      	cmp	r3, #0
+      70:	db1a      	blt.n	a8 <__aeabi_ldivmod+0x68>
+      72:	f000 f84d 	bl	110 <__udivmoddi4>
+      76:	f8dd e004 	ldr.w	lr, [sp, #4]
+      7a:	e9dd 2302 	ldrd	r2, r3, [sp, #8]
+      7e:	b004      	add	sp, #16
+      80:	4770      	bx	lr
+      82:	4240      	negs	r0, r0
+      84:	eb61 0141 	sbc.w	r1, r1, r1, lsl #1
+      88:	2b00      	cmp	r3, #0
+      8a:	db1b      	blt.n	c4 <__aeabi_ldivmod+0x84>
+      8c:	f000 f840 	bl	110 <__udivmoddi4>
+      90:	f8dd e004 	ldr.w	lr, [sp, #4]
+      94:	e9dd 2302 	ldrd	r2, r3, [sp, #8]
+      98:	b004      	add	sp, #16
+      9a:	4240      	negs	r0, r0
+      9c:	eb61 0141 	sbc.w	r1, r1, r1, lsl #1
+      a0:	4252      	negs	r2, r2
+      a2:	eb63 0343 	sbc.w	r3, r3, r3, lsl #1
+      a6:	4770      	bx	lr
+      a8:	4252      	negs	r2, r2
+      aa:	eb63 0343 	sbc.w	r3, r3, r3, lsl #1
+      ae:	f000 f82f 	bl	110 <__udivmoddi4>
+      b2:	f8dd e004 	ldr.w	lr, [sp, #4]
+      b6:	e9dd 2302 	ldrd	r2, r3, [sp, #8]
+      ba:	b004      	add	sp, #16
+      bc:	4240      	negs	r0, r0
+      be:	eb61 0141 	sbc.w	r1, r1, r1, lsl #1
+      c2:	4770      	bx	lr
+      c4:	4252      	negs	r2, r2
+      c6:	eb63 0343 	sbc.w	r3, r3, r3, lsl #1
+      ca:	f000 f821 	bl	110 <__udivmoddi4>
+      ce:	f8dd e004 	ldr.w	lr, [sp, #4]
+      d2:	e9dd 2302 	ldrd	r2, r3, [sp, #8]
+      d6:	b004      	add	sp, #16
+      d8:	4252      	negs	r2, r2
+      da:	eb63 0343 	sbc.w	r3, r3, r3, lsl #1
+      de:	4770      	bx	lr
+
+000000e0 <__aeabi_uldivmod>:
+      e0:	b953      	cbnz	r3, f8 <__aeabi_uldivmod+0x18>
+      e2:	b94a      	cbnz	r2, f8 <__aeabi_uldivmod+0x18>
+      e4:	2900      	cmp	r1, #0
+      e6:	bf08      	it	eq
+      e8:	2800      	cmpeq	r0, #0
+      ea:	bf1c      	itt	ne
+      ec:	f04f 31ff 	movne.w	r1, #4294967295	@ 0xffffffff
+      f0:	f04f 30ff 	movne.w	r0, #4294967295	@ 0xffffffff
+      f4:	f000 b96c 	b.w	3d0 <__aeabi_idiv0>
+      f8:	f1ad 0c08 	sub.w	ip, sp, #8
+      fc:	e96d ce04 	strd	ip, lr, [sp, #-16]!
+     100:	f000 f806 	bl	110 <__udivmoddi4>
+     104:	f8dd e004 	ldr.w	lr, [sp, #4]
+     108:	e9dd 2302 	ldrd	r2, r3, [sp, #8]
+     10c:	b004      	add	sp, #16
+     10e:	4770      	bx	lr
+
+00000110 <__udivmoddi4>:
+     110:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+     114:	9e08      	ldr	r6, [sp, #32]
+     116:	460d      	mov	r5, r1
+     118:	4604      	mov	r4, r0
+     11a:	468e      	mov	lr, r1
+     11c:	2b00      	cmp	r3, #0
+     11e:	f040 8082 	bne.w	226 <__udivmoddi4+0x116>
+     122:	428a      	cmp	r2, r1
+     124:	4617      	mov	r7, r2
+     126:	d946      	bls.n	1b6 <__udivmoddi4+0xa6>
+     128:	fab2 f282 	clz	r2, r2
+     12c:	b14a      	cbz	r2, 142 <__udivmoddi4+0x32>
+     12e:	f1c2 0120 	rsb	r1, r2, #32
+     132:	fa05 f302 	lsl.w	r3, r5, r2
+     136:	fa20 f101 	lsr.w	r1, r0, r1
+     13a:	4097      	lsls	r7, r2
+     13c:	ea41 0e03 	orr.w	lr, r1, r3
+     140:	4094      	lsls	r4, r2
+     142:	ea4f 4817 	mov.w	r8, r7, lsr #16
+     146:	0c23      	lsrs	r3, r4, #16
+     148:	fbbe fcf8 	udiv	ip, lr, r8
+     14c:	b2b9      	uxth	r1, r7
+     14e:	fb08 ee1c 	mls	lr, r8, ip, lr
+     152:	ea43 430e 	orr.w	r3, r3, lr, lsl #16
+     156:	fb0c f001 	mul.w	r0, ip, r1
+     15a:	4298      	cmp	r0, r3
+     15c:	d90a      	bls.n	174 <__udivmoddi4+0x64>
+     15e:	18fb      	adds	r3, r7, r3
+     160:	f10c 35ff 	add.w	r5, ip, #4294967295	@ 0xffffffff
+     164:	f080 8116 	bcs.w	394 <__udivmoddi4+0x284>
+     168:	4298      	cmp	r0, r3
+     16a:	f240 8113 	bls.w	394 <__udivmoddi4+0x284>
+     16e:	f1ac 0c02 	sub.w	ip, ip, #2
+     172:	443b      	add	r3, r7
+     174:	1a1b      	subs	r3, r3, r0
+     176:	b2a4      	uxth	r4, r4
+     178:	fbb3 f0f8 	udiv	r0, r3, r8
+     17c:	fb08 3310 	mls	r3, r8, r0, r3
+     180:	ea44 4403 	orr.w	r4, r4, r3, lsl #16
+     184:	fb00 f101 	mul.w	r1, r0, r1
+     188:	42a1      	cmp	r1, r4
+     18a:	d909      	bls.n	1a0 <__udivmoddi4+0x90>
+     18c:	193c      	adds	r4, r7, r4
+     18e:	f100 33ff 	add.w	r3, r0, #4294967295	@ 0xffffffff
+     192:	f080 8101 	bcs.w	398 <__udivmoddi4+0x288>
+     196:	42a1      	cmp	r1, r4
+     198:	f240 80fe 	bls.w	398 <__udivmoddi4+0x288>
+     19c:	3802      	subs	r0, #2
+     19e:	443c      	add	r4, r7
+     1a0:	1a64      	subs	r4, r4, r1
+     1a2:	ea40 400c 	orr.w	r0, r0, ip, lsl #16
+     1a6:	2100      	movs	r1, #0
+     1a8:	b11e      	cbz	r6, 1b2 <__udivmoddi4+0xa2>
+     1aa:	40d4      	lsrs	r4, r2
+     1ac:	2300      	movs	r3, #0
+     1ae:	e9c6 4300 	strd	r4, r3, [r6]
+     1b2:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+     1b6:	b902      	cbnz	r2, 1ba <__udivmoddi4+0xaa>
+     1b8:	deff      	udf	#255	@ 0xff
+     1ba:	fab2 f282 	clz	r2, r2
+     1be:	2a00      	cmp	r2, #0
+     1c0:	d14f      	bne.n	262 <__udivmoddi4+0x152>
+     1c2:	1bcb      	subs	r3, r1, r7
+     1c4:	ea4f 4e17 	mov.w	lr, r7, lsr #16
+     1c8:	fa1f f887 	uxth.w	r8, r7
+     1cc:	2101      	movs	r1, #1
+     1ce:	fbb3 fcfe 	udiv	ip, r3, lr
+     1d2:	0c25      	lsrs	r5, r4, #16
+     1d4:	fb0e 331c 	mls	r3, lr, ip, r3
+     1d8:	ea45 4503 	orr.w	r5, r5, r3, lsl #16
+     1dc:	fb08 f30c 	mul.w	r3, r8, ip
+     1e0:	42ab      	cmp	r3, r5
+     1e2:	d907      	bls.n	1f4 <__udivmoddi4+0xe4>
+     1e4:	197d      	adds	r5, r7, r5
+     1e6:	f10c 30ff 	add.w	r0, ip, #4294967295	@ 0xffffffff
+     1ea:	d202      	bcs.n	1f2 <__udivmoddi4+0xe2>
+     1ec:	42ab      	cmp	r3, r5
+     1ee:	f200 80e7 	bhi.w	3c0 <__udivmoddi4+0x2b0>
+     1f2:	4684      	mov	ip, r0
+     1f4:	1aed      	subs	r5, r5, r3
+     1f6:	b2a3      	uxth	r3, r4
+     1f8:	fbb5 f0fe 	udiv	r0, r5, lr
+     1fc:	fb0e 5510 	mls	r5, lr, r0, r5
+     200:	ea43 4405 	orr.w	r4, r3, r5, lsl #16
+
+----------------------------------------
+FILE: extra-firmwares/hardworker.z1
+TYPE: extra-firmwares/hardworker.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+000033b2 t __br_unexpected_
+00003400 T __divhi3
+00003472 T __divsi3
+00003400 T __ext_divmod16
+00003472 T __ext_divmod32
+000033de T __ext_udivmod16
+0000343a T __ext_udivmod32
+00003432 T __modhi3
+000034b4 T __modsi3
+000033b8 T __mulsi3
+00003510 T __udivdi3
+000033de T __udivhi3
+0000354c T __udivmoddi4
+0000343a T __udivsi3
+0000352a T __umoddi3
+000033f8 T __umodhi3
+00003468 T __umodsi3
+0000ffc0 T __vectors_start
+000034be T __xabi_udivmod64
+00003100 W _reset_vector__
+000033b6 W _unexpected_
+00010000 T _vectors_end
+000041ba T cc2420_get_txpower
+0000418e T cc2420_set_txpower
+000050fa T ctimer_expired
+00002544 B curr_instance
+0000118c D curr_log_level_6lowpan
+00001188 D curr_log_level_framer
+0000118e D curr_log_level_ipv6
+0000118a D curr_log_level_mac
+00001184 D curr_log_level_main
+00001192 D curr_log_level_rpl
+00001186 D curr_log_level_sys
+00001190 D curr_log_level_tcpip
+000052d2 T etimer_next_expiration_time
+000061c6 T log_6addr
+000061f8 T log_lladdr
+00009bc2 t nbr_path_cost
+00001366 b next_expiration
+0000c4f4 r output_power
+00002475 b poll_mode
+00002650 B rpl_multicast_addr
+00003df6 t set_frame_filtering
+00003e56 t set_poll_mode
+0000c3e4 T stimer_expired
+0001185e T timer_expired
+000131a0 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+000056c4 0000015c T frame802154_parse
+00013618 0000016e t ext_hdr_options_process
+00014668 00000176 t print_field
+000131e8 00000182 T uip_sr_update_node
+00004dae 00000194 t input_packet
+00007574 000001a4 t process_dio_init_dag
+000084b6 000001a6 T rpl_ext_header_hbh_update
+000129fc 000001c4 T uip_icmp6_error_output
+00009ee4 000001da T rpl_neighbor_snprint
+000082c4 000001f2 T rpl_ext_header_srh_update
+000098e2 000001f2 T rpl_icmp6_dao_output
+000079b4 00000208 T rpl_dag_update_state
+00004ab2 0000025e T csma_output_packet
+0000313e 0000026e T main
+00012526 00000282 T uip_ds6_init
+0000b11c 0000028e t add_fragment
+0000964a 00000298 T rpl_icmp6_dio_output
+000047d4 000002de t transmit_from_queue
+00007bbc 00000344 T rpl_process_dio
+00008c9e 0000036a t dao_input
+0001131a 00000412 T tcpip_ipv6_output
+00012cc8 0000041e t ns_input
+0000871c 00000438 T rpl_ext_header_update
+00009008 000004ac t dio_input
+000015e2 00000550 b buframmem_memb_mem
+00001d34 00000558 b frag_buf
+000147de 00000742 T vuprintf
+000138b0 00000930 T uip_process
+0000b562 00000ddc t output
+00010000 0000122e t input
+
+[Math / DSP related strings]
+initialized DAG with instance ID %u, DAG ID 
+, instance %u
+DAG expired, poison and leave
+DAG expiring in %u seconds, send DIS to preferred parent
+created DAG with instance ID %u, DAG ID 
+unable to add/update hop-by-hop extension header: incorrect instance
+unknown instance: %u
+dao_ack_input: unknown instance, discard
+dao_input: unknown RPL instance %u, discard
+dao_input: missing full DAG ID, len %u, discard
+, instance_id %u, DAG ID 
+dis_input: not in an instance yet, discard
+rpl_icmp6_dao_output: not in an instance, skip sending DAO
+, better since %u min)
+uncompression: address %d %d 
+Insufficient packet data to decompress IP address
+compression: before (%d): 
+Not enough packetbuf space to compress header (%u bytes, %u left). Aborting.
+compression: dest or src ipaddr - setting CID
+compression: addr unspecified - setting SAC
+compression: src with context - setting CID & SAC ctx: %d
+compression: first header: %d
+compression: next header: %d
+compression: next header %d (len:%d)
+compression: keeping the next header in this ext hdr: %d
+compression: inlined UDP ports on send side: %x, %x
+IPHC: cannot compress UDP headers
+compression: could not handle compression of header
+compression: last header could is not compressed: %d
+compression: after (%d): 
+output: compressed header does not fit first fragment
+input: received first element of a fragmented packet (tag %d, len %d)
+uncompression: IPHC dispatch
+uncompression: CID flag set - increase header with one
+Not enough packetbuf space to decompress header (%u bytes, %u left). Aborting.
+uncompression: next header inline: %d
+uncompression: error source context not found
+uncompression: error destination context not found
+uncompression: next header is inlined. Next: %d
+uncompression: found ext header id: %d next: %d len: %d
+uncompression: error unsupported ext header
+uncompression: cannot write ext header beyond target buffer
+uncompression: %d len: %d exthdr len: %d (calc: %d)
+uncompression: cannot write UDP header beyond target buffer
+uncompression: incoming header value: %i
+uncompression: UDP ports (ptr+5): %x, %x
+uncompression: destination address
+uncompression: UDP ports (ptr+4): %x, %x
+uncompression: source address
+uncompression: UDP ports (ptr+2): %x, %x
+uncompression: error unsupported UDP compression
+uncompression: checksum included
+uncompression: checksum *NOT* included
+uncompression: UDP length: %u (ext: %u) ip_len: %d udp_len: %d
+uncompression: IP payload length: %d. %u - %u + %u - %u
+input: failed to decompress IPHC packet
+uncompression: IPV6 dispatch
+uncompression: unknown dispatch: 0x%02x, or IPHC disabled
+uncompression: after (%u):
+output: processing %u bytes packet from 
+output: no route found, using default route: 
+Default route periodic: defrt lifetime expired
+NS: removing expired node 
+Upper layer checksum len: %d from: %d
+Processing PAD1 option
+Processing PADN option
+Processing RPL option
+Processing hbh header
+Processing desto header
+Processing Routing header
+icmpv6 bad checksum
+udp: bad checksum 0x%04x 0x%04x
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+000033b8 <__mulsi3>:
+    33b8:	1b 14       	pushm.a	#2,	r11	
+    33ba:	0b 43       	clr	r11		
+    33bc:	0a 43       	clr	r10		
+    33be:	07 3c       	jmp	$+16     	;abs 0x33ce
+    33c0:	5d 03       	rrum	#1,	r13	
+    33c2:	0c 10       	rrc	r12		
+    33c4:	02 28       	jnc	$+6      	;abs 0x33ca
+    33c6:	0a 5e       	add	r14,	r10	
+    33c8:	0b 6f       	addc	r15,	r11	
+    33ca:	0e 5e       	rla	r14		
+    33cc:	0f 6f       	rlc	r15		
+    33ce:	0c 93       	tst	r12		
+    33d0:	f7 23       	jnz	$-16     	;abs 0x33c0
+    33d2:	0d 93       	tst	r13		
+    33d4:	f5 23       	jnz	$-20     	;abs 0x33c0
+    33d6:	0e 4a       	mov	r10,	r14	
+    33d8:	0f 4b       	mov	r11,	r15	
+    33da:	1a 16       	popm.a	#2,	r11	
+--
+000033de <__udivhi3>:
+    33de:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    33e2:	0d 4e       	mov	r14,	r13	
+    33e4:	0e 43       	clr	r14		
+    33e6:	0f 5f       	rla	r15		
+    33e8:	0e 6e       	rlc	r14		
+    33ea:	0e 9d       	cmp	r13,	r14	
+    33ec:	02 28       	jnc	$+6      	;abs 0x33f2
+    33ee:	0e 8d       	sub	r13,	r14	
+    33f0:	1f d3       	bis	#1,	r15	;r3 As==01
+    33f2:	1c 83       	dec	r12		
+    33f4:	f8 23       	jnz	$-14     	;abs 0x33e6
+    33f6:	10 01       	reta			
+
+000033f8 <__umodhi3>:
+    33f8:	b0 13 de 33 	calla	#0x033de	
+    33fc:	0f 4e       	mov	r14,	r15	
+    33fe:	10 01       	reta			
+
+00003400 <__divhi3>:
+    3400:	0d 43       	clr	r13		
+    3402:	0f 93       	tst	r15		
+    3404:	04 34       	jge	$+10     	;abs 0x340e
+    3406:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    340a:	3f e3       	inv	r15		
+    340c:	1f 53       	inc	r15		
+    340e:	0e 93       	tst	r14		
+    3410:	03 34       	jge	$+8      	;abs 0x3418
+    3412:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    3414:	3e e3       	inv	r14		
+    3416:	1e 53       	inc	r14		
+    3418:	0d 12       	push	r13		
+    341a:	b0 13 de 33 	calla	#0x033de	
+    341e:	3d 41       	pop	r13		
+    3420:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    3422:	02 24       	jz	$+6      	;abs 0x3428
+    3424:	3e e3       	inv	r14		
+    3426:	1e 53       	inc	r14		
+--
+0000343a <__udivsi3>:
+    343a:	2b 14       	pushm.a	#3,	r11	
+    343c:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    3440:	0a 4c       	mov	r12,	r10	
+    3442:	0b 4d       	mov	r13,	r11	
+    3444:	0c 43       	clr	r12		
+    3446:	0d 43       	clr	r13		
+    3448:	0e 5e       	rla	r14		
+    344a:	0f 6f       	rlc	r15		
+    344c:	0c 6c       	rlc	r12		
+    344e:	0d 6d       	rlc	r13		
+    3450:	0d 9b       	cmp	r11,	r13	
+    3452:	06 28       	jnc	$+14     	;abs 0x3460
+    3454:	02 20       	jnz	$+6      	;abs 0x345a
+    3456:	0c 9a       	cmp	r10,	r12	
+    3458:	03 28       	jnc	$+8      	;abs 0x3460
+    345a:	0c 8a       	sub	r10,	r12	
+    345c:	0d 7b       	subc	r11,	r13	
+    345e:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+00003472 <__divsi3>:
+    3472:	0b 14       	pushm.a	#1,	r11	
+    3474:	0b 43       	clr	r11		
+    3476:	0f 93       	tst	r15		
+    3478:	06 34       	jge	$+14     	;abs 0x3486
+    347a:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    347e:	3e e3       	inv	r14		
+    3480:	3f e3       	inv	r15		
+    3482:	1e 53       	inc	r14		
+    3484:	0f 63       	adc	r15		
+    3486:	0d 93       	tst	r13		
+    3488:	05 34       	jge	$+12     	;abs 0x3494
+    348a:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    348c:	3c e3       	inv	r12		
+    348e:	3d e3       	inv	r13		
+    3490:	1c 53       	inc	r12		
+    3492:	0d 63       	adc	r13		
+    3494:	b0 13 3a 34 	calla	#0x0343a	
+    3498:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+000034be <__xabi_udivmod64>:
+    34be:	37 14       	pushm.a	#4,	r7	
+    34c0:	30 12 40 00 	push	#64		;#0x0040
+    34c4:	04 48       	mov	r8,	r4	
+    34c6:	05 49       	mov	r9,	r5	
+    34c8:	06 4a       	mov	r10,	r6	
+    34ca:	07 4b       	mov	r11,	r7	
+    34cc:	08 43       	clr	r8		
+    34ce:	09 43       	clr	r9		
+    34d0:	0a 43       	clr	r10		
+    34d2:	0b 43       	clr	r11		
+    34d4:	0c 5c       	rla	r12		
+    34d6:	0d 6d       	rlc	r13		
+    34d8:	0e 6e       	rlc	r14		
+    34da:	0f 6f       	rlc	r15		
+    34dc:	08 68       	rlc	r8		
+    34de:	09 69       	rlc	r9		
+    34e0:	0a 6a       	rlc	r10		
+    34e2:	0b 6b       	rlc	r11		
+--
+00003510 <__udivdi3>:
+    3510:	3b 14       	pushm.a	#4,	r11	
+    3512:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    3516:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    351a:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    351e:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    3522:	b0 13 be 34 	calla	#0x034be	
+    3526:	38 16       	popm.a	#4,	r11	
+    3528:	10 01       	reta			
+
+0000352a <__umoddi3>:
+    352a:	3b 14       	pushm.a	#4,	r11	
+    352c:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    3530:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    3534:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    3538:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    353c:	b0 13 be 34 	calla	#0x034be	
+    3540:	0c 48       	mov	r8,	r12	
+    3542:	0d 49       	mov	r9,	r13	
+--
+0000354c <__udivmoddi4>:
+    354c:	4b 14       	pushm.a	#5,	r11	
+    354e:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    3552:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    3556:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    355a:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    355e:	b0 13 be 34 	calla	#0x034be	
+    3562:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    3566:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    356a:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    356e:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    3572:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    3576:	47 16       	popm.a	#5,	r11	
+    3578:	10 01       	reta			
+
+0000357a <port1_isr>:
+    357a:	3f 14       	pushm.a	#4,	r15	
+    357c:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    3580:	23 00 
+--
+00003df6 <set_frame_filtering>:
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.sky
+TYPE: extra-firmwares/hello-world.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+         U InterruptVectors
+0000427c t __br_unexpected_
+0000de8a T __divhi3
+0000df04 T __divsi3
+0000de8a T __ext_divmod16
+0000df04 T __ext_divmod32
+0000de68 T __ext_udivmod16
+0000dec4 T __ext_udivmod32
+0000debc T __modhi3
+0000df46 T __modsi3
+0000de3c T __mulsi3
+0000dfae T __udivdi3
+0000de68 T __udivhi3
+0000e002 T __udivmoddi4
+0000dec4 T __udivsi3
+0000dfd4 T __umoddi3
+0000de82 T __umodhi3
+0000defa T __umodsi3
+0000ffe0 T __vectors_start
+0000df50 T __xabi_udivmod64
+00004000 W _reset_vector__
+0000de3a W _unexpected_
+00010000 T _vectors_end
+00001150 D all_modules
+0000e094 R cc2420_aes_128_driver
+00004b02 T cc2420_get_txpower
+00004ad6 T cc2420_set_txpower
+0000566e T ctimer_expired
+0000281a B curr_instance
+000013ea B curr_log_level_6lowpan
+000013e2 B curr_log_level_6top
+000013e0 B curr_log_level_coap
+000013e4 B curr_log_level_framer
+000013ec B curr_log_level_ipv6
+000013dc B curr_log_level_lwm2m
+000013e6 B curr_log_level_mac
+000011a4 D curr_log_level_main
+000013e8 B curr_log_level_nullnet
+000013f0 B curr_log_level_rpl
+000013de B curr_log_level_snmp
+000013da B curr_log_level_sys
+000013ee B curr_log_level_tcpip
+000059c6 T etimer_next_expiration_time
+00006662 T log_6addr
+00006694 T log_lladdr
+00008d04 t nbr_path_cost
+00001328 b next_expiration
+0000e0c2 r output_power
+0000124c b poll_mode
+00002918 B rpl_multicast_addr
+00004698 t set_frame_filtering
+000046f8 t set_poll_mode
+0000b340 T stimer_expired
+0000b5d2 T timer_expired
+0000c6b0 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+0000b3b0 00000114 T tcpip_ipv6_output
+00007ebe 00000118 T rpl_ext_header_srh_update
+00004b6c 0000011e t get_value
+000024c0 00000120 b _ds6_neighbors_mem
+000056e8 00000120 T ds2411_init
+00002674 00000120 b nodememb_memb_mem
+0000d13c 0000012c T uiplib_ipaddr_snprint
+00007912 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c172 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d5a 00000158 b frag_info
+0000beea 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000084a6 0000016c t dao_input
+0000d37e 00000194 t print_field
+00007a56 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009d8a 000001fc t add_fragment
+00008954 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c358 00000298 t ns_input
+0000813e 000002aa T rpl_ext_header_update
+00008612 000002ba t dio_input
+0000caa8 000004c2 T uip_process
+00001716 00000550 b buframmem_memb_mem
+00001eb4 00000558 b frag_buf
+0000d512 0000063e T vuprintf
+0000a054 0000079e t output
+0000a7f2 00000a1a t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+00004698 <set_frame_filtering>:
+    4698:	0b 12       	push	r11		
+    469a:	4b 4f       	mov.b	r15,	r11	
+    469c:	d2 53 50 12 	inc.b	&0x1250	
+    46a0:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    46a4:	b0 12 de 43 	call	#0x43de	
+    46a8:	0e 4f       	mov	r15,	r14	
+    46aa:	4b 93       	tst.b	r11		
+    46ac:	03 24       	jz	$+8      	;abs 0x46b4
+    46ae:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    46b2:	02 3c       	jmp	$+6      	;abs 0x46b8
+    46b4:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    46b8:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    46bc:	b0 12 2a 44 	call	#0x442a	
+    46c0:	b0 12 58 46 	call	#0x4658	
+    46c4:	3b 41       	pop	r11		
+    46c6:	30 41       	ret			
+
+000046c8 <set_auto_ack>:
+--
+00008d04 <nbr_path_cost>:
+    8d04:	0b 12       	push	r11		
+    8d06:	0a 12       	push	r10		
+    8d08:	0b 4f       	mov	r15,	r11	
+    8d0a:	0f 93       	tst	r15		
+    8d0c:	13 24       	jz	$+40     	;abs 0x8d34
+    8d0e:	1a 4f 04 00 	mov	4(r15),	r10	;0x0004(r15)
+    8d12:	b0 12 de 8c 	call	#0x8cde	
+    8d16:	0c 4f       	mov	r15,	r12	
+    8d18:	0d 43       	clr	r13		
+    8d1a:	0e 4a       	mov	r10,	r14	
+    8d1c:	0f 43       	clr	r15		
+    8d1e:	0c 5e       	add	r14,	r12	
+    8d20:	0d 6f       	addc	r15,	r13	
+    8d22:	1d 93       	cmp	#1,	r13	;r3 As==01
+    8d24:	07 2c       	jc	$+16     	;abs 0x8d34
+    8d26:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8d28:	05 2c       	jc	$+12     	;abs 0x8d34
+    8d2a:	0f 4b       	mov	r11,	r15	
+--
+0000de3c <__mulsi3>:
+    de3c:	0b 12       	push	r11		
+    de3e:	0a 12       	push	r10		
+    de40:	0b 43       	clr	r11		
+    de42:	0a 43       	clr	r10		
+    de44:	08 3c       	jmp	$+18     	;abs 0xde56
+    de46:	12 c3       	clrc			
+    de48:	0d 10       	rrc	r13		
+    de4a:	0c 10       	rrc	r12		
+    de4c:	02 28       	jnc	$+6      	;abs 0xde52
+    de4e:	0a 5e       	add	r14,	r10	
+    de50:	0b 6f       	addc	r15,	r11	
+    de52:	0e 5e       	rla	r14		
+    de54:	0f 6f       	rlc	r15		
+    de56:	0c 93       	tst	r12		
+    de58:	f6 23       	jnz	$-18     	;abs 0xde46
+    de5a:	0d 93       	tst	r13		
+    de5c:	f4 23       	jnz	$-22     	;abs 0xde46
+    de5e:	0e 4a       	mov	r10,	r14	
+--
+0000de68 <__udivhi3>:
+    de68:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    de6c:	0d 4e       	mov	r14,	r13	
+    de6e:	0e 43       	clr	r14		
+    de70:	0f 5f       	rla	r15		
+    de72:	0e 6e       	rlc	r14		
+    de74:	0e 9d       	cmp	r13,	r14	
+    de76:	02 28       	jnc	$+6      	;abs 0xde7c
+    de78:	0e 8d       	sub	r13,	r14	
+    de7a:	1f d3       	bis	#1,	r15	;r3 As==01
+    de7c:	1c 83       	dec	r12		
+    de7e:	f8 23       	jnz	$-14     	;abs 0xde70
+    de80:	30 41       	ret			
+
+0000de82 <__umodhi3>:
+    de82:	b0 12 68 de 	call	#0xde68	
+    de86:	0f 4e       	mov	r14,	r15	
+    de88:	30 41       	ret			
+
+0000de8a <__divhi3>:
+    de8a:	0d 43       	clr	r13		
+    de8c:	0f 93       	tst	r15		
+    de8e:	04 34       	jge	$+10     	;abs 0xde98
+    de90:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    de94:	3f e3       	inv	r15		
+    de96:	1f 53       	inc	r15		
+    de98:	0e 93       	tst	r14		
+    de9a:	03 34       	jge	$+8      	;abs 0xdea2
+    de9c:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    de9e:	3e e3       	inv	r14		
+    dea0:	1e 53       	inc	r14		
+    dea2:	0d 12       	push	r13		
+    dea4:	b0 12 68 de 	call	#0xde68	
+    dea8:	3d 41       	pop	r13		
+    deaa:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    deac:	02 24       	jz	$+6      	;abs 0xdeb2
+    deae:	3e e3       	inv	r14		
+    deb0:	1e 53       	inc	r14		
+--
+0000dec4 <__udivsi3>:
+    dec4:	0b 12       	push	r11		
+    dec6:	0a 12       	push	r10		
+    dec8:	09 12       	push	r9		
+    deca:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    dece:	0a 4c       	mov	r12,	r10	
+    ded0:	0b 4d       	mov	r13,	r11	
+    ded2:	0c 43       	clr	r12		
+    ded4:	0d 43       	clr	r13		
+    ded6:	0e 5e       	rla	r14		
+    ded8:	0f 6f       	rlc	r15		
+    deda:	0c 6c       	rlc	r12		
+    dedc:	0d 6d       	rlc	r13		
+    dede:	0d 9b       	cmp	r11,	r13	
+    dee0:	06 28       	jnc	$+14     	;abs 0xdeee
+    dee2:	02 20       	jnz	$+6      	;abs 0xdee8
+    dee4:	0c 9a       	cmp	r10,	r12	
+    dee6:	03 28       	jnc	$+8      	;abs 0xdeee
+    dee8:	0c 8a       	sub	r10,	r12	
+--
+0000df04 <__divsi3>:
+    df04:	0b 12       	push	r11		
+    df06:	0b 43       	clr	r11		
+    df08:	0f 93       	tst	r15		
+    df0a:	06 34       	jge	$+14     	;abs 0xdf18
+    df0c:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    df10:	3e e3       	inv	r14		
+    df12:	3f e3       	inv	r15		
+    df14:	1e 53       	inc	r14		
+    df16:	0f 63       	adc	r15		
+    df18:	0d 93       	tst	r13		
+    df1a:	05 34       	jge	$+12     	;abs 0xdf26
+    df1c:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    df1e:	3c e3       	inv	r12		
+    df20:	3d e3       	inv	r13		
+    df22:	1c 53       	inc	r12		
+    df24:	0d 63       	adc	r13		
+    df26:	b0 12 c4 de 	call	#0xdec4	
+    df2a:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+0000df50 <__xabi_udivmod64>:
+    df50:	07 12       	push	r7		
+    df52:	06 12       	push	r6		
+    df54:	05 12       	push	r5		
+    df56:	04 12       	push	r4		
+    df58:	30 12 40 00 	push	#64		;#0x0040
+    df5c:	04 48       	mov	r8,	r4	
+    df5e:	05 49       	mov	r9,	r5	
+    df60:	06 4a       	mov	r10,	r6	
+    df62:	07 4b       	mov	r11,	r7	
+    df64:	08 43       	clr	r8		
+    df66:	09 43       	clr	r9		
+    df68:	0a 43       	clr	r10		
+    df6a:	0b 43       	clr	r11		
+    df6c:	0c 5c       	rla	r12		
+    df6e:	0d 6d       	rlc	r13		
+    df70:	0e 6e       	rlc	r14		
+    df72:	0f 6f       	rlc	r15		
+    df74:	08 68       	rlc	r8		
+--
+0000dfae <__udivdi3>:
+
+----------------------------------------
+FILE: extra-firmwares/hello-world.z1
+TYPE: extra-firmwares/hello-world.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+0000337c t __br_unexpected_
+000033ca T __divhi3
+0000343c T __divsi3
+000033ca T __ext_divmod16
+0000343c T __ext_divmod32
+000033a8 T __ext_udivmod16
+00003404 T __ext_udivmod32
+000033fc T __modhi3
+0000347e T __modsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+000034f4 T __umoddi3
+000033c2 T __umodhi3
+00003432 T __umodsi3
+0000ffc0 T __vectors_start
+00003488 T __xabi_udivmod64
+00003100 W _reset_vector__
+00003380 W _unexpected_
+00010000 T _vectors_end
+0000414c T cc2420_get_txpower
+00004120 T cc2420_set_txpower
+00004bac T ctimer_expired
+00002500 B curr_instance
+00001164 D curr_log_level_main
+00004d84 T etimer_next_expiration_time
+00005a66 T log_6addr
+00005a98 T log_lladdr
+00007f02 t nbr_path_cost
+00001338 b next_expiration
+0000cf10 r output_power
+00002431 b poll_mode
+0000260c B rpl_multicast_addr
+00003d88 t set_frame_filtering
+00003de8 t set_poll_mode
+0000a2e2 T stimer_expired
+0000a566 T timer_expired
+0000b5e6 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+00004430 000000ea T cc2420_init
+00005874 000000f6 T link_stats_input_callback
+00002624 00000108 B uip_ds6_if
+00002500 0000010c B curr_instance
+0000a352 0000010c T tcpip_ipv6_output
+0000bff4 00000114 T uiplib_ipaddr_snprint
+000041b2 0000011e t get_value
+00004840 00000136 T csma_output_packet
+0000b0d8 00000136 T uip_icmp6_error_output
+00006c74 0000013c T rpl_dag_update_state
+000042e6 0000014a t set_value
+00007722 00000158 t dao_input
+00001b98 00000158 b frag_info
+00005176 0000015c T frame802154_parse
+0000ae58 00000164 T uip_ds6_init
+0000c2c6 00000176 t print_field
+00006db0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008e3a 000001e8 t add_fragment
+00007b8c 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007406 00000266 T rpl_ext_header_update
+0000b2a2 00000290 t ns_input
+0000787a 00000292 t dio_input
+0000b984 000004ba T uip_process
+0000159e 00000550 b buframmem_memb_mem
+00001cf0 00000558 b frag_buf
+0000c43c 00000742 T vuprintf
+000090d2 00000746 t output
+00009818 0000099c t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+00003382 <__mulsi3>:
+    3382:	1b 14       	pushm.a	#2,	r11	
+    3384:	0b 43       	clr	r11		
+    3386:	0a 43       	clr	r10		
+    3388:	07 3c       	jmp	$+16     	;abs 0x3398
+    338a:	5d 03       	rrum	#1,	r13	
+    338c:	0c 10       	rrc	r12		
+    338e:	02 28       	jnc	$+6      	;abs 0x3394
+    3390:	0a 5e       	add	r14,	r10	
+    3392:	0b 6f       	addc	r15,	r11	
+    3394:	0e 5e       	rla	r14		
+    3396:	0f 6f       	rlc	r15		
+    3398:	0c 93       	tst	r12		
+    339a:	f7 23       	jnz	$-16     	;abs 0x338a
+    339c:	0d 93       	tst	r13		
+    339e:	f5 23       	jnz	$-20     	;abs 0x338a
+    33a0:	0e 4a       	mov	r10,	r14	
+    33a2:	0f 4b       	mov	r11,	r15	
+    33a4:	1a 16       	popm.a	#2,	r11	
+--
+000033a8 <__udivhi3>:
+    33a8:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    33ac:	0d 4e       	mov	r14,	r13	
+    33ae:	0e 43       	clr	r14		
+    33b0:	0f 5f       	rla	r15		
+    33b2:	0e 6e       	rlc	r14		
+    33b4:	0e 9d       	cmp	r13,	r14	
+    33b6:	02 28       	jnc	$+6      	;abs 0x33bc
+    33b8:	0e 8d       	sub	r13,	r14	
+    33ba:	1f d3       	bis	#1,	r15	;r3 As==01
+    33bc:	1c 83       	dec	r12		
+    33be:	f8 23       	jnz	$-14     	;abs 0x33b0
+    33c0:	10 01       	reta			
+
+000033c2 <__umodhi3>:
+    33c2:	b0 13 a8 33 	calla	#0x033a8	
+    33c6:	0f 4e       	mov	r14,	r15	
+    33c8:	10 01       	reta			
+
+000033ca <__divhi3>:
+    33ca:	0d 43       	clr	r13		
+    33cc:	0f 93       	tst	r15		
+    33ce:	04 34       	jge	$+10     	;abs 0x33d8
+    33d0:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    33d4:	3f e3       	inv	r15		
+    33d6:	1f 53       	inc	r15		
+    33d8:	0e 93       	tst	r14		
+    33da:	03 34       	jge	$+8      	;abs 0x33e2
+    33dc:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    33de:	3e e3       	inv	r14		
+    33e0:	1e 53       	inc	r14		
+    33e2:	0d 12       	push	r13		
+    33e4:	b0 13 a8 33 	calla	#0x033a8	
+    33e8:	3d 41       	pop	r13		
+    33ea:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    33ec:	02 24       	jz	$+6      	;abs 0x33f2
+    33ee:	3e e3       	inv	r14		
+    33f0:	1e 53       	inc	r14		
+--
+00003404 <__udivsi3>:
+    3404:	2b 14       	pushm.a	#3,	r11	
+    3406:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    340a:	0a 4c       	mov	r12,	r10	
+    340c:	0b 4d       	mov	r13,	r11	
+    340e:	0c 43       	clr	r12		
+    3410:	0d 43       	clr	r13		
+    3412:	0e 5e       	rla	r14		
+    3414:	0f 6f       	rlc	r15		
+    3416:	0c 6c       	rlc	r12		
+    3418:	0d 6d       	rlc	r13		
+    341a:	0d 9b       	cmp	r11,	r13	
+    341c:	06 28       	jnc	$+14     	;abs 0x342a
+    341e:	02 20       	jnz	$+6      	;abs 0x3424
+    3420:	0c 9a       	cmp	r10,	r12	
+    3422:	03 28       	jnc	$+8      	;abs 0x342a
+    3424:	0c 8a       	sub	r10,	r12	
+    3426:	0d 7b       	subc	r11,	r13	
+    3428:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+0000343c <__divsi3>:
+    343c:	0b 14       	pushm.a	#1,	r11	
+    343e:	0b 43       	clr	r11		
+    3440:	0f 93       	tst	r15		
+    3442:	06 34       	jge	$+14     	;abs 0x3450
+    3444:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    3448:	3e e3       	inv	r14		
+    344a:	3f e3       	inv	r15		
+    344c:	1e 53       	inc	r14		
+    344e:	0f 63       	adc	r15		
+    3450:	0d 93       	tst	r13		
+    3452:	05 34       	jge	$+12     	;abs 0x345e
+    3454:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    3456:	3c e3       	inv	r12		
+    3458:	3d e3       	inv	r13		
+    345a:	1c 53       	inc	r12		
+    345c:	0d 63       	adc	r13		
+    345e:	b0 13 04 34 	calla	#0x03404	
+    3462:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+00003488 <__xabi_udivmod64>:
+    3488:	37 14       	pushm.a	#4,	r7	
+    348a:	30 12 40 00 	push	#64		;#0x0040
+    348e:	04 48       	mov	r8,	r4	
+    3490:	05 49       	mov	r9,	r5	
+    3492:	06 4a       	mov	r10,	r6	
+    3494:	07 4b       	mov	r11,	r7	
+    3496:	08 43       	clr	r8		
+    3498:	09 43       	clr	r9		
+    349a:	0a 43       	clr	r10		
+    349c:	0b 43       	clr	r11		
+    349e:	0c 5c       	rla	r12		
+    34a0:	0d 6d       	rlc	r13		
+    34a2:	0e 6e       	rlc	r14		
+    34a4:	0f 6f       	rlc	r15		
+    34a6:	08 68       	rlc	r8		
+    34a8:	09 69       	rlc	r9		
+    34aa:	0a 6a       	rlc	r10		
+    34ac:	0b 6b       	rlc	r11		
+--
+000034da <__udivdi3>:
+    34da:	3b 14       	pushm.a	#4,	r11	
+    34dc:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34e0:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34e4:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34e8:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    34ec:	b0 13 88 34 	calla	#0x03488	
+    34f0:	38 16       	popm.a	#4,	r11	
+    34f2:	10 01       	reta			
+
+000034f4 <__umoddi3>:
+    34f4:	3b 14       	pushm.a	#4,	r11	
+    34f6:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34fa:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34fe:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    3502:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    3506:	b0 13 88 34 	calla	#0x03488	
+    350a:	0c 48       	mov	r8,	r12	
+    350c:	0d 49       	mov	r9,	r13	
+--
+00003516 <__udivmoddi4>:
+    3516:	4b 14       	pushm.a	#5,	r11	
+    3518:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    351c:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    3520:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    3524:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    3528:	b0 13 88 34 	calla	#0x03488	
+    352c:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    3530:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    3534:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    3538:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    353c:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    3540:	47 16       	popm.a	#5,	r11	
+    3542:	10 01       	reta			
+
+00003544 <port1_isr>:
+    3544:	3f 14       	pushm.a	#4,	r15	
+    3546:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    354a:	23 00 
+--
+00003d88 <set_frame_filtering>:
+
+----------------------------------------
+FILE: extra-firmwares/mtype5756516.cooja
+TYPE: extra-firmwares/mtype5756516.cooja: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, BuildID[sha1]=1f0390f80935c86149abad7dbc92cbc9a0fe7759, not stripped
+
+[Math / DSP related symbols]
+0000000000044360 r SIN_TAB
+0000000000057b38 b addr_filter
+00000000000523c0 D aes_128_driver
+0000000000054140 D all_modules
+000000000006cb94 b asn_since_last_learning
+000000000002e8ab t cmd_log
+00000000000165b8 T compower_accumulate
+0000000000016642 T compower_clear
+0000000000055990 B compower_idle_activity
+000000000001659e T compower_init
+000000000001f8bc t control_message_expiration
+000000000001c1e0 t cosI
+00000000000179de T crc16_add
+0000000000017a50 T crc16_data
+0000000000017fd4 T ctimer_expired
+00000000000693a0 B curr_instance
+0000000000059994 B curr_log_level_6lowpan
+00000000000599a4 B curr_log_level_6top
+00000000000599a8 B curr_log_level_coap
+00000000000599a0 B curr_log_level_framer
+0000000000059990 B curr_log_level_ipv6
+00000000000599b0 B curr_log_level_lwm2m
+000000000005999c B curr_log_level_mac
+0000000000054130 D curr_log_level_main
+0000000000059998 B curr_log_level_nullnet
+0000000000059988 B curr_log_level_rpl
+00000000000599ac B curr_log_level_snmp
+000000000005998c B curr_log_level_tcpip
+0000000000094d40 b current_channel_since.4
+000000000001f3b9 t data_message_expiration
+0000000000024a37 t double_interval
+000000000003611b t double_interval
+0000000000058028 B energest_current_mode
+00000000000196d8 T etimer_expiration_time
+0000000000017c04 t etimer_expired
+000000000002d7c1 t etimer_expired
+000000000003424b t etimer_expired
+000000000003561b t etimer_expired
+000000000003b2df t etimer_expired
+000000000003ce62 t etimer_expired
+0000000000019727 T etimer_next_expiration_time
+0000000000094a60 b expected_rx_time.14
+0000000000036244 t fire
+0000000000014bb9 t galois_mul2
+000000000001c23c T ifft
+000000000001c206 t ilog2
+000000000005bf08 b l_missing.10
+000000000001cc0d T leds_single_off
+000000000001cba0 T leds_single_on
+000000000001cc7a T leds_single_toggle
+000000000001fa36 t lifetime_timer_expiration
+000000000005beb8 b locdsptr
+000000000001d761 T log_6addr
+000000000001d8a2 T log_6addr_compact
+000000000001d7c7 T log_6addr_compact_snprint
+000000000001da0a T log_bytes
+00000000000342a0 t log_energest
+000000000001db78 T log_get_level
+000000000001dc2f T log_level_to_str
+000000000001d908 T log_lladdr
+000000000001d988 T log_lladdr_compact
+0000000000016bdb T log_message
+00000000000579c8 b log_putchar_with_slip
+000000000001da6a T log_set_level
+0000000000016c0a T log_set_putchar_with_slip
+000000000001c893 t mul_gf_256
+000000000002a810 t nbr_path_cost
+000000000002b72f t nbr_path_cost
+00000000000585e8 b next_expiration
+0000000000057b30 b poll_mode
+000000000005bf09 b r_missing.9
+0000000000016fa6 T radio_set_txpower
+00000000000548c0 b round_keys
+00000000000272b8 T rpl_get_default_instance
+000000000006a940 B rpl_multicast_addr
+000000000002d119 T sensors_first
+0000000000016f47 t set_frame_filtering
+0000000000016f75 t set_poll_mode
+000000000002e73f t shell_output_log_levels
+0000000000064318 B simEtimerNextExpirationTime
+00000000000559c0 B simLoggedData
+00000000000579c4 B simLoggedFlag
+00000000000579c0 B simLoggedLength
+0000000000053fdc D simPower
+000000000006b178 B simRtimerNextExpirationTime
+0000000000016b56 T simlog
+0000000000016af4 T simlog_char
+000000000001c17f t sinI
+00000000000355bb T stimer_expired
+0000000000035f41 T timer_expired
+0000000000037be1 T tsch_queue_backoff_expired
+000000000003fa97 T uip_nameserver_next_expiration
+00000000000407b5 T uip_sr_expire_parent
+000000000005bf28 b vector.6
+000000000005bf21 b vector_len.7
+
+[Top 30 largest symbols / possible hotspots]
+000000000002df70 0000000000000714 t cmd_rpl_status
+000000000003a46e 0000000000000799 t tsch_rx_slot
+000000000003fbbb 00000000000007c6 t ns_input
+000000000006cc60 0000000000000800 b packet_memb_memb_mem
+000000000006a960 0000000000000800 B simSerialReceivingData
+0000000000039c52 000000000000081c t tsch_tx_slot
+0000000000020aeb 00000000000009a7 t accept
+0000000000025fe3 00000000000009ae t icmp_input
+0000000000097ce0 0000000000000ab0 b packets_memb_memb_mem
+000000000003287c 0000000000000e0b t uncompress_hdr_iphc
+0000000000053000 0000000000000ec0 d _GLOBAL_OFFSET_TABLE_
+000000000003193b 0000000000000f41 t compress_hdr_iphc
+00000000000415f3 0000000000000f5d T uip_process
+00000000000549c0 0000000000000fa0 B simCFSData
+000000000001fb44 0000000000000fa7 t icmp_in
+00000000000586c0 00000000000012c0 b _link_stats_mem
+0000000000069600 00000000000012c0 b _rpl_neighbors_mem
+0000000000062f60 00000000000012c0 b neighbor_addr_mem_memb_mem
+00000000000002f0 0000000000001974 r __TMC_END__
+0000000000067480 0000000000001ec0 b buffered_msgs
+00000000000559c0 0000000000002000 B simLoggedData
+0000000000059b60 00000000000021c0 b buffered_message_set
+00000000000457d8 000000000000227c r __GNU_EH_FRAME_HDR
+000000000005bfa0 00000000000023d0 b cooja_thread
+0000000000060760 00000000000023d0 b process_run_thread
+000000000005e380 00000000000023d0 b rtimer_thread
+00000000000953c0 0000000000002580 b _ds6_neighbors_mem
+00000000000648e0 0000000000002a80 b buframmem_memb_mem
+0000000000098900 0000000000002ee0 b nodememb_memb_mem
+000000000006d460 0000000000026ac0 b _tsch_neighbors_mem
+
+[Math / DSP related strings]
+aes_128_driver
+ctimer_expired
+compower_idle_activity
+compower_init
+compower_clear
+compower_accumulate
+curr_log_level_main
+log_lladdr
+log_6addr
+simLoggedData
+simLoggedLength
+simLoggedFlag
+simlog_char
+simlog
+log_message
+log_set_putchar_with_slip
+simPower
+radio_set_txpower
+crc16_add
+crc16_data
+etimer_expiration_time
+etimer_next_expiration_time
+ifft
+leds_single_on
+leds_single_off
+leds_single_toggle
+curr_log_level_rpl
+curr_log_level_tcpip
+curr_log_level_ipv6
+curr_log_level_6lowpan
+curr_log_level_nullnet
+curr_log_level_mac
+curr_log_level_framer
+curr_log_level_6top
+curr_log_level_coap
+curr_log_level_snmp
+curr_log_level_lwm2m
+log_6addr_compact_snprint
+log_6addr_compact
+log_lladdr_compact
+log_bytes
+log_set_level
+log_get_level
+log_level_to_str
+simEtimerNextExpirationTime
+curr_instance
+rpl_get_default_instance
+uip_sr_expire_parent
+simRtimerNextExpirationTime
+sensors_first
+stimer_expired
+tsch_queue_backoff_expired
+uip_nameserver_next_expiration
+, better since %u min)
+-- Instance: None
+-- Instance: %u
+Log levels:
+Invalid first argument: %s
+'> log module level': Sets log level (0--4) for a given module (or "all"). For module "mac", level 4 also enables per-slot logging.
+aes-128.c
+compower.c
+cooja-log.c
+log_putchar_with_slip
+addr_filter
+set_frame_filtering
+crc16.c
+etimer_expired
+ifft.c
+SIN_TAB
+sinI
+cosI
+ilog2
+locdsptr
+data_message_expiration
+control_message_expiration
+lifetime_timer_expiration
+l_missing.10
+r_missing.9
+vector_len.7
+vector.6
+double_interval
+nbr_path_cost
+shell_output_log_levels
+cmd_log
+compress_addr_64
+uncompress_addr
+uncompress_hdr_iphc
+log_energest
+fire
+asn_since_last_learning
+tsch-log.c
+expected_rx_time.14
+current_channel_since.4
+sensors_first
+compower_idle_activity
+crc16_add
+tsch_queue_backoff_expired
+radio_set_txpower
+simLoggedLength
+ifft
+
+[Instruction samples: multiply/divide/float-like operations]
+   1656d:	48 f7 e2             	mul    %rdx
+   24a2b:	48 f7 f1             	div    %rcx
+   2ae57:	48 f7 e2             	mul    %rdx
+   2aef9:	48 f7 e2             	mul    %rdx
+   2bb33:	48 f7 e2             	mul    %rdx
+   2bbc9:	48 f7 e2             	mul    %rdx
+   2dc55:	48 f7 e2             	mul    %rdx
+   2ff9e:	48 f7 e2             	mul    %rdx
+   3002c:	48 f7 e2             	mul    %rdx
+   343db:	48 f7 e2             	mul    %rdx
+   36526:	48 f7 f1             	div    %rcx
+   37ecf:	66 f7 f1             	div    %cx
+   3808f:	f7 f1                	div    %ecx
+   3809f:	f7 f1                	div    %ecx
+   389f2:	f7 f1                	div    %ecx
+   397c5:	f7 f1                	div    %ecx
+   39b70:	48 f7 e2             	mul    %rdx
+   3af3b:	48 f7 f7             	div    %rdi
+   3b81e:	48 f7 e2             	mul    %rdx
+   3b847:	48 f7 e2             	mul    %rdx
+   3b859:	48 f7 f6             	div    %rsi
+   3bab8:	f7 f1                	div    %ecx
+   3bacb:	f7 f1                	div    %ecx
+   3c031:	f7 f1                	div    %ecx
+   3c044:	f7 f1                	div    %ecx
+   3c8a3:	48 f7 f1             	div    %rcx
+   3eec5:	f7 f1                	div    %ecx
+
+[Disassembly around math/helper functions]
+0000000000013020 <crc16_add@plt>:
+   13020:	f3 0f 1e fa          	endbr64
+   13024:	f2 ff 25 25 01 04 00 	bnd jmp *0x40125(%rip)        # 53150 <crc16_add@@Base+0x3b772>
+   1302b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013030 <packetbuf_set_addr@plt>:
+   13030:	f3 0f 1e fa          	endbr64
+   13034:	f2 ff 25 1d 01 04 00 	bnd jmp *0x4011d(%rip)        # 53158 <packetbuf_set_addr@@Base+0x3013b>
+   1303b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013040 <strncmp@plt>:
+   13040:	f3 0f 1e fa          	endbr64
+   13044:	f2 ff 25 15 01 04 00 	bnd jmp *0x40115(%rip)        # 53160 <strncmp@GLIBC_2.2.5>
+   1304b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013050 <ctimer_stop@plt>:
+   13050:	f3 0f 1e fa          	endbr64
+   13054:	f2 ff 25 0d 01 04 00 	bnd jmp *0x4010d(%rip)        # 53168 <ctimer_stop@@Base+0x3b1f2>
+   1305b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000013060 <tsch_queue_backoff_expired@plt>:
+--
+0000000000014bb9 <galois_mul2>:
+   14bb9:	f3 0f 1e fa          	endbr64
+   14bbd:	55                   	push   %rbp
+   14bbe:	48 89 e5             	mov    %rsp,%rbp
+   14bc1:	89 f8                	mov    %edi,%eax
+   14bc3:	88 45 ec             	mov    %al,-0x14(%rbp)
+   14bc6:	0f b6 45 ec          	movzbl -0x14(%rbp),%eax
+   14bca:	c0 e8 07             	shr    $0x7,%al
+   14bcd:	89 c2                	mov    %eax,%edx
+   14bcf:	89 d0                	mov    %edx,%eax
+   14bd1:	01 c0                	add    %eax,%eax
+   14bd3:	01 d0                	add    %edx,%eax
+   14bd5:	8d 14 c5 00 00 00 00 	lea    0x0(,%rax,8),%edx
+   14bdc:	01 d0                	add    %edx,%eax
+   14bde:	88 45 ff             	mov    %al,-0x1(%rbp)
+   14be1:	0f b6 45 ec          	movzbl -0x14(%rbp),%eax
+   14be5:	01 c0                	add    %eax,%eax
+   14be7:	89 c2                	mov    %eax,%edx
+   14be9:	0f b6 45 ff          	movzbl -0x1(%rbp),%eax
+--
+   14e2f:	e8 85 fd ff ff       	call   14bb9 <galois_mul2>
+   14e34:	88 45 ff             	mov    %al,-0x1(%rbp)
+   14e37:	0f b6 45 fd          	movzbl -0x3(%rbp),%eax
+   14e3b:	83 c0 01             	add    $0x1,%eax
+   14e3e:	88 45 fd             	mov    %al,-0x3(%rbp)
+   14e41:	80 7d fd 0a          	cmpb   $0xa,-0x3(%rbp)
+   14e45:	0f 86 dc fd ff ff    	jbe    14c27 <set_key+0x36>
+   14e4b:	90                   	nop
+   14e4c:	90                   	nop
+   14e4d:	c9                   	leave
+   14e4e:	c3                   	ret
+
+0000000000014e4f <encrypt>:
+   14e4f:	f3 0f 1e fa          	endbr64
+   14e53:	55                   	push   %rbp
+   14e54:	48 89 e5             	mov    %rsp,%rbp
+   14e57:	48 83 ec 18          	sub    $0x18,%rsp
+   14e5b:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+   14e5f:	c6 45 fb 00          	movb   $0x0,-0x5(%rbp)
+--
+   15087:	e8 2d fb ff ff       	call   14bb9 <galois_mul2>
+   1508c:	88 45 ff             	mov    %al,-0x1(%rbp)
+   1508f:	0f b6 55 fe          	movzbl -0x2(%rbp),%edx
+   15093:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   15097:	48 01 d0             	add    %rdx,%rax
+   1509a:	0f b6 00             	movzbl (%rax),%eax
+   1509d:	32 45 ff             	xor    -0x1(%rbp),%al
+   150a0:	0f b6 4d fe          	movzbl -0x2(%rbp),%ecx
+   150a4:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+   150a8:	48 01 ca             	add    %rcx,%rdx
+   150ab:	32 45 fc             	xor    -0x4(%rbp),%al
+   150ae:	88 02                	mov    %al,(%rdx)
+   150b0:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   150b4:	48 8d 50 01          	lea    0x1(%rax),%rdx
+   150b8:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   150bc:	48 01 d0             	add    %rdx,%rax
+   150bf:	0f b6 10             	movzbl (%rax),%edx
+   150c2:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   150c6:	48 8d 48 02          	lea    0x2(%rax),%rcx
+--
+   150df:	e8 d5 fa ff ff       	call   14bb9 <galois_mul2>
+   150e4:	88 45 ff             	mov    %al,-0x1(%rbp)
+   150e7:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   150eb:	48 8d 50 01          	lea    0x1(%rax),%rdx
+   150ef:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   150f3:	48 01 d0             	add    %rdx,%rax
+   150f6:	0f b6 00             	movzbl (%rax),%eax
+   150f9:	32 45 ff             	xor    -0x1(%rbp),%al
+   150fc:	0f b6 55 fe          	movzbl -0x2(%rbp),%edx
+   15100:	48 8d 4a 01          	lea    0x1(%rdx),%rcx
+   15104:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+   15108:	48 01 ca             	add    %rcx,%rdx
+   1510b:	32 45 fc             	xor    -0x4(%rbp),%al
+   1510e:	88 02                	mov    %al,(%rdx)
+   15110:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   15114:	48 8d 50 02          	lea    0x2(%rax),%rdx
+   15118:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   1511c:	48 01 d0             	add    %rdx,%rax
+   1511f:	0f b6 10             	movzbl (%rax),%edx
+--
+   1513f:	e8 75 fa ff ff       	call   14bb9 <galois_mul2>
+   15144:	88 45 ff             	mov    %al,-0x1(%rbp)
+   15147:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   1514b:	48 8d 50 02          	lea    0x2(%rax),%rdx
+   1514f:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   15153:	48 01 d0             	add    %rdx,%rax
+   15156:	0f b6 00             	movzbl (%rax),%eax
+   15159:	32 45 ff             	xor    -0x1(%rbp),%al
+   1515c:	0f b6 55 fe          	movzbl -0x2(%rbp),%edx
+   15160:	48 8d 4a 02          	lea    0x2(%rdx),%rcx
+   15164:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+   15168:	48 01 ca             	add    %rcx,%rdx
+   1516b:	32 45 fc             	xor    -0x4(%rbp),%al
+   1516e:	88 02                	mov    %al,(%rdx)
+   15170:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   15174:	48 8d 50 03          	lea    0x3(%rax),%rdx
+   15178:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   1517c:	48 01 d0             	add    %rdx,%rax
+   1517f:	0f b6 00             	movzbl (%rax),%eax
+--
+   1518e:	e8 26 fa ff ff       	call   14bb9 <galois_mul2>
+   15193:	88 45 ff             	mov    %al,-0x1(%rbp)
+   15196:	0f b6 45 fe          	movzbl -0x2(%rbp),%eax
+   1519a:	48 8d 50 03          	lea    0x3(%rax),%rdx
+   1519e:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+   151a2:	48 01 d0             	add    %rdx,%rax
+   151a5:	0f b6 00             	movzbl (%rax),%eax
+   151a8:	32 45 ff             	xor    -0x1(%rbp),%al
+   151ab:	0f b6 55 fe          	movzbl -0x2(%rbp),%edx
+   151af:	48 8d 4a 03          	lea    0x3(%rdx),%rcx
+   151b3:	48 8b 55 e8          	mov    -0x18(%rbp),%rdx
+   151b7:	48 01 ca             	add    %rcx,%rdx
+   151ba:	32 45 fc             	xor    -0x4(%rbp),%al
+   151bd:	88 02                	mov    %al,(%rdx)
+   151bf:	0f b6 45 fb          	movzbl -0x5(%rbp),%eax
+   151c3:	83 c0 01             	add    $0x1,%eax
+   151c6:	88 45 fb             	mov    %al,-0x5(%rbp)
+   151c9:	80 7d fb 03          	cmpb   $0x3,-0x5(%rbp)
+   151cd:	0f 86 21 fe ff ff    	jbe    14ff4 <encrypt+0x1a5>
+--
+   15b76:	48 8b 05 3b d3 03 00 	mov    0x3d33b(%rip),%rax        # 52eb8 <aes_128_driver@@Base+0xaf8>
+   15b7d:	48 8b 50 08          	mov    0x8(%rax),%rdx
+   15b81:	48 8d 45 e0          	lea    -0x20(%rbp),%rax
+   15b85:	48 89 c7             	mov    %rax,%rdi
+   15b88:	ff d2                	call   *%rdx
+   15b8a:	c6 45 df 00          	movb   $0x0,-0x21(%rbp)
+   15b8e:	eb 44                	jmp    15bd4 <ctr_step+0xaf>
+   15b90:	0f b7 55 c4          	movzwl -0x3c(%rbp),%edx
+   15b94:	0f b6 45 df          	movzbl -0x21(%rbp),%eax
+   15b98:	01 d0                	add    %edx,%eax
+   15b9a:	48 63 d0             	movslq %eax,%rdx
+   15b9d:	48 8b 45 b8          	mov    -0x48(%rbp),%rax
+   15ba1:	48 01 d0             	add    %rdx,%rax
+   15ba4:	0f b6 08             	movzbl (%rax),%ecx
+   15ba7:	0f b6 45 df          	movzbl -0x21(%rbp),%eax
+   15bab:	48 98                	cltq
+   15bad:	0f b6 54 05 e0       	movzbl -0x20(%rbp,%rax,1),%edx
+   15bb2:	0f b7 75 c4          	movzwl -0x3c(%rbp),%esi
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-broadcast.z1
+TYPE: extra-firmwares/nullnet-broadcast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+00003308 t __br_unexpected_
+00003334 T __ext_udivmod16
+00003356 T __ext_udivmod32
+0000330e T __mulsi3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+000033fa T __umoddi3
+0000334e T __umodhi3
+00003384 T __umodsi3
+0000ffc0 T __vectors_start
+0000338e T __xabi_udivmod64
+00003100 W _reset_vector__
+0000330c W _unexpected_
+00010000 T _vectors_end
+0000405e T cc2420_get_txpower
+00004032 T cc2420_set_txpower
+0000114a D curr_log_level_main
+00004c68 T etimer_expired
+00004c82 T etimer_next_expiration_time
+00005b5c t is_in_leaf_mode
+0000562a T log_lladdr
+00001296 b next_expiration
+00007370 r output_power
+000019c9 b poll_mode
+00003c9a t set_frame_filtering
+00003cfa t set_poll_mode
+000064de T timer_expired
+
+[Top 30 largest symbols / possible hotspots]
+00005f02 00000088 t exit_process
+0000677a 00000088 T xmem_pread
+00005000 0000008c T frame802154_parse_fcf
+00005fe4 0000008c T process_run
+00005336 0000009e t create_frame
+000051e8 0000009e t parse
+00004988 000000a0 t process_thread_ctimer_process
+00004dbc 000000a8 t field_len
+00005286 000000b0 T framer_802154_setup_params
+000059a0 000000b2 t process_thread_nullnet_example_process
+00003e86 000000ba t cc2420_read
+00006250 000000c2 t process_thread_sensors_process
+00004b40 000000c4 t process_thread_etimer_process
+00003530 000000d0 T timera1
+000063f0 000000d2 t process_thread_stack_check_process
+00004f2c 000000d4 T frame802154_create
+00005d26 000000d6 T platform_init_stage_two
+00004cdc 000000e0 T frame802154_has_panid
+0000129a 000000e0 b received_seqnos
+00007152 000000e8 T memcpy
+00004342 000000ea T cc2420_init
+000040c4 0000011e t get_value
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+0000508c 0000015c T frame802154_parse
+00006812 00000176 t print_field
+00004596 000001b0 t transmit_from_queue
+0000313e 000001c4 T main
+0000144e 00000550 b buframmem_memb_mem
+00006988 00000742 T vuprintf
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000330e <__mulsi3>:
+    330e:	1b 14       	pushm.a	#2,	r11	
+    3310:	0b 43       	clr	r11		
+    3312:	0a 43       	clr	r10		
+    3314:	07 3c       	jmp	$+16     	;abs 0x3324
+    3316:	5d 03       	rrum	#1,	r13	
+    3318:	0c 10       	rrc	r12		
+    331a:	02 28       	jnc	$+6      	;abs 0x3320
+    331c:	0a 5e       	add	r14,	r10	
+    331e:	0b 6f       	addc	r15,	r11	
+    3320:	0e 5e       	rla	r14		
+    3322:	0f 6f       	rlc	r15		
+    3324:	0c 93       	tst	r12		
+    3326:	f7 23       	jnz	$-16     	;abs 0x3316
+    3328:	0d 93       	tst	r13		
+    332a:	f5 23       	jnz	$-20     	;abs 0x3316
+    332c:	0e 4a       	mov	r10,	r14	
+    332e:	0f 4b       	mov	r11,	r15	
+    3330:	1a 16       	popm.a	#2,	r11	
+--
+00003334 <__udivhi3>:
+    3334:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    3338:	0d 4e       	mov	r14,	r13	
+    333a:	0e 43       	clr	r14		
+    333c:	0f 5f       	rla	r15		
+    333e:	0e 6e       	rlc	r14		
+    3340:	0e 9d       	cmp	r13,	r14	
+    3342:	02 28       	jnc	$+6      	;abs 0x3348
+    3344:	0e 8d       	sub	r13,	r14	
+    3346:	1f d3       	bis	#1,	r15	;r3 As==01
+    3348:	1c 83       	dec	r12		
+    334a:	f8 23       	jnz	$-14     	;abs 0x333c
+    334c:	10 01       	reta			
+
+0000334e <__umodhi3>:
+    334e:	b0 13 34 33 	calla	#0x03334	
+    3352:	0f 4e       	mov	r14,	r15	
+    3354:	10 01       	reta			
+
+00003356 <__udivsi3>:
+    3356:	2b 14       	pushm.a	#3,	r11	
+    3358:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    335c:	0a 4c       	mov	r12,	r10	
+    335e:	0b 4d       	mov	r13,	r11	
+    3360:	0c 43       	clr	r12		
+    3362:	0d 43       	clr	r13		
+    3364:	0e 5e       	rla	r14		
+    3366:	0f 6f       	rlc	r15		
+    3368:	0c 6c       	rlc	r12		
+    336a:	0d 6d       	rlc	r13		
+    336c:	0d 9b       	cmp	r11,	r13	
+    336e:	06 28       	jnc	$+14     	;abs 0x337c
+    3370:	02 20       	jnz	$+6      	;abs 0x3376
+    3372:	0c 9a       	cmp	r10,	r12	
+    3374:	03 28       	jnc	$+8      	;abs 0x337c
+    3376:	0c 8a       	sub	r10,	r12	
+    3378:	0d 7b       	subc	r11,	r13	
+    337a:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+0000338e <__xabi_udivmod64>:
+    338e:	37 14       	pushm.a	#4,	r7	
+    3390:	30 12 40 00 	push	#64		;#0x0040
+    3394:	04 48       	mov	r8,	r4	
+    3396:	05 49       	mov	r9,	r5	
+    3398:	06 4a       	mov	r10,	r6	
+    339a:	07 4b       	mov	r11,	r7	
+    339c:	08 43       	clr	r8		
+    339e:	09 43       	clr	r9		
+    33a0:	0a 43       	clr	r10		
+    33a2:	0b 43       	clr	r11		
+    33a4:	0c 5c       	rla	r12		
+    33a6:	0d 6d       	rlc	r13		
+    33a8:	0e 6e       	rlc	r14		
+    33aa:	0f 6f       	rlc	r15		
+    33ac:	08 68       	rlc	r8		
+    33ae:	09 69       	rlc	r9		
+    33b0:	0a 6a       	rlc	r10		
+    33b2:	0b 6b       	rlc	r11		
+--
+000033e0 <__udivdi3>:
+    33e0:	3b 14       	pushm.a	#4,	r11	
+    33e2:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    33e6:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    33ea:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    33ee:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    33f2:	b0 13 8e 33 	calla	#0x0338e	
+    33f6:	38 16       	popm.a	#4,	r11	
+    33f8:	10 01       	reta			
+
+000033fa <__umoddi3>:
+    33fa:	3b 14       	pushm.a	#4,	r11	
+    33fc:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    3400:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    3404:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    3408:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    340c:	b0 13 8e 33 	calla	#0x0338e	
+    3410:	0c 48       	mov	r8,	r12	
+    3412:	0d 49       	mov	r9,	r13	
+--
+0000341c <__udivmoddi4>:
+    341c:	4b 14       	pushm.a	#5,	r11	
+    341e:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    3422:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    3426:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    342a:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    342e:	b0 13 8e 33 	calla	#0x0338e	
+    3432:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    3436:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    343a:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    343e:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    3442:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    3446:	47 16       	popm.a	#5,	r11	
+    3448:	10 01       	reta			
+
+0000344a <port1_isr>:
+    344a:	3f 14       	pushm.a	#4,	r15	
+    344c:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    3450:	23 00 
+--
+00003c9a <set_frame_filtering>:
+    3c9a:	0b 14       	pushm.a	#1,	r11	
+    3c9c:	4b 4f       	mov.b	r15,	r11	
+    3c9e:	d2 53 ca 19 	inc.b	&0x19ca	
+    3ca2:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    3ca6:	b0 13 1e 3a 	calla	#0x03a1e	
+    3caa:	0e 4f       	mov	r15,	r14	
+    3cac:	4b 93       	tst.b	r11		
+    3cae:	03 24       	jz	$+8      	;abs 0x3cb6
+    3cb0:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    3cb4:	02 3c       	jmp	$+6      	;abs 0x3cba
+    3cb6:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    3cba:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    3cbe:	b0 13 64 3a 	calla	#0x03a64	
+    3cc2:	b0 13 72 3c 	calla	#0x03c72	
+    3cc6:	0b 16       	popm.a	#1,	r11	
+    3cc8:	10 01       	reta			
+
+00003cca <set_auto_ack>:
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast-u50.sky
+TYPE: extra-firmwares/nullnet-unicast-u50.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+         U InterruptVectors
+0000421c t __br_unexpected_
+00008098 T __ext_udivmod16
+000080ba T __ext_udivmod32
+0000806c T __mulsi3
+00008158 T __udivdi3
+00008098 T __udivhi3
+000081ac T __udivmoddi4
+000080ba T __udivsi3
+0000817e T __umoddi3
+000080b2 T __umodhi3
+000080f0 T __umodsi3
+0000ffe0 T __vectors_start
+000080fa T __xabi_udivmod64
+00004000 W _reset_vector__
+0000806a W _unexpected_
+00010000 T _vectors_end
+0000113a D all_modules
+00008240 R cc2420_aes_128_driver
+00004b96 T cc2420_get_txpower
+00004b6a T cc2420_set_txpower
+0000132e B curr_log_level_6lowpan
+00001326 B curr_log_level_6top
+00001324 B curr_log_level_coap
+00001328 B curr_log_level_framer
+00001330 B curr_log_level_ipv6
+00001320 B curr_log_level_lwm2m
+0000132a B curr_log_level_mac
+0000118e D curr_log_level_main
+0000132c B curr_log_level_nullnet
+00001334 B curr_log_level_rpl
+00001322 B curr_log_level_snmp
+0000131e B curr_log_level_sys
+00001332 B curr_log_level_tcpip
+00001cdc B energest_current_mode
+00005ab6 T etimer_next_expiration_time
+00006934 t is_in_leaf_mode
+000063ce T log_lladdr
+0000131a b next_expiration
+0000826e r output_power
+0000123e b poll_mode
+00004708 t set_frame_filtering
+00004768 t set_poll_mode
+00007430 T timer_expired
+
+[Top 30 largest symbols / possible hotspots]
+00005598 0000009a t process_thread_ctimer_process
+000045fe 0000009c t energest_off
+000061d8 000000a2 t create_frame
+00006080 000000a2 t parse
+000071d6 000000a4 t process_thread_serial_line_process
+00005bf0 000000aa t field_len
+00006122 000000b6 T framer_802154_setup_params
+00006746 000000ba t process_thread_nullnet_example_process
+00005e5c 000000bc T frame802154_parse_fcf
+00004930 000000be t cc2420_read
+000014bc 000000c0 b events
+000070ea 000000c2 t process_thread_sensors_process
+0000597a 000000cc t process_thread_etimer_process
+00005d8a 000000d2 T frame802154_create
+00004f6e 000000dc T timera1
+00005b10 000000e0 T frame802154_has_panid
+00001338 000000e0 b received_seqnos
+00004e84 000000ea T cc2420_init
+00007514 000000f4 T uart1_init
+00007f06 000000fa T memcpy
+00004c00 0000011e t get_value
+0000573c 00000120 T ds2411_init
+00005360 00000146 T csma_output_packet
+00004d34 00000150 t set_value
+00005f18 00000168 T frame802154_parse
+000076a8 00000194 t print_field
+000051a4 000001bc t transmit_from_queue
+0000403e 000001d8 T main
+00001584 00000550 b buframmem_memb_mem
+0000783c 0000063e T vuprintf
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+00004708 <set_frame_filtering>:
+    4708:	0b 12       	push	r11		
+    470a:	4b 4f       	mov.b	r15,	r11	
+    470c:	d2 53 42 12 	inc.b	&0x1242	
+    4710:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    4714:	b0 12 7e 43 	call	#0x437e	
+    4718:	0e 4f       	mov	r15,	r14	
+    471a:	4b 93       	tst.b	r11		
+    471c:	03 24       	jz	$+8      	;abs 0x4724
+    471e:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    4722:	02 3c       	jmp	$+6      	;abs 0x4728
+    4724:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    4728:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    472c:	b0 12 ca 43 	call	#0x43ca	
+    4730:	b0 12 c8 46 	call	#0x46c8	
+    4734:	3b 41       	pop	r11		
+    4736:	30 41       	ret			
+
+00004738 <set_auto_ack>:
+--
+0000806c <__mulsi3>:
+    806c:	0b 12       	push	r11		
+    806e:	0a 12       	push	r10		
+    8070:	0b 43       	clr	r11		
+    8072:	0a 43       	clr	r10		
+    8074:	08 3c       	jmp	$+18     	;abs 0x8086
+    8076:	12 c3       	clrc			
+    8078:	0d 10       	rrc	r13		
+    807a:	0c 10       	rrc	r12		
+    807c:	02 28       	jnc	$+6      	;abs 0x8082
+    807e:	0a 5e       	add	r14,	r10	
+    8080:	0b 6f       	addc	r15,	r11	
+    8082:	0e 5e       	rla	r14		
+    8084:	0f 6f       	rlc	r15		
+    8086:	0c 93       	tst	r12		
+    8088:	f6 23       	jnz	$-18     	;abs 0x8076
+    808a:	0d 93       	tst	r13		
+    808c:	f4 23       	jnz	$-22     	;abs 0x8076
+    808e:	0e 4a       	mov	r10,	r14	
+--
+00008098 <__udivhi3>:
+    8098:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    809c:	0d 4e       	mov	r14,	r13	
+    809e:	0e 43       	clr	r14		
+    80a0:	0f 5f       	rla	r15		
+    80a2:	0e 6e       	rlc	r14		
+    80a4:	0e 9d       	cmp	r13,	r14	
+    80a6:	02 28       	jnc	$+6      	;abs 0x80ac
+    80a8:	0e 8d       	sub	r13,	r14	
+    80aa:	1f d3       	bis	#1,	r15	;r3 As==01
+    80ac:	1c 83       	dec	r12		
+    80ae:	f8 23       	jnz	$-14     	;abs 0x80a0
+    80b0:	30 41       	ret			
+
+000080b2 <__umodhi3>:
+    80b2:	b0 12 98 80 	call	#0x8098	
+    80b6:	0f 4e       	mov	r14,	r15	
+    80b8:	30 41       	ret			
+
+000080ba <__udivsi3>:
+    80ba:	0b 12       	push	r11		
+    80bc:	0a 12       	push	r10		
+    80be:	09 12       	push	r9		
+    80c0:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    80c4:	0a 4c       	mov	r12,	r10	
+    80c6:	0b 4d       	mov	r13,	r11	
+    80c8:	0c 43       	clr	r12		
+    80ca:	0d 43       	clr	r13		
+    80cc:	0e 5e       	rla	r14		
+    80ce:	0f 6f       	rlc	r15		
+    80d0:	0c 6c       	rlc	r12		
+    80d2:	0d 6d       	rlc	r13		
+    80d4:	0d 9b       	cmp	r11,	r13	
+    80d6:	06 28       	jnc	$+14     	;abs 0x80e4
+    80d8:	02 20       	jnz	$+6      	;abs 0x80de
+    80da:	0c 9a       	cmp	r10,	r12	
+    80dc:	03 28       	jnc	$+8      	;abs 0x80e4
+    80de:	0c 8a       	sub	r10,	r12	
+--
+000080fa <__xabi_udivmod64>:
+    80fa:	07 12       	push	r7		
+    80fc:	06 12       	push	r6		
+    80fe:	05 12       	push	r5		
+    8100:	04 12       	push	r4		
+    8102:	30 12 40 00 	push	#64		;#0x0040
+    8106:	04 48       	mov	r8,	r4	
+    8108:	05 49       	mov	r9,	r5	
+    810a:	06 4a       	mov	r10,	r6	
+    810c:	07 4b       	mov	r11,	r7	
+    810e:	08 43       	clr	r8		
+    8110:	09 43       	clr	r9		
+    8112:	0a 43       	clr	r10		
+    8114:	0b 43       	clr	r11		
+    8116:	0c 5c       	rla	r12		
+    8118:	0d 6d       	rlc	r13		
+    811a:	0e 6e       	rlc	r14		
+    811c:	0f 6f       	rlc	r15		
+    811e:	08 68       	rlc	r8		
+--
+00008158 <__udivdi3>:
+    8158:	0b 12       	push	r11		
+    815a:	0a 12       	push	r10		
+    815c:	09 12       	push	r9		
+    815e:	08 12       	push	r8		
+    8160:	18 41 0a 00 	mov	10(r1),	r8	;0x000a(r1)
+    8164:	19 41 0c 00 	mov	12(r1),	r9	;0x000c(r1)
+    8168:	1a 41 0e 00 	mov	14(r1),	r10	;0x000e(r1)
+    816c:	1b 41 10 00 	mov	16(r1),	r11	;0x0010(r1)
+    8170:	b0 12 fa 80 	call	#0x80fa	
+    8174:	38 41       	pop	r8		
+    8176:	39 41       	pop	r9		
+    8178:	3a 41       	pop	r10		
+    817a:	3b 41       	pop	r11		
+    817c:	30 41       	ret			
+
+0000817e <__umoddi3>:
+    817e:	0b 12       	push	r11		
+    8180:	0a 12       	push	r10		
+--
+000081ac <__udivmoddi4>:
+    81ac:	0b 12       	push	r11		
+    81ae:	0a 12       	push	r10		
+    81b0:	09 12       	push	r9		
+    81b2:	08 12       	push	r8		
+    81b4:	07 12       	push	r7		
+    81b6:	18 41 0c 00 	mov	12(r1),	r8	;0x000c(r1)
+    81ba:	19 41 0e 00 	mov	14(r1),	r9	;0x000e(r1)
+    81be:	1a 41 10 00 	mov	16(r1),	r10	;0x0010(r1)
+    81c2:	1b 41 12 00 	mov	18(r1),	r11	;0x0012(r1)
+    81c6:	b0 12 fa 80 	call	#0x80fa	
+    81ca:	17 41 14 00 	mov	20(r1),	r7	;0x0014(r1)
+    81ce:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    81d2:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    81d6:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    81da:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    81de:	37 41       	pop	r7		
+    81e0:	38 41       	pop	r8		
+    81e2:	39 41       	pop	r9		
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.sky
+TYPE: extra-firmwares/nullnet-unicast.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+         U InterruptVectors
+0000935a T __addsf3
+00004208 t __br_unexpected_
+00009606 T __divsf3
+0000a9ba T __ext_udivmod16
+0000a9dc T __ext_udivmod32
+0000992e T __fixsfsi
+00008e76 T __fixunssfdi
+00008e34 T __fixunssfsi
+00009886 T __floatsisf
+00008f9a T __floatundisf
+000099ba T __floatunsisf
+00007efe T __ieee754_powf
+00008cc2 T __ieee754_sqrtf
+0000a944 T __muldi3
+000093f6 T __mulsf3
+0000a918 T __mulsi3
+000093a6 T __subsf3
+0000aa7a T __udivdi3
+0000a9ba T __udivhi3
+0000aace T __udivmoddi4
+0000a9dc T __udivsi3
+0000aaa0 T __umoddi3
+0000a9d4 T __umodhi3
+0000aa12 T __umodsi3
+0000ffe0 T __vectors_start
+0000a97a T __xabi_muldi3
+0000aa1c T __xabi_udivmod64
+00004000 W _reset_vector__
+0000a916 W _unexpected_
+00010000 T _vectors_end
+0000113e D all_modules
+0000ab60 R cc2420_aes_128_driver
+00004a94 T cc2420_get_txpower
+00004a68 T cc2420_set_txpower
+00002340 B curr_log_level_6lowpan
+00002338 B curr_log_level_6top
+00002336 B curr_log_level_coap
+0000233a B curr_log_level_framer
+00002342 B curr_log_level_ipv6
+00002332 B curr_log_level_lwm2m
+0000233c B curr_log_level_mac
+0000118c D curr_log_level_main
+0000233e B curr_log_level_nullnet
+00002346 B curr_log_level_rpl
+00002334 B curr_log_level_snmp
+00002344 B curr_log_level_tcpip
+00002df4 B distance_zero
+0000595a T etimer_expired
+00005974 T etimer_next_expiration_time
+00007184 t is_in_leaf_mode
+000062c4 T log_lladdr
+0000232e b next_expiration
+0000ab8e r output_power
+00002252 b poll_mode
+00008b48 T powf
+0000462a t set_frame_filtering
+0000468a t set_poll_mode
+00007c9a T timer_expired
+
+[Top 30 largest symbols / possible hotspots]
+00004d82 000000ea T cc2420_init
+00007b94 000000ea t process_thread_stack_check_process
+00002454 000000f2 B rssiList
+00007d7a 000000f4 T uart1_init
+0000a7b2 000000fa T memcpy
+0000b0cc 00000100 R __clz_tab
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00008e76 00000124 T __fixunssfdi
+00009cec 0000013c T __unpack_f
+00008f9a 0000013e T __floatundisf
+00009606 00000148 T __divsf3
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00008cc2 00000172 T __ieee754_sqrtf
+00008b4e 00000174 T scalbnf
+00009f54 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00009b12 000001da T __pack_f
+00006672 000001e4 t process_thread_nullnet_example_process
+000093f6 00000210 T __mulsf3
+000090d8 00000282 t _fpadd_parts
+000019e4 000003e8 D node_positions
+00001520 000004c4 D anchor_nodes
+000026b6 00000550 b buframmem_memb_mem
+0000a0e8 0000063e T vuprintf
+00006856 00000864 T input_callback
+00007efe 00000c4a T __ieee754_powf
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000462a <set_frame_filtering>:
+    462a:	0b 12       	push	r11		
+    462c:	4b 4f       	mov.b	r15,	r11	
+    462e:	d2 53 56 22 	inc.b	&0x2256	
+    4632:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    4636:	b0 12 70 43 	call	#0x4370	
+    463a:	0e 4f       	mov	r15,	r14	
+    463c:	4b 93       	tst.b	r11		
+    463e:	03 24       	jz	$+8      	;abs 0x4646
+    4640:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    4644:	02 3c       	jmp	$+6      	;abs 0x464a
+    4646:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    464a:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    464e:	b0 12 bc 43 	call	#0x43bc	
+    4652:	b0 12 ea 45 	call	#0x45ea	
+    4656:	3b 41       	pop	r11		
+    4658:	30 41       	ret			
+
+0000465a <set_auto_ack>:
+--
+00008cc2 <__ieee754_sqrtf>:
+    8cc2:	0b 12       	push	r11		
+    8cc4:	0a 12       	push	r10		
+    8cc6:	09 12       	push	r9		
+    8cc8:	08 12       	push	r8		
+    8cca:	07 12       	push	r7		
+    8ccc:	06 12       	push	r6		
+    8cce:	05 12       	push	r5		
+    8cd0:	04 12       	push	r4		
+    8cd2:	21 83       	decd	r1		
+    8cd4:	0a 4e       	mov	r14,	r10	
+    8cd6:	0b 4f       	mov	r15,	r11	
+    8cd8:	0c 4e       	mov	r14,	r12	
+    8cda:	0d 4f       	mov	r15,	r13	
+    8cdc:	06 4e       	mov	r14,	r6	
+    8cde:	07 4f       	mov	r15,	r7	
+    8ce0:	36 f3       	and	#-1,	r6	;r3 As==11
+    8ce2:	37 f0 ff 7f 	and	#32767,	r7	;#0x7fff
+    8ce6:	37 90 80 7f 	cmp	#32640,	r7	;#0x7f80
+--
+00008e34 <__fixunssfsi>:
+    8e34:	0b 12       	push	r11		
+    8e36:	0a 12       	push	r10		
+    8e38:	0a 4e       	mov	r14,	r10	
+    8e3a:	0b 4f       	mov	r15,	r11	
+    8e3c:	0c 43       	clr	r12		
+    8e3e:	3d 40 00 4f 	mov	#20224,	r13	;#0x4f00
+    8e42:	b0 12 9c 97 	call	#0x979c	
+    8e46:	0f 93       	tst	r15		
+    8e48:	07 34       	jge	$+16     	;abs 0x8e58
+    8e4a:	0e 4a       	mov	r10,	r14	
+    8e4c:	0f 4b       	mov	r11,	r15	
+    8e4e:	b0 12 2e 99 	call	#0x992e	
+    8e52:	3a 41       	pop	r10		
+    8e54:	3b 41       	pop	r11		
+    8e56:	30 41       	ret			
+    8e58:	0c 43       	clr	r12		
+    8e5a:	3d 40 00 4f 	mov	#20224,	r13	;#0x4f00
+    8e5e:	0e 4a       	mov	r10,	r14	
+--
+00008e76 <__fixunssfdi>:
+    8e76:	0b 12       	push	r11		
+    8e78:	0a 12       	push	r10		
+    8e7a:	09 12       	push	r9		
+    8e7c:	08 12       	push	r8		
+    8e7e:	07 12       	push	r7		
+    8e80:	06 12       	push	r6		
+    8e82:	05 12       	push	r5		
+    8e84:	04 12       	push	r4		
+    8e86:	21 83       	decd	r1		
+    8e88:	0a 4e       	mov	r14,	r10	
+    8e8a:	0b 4f       	mov	r15,	r11	
+    8e8c:	0c 43       	clr	r12		
+    8e8e:	3d 40 80 3f 	mov	#16256,	r13	;#0x3f80
+    8e92:	b0 12 ea 97 	call	#0x97ea	
+    8e96:	0f 93       	tst	r15		
+    8e98:	2d 38       	jl	$+92     	;abs 0x8ef4
+    8e9a:	0c 43       	clr	r12		
+    8e9c:	3d 40 80 4f 	mov	#20352,	r13	;#0x4f80
+--
+00008f9a <__floatundisf>:
+    8f9a:	0b 12       	push	r11		
+    8f9c:	0a 12       	push	r10		
+    8f9e:	09 12       	push	r9		
+    8fa0:	08 12       	push	r8		
+    8fa2:	07 12       	push	r7		
+    8fa4:	06 12       	push	r6		
+    8fa6:	05 12       	push	r5		
+    8fa8:	04 12       	push	r4		
+    8faa:	04 4c       	mov	r12,	r4	
+    8fac:	05 4d       	mov	r13,	r5	
+    8fae:	06 4e       	mov	r14,	r6	
+    8fb0:	07 4f       	mov	r15,	r7	
+    8fb2:	3c f3       	and	#-1,	r12	;r3 As==11
+    8fb4:	3d f3       	and	#-1,	r13	;r3 As==11
+    8fb6:	0e f3       	and	#0,	r14	;r3 As==00
+    8fb8:	0f f3       	and	#0,	r15	;r3 As==00
+    8fba:	0c 94       	cmp	r4,	r12	
+    8fbc:	62 24       	jz	$+198    	;abs 0x9082
+--
+0000935a <__addsf3>:
+    935a:	31 50 e0 ff 	add	#-32,	r1	;#0xffe0
+    935e:	81 4e 1c 00 	mov	r14,	28(r1)	;0x001c(r1)
+    9362:	81 4f 1e 00 	mov	r15,	30(r1)	;0x001e(r1)
+    9366:	81 4c 18 00 	mov	r12,	24(r1)	;0x0018(r1)
+    936a:	81 4d 1a 00 	mov	r13,	26(r1)	;0x001a(r1)
+    936e:	0e 41       	mov	r1,	r14	
+    9370:	3e 50 10 00 	add	#16,	r14	;#0x0010
+    9374:	0f 41       	mov	r1,	r15	
+    9376:	3f 50 1c 00 	add	#28,	r15	;#0x001c
+    937a:	b0 12 ec 9c 	call	#0x9cec	
+    937e:	0e 41       	mov	r1,	r14	
+    9380:	3e 52       	add	#8,	r14	;r2 As==11
+    9382:	0f 41       	mov	r1,	r15	
+    9384:	3f 50 18 00 	add	#24,	r15	;#0x0018
+    9388:	b0 12 ec 9c 	call	#0x9cec	
+    938c:	0d 41       	mov	r1,	r13	
+    938e:	0e 41       	mov	r1,	r14	
+    9390:	3e 52       	add	#8,	r14	;r2 As==11
+--
+000093a6 <__subsf3>:
+    93a6:	31 50 e0 ff 	add	#-32,	r1	;#0xffe0
+    93aa:	81 4e 1c 00 	mov	r14,	28(r1)	;0x001c(r1)
+    93ae:	81 4f 1e 00 	mov	r15,	30(r1)	;0x001e(r1)
+    93b2:	81 4c 18 00 	mov	r12,	24(r1)	;0x0018(r1)
+    93b6:	81 4d 1a 00 	mov	r13,	26(r1)	;0x001a(r1)
+    93ba:	0e 41       	mov	r1,	r14	
+    93bc:	3e 50 10 00 	add	#16,	r14	;#0x0010
+    93c0:	0f 41       	mov	r1,	r15	
+    93c2:	3f 50 1c 00 	add	#28,	r15	;#0x001c
+    93c6:	b0 12 ec 9c 	call	#0x9cec	
+    93ca:	0e 41       	mov	r1,	r14	
+    93cc:	3e 52       	add	#8,	r14	;r2 As==11
+    93ce:	0f 41       	mov	r1,	r15	
+    93d0:	3f 50 18 00 	add	#24,	r15	;#0x0018
+    93d4:	b0 12 ec 9c 	call	#0x9cec	
+    93d8:	d1 e3 09 00 	xor.b	#1,	9(r1)	;r3 As==01, 0x0009(r1)
+    93dc:	0d 41       	mov	r1,	r13	
+    93de:	0e 41       	mov	r1,	r14	
+--
+000093f6 <__mulsf3>:
+    93f6:	0b 12       	push	r11		
+    93f8:	0a 12       	push	r10		
+    93fa:	09 12       	push	r9		
+    93fc:	08 12       	push	r8		
+    93fe:	07 12       	push	r7		
+    9400:	06 12       	push	r6		
+    9402:	05 12       	push	r5		
+    9404:	04 12       	push	r4		
+    9406:	31 50 de ff 	add	#-34,	r1	;#0xffde
+    940a:	81 4e 1c 00 	mov	r14,	28(r1)	;0x001c(r1)
+    940e:	81 4f 1e 00 	mov	r15,	30(r1)	;0x001e(r1)
+    9412:	81 4c 18 00 	mov	r12,	24(r1)	;0x0018(r1)
+    9416:	81 4d 1a 00 	mov	r13,	26(r1)	;0x001a(r1)
+    941a:	0e 41       	mov	r1,	r14	
+    941c:	3e 50 10 00 	add	#16,	r14	;#0x0010
+    9420:	0f 41       	mov	r1,	r15	
+    9422:	3f 50 1c 00 	add	#28,	r15	;#0x001c
+    9426:	b0 12 ec 9c 	call	#0x9cec	
+--
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast.z1
+TYPE: extra-firmwares/nullnet-unicast.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+00008226 T __addsf3
+00003308 t __br_unexpected_
+000084c0 T __divsf3
+00003334 T __ext_udivmod16
+00003356 T __ext_udivmod32
+00008cdc T __fixsfsi
+00007d78 T __fixunssfdi
+000088de T __fixunssfsi
+000086ec T __floatsisf
+00007e98 T __floatundisf
+00008790 T __floatunsisf
+00006e8a T __ieee754_powf
+00007c22 T __ieee754_sqrtf
+000082c2 T __mulsf3
+0000330e T __mulsi3
+00008272 T __subsf3
+000033e0 T __udivdi3
+00003334 T __udivhi3
+0000341c T __udivmoddi4
+00003356 T __udivsi3
+000033fa T __umoddi3
+0000334e T __umodhi3
+00003384 T __umodsi3
+0000ffc0 T __vectors_start
+0000338e T __xabi_udivmod64
+00003100 W _reset_vector__
+0000330c W _unexpected_
+00010000 T _vectors_end
+0000405e T cc2420_get_txpower
+00004032 T cc2420_set_txpower
+0000114a D curr_log_level_main
+00004c68 T etimer_expired
+00004c82 T etimer_next_expiration_time
+000061e4 t is_in_leaf_mode
+0000562a T log_lladdr
+00001ba8 b next_expiration
+00009948 r output_power
+000023d3 b poll_mode
+00007ab4 T powf
+00003c9a t set_frame_filtering
+00003cfa t set_poll_mode
+00006b66 T timer_expired
+
+[Top 30 largest symbols / possible hotspots]
+00004cdc 000000e0 T frame802154_has_panid
+00001bac 000000e0 b received_seqnos
+00008790 000000e4 T __floatunsisf
+0000972a 000000e8 T memcpy
+00004342 000000ea T cc2420_init
+00001c8e 000000f2 B rssiList
+00009d7c 00000100 R __clz_tab
+00008ade 0000010c T __unpack_f
+000040c4 0000011e t get_value
+00007d78 00000120 T __fixunssfdi
+00007e98 00000124 T __floatundisf
+000084c0 00000142 T __divsf3
+00004746 00000148 T csma_output_packet
+000041f8 0000014a t set_value
+00007c22 00000156 T __ieee754_sqrtf
+0000508c 0000015c T frame802154_parse
+00007aba 00000168 T scalbnf
+00008dea 00000176 t print_field
+000059a0 00000194 t process_thread_nullnet_example_process
+00004596 000001b0 t transmit_from_queue
+0000891a 000001c4 T __pack_f
+0000313e 000001c4 T main
+000082c2 000001fe T __mulsf3
+00007fbc 0000026a t _fpadd_parts
+00001620 000003e8 D node_positions
+0000115c 000004c4 D anchor_nodes
+00001e54 00000550 b buframmem_memb_mem
+00005b34 000005f0 T input_callback
+00008f60 00000742 T vuprintf
+00006e8a 00000c2a T __ieee754_powf
+
+[Math / DSP related strings]
+distance is: %llu wcl: %llu - wcwcl: %llu 
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000330e <__mulsi3>:
+    330e:	1b 14       	pushm.a	#2,	r11	
+    3310:	0b 43       	clr	r11		
+    3312:	0a 43       	clr	r10		
+    3314:	07 3c       	jmp	$+16     	;abs 0x3324
+    3316:	5d 03       	rrum	#1,	r13	
+    3318:	0c 10       	rrc	r12		
+    331a:	02 28       	jnc	$+6      	;abs 0x3320
+    331c:	0a 5e       	add	r14,	r10	
+    331e:	0b 6f       	addc	r15,	r11	
+    3320:	0e 5e       	rla	r14		
+    3322:	0f 6f       	rlc	r15		
+    3324:	0c 93       	tst	r12		
+    3326:	f7 23       	jnz	$-16     	;abs 0x3316
+    3328:	0d 93       	tst	r13		
+    332a:	f5 23       	jnz	$-20     	;abs 0x3316
+    332c:	0e 4a       	mov	r10,	r14	
+    332e:	0f 4b       	mov	r11,	r15	
+    3330:	1a 16       	popm.a	#2,	r11	
+--
+00003334 <__udivhi3>:
+    3334:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    3338:	0d 4e       	mov	r14,	r13	
+    333a:	0e 43       	clr	r14		
+    333c:	0f 5f       	rla	r15		
+    333e:	0e 6e       	rlc	r14		
+    3340:	0e 9d       	cmp	r13,	r14	
+    3342:	02 28       	jnc	$+6      	;abs 0x3348
+    3344:	0e 8d       	sub	r13,	r14	
+    3346:	1f d3       	bis	#1,	r15	;r3 As==01
+    3348:	1c 83       	dec	r12		
+    334a:	f8 23       	jnz	$-14     	;abs 0x333c
+    334c:	10 01       	reta			
+
+0000334e <__umodhi3>:
+    334e:	b0 13 34 33 	calla	#0x03334	
+    3352:	0f 4e       	mov	r14,	r15	
+    3354:	10 01       	reta			
+
+00003356 <__udivsi3>:
+    3356:	2b 14       	pushm.a	#3,	r11	
+    3358:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    335c:	0a 4c       	mov	r12,	r10	
+    335e:	0b 4d       	mov	r13,	r11	
+    3360:	0c 43       	clr	r12		
+    3362:	0d 43       	clr	r13		
+    3364:	0e 5e       	rla	r14		
+    3366:	0f 6f       	rlc	r15		
+    3368:	0c 6c       	rlc	r12		
+    336a:	0d 6d       	rlc	r13		
+    336c:	0d 9b       	cmp	r11,	r13	
+    336e:	06 28       	jnc	$+14     	;abs 0x337c
+    3370:	02 20       	jnz	$+6      	;abs 0x3376
+    3372:	0c 9a       	cmp	r10,	r12	
+    3374:	03 28       	jnc	$+8      	;abs 0x337c
+    3376:	0c 8a       	sub	r10,	r12	
+    3378:	0d 7b       	subc	r11,	r13	
+    337a:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+0000338e <__xabi_udivmod64>:
+    338e:	37 14       	pushm.a	#4,	r7	
+    3390:	30 12 40 00 	push	#64		;#0x0040
+    3394:	04 48       	mov	r8,	r4	
+    3396:	05 49       	mov	r9,	r5	
+    3398:	06 4a       	mov	r10,	r6	
+    339a:	07 4b       	mov	r11,	r7	
+    339c:	08 43       	clr	r8		
+    339e:	09 43       	clr	r9		
+    33a0:	0a 43       	clr	r10		
+    33a2:	0b 43       	clr	r11		
+    33a4:	0c 5c       	rla	r12		
+    33a6:	0d 6d       	rlc	r13		
+    33a8:	0e 6e       	rlc	r14		
+    33aa:	0f 6f       	rlc	r15		
+    33ac:	08 68       	rlc	r8		
+    33ae:	09 69       	rlc	r9		
+    33b0:	0a 6a       	rlc	r10		
+    33b2:	0b 6b       	rlc	r11		
+--
+000033e0 <__udivdi3>:
+    33e0:	3b 14       	pushm.a	#4,	r11	
+    33e2:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    33e6:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    33ea:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    33ee:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    33f2:	b0 13 8e 33 	calla	#0x0338e	
+    33f6:	38 16       	popm.a	#4,	r11	
+    33f8:	10 01       	reta			
+
+000033fa <__umoddi3>:
+    33fa:	3b 14       	pushm.a	#4,	r11	
+    33fc:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    3400:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    3404:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    3408:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    340c:	b0 13 8e 33 	calla	#0x0338e	
+    3410:	0c 48       	mov	r8,	r12	
+    3412:	0d 49       	mov	r9,	r13	
+--
+0000341c <__udivmoddi4>:
+    341c:	4b 14       	pushm.a	#5,	r11	
+    341e:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    3422:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    3426:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    342a:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    342e:	b0 13 8e 33 	calla	#0x0338e	
+    3432:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    3436:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    343a:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    343e:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    3442:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    3446:	47 16       	popm.a	#5,	r11	
+    3448:	10 01       	reta			
+
+0000344a <port1_isr>:
+    344a:	3f 14       	pushm.a	#4,	r15	
+    344c:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    3450:	23 00 
+--
+00003c9a <set_frame_filtering>:
+    3c9a:	0b 14       	pushm.a	#1,	r11	
+    3c9c:	4b 4f       	mov.b	r15,	r11	
+    3c9e:	d2 53 d4 23 	inc.b	&0x23d4	
+    3ca2:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    3ca6:	b0 13 1e 3a 	calla	#0x03a1e	
+    3caa:	0e 4f       	mov	r15,	r14	
+    3cac:	4b 93       	tst.b	r11		
+    3cae:	03 24       	jz	$+8      	;abs 0x3cb6
+    3cb0:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    3cb4:	02 3c       	jmp	$+6      	;abs 0x3cba
+    3cb6:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    3cba:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    3cbe:	b0 13 64 3a 	calla	#0x03a64	
+    3cc2:	b0 13 72 3c 	calla	#0x03c72	
+    3cc6:	0b 16       	popm.a	#1,	r11	
+    3cc8:	10 01       	reta			
+
+00003cca <set_auto_ack>:
+--
+00007c22 <__ieee754_sqrtf>:
+    7c22:	7b 14       	pushm.a	#8,	r11	
+    7c24:	21 83       	decd	r1		
+    7c26:	0a 4e       	mov	r14,	r10	
+    7c28:	0b 4f       	mov	r15,	r11	
+    7c2a:	0c 4e       	mov	r14,	r12	
+    7c2c:	0d 4f       	mov	r15,	r13	
+    7c2e:	06 4e       	mov	r14,	r6	
+    7c30:	07 4f       	mov	r15,	r7	
+    7c32:	36 f3       	and	#-1,	r6	;r3 As==11
+    7c34:	37 f0 ff 7f 	and	#32767,	r7	;#0x7fff
+    7c38:	37 90 80 7f 	cmp	#32640,	r7	;#0x7f80
+    7c3c:	0b 28       	jnc	$+24     	;abs 0x7c54
+    7c3e:	0c 4e       	mov	r14,	r12	
+    7c40:	0d 4f       	mov	r15,	r13	
+    7c42:	b0 13 c2 82 	calla	#0x082c2	
+    7c46:	0c 4e       	mov	r14,	r12	
+    7c48:	0d 4f       	mov	r15,	r13	
+    7c4a:	0e 4a       	mov	r10,	r14	
+--
+00007d78 <__fixunssfdi>:
+
+----------------------------------------
+FILE: extra-firmwares/nullnet-unicast_eleco.sky
+TYPE: extra-firmwares/nullnet-unicast_eleco.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+         U InterruptVectors
+00004208 t __br_unexpected_
+00008070 T __ext_udivmod16
+00008092 T __ext_udivmod32
+00008044 T __mulsi3
+00008130 T __udivdi3
+00008070 T __udivhi3
+00008184 T __udivmoddi4
+00008092 T __udivsi3
+00008156 T __umoddi3
+0000808a T __umodhi3
+000080c8 T __umodsi3
+0000ffe0 T __vectors_start
+000080d2 T __xabi_udivmod64
+00004000 W _reset_vector__
+00008042 W _unexpected_
+00010000 T _vectors_end
+0000113e D all_modules
+00008218 R cc2420_aes_128_driver
+00004a94 T cc2420_get_txpower
+00004a68 T cc2420_set_txpower
+00002408 B curr_log_level_6lowpan
+00002400 B curr_log_level_6top
+000023fe B curr_log_level_coap
+00002402 B curr_log_level_framer
+0000240a B curr_log_level_ipv6
+000023fa B curr_log_level_lwm2m
+00002404 B curr_log_level_mac
+0000118c D curr_log_level_main
+00002406 B curr_log_level_nullnet
+0000240e B curr_log_level_rpl
+000023fc B curr_log_level_snmp
+0000240c B curr_log_level_tcpip
+0000595a T etimer_expired
+00005974 T etimer_next_expiration_time
+000068f6 t is_in_leaf_mode
+000062c4 T log_lladdr
+000023f6 b next_expiration
+00008246 r output_power
+0000231a b poll_mode
+0000462a t set_frame_filtering
+0000468a t set_poll_mode
+0000740c T timer_expired
+
+[Top 30 largest symbols / possible hotspots]
+00005aae 000000ac t field_len
+00005ff4 000000b8 T framer_802154_setup_params
+00005d2e 000000bc T frame802154_parse_fcf
+0000482e 000000be t cc2420_read
+0000268c 000000c0 b events
+00007066 000000c2 t process_thread_sensors_process
+00001e30 000000c8 D AnchorIndexes
+0000582a 000000cc t process_thread_etimer_process
+00004e6c 000000dc T timera1
+000059ce 000000e0 T frame802154_has_panid
+00002412 000000e0 b received_seqnos
+00005c4a 000000e4 T frame802154_create
+00004d82 000000ea T cc2420_init
+00007306 000000ea t process_thread_stack_check_process
+000024f4 000000f2 B rssiList
+000074ec 000000f4 T uart1_init
+00007ede 000000fa T memcpy
+00004afe 0000011e t get_value
+00005684 00000120 T ds2411_init
+00006672 00000126 t process_thread_nullnet_example_process
+00004c32 00000150 t set_value
+0000526c 00000158 T csma_output_packet
+00005dea 00000168 T frame802154_parse
+00007680 00000194 t print_field
+000050ac 000001c0 t transmit_from_queue
+0000403e 000001c4 T main
+00001a48 000003e8 D node_positions
+00001584 000004c4 D anchor_nodes
+00002754 00000550 b buframmem_memb_mem
+00007814 0000063e T vuprintf
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+0000462a <set_frame_filtering>:
+    462a:	0b 12       	push	r11		
+    462c:	4b 4f       	mov.b	r15,	r11	
+    462e:	d2 53 1e 23 	inc.b	&0x231e	
+    4632:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    4636:	b0 12 70 43 	call	#0x4370	
+    463a:	0e 4f       	mov	r15,	r14	
+    463c:	4b 93       	tst.b	r11		
+    463e:	03 24       	jz	$+8      	;abs 0x4646
+    4640:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    4644:	02 3c       	jmp	$+6      	;abs 0x464a
+    4646:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    464a:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    464e:	b0 12 bc 43 	call	#0x43bc	
+    4652:	b0 12 ea 45 	call	#0x45ea	
+    4656:	3b 41       	pop	r11		
+    4658:	30 41       	ret			
+
+0000465a <set_auto_ack>:
+--
+00008044 <__mulsi3>:
+    8044:	0b 12       	push	r11		
+    8046:	0a 12       	push	r10		
+    8048:	0b 43       	clr	r11		
+    804a:	0a 43       	clr	r10		
+    804c:	08 3c       	jmp	$+18     	;abs 0x805e
+    804e:	12 c3       	clrc			
+    8050:	0d 10       	rrc	r13		
+    8052:	0c 10       	rrc	r12		
+    8054:	02 28       	jnc	$+6      	;abs 0x805a
+    8056:	0a 5e       	add	r14,	r10	
+    8058:	0b 6f       	addc	r15,	r11	
+    805a:	0e 5e       	rla	r14		
+    805c:	0f 6f       	rlc	r15		
+    805e:	0c 93       	tst	r12		
+    8060:	f6 23       	jnz	$-18     	;abs 0x804e
+    8062:	0d 93       	tst	r13		
+    8064:	f4 23       	jnz	$-22     	;abs 0x804e
+    8066:	0e 4a       	mov	r10,	r14	
+--
+00008070 <__udivhi3>:
+    8070:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    8074:	0d 4e       	mov	r14,	r13	
+    8076:	0e 43       	clr	r14		
+    8078:	0f 5f       	rla	r15		
+    807a:	0e 6e       	rlc	r14		
+    807c:	0e 9d       	cmp	r13,	r14	
+    807e:	02 28       	jnc	$+6      	;abs 0x8084
+    8080:	0e 8d       	sub	r13,	r14	
+    8082:	1f d3       	bis	#1,	r15	;r3 As==01
+    8084:	1c 83       	dec	r12		
+    8086:	f8 23       	jnz	$-14     	;abs 0x8078
+    8088:	30 41       	ret			
+
+0000808a <__umodhi3>:
+    808a:	b0 12 70 80 	call	#0x8070	
+    808e:	0f 4e       	mov	r14,	r15	
+    8090:	30 41       	ret			
+
+00008092 <__udivsi3>:
+    8092:	0b 12       	push	r11		
+    8094:	0a 12       	push	r10		
+    8096:	09 12       	push	r9		
+    8098:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    809c:	0a 4c       	mov	r12,	r10	
+    809e:	0b 4d       	mov	r13,	r11	
+    80a0:	0c 43       	clr	r12		
+    80a2:	0d 43       	clr	r13		
+    80a4:	0e 5e       	rla	r14		
+    80a6:	0f 6f       	rlc	r15		
+    80a8:	0c 6c       	rlc	r12		
+    80aa:	0d 6d       	rlc	r13		
+    80ac:	0d 9b       	cmp	r11,	r13	
+    80ae:	06 28       	jnc	$+14     	;abs 0x80bc
+    80b0:	02 20       	jnz	$+6      	;abs 0x80b6
+    80b2:	0c 9a       	cmp	r10,	r12	
+    80b4:	03 28       	jnc	$+8      	;abs 0x80bc
+    80b6:	0c 8a       	sub	r10,	r12	
+--
+000080d2 <__xabi_udivmod64>:
+    80d2:	07 12       	push	r7		
+    80d4:	06 12       	push	r6		
+    80d6:	05 12       	push	r5		
+    80d8:	04 12       	push	r4		
+    80da:	30 12 40 00 	push	#64		;#0x0040
+    80de:	04 48       	mov	r8,	r4	
+    80e0:	05 49       	mov	r9,	r5	
+    80e2:	06 4a       	mov	r10,	r6	
+    80e4:	07 4b       	mov	r11,	r7	
+    80e6:	08 43       	clr	r8		
+    80e8:	09 43       	clr	r9		
+    80ea:	0a 43       	clr	r10		
+    80ec:	0b 43       	clr	r11		
+    80ee:	0c 5c       	rla	r12		
+    80f0:	0d 6d       	rlc	r13		
+    80f2:	0e 6e       	rlc	r14		
+    80f4:	0f 6f       	rlc	r15		
+    80f6:	08 68       	rlc	r8		
+--
+00008130 <__udivdi3>:
+    8130:	0b 12       	push	r11		
+    8132:	0a 12       	push	r10		
+    8134:	09 12       	push	r9		
+    8136:	08 12       	push	r8		
+    8138:	18 41 0a 00 	mov	10(r1),	r8	;0x000a(r1)
+    813c:	19 41 0c 00 	mov	12(r1),	r9	;0x000c(r1)
+    8140:	1a 41 0e 00 	mov	14(r1),	r10	;0x000e(r1)
+    8144:	1b 41 10 00 	mov	16(r1),	r11	;0x0010(r1)
+    8148:	b0 12 d2 80 	call	#0x80d2	
+    814c:	38 41       	pop	r8		
+    814e:	39 41       	pop	r9		
+    8150:	3a 41       	pop	r10		
+    8152:	3b 41       	pop	r11		
+    8154:	30 41       	ret			
+
+00008156 <__umoddi3>:
+    8156:	0b 12       	push	r11		
+    8158:	0a 12       	push	r10		
+--
+00008184 <__udivmoddi4>:
+    8184:	0b 12       	push	r11		
+    8186:	0a 12       	push	r10		
+    8188:	09 12       	push	r9		
+    818a:	08 12       	push	r8		
+    818c:	07 12       	push	r7		
+    818e:	18 41 0c 00 	mov	12(r1),	r8	;0x000c(r1)
+    8192:	19 41 0e 00 	mov	14(r1),	r9	;0x000e(r1)
+    8196:	1a 41 10 00 	mov	16(r1),	r10	;0x0010(r1)
+    819a:	1b 41 12 00 	mov	18(r1),	r11	;0x0012(r1)
+    819e:	b0 12 d2 80 	call	#0x80d2	
+    81a2:	17 41 14 00 	mov	20(r1),	r7	;0x0014(r1)
+    81a6:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    81aa:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    81ae:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    81b2:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    81b6:	37 41       	pop	r7		
+    81b8:	38 41       	pop	r8		
+    81ba:	39 41       	pop	r9		
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.sky
+TYPE: extra-firmwares/udp-client.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+         U InterruptVectors
+0000427c t __br_unexpected_
+0000e27c T __divhi3
+0000e2f6 T __divsi3
+0000e27c T __ext_divmod16
+0000e2f6 T __ext_divmod32
+0000e25a T __ext_udivmod16
+0000e2b6 T __ext_udivmod32
+0000e2ae T __modhi3
+0000e338 T __modsi3
+0000e22e T __mulsi3
+0000e3a0 T __udivdi3
+0000e25a T __udivhi3
+0000e3f4 T __udivmoddi4
+0000e2b6 T __udivsi3
+0000e3c6 T __umoddi3
+0000e274 T __umodhi3
+0000e2ec T __umodsi3
+0000ffe0 T __vectors_start
+0000e342 T __xabi_udivmod64
+00004000 W _reset_vector__
+0000e22c W _unexpected_
+00010000 T _vectors_end
+00001142 D all_modules
+0000e488 R cc2420_aes_128_driver
+00004b02 T cc2420_get_txpower
+00004ad6 T cc2420_set_txpower
+0000566e T ctimer_expired
+00002956 B curr_instance
+000013e2 B curr_log_level_6lowpan
+000013da B curr_log_level_6top
+000013d8 B curr_log_level_coap
+000013dc B curr_log_level_framer
+000013e4 B curr_log_level_ipv6
+000013d4 B curr_log_level_lwm2m
+000013de B curr_log_level_mac
+00001196 D curr_log_level_main
+000013e0 B curr_log_level_nullnet
+000013e8 B curr_log_level_rpl
+000013d6 B curr_log_level_snmp
+000013d2 B curr_log_level_sys
+000013e6 B curr_log_level_tcpip
+000059c6 T etimer_next_expiration_time
+000065a6 T log_6addr
+000065d8 T log_lladdr
+00008c48 t nbr_path_cost
+0000132e b next_expiration
+0000e4b6 r output_power
+00001252 b poll_mode
+00002a54 B rpl_multicast_addr
+00004698 t set_frame_filtering
+000046f8 t set_poll_mode
+0000b402 T stimer_expired
+0000b6ae T timer_expired
+0000c966 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+00007e02 00000118 T rpl_ext_header_srh_update
+00004b6c 0000011e t get_value
+0000250c 00000120 b _ds6_neighbors_mem
+000056e8 00000120 T ds2411_init
+000026c0 00000120 b nodememb_memb_mem
+0000d52e 0000012c T uiplib_ipaddr_snprint
+00007856 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c428 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d52 00000158 b frag_info
+0000c1a0 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000083ea 0000016c t dao_input
+0000d770 00000194 t print_field
+0000b86e 00000194 t process_thread_udp_client_process
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c60e 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000ce9a 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d904 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+00004698 <set_frame_filtering>:
+    4698:	0b 12       	push	r11		
+    469a:	4b 4f       	mov.b	r15,	r11	
+    469c:	d2 53 56 12 	inc.b	&0x1256	
+    46a0:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    46a4:	b0 12 de 43 	call	#0x43de	
+    46a8:	0e 4f       	mov	r15,	r14	
+    46aa:	4b 93       	tst.b	r11		
+    46ac:	03 24       	jz	$+8      	;abs 0x46b4
+    46ae:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    46b2:	02 3c       	jmp	$+6      	;abs 0x46b8
+    46b4:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    46b8:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    46bc:	b0 12 2a 44 	call	#0x442a	
+    46c0:	b0 12 58 46 	call	#0x4658	
+    46c4:	3b 41       	pop	r11		
+    46c6:	30 41       	ret			
+
+000046c8 <set_auto_ack>:
+--
+00008c48 <nbr_path_cost>:
+    8c48:	0b 12       	push	r11		
+    8c4a:	0a 12       	push	r10		
+    8c4c:	0b 4f       	mov	r15,	r11	
+    8c4e:	0f 93       	tst	r15		
+    8c50:	13 24       	jz	$+40     	;abs 0x8c78
+    8c52:	1a 4f 04 00 	mov	4(r15),	r10	;0x0004(r15)
+    8c56:	b0 12 22 8c 	call	#0x8c22	
+    8c5a:	0c 4f       	mov	r15,	r12	
+    8c5c:	0d 43       	clr	r13		
+    8c5e:	0e 4a       	mov	r10,	r14	
+    8c60:	0f 43       	clr	r15		
+    8c62:	0c 5e       	add	r14,	r12	
+    8c64:	0d 6f       	addc	r15,	r13	
+    8c66:	1d 93       	cmp	#1,	r13	;r3 As==01
+    8c68:	07 2c       	jc	$+16     	;abs 0x8c78
+    8c6a:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8c6c:	05 2c       	jc	$+12     	;abs 0x8c78
+    8c6e:	0f 4b       	mov	r11,	r15	
+--
+0000e22e <__mulsi3>:
+    e22e:	0b 12       	push	r11		
+    e230:	0a 12       	push	r10		
+    e232:	0b 43       	clr	r11		
+    e234:	0a 43       	clr	r10		
+    e236:	08 3c       	jmp	$+18     	;abs 0xe248
+    e238:	12 c3       	clrc			
+    e23a:	0d 10       	rrc	r13		
+    e23c:	0c 10       	rrc	r12		
+    e23e:	02 28       	jnc	$+6      	;abs 0xe244
+    e240:	0a 5e       	add	r14,	r10	
+    e242:	0b 6f       	addc	r15,	r11	
+    e244:	0e 5e       	rla	r14		
+    e246:	0f 6f       	rlc	r15		
+    e248:	0c 93       	tst	r12		
+    e24a:	f6 23       	jnz	$-18     	;abs 0xe238
+    e24c:	0d 93       	tst	r13		
+    e24e:	f4 23       	jnz	$-22     	;abs 0xe238
+    e250:	0e 4a       	mov	r10,	r14	
+--
+0000e25a <__udivhi3>:
+    e25a:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    e25e:	0d 4e       	mov	r14,	r13	
+    e260:	0e 43       	clr	r14		
+    e262:	0f 5f       	rla	r15		
+    e264:	0e 6e       	rlc	r14		
+    e266:	0e 9d       	cmp	r13,	r14	
+    e268:	02 28       	jnc	$+6      	;abs 0xe26e
+    e26a:	0e 8d       	sub	r13,	r14	
+    e26c:	1f d3       	bis	#1,	r15	;r3 As==01
+    e26e:	1c 83       	dec	r12		
+    e270:	f8 23       	jnz	$-14     	;abs 0xe262
+    e272:	30 41       	ret			
+
+0000e274 <__umodhi3>:
+    e274:	b0 12 5a e2 	call	#0xe25a	
+    e278:	0f 4e       	mov	r14,	r15	
+    e27a:	30 41       	ret			
+
+0000e27c <__divhi3>:
+    e27c:	0d 43       	clr	r13		
+    e27e:	0f 93       	tst	r15		
+    e280:	04 34       	jge	$+10     	;abs 0xe28a
+    e282:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    e286:	3f e3       	inv	r15		
+    e288:	1f 53       	inc	r15		
+    e28a:	0e 93       	tst	r14		
+    e28c:	03 34       	jge	$+8      	;abs 0xe294
+    e28e:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    e290:	3e e3       	inv	r14		
+    e292:	1e 53       	inc	r14		
+    e294:	0d 12       	push	r13		
+    e296:	b0 12 5a e2 	call	#0xe25a	
+    e29a:	3d 41       	pop	r13		
+    e29c:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    e29e:	02 24       	jz	$+6      	;abs 0xe2a4
+    e2a0:	3e e3       	inv	r14		
+    e2a2:	1e 53       	inc	r14		
+--
+0000e2b6 <__udivsi3>:
+    e2b6:	0b 12       	push	r11		
+    e2b8:	0a 12       	push	r10		
+    e2ba:	09 12       	push	r9		
+    e2bc:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    e2c0:	0a 4c       	mov	r12,	r10	
+    e2c2:	0b 4d       	mov	r13,	r11	
+    e2c4:	0c 43       	clr	r12		
+    e2c6:	0d 43       	clr	r13		
+    e2c8:	0e 5e       	rla	r14		
+    e2ca:	0f 6f       	rlc	r15		
+    e2cc:	0c 6c       	rlc	r12		
+    e2ce:	0d 6d       	rlc	r13		
+    e2d0:	0d 9b       	cmp	r11,	r13	
+    e2d2:	06 28       	jnc	$+14     	;abs 0xe2e0
+    e2d4:	02 20       	jnz	$+6      	;abs 0xe2da
+    e2d6:	0c 9a       	cmp	r10,	r12	
+    e2d8:	03 28       	jnc	$+8      	;abs 0xe2e0
+    e2da:	0c 8a       	sub	r10,	r12	
+--
+0000e2f6 <__divsi3>:
+    e2f6:	0b 12       	push	r11		
+    e2f8:	0b 43       	clr	r11		
+    e2fa:	0f 93       	tst	r15		
+    e2fc:	06 34       	jge	$+14     	;abs 0xe30a
+    e2fe:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    e302:	3e e3       	inv	r14		
+    e304:	3f e3       	inv	r15		
+    e306:	1e 53       	inc	r14		
+    e308:	0f 63       	adc	r15		
+    e30a:	0d 93       	tst	r13		
+    e30c:	05 34       	jge	$+12     	;abs 0xe318
+    e30e:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    e310:	3c e3       	inv	r12		
+    e312:	3d e3       	inv	r13		
+    e314:	1c 53       	inc	r12		
+    e316:	0d 63       	adc	r13		
+    e318:	b0 12 b6 e2 	call	#0xe2b6	
+    e31c:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+0000e342 <__xabi_udivmod64>:
+    e342:	07 12       	push	r7		
+    e344:	06 12       	push	r6		
+    e346:	05 12       	push	r5		
+    e348:	04 12       	push	r4		
+    e34a:	30 12 40 00 	push	#64		;#0x0040
+    e34e:	04 48       	mov	r8,	r4	
+    e350:	05 49       	mov	r9,	r5	
+    e352:	06 4a       	mov	r10,	r6	
+    e354:	07 4b       	mov	r11,	r7	
+    e356:	08 43       	clr	r8		
+    e358:	09 43       	clr	r9		
+    e35a:	0a 43       	clr	r10		
+    e35c:	0b 43       	clr	r11		
+    e35e:	0c 5c       	rla	r12		
+    e360:	0d 6d       	rlc	r13		
+    e362:	0e 6e       	rlc	r14		
+    e364:	0f 6f       	rlc	r15		
+    e366:	08 68       	rlc	r8		
+--
+0000e3a0 <__udivdi3>:
+
+----------------------------------------
+FILE: extra-firmwares/udp-client.z1
+TYPE: extra-firmwares/udp-client.z1: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+0000337c t __br_unexpected_
+000033ca T __divhi3
+0000343c T __divsi3
+000033ca T __ext_divmod16
+0000343c T __ext_divmod32
+000033a8 T __ext_udivmod16
+00003404 T __ext_udivmod32
+000033fc T __modhi3
+0000347e T __modsi3
+00003382 T __mulsi3
+000034da T __udivdi3
+000033a8 T __udivhi3
+00003516 T __udivmoddi4
+00003404 T __udivsi3
+000034f4 T __umoddi3
+000033c2 T __umodhi3
+00003432 T __umodsi3
+0000ffc0 T __vectors_start
+00003488 T __xabi_udivmod64
+00003100 W _reset_vector__
+00003380 W _unexpected_
+00010000 T _vectors_end
+0000414c T cc2420_get_txpower
+00004120 T cc2420_set_txpower
+00004bac T ctimer_expired
+000025dc B curr_instance
+00001154 D curr_log_level_main
+00004d84 T etimer_next_expiration_time
+00005996 T log_6addr
+000059c8 T log_lladdr
+00007e32 t nbr_path_cost
+00001340 b next_expiration
+0000d290 r output_power
+00002461 b poll_mode
+000026e8 B rpl_multicast_addr
+00003d88 t set_frame_filtering
+00003de8 t set_poll_mode
+0000a36e T stimer_expired
+0000a60c T timer_expired
+0000b864 T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+000057a4 000000f6 T link_stats_input_callback
+00002700 00000108 B uip_ds6_if
+000025dc 0000010c B curr_instance
+0000a3f8 0000010c T tcpip_ipv6_output
+0000c376 00000114 T uiplib_ipaddr_snprint
+000041b2 0000011e t get_value
+00004840 00000136 T csma_output_packet
+0000b356 00000136 T uip_icmp6_error_output
+00006ba4 0000013c T rpl_dag_update_state
+000042e6 0000014a t set_value
+00007652 00000158 t dao_input
+00001b92 00000158 b frag_info
+00005176 0000015c T frame802154_parse
+0000b0d6 00000164 T uip_ds6_init
+0000c648 00000176 t print_field
+0000a83c 00000192 t process_thread_udp_client_process
+00006ce0 0000019e T rpl_process_dio
+00004694 000001ac t transmit_from_queue
+00008d6a 000001e8 t add_fragment
+00007abc 0000020a T rpl_icmp6_dio_output
+0000313e 00000238 T main
+00007336 00000266 T rpl_ext_header_update
+0000b520 00000290 t ns_input
+000077aa 00000292 t dio_input
+0000bd06 000004ba T uip_process
+00001598 00000550 b buframmem_memb_mem
+00001cea 00000558 b frag_buf
+0000c7be 00000742 T vuprintf
+00009002 00000746 t output
+00009748 0000099c t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+00003382 <__mulsi3>:
+    3382:	1b 14       	pushm.a	#2,	r11	
+    3384:	0b 43       	clr	r11		
+    3386:	0a 43       	clr	r10		
+    3388:	07 3c       	jmp	$+16     	;abs 0x3398
+    338a:	5d 03       	rrum	#1,	r13	
+    338c:	0c 10       	rrc	r12		
+    338e:	02 28       	jnc	$+6      	;abs 0x3394
+    3390:	0a 5e       	add	r14,	r10	
+    3392:	0b 6f       	addc	r15,	r11	
+    3394:	0e 5e       	rla	r14		
+    3396:	0f 6f       	rlc	r15		
+    3398:	0c 93       	tst	r12		
+    339a:	f7 23       	jnz	$-16     	;abs 0x338a
+    339c:	0d 93       	tst	r13		
+    339e:	f5 23       	jnz	$-20     	;abs 0x338a
+    33a0:	0e 4a       	mov	r10,	r14	
+    33a2:	0f 4b       	mov	r11,	r15	
+    33a4:	1a 16       	popm.a	#2,	r11	
+--
+000033a8 <__udivhi3>:
+    33a8:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    33ac:	0d 4e       	mov	r14,	r13	
+    33ae:	0e 43       	clr	r14		
+    33b0:	0f 5f       	rla	r15		
+    33b2:	0e 6e       	rlc	r14		
+    33b4:	0e 9d       	cmp	r13,	r14	
+    33b6:	02 28       	jnc	$+6      	;abs 0x33bc
+    33b8:	0e 8d       	sub	r13,	r14	
+    33ba:	1f d3       	bis	#1,	r15	;r3 As==01
+    33bc:	1c 83       	dec	r12		
+    33be:	f8 23       	jnz	$-14     	;abs 0x33b0
+    33c0:	10 01       	reta			
+
+000033c2 <__umodhi3>:
+    33c2:	b0 13 a8 33 	calla	#0x033a8	
+    33c6:	0f 4e       	mov	r14,	r15	
+    33c8:	10 01       	reta			
+
+000033ca <__divhi3>:
+    33ca:	0d 43       	clr	r13		
+    33cc:	0f 93       	tst	r15		
+    33ce:	04 34       	jge	$+10     	;abs 0x33d8
+    33d0:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    33d4:	3f e3       	inv	r15		
+    33d6:	1f 53       	inc	r15		
+    33d8:	0e 93       	tst	r14		
+    33da:	03 34       	jge	$+8      	;abs 0x33e2
+    33dc:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    33de:	3e e3       	inv	r14		
+    33e0:	1e 53       	inc	r14		
+    33e2:	0d 12       	push	r13		
+    33e4:	b0 13 a8 33 	calla	#0x033a8	
+    33e8:	3d 41       	pop	r13		
+    33ea:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    33ec:	02 24       	jz	$+6      	;abs 0x33f2
+    33ee:	3e e3       	inv	r14		
+    33f0:	1e 53       	inc	r14		
+--
+00003404 <__udivsi3>:
+    3404:	2b 14       	pushm.a	#3,	r11	
+    3406:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    340a:	0a 4c       	mov	r12,	r10	
+    340c:	0b 4d       	mov	r13,	r11	
+    340e:	0c 43       	clr	r12		
+    3410:	0d 43       	clr	r13		
+    3412:	0e 5e       	rla	r14		
+    3414:	0f 6f       	rlc	r15		
+    3416:	0c 6c       	rlc	r12		
+    3418:	0d 6d       	rlc	r13		
+    341a:	0d 9b       	cmp	r11,	r13	
+    341c:	06 28       	jnc	$+14     	;abs 0x342a
+    341e:	02 20       	jnz	$+6      	;abs 0x3424
+    3420:	0c 9a       	cmp	r10,	r12	
+    3422:	03 28       	jnc	$+8      	;abs 0x342a
+    3424:	0c 8a       	sub	r10,	r12	
+    3426:	0d 7b       	subc	r11,	r13	
+    3428:	1e d3       	bis	#1,	r14	;r3 As==01
+--
+0000343c <__divsi3>:
+    343c:	0b 14       	pushm.a	#1,	r11	
+    343e:	0b 43       	clr	r11		
+    3440:	0f 93       	tst	r15		
+    3442:	06 34       	jge	$+14     	;abs 0x3450
+    3444:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    3448:	3e e3       	inv	r14		
+    344a:	3f e3       	inv	r15		
+    344c:	1e 53       	inc	r14		
+    344e:	0f 63       	adc	r15		
+    3450:	0d 93       	tst	r13		
+    3452:	05 34       	jge	$+12     	;abs 0x345e
+    3454:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    3456:	3c e3       	inv	r12		
+    3458:	3d e3       	inv	r13		
+    345a:	1c 53       	inc	r12		
+    345c:	0d 63       	adc	r13		
+    345e:	b0 13 04 34 	calla	#0x03404	
+    3462:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+00003488 <__xabi_udivmod64>:
+    3488:	37 14       	pushm.a	#4,	r7	
+    348a:	30 12 40 00 	push	#64		;#0x0040
+    348e:	04 48       	mov	r8,	r4	
+    3490:	05 49       	mov	r9,	r5	
+    3492:	06 4a       	mov	r10,	r6	
+    3494:	07 4b       	mov	r11,	r7	
+    3496:	08 43       	clr	r8		
+    3498:	09 43       	clr	r9		
+    349a:	0a 43       	clr	r10		
+    349c:	0b 43       	clr	r11		
+    349e:	0c 5c       	rla	r12		
+    34a0:	0d 6d       	rlc	r13		
+    34a2:	0e 6e       	rlc	r14		
+    34a4:	0f 6f       	rlc	r15		
+    34a6:	08 68       	rlc	r8		
+    34a8:	09 69       	rlc	r9		
+    34aa:	0a 6a       	rlc	r10		
+    34ac:	0b 6b       	rlc	r11		
+--
+000034da <__udivdi3>:
+    34da:	3b 14       	pushm.a	#4,	r11	
+    34dc:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34e0:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34e4:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    34e8:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    34ec:	b0 13 88 34 	calla	#0x03488	
+    34f0:	38 16       	popm.a	#4,	r11	
+    34f2:	10 01       	reta			
+
+000034f4 <__umoddi3>:
+    34f4:	3b 14       	pushm.a	#4,	r11	
+    34f6:	18 41 14 00 	mov	20(r1),	r8	;0x0014(r1)
+    34fa:	19 41 16 00 	mov	22(r1),	r9	;0x0016(r1)
+    34fe:	1a 41 18 00 	mov	24(r1),	r10	;0x0018(r1)
+    3502:	1b 41 1a 00 	mov	26(r1),	r11	;0x001a(r1)
+    3506:	b0 13 88 34 	calla	#0x03488	
+    350a:	0c 48       	mov	r8,	r12	
+    350c:	0d 49       	mov	r9,	r13	
+--
+00003516 <__udivmoddi4>:
+    3516:	4b 14       	pushm.a	#5,	r11	
+    3518:	18 41 18 00 	mov	24(r1),	r8	;0x0018(r1)
+    351c:	19 41 1a 00 	mov	26(r1),	r9	;0x001a(r1)
+    3520:	1a 41 1c 00 	mov	28(r1),	r10	;0x001c(r1)
+    3524:	1b 41 1e 00 	mov	30(r1),	r11	;0x001e(r1)
+    3528:	b0 13 88 34 	calla	#0x03488	
+    352c:	17 41 20 00 	mov	32(r1),	r7	;0x0020(r1)
+    3530:	87 48 00 00 	mov	r8,	0(r7)	;0x0000(r7)
+    3534:	87 49 02 00 	mov	r9,	2(r7)	;0x0002(r7)
+    3538:	87 4a 04 00 	mov	r10,	4(r7)	;0x0004(r7)
+    353c:	87 4b 06 00 	mov	r11,	6(r7)	;0x0006(r7)
+    3540:	47 16       	popm.a	#5,	r11	
+    3542:	10 01       	reta			
+
+00003544 <port1_isr>:
+    3544:	3f 14       	pushm.a	#4,	r15	
+    3546:	f2 b0 40 00 	bit.b	#64,	&0x0023	;#0x0040
+    354a:	23 00 
+--
+00003d88 <set_frame_filtering>:
+
+----------------------------------------
+FILE: extra-firmwares/udp-server.sky
+TYPE: extra-firmwares/udp-server.sky: ELF 32-bit LSB executable, TI msp430, version 1 (embedded), statically linked, with debug_info, not stripped
+
+[Math / DSP related symbols]
+         U InterruptVectors
+0000427c t __br_unexpected_
+0000e140 T __divhi3
+0000e1ba T __divsi3
+0000e140 T __ext_divmod16
+0000e1ba T __ext_divmod32
+0000e11e T __ext_udivmod16
+0000e17a T __ext_udivmod32
+0000e172 T __modhi3
+0000e1fc T __modsi3
+0000e0f2 T __mulsi3
+0000e264 T __udivdi3
+0000e11e T __udivhi3
+0000e2b8 T __udivmoddi4
+0000e17a T __udivsi3
+0000e28a T __umoddi3
+0000e138 T __umodhi3
+0000e1b0 T __umodsi3
+0000ffe0 T __vectors_start
+0000e206 T __xabi_udivmod64
+00004000 W _reset_vector__
+0000e0f0 W _unexpected_
+00010000 T _vectors_end
+00001142 D all_modules
+0000e34c R cc2420_aes_128_driver
+00004b02 T cc2420_get_txpower
+00004ad6 T cc2420_set_txpower
+0000566e T ctimer_expired
+0000291e B curr_instance
+000013e2 B curr_log_level_6lowpan
+000013da B curr_log_level_6top
+000013d8 B curr_log_level_coap
+000013dc B curr_log_level_framer
+000013e4 B curr_log_level_ipv6
+000013d4 B curr_log_level_lwm2m
+000013de B curr_log_level_mac
+00001196 D curr_log_level_main
+000013e0 B curr_log_level_nullnet
+000013e8 B curr_log_level_rpl
+000013d6 B curr_log_level_snmp
+000013d2 B curr_log_level_sys
+000013e6 B curr_log_level_tcpip
+000059c6 T etimer_next_expiration_time
+000065a6 T log_6addr
+000065d8 T log_lladdr
+00008c48 t nbr_path_cost
+0000132e b next_expiration
+0000e37a r output_power
+00001252 b poll_mode
+00002a1c B rpl_multicast_addr
+00004698 t set_frame_filtering
+000046f8 t set_poll_mode
+0000b402 T stimer_expired
+0000b6ae T timer_expired
+0000c82a T uip_sr_expire_parent
+
+[Top 30 largest symbols / possible hotspots]
+0000b48c 00000114 T tcpip_ipv6_output
+00007e02 00000118 T rpl_ext_header_srh_update
+00004b6c 0000011e t get_value
+000024d4 00000120 b _ds6_neighbors_mem
+000056e8 00000120 T ds2411_init
+00002688 00000120 b nodememb_memb_mem
+0000d3f2 0000012c T uiplib_ipaddr_snprint
+00007856 00000144 T rpl_dag_update_state
+000052e2 00000146 T csma_output_packet
+0000c2ec 00000146 T uip_icmp6_error_output
+00004ca0 00000150 t set_value
+00001d52 00000158 b frag_info
+0000c064 00000164 T uip_ds6_init
+00005e28 00000168 T frame802154_parse
+000083ea 0000016c t dao_input
+0000d634 00000194 t print_field
+0000799a 000001b6 T rpl_process_dio
+00005126 000001bc t transmit_from_queue
+00009cce 000001fc t add_fragment
+00008898 00000230 T rpl_icmp6_dio_output
+0000403e 00000238 T main
+0000c4d2 00000298 t ns_input
+00008082 000002aa T rpl_ext_header_update
+00008556 000002ba t dio_input
+0000cd5e 000004c2 T uip_process
+0000170e 00000550 b buframmem_memb_mem
+00001eac 00000558 b frag_buf
+0000d7c8 0000063e T vuprintf
+00009f98 0000079e t output
+0000a736 00000a1a t input
+
+[Math / DSP related strings]
+
+[Instruction samples: multiply/divide/float-like operations]
+
+[Disassembly around math/helper functions]
+00004698 <set_frame_filtering>:
+    4698:	0b 12       	push	r11		
+    469a:	4b 4f       	mov.b	r15,	r11	
+    469c:	d2 53 56 12 	inc.b	&0x1256	
+    46a0:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    46a4:	b0 12 de 43 	call	#0x43de	
+    46a8:	0e 4f       	mov	r15,	r14	
+    46aa:	4b 93       	tst.b	r11		
+    46ac:	03 24       	jz	$+8      	;abs 0x46b4
+    46ae:	3e d0 00 08 	bis	#2048,	r14	;#0x0800
+    46b2:	02 3c       	jmp	$+6      	;abs 0x46b8
+    46b4:	3e f0 ff f7 	and	#-2049,	r14	;#0xf7ff
+    46b8:	3f 40 11 00 	mov	#17,	r15	;#0x0011
+    46bc:	b0 12 2a 44 	call	#0x442a	
+    46c0:	b0 12 58 46 	call	#0x4658	
+    46c4:	3b 41       	pop	r11		
+    46c6:	30 41       	ret			
+
+000046c8 <set_auto_ack>:
+--
+00008c48 <nbr_path_cost>:
+    8c48:	0b 12       	push	r11		
+    8c4a:	0a 12       	push	r10		
+    8c4c:	0b 4f       	mov	r15,	r11	
+    8c4e:	0f 93       	tst	r15		
+    8c50:	13 24       	jz	$+40     	;abs 0x8c78
+    8c52:	1a 4f 04 00 	mov	4(r15),	r10	;0x0004(r15)
+    8c56:	b0 12 22 8c 	call	#0x8c22	
+    8c5a:	0c 4f       	mov	r15,	r12	
+    8c5c:	0d 43       	clr	r13		
+    8c5e:	0e 4a       	mov	r10,	r14	
+    8c60:	0f 43       	clr	r15		
+    8c62:	0c 5e       	add	r14,	r12	
+    8c64:	0d 6f       	addc	r15,	r13	
+    8c66:	1d 93       	cmp	#1,	r13	;r3 As==01
+    8c68:	07 2c       	jc	$+16     	;abs 0x8c78
+    8c6a:	3c 93       	cmp	#-1,	r12	;r3 As==11
+    8c6c:	05 2c       	jc	$+12     	;abs 0x8c78
+    8c6e:	0f 4b       	mov	r11,	r15	
+--
+0000e0f2 <__mulsi3>:
+    e0f2:	0b 12       	push	r11		
+    e0f4:	0a 12       	push	r10		
+    e0f6:	0b 43       	clr	r11		
+    e0f8:	0a 43       	clr	r10		
+    e0fa:	08 3c       	jmp	$+18     	;abs 0xe10c
+    e0fc:	12 c3       	clrc			
+    e0fe:	0d 10       	rrc	r13		
+    e100:	0c 10       	rrc	r12		
+    e102:	02 28       	jnc	$+6      	;abs 0xe108
+    e104:	0a 5e       	add	r14,	r10	
+    e106:	0b 6f       	addc	r15,	r11	
+    e108:	0e 5e       	rla	r14		
+    e10a:	0f 6f       	rlc	r15		
+    e10c:	0c 93       	tst	r12		
+    e10e:	f6 23       	jnz	$-18     	;abs 0xe0fc
+    e110:	0d 93       	tst	r13		
+    e112:	f4 23       	jnz	$-22     	;abs 0xe0fc
+    e114:	0e 4a       	mov	r10,	r14	
+--
+0000e11e <__udivhi3>:
+    e11e:	7c 40 10 00 	mov.b	#16,	r12	;#0x0010
+    e122:	0d 4e       	mov	r14,	r13	
+    e124:	0e 43       	clr	r14		
+    e126:	0f 5f       	rla	r15		
+    e128:	0e 6e       	rlc	r14		
+    e12a:	0e 9d       	cmp	r13,	r14	
+    e12c:	02 28       	jnc	$+6      	;abs 0xe132
+    e12e:	0e 8d       	sub	r13,	r14	
+    e130:	1f d3       	bis	#1,	r15	;r3 As==01
+    e132:	1c 83       	dec	r12		
+    e134:	f8 23       	jnz	$-14     	;abs 0xe126
+    e136:	30 41       	ret			
+
+0000e138 <__umodhi3>:
+    e138:	b0 12 1e e1 	call	#0xe11e	
+    e13c:	0f 4e       	mov	r14,	r15	
+    e13e:	30 41       	ret			
+
+0000e140 <__divhi3>:
+    e140:	0d 43       	clr	r13		
+    e142:	0f 93       	tst	r15		
+    e144:	04 34       	jge	$+10     	;abs 0xe14e
+    e146:	3d 40 03 00 	mov	#3,	r13	;#0x0003
+    e14a:	3f e3       	inv	r15		
+    e14c:	1f 53       	inc	r15		
+    e14e:	0e 93       	tst	r14		
+    e150:	03 34       	jge	$+8      	;abs 0xe158
+    e152:	5d e3       	xor.b	#1,	r13	;r3 As==01
+    e154:	3e e3       	inv	r14		
+    e156:	1e 53       	inc	r14		
+    e158:	0d 12       	push	r13		
+    e15a:	b0 12 1e e1 	call	#0xe11e	
+    e15e:	3d 41       	pop	r13		
+    e160:	6d b3       	bit.b	#2,	r13	;r3 As==10
+    e162:	02 24       	jz	$+6      	;abs 0xe168
+    e164:	3e e3       	inv	r14		
+    e166:	1e 53       	inc	r14		
+--
+0000e17a <__udivsi3>:
+    e17a:	0b 12       	push	r11		
+    e17c:	0a 12       	push	r10		
+    e17e:	09 12       	push	r9		
+    e180:	79 40 20 00 	mov.b	#32,	r9	;#0x0020
+    e184:	0a 4c       	mov	r12,	r10	
+    e186:	0b 4d       	mov	r13,	r11	
+    e188:	0c 43       	clr	r12		
+    e18a:	0d 43       	clr	r13		
+    e18c:	0e 5e       	rla	r14		
+    e18e:	0f 6f       	rlc	r15		
+    e190:	0c 6c       	rlc	r12		
+    e192:	0d 6d       	rlc	r13		
+    e194:	0d 9b       	cmp	r11,	r13	
+    e196:	06 28       	jnc	$+14     	;abs 0xe1a4
+    e198:	02 20       	jnz	$+6      	;abs 0xe19e
+    e19a:	0c 9a       	cmp	r10,	r12	
+    e19c:	03 28       	jnc	$+8      	;abs 0xe1a4
+    e19e:	0c 8a       	sub	r10,	r12	
+--
+0000e1ba <__divsi3>:
+    e1ba:	0b 12       	push	r11		
+    e1bc:	0b 43       	clr	r11		
+    e1be:	0f 93       	tst	r15		
+    e1c0:	06 34       	jge	$+14     	;abs 0xe1ce
+    e1c2:	3b 40 03 00 	mov	#3,	r11	;#0x0003
+    e1c6:	3e e3       	inv	r14		
+    e1c8:	3f e3       	inv	r15		
+    e1ca:	1e 53       	inc	r14		
+    e1cc:	0f 63       	adc	r15		
+    e1ce:	0d 93       	tst	r13		
+    e1d0:	05 34       	jge	$+12     	;abs 0xe1dc
+    e1d2:	5b e3       	xor.b	#1,	r11	;r3 As==01
+    e1d4:	3c e3       	inv	r12		
+    e1d6:	3d e3       	inv	r13		
+    e1d8:	1c 53       	inc	r12		
+    e1da:	0d 63       	adc	r13		
+    e1dc:	b0 12 7a e1 	call	#0xe17a	
+    e1e0:	6b b3       	bit.b	#2,	r11	;r3 As==10
+--
+0000e206 <__xabi_udivmod64>:
+    e206:	07 12       	push	r7		
+    e208:	06 12       	push	r6		
+    e20a:	05 12       	push	r5		
+    e20c:	04 12       	push	r4		
+    e20e:	30 12 40 00 	push	#64		;#0x0040
+    e212:	04 48       	mov	r8,	r4	
+    e214:	05 49       	mov	r9,	r5	
+    e216:	06 4a       	mov	r10,	r6	
+    e218:	07 4b       	mov	r11,	r7	
+    e21a:	08 43       	clr	r8		
+    e21c:	09 43       	clr	r9		
+    e21e:	0a 43       	clr	r10		
+    e220:	0b 43       	clr	r11		
+    e222:	0c 5c       	rla	r12		
+    e224:	0d 6d       	rlc	r13		
+    e226:	0e 6e       	rlc	r14		
+    e228:	0f 6f       	rlc	r15		
+    e22a:	08 68       	rlc	r8		
+--
+0000e264 <__udivdi3>:
